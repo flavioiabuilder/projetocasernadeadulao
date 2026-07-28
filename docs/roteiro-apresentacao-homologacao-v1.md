@@ -814,12 +814,7 @@ Terceira e última aparição da frase-âncora (**Dedicatória**, não Prefácio
 ## O que ainda precisa de confirmação humana antes de codificar
 
 1. ~~Exibir ou omitir a Tela 24~~ — **decidido: exibir** (estudo proposto + salvaguardas)
-2. Se o HTML único será artefato **irmão** do prospecto multiarquivo (recomendado) ou substituto
-
-### Nota de UI (prospecto atual)
-
-- Sumário: painel papel lateral (Direção A).
-- Onda 1 de consistência visual aplicada (tokens, CSS legado, ritmo 11–12).
+2. Se o HTML único será artefato **irmão** do prospecto multiarquivo — **decidido: irmão** em `apresentacao/homologacao-pastoral.html` (gerado por `npm run generate:apresentacao`)
 
 ---
 

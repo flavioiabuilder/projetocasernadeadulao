@@ -5,6 +5,7 @@
   "description": "Prospecto pastoral Discipulando a Caserna — Projeto Caserna de Adulão",
   "scripts": {
     "generate": "node ferramentas/gerar-dados.js",
+    "generate:apresentacao": "node ferramentas/gerar-apresentacao-homologacao.js",
     "check:encoding": "node ferramentas/check-encoding.js",
     "lint:html": "node ferramentas/lint-html.js",
     "lint:css": "stylelint css/**/*.css",

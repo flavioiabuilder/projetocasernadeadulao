@@ -10,6 +10,12 @@
 - Sumário em painel papel; regra bronze vs bronze-cl documentada.
 - `componentes.css` partido em `nav.css`, `editorial.css`, `escudo.css`, `curricular.css`.
 
+### Apresentação de homologação (irmão do prospecto)
+
+- HTML único em `apresentacao/homologacao-pastoral.html` (gerado por `npm run generate:apresentacao`).
+- 30 telas / 9 atos conforme `docs/roteiro-apresentacao-homologacao-v1.md`.
+- Prefácio como convite; merch como estudo; caderneta como proposta.
+
 ## [1.0.0] — 2026-07-27
 
 ### Prospecto v1 — cinco movimentos (seções 1–15)
