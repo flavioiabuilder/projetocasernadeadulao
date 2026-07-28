@@ -49,6 +49,16 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
     await expect(page.locator("#titulo-15")).toHaveText("A palavra final");
   });
 
+  test("barra marca o movimento clicado", async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto("/");
+    await page.locator('.barra__movimento[data-movimento="movimento-2"]').click();
+    await expect(page.locator("#movimento-2")).toBeInViewport();
+    await expect(
+      page.locator(".barra__movimento--ativo")
+    ).toHaveAttribute("data-movimento", "movimento-2");
+  });
+
   test("matriz e folheador operáveis", async ({ page }) => {
     await page.goto("/");
     await page.locator("#secao-9").scrollIntoViewIfNeeded();

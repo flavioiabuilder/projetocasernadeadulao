@@ -44,6 +44,10 @@
     );
   }
 
+  function topoDocumento(el) {
+    return el.getBoundingClientRect().top + window.scrollY;
+  }
+
   function initNavegacao() {
     const links = Array.from(document.querySelectorAll(".indice__link"));
     const marcadores = Array.from(
@@ -51,6 +55,7 @@
     );
     const barra = document.querySelector(".progresso-topo__barra");
     const progressoIndice = document.querySelector(".indice__progresso");
+    const cabecalho = document.querySelector(".barra");
 
     const secoes = [];
     MOVIMENTOS.forEach((m) => {
@@ -68,6 +73,8 @@
     let ticking = false;
     let ativoSecaoId = null;
     let ativoMovimentoId = null;
+    let movimentoFixadoId = null;
+    let liberarFixacaoEm = 0;
 
     function marcarMovimento(movId) {
       if (movId === ativoMovimentoId) return;
@@ -81,6 +88,29 @@
           btn.removeAttribute("aria-current");
         }
       });
+    }
+
+    function alturaBarra() {
+      return cabecalho ? cabecalho.getBoundingClientRect().height : 60;
+    }
+
+    /**
+     * Linha de ativação na metade superior da viewport (abaixo da barra).
+     * Assim o cabeçalho do movimento, ainda visível abaixo do topo, já conta.
+     */
+    function linhaAtivacao() {
+      const y = window.scrollY || window.pageYOffset;
+      return y + Math.max(alturaBarra() + 24, window.innerHeight * 0.4);
+    }
+
+    function movimentoNaLinha(linha) {
+      let atual = marcosMovimento[0];
+      for (let i = 0; i < marcosMovimento.length; i++) {
+        if (topoDocumento(marcosMovimento[i].el) <= linha) {
+          atual = marcosMovimento[i];
+        }
+      }
+      return atual;
     }
 
     function atualizar() {
@@ -97,22 +127,20 @@
         progressoIndice.style.transform = "scaleX(" + pct + ")";
       }
 
-      /* Probe próximo do topo: o cabeçalho do movimento (antes da 1ª seção) conta. */
-      const probe = y + Math.min(120, window.innerHeight * 0.2);
+      const linha = linhaAtivacao();
+      const agora = Date.now();
 
-      let marcoAtual = marcosMovimento[0];
-      for (let i = 0; i < marcosMovimento.length; i++) {
-        if (marcosMovimento[i].el.offsetTop <= probe) {
-          marcoAtual = marcosMovimento[i];
-        }
-      }
-      if (marcoAtual) {
-        marcarMovimento(marcoAtual.id);
+      if (movimentoFixadoId && agora < liberarFixacaoEm) {
+        marcarMovimento(movimentoFixadoId);
+      } else {
+        movimentoFixadoId = null;
+        const marcoAtual = movimentoNaLinha(linha);
+        if (marcoAtual) marcarMovimento(marcoAtual.id);
       }
 
       let atual = secoes[0];
       for (let i = 0; i < secoes.length; i++) {
-        if (secoes[i].offsetTop <= probe) {
+        if (topoDocumento(secoes[i]) <= linha) {
           atual = secoes[i];
         }
       }
@@ -150,7 +178,10 @@
     marcadores.forEach((btn) => {
       btn.addEventListener("click", () => {
         const mid = btn.getAttribute("data-movimento");
-        if (mid) marcarMovimento(mid);
+        if (!mid) return;
+        movimentoFixadoId = mid;
+        liberarFixacaoEm = Date.now() + 1200;
+        marcarMovimento(mid);
       });
     });
 
