@@ -26,26 +26,59 @@
     <link rel="stylesheet" href="css/componentes.css" />
     <link rel="stylesheet" href="css/secoes.css" />
   </head>
-  <body>
+  <body class="nav-sobre-navy">
     <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
 
-    <div
-      class="progresso-topo"
-      aria-hidden="true"
-    >
+    <header class="barra">
+      <a class="barra__marca" href="#secao-1">Discipulando a Caserna</a>
+      <nav class="barra__movimentos" aria-label="Movimentos do prospecto">
+        <a
+          class="barra__movimento"
+          href="#movimento-1"
+          data-movimento="movimento-1"
+          >Necessidade</a
+        >
+        <a
+          class="barra__movimento"
+          href="#movimento-2"
+          data-movimento="movimento-2"
+          >Resposta</a
+        >
+        <a
+          class="barra__movimento"
+          href="#movimento-3"
+          data-movimento="movimento-3"
+          >Programa</a
+        >
+        <a
+          class="barra__movimento"
+          href="#movimento-4"
+          data-movimento="movimento-4"
+          >Prova</a
+        >
+        <a
+          class="barra__movimento"
+          href="#movimento-5"
+          data-movimento="movimento-5"
+          >Pedido</a
+        >
+      </nav>
+      <button
+        type="button"
+        class="barra__sumario"
+        data-indice-toggle
+        aria-expanded="false"
+        aria-controls="indice-navegacao"
+      >
+        Sumário
+      </button>
+    </header>
+
+    <div class="progresso-topo" aria-hidden="true">
       <span class="progresso-topo__barra"></span>
     </div>
 
-    <button
-      type="button"
-      class="indice-toggle"
-      data-indice-toggle
-      aria-expanded="false"
-      aria-controls="indice-navegacao"
-    >
-      Sumário
-    </button>
-    <div class="indice-overlay" data-indice-overlay></div>
+    <div class="indice-overlay" data-indice-overlay hidden></div>
 
     <noscript>
       <style>
@@ -65,7 +98,7 @@
           max-width: 40rem;
           margin-inline: auto;
         }
-        .indice-toggle,
+        .barra__sumario,
         .indice-overlay,
         .trilho {
           display: none !important;
@@ -130,49 +163,6 @@
           </ul>
         </div>
       </div>
-    </nav>
-
-    <nav class="trilho" aria-label="Trilho dos movimentos">
-      <a
-        class="trilho__marcador"
-        href="#movimento-1"
-        data-movimento="movimento-1"
-      >
-        <span class="trilho__ponto" aria-hidden="true"></span>
-        <span class="trilho__rotulo">Necessidade</span>
-      </a>
-      <a
-        class="trilho__marcador"
-        href="#movimento-2"
-        data-movimento="movimento-2"
-      >
-        <span class="trilho__ponto" aria-hidden="true"></span>
-        <span class="trilho__rotulo">Resposta</span>
-      </a>
-      <a
-        class="trilho__marcador"
-        href="#movimento-3"
-        data-movimento="movimento-3"
-      >
-        <span class="trilho__ponto" aria-hidden="true"></span>
-        <span class="trilho__rotulo">Programa</span>
-      </a>
-      <a
-        class="trilho__marcador"
-        href="#movimento-4"
-        data-movimento="movimento-4"
-      >
-        <span class="trilho__ponto" aria-hidden="true"></span>
-        <span class="trilho__rotulo">Prova</span>
-      </a>
-      <a
-        class="trilho__marcador"
-        href="#movimento-5"
-        data-movimento="movimento-5"
-      >
-        <span class="trilho__ponto" aria-hidden="true"></span>
-        <span class="trilho__rotulo">Pedido</span>
-      </a>
     </nav>
 
     <div class="pagina">

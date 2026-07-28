@@ -40,6 +40,7 @@
 .secao {
   position: relative;
   padding-block: var(--esp-16);
+  scroll-margin-top: 5rem;
 }
 
 .secao--navy {
@@ -71,7 +72,7 @@
 }
 
 .movimento {
-  scroll-margin-top: var(--esp-8);
+  scroll-margin-top: 5rem;
 }
 
 .movimento__cabeca {

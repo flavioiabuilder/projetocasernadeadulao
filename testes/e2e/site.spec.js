@@ -43,7 +43,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
     await page.goto("/");
     await page.locator("[data-indice-toggle]").click();
     const link = page.locator('.indice__link[href="#secao-15"]');
-    await link.evaluate((el) => el.scrollIntoView({ block: "nearest" }));
+    await expect(link).toBeVisible();
     await link.click();
     await expect(page.locator("#secao-15")).toBeInViewport();
     await expect(page.locator("#titulo-15")).toHaveText("A palavra final");

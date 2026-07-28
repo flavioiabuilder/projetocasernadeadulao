@@ -1,12 +1,167 @@
-/* Componentes: índice, progresso, rodapé, cartões, selos. */
+/* Componentes: barra, índice, progresso, tipografia, cartões, selos. */
 
-/* ——— Progresso de leitura (filete superior) ——— */
-.progresso-topo {
+/* ——— Barra superior (estilo mockup institucional) ——— */
+.barra {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 40;
+  z-index: 45;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--esp-4);
+  min-height: 3.75rem;
+  padding: var(--esp-3) var(--esp-5);
+  background: color-mix(in srgb, var(--papel) 88%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--regua) 35%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    background 200ms var(--easing),
+    border-color 200ms var(--easing),
+    color 200ms var(--easing);
+}
+
+body.nav-sobre-navy .barra {
+  background: color-mix(in srgb, var(--navy-esc) 82%, transparent);
+  border-bottom-color: color-mix(in srgb, var(--creme) 8%, transparent);
+}
+
+.barra__marca {
+  font-family: var(--fonte-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--navy);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 14rem;
+}
+
+body.nav-sobre-navy .barra__marca {
+  color: var(--papel);
+}
+
+.barra__movimentos {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 1.8vw, 1.75rem);
+}
+
+.barra__movimento {
+  position: relative;
+  padding: var(--esp-2) 0;
+  font-family: var(--fonte-display);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: color-mix(in srgb, var(--tinta) 55%, transparent);
+  white-space: nowrap;
+}
+
+body.nav-sobre-navy .barra__movimento {
+  color: color-mix(in srgb, var(--creme) 55%, transparent);
+}
+
+.barra__movimento::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 180ms var(--easing);
+}
+
+.barra__movimento:hover,
+.barra__movimento:focus-visible {
+  color: var(--navy);
+}
+
+body.nav-sobre-navy .barra__movimento:hover,
+body.nav-sobre-navy .barra__movimento:focus-visible {
+  color: var(--creme);
+}
+
+.barra__movimento--ativo,
+.barra__movimento[aria-current="true"] {
+  color: var(--navy);
+}
+
+body.nav-sobre-navy .barra__movimento--ativo,
+body.nav-sobre-navy .barra__movimento[aria-current="true"] {
+  color: var(--creme);
+}
+
+.barra__movimento--ativo::after,
+.barra__movimento[aria-current="true"]::after {
+  transform: scaleX(1);
+}
+
+.barra__sumario {
+  justify-self: end;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.65rem 1.1rem;
+  background: var(--bronze);
+  color: var(--papel);
+  font-family: var(--fonte-display);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 0;
+  cursor: pointer;
+  transition: background 180ms var(--easing), color 180ms var(--easing);
+}
+
+.barra__sumario:hover,
+.barra__sumario:focus-visible {
+  background: color-mix(in srgb, var(--bronze) 82%, black);
+}
+
+body.nav-sobre-navy .barra__sumario {
+  background: var(--bronze);
+  color: var(--papel);
+}
+
+body.indice-aberto .barra__sumario {
+  background: var(--bronze-cl);
+  color: var(--navy-esc);
+}
+
+@media (min-width: 960px) {
+  .barra {
+    grid-template-columns: minmax(10rem, 1fr) auto minmax(10rem, 1fr);
+    padding-inline: var(--esp-8);
+  }
+
+  .barra__movimentos {
+    display: flex;
+  }
+
+  .barra__marca {
+    max-width: none;
+  }
+}
+
+/* ——— Progresso sob a barra ——— */
+.progresso-topo {
+  position: fixed;
+  top: 3.75rem;
+  left: 0;
+  right: 0;
+  z-index: 44;
   height: 1px;
   background: transparent;
   pointer-events: none;
@@ -32,44 +187,6 @@ body.nav-sobre-navy .progresso-topo__barra {
   background: color-mix(in srgb, var(--bronze-cl) 75%, transparent);
 }
 
-/* ——— Sumário: tipografia quieta (índice de livro, não botão de app) ——— */
-.indice-toggle {
-  position: fixed;
-  top: var(--esp-5);
-  right: var(--esp-5);
-  z-index: 55;
-  min-width: 44px;
-  min-height: 44px;
-  padding: var(--esp-2) 0;
-  background: transparent;
-  color: color-mix(in srgb, var(--bronze) 88%, var(--tinta));
-  font-family: var(--fonte-display);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  border: 0;
-  border-bottom: 1px solid transparent;
-  cursor: pointer;
-  transition:
-    color 200ms var(--easing),
-    border-color 200ms var(--easing);
-}
-
-.indice-toggle:hover,
-.indice-toggle:focus-visible {
-  border-bottom-color: currentColor;
-}
-
-body.nav-sobre-navy .indice-toggle {
-  color: color-mix(in srgb, var(--bronze-cl) 85%, white);
-}
-
-body.indice-aberto .indice-toggle {
-  color: var(--bronze-cl);
-  border-bottom-color: color-mix(in srgb, var(--bronze-cl) 55%, transparent);
-}
-
 .indice-overlay {
   display: none;
 }
@@ -85,7 +202,7 @@ body.indice-aberto .indice-toggle {
   width: 100%;
   height: 100dvh;
   padding: var(--esp-16) var(--esp-5) var(--esp-10);
-  background: color-mix(in srgb, var(--navy-esc) 88%, transparent);
+  background: color-mix(in srgb, var(--navy-esc) 90%, transparent);
   color: var(--creme);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -178,7 +295,6 @@ body.indice-aberto .indice-toggle {
   text-align: center;
   text-decoration: none;
   color: color-mix(in srgb, var(--creme) 62%, transparent);
-  border-left: 0;
   border-bottom: 1px solid transparent;
   transition:
     color 160ms var(--easing),
@@ -198,13 +314,14 @@ body.indice-aberto .indice-toggle {
   font-weight: 600;
 }
 
-/* Trilho lateral retirado — progresso só no filete; navegação pelo sumário */
 .trilho {
   display: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .indice-toggle,
+  .barra,
+  .barra__sumario,
+  .barra__movimento::after,
   .indice {
     transition: none;
   }
@@ -239,6 +356,15 @@ body.indice-aberto .indice-toggle {
   hyphens: none;
 }
 
+.secao--navy .secao__titulo,
+.secao--navy-esc .secao__titulo {
+  max-width: 22ch;
+  color: var(--papel);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: var(--lh-aperto);
+}
+
 .secao__subtitulo {
   margin-bottom: var(--esp-6);
   font-family: var(--fonte-corpo);
@@ -263,17 +389,17 @@ body.indice-aberto .indice-toggle {
   margin-block: var(--esp-6);
   padding: var(--esp-5) var(--esp-5) var(--esp-5) var(--esp-6);
   max-width: var(--medida);
-  background: var(--creme);
-  border-left: 3px solid var(--bronze);
+  background: transparent;
+  border-left: 2px solid var(--bronze);
   font-family: var(--fonte-corpo);
   font-size: var(--texto-md);
 }
 
 .secao--navy .destaque,
 .secao--navy-esc .destaque {
-  background: color-mix(in srgb, var(--navy-esc) 70%, black);
+  background: transparent;
   color: var(--creme);
-  border-left-color: var(--bronze-cl);
+  border-left-color: var(--bronze);
 }
 
 .citacao-biblica {
@@ -334,9 +460,9 @@ body.indice-aberto .indice-toggle {
 
 /* ——— Comparação (seção 3) ——— */
 .comparacao {
-  margin-block: var(--esp-8);
+  margin-block: var(--esp-10);
   width: 100%;
-  max-width: var(--container-largo);
+  max-width: min(52rem, 100%);
 }
 
 .comparacao__cabecalhos {
@@ -347,21 +473,25 @@ body.indice-aberto .indice-toggle {
   display: grid;
   gap: var(--esp-3);
   padding-block: var(--esp-5);
-  border-bottom: 1px solid color-mix(in srgb, var(--regua) 35%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--creme) 12%, transparent);
 }
 
 .comparacao__lado {
+  font-family: var(--fonte-display);
   font-size: var(--texto-sm);
-  line-height: 1.55;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
 }
 
 .comparacao__lado--apagado {
-  color: color-mix(in srgb, var(--creme) 42%, transparent);
+  color: color-mix(in srgb, var(--creme) 38%, transparent);
+  font-weight: 500;
 }
 
 .comparacao__lado--pleno {
-  color: var(--creme);
-  font-weight: 600;
+  color: var(--papel);
+  font-weight: 700;
 }
 
 .comparacao__rotulo-mobile {
@@ -372,39 +502,38 @@ body.indice-aberto .indice-toggle {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--bronze-cl);
+  color: var(--bronze);
 }
 
 .comparacao__lado--apagado .comparacao__rotulo-mobile {
-  color: color-mix(in srgb, var(--regua) 70%, transparent);
+  color: color-mix(in srgb, var(--creme) 35%, transparent);
 }
 
 @media (min-width: 768px) {
   .comparacao__cabecalhos {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--esp-8);
+    gap: var(--esp-10);
     padding-bottom: var(--esp-4);
-    border-bottom: 1px solid color-mix(in srgb, var(--regua) 40%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--creme) 14%, transparent);
     font-family: var(--fonte-display);
-    font-size: var(--texto-xs);
+    font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
   }
 
   .comparacao__cabecalhos span:first-child {
-    color: color-mix(in srgb, var(--creme) 40%, transparent);
+    color: color-mix(in srgb, var(--creme) 38%, transparent);
   }
 
   .comparacao__cabecalhos span:last-child {
-    color: var(--bronze-cl);
+    color: var(--papel);
   }
 
   .comparacao__par {
     grid-template-columns: 1fr 1fr;
-    gap: var(--esp-8);
-    column-gap: var(--esp-8);
+    gap: var(--esp-10);
     position: relative;
   }
 
@@ -415,7 +544,7 @@ body.indice-aberto .indice-toggle {
     top: var(--esp-4);
     bottom: var(--esp-4);
     width: 1px;
-    background: color-mix(in srgb, var(--bronze) 45%, transparent);
+    background: color-mix(in srgb, var(--creme) 14%, transparent);
     transform: translateX(-50%);
   }
 
@@ -425,13 +554,14 @@ body.indice-aberto .indice-toggle {
 }
 
 .fechamento-filete {
-  margin-top: var(--esp-8);
-  padding-left: var(--esp-5);
-  border-left: 3px solid var(--bronze-cl);
-  max-width: var(--medida);
+  margin-top: var(--esp-10);
+  padding: var(--esp-2) 0 var(--esp-2) var(--esp-6);
+  border-left: 2px solid var(--bronze);
+  max-width: min(42rem, 100%);
   display: flex;
   flex-direction: column;
   gap: var(--esp-5);
+  color: color-mix(in srgb, var(--creme) 88%, white);
 }
 
 /* ——— Paralelo (seção 4) ——— */

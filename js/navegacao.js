@@ -1,6 +1,6 @@
 /**
- * Sumário em overlay editorial + progresso de leitura.
- * body.nav-sobre-navy adapta contraste do chrome ao fundo da seção ativa.
+ * Barra superior (movimentos) + sumário em overlay + progresso de leitura.
+ * body.nav-sobre-navy adapta contraste ao fundo da seção ativa.
  */
 (function () {
   const MOVIMENTOS = [
@@ -51,7 +51,7 @@
   function initNavegacao() {
     const links = Array.from(document.querySelectorAll(".indice__link"));
     const marcadores = Array.from(
-      document.querySelectorAll(".trilho__marcador")
+      document.querySelectorAll(".barra__movimento[data-movimento]")
     );
     const barra = document.querySelector(".progresso-topo__barra");
     const progressoIndice = document.querySelector(".indice__progresso");
@@ -112,8 +112,12 @@
       marcadores.forEach((btn) => {
         const mid = btn.getAttribute("data-movimento");
         const on = mov && mid === mov.id;
-        btn.classList.toggle("trilho__marcador--ativo", on);
-        btn.setAttribute("aria-current", on ? "true" : "false");
+        btn.classList.toggle("barra__movimento--ativo", on);
+        if (on) {
+          btn.setAttribute("aria-current", "true");
+        } else {
+          btn.removeAttribute("aria-current");
+        }
       });
     }
 
@@ -137,7 +141,6 @@
       document.body.classList.remove("indice-aberto");
       if (toggle) {
         toggle.setAttribute("aria-expanded", "false");
-        toggle.textContent = "Sumário";
       }
     }
 
@@ -147,7 +150,6 @@
       document.body.classList.add("indice-aberto");
       if (toggle) {
         toggle.setAttribute("aria-expanded", "true");
-        toggle.textContent = "Fechar";
       }
     }
 

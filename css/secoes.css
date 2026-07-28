@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-block: var(--esp-20);
+  padding-block: calc(var(--esp-20) + 2rem);
 }
 
 .abertura {
