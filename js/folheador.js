@@ -62,10 +62,10 @@
         p.pagina;
       if (rotulo) {
         rotulo.textContent =
-          (edicao === "aluno" ? "Aluno" : "Instrutor") +
-          " · p. " +
+          (edicao === "aluno" ? "Edição do Aluno" : "Edição do Instrutor") +
+          " · Página " +
           p.pagina +
-          " / " +
+          " de " +
           lista.length;
       }
       prev.disabled = indice <= 0;

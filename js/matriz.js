@@ -43,16 +43,16 @@
         ? "matriz__estado--produzida"
         : "matriz__estado--planejada";
 
+      const num = String(l.numero).padStart(2, "0");
       const artigo = el("article", { class: "matriz__licao" });
       const cabeca = el("header", { class: "matriz__licao-cabeca" });
-      cabeca.appendChild(el("span", { class: "matriz__licao-num", text: String(l.numero) }));
+      cabeca.appendChild(el("span", { class: "matriz__licao-num", text: num }));
       cabeca.appendChild(el("h5", { class: "matriz__licao-titulo", text: l.titulo }));
       cabeca.appendChild(el("span", { class: `matriz__estado ${classe}`, text: estado }));
       artigo.appendChild(cabeca);
 
       const base = el("p", { class: "matriz__licao-base" });
-      base.appendChild(el("span", { text: "Texto-base" }));
-      base.appendChild(document.createTextNode(` ${l.textoBase}`));
+      base.appendChild(el("span", { text: l.textoBase }));
       artigo.appendChild(base);
       artigo.appendChild(el("p", { class: "matriz__licao-obj", text: l.objetivo }));
       return artigo;
@@ -77,16 +77,20 @@
       meta.appendChild(
         el("span", {
           class: "matriz__modulo-nome",
-          text: `Módulo ${mod.numero} · ${mod.nome}`,
+          text: `Módulo ${mod.numero}`,
         })
       );
-      meta.appendChild(el("span", { class: "matriz__modulo-sub", text: mod.subtitulo }));
-      meta.appendChild(
-        el("span", {
-          class: "matriz__modulo-peca",
-          text: `${mod.peca} · lições ${mod.licoes[0]}–${mod.licoes[1]}`,
-        })
-      );
+      if (mod.nome) {
+        meta.appendChild(el("span", { class: "matriz__modulo-sub", text: mod.nome }));
+      }
+      if (mod.peca) {
+        meta.appendChild(
+          el("span", {
+            class: "matriz__modulo-peca",
+            text: mod.peca,
+          })
+        );
+      }
       btn.appendChild(meta);
       btn.appendChild(
         el("span", {
