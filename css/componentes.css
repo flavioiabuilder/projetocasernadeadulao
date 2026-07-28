@@ -115,37 +115,40 @@ body.nav-sobre-navy .barra__movimento[aria-current="true"] {
 
 .barra__sumario {
   flex: 0 0 auto;
+  position: relative;
   min-width: 44px;
-  min-height: 44px;
-  padding: 0.35rem 0;
-  margin-left: 0.25rem;
-  background: transparent;
-  color: var(--bronze);
+  min-height: 2.5rem;
+  margin-left: var(--esp-3);
+  padding: 0.55rem 1rem;
+  background: var(--bronze);
+  color: var(--papel);
   font-family: var(--fonte-display);
   font-size: 0.625rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  border: 0;
-  border-bottom: 1px solid transparent;
+  border: 1px solid transparent;
   cursor: pointer;
   transition:
+    background 160ms var(--easing),
     color 160ms var(--easing),
     border-color 160ms var(--easing);
 }
 
 .barra__sumario:hover,
 .barra__sumario:focus-visible {
-  border-bottom-color: currentColor;
+  background: color-mix(in srgb, var(--bronze) 82%, black);
 }
 
 body.nav-sobre-navy .barra__sumario {
-  color: var(--bronze-cl);
+  background: var(--bronze);
+  color: var(--papel);
 }
 
 body.indice-aberto .barra__sumario {
+  background: transparent;
   color: var(--bronze-cl);
-  border-bottom-color: color-mix(in srgb, var(--bronze-cl) 55%, transparent);
+  border-color: color-mix(in srgb, var(--bronze-cl) 55%, transparent);
 }
 
 @media (min-width: 960px) {
@@ -156,6 +159,24 @@ body.indice-aberto .barra__sumario {
 
   .barra__movimentos {
     display: flex;
+  }
+
+  .barra__sumario {
+    margin-left: var(--esp-5);
+  }
+
+  .barra__sumario::before {
+    content: "";
+    position: absolute;
+    left: calc(-1 * var(--esp-5) / 2);
+    top: 20%;
+    bottom: 20%;
+    width: 1px;
+    background: color-mix(in srgb, var(--regua) 55%, transparent);
+  }
+
+  body.nav-sobre-navy .barra__sumario::before {
+    background: color-mix(in srgb, var(--creme) 18%, transparent);
   }
 }
 
