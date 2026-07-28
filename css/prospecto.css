@@ -54,25 +54,7 @@
   max-width: 36ch;
 }
 
-/* —— Índice hierárquico —— */
-.indice {
-  height: min(70vh, 32rem);
-}
-
-.indice__lista {
-  justify-content: flex-start;
-  gap: var(--esp-3);
-  overflow-y: auto;
-  max-height: 100%;
-  scrollbar-width: thin;
-}
-
-.indice__grupo {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
+/* —— Índice hierárquico (legado do protótipo; drawer real em componentes.css) —— */
 .indice__parte {
   font-size: 0.75rem;
   font-weight: 800;
@@ -82,7 +64,7 @@
 }
 
 .indice__parte--ativa {
-  color: var(--bronze-cl);
+  color: var(--bronze-esc);
 }
 
 .indice__sublista {

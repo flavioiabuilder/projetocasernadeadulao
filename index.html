@@ -78,26 +78,36 @@
       <span class="progresso-topo__barra"></span>
     </div>
 
-    <div class="indice-overlay" data-indice-overlay hidden></div>
+    <div
+      class="indice-overlay"
+      data-indice-overlay
+      hidden
+      aria-hidden="true"
+    ></div>
 
     <noscript>
       <style>
         .indice {
           position: static !important;
-          opacity: 1 !important;
+          transform: none !important;
           visibility: visible !important;
           pointer-events: auto !important;
-          background: var(--papel, #fbf8f2) !important;
-          backdrop-filter: none !important;
-          color: var(--tinta, #23262b) !important;
-          padding: 1.5rem 1.25rem !important;
+          width: 100% !important;
           height: auto !important;
+          max-width: none !important;
+          border-left: 0 !important;
+          background: var(--papel, #fbf8f2) !important;
+          color: var(--tinta, #23262b) !important;
+          padding: 0 !important;
           display: block !important;
         }
         .indice__painel {
           max-width: 40rem;
           margin-inline: auto;
+          padding: 1.5rem 1.25rem !important;
+          overflow: visible !important;
         }
+        .indice__fechar,
         .barra__sumario,
         .indice-overlay,
         .trilho {
@@ -113,7 +123,17 @@
       aria-label="Sumário do prospecto"
     >
       <div class="indice__painel">
-        <p class="indice__rotulo">Sumário</p>
+        <div class="indice__cabecalho">
+          <p class="indice__rotulo">Sumário</p>
+          <button
+            type="button"
+            class="indice__fechar"
+            data-indice-fechar
+            aria-label="Fechar sumário"
+          >
+            ×
+          </button>
+        </div>
         <div class="indice__progresso-wrap" aria-hidden="true">
           <span class="indice__progresso"></span>
         </div>

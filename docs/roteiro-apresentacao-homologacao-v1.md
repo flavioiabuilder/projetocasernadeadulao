@@ -816,6 +816,10 @@ Terceira e última aparição da frase-âncora (**Dedicatória**, não Prefácio
 1. ~~Exibir ou omitir a Tela 24~~ — **decidido: exibir** (estudo proposto + salvaguardas)
 2. Se o HTML único será artefato **irmão** do prospecto multiarquivo (recomendado) ou substituto
 
+### Nota de UI (prospecto atual)
+
+Sumário do `index.html`: painel papel lateral (Direção A), não overlay navy em tela cheia.
+
 ---
 
 *Roteiro v1.1 — ajustado após auditoria contra Guia Mestre v1.0-RC (revisão de 10/06/2026) e `conteudo/`. Prefácio tratado como convite. Afirmações em tela rastreáveis ao campo Fonte.*

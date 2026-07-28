@@ -72,7 +72,7 @@ A Direção A governa **integralmente**:
 | **Espaço** | Margens generosas; ritmo vertical de documento; espaço negativo como hierarquia |
 | **Ritmo** | Capítulos editoriais; progressão carta → contexto → necessidade → proposta → currículo → apreciação |
 | **Componentes** | Listas tipográficas, citações com filete, notas, selos, rótulos de estado editoriais, checklist final — sem cards de feature, sem stat strips, sem dashboard |
-| **Navegação** | Sumário de prospecto / índice de documento (linguagem pastoral); progresso de leitura discreto |
+| **Navegação** | Sumário de prospecto / índice de documento: **painel papel lateral** (não cortina navy em tela cheia); progresso de leitura discreto |
 | **Movimento** | Mínimo e progressivo; revelação discreta opcional; identidade **não** depende de animação; respeitar `prefers-reduced-motion` |
 | **Mobile** | Uma coluna; mesma identidade; currículo em estrutura vertical (acordeão, listas editoriais ou equivalente semântico) — **sem** tabela rígida em telas estreitas |
 

@@ -187,12 +187,17 @@
 
     const toggle = document.querySelector("[data-indice-toggle]");
     const drawer = document.querySelector("[data-indice]");
-    const painel = drawer && drawer.querySelector(".indice__painel");
+    const overlay = document.querySelector("[data-indice-overlay]");
+    const fecharBtn = document.querySelector("[data-indice-fechar]");
 
     function fecharIndice() {
       if (!drawer) return;
       drawer.classList.remove("indice--aberto");
       document.body.classList.remove("indice-aberto");
+      if (overlay) {
+        overlay.hidden = true;
+        overlay.setAttribute("aria-hidden", "true");
+      }
       if (toggle) {
         toggle.setAttribute("aria-expanded", "false");
       }
@@ -202,8 +207,15 @@
       if (!drawer) return;
       drawer.classList.add("indice--aberto");
       document.body.classList.add("indice-aberto");
+      if (overlay) {
+        overlay.hidden = false;
+        overlay.setAttribute("aria-hidden", "false");
+      }
       if (toggle) {
         toggle.setAttribute("aria-expanded", "true");
+      }
+      if (fecharBtn) {
+        fecharBtn.focus();
       }
     }
 
@@ -216,12 +228,11 @@
         }
       });
     }
-    if (drawer) {
-      drawer.addEventListener("click", (ev) => {
-        if (painel && !painel.contains(ev.target)) {
-          fecharIndice();
-        }
-      });
+    if (overlay) {
+      overlay.addEventListener("click", fecharIndice);
+    }
+    if (fecharBtn) {
+      fecharBtn.addEventListener("click", fecharIndice);
     }
     document.addEventListener("keydown", (ev) => {
       if (ev.key === "Escape") fecharIndice();
