@@ -2,8 +2,6 @@
 
 .pagina {
   position: relative;
-  padding-left: var(--rail-left);
-  padding-right: var(--rail-right);
 }
 
 .container {
@@ -108,9 +106,5 @@
 @media (min-width: 900px) {
   .secao {
     padding-block: var(--esp-20);
-  }
-
-  .pagina {
-    padding-right: 14rem;
   }
 }

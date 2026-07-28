@@ -41,7 +41,7 @@
   --esp-20: 5rem;
   --esp-24: 6rem;
 
-  /* Layout — gutters reservam trilho e índice sem “cortar” o fundo */
+  /* Layout — gutters de conteúdo; nav flutuante não reserva colunas */
   --container: 40rem;
   --container-largo: 64rem;
   --gutter-mobile: 1.25rem;
@@ -62,8 +62,8 @@
 
 @media (min-width: 900px) {
   :root {
-    /* Espaço para o trilho + rótulos curtos à esquerda */
-    --rail-left: 9.5rem;
+    /* Trilho flutuante — sem coluna reservada (imersão em tela cheia) */
+    --rail-left: 0px;
   }
 }
 
