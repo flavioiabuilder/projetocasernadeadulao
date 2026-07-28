@@ -12,6 +12,12 @@
   --regua: #c9bca1;
   --tinta: #23262b;
 
+  /*
+   * Acento por superfície:
+   * — papel/creme → --bronze
+   * — navy / navy-esc → --bronze-cl
+   */
+
   /* Tipografia */
   --fonte-display: "Montserrat", sans-serif;
   --fonte-corpo: "Source Serif 4", "Source Serif Pro", Georgia, serif;
@@ -23,6 +29,16 @@
   --texto-lg: clamp(1.375rem, 1.15rem + 0.9vw, 1.85rem);
   --texto-xl: clamp(1.85rem, 1.35rem + 1.6vw, 2.75rem);
   --texto-2xl: clamp(2.35rem, 1.55rem + 2.4vw, 3.5rem);
+
+  /* Rótulos editoriais (uppercase / Montserrat) */
+  --rotulo: 0.65rem;
+  --rotulo-sm: 0.625rem;
+  --rotulo-md: 0.7rem;
+  --rotulo-barra: 0.6875rem;
+  --rotulo-tracking: 0.14em;
+  --rotulo-tracking-aperto: 0.12em;
+  --rotulo-tracking-largo: 0.18em;
+  --rotulo-tracking-hero: 0.3em;
 
   --lh-aperto: 1.15;
   --lh-corpo: 1.7;
@@ -51,8 +67,15 @@
   --rail-left: 0px;
   --rail-right: 0px;
 
-  /* Sombra e movimento */
-  --sombra-suave: 0 12px 40px rgba(16, 29, 51, 0.12);
+  /* Filetes (régua) — três densidades, não opacidades ad hoc */
+  --traco-suave: color-mix(in srgb, var(--regua) 35%, transparent);
+  --traco: color-mix(in srgb, var(--regua) 55%, transparent);
+  --traco-forte: color-mix(in srgb, var(--regua) 70%, transparent);
+  --traco-creme-suave: color-mix(in srgb, var(--creme) 18%, transparent);
+  --traco-creme: color-mix(in srgb, var(--creme) 22%, transparent);
+
+  /* Movimento (Direção A: filete > sombra; --sombra-suave só se inevitável) */
+  --sombra-suave: 0 12px 40px color-mix(in srgb, var(--navy-esc) 12%, transparent);
   --duracao: 320ms;
   --easing: cubic-bezier(0.22, 1, 0.36, 1);
 

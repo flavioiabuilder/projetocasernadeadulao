@@ -26,11 +26,10 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(
-      rgba(16, 29, 51, 0.92),
-      rgba(16, 29, 51, 0.96)
-    );
+  background: linear-gradient(
+    color-mix(in srgb, var(--navy-esc) 92%, black),
+    color-mix(in srgb, var(--navy-esc) 96%, black)
+  );
   pointer-events: none;
 }
 
