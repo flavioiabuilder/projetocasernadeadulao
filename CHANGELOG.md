@@ -16,6 +16,7 @@
 - 30 telas / 9 atos conforme `docs/roteiro-apresentacao-homologacao-v1.md`.
 - Prefácio como convite; merch como estudo; caderneta como proposta.
 - Polimento: fontes locais embutidas (Montserrat + Source Serif 4), tipografia/filetes Direção A, matriz responsiva, cantos retos.
+- Passagem editorial vs roteiro v1.1: Tela 15 sem inventário de corpo da Lição 6 (só matriz + Guia 3.4); rótulos completos do ritmo (14); Formatura (18); documento companheiro (26); versos dos símbolos alinhados a 1.6.
 
 ## [1.0.0] — 2026-07-27
 

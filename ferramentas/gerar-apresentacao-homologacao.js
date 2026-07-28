@@ -71,7 +71,7 @@ const ANATOMIA_L6 = [
     chave: "textoBase",
     rotulo: "Texto-base",
     guia: GUIA34.textoBase,
-    conteudo: `${licao6.textoBase} — “pela graça sois salvos, mediante a fé… não vem de obras”.`,
+    conteudo: licao6.textoBase,
   },
   {
     chave: "objetivo",
@@ -84,28 +84,28 @@ const ANATOMIA_L6 = [
     rotulo: "Síntese teológica",
     guia: GUIA34.sintese,
     conteudo:
-      "Graça é dom, não salário; ordem do Reino que cancela a expulsão espiritual e restitui patente e função para servir — assinada pela cruz e ressurreição de Cristo.",
+      "Texto integral na edição do Aluno e do Instrutor (Módulo 1 produzido). Aqui: definição do elemento conforme Guia 3.4.",
   },
   {
     chave: "aplicacao",
     rotulo: "Aplicação militar",
     guia: GUIA34.aplicacao,
     conteudo:
-      "Confronta mérito (compensar vergonha com performance) e fatalismo (ficha que define para sempre) — a graça reabilita para vida obediente, reordenando lealdades.",
+      "Texto integral na edição do Aluno e do Instrutor (Módulo 1 produzido). Aqui: definição do elemento conforme Guia 3.4.",
   },
   {
     chave: "ordemDia",
     rotulo: "Ordem do Dia",
     guia: GUIA34.ordemDia,
     conteudo:
-      "Receber a graça como ordem do Comandante e decidir um passo concreto de obediência como resposta de gratidão — não para manter patente, mas para marchar sob novo comando.",
+      "Texto integral na edição do Aluno e do Instrutor (Módulo 1 produzido). Aqui: definição do elemento conforme Guia 3.4.",
   },
   {
     chave: "perguntas",
     rotulo: "Perguntas de reflexão",
     guia: GUIA34.perguntas,
     conteudo:
-      "O que Ef 2.8–9 mostrou sobre o Comandante? Onde ainda tentamos reconquistar a patente por mérito? O que muda quando a reintegração veio antes da nossa força?",
+      "Texto integral na edição do Aluno e do Instrutor (Módulo 1 produzido). Aqui: definição do elemento conforme Guia 3.4.",
   },
 ];
 
@@ -133,25 +133,25 @@ const FLIP_SIMBOLOS = [
     frente: "Cinto da Verdade",
     frenteSub: "Cinto de Guarnição",
     verso:
-      "Sustenta toda a armadura — a verdade de Cristo que firma o discípulo no chamado inicial. Ef 6.14.",
+      "A base do alistamento espiritual: a verdade do Evangelho que sustenta a nova identidade do recruta e dá firmeza para toda a jornada (Ef 6.14; 2Co 5.17; 2Tm 2.3–4).",
   },
   {
     frente: "Couraça da Justiça",
     frenteSub: "Colete Balístico",
     verso:
-      "Protege o coração — a justiça imputada que guarda o centro da vida espiritual. Ef 6.14.",
+      "Disciplina e proteção do coração e da integridade no dia a dia — o discípulo, já chamado, é fortalecido na Palavra e aprende a permanecer firme (Ef 6.14).",
   },
   {
     frente: "Calçados do Evangelho da Paz",
     frenteSub: "Coturno",
     verso:
-      "Firmeza em qualquer terreno — prontidão para marchar com o evangelho de paz. Ef 6.15.",
+      "Estabilidade, firmeza e constância na caminhada — andar dignamente em qualquer terreno, com mansidão e perseverança (Ef 6.15).",
   },
   {
     frente: "Escudo da Fé",
     frenteSub: "Insígnia final",
     verso:
-      "Apaga os dardos inflamados — fé que sustenta até o envio e a perseverança. Ef 6.16.",
+      "Fé ativa e avanço em missão, inclusive em proteção mútua, como tropa — restauração pela graça e comissionamento para servir e multiplicar (Ef 6.16).",
   },
 ];
 
@@ -443,12 +443,12 @@ function buildScreens() {
         <p><strong>48 semanas</strong> efetivas de aula · <strong>11 a 12 meses</strong> de calendário<br>A folga existe para feriados, restrições institucionais, revisões e cerimônias de transição.</p>
         <p>Dentro de cada encontro:</p>
         <div class="ritmo-bar" role="img" aria-label="Blocos de tempo do encontro">
-          <span style="flex:2">Contemplação (15–25 min)</span>
-          <span style="flex:3">Discernimento (25–35 min)</span>
-          <span style="flex:1.5">Oração (10–15 min)</span>
+          <span style="flex:2">Contemplação na Palavra (15–25 min)</span>
+          <span style="flex:3">Discernimento e aplicação (25–35 min)</span>
+          <span style="flex:1.5">Oração e compromisso (10–15 min)</span>
           <span class="ritmo-bar__od">Ordem do Dia</span>
         </div>
-        ${blocoConducao("Enfatize o gesto visual da Ordem do Dia saindo da barra: \"O encontro termina, mas a lição não.\"")}
+        ${blocoConducao("Enfatize o gesto visual da Ordem do Dia saindo da barra: \"O encontro termina, mas a lição não. A Ordem do Dia é o que atravessa a semana.\"")}
       </div>`
     )
   );
@@ -468,7 +468,8 @@ function buildScreens() {
       5,
       `<div class="screen-inner">
         <h2>Toda lição tem sete elementos. Sempre os mesmos.</h2>
-        <p class="anatomia-sub">Lição 6 — ${esc(licao6.titulo)} (${esc(licao6.textoBase)})</p>
+        <p>Título · Texto-base · Objetivo · Síntese teológica · Aplicação militar · <strong>Ordem do Dia</strong> · Perguntas de reflexão</p>
+        <p class="anatomia-sub">Exemplo: Lição 6 — ${esc(licao6.titulo)} (${esc(licao6.textoBase)}). Título, texto-base e objetivo vêm da matriz; os demais painéis trazem a definição do Guia 3.4 — o texto integral da lição está nas edições Aluno e Instrutor.</p>
         <ul class="anatomia-list">${anatomiaBtns}</ul>
         <p>A repetição do formato não cria frieza. <strong>Cria chão.</strong><br>Instrutores diferentes, em ambientes diferentes, ministram o mesmo conteúdo sem perda de ênfase.</p>
         ${blocoConducao("Deixe o Pastor abrir os elementos. Se o tempo estiver curto, abra apenas Aplicação militar e Ordem do Dia.")}
@@ -540,7 +541,7 @@ function buildScreens() {
           <li><span class="mil-label">Primeira Marcha</span> — O Recruta que se Rendeu</li>
           <li><span class="mil-label">Segunda Marcha</span> — O Combatente que se Fortalece</li>
           <li><span class="mil-label">Terceira Marcha</span> — O Guerreiro que Persevera</li>
-          <li><span class="mil-label">Formatura</span> — do Soldado de Cristo</li>
+          <li><span class="mil-label">Formatura do Soldado de Cristo</span></li>
         </ul>
         ${blocoConducao("Leia os quatro nomes em voz alta, na sequência, sem comentar entre eles.")}
       </div>`
@@ -691,6 +692,7 @@ function buildScreens() {
           <article><span class="selo-planej">em planejamento</span><h3>A Marcha da Liberdade</h3><p>Associada ao Capacete da Salvação</p></article>
           <article><span class="selo-planej">em planejamento</span><h3>Vigília na Tempestade</h3><p>Associada à Espada do Espírito</p></article>
         </div>
+        <p>Mantidas em documento companheiro próprio, fora do corpo do Guia, por serem intervenção pastoral focada.</p>
         <div class="limites">
           <h3>Limites de escopo, explícitos</h3>
           <p>Não substituem acompanhamento profissional, jurídico ou clínico; não fazem promessas sobre processos institucionais; conduzidos em comunhão com a igreja e, havendo, com a capelania.</p>
