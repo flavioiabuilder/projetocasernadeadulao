@@ -217,7 +217,7 @@ p{margin:0 0 1rem;max-width:68ch}
 .assinatura{margin-top:2.25rem;font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.04em}
 .rodape-inst{font-size:.8rem;color:var(--struct);margin-top:1.5rem;font-family:var(--sans)}
 .conducao{display:none;margin-top:2rem;padding:1.1rem 1.2rem;background:color-mix(in srgb,var(--navy) 6%,var(--bg));border-left:2px solid var(--navy);font-size:.9rem;color:var(--struct);font-style:italic}
-body.modo-leitura .conducao{display:block}
+/* condução removida na v2 */
 #armor-bar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:.45rem;padding:.55rem .75rem;background:color-mix(in srgb,var(--bg) 92%,transparent);border-bottom:1px solid var(--traco);backdrop-filter:blur(6px)}
 .armor-piece{min-width:44px;min-height:44px;border:1px solid var(--traco);background:var(--papel);cursor:pointer;padding:.35rem;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:.55rem;font-weight:700;color:var(--struct);text-transform:uppercase;letter-spacing:.06em;line-height:1.1}
 .armor-piece.filled{background:var(--brass);border-color:var(--brass);color:var(--papel)}
@@ -286,6 +286,68 @@ body.modo-leitura .conducao{display:block}
 .matriz-tabela tbody tr.is-filtering-out{position:static;height:auto;visibility:visible}
 .escudo-img,.escudo-wrap svg{transform:none!important}
 }
+
+/* —— Documento autônomo v2 —— */
+.nota-autor{margin:1.75rem 0 0;padding:1rem 0 1rem 1.15rem;border-left:2px solid var(--brass);font-size:.95rem;color:var(--struct)}
+.nota-autor__rotulo{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin:0 0 .55rem}
+.nota-autor__corpo p,.nota-autor p{margin:0 0 .75rem;max-width:62ch}
+.nota-autor__assinatura{margin:.85rem 0 0;font-family:var(--sans);font-size:.8rem;font-weight:700;color:var(--navy)}
+.fecho-ato{margin:2.25rem auto 0;padding-top:1.25rem;border-top:1px solid var(--traco);text-align:center;font-size:.95rem;color:var(--struct);max-width:36ch;font-style:italic}
+.instrucao-leitor{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.04em;color:var(--brass);margin:0 0 1rem}
+.atos-dots{display:flex;gap:.45rem;justify-content:center;margin:1.75rem 0}
+.atos-dots span{width:.55rem;height:.55rem;background:var(--traco);display:inline-block}
+.btn-comecar{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.7rem 1.5rem;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--creme);background:var(--navy);border:1px solid var(--navy)}
+.btn-comecar:focus-visible{outline:var(--foco);outline-offset:var(--foco-off)}
+.faq-acordeao{margin:1.25rem 0}
+.faq-item{border-bottom:1px solid var(--traco-suave);padding:.35rem 0}
+.faq-item summary{cursor:pointer;font-family:var(--sans);font-weight:700;font-size:.95rem;padding:.85rem 0;min-height:44px;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-resposta{padding:0 0 1rem;color:var(--struct)}
+.screen-inner--sobrio{text-align:center;max-width:36rem}
+.screen-inner--sobrio p{margin-left:auto;margin-right:auto}
+.checklist-blocos{display:grid;gap:1.75rem;margin:1.5rem 0}
+.checklist-bloco h3{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin:0 0 .85rem;padding-bottom:.45rem;border-bottom:1px solid var(--traco)}
+.marcas-salvaguarda--destaque{border-left-width:3px;font-size:1.05rem;padding:1.35rem 1.4rem}
+.matriz-framing{font-size:.95rem;margin-bottom:1rem}
+.matriz-contador{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin:.5rem 0 1rem}
+.matriz-rodape{font-size:.9rem;color:var(--struct);margin-top:1rem;font-style:italic}
+.matriz-lista{display:none;list-style:none;padding:0;margin:1rem 0}
+.matriz-lista__item{border-bottom:1px solid var(--traco-suave);padding:.85rem 0;cursor:pointer}
+.matriz-lista__num{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin:0 0 .25rem}
+.matriz-lista__titulo{margin:0 0 .25rem;font-weight:700}
+.matriz-lista__base{margin:0;font-size:.9rem;color:var(--struct)}
+.matriz-lista__obj{display:none;margin:.55rem 0 0;font-size:.9rem;color:var(--struct)}
+.matriz-lista__item.is-open .matriz-lista__obj{display:block}
+.obs-geral-bloco{margin:1.5rem 0}
+.obs-geral-bloco label{display:block;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
+.obs-geral{width:100%;padding:.75rem;border:1px solid var(--traco);background:var(--papel);font:inherit;resize:vertical}
+.retorno-caminho{font-size:.95rem;margin-top:1.5rem}
+.retorno-assinatura{font-family:var(--sans);font-size:.85rem;font-weight:700}
+#nav-arrows{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);z-index:140;display:none;gap:.5rem}
+#nav-arrows.visible{display:flex}
+#nav-arrows button{min-width:44px;min-height:44px;border:1px solid var(--traco);background:var(--papel);color:var(--navy);font-family:var(--sans);font-size:.7rem;font-weight:700;cursor:pointer;padding:.5rem .85rem}
+#progress-chip{position:fixed;top:.65rem;left:50%;transform:translateX(-50%);z-index:110;display:none;font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--struct);background:color-mix(in srgb,var(--bg) 92%,transparent);padding:.35rem .75rem;border:1px solid var(--traco-suave);white-space:nowrap}
+#progress-chip.visible{display:block}
+#resume-banner{position:fixed;bottom:4.5rem;left:50%;transform:translateX(-50%);z-index:160;display:none;align-items:center;gap:.65rem;padding:.65rem 1rem;background:var(--papel);border:1px solid var(--brass);font-family:var(--sans);font-size:.8rem;max-width:min(92vw,28rem)}
+#resume-banner.visible{display:flex;flex-wrap:wrap;justify-content:center}
+#resume-banner button{min-height:44px;border:1px solid var(--navy);background:var(--navy);color:var(--creme);font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;padding:.45rem .85rem}
+body.versao-continua #deck{height:auto!important;overflow:visible!important;scroll-snap-type:none!important}
+body.versao-continua{overflow:auto!important;height:auto!important}
+body.versao-continua html{height:auto!important}
+body.versao-continua .screen{min-height:auto;scroll-snap-align:none;padding:3rem 1.5rem;border-bottom:1px solid var(--traco)}
+body.versao-continua #nav-arrows,#progress-chip{display:none!important}
+@media(max-width:700px){
+#nav-arrows.visible{display:flex}
+.matriz-scroll{display:none}
+.matriz-lista{display:block}
+}
+@media print{
+.nota-autor,.fecho-ato,.faq-resposta,.instrucao-leitor{display:block!important}
+.faq-item{break-inside:avoid}
+.faq-item[open] .faq-resposta,.faq-resposta{display:block!important}
+#nav-arrows,#progress-chip,#resume-banner{display:none!important}
+details.faq-item{open:true}
+}
 @media(max-width:700px){
 .split-cols,.ritos-cols,.apendices,.flip-grid{grid-template-columns:1fr}
 .screen{padding:5.25rem 1.15rem 3rem}
@@ -319,7 +381,10 @@ body.modo-leitura .conducao{display:block}
 <p class="watermark" aria-hidden="true">documento de validação — circulação restrita</p>
 <div class="ui-controls">
 <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="side-menu">Menu</button>
-<button type="button" class="modo-toggle" id="modo-toggle" aria-pressed="false">Modo leitura</button>
+<button type="button" class="modo-toggle" id="modo-toggle" aria-pressed="false">Versão contínua</button>
+<nav id="nav-arrows" aria-label="Navegação entre telas"><button type="button" id="nav-prev">Anterior</button><button type="button" id="nav-next">Próxima</button></nav>
+<p id="progress-chip" aria-live="polite"></p>
+<div id="resume-banner" role="status"><span id="resume-text"></span><button type="button" id="resume-yes">Retomar</button><button type="button" id="resume-no">Começar do início</button></div>
 </div>
 <nav id="armor-bar" aria-label="Progresso da armadura">
 <button type="button" class="armor-piece" title="Ato IV — Cinto" aria-label="Ir para Ato IV">Cinto</button>
@@ -328,7 +393,7 @@ body.modo-leitura .conducao{display:block}
 <button type="button" class="armor-piece" title="Ato IX — Escudo" aria-label="Ir para Ato IX">Esc.</button>
 </nav>
 <nav id="side-menu" aria-label="Atos da apresentação" aria-hidden="true">
-<ul><li><a href="#tela-01" data-tela="1">Ato 0 — A Caverna</a></li><li><a href="#tela-02" data-tela="2">Ato I — A Dor</a></li><li><a href="#tela-05" data-tela="5">Ato II — O Que Já Acontecia</a></li><li><a href="#tela-07" data-tela="7">Ato III — O Problema</a></li><li><a href="#tela-09" data-tela="9">Ato IV — A Concepção</a></li><li><a href="#tela-13" data-tela="13">Ato V — A Arquitetura</a></li><li><a href="#tela-18" data-tela="18">Ato VI — A Marcha</a></li><li><a href="#tela-22" data-tela="22">Ato VII — Identidade Visível</a></li><li><a href="#tela-26" data-tela="26">Ato VIII — O Horizonte</a></li><li><a href="#tela-29" data-tela="29">Ato IX — A Decisão</a></li></ul>
+<ul><li><a href="#tela-01" data-tela="1">Ato 0 — A Caverna</a></li><li><a href="#tela-03" data-tela="3">Ato I — A Dor</a></li><li><a href="#tela-06" data-tela="6">Ato II — O Que Já Acontecia</a></li><li><a href="#tela-08" data-tela="8">Ato III — O Problema</a></li><li><a href="#tela-10" data-tela="10">Ato IV — A Concepção</a></li><li><a href="#tela-14" data-tela="14">Ato V — A Arquitetura</a></li><li><a href="#tela-19" data-tela="19">Ato VI — A Marcha</a></li><li><a href="#tela-23" data-tela="23">Ato VII — Identidade Visível</a></li><li><a href="#tela-27" data-tela="27">Ato VIII — O Horizonte</a></li><li><a href="#tela-32" data-tela="32">Ato IX — A Decisão</a></li></ul>
 </nav>
 <main id="deck">
 <section id="tela-01" class="screen screen--ato" data-screen="1" data-act="0" tabindex="-1"><div class="screen-inner screen-inner--cold">
@@ -342,9 +407,18 @@ body.modo-leitura .conducao{display:block}
           <p class="meta">Apresentação institucional para validação pastoral</p>
         </div>
         <p class="scroll-hint" aria-hidden="true">↓</p>
-        <aside class="conducao" aria-label="Notas de condução"><p>Não fale nesta tela. Deixe o silêncio de três a cinco segundos. Só depois: &quot;Pastor, é daqui que tudo começa — e o senhor sabe disso melhor do que eu.&quot;</p></aside>
       </div></section>
-<section id="tela-02" class="screen screen--ato" data-screen="2" data-act="1" tabindex="-1"><div class="screen-inner">
+<section id="tela-02" class="screen" data-screen="2" data-act="0" tabindex="-1"><div class="screen-inner screen-inner--comoler">
+        <h2>Antes de começar.</h2>
+        <p>Esta apresentação foi feita para ser lida sem mim presente. Tudo o que eu diria está escrito.</p>
+        <p><strong>Tempo de leitura:</strong> cerca de 20 minutos · <strong>Nove atos</strong> · pode ser interrompida e retomada<br>
+        <strong>Ao final</strong> há uma lista de decisões — é o motivo pelo qual este documento existe<br>
+        <strong>Documento de referência:</strong> o Guia Mestre v1.0-RC completo segue em anexo</p>
+        <p>O senhor não precisa responder nada durante a leitura. As perguntas estão todas no fim, reunidas.</p>
+        <div class="atos-dots" aria-hidden="true"><span class="atos-dots__item" title="Ato I — A Dor"></span><span class="atos-dots__item" title="Ato II — O Que Já Acontecia"></span><span class="atos-dots__item" title="Ato III — O Problema"></span><span class="atos-dots__item" title="Ato IV — A Concepção"></span><span class="atos-dots__item" title="Ato V — A Arquitetura"></span><span class="atos-dots__item" title="Ato VI — A Marcha"></span><span class="atos-dots__item" title="Ato VII — Identidade Visível"></span><span class="atos-dots__item" title="Ato VIII — O Horizonte"></span><span class="atos-dots__item" title="Ato IX — A Decisão"></span></div>
+        <a class="btn-comecar" href="#tela-03">Começar</a>
+      </div><p class="stamp">v1.0-RC · documento de validação</p></section>
+<section id="tela-03" class="screen screen--ato" data-screen="3" data-act="1" tabindex="-1"><div class="screen-inner">
         <h2>Ele chega com a farda e com a vergonha.</h2>
         <div class="split-cols">
           <ul class="mil-labels" aria-label="O que conhece">
@@ -356,9 +430,8 @@ body.modo-leitura .conducao{display:block}
         </div>
         <p>Conhece hierarquia. Conhece disciplina. Conhece missão.<br>E carrega, ao mesmo tempo, a culpa real e o peso do que ainda não conseguiu nomear.</p>
         <p>Muitos chegam acreditando que Cristo foi embora na hora da desonra.<br>Outros, que Ele nunca esteve ali para começo de conversa.</p>
-        <aside class="conducao" aria-label="Notas de condução"><p>Este é o primeiro momento de conteúdo. Diga em voz baixa. Não dramatize — o texto já carrega. Se o Pastor comentar aqui, deixe-o comentar.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-03" class="screen" data-screen="3" data-act="1" tabindex="-1"><div class="screen-inner">
+<section id="tela-04" class="screen" data-screen="4" data-act="1" tabindex="-1"><div class="screen-inner">
         <h2>Presídio Militar da PMCE.</h2>
         <p>Horário controlado. Circulação controlada. Material controlado.<br>Tensão institucional. Número de participantes que varia a cada semana.</p>
         <p><strong>Não é um lugar onde se improvisa discipulado.</strong><br>É um lugar onde o improviso custa caro.</p>
@@ -370,14 +443,14 @@ body.modo-leitura .conducao{display:block}
           <text x="30" y="105" text-anchor="middle" fill="#4A4A4A" font-size="12">material</text>
           <text x="290" y="105" text-anchor="middle" fill="#4A4A4A" font-size="12">rotatividade</text>
         </svg>
-        <aside class="conducao" aria-label="Notas de condução"><p>Aqui você estabelece a credencial do documento: ele não foi escrito de gabinete. &quot;Tudo o que vem a seguir foi desenhado para funcionar neste terreno — não em uma sala de aula ideal.&quot;</p></aside>
+        <p class="pe-de-pagina">Este documento não foi escrito de gabinete. Tudo o que vem a seguir foi desenhado para funcionar neste terreno.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-04" class="screen" data-screen="4" data-act="1" tabindex="-1"><div class="screen-inner screen-inner--pivot">
+<section id="tela-05" class="screen" data-screen="5" data-act="1" tabindex="-1"><div class="screen-inner screen-inner--pivot">
         <h2>Ele não precisa de mais cobrança.</h2>
         <p class="lead">Precisa de alguém que vá à caverna com ele e aponte Cristo.</p>
-        <aside class="conducao" aria-label="Notas de condução"><p>Pausa. Esta é a tela-pivô do primeiro ato. Frase única, dita uma vez, sem repetir.</p></aside>
+        <p class="fecho-ato">Antes de mostrar o que foi construído, é preciso dizer o que já existia.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-05" class="screen screen--ato" data-screen="5" data-act="2" tabindex="-1"><div class="screen-inner">
+<section id="tela-06" class="screen screen--ato" data-screen="6" data-act="2" tabindex="-1"><div class="screen-inner">
         <h2>Antes que houvesse estrutura, método ou currículo, o Senhor já chamava.</h2>
         <p>Não havia matriz curricular.<br>Não havia módulos, símbolos, transições ou certificados.<br>Havia homens se assentando, Bíblia aberta, e fé reacendendo onde a culpa tentava apagar.</p>
         <p><strong>O Guia não criou esse mover. O Guia nasceu para guardar o que já estava acontecendo.</strong></p>
@@ -386,9 +459,9 @@ body.modo-leitura .conducao{display:block}
           <span class="timeline__linha"></span>
           <span class="timeline__ponto timeline__ponto--guia">o Guia</span>
         </div>
-        <aside class="conducao" aria-label="Notas de condução"><p>Esta tela protege o projeto de soar tecnocrático. Diga: &quot;Nada aqui é invenção metodológica. É organização pastoral de algo que Deus começou antes.&quot;</p></aside>
+        <aside class="nota-autor" aria-label="Nota do autor"><p class="nota-autor__rotulo">nota do autor</p><p>Preciso dizer isto antes de mostrar qualquer estrutura: nada aqui é invenção metodológica minha. O que descrevo nas próximas telas é a organização, em papel, de algo que o senhor viu acontecer antes de existir qualquer documento. Se em algum ponto a estrutura parecer maior do que aquilo que ela serve, é erro meu de proporção — e é exatamente esse tipo de erro que peço que o senhor aponte.</p><p class="nota-autor__assinatura">— Obr. Flávio Alves da Costa</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-06" class="screen" data-screen="6" data-act="2" tabindex="-1"><div class="screen-inner">
+<section id="tela-07" class="screen" data-screen="7" data-act="2" tabindex="-1"><div class="screen-inner">
         <h2>A caverna que dá nome a tudo.</h2>
         <p>Davi acolheu em Adulão homens abatidos, endividados e amargurados.<br>Sob liderança forjada na crise, aqueles proscritos se tornaram valentes.</p>
         <p>O projeto reconhece a mesma lógica: <strong>a caserna também pode ser uma caverna</strong> — e Cristo, o Comandante maior que Davi, faz de quebrantados, valentes.</p>
@@ -398,10 +471,11 @@ body.modo-leitura .conducao{display:block}
           <span class="adulao-comp__tag adulao-comp__tag--2">dívida</span>
           <span class="adulao-comp__tag adulao-comp__tag--3">amargura</span>
         </div>
-        <aside class="conducao" aria-label="Notas de condução"><p>Primeira aparição da frase-âncora: &quot;de quebrantados, valentes.&quot; Ela volta mais duas vezes (Telas 21 e 30). Diga-a devagar e não a explique.</p></aside>
+        <p class="fecho-ato">O mover era real. O que faltava era forma de guardá-lo.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-07" class="screen screen--ato" data-screen="7" data-act="3" tabindex="-1"><div class="screen-inner">
+<section id="tela-08" class="screen screen--ato" data-screen="8" data-act="3" tabindex="-1"><div class="screen-inner">
         <h2>Sem método, o que Deus faz se perde.</h2>
+        <p class="instrucao-leitor">Toque em cada risco para ver a salvaguarda que o Guia prevê.</p>
         <div class="flip-grid"><button type="button" class="flip-card" data-flip="risco-0" aria-pressed="false">
         <span class="flip-card__inner">
           <span class="flip-card__face flip-card__face--front"><span>Turmas com estágios diferentes e nenhum critério para reconhecê-los.</span></span>
@@ -423,9 +497,8 @@ body.modo-leitura .conducao{display:block}
           <span class="flip-card__face flip-card__face--back"><span>Remissão de módulo concluído — mesma linguagem e progressão em todos os ambientes.</span></span>
         </span>
       </button></div>
-        <aside class="conducao" aria-label="Notas de condução"><p>Deixe o Pastor virar os cartões ele mesmo se estiver com o dispositivo em mãos. &quot;Cada risco à esquerda tem uma resposta desenhada no Guia. Nenhum deles é hipotético.&quot;</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-08" class="screen" data-screen="8" data-act="3" tabindex="-1"><div class="screen-inner">
+<section id="tela-09" class="screen" data-screen="9" data-act="3" tabindex="-1"><div class="screen-inner">
         <h2>Um Guia Mestre.</h2>
         <p>Referência oficial. Vade Mecum espiritual.<br>Não para engessar o que Deus faz — para guardar, nutrir e conduzir.</p>
         <p>Quatro exigências que o documento assumiu desde a primeira linha:</p>
@@ -435,9 +508,9 @@ body.modo-leitura .conducao{display:block}
           <li><strong>Estabelecer</strong> jornada progressiva</li>
           <li><strong>Garantir</strong> continuidade e replicabilidade</li>
         </ul>
-        <aside class="conducao" aria-label="Notas de condução"><p>Transição para o ato conceitual. &quot;O que vem agora é como esse documento foi pensado — não o que ele contém, mas por que ele tem a forma que tem.&quot;</p></aside>
+        <p class="fecho-ato">O que vem agora não é o conteúdo do Guia. É a razão pela qual ele tem a forma que tem.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-09" class="screen screen--ato" data-screen="9" data-act="4" tabindex="-1"><div class="screen-inner">
+<section id="tela-10" class="screen screen--ato" data-screen="10" data-act="4" tabindex="-1"><div class="screen-inner">
         <h2>Não são quatro temas. São quatro ações de Cristo.</h2>
         <div class="eixo-grid">
           <article class="eixo"><h3>Cristo Chamando</h3><p>convoca, perdoa, incorpora</p></article>
@@ -446,9 +519,9 @@ body.modo-leitura .conducao{display:block}
           <article class="eixo"><h3>Cristo Enviando</h3><p>comissiona, sustenta, multiplica</p></article>
         </div>
         <p class="eixo-nota">A ordem não é organizacional. É o próprio caminho da graça na vida do homem — e por isso não pode ser invertida.</p>
-        <aside class="conducao" aria-label="Notas de condução"><p>Marque explicitamente: o sujeito de todas as quatro frases é Cristo, não o instrutor e não o discípulo.</p></aside>
+        <p class="eixo-sujeito">Em cada uma dessas quatro frases, o sujeito é Cristo — não o instrutor, e não o discípulo.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-10" class="screen" data-screen="10" data-act="4" tabindex="-1"><div class="screen-inner">
+<section id="tela-11" class="screen" data-screen="11" data-act="4" tabindex="-1"><div class="screen-inner">
         <h2>Uma narrativa unifica os quatro módulos: Efésios 6.</h2>
         <p>O discípulo não coleciona conteúdos. Ele é <strong>revestido</strong>, peça por peça.</p>
         <ol class="pecas-linha">
@@ -457,9 +530,9 @@ body.modo-leitura .conducao{display:block}
           <li>Calçados do Evangelho da Paz</li>
           <li>Escudo da Fé</li>
         </ol>
-        <aside class="conducao" aria-label="Notas de condução"><p>Aponte a barra do topo explicitamente uma única vez, aqui: &quot;O senhor vai reparar que a barra lá em cima vai se completando conforme avançamos. Ela é a armadura.&quot;</p></aside>
+        <p class="armor-nota">A barra no alto desta página é essa armadura. Ela se completa conforme o senhor avança.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-11" class="screen" data-screen="11" data-act="4" tabindex="-1"><div class="screen-inner">
+<section id="tela-12" class="screen" data-screen="12" data-act="4" tabindex="-1"><div class="screen-inner">
         <h2>Duas peças não foram atribuídas a módulos. A decisão é teológica.</h2>
         <p><strong>A Espada do Espírito</strong> — a Palavra não pertence a uma etapa. Ela atravessa todas, do chamado ao envio, como instrumento de cada lição.</p>
         <p><strong>O Capacete da Salvação</strong> — guarda a mente na esperança. Está reservado à dimensão pastoral de socorro, nos módulos complementares.</p>
@@ -472,9 +545,8 @@ body.modo-leitura .conducao{display:block}
           <ellipse cx="200" cy="15" rx="50" ry="12" fill="none" stroke="#8C6A46" stroke-width="1.5"/>
           <text x="200" y="18" text-anchor="middle" fill="#8C6A46" font-size="10">capacete</text>
         </svg>
-        <aside class="conducao" aria-label="Notas de condução"><p>Tela de credibilidade. Mostra que o sistema simbólico foi pensado, não montado por conveniência estética.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-12" class="screen" data-screen="12" data-act="4" tabindex="-1"><div class="screen-inner">
+<section id="tela-13" class="screen" data-screen="13" data-act="4" tabindex="-1"><div class="screen-inner">
         <h2>Contemplar antes de obedecer.</h2>
         <p>Nenhuma disciplina espiritual verdadeira nasce de cobrança — nasce de fascínio.<br>Nenhuma obediência frutífera nasce de medo — nasce de amor.</p>
         <p>Por isso toda lição segue a mesma ordem interna:<br><strong>ver Cristo</strong> → <strong>entender pela Palavra</strong> → <strong>responder em obediência concreta</strong></p>
@@ -482,16 +554,15 @@ body.modo-leitura .conducao{display:block}
         <div class="metodo-ciclo" role="img" aria-label="Ciclo: ver Cristo, entender, responder">
           <span>ver Cristo</span><span>→</span><span>entender</span><span>→</span><span>responder</span><span class="metodo-ciclo__retorno">↺</span>
         </div>
-        <aside class="conducao" aria-label="Notas de condução"><p>Coração pastoral do método — sem atribuir Prefácio. Planta o convite; o formalismo do pedido vem na Tela 29.</p></aside>
+        <p class="fecho-ato">Definido o eixo, resta mostrar como ele vira ano letivo.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-13" class="screen screen--ato" data-screen="13" data-act="5" tabindex="-1"><div class="screen-inner">
+<section id="tela-14" class="screen screen--ato" data-screen="14" data-act="5" tabindex="-1"><div class="screen-inner">
         <p class="conta-grande" aria-label="4 vezes 12 igual a 48">4 × 12 = 48</p>
         <h2>Quatro módulos sequenciais. Doze lições cada. Um ciclo anual.</h2>
         <p>Nenhum módulo repete o outro. Alguns temas retornam — com profundidade e finalidade diferentes.<br>O discípulo não gira nos mesmos assuntos: ele sobe em espiral.</p>
         <div class="grade-48" id="grade-48" aria-hidden="true"></div>
-        <aside class="conducao" aria-label="Notas de condução"><p>Tela de impacto numérico. Não explique muito. A grade de 48 reaparece filtrável na Tela 16.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-14" class="screen" data-screen="14" data-act="5" tabindex="-1"><div class="screen-inner">
+<section id="tela-15" class="screen" data-screen="15" data-act="5" tabindex="-1"><div class="screen-inner">
         <h2>Um encontro por semana. De 1h30 a 2h.</h2>
         <p><strong>48 semanas</strong> efetivas de aula · <strong>11 a 12 meses</strong> de calendário<br>A folga existe para feriados, restrições institucionais, revisões e cerimônias de transição.</p>
         <p>Dentro de cada encontro:</p>
@@ -501,12 +572,13 @@ body.modo-leitura .conducao{display:block}
           <span style="flex:1.5">Oração e compromisso (10–15 min)</span>
           <span class="ritmo-bar__od">Ordem do Dia</span>
         </div>
-        <aside class="conducao" aria-label="Notas de condução"><p>Enfatize o gesto visual da Ordem do Dia saindo da barra: &quot;O encontro termina, mas a lição não. A Ordem do Dia é o que atravessa a semana.&quot;</p></aside>
+        <p class="ritmo-nota">O encontro termina; a lição não. A Ordem do Dia é o que atravessa a semana.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-15" class="screen" data-screen="15" data-act="5" tabindex="-1"><div class="screen-inner">
+<section id="tela-16" class="screen" data-screen="16" data-act="5" tabindex="-1"><div class="screen-inner">
         <h2>Toda lição tem sete elementos. Sempre os mesmos.</h2>
         <p>Título · Texto-base · Objetivo · Síntese teológica · Aplicação militar · <strong>Ordem do Dia</strong> · Perguntas de reflexão</p>
-        <p class="anatomia-sub">Exemplo: Lição 6 — Ordem de reintegração: a graça que devolve a patente (Ef 2.8-9). Título, texto-base e objetivo vêm da matriz; os demais painéis trazem a definição do Guia 3.4 — o texto integral da lição está nas edições Aluno e Instrutor.</p>
+        <p class="anatomia-sub">Exemplo: Lição 6 — Ordem de reintegração: a graça que devolve a patente (Ef 2.8–9). Título, texto-base e objetivo vêm da matriz; os demais painéis trazem a definição do Guia 3.4 — o texto integral da lição está nas edições Aluno e Instrutor.</p>
+        <p class="instrucao-leitor">Toque em cada elemento para ver a definição do Guia 3.4. Aplicação militar e Ordem do Dia aparecem em destaque, por serem os elementos que a caserna mais precisa reconhecer.</p>
         <ul class="anatomia-list"><li><button type="button" class="anatomia-btn" data-anatomia="titulo" aria-expanded="false">Título</button>
         <div class="anatomia-panel" id="anatomia-titulo" hidden>
           <p class="anatomia-guia"><em>Guia 3.4:</em> Indica o tema central da lição, em linguagem bíblica e militar, apontando para a pessoa e a obra de Cristo.</p>
@@ -514,20 +586,20 @@ body.modo-leitura .conducao{display:block}
         </div></li><li><button type="button" class="anatomia-btn" data-anatomia="textoBase" aria-expanded="false">Texto-base</button>
         <div class="anatomia-panel" id="anatomia-textoBase" hidden>
           <p class="anatomia-guia"><em>Guia 3.4:</em> Passagem bíblica principal; janela pela qual a turma contempla o caráter de Deus em Cristo antes de ouvir as ordens.</p>
-          <p>Ef 2.8-9</p>
+          <p>Ef 2.8–9</p>
         </div></li><li><button type="button" class="anatomia-btn" data-anatomia="objetivo" aria-expanded="false">Objetivo</button>
         <div class="anatomia-panel" id="anatomia-objetivo" hidden>
           <p class="anatomia-guia"><em>Guia 3.4:</em> Declara o que o discípulo será levado a crer e obedecer — espiritual e verificável, conectando contemplação e resposta.</p>
-          <p>Anunciar a graça que reintegra: dom de Cristo, não salário do esforço.</p>
+          <p>Apresentar a graça não apenas como perdão, mas como um ato oficial de recomissionamento, em que o Comandante assina a ordem que restaura o status e a função do soldado.</p>
         </div></li><li><button type="button" class="anatomia-btn" data-anatomia="sintese" aria-expanded="false">Síntese teológica</button>
         <div class="anatomia-panel" id="anatomia-sintese" hidden>
           <p class="anatomia-guia"><em>Guia 3.4:</em> Breve explicação bíblico-doutrinária, cristocêntrica, que aquece o coração e conduz à adoração — não moralismo.</p>
           <p>Texto integral na edição do Aluno e do Instrutor (Módulo 1 produzido). Aqui: definição do elemento conforme Guia 3.4.</p>
-        </div></li><li><button type="button" class="anatomia-btn" data-anatomia="aplicacao" aria-expanded="false">Aplicação militar</button>
+        </div></li><li><button type="button" class="anatomia-btn anatomia-btn--destaque" data-anatomia="aplicacao" aria-expanded="false">Aplicação militar</button>
         <div class="anatomia-panel" id="anatomia-aplicacao" hidden>
           <p class="anatomia-guia"><em>Guia 3.4:</em> Tradução para caserna e presídio: hierarquia, honra, serviço — sempre com Cristo como padrão, não o desempenho.</p>
           <p>Texto integral na edição do Aluno e do Instrutor (Módulo 1 produzido). Aqui: definição do elemento conforme Guia 3.4.</p>
-        </div></li><li><button type="button" class="anatomia-btn" data-anatomia="ordemDia" aria-expanded="false">Ordem do Dia</button>
+        </div></li><li><button type="button" class="anatomia-btn anatomia-btn--destaque" data-anatomia="ordemDia" aria-expanded="false">Ordem do Dia</button>
         <div class="anatomia-panel" id="anatomia-ordemDia" hidden>
           <p class="anatomia-guia"><em>Guia 3.4:</em> Ação prática da semana: simples, verificável, compatível com o ambiente militar-prisional — resposta de gratidão, não moeda.</p>
           <p>Texto integral na edição do Aluno e do Instrutor (Módulo 1 produzido). Aqui: definição do elemento conforme Guia 3.4.</p>
@@ -537,24 +609,265 @@ body.modo-leitura .conducao{display:block}
           <p>Texto integral na edição do Aluno e do Instrutor (Módulo 1 produzido). Aqui: definição do elemento conforme Guia 3.4.</p>
         </div></li></ul>
         <p>A repetição do formato não cria frieza. <strong>Cria chão.</strong><br>Instrutores diferentes, em ambientes diferentes, ministram o mesmo conteúdo sem perda de ênfase.</p>
-        <aside class="conducao" aria-label="Notas de condução"><p>Deixe o Pastor abrir os elementos. Se o tempo estiver curto, abra apenas Aplicação militar e Ordem do Dia.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-16" class="screen" data-screen="16" data-act="5" tabindex="-1"><div class="screen-inner screen-inner--matriz">
+<section id="tela-17" class="screen" data-screen="17" data-act="5" tabindex="-1"><div class="screen-inner screen-inner--matriz">
         <h2>As 48 lições, em visão anual.</h2>
-        <p class="matriz-hint"><em>Filtre por módulo para ver a progressão completa.</em></p>
+        <p class="matriz-framing">O Módulo 1 é o que submeto à sua apreciação agora. Os demais estão desenhados e aguardam liberação. Use os filtros para percorrer o ano inteiro.</p>
         <div class="matriz-toolbar">
-          <button type="button" class="matriz-filtro matriz-filtro--ativa" data-modulo="0">Todas</button>
-          <button type="button" class="matriz-filtro" data-modulo="1">Cristo Chamando</button><button type="button" class="matriz-filtro" data-modulo="2">Cristo Treinando</button><button type="button" class="matriz-filtro" data-modulo="3">Cristo Moldando</button><button type="button" class="matriz-filtro" data-modulo="4">Cristo Enviando</button>
+          <button type="button" class="matriz-filtro" data-modulo="0">Todas</button>
+          <button type="button" class="matriz-filtro matriz-filtro--ativa" data-modulo="1">Cristo Chamando</button><button type="button" class="matriz-filtro" data-modulo="2">Cristo Treinando</button><button type="button" class="matriz-filtro" data-modulo="3">Cristo Moldando</button><button type="button" class="matriz-filtro" data-modulo="4">Cristo Enviando</button>
         </div>
+        <p class="matriz-contador" id="matriz-contador" aria-live="polite">12 de 48 lições</p>
         <div class="matriz-scroll">
           <table class="matriz-tabela">
             <thead><tr><th>#</th><th>Título</th><th>Texto-base</th><th>Objetivo</th></tr></thead>
-            <tbody><tr data-modulo="1"><td>1</td><td>Bem-vindo a Adulão: o quartel dos feridos</td><td>2Tm 2.3</td><td class="col-obj">Acolher o ferido antes de qualquer exigência: Adulão é abrigo, não vitrine de heróis.</td></tr><tr data-modulo="1"><td>2</td><td>O Comandante que entra na caverna</td><td>Jo 14.18</td><td class="col-obj">Mostrar Cristo como o Senhor que desce ao lugar do fracasso para resgatar.</td></tr><tr data-modulo="1"><td>3</td><td>Contemplação: resposta de gratidão ao resgate</td><td>2Co 3.18</td><td class="col-obj">Ensinar a contemplação como resposta ao resgate, não técnica para merecer.</td></tr><tr data-modulo="1"><td>4</td><td>A Bíblia: o Manual do Guerreiro</td><td>Sl 119.105</td><td class="col-obj">Firmar a autoridade da Escritura como manual que orienta a marcha.</td></tr><tr data-modulo="1"><td>5</td><td>Insubordinação: a quebra de lealdade que custa a honra</td><td>Rm 3.23</td><td class="col-obj">Apresentar o pecado como quebra de lealdade, com diagnóstico que cura.</td></tr><tr data-modulo="1"><td>6</td><td>Ordem de reintegração: a graça que devolve a patente</td><td>Ef 2.8-9</td><td class="col-obj">Anunciar a graça que reintegra: dom de Cristo, não salário do esforço.</td></tr><tr data-modulo="1"><td>7</td><td>A Fé: Confiança e Obediência</td><td>Hb 11.6</td><td class="col-obj">Ensinar a fé como confiança que se traduz em obediência.</td></tr><tr data-modulo="1"><td>8</td><td>Apresentando-se para o serviço: a rendição que restaura a confiança</td><td>At 3.19</td><td class="col-obj">Demonstrar que o arrependimento é reapresentar-se ao Quartel-General para servir sob novas ordens.</td></tr><tr data-modulo="1"><td>9</td><td>A Cruz: O Juramento de Lealdade</td><td>Lc 9.23</td><td class="col-obj">Ensinar o custo do discipulado como entrega diária, em resposta amorosa.</td></tr><tr data-modulo="1"><td>10</td><td>Nova farda, nova missão</td><td>Jo 3.3-8</td><td class="col-obj">Apresentar o novo nascimento como nova natureza que habilita a um propósito útil.</td></tr><tr data-modulo="1"><td>11</td><td>O Espírito Santo: O Instrutor Interior</td><td>Jo 16.13</td><td class="col-obj">Ensinar que o Espírito guia, corrige e fortalece por dentro, formando obediência.</td></tr><tr data-modulo="1"><td>12</td><td>Comunhão e Vida de Tropa</td><td>At 2.42-47</td><td class="col-obj">Demonstrar que ninguém cresce isolado: a tropa é ambiente de edificação e cuidado.</td></tr><tr data-modulo="2"><td>13</td><td>Oração: Comunicação com o Quartel-General</td><td>Fp 4.6-7</td><td class="col-obj">Ensinar a oração como diálogo vital e diário com o Comandante.</td></tr><tr data-modulo="2"><td>14</td><td>A Igreja: Companhia de Irmãos de Armas</td><td>Ef 4.11-16</td><td class="col-obj">Mostrar a Igreja como corpo que serve, se edifica e marcha junto.</td></tr><tr data-modulo="2"><td>15</td><td>O Batismo: Juramento de Fidelidade</td><td>Rm 6.3-4</td><td class="col-obj">Explicar o batismo como aliança pública de morte para o pecado e vida para Deus.</td></tr><tr data-modulo="2"><td>16</td><td>Santificação: Separação e Consagração</td><td>1Ts 4.3-7</td><td class="col-obj">Ensinar a santificação como separação do pecado e dedicação a Deus.</td></tr><tr data-modulo="2"><td>17</td><td>Combate Espiritual e Tentação</td><td>Ef 6.10-13</td><td class="col-obj">Ensinar sobre a guerra espiritual e o uso das armas de Deus.</td></tr><tr data-modulo="2"><td>18</td><td>Adoração: Estratégia de Combate Espiritual</td><td>2Cr 20.21-22</td><td class="col-obj">Mostrar que adorar é guerrear com fé e que o louvor antecede a vitória.</td></tr><tr data-modulo="2"><td>19</td><td>Mordomia e Obediência Financeira</td><td>2Co 9.6-8</td><td class="col-obj">Ensinar fidelidade nos recursos como resposta de fé e prestação de contas.</td></tr><tr data-modulo="2"><td>20</td><td>O Lar Cristão: A Base da Tropa</td><td>Js 24.15</td><td class="col-obj">Ensinar que a casa é o primeiro campo de discipulado e de lealdade.</td></tr><tr data-modulo="2"><td>21</td><td>Perdão e Reconciliação: Cura das Feridas de Guerra</td><td>Mt 18.21-22</td><td class="col-obj">Ensinar que o perdão restaura a comunhão e impede contaminação da tropa.</td></tr><tr data-modulo="2"><td>22</td><td>Ética e Testemunho na Corporação</td><td>Mt 5.13-16</td><td class="col-obj">Ensinar o valor do testemunho cristão no ambiente de serviço.</td></tr><tr data-modulo="2"><td>23</td><td>A Palavra e o Juramento</td><td>Tg 5.12</td><td class="col-obj">Ensinar integridade no falar e fidelidade aos compromissos assumidos.</td></tr><tr data-modulo="2"><td>24</td><td>Preparação para o Batismo: Revisão e Entrega</td><td>At 8.36-38</td><td class="col-obj">Revisar fundamentos e conduzir o discípulo à consagração pública.</td></tr><tr data-modulo="3"><td>25</td><td>O Espírito Santo e os Dons de Serviço</td><td>1Co 12.4-7</td><td class="col-obj">Ensinar que os dons são dados para servir e edificar o corpo de Cristo.</td></tr><tr data-modulo="3"><td>26</td><td>O Fruto do Espírito: Caráter do Guerreiro de Cristo</td><td>Gl 5.22-23</td><td class="col-obj">Mostrar que o fruto é sinal de maturidade e da patente interior.</td></tr><tr data-modulo="3"><td>27</td><td>A Mente de Cristo</td><td>Fp 2.5-8</td><td class="col-obj">Ensinar a pensar e agir com humildade, obediência e serviço.</td></tr><tr data-modulo="3"><td>28</td><td>Disciplina Espiritual: Treino e Constância</td><td>1Tm 4.7-8</td><td class="col-obj">Mostrar que a piedade se fortalece por treino, como resposta à graça.</td></tr><tr data-modulo="3"><td>29</td><td>Santidade no Campo de Batalha</td><td>1Pe 1.15-16</td><td class="col-obj">Ensinar santidade como modo de vida em qualquer ambiente.</td></tr><tr data-modulo="3"><td>30</td><td>Autoridade e Submissão</td><td>Hb 13.17</td><td class="col-obj">Ensinar a obedecer e a liderar com humildade, revelando maturidade.</td></tr><tr data-modulo="3"><td>31</td><td>Amor e Camaradagem</td><td>Jo 15.12-13</td><td class="col-obj">Ensinar o amor fraternal como vínculo da tropa espiritual.</td></tr><tr data-modulo="3"><td>32</td><td>Humildade e Serviço</td><td>Mc 10.43-45</td><td class="col-obj">Ensinar que servir é o maior posto no Reino de Deus.</td></tr><tr data-modulo="3"><td>33</td><td>Enfrentando o Sofrimento e as Provações</td><td>Rm 5.3-5</td><td class="col-obj">Ensinar a ver o sofrimento como instrumento de crescimento e perseverança.</td></tr><tr data-modulo="3"><td>34</td><td>Alegria e Esperança em Meio à Luta</td><td>Fp 4.4-7</td><td class="col-obj">Ensinar a manter alegria e contentamento mesmo em combate.</td></tr><tr data-modulo="3"><td>35</td><td>Testemunho Público e Coerência de Vida</td><td>Mt 5.14-16</td><td class="col-obj">Ensinar o poder do exemplo visível no meio da tropa.</td></tr><tr data-modulo="3"><td>36</td><td>Multiplicação: O Discípulo que Forma Discípulos</td><td>2Tm 2.2</td><td class="col-obj">Ensinar que o ciclo do discipulado se completa quando formamos outros.</td></tr><tr data-modulo="4"><td>37</td><td>A Grande Comissão: O Chamado para Avançar</td><td>Mt 28.18-20</td><td class="col-obj">Ensinar que todo discípulo maduro é enviado.</td></tr><tr data-modulo="4"><td>38</td><td>Evangelismo Relacional no Contexto Militar</td><td>Jo 4.28-30</td><td class="col-obj">Ensinar a evangelizar com sabedoria e testemunho no dia a dia.</td></tr><tr data-modulo="4"><td>39</td><td>Vocação e Propósito na Corporação</td><td>Cl 3.23-24</td><td class="col-obj">Mostrar que o trabalho e a farda podem ser serviço ao Senhor.</td></tr><tr data-modulo="4"><td>40</td><td>Liderança Espiritual e Influência pelo Exemplo</td><td>1Pe 5.2-3</td><td class="col-obj">Ensinar que liderança cristã é serviço e autoridade moral.</td></tr><tr data-modulo="4"><td>41</td><td>Unidade e Cooperação no Corpo de Cristo</td><td>Ef 4.1-3</td><td class="col-obj">Ensinar a importância da unidade e do trabalho conjunto na missão.</td></tr><tr data-modulo="4"><td>42</td><td>Serviço e Diaconia: Grandeza na Humildade</td><td>Jo 13.12-15</td><td class="col-obj">Ensinar o valor do serviço humilde, à semelhança de Cristo.</td></tr><tr data-modulo="4"><td>43</td><td>Oração Intercessora e Batalha Espiritual</td><td>1Tm 2.1-3</td><td class="col-obj">Ensinar o poder da intercessão como combate em favor de outros.</td></tr><tr data-modulo="4"><td>44</td><td>Missões e Compaixão Global</td><td>Mc 16.15; At 1.8</td><td class="col-obj">Ampliar a visão missionária para além dos muros da caserna.</td></tr><tr data-modulo="4"><td>45</td><td>Perseverança e Fidelidade até o Fim</td><td>Hb 10.35-39</td><td class="col-obj">Ensinar a manter fé e lealdade mesmo nas provações.</td></tr><tr data-modulo="4"><td>46</td><td>A Volta do Rei: Prontidão e Santidade</td><td>Ap 22.12-13</td><td class="col-obj">Ensinar que a esperança da volta de Cristo sustenta a fidelidade presente.</td></tr><tr data-modulo="4"><td>47</td><td>Recompensas e Galardões do Guerreiro Fiel</td><td>2Tm 4.7-8</td><td class="col-obj">Mostrar que o serviço fiel tem recompensa eterna.</td></tr><tr data-modulo="4"><td>48</td><td>Formatura do Soldado de Cristo</td><td>Fp 3.13-14</td><td class="col-obj">Celebrar a conclusão do discipulado e o envio para formar outros.</td></tr></tbody>
+            <tbody><tr data-modulo="1"><td>1</td><td>Bem-vindo a Adulão: o quartel dos feridos</td><td>1Sm 22.1–2; 2Tm 2.3–4</td><td class="col-obj">Acolher o ferido, validar sua dor e mostrar que, pela graça, Cristo chama abatidos para iniciar restauração em comunhão.</td></tr><tr data-modulo="1"><td>2</td><td>O Comandante que entra na caverna</td><td>Jo 14.16–26</td><td class="col-obj">Apresentar o Cristo que se aproxima, revela o Pai e envia o Espírito, trazendo socorro real ao homem ferido e conduzindo-o ao caminho do Reino.</td></tr><tr data-modulo="1"><td>3</td><td>Contemplação: resposta de gratidão ao resgate</td><td>2Co 3.18</td><td class="col-obj">Ensinar que a transformação do discípulo nasce da visão da glória de Cristo como resposta de gratidão, não de esforço meramente humano.</td></tr><tr data-modulo="1"><td>4</td><td>A Bíblia: O Manual do Guerreiro</td><td>Sl 119.105</td><td class="col-obj">Estabelecer a Escritura como referência de fé e conduta para o soldado de Cristo, sob autoridade do Comandante.</td></tr><tr data-modulo="1"><td>5</td><td>Insubordinação: a quebra de lealdade que custa a honra</td><td>Rm 3.23</td><td class="col-obj">Conectar o erro teológico à experiência da perda de honra, mostrando que a deslealdade ao Comandante custa a patente espiritual.</td></tr><tr data-modulo="1"><td>6</td><td>Ordem de reintegração: a graça que devolve a patente</td><td>Ef 2.8–9</td><td class="col-obj">Apresentar a graça não apenas como perdão, mas como um ato oficial de recomissionamento, em que o Comandante assina a ordem que restaura o status e a função do soldado.</td></tr><tr data-modulo="1"><td>7</td><td>A Fé: Confiança e Obediência</td><td>Hb 11.6</td><td class="col-obj">Ensinar que fé é resposta confiante ao Comandante, mesmo sob pressão, sustentada pela graça.</td></tr><tr data-modulo="1"><td>8</td><td>Apresentando-se para o serviço: a rendição que restaura a confiança</td><td>At 3.19</td><td class="col-obj">Demonstrar que o arrependimento não é apenas remorso, mas a ação concreta de se reapresentar ao Quartel-General para servir sob novas ordens.</td></tr><tr data-modulo="1"><td>9</td><td>A Cruz: O Juramento de Lealdade</td><td>Lc 9.23</td><td class="col-obj">Ensinar o custo do discipulado como entrega diária ao Comandante, em resposta amorosa ao que Ele fez por nós.</td></tr><tr data-modulo="1"><td>10</td><td>Nova farda, nova missão</td><td>Jo 3.3–8</td><td class="col-obj">Apresentar o novo nascimento como o recebimento de uma nova farda (nova natureza), capacitando o soldado para uma nova missão (propósito útil), tirando o foco apenas da mudança de status.</td></tr><tr data-modulo="1"><td>11</td><td>O Espírito Santo: O Instrutor Interior</td><td>Jo 16.13</td><td class="col-obj">Ensinar que o Espírito Santo é quem guia, corrige e fortalece o discípulo por dentro, formando obediência.</td></tr><tr data-modulo="1"><td>12</td><td>Comunhão e Vida de Tropa</td><td>At 2.42–47</td><td class="col-obj">Demonstrar que ninguém cresce isolado e que a tropa do Cordeiro é o ambiente da edificação e do cuidado.</td></tr><tr data-modulo="2" hidden><td>13</td><td>Oração: Comunicação com o Quartel-General</td><td>Fp 4.6–7</td><td class="col-obj">Ensinar a oração como diálogo vital e diário com o Comandante.</td></tr><tr data-modulo="2" hidden><td>14</td><td>A Igreja: Companhia de Irmãos de Armas</td><td>Ef 4.11–16</td><td class="col-obj">Mostrar a Igreja como corpo que serve, se edifica e marcha junto.</td></tr><tr data-modulo="2" hidden><td>15</td><td>O Batismo: Juramento de Fidelidade</td><td>Rm 6.3–4</td><td class="col-obj">Explicar o batismo como aliança pública de morte para o pecado e vida para Deus.</td></tr><tr data-modulo="2" hidden><td>16</td><td>Santificação: Separação e Consagração</td><td>1Ts 4.3–7</td><td class="col-obj">Ensinar que santificação é processo de separação do pecado e dedicação a Deus.</td></tr><tr data-modulo="2" hidden><td>17</td><td>Combate Espiritual e Tentação</td><td>Ef 6.10–13</td><td class="col-obj">Ensinar sobre a guerra espiritual e o uso das armas de Deus.</td></tr><tr data-modulo="2" hidden><td>18</td><td>Adoração: Estratégia de Combate Espiritual</td><td>2Cr 20.21–22</td><td class="col-obj">Mostrar que adorar é guerrear com fé e que o louvor antecede a vitória.</td></tr><tr data-modulo="2" hidden><td>19</td><td>Mordomia e Obediência Financeira</td><td>2Co 9.6–8</td><td class="col-obj">Ensinar fidelidade a Deus nos recursos como resposta de fé e prestação de contas ao Senhor.</td></tr><tr data-modulo="2" hidden><td>20</td><td>O Lar Cristão: A Base da Tropa</td><td>Js 24.15</td><td class="col-obj">Ensinar que a casa é o primeiro campo de discipulado e de lealdade.</td></tr><tr data-modulo="2" hidden><td>21</td><td>Perdão e Reconciliação: Cura das Feridas de Guerra</td><td>Mt 18.21–22</td><td class="col-obj">Ensinar que o perdão restaura a comunhão e impede contaminação da tropa.</td></tr><tr data-modulo="2" hidden><td>22</td><td>Ética e Testemunho na Corporação</td><td>Mt 5.13–16</td><td class="col-obj">Ensinar o valor do testemunho cristão no ambiente de serviço militar.</td></tr><tr data-modulo="2" hidden><td>23</td><td>A Palavra e o Juramento</td><td>Tg 5.12</td><td class="col-obj">Ensinar integridade no falar e fidelidade aos compromissos assumidos.</td></tr><tr data-modulo="2" hidden><td>24</td><td>Preparação para o Batismo: Revisão e Entrega</td><td>At 8.36–38</td><td class="col-obj">Revisar fundamentos e conduzir o aluno à consagração pública.</td></tr><tr data-modulo="3" hidden><td>25</td><td>O Espírito Santo e os Dons de Serviço</td><td>1Co 12.4–7</td><td class="col-obj">Ensinar que os dons são dados para servir e edificar o corpo de Cristo.</td></tr><tr data-modulo="3" hidden><td>26</td><td>O Fruto do Espírito: Caráter do Guerreiro de Cristo</td><td>Gl 5.22–23</td><td class="col-obj">Mostrar que o fruto é sinal de maturidade espiritual e da patente interior.</td></tr><tr data-modulo="3" hidden><td>27</td><td>A Mente de Cristo</td><td>Fp 2.5–8</td><td class="col-obj">Ensinar a pensar e agir com humildade, obediência e serviço.</td></tr><tr data-modulo="3" hidden><td>28</td><td>Disciplina Espiritual: Treino e Constância</td><td>1Tm 4.7–8</td><td class="col-obj">Mostrar que piedade se fortalece por treino constante como resposta à graça, não por mérito.</td></tr><tr data-modulo="3" hidden><td>29</td><td>Santidade no Campo de Batalha</td><td>1Pe 1.15–16</td><td class="col-obj">Ensinar santidade como modo de vida em qualquer ambiente.</td></tr><tr data-modulo="3" hidden><td>30</td><td>Autoridade e Submissão</td><td>Hb 13.17</td><td class="col-obj">Ensinar a obedecer e a liderar com humildade, revelando maturidade.</td></tr><tr data-modulo="3" hidden><td>31</td><td>Amor e Camaradagem</td><td>Jo 15.12–13</td><td class="col-obj">Ensinar o amor fraternal como vínculo da tropa espiritual.</td></tr><tr data-modulo="3" hidden><td>32</td><td>Humildade e Serviço</td><td>Mc 10.43–45</td><td class="col-obj">Ensinar que servir é o maior posto no Reino de Deus.</td></tr><tr data-modulo="3" hidden><td>33</td><td>Enfrentando o Sofrimento e as Provações</td><td>Rm 5.3–5</td><td class="col-obj">Ensinar a ver o sofrimento como instrumento de crescimento e perseverança.</td></tr><tr data-modulo="3" hidden><td>34</td><td>Alegria e Esperança em Meio à Luta</td><td>Fp 4.4–7</td><td class="col-obj">Ensinar a manter alegria e contentamento mesmo em combate.</td></tr><tr data-modulo="3" hidden><td>35</td><td>Testemunho Público e Coerência de Vida</td><td>Mt 5.14–16</td><td class="col-obj">Ensinar o poder do exemplo visível do cristão no meio militar.</td></tr><tr data-modulo="3" hidden><td>36</td><td>Multiplicação: O Discípulo que Forma Discípulos</td><td>2Tm 2.2</td><td class="col-obj">Ensinar que o ciclo do discipulado se completa quando formamos outros.</td></tr><tr data-modulo="4" hidden><td>37</td><td>A Grande Comissão: O Chamado para Avançar</td><td>Mt 28.18–20</td><td class="col-obj">Ensinar que todo discípulo maduro é enviado.</td></tr><tr data-modulo="4" hidden><td>38</td><td>Evangelismo Relacional no Contexto Militar</td><td>Jo 4.28–30</td><td class="col-obj">Ensinar a evangelizar com sabedoria e testemunho no dia a dia.</td></tr><tr data-modulo="4" hidden><td>39</td><td>Vocação e Propósito na Corporação</td><td>Cl 3.23–24</td><td class="col-obj">Mostrar que o trabalho e a farda podem ser serviço ao Senhor.</td></tr><tr data-modulo="4" hidden><td>40</td><td>Liderança Espiritual e Influência pelo Exemplo</td><td>1Pe 5.2–3</td><td class="col-obj">Ensinar que liderança cristã é serviço e autoridade moral.</td></tr><tr data-modulo="4" hidden><td>41</td><td>Unidade e Cooperação no Corpo de Cristo</td><td>Ef 4.1–3</td><td class="col-obj">Ensinar a importância da unidade e do trabalho conjunto na missão.</td></tr><tr data-modulo="4" hidden><td>42</td><td>Serviço e Diaconia: Grandeza na Humildade</td><td>Jo 13.12–15</td><td class="col-obj">Ensinar o valor do serviço humilde, à semelhança de Cristo.</td></tr><tr data-modulo="4" hidden><td>43</td><td>Oração Intercessora e Batalha Espiritual</td><td>1Tm 2.1–3</td><td class="col-obj">Ensinar o poder da intercessão como combate em favor de outros.</td></tr><tr data-modulo="4" hidden><td>44</td><td>Missões e Compaixão Global</td><td>Mc 16.15; At 1.8</td><td class="col-obj">Ampliar a visão missionária para além dos muros da caserna.</td></tr><tr data-modulo="4" hidden><td>45</td><td>Perseverança e Fidelidade até o Fim</td><td>Hb 10.35–39</td><td class="col-obj">Ensinar a manter fé e lealdade mesmo nas provações.</td></tr><tr data-modulo="4" hidden><td>46</td><td>A Volta do Rei: Prontidão e Santidade</td><td>Ap 22.12–13</td><td class="col-obj">Ensinar que a esperança da volta de Cristo sustenta a fidelidade presente.</td></tr><tr data-modulo="4" hidden><td>47</td><td>Recompensas e Galardões do Guerreiro Fiel</td><td>2Tm 4.7–8</td><td class="col-obj">Mostrar que o serviço fiel tem recompensa eterna.</td></tr><tr data-modulo="4" hidden><td>48</td><td>Formatura do Soldado de Cristo</td><td>Fp 3.13–14</td><td class="col-obj">Celebrar a conclusão do discipulado e o envio para formar outros.</td></tr></tbody>
           </table>
         </div>
-        <aside class="conducao" aria-label="Notas de condução"><p>Esta é a tela em que você para de apresentar e deixa o Pastor navegar. Silêncio produtivo.</p></aside>
+        <ul class="matriz-lista"><li class="matriz-lista__item" data-modulo="1">
+          <p class="matriz-lista__num">Lição 1</p>
+          <p class="matriz-lista__titulo">Bem-vindo a Adulão: o quartel dos feridos</p>
+          <p class="matriz-lista__base">1Sm 22.1–2; 2Tm 2.3–4</p>
+          <p class="matriz-lista__obj">Acolher o ferido, validar sua dor e mostrar que, pela graça, Cristo chama abatidos para iniciar restauração em comunhão.</p>
+        </li><li class="matriz-lista__item" data-modulo="1">
+          <p class="matriz-lista__num">Lição 2</p>
+          <p class="matriz-lista__titulo">O Comandante que entra na caverna</p>
+          <p class="matriz-lista__base">Jo 14.16–26</p>
+          <p class="matriz-lista__obj">Apresentar o Cristo que se aproxima, revela o Pai e envia o Espírito, trazendo socorro real ao homem ferido e conduzindo-o ao caminho do Reino.</p>
+        </li><li class="matriz-lista__item" data-modulo="1">
+          <p class="matriz-lista__num">Lição 3</p>
+          <p class="matriz-lista__titulo">Contemplação: resposta de gratidão ao resgate</p>
+          <p class="matriz-lista__base">2Co 3.18</p>
+          <p class="matriz-lista__obj">Ensinar que a transformação do discípulo nasce da visão da glória de Cristo como resposta de gratidão, não de esforço meramente humano.</p>
+        </li><li class="matriz-lista__item" data-modulo="1">
+          <p class="matriz-lista__num">Lição 4</p>
+          <p class="matriz-lista__titulo">A Bíblia: O Manual do Guerreiro</p>
+          <p class="matriz-lista__base">Sl 119.105</p>
+          <p class="matriz-lista__obj">Estabelecer a Escritura como referência de fé e conduta para o soldado de Cristo, sob autoridade do Comandante.</p>
+        </li><li class="matriz-lista__item" data-modulo="1">
+          <p class="matriz-lista__num">Lição 5</p>
+          <p class="matriz-lista__titulo">Insubordinação: a quebra de lealdade que custa a honra</p>
+          <p class="matriz-lista__base">Rm 3.23</p>
+          <p class="matriz-lista__obj">Conectar o erro teológico à experiência da perda de honra, mostrando que a deslealdade ao Comandante custa a patente espiritual.</p>
+        </li><li class="matriz-lista__item" data-modulo="1">
+          <p class="matriz-lista__num">Lição 6</p>
+          <p class="matriz-lista__titulo">Ordem de reintegração: a graça que devolve a patente</p>
+          <p class="matriz-lista__base">Ef 2.8–9</p>
+          <p class="matriz-lista__obj">Apresentar a graça não apenas como perdão, mas como um ato oficial de recomissionamento, em que o Comandante assina a ordem que restaura o status e a função do soldado.</p>
+        </li><li class="matriz-lista__item" data-modulo="1">
+          <p class="matriz-lista__num">Lição 7</p>
+          <p class="matriz-lista__titulo">A Fé: Confiança e Obediência</p>
+          <p class="matriz-lista__base">Hb 11.6</p>
+          <p class="matriz-lista__obj">Ensinar que fé é resposta confiante ao Comandante, mesmo sob pressão, sustentada pela graça.</p>
+        </li><li class="matriz-lista__item" data-modulo="1">
+          <p class="matriz-lista__num">Lição 8</p>
+          <p class="matriz-lista__titulo">Apresentando-se para o serviço: a rendição que restaura a confiança</p>
+          <p class="matriz-lista__base">At 3.19</p>
+          <p class="matriz-lista__obj">Demonstrar que o arrependimento não é apenas remorso, mas a ação concreta de se reapresentar ao Quartel-General para servir sob novas ordens.</p>
+        </li><li class="matriz-lista__item" data-modulo="1">
+          <p class="matriz-lista__num">Lição 9</p>
+          <p class="matriz-lista__titulo">A Cruz: O Juramento de Lealdade</p>
+          <p class="matriz-lista__base">Lc 9.23</p>
+          <p class="matriz-lista__obj">Ensinar o custo do discipulado como entrega diária ao Comandante, em resposta amorosa ao que Ele fez por nós.</p>
+        </li><li class="matriz-lista__item" data-modulo="1">
+          <p class="matriz-lista__num">Lição 10</p>
+          <p class="matriz-lista__titulo">Nova farda, nova missão</p>
+          <p class="matriz-lista__base">Jo 3.3–8</p>
+          <p class="matriz-lista__obj">Apresentar o novo nascimento como o recebimento de uma nova farda (nova natureza), capacitando o soldado para uma nova missão (propósito útil), tirando o foco apenas da mudança de status.</p>
+        </li><li class="matriz-lista__item" data-modulo="1">
+          <p class="matriz-lista__num">Lição 11</p>
+          <p class="matriz-lista__titulo">O Espírito Santo: O Instrutor Interior</p>
+          <p class="matriz-lista__base">Jo 16.13</p>
+          <p class="matriz-lista__obj">Ensinar que o Espírito Santo é quem guia, corrige e fortalece o discípulo por dentro, formando obediência.</p>
+        </li><li class="matriz-lista__item" data-modulo="1">
+          <p class="matriz-lista__num">Lição 12</p>
+          <p class="matriz-lista__titulo">Comunhão e Vida de Tropa</p>
+          <p class="matriz-lista__base">At 2.42–47</p>
+          <p class="matriz-lista__obj">Demonstrar que ninguém cresce isolado e que a tropa do Cordeiro é o ambiente da edificação e do cuidado.</p>
+        </li><li class="matriz-lista__item" data-modulo="2" hidden>
+          <p class="matriz-lista__num">Lição 13</p>
+          <p class="matriz-lista__titulo">Oração: Comunicação com o Quartel-General</p>
+          <p class="matriz-lista__base">Fp 4.6–7</p>
+          <p class="matriz-lista__obj">Ensinar a oração como diálogo vital e diário com o Comandante.</p>
+        </li><li class="matriz-lista__item" data-modulo="2" hidden>
+          <p class="matriz-lista__num">Lição 14</p>
+          <p class="matriz-lista__titulo">A Igreja: Companhia de Irmãos de Armas</p>
+          <p class="matriz-lista__base">Ef 4.11–16</p>
+          <p class="matriz-lista__obj">Mostrar a Igreja como corpo que serve, se edifica e marcha junto.</p>
+        </li><li class="matriz-lista__item" data-modulo="2" hidden>
+          <p class="matriz-lista__num">Lição 15</p>
+          <p class="matriz-lista__titulo">O Batismo: Juramento de Fidelidade</p>
+          <p class="matriz-lista__base">Rm 6.3–4</p>
+          <p class="matriz-lista__obj">Explicar o batismo como aliança pública de morte para o pecado e vida para Deus.</p>
+        </li><li class="matriz-lista__item" data-modulo="2" hidden>
+          <p class="matriz-lista__num">Lição 16</p>
+          <p class="matriz-lista__titulo">Santificação: Separação e Consagração</p>
+          <p class="matriz-lista__base">1Ts 4.3–7</p>
+          <p class="matriz-lista__obj">Ensinar que santificação é processo de separação do pecado e dedicação a Deus.</p>
+        </li><li class="matriz-lista__item" data-modulo="2" hidden>
+          <p class="matriz-lista__num">Lição 17</p>
+          <p class="matriz-lista__titulo">Combate Espiritual e Tentação</p>
+          <p class="matriz-lista__base">Ef 6.10–13</p>
+          <p class="matriz-lista__obj">Ensinar sobre a guerra espiritual e o uso das armas de Deus.</p>
+        </li><li class="matriz-lista__item" data-modulo="2" hidden>
+          <p class="matriz-lista__num">Lição 18</p>
+          <p class="matriz-lista__titulo">Adoração: Estratégia de Combate Espiritual</p>
+          <p class="matriz-lista__base">2Cr 20.21–22</p>
+          <p class="matriz-lista__obj">Mostrar que adorar é guerrear com fé e que o louvor antecede a vitória.</p>
+        </li><li class="matriz-lista__item" data-modulo="2" hidden>
+          <p class="matriz-lista__num">Lição 19</p>
+          <p class="matriz-lista__titulo">Mordomia e Obediência Financeira</p>
+          <p class="matriz-lista__base">2Co 9.6–8</p>
+          <p class="matriz-lista__obj">Ensinar fidelidade a Deus nos recursos como resposta de fé e prestação de contas ao Senhor.</p>
+        </li><li class="matriz-lista__item" data-modulo="2" hidden>
+          <p class="matriz-lista__num">Lição 20</p>
+          <p class="matriz-lista__titulo">O Lar Cristão: A Base da Tropa</p>
+          <p class="matriz-lista__base">Js 24.15</p>
+          <p class="matriz-lista__obj">Ensinar que a casa é o primeiro campo de discipulado e de lealdade.</p>
+        </li><li class="matriz-lista__item" data-modulo="2" hidden>
+          <p class="matriz-lista__num">Lição 21</p>
+          <p class="matriz-lista__titulo">Perdão e Reconciliação: Cura das Feridas de Guerra</p>
+          <p class="matriz-lista__base">Mt 18.21–22</p>
+          <p class="matriz-lista__obj">Ensinar que o perdão restaura a comunhão e impede contaminação da tropa.</p>
+        </li><li class="matriz-lista__item" data-modulo="2" hidden>
+          <p class="matriz-lista__num">Lição 22</p>
+          <p class="matriz-lista__titulo">Ética e Testemunho na Corporação</p>
+          <p class="matriz-lista__base">Mt 5.13–16</p>
+          <p class="matriz-lista__obj">Ensinar o valor do testemunho cristão no ambiente de serviço militar.</p>
+        </li><li class="matriz-lista__item" data-modulo="2" hidden>
+          <p class="matriz-lista__num">Lição 23</p>
+          <p class="matriz-lista__titulo">A Palavra e o Juramento</p>
+          <p class="matriz-lista__base">Tg 5.12</p>
+          <p class="matriz-lista__obj">Ensinar integridade no falar e fidelidade aos compromissos assumidos.</p>
+        </li><li class="matriz-lista__item" data-modulo="2" hidden>
+          <p class="matriz-lista__num">Lição 24</p>
+          <p class="matriz-lista__titulo">Preparação para o Batismo: Revisão e Entrega</p>
+          <p class="matriz-lista__base">At 8.36–38</p>
+          <p class="matriz-lista__obj">Revisar fundamentos e conduzir o aluno à consagração pública.</p>
+        </li><li class="matriz-lista__item" data-modulo="3" hidden>
+          <p class="matriz-lista__num">Lição 25</p>
+          <p class="matriz-lista__titulo">O Espírito Santo e os Dons de Serviço</p>
+          <p class="matriz-lista__base">1Co 12.4–7</p>
+          <p class="matriz-lista__obj">Ensinar que os dons são dados para servir e edificar o corpo de Cristo.</p>
+        </li><li class="matriz-lista__item" data-modulo="3" hidden>
+          <p class="matriz-lista__num">Lição 26</p>
+          <p class="matriz-lista__titulo">O Fruto do Espírito: Caráter do Guerreiro de Cristo</p>
+          <p class="matriz-lista__base">Gl 5.22–23</p>
+          <p class="matriz-lista__obj">Mostrar que o fruto é sinal de maturidade espiritual e da patente interior.</p>
+        </li><li class="matriz-lista__item" data-modulo="3" hidden>
+          <p class="matriz-lista__num">Lição 27</p>
+          <p class="matriz-lista__titulo">A Mente de Cristo</p>
+          <p class="matriz-lista__base">Fp 2.5–8</p>
+          <p class="matriz-lista__obj">Ensinar a pensar e agir com humildade, obediência e serviço.</p>
+        </li><li class="matriz-lista__item" data-modulo="3" hidden>
+          <p class="matriz-lista__num">Lição 28</p>
+          <p class="matriz-lista__titulo">Disciplina Espiritual: Treino e Constância</p>
+          <p class="matriz-lista__base">1Tm 4.7–8</p>
+          <p class="matriz-lista__obj">Mostrar que piedade se fortalece por treino constante como resposta à graça, não por mérito.</p>
+        </li><li class="matriz-lista__item" data-modulo="3" hidden>
+          <p class="matriz-lista__num">Lição 29</p>
+          <p class="matriz-lista__titulo">Santidade no Campo de Batalha</p>
+          <p class="matriz-lista__base">1Pe 1.15–16</p>
+          <p class="matriz-lista__obj">Ensinar santidade como modo de vida em qualquer ambiente.</p>
+        </li><li class="matriz-lista__item" data-modulo="3" hidden>
+          <p class="matriz-lista__num">Lição 30</p>
+          <p class="matriz-lista__titulo">Autoridade e Submissão</p>
+          <p class="matriz-lista__base">Hb 13.17</p>
+          <p class="matriz-lista__obj">Ensinar a obedecer e a liderar com humildade, revelando maturidade.</p>
+        </li><li class="matriz-lista__item" data-modulo="3" hidden>
+          <p class="matriz-lista__num">Lição 31</p>
+          <p class="matriz-lista__titulo">Amor e Camaradagem</p>
+          <p class="matriz-lista__base">Jo 15.12–13</p>
+          <p class="matriz-lista__obj">Ensinar o amor fraternal como vínculo da tropa espiritual.</p>
+        </li><li class="matriz-lista__item" data-modulo="3" hidden>
+          <p class="matriz-lista__num">Lição 32</p>
+          <p class="matriz-lista__titulo">Humildade e Serviço</p>
+          <p class="matriz-lista__base">Mc 10.43–45</p>
+          <p class="matriz-lista__obj">Ensinar que servir é o maior posto no Reino de Deus.</p>
+        </li><li class="matriz-lista__item" data-modulo="3" hidden>
+          <p class="matriz-lista__num">Lição 33</p>
+          <p class="matriz-lista__titulo">Enfrentando o Sofrimento e as Provações</p>
+          <p class="matriz-lista__base">Rm 5.3–5</p>
+          <p class="matriz-lista__obj">Ensinar a ver o sofrimento como instrumento de crescimento e perseverança.</p>
+        </li><li class="matriz-lista__item" data-modulo="3" hidden>
+          <p class="matriz-lista__num">Lição 34</p>
+          <p class="matriz-lista__titulo">Alegria e Esperança em Meio à Luta</p>
+          <p class="matriz-lista__base">Fp 4.4–7</p>
+          <p class="matriz-lista__obj">Ensinar a manter alegria e contentamento mesmo em combate.</p>
+        </li><li class="matriz-lista__item" data-modulo="3" hidden>
+          <p class="matriz-lista__num">Lição 35</p>
+          <p class="matriz-lista__titulo">Testemunho Público e Coerência de Vida</p>
+          <p class="matriz-lista__base">Mt 5.14–16</p>
+          <p class="matriz-lista__obj">Ensinar o poder do exemplo visível do cristão no meio militar.</p>
+        </li><li class="matriz-lista__item" data-modulo="3" hidden>
+          <p class="matriz-lista__num">Lição 36</p>
+          <p class="matriz-lista__titulo">Multiplicação: O Discípulo que Forma Discípulos</p>
+          <p class="matriz-lista__base">2Tm 2.2</p>
+          <p class="matriz-lista__obj">Ensinar que o ciclo do discipulado se completa quando formamos outros.</p>
+        </li><li class="matriz-lista__item" data-modulo="4" hidden>
+          <p class="matriz-lista__num">Lição 37</p>
+          <p class="matriz-lista__titulo">A Grande Comissão: O Chamado para Avançar</p>
+          <p class="matriz-lista__base">Mt 28.18–20</p>
+          <p class="matriz-lista__obj">Ensinar que todo discípulo maduro é enviado.</p>
+        </li><li class="matriz-lista__item" data-modulo="4" hidden>
+          <p class="matriz-lista__num">Lição 38</p>
+          <p class="matriz-lista__titulo">Evangelismo Relacional no Contexto Militar</p>
+          <p class="matriz-lista__base">Jo 4.28–30</p>
+          <p class="matriz-lista__obj">Ensinar a evangelizar com sabedoria e testemunho no dia a dia.</p>
+        </li><li class="matriz-lista__item" data-modulo="4" hidden>
+          <p class="matriz-lista__num">Lição 39</p>
+          <p class="matriz-lista__titulo">Vocação e Propósito na Corporação</p>
+          <p class="matriz-lista__base">Cl 3.23–24</p>
+          <p class="matriz-lista__obj">Mostrar que o trabalho e a farda podem ser serviço ao Senhor.</p>
+        </li><li class="matriz-lista__item" data-modulo="4" hidden>
+          <p class="matriz-lista__num">Lição 40</p>
+          <p class="matriz-lista__titulo">Liderança Espiritual e Influência pelo Exemplo</p>
+          <p class="matriz-lista__base">1Pe 5.2–3</p>
+          <p class="matriz-lista__obj">Ensinar que liderança cristã é serviço e autoridade moral.</p>
+        </li><li class="matriz-lista__item" data-modulo="4" hidden>
+          <p class="matriz-lista__num">Lição 41</p>
+          <p class="matriz-lista__titulo">Unidade e Cooperação no Corpo de Cristo</p>
+          <p class="matriz-lista__base">Ef 4.1–3</p>
+          <p class="matriz-lista__obj">Ensinar a importância da unidade e do trabalho conjunto na missão.</p>
+        </li><li class="matriz-lista__item" data-modulo="4" hidden>
+          <p class="matriz-lista__num">Lição 42</p>
+          <p class="matriz-lista__titulo">Serviço e Diaconia: Grandeza na Humildade</p>
+          <p class="matriz-lista__base">Jo 13.12–15</p>
+          <p class="matriz-lista__obj">Ensinar o valor do serviço humilde, à semelhança de Cristo.</p>
+        </li><li class="matriz-lista__item" data-modulo="4" hidden>
+          <p class="matriz-lista__num">Lição 43</p>
+          <p class="matriz-lista__titulo">Oração Intercessora e Batalha Espiritual</p>
+          <p class="matriz-lista__base">1Tm 2.1–3</p>
+          <p class="matriz-lista__obj">Ensinar o poder da intercessão como combate em favor de outros.</p>
+        </li><li class="matriz-lista__item" data-modulo="4" hidden>
+          <p class="matriz-lista__num">Lição 44</p>
+          <p class="matriz-lista__titulo">Missões e Compaixão Global</p>
+          <p class="matriz-lista__base">Mc 16.15; At 1.8</p>
+          <p class="matriz-lista__obj">Ampliar a visão missionária para além dos muros da caserna.</p>
+        </li><li class="matriz-lista__item" data-modulo="4" hidden>
+          <p class="matriz-lista__num">Lição 45</p>
+          <p class="matriz-lista__titulo">Perseverança e Fidelidade até o Fim</p>
+          <p class="matriz-lista__base">Hb 10.35–39</p>
+          <p class="matriz-lista__obj">Ensinar a manter fé e lealdade mesmo nas provações.</p>
+        </li><li class="matriz-lista__item" data-modulo="4" hidden>
+          <p class="matriz-lista__num">Lição 46</p>
+          <p class="matriz-lista__titulo">A Volta do Rei: Prontidão e Santidade</p>
+          <p class="matriz-lista__base">Ap 22.12–13</p>
+          <p class="matriz-lista__obj">Ensinar que a esperança da volta de Cristo sustenta a fidelidade presente.</p>
+        </li><li class="matriz-lista__item" data-modulo="4" hidden>
+          <p class="matriz-lista__num">Lição 47</p>
+          <p class="matriz-lista__titulo">Recompensas e Galardões do Guerreiro Fiel</p>
+          <p class="matriz-lista__base">2Tm 4.7–8</p>
+          <p class="matriz-lista__obj">Mostrar que o serviço fiel tem recompensa eterna.</p>
+        </li><li class="matriz-lista__item" data-modulo="4" hidden>
+          <p class="matriz-lista__num">Lição 48</p>
+          <p class="matriz-lista__titulo">Formatura do Soldado de Cristo</p>
+          <p class="matriz-lista__base">Fp 3.13–14</p>
+          <p class="matriz-lista__obj">Celebrar a conclusão do discipulado e o envio para formar outros.</p>
+        </li></ul>
+        <p class="matriz-rodape">O texto integral de cada lição está nas edições Aluno e Instrutor do Módulo 1, em anexo.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-17" class="screen" data-screen="17" data-act="5" tabindex="-1"><div class="screen-inner">
+<section id="tela-18" class="screen" data-screen="18" data-act="5" tabindex="-1"><div class="screen-inner">
         <h2>Cinco marcas — sinais de uma obra de graça, não medalhas.</h2>
         <ul class="marcas-arco">
           <li>Fé bíblica e cristocêntrica</li>
@@ -563,10 +876,10 @@ body.modo-leitura .conducao{display:block}
           <li>Caráter obediente e servidor</li>
           <li>Compromisso com a missão e a multiplicação</li>
         </ul>
-        <p class="marcas-salvaguarda">Nenhuma delas descreve perfeição alcançada. Todas descrevem <strong>caminho em andamento</strong>.</p>
-        <aside class="conducao" aria-label="Notas de condução"><p>Frisar a última linha em voz alta. &quot;Isso não é um checklist de aprovação. É um mapa de leitura pastoral.&quot;</p></aside>
+        <p class="marcas-salvaguarda marcas-salvaguarda--destaque">Nenhuma delas descreve perfeição alcançada. Todas descrevem <strong>caminho em andamento</strong>.</p>
+        <p class="fecho-ato">A estrutura já foi vista. Falta o que a torna memorável para quem a percorre.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-18" class="screen screen--ato" data-screen="18" data-act="6" tabindex="-1"><div class="screen-inner">
+<section id="tela-19" class="screen screen--ato" data-screen="19" data-act="6" tabindex="-1"><div class="screen-inner">
         <h2>Cada módulo termina em um marco reconhecido pela tropa.</h2>
         <ul class="marchas">
           <li><span class="mil-label">Primeira Marcha</span> — O Recruta que se Rendeu</li>
@@ -574,9 +887,9 @@ body.modo-leitura .conducao{display:block}
           <li><span class="mil-label">Terceira Marcha</span> — O Guerreiro que Persevera</li>
           <li><span class="mil-label">Formatura do Soldado de Cristo</span></li>
         </ul>
-        <aside class="conducao" aria-label="Notas de condução"><p>Leia os quatro nomes em voz alta, na sequência, sem comentar entre eles.</p></aside>
+        <p class="marchas-nota">Recruta, combatente, guerreiro, soldado. É a mesma pessoa, em quatro estágios.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-19" class="screen" data-screen="19" data-act="6" tabindex="-1"><div class="screen-inner">
+<section id="tela-20" class="screen" data-screen="20" data-act="6" tabindex="-1"><div class="screen-inner">
         <h2>Quatro insígnias. Nenhuma é troféu.</h2>
         <p><em>Toque em cada uma para ver o sentido bíblico.</em></p>
         <div class="flip-grid flip-grid--simbolos"><button type="button" class="flip-card flip-card--simbolo" data-flip="simbolo-0" aria-pressed="false">
@@ -612,9 +925,9 @@ body.modo-leitura .conducao{display:block}
           <span class="flip-card__face flip-card__face--back"><span>Fé ativa e avanço em missão, inclusive em proteção mútua, como tropa — restauração pela graça e comissionamento para servir e multiplicar (Ef 6.16).</span></span>
         </span>
       </button></div>
-        <aside class="conducao" aria-label="Notas de condução"><p>Chame atenção para o nome duplo: &quot;Cada peça tem o nome que a Escritura dá e o nome que a caserna reconhece.&quot;</p></aside>
+        <p class="simbolos-nota">Cada peça tem o nome que a Escritura dá e o nome que a caserna reconhece.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-20" class="screen" data-screen="20" data-act="6" tabindex="-1"><div class="screen-inner">
+<section id="tela-21" class="screen" data-screen="21" data-act="6" tabindex="-1"><div class="screen-inner">
         <h2>Sobriedade é regra, não estilo.</h2>
         <div class="ritos-cols">
           <div class="ritos-e"><h3>O que a transição é</h3>
@@ -625,26 +938,25 @@ body.modo-leitura .conducao{display:block}
           </div>
         </div>
         <p>Nenhum discípulo deve ser constrangido ou exposto.</p>
-        <aside class="conducao" aria-label="Notas de condução"><p>Tela de salvaguarda. Responde, antes que seja feita, a preocupação pastoral mais previsível.</p></aside>
+        <aside class="nota-autor" aria-label="Nota do autor"><p class="nota-autor__rotulo">nota do autor</p><p>Esta foi a preocupação que mais me ocupou na revisão. Um sistema de insígnias, num ambiente onde a hierarquia já é linguagem corrente, tem caminho curto para virar vaidade. O Guia condena triunfalismo em cinco seções distintas, e não como ressalva de rodapé: como critério de condução. Ainda assim, é o ponto do projeto em que eu mais precisaria da sua correção, porque é o ponto em que a boa intenção do autor não basta.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-21" class="screen" data-screen="21" data-act="6" tabindex="-1"><div class="screen-inner">
+<section id="tela-22" class="screen" data-screen="22" data-act="6" tabindex="-1"><div class="screen-inner">
         <h2>Memória pastoral, não comprovação de mérito.</h2>
         <blockquote class="cert-quote">
           <p>“Certificamos que [nome] concluiu, pela graça de Cristo, a [marcha correspondente] do Discipulando a Caserna, como testemunho da obra que Deus começou e haverá de completar (Fp 1.6).”</p>
         </blockquote>
         <p class="proposta-tag">PROPOSTA</p>
         <p>Onde o contexto institucional não permitir a entrega física, <strong>o registro pastoral simples cumpre a mesma função.</strong></p>
-        <aside class="conducao" aria-label="Notas de condução"><p>Segunda aparição da frase-âncora: ao mostrar o certificado, diga &quot;de quebrantados, valentes&quot; — desta vez apontando o nome em branco no documento.</p></aside>
+        <p class="fecho-ato">O que se vive em sala precisa ter forma visível fora dela.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-22" class="screen screen--ato" data-screen="22" data-act="7" tabindex="-1"><div class="screen-inner">
+<section id="tela-23" class="screen screen--ato" data-screen="23" data-act="7" tabindex="-1"><div class="screen-inner">
         <h2>O escudo ensina o que o programa confessa.</h2>
         <p class="estudo-tag">logomarca oficial — apreciação pastoral pendente</p>
         <div class="escudo-wrap"><img class="escudo-img" src="../assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png" width="320" height="320" alt="Logomarca do Discipulando a Caserna" decoding="async" /></div>
         <p>Um escudo com as insígnias cravadas — o cinto, a couraça, os calçados e, no quarto campo, o próprio escudo do Projeto.<br>Encimado pelo <strong>capacete</strong>. Atravessado pela <strong>espada</strong>.</p>
         <p>O discípulo não coleciona medalhas. <strong>Ele é revestido por Cristo.</strong></p>
-        <aside class="conducao" aria-label="Notas de condução"><p>Esta tela precisa vir antes de qualquer aplicação. A identidade visual é doutrina antes de ser design.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-23" class="screen" data-screen="23" data-act="7" tabindex="-1"><div class="screen-inner">
+<section id="tela-24" class="screen" data-screen="24" data-act="7" tabindex="-1"><div class="screen-inner">
         <h2>Não é brinde. É proposta de instrumento do método.</h2>
         <p class="proposta-tag">PROPOSTA</p>
         <p>Toda lição termina em <strong>Ordem do Dia</strong>: ação prática, simples e verificável, cumprida ao longo da semana — exigência do Guia (3.4).</p>
@@ -656,13 +968,14 @@ body.modo-leitura .conducao{display:block}
           <p>Ação: _______________</p>
           <p>Registro: _______________</p>
         </div>
-        <aside class="conducao" aria-label="Notas de condução"><p>Reenquadra o que vem depois. &quot;A caderneta é só uma forma que estou propondo para registrá-la — não um produto já decidido.&quot;</p></aside>
+        <aside class="nota-autor" aria-label="Nota do autor"><p class="nota-autor__rotulo">nota do autor</p><p>A caderneta é a única peça material que o próprio Guia praticamente exige, porque a Ordem do Dia precisa ser registrada em algum lugar. Coloco-a antes de qualquer outra aplicação da marca de propósito: quero que fique claro que ela nasceu da pedagogia. O que vem na tela seguinte não tem essa justificativa, e por isso está marcado como estudo.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-24" class="screen" data-screen="24" data-act="7" tabindex="-1"><div class="screen-inner">
+<section id="tela-25" class="screen" data-screen="25" data-act="7" tabindex="-1"><div class="screen-inner">
         <h2>Senso de corpo tem forma visível — em estudo.</h2>
         <p class="estudo-tag estudo-tag--block">ESTUDO — NÃO APROVADO</p>
         <ul class="merch-list"><li>Camisa</li><li>Caneca</li><li>Adesivo</li><li>Insígnia bordada</li><li>Bolsa de campanha</li></ul>
         <p>Não são produtos de vitrine. São sinais de pertencimento a uma tropa — o mesmo princípio que o Guia assume quando fala de senso de corpo, camaradagem e vida comunitária.</p>
+        <aside class="nota-autor" aria-label="Nota do autor"><p class="nota-autor__rotulo">nota do autor</p><p>Esta tela não é um pedido. É uma consulta.</p><p>Trago o estudo porque acho que o senhor precisa saber que ele existe e que eu pensei nele — não porque queira aprovação hoje. Se a resposta for que o projeto não deve ter esse tipo de aplicação, ou não agora, isso encerra o assunto e não haverá insistência. Registrei salvaguardas abaixo porque, se um dia houver decisão favorável, ela já deve nascer com limite.</p></aside>
         <div class="salvaguardas">
           <h3>Salvaguardas propostas</h3>
           <ul>
@@ -672,15 +985,15 @@ body.modo-leitura .conducao{display:block}
             <li>Aprovação prévia de toda aplicação da marca</li>
           </ul>
         </div>
-        <aside class="conducao" aria-label="Notas de condução"><p>Não venda. Apresente e cale. Registre a reação no checklist da Tela 29.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-25" class="screen" data-screen="25" data-act="7" tabindex="-1"><div class="screen-inner">
+<section id="tela-26" class="screen" data-screen="26" data-act="7" tabindex="-1"><div class="screen-inner">
         <h2>A forma pode variar. O conteúdo teológico, não.</h2>
         <p>O Guia já estabelece: o recurso gráfico de cada símbolo pode mudar conforme o que estiver disponível — impresso, cartão, insígnia, projeção.<br><strong>O significado espiritual e a ordem dos símbolos não devem ser alterados.</strong></p>
         <p class="pendencia">Pendência registrada: <strong>Caderno de Identidade Visual do Projeto</strong>, previsto no item 5.3 e ainda não produzido.</p>
-        <aside class="conducao" aria-label="Notas de condução"><p>&quot;O Guia previu esse caderno. Ele ainda não existe. Proponho que seja o próximo entregável — sob a supervisão do senhor.&quot;</p></aside>
+        <p>O Guia previu esse caderno. Ele ainda não existe. Proponho que seja o próximo entregável — sob a supervisão do senhor.</p>
+        <p class="fecho-ato">Até aqui, o que existe. A partir daqui, o que ainda não existe.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-26" class="screen screen--ato" data-screen="26" data-act="8" tabindex="-1"><div class="screen-inner">
+<section id="tela-27" class="screen screen--ato" data-screen="27" data-act="8" tabindex="-1"><div class="screen-inner">
         <h2>Duas frentes de socorro, já previstas e ainda não desenvolvidas.</h2>
         <div class="apendices">
           <article><span class="selo-planej">em planejamento</span><h3>A Marcha da Liberdade</h3><p>Associada ao Capacete da Salvação</p></article>
@@ -691,9 +1004,9 @@ body.modo-leitura .conducao{display:block}
           <h3>Limites de escopo, explícitos</h3>
           <p>Não substituem acompanhamento profissional, jurídico ou clínico; não fazem promessas sobre processos institucionais; conduzidos em comunhão com a igreja e, havendo, com a capelania.</p>
         </div>
-        <aside class="conducao" aria-label="Notas de condução"><p>&quot;Não vou apresentar isso como pronto, porque não está.&quot;</p></aside>
+        <p class="apendices-nota">Não apresento isso como pronto, porque não está.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-27" class="screen" data-screen="27" data-act="8" tabindex="-1"><div class="screen-inner">
+<section id="tela-28" class="screen" data-screen="28" data-act="8" tabindex="-1"><div class="screen-inner">
         <h2>Multiplicação fiel, não reprodução vazia.</h2>
         <p>O Guia forma o discípulo. Falta formar quem forma.</p>
         <p>Critérios já estabelecidos para qualquer expansão:</p>
@@ -702,9 +1015,9 @@ body.modo-leitura .conducao{display:block}
           <li><strong>Coerência pedagógica</strong> — não pular etapas por pressa</li>
           <li><strong>Integridade pastoral</strong> — não sacrificar cuidado de almas por alcance</li>
         </ul>
-        <aside class="conducao" aria-label="Notas de condução"><p>&quot;O item 6.4.2 já prevê a multiplicação. O que não existe ainda é o percurso formal de formação do instrutor.&quot;</p></aside>
+        <p class="multiplicacao-nota">O item 6.4.2 já prevê a multiplicação. O que ainda não existe é o percurso formal de formação do instrutor.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-28" class="screen" data-screen="28" data-act="8" tabindex="-1"><div class="screen-inner">
+<section id="tela-29" class="screen" data-screen="29" data-act="8" tabindex="-1"><div class="screen-inner">
         <h2>O ambiente muda. O discipulado, não.</h2>
         <p>O homem que concluiu o Módulo 1 no presídio <strong>não recomeça do zero na igreja.</strong><br>Ele é reconhecido como quem já passou pela fase do chamado, e avança para o treinamento.</p>
         <p>Uma única linguagem. Uma única progressão. Válida em presídio, quartel e igreja local.</p>
@@ -715,24 +1028,42 @@ body.modo-leitura .conducao{display:block}
           <circle cx="210" cy="40" r="8" fill="#1A2A44"/><text x="210" y="65" text-anchor="middle" font-size="11" fill="#4A4A4A">quartel</text>
           <circle cx="350" cy="40" r="8" fill="#1A2A44"/><text x="350" y="65" text-anchor="middle" font-size="11" fill="#4A4A4A">igreja</text>
         </svg>
-        <aside class="conducao" aria-label="Notas de condução"><p>Última tela de conteúdo antes da decisão. &quot;Isso exige que a igreja seja avisada do estágio do discípulo.&quot;</p></aside>
+        <p class="fecho-ato">É tudo o que eu tinha a apresentar. O que segue depende do senhor.</p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-29" class="screen screen--ato" data-screen="29" data-act="9" tabindex="-1"><div class="screen-inner screen-inner--decisao">
+<section id="tela-30" class="screen" data-screen="30" data-act="8" tabindex="-1"><div class="screen-inner">
+        <h2>O que eu responderia, se o senhor me perguntasse.</h2>
+        <p class="instrucao-leitor">Toque em cada pergunta.</p>
+        <div class="faq-acordeao"><details class="faq-item"><summary>Isso não militariza demais o Evangelho?</summary><div class="faq-resposta"><p>A metáfora militar é ponte pedagógica, não conteúdo. O Guia subordina toda imagem de caserna às Escrituras e afirma, em mais de uma seção, que o modelo de autoridade não é a hierarquia terrena, mas Cristo — o Comandante que serve e dá a vida. Onde a linguagem parecer sacralizar a instituição militar, é falha de redação e deve ser corrigida.</p></div></details><details class="faq-item"><summary>O sistema de marchas não vira competição entre os homens?</summary><div class="faq-resposta"><p>É o risco real do projeto. As salvaguardas estão escritas: sem ranking, sem comparação, sem condicionamento de bênçãos, entrega comunitária, ninguém exposto. Mas salvaguarda em papel não basta — depende de quem conduz. É por isso que a formação de instrutores está listada como pendência, e não como detalhe.</p></div></details><details class="faq-item"><summary>Quem garante fidelidade doutrinária se isso for replicado?</summary><div class="faq-resposta"><p>Hoje, ninguém — e é uma lacuna que reconheço. O Guia estabelece que ajustes pedagógicos são bem-vindos e que mudanças doutrinárias exigem deliberação pastoral, mas não existe ainda instância formal que exerça isso. Proponho que a homologação venha acompanhada da definição de quem responde por essa guarda.</p></div></details><details class="faq-item"><summary>Quanto do meu tempo isso vai exigir?</summary><div class="faq-resposta"><p>Para a homologação: a leitura do Guia e a apreciação do Módulo 1. Depois disso, o que eu pediria é acompanhamento pontual em decisões doutrinárias — não gestão de rotina. A condução operacional é minha responsabilidade e da equipe.</p></div></details><details class="faq-item"><summary>De onde vem o recurso para isso?</summary><div class="faq-resposta"><p>Nada do que está aqui depende de recurso ainda. Impressos, insígnias e aplicações só entram em pauta se e quando houver decisão favorável, com destinação definida pela liderança e prestação de contas. Nenhuma peça foi produzida.</p></div></details><details class="faq-item"><summary>E se eu quiser mudar algo estrutural?</summary><div class="faq-resposta"><p>Todo o material está em versão candidata justamente para isso. Alterar módulo, símbolo, nomenclatura ou sequência é trabalho de revisão, não perda — e é preferível fazê-lo agora, antes de qualquer turma iniciar.</p></div></details></div>
+      </div><p class="stamp">v1.0-RC · documento de validação</p></section>
+<section id="tela-31" class="screen" data-screen="31" data-act="9" tabindex="-1"><div class="screen-inner screen-inner--sobrio">
+        <h2>Se o senhor entender que não é hora, ou que não é assim.</h2>
+        <p>Este material está em versão candidata. Ele não foi impresso, não foi distribuído, nenhuma turma foi iniciada e nenhuma peça foi produzida. Nada precisa ser desfeito.</p>
+        <p>Se a resposta for <strong>“ainda não”</strong>, o material aguarda.<br>
+        Se for <strong>“não desse jeito”</strong>, eu reviso — e prefiro revisar agora.<br>
+        Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já serviu para organizar o que aprendi.</p>
+        <p>Não há prazo, não há compromisso assumido com terceiros e não há nada em curso que dependa de uma resposta rápida.</p>
+      </div><p class="stamp">v1.0-RC · documento de validação</p></section>
+<section id="tela-32" class="screen screen--ato" data-screen="32" data-act="9" tabindex="-1"><div class="screen-inner screen-inner--decisao">
         <h2>Pastor, o Guia está em v1.0-RC. Nenhum conteúdo é final antes da sua homologação.</h2>
-        <ul class="checklist" id="checklist"><li><label><input type="checkbox" data-check="0" /> <span>Apreciação doutrinária e pastoral do Módulo 1 (doze lições, edições Aluno e Instrutor)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Apreciação doutrinária e pastoral do Módulo 1 (doze lições, edições Aluno e Instrutor)"></textarea></li><li><label><input type="checkbox" data-check="1" /> <span>Homologar o Guia Mestre v1.0-RC → v1.0</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Homologar o Guia Mestre v1.0-RC → v1.0"></textarea></li><li><label><input type="checkbox" data-check="2" /> <span>O prefácio do Guia Mestre — página reservada; ver convite abaixo</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para O prefácio do Guia Mestre — página reservada; ver convite abaixo"></textarea></li><li><label><input type="checkbox" data-check="3" /> <span>Liberação para produção dos Módulos 2 a 4</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Liberação para produção dos Módulos 2 a 4"></textarea></li><li><label><input type="checkbox" data-check="4" /> <span>Autorizar a turma-piloto (pergunta de implantação: local, período, número)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Autorizar a turma-piloto (pergunta de implantação: local, período, número)"></textarea></li><li><label><input type="checkbox" data-check="5" /> <span>Nomear o instrutor ou instrutores responsáveis (pergunta de implantação)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Nomear o instrutor ou instrutores responsáveis (pergunta de implantação)"></textarea></li><li><label><input type="checkbox" data-check="6" /> <span>Aprovar o estudo de identidade visual e a logomarca apresentados</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Aprovar o estudo de identidade visual e a logomarca apresentados"></textarea></li><li><label><input type="checkbox" data-check="7" /> <span>Autorizar a produção do Caderno de Identidade Visual (pendência do item 5.3)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Autorizar a produção do Caderno de Identidade Visual (pendência do item 5.3)"></textarea></li><li><label><input type="checkbox" data-check="8" /> <span>Autorizar o desenvolvimento dos Apêndices Pastorais</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Autorizar o desenvolvimento dos Apêndices Pastorais"></textarea></li><li><label><input type="checkbox" data-check="9" /> <span>Definir a política de aplicação da marca e destinação de receita (Tela 24 — estudo de identidade de tropa)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Definir a política de aplicação da marca e destinação de receita (Tela 24 — estudo de identidade de tropa)"></textarea></li><li><label><input type="checkbox" data-check="10" /> <span>Definir o fluxo de comunicação com a igreja local (item 1.4.3)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Definir o fluxo de comunicação com a igreja local (item 1.4.3)"></textarea></li></ul>
+        <div class="checklist-blocos"><div class="checklist-bloco"><h3>O que peço agora</h3><ul class="checklist"><li><label><input type="checkbox" data-check="0" /> <span>Apreciação doutrinária e pastoral do Módulo 1 (doze lições, edições Aluno e Instrutor)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Apreciação doutrinária e pastoral do Módulo 1 (doze lições, edições Aluno e Instrutor)"></textarea></li><li><label><input type="checkbox" data-check="1" /> <span>Homologação do Guia Mestre v1.0-RC → v1.0</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Homologação do Guia Mestre v1.0-RC → v1.0"></textarea></li><li><label><input type="checkbox" data-check="2" /> <span>Liberação para produção dos Módulos 2 a 4</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Liberação para produção dos Módulos 2 a 4"></textarea></li></ul></div><div class="checklist-bloco"><h3>O que peço quando for possível</h3><ul class="checklist"><li><label><input type="checkbox" data-check="3" /> <span>O prefácio do Guia Mestre (convite integral abaixo — sem prazo)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para O prefácio do Guia Mestre (convite integral abaixo — sem prazo)"></textarea></li><li><label><input type="checkbox" data-check="4" /> <span>Definição de quem responde pela guarda doutrinária em caso de replicação</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Definição de quem responde pela guarda doutrinária em caso de replicação"></textarea></li><li><label><input type="checkbox" data-check="5" /> <span>Apreciação do estudo de identidade visual e da logomarca</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Apreciação do estudo de identidade visual e da logomarca"></textarea></li></ul></div><div class="checklist-bloco"><h3>Decisões que dependem das anteriores</h3><ul class="checklist"><li><label><input type="checkbox" data-check="6" /> <span>Turma-piloto: local, período, número de participantes</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Turma-piloto: local, período, número de participantes"></textarea></li><li><label><input type="checkbox" data-check="7" /> <span>Instrutor ou instrutores responsáveis</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Instrutor ou instrutores responsáveis"></textarea></li><li><label><input type="checkbox" data-check="8" /> <span>Produção do Caderno de Identidade Visual (pendência do item 5.3)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Produção do Caderno de Identidade Visual (pendência do item 5.3)"></textarea></li><li><label><input type="checkbox" data-check="9" /> <span>Desenvolvimento dos Apêndices Pastorais</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Desenvolvimento dos Apêndices Pastorais"></textarea></li><li><label><input type="checkbox" data-check="10" /> <span>Política de aplicação da marca e destinação de eventual receita</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Política de aplicação da marca e destinação de eventual receita"></textarea></li><li><label><input type="checkbox" data-check="11" /> <span>Fluxo de comunicação com a igreja local (item 1.4.3)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Fluxo de comunicação com a igreja local (item 1.4.3)"></textarea></li></ul></div></div>
         <div class="convite">
           <p class="convite-rotulo">CONVITE</p>
           <h3>O prefácio</h3>
           <p>Há uma página do Guia Mestre que continua em branco por decisão minha: o prefácio.</p><p>Não é uma formalidade de abertura, e não peço que seja escrito por cortesia. O Guia descreve um método, mas quem pode dizer se esse método é fiel ao Cristo das Escrituras — e se serve de fato aos homens para quem foi escrito — não é o autor. É o pastor que acompanhou a obra desde a origem, que conhece os nomes por trás dos exemplos e que responderá diante de Deus pelo que for ensinado em seu nome.</p><p>Por isso, aquela página não foi preenchida com texto provisório à espera de aprovação. Está reservada, e permanecerá reservada pelo tempo que for necessário. Não há prazo. Se o senhor entender que o material ainda não está em condições de receber esse prefácio, essa também será uma resposta — e uma resposta que eu acolherei.</p><p>Quando quiser escrevê-lo, basta enviar o texto. Ele entra no Guia exatamente como o senhor o redigir, sem edição de conteúdo, acima da minha nota de autor.</p>
+        </div>
+        <div class="obs-geral-bloco">
+          <label for="obs-geral">Observações gerais</label>
+          <textarea id="obs-geral" class="obs-geral" rows="4" placeholder="Observações gerais"></textarea>
         </div>
         <div class="decisao-acoes">
           <button type="button" id="btn-copiar">Copiar resumo</button>
           <button type="button" id="btn-imprimir">Imprimir</button>
         </div>
         <p id="copiar-status" class="copiar-status" role="status" aria-live="polite"></p>
-        <aside class="conducao" aria-label="Notas de condução"><p>Não passe rápido. Leia os itens em voz alta. No bloco do prefácio, leia o convite completo.</p></aside>
+        <p class="retorno-caminho">O resumo pode ser enviado por WhatsApp ou e-mail, ou entregue impresso e assinado — o que for mais cômodo. Se preferir tratar pessoalmente, também está bem: a lista serve só para que nada se perca.</p>
+        <p class="retorno-assinatura">Obr. Flávio Alves da Costa · <a href="mailto:casernadeadulao@gmail.com">casernadeadulao@gmail.com</a></p>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-30" class="screen" data-screen="30" data-act="9" tabindex="-1"><div class="screen-inner screen-inner--fechamento">
+<section id="tela-33" class="screen" data-screen="33" data-act="9" tabindex="-1"><div class="screen-inner screen-inner--fechamento">
         <p class="ancora">De quebrantados, valentes.</p>
         <blockquote class="fp-quote" cite="Fp 1.6">
           <p>“Estou plenamente certo de que aquele que começou boa obra em vocês há de completá-la até o Dia de Cristo Jesus.”</p>
@@ -742,15 +1073,18 @@ body.modo-leitura .conducao{display:block}
         <p>Fico à disposição para o que o senhor determinar.</p>
         <p class="assinatura">Obr. Flávio Alves da Costa<br>Projeto Caserna de Adulão · Fortaleza-CE</p>
         <p class="rodape-inst">Projeto Caserna de Adulão · CNPJ 63.724.286/0001-78<br>Guia Mestre v1.0-RC — documento de validação · circulação restrita · Fortaleza, 2026</p>
-        <aside class="conducao" aria-label="Notas de condução"><p>Terceira e última aparição da frase-âncora. Depois da citação de Fp 1.6, silêncio.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
 </main>
-<script type="application/json" id="matriz-dados">{"fonte":"Guia Mestre v1.0-RC — Quadro 1 (Matriz Curricular)","total":48,"licoes":[{"numero":1,"modulo":1,"titulo":"Bem-vindo a Adulão: o quartel dos feridos","textoBase":"2Tm 2.3","objetivo":"Acolher o ferido antes de qualquer exigência: Adulão é abrigo, não vitrine de heróis.","produzida":true},{"numero":2,"modulo":1,"titulo":"O Comandante que entra na caverna","textoBase":"Jo 14.18","objetivo":"Mostrar Cristo como o Senhor que desce ao lugar do fracasso para resgatar.","produzida":true},{"numero":3,"modulo":1,"titulo":"Contemplação: resposta de gratidão ao resgate","textoBase":"2Co 3.18","objetivo":"Ensinar a contemplação como resposta ao resgate, não técnica para merecer.","produzida":true},{"numero":4,"modulo":1,"titulo":"A Bíblia: o Manual do Guerreiro","textoBase":"Sl 119.105","objetivo":"Firmar a autoridade da Escritura como manual que orienta a marcha.","produzida":true},{"numero":5,"modulo":1,"titulo":"Insubordinação: a quebra de lealdade que custa a honra","textoBase":"Rm 3.23","objetivo":"Apresentar o pecado como quebra de lealdade, com diagnóstico que cura.","produzida":true},{"numero":6,"modulo":1,"titulo":"Ordem de reintegração: a graça que devolve a patente","textoBase":"Ef 2.8-9","objetivo":"Anunciar a graça que reintegra: dom de Cristo, não salário do esforço.","produzida":true},{"numero":7,"modulo":1,"titulo":"A Fé: Confiança e Obediência","textoBase":"Hb 11.6","objetivo":"Ensinar a fé como confiança que se traduz em obediência.","produzida":true},{"numero":8,"modulo":1,"titulo":"Apresentando-se para o serviço: a rendição que restaura a confiança","textoBase":"At 3.19","objetivo":"Demonstrar que o arrependimento é reapresentar-se ao Quartel-General para servir sob novas ordens.","produzida":true},{"numero":9,"modulo":1,"titulo":"A Cruz: O Juramento de Lealdade","textoBase":"Lc 9.23","objetivo":"Ensinar o custo do discipulado como entrega diária, em resposta amorosa.","produzida":true},{"numero":10,"modulo":1,"titulo":"Nova farda, nova missão","textoBase":"Jo 3.3-8","objetivo":"Apresentar o novo nascimento como nova natureza que habilita a um propósito útil.","produzida":true},{"numero":11,"modulo":1,"titulo":"O Espírito Santo: O Instrutor Interior","textoBase":"Jo 16.13","objetivo":"Ensinar que o Espírito guia, corrige e fortalece por dentro, formando obediência.","produzida":true},{"numero":12,"modulo":1,"titulo":"Comunhão e Vida de Tropa","textoBase":"At 2.42-47","objetivo":"Demonstrar que ninguém cresce isolado: a tropa é ambiente de edificação e cuidado.","produzida":true},{"numero":13,"modulo":2,"titulo":"Oração: Comunicação com o Quartel-General","textoBase":"Fp 4.6-7","objetivo":"Ensinar a oração como diálogo vital e diário com o Comandante.","produzida":false},{"numero":14,"modulo":2,"titulo":"A Igreja: Companhia de Irmãos de Armas","textoBase":"Ef 4.11-16","objetivo":"Mostrar a Igreja como corpo que serve, se edifica e marcha junto.","produzida":false},{"numero":15,"modulo":2,"titulo":"O Batismo: Juramento de Fidelidade","textoBase":"Rm 6.3-4","objetivo":"Explicar o batismo como aliança pública de morte para o pecado e vida para Deus.","produzida":false},{"numero":16,"modulo":2,"titulo":"Santificação: Separação e Consagração","textoBase":"1Ts 4.3-7","objetivo":"Ensinar a santificação como separação do pecado e dedicação a Deus.","produzida":false},{"numero":17,"modulo":2,"titulo":"Combate Espiritual e Tentação","textoBase":"Ef 6.10-13","objetivo":"Ensinar sobre a guerra espiritual e o uso das armas de Deus.","produzida":false},{"numero":18,"modulo":2,"titulo":"Adoração: Estratégia de Combate Espiritual","textoBase":"2Cr 20.21-22","objetivo":"Mostrar que adorar é guerrear com fé e que o louvor antecede a vitória.","produzida":false},{"numero":19,"modulo":2,"titulo":"Mordomia e Obediência Financeira","textoBase":"2Co 9.6-8","objetivo":"Ensinar fidelidade nos recursos como resposta de fé e prestação de contas.","produzida":false},{"numero":20,"modulo":2,"titulo":"O Lar Cristão: A Base da Tropa","textoBase":"Js 24.15","objetivo":"Ensinar que a casa é o primeiro campo de discipulado e de lealdade.","produzida":false},{"numero":21,"modulo":2,"titulo":"Perdão e Reconciliação: Cura das Feridas de Guerra","textoBase":"Mt 18.21-22","objetivo":"Ensinar que o perdão restaura a comunhão e impede contaminação da tropa.","produzida":false},{"numero":22,"modulo":2,"titulo":"Ética e Testemunho na Corporação","textoBase":"Mt 5.13-16","objetivo":"Ensinar o valor do testemunho cristão no ambiente de serviço.","produzida":false},{"numero":23,"modulo":2,"titulo":"A Palavra e o Juramento","textoBase":"Tg 5.12","objetivo":"Ensinar integridade no falar e fidelidade aos compromissos assumidos.","produzida":false},{"numero":24,"modulo":2,"titulo":"Preparação para o Batismo: Revisão e Entrega","textoBase":"At 8.36-38","objetivo":"Revisar fundamentos e conduzir o discípulo à consagração pública.","produzida":false},{"numero":25,"modulo":3,"titulo":"O Espírito Santo e os Dons de Serviço","textoBase":"1Co 12.4-7","objetivo":"Ensinar que os dons são dados para servir e edificar o corpo de Cristo.","produzida":false},{"numero":26,"modulo":3,"titulo":"O Fruto do Espírito: Caráter do Guerreiro de Cristo","textoBase":"Gl 5.22-23","objetivo":"Mostrar que o fruto é sinal de maturidade e da patente interior.","produzida":false},{"numero":27,"modulo":3,"titulo":"A Mente de Cristo","textoBase":"Fp 2.5-8","objetivo":"Ensinar a pensar e agir com humildade, obediência e serviço.","produzida":false},{"numero":28,"modulo":3,"titulo":"Disciplina Espiritual: Treino e Constância","textoBase":"1Tm 4.7-8","objetivo":"Mostrar que a piedade se fortalece por treino, como resposta à graça.","produzida":false},{"numero":29,"modulo":3,"titulo":"Santidade no Campo de Batalha","textoBase":"1Pe 1.15-16","objetivo":"Ensinar santidade como modo de vida em qualquer ambiente.","produzida":false},{"numero":30,"modulo":3,"titulo":"Autoridade e Submissão","textoBase":"Hb 13.17","objetivo":"Ensinar a obedecer e a liderar com humildade, revelando maturidade.","produzida":false},{"numero":31,"modulo":3,"titulo":"Amor e Camaradagem","textoBase":"Jo 15.12-13","objetivo":"Ensinar o amor fraternal como vínculo da tropa espiritual.","produzida":false},{"numero":32,"modulo":3,"titulo":"Humildade e Serviço","textoBase":"Mc 10.43-45","objetivo":"Ensinar que servir é o maior posto no Reino de Deus.","produzida":false},{"numero":33,"modulo":3,"titulo":"Enfrentando o Sofrimento e as Provações","textoBase":"Rm 5.3-5","objetivo":"Ensinar a ver o sofrimento como instrumento de crescimento e perseverança.","produzida":false},{"numero":34,"modulo":3,"titulo":"Alegria e Esperança em Meio à Luta","textoBase":"Fp 4.4-7","objetivo":"Ensinar a manter alegria e contentamento mesmo em combate.","produzida":false},{"numero":35,"modulo":3,"titulo":"Testemunho Público e Coerência de Vida","textoBase":"Mt 5.14-16","objetivo":"Ensinar o poder do exemplo visível no meio da tropa.","produzida":false},{"numero":36,"modulo":3,"titulo":"Multiplicação: O Discípulo que Forma Discípulos","textoBase":"2Tm 2.2","objetivo":"Ensinar que o ciclo do discipulado se completa quando formamos outros.","produzida":false},{"numero":37,"modulo":4,"titulo":"A Grande Comissão: O Chamado para Avançar","textoBase":"Mt 28.18-20","objetivo":"Ensinar que todo discípulo maduro é enviado.","produzida":false},{"numero":38,"modulo":4,"titulo":"Evangelismo Relacional no Contexto Militar","textoBase":"Jo 4.28-30","objetivo":"Ensinar a evangelizar com sabedoria e testemunho no dia a dia.","produzida":false},{"numero":39,"modulo":4,"titulo":"Vocação e Propósito na Corporação","textoBase":"Cl 3.23-24","objetivo":"Mostrar que o trabalho e a farda podem ser serviço ao Senhor.","produzida":false},{"numero":40,"modulo":4,"titulo":"Liderança Espiritual e Influência pelo Exemplo","textoBase":"1Pe 5.2-3","objetivo":"Ensinar que liderança cristã é serviço e autoridade moral.","produzida":false},{"numero":41,"modulo":4,"titulo":"Unidade e Cooperação no Corpo de Cristo","textoBase":"Ef 4.1-3","objetivo":"Ensinar a importância da unidade e do trabalho conjunto na missão.","produzida":false},{"numero":42,"modulo":4,"titulo":"Serviço e Diaconia: Grandeza na Humildade","textoBase":"Jo 13.12-15","objetivo":"Ensinar o valor do serviço humilde, à semelhança de Cristo.","produzida":false},{"numero":43,"modulo":4,"titulo":"Oração Intercessora e Batalha Espiritual","textoBase":"1Tm 2.1-3","objetivo":"Ensinar o poder da intercessão como combate em favor de outros.","produzida":false},{"numero":44,"modulo":4,"titulo":"Missões e Compaixão Global","textoBase":"Mc 16.15; At 1.8","objetivo":"Ampliar a visão missionária para além dos muros da caserna.","produzida":false},{"numero":45,"modulo":4,"titulo":"Perseverança e Fidelidade até o Fim","textoBase":"Hb 10.35-39","objetivo":"Ensinar a manter fé e lealdade mesmo nas provações.","produzida":false},{"numero":46,"modulo":4,"titulo":"A Volta do Rei: Prontidão e Santidade","textoBase":"Ap 22.12-13","objetivo":"Ensinar que a esperança da volta de Cristo sustenta a fidelidade presente.","produzida":false},{"numero":47,"modulo":4,"titulo":"Recompensas e Galardões do Guerreiro Fiel","textoBase":"2Tm 4.7-8","objetivo":"Mostrar que o serviço fiel tem recompensa eterna.","produzida":false},{"numero":48,"modulo":4,"titulo":"Formatura do Soldado de Cristo","textoBase":"Fp 3.13-14","objetivo":"Celebrar a conclusão do discipulado e o envio para formar outros.","produzida":false}]}</script>
+<script type="application/json" id="matriz-dados">{"fonte":"Guia Mestre v1.0-RC — Quadro 1 (Matriz Curricular)","total":48,"licoes":[{"numero":1,"modulo":1,"titulo":"Bem-vindo a Adulão: o quartel dos feridos","textoBase":"1Sm 22.1–2; 2Tm 2.3–4","objetivo":"Acolher o ferido, validar sua dor e mostrar que, pela graça, Cristo chama abatidos para iniciar restauração em comunhão.","produzida":true},{"numero":2,"modulo":1,"titulo":"O Comandante que entra na caverna","textoBase":"Jo 14.16–26","objetivo":"Apresentar o Cristo que se aproxima, revela o Pai e envia o Espírito, trazendo socorro real ao homem ferido e conduzindo-o ao caminho do Reino.","produzida":true},{"numero":3,"modulo":1,"titulo":"Contemplação: resposta de gratidão ao resgate","textoBase":"2Co 3.18","objetivo":"Ensinar que a transformação do discípulo nasce da visão da glória de Cristo como resposta de gratidão, não de esforço meramente humano.","produzida":true},{"numero":4,"modulo":1,"titulo":"A Bíblia: O Manual do Guerreiro","textoBase":"Sl 119.105","objetivo":"Estabelecer a Escritura como referência de fé e conduta para o soldado de Cristo, sob autoridade do Comandante.","produzida":true},{"numero":5,"modulo":1,"titulo":"Insubordinação: a quebra de lealdade que custa a honra","textoBase":"Rm 3.23","objetivo":"Conectar o erro teológico à experiência da perda de honra, mostrando que a deslealdade ao Comandante custa a patente espiritual.","produzida":true},{"numero":6,"modulo":1,"titulo":"Ordem de reintegração: a graça que devolve a patente","textoBase":"Ef 2.8–9","objetivo":"Apresentar a graça não apenas como perdão, mas como um ato oficial de recomissionamento, em que o Comandante assina a ordem que restaura o status e a função do soldado.","produzida":true},{"numero":7,"modulo":1,"titulo":"A Fé: Confiança e Obediência","textoBase":"Hb 11.6","objetivo":"Ensinar que fé é resposta confiante ao Comandante, mesmo sob pressão, sustentada pela graça.","produzida":true},{"numero":8,"modulo":1,"titulo":"Apresentando-se para o serviço: a rendição que restaura a confiança","textoBase":"At 3.19","objetivo":"Demonstrar que o arrependimento não é apenas remorso, mas a ação concreta de se reapresentar ao Quartel-General para servir sob novas ordens.","produzida":true},{"numero":9,"modulo":1,"titulo":"A Cruz: O Juramento de Lealdade","textoBase":"Lc 9.23","objetivo":"Ensinar o custo do discipulado como entrega diária ao Comandante, em resposta amorosa ao que Ele fez por nós.","produzida":true},{"numero":10,"modulo":1,"titulo":"Nova farda, nova missão","textoBase":"Jo 3.3–8","objetivo":"Apresentar o novo nascimento como o recebimento de uma nova farda (nova natureza), capacitando o soldado para uma nova missão (propósito útil), tirando o foco apenas da mudança de status.","produzida":true},{"numero":11,"modulo":1,"titulo":"O Espírito Santo: O Instrutor Interior","textoBase":"Jo 16.13","objetivo":"Ensinar que o Espírito Santo é quem guia, corrige e fortalece o discípulo por dentro, formando obediência.","produzida":true},{"numero":12,"modulo":1,"titulo":"Comunhão e Vida de Tropa","textoBase":"At 2.42–47","objetivo":"Demonstrar que ninguém cresce isolado e que a tropa do Cordeiro é o ambiente da edificação e do cuidado.","produzida":true},{"numero":13,"modulo":2,"titulo":"Oração: Comunicação com o Quartel-General","textoBase":"Fp 4.6–7","objetivo":"Ensinar a oração como diálogo vital e diário com o Comandante.","produzida":false},{"numero":14,"modulo":2,"titulo":"A Igreja: Companhia de Irmãos de Armas","textoBase":"Ef 4.11–16","objetivo":"Mostrar a Igreja como corpo que serve, se edifica e marcha junto.","produzida":false},{"numero":15,"modulo":2,"titulo":"O Batismo: Juramento de Fidelidade","textoBase":"Rm 6.3–4","objetivo":"Explicar o batismo como aliança pública de morte para o pecado e vida para Deus.","produzida":false},{"numero":16,"modulo":2,"titulo":"Santificação: Separação e Consagração","textoBase":"1Ts 4.3–7","objetivo":"Ensinar que santificação é processo de separação do pecado e dedicação a Deus.","produzida":false},{"numero":17,"modulo":2,"titulo":"Combate Espiritual e Tentação","textoBase":"Ef 6.10–13","objetivo":"Ensinar sobre a guerra espiritual e o uso das armas de Deus.","produzida":false},{"numero":18,"modulo":2,"titulo":"Adoração: Estratégia de Combate Espiritual","textoBase":"2Cr 20.21–22","objetivo":"Mostrar que adorar é guerrear com fé e que o louvor antecede a vitória.","produzida":false},{"numero":19,"modulo":2,"titulo":"Mordomia e Obediência Financeira","textoBase":"2Co 9.6–8","objetivo":"Ensinar fidelidade a Deus nos recursos como resposta de fé e prestação de contas ao Senhor.","produzida":false},{"numero":20,"modulo":2,"titulo":"O Lar Cristão: A Base da Tropa","textoBase":"Js 24.15","objetivo":"Ensinar que a casa é o primeiro campo de discipulado e de lealdade.","produzida":false},{"numero":21,"modulo":2,"titulo":"Perdão e Reconciliação: Cura das Feridas de Guerra","textoBase":"Mt 18.21–22","objetivo":"Ensinar que o perdão restaura a comunhão e impede contaminação da tropa.","produzida":false},{"numero":22,"modulo":2,"titulo":"Ética e Testemunho na Corporação","textoBase":"Mt 5.13–16","objetivo":"Ensinar o valor do testemunho cristão no ambiente de serviço militar.","produzida":false},{"numero":23,"modulo":2,"titulo":"A Palavra e o Juramento","textoBase":"Tg 5.12","objetivo":"Ensinar integridade no falar e fidelidade aos compromissos assumidos.","produzida":false},{"numero":24,"modulo":2,"titulo":"Preparação para o Batismo: Revisão e Entrega","textoBase":"At 8.36–38","objetivo":"Revisar fundamentos e conduzir o aluno à consagração pública.","produzida":false},{"numero":25,"modulo":3,"titulo":"O Espírito Santo e os Dons de Serviço","textoBase":"1Co 12.4–7","objetivo":"Ensinar que os dons são dados para servir e edificar o corpo de Cristo.","produzida":false},{"numero":26,"modulo":3,"titulo":"O Fruto do Espírito: Caráter do Guerreiro de Cristo","textoBase":"Gl 5.22–23","objetivo":"Mostrar que o fruto é sinal de maturidade espiritual e da patente interior.","produzida":false},{"numero":27,"modulo":3,"titulo":"A Mente de Cristo","textoBase":"Fp 2.5–8","objetivo":"Ensinar a pensar e agir com humildade, obediência e serviço.","produzida":false},{"numero":28,"modulo":3,"titulo":"Disciplina Espiritual: Treino e Constância","textoBase":"1Tm 4.7–8","objetivo":"Mostrar que piedade se fortalece por treino constante como resposta à graça, não por mérito.","produzida":false},{"numero":29,"modulo":3,"titulo":"Santidade no Campo de Batalha","textoBase":"1Pe 1.15–16","objetivo":"Ensinar santidade como modo de vida em qualquer ambiente.","produzida":false},{"numero":30,"modulo":3,"titulo":"Autoridade e Submissão","textoBase":"Hb 13.17","objetivo":"Ensinar a obedecer e a liderar com humildade, revelando maturidade.","produzida":false},{"numero":31,"modulo":3,"titulo":"Amor e Camaradagem","textoBase":"Jo 15.12–13","objetivo":"Ensinar o amor fraternal como vínculo da tropa espiritual.","produzida":false},{"numero":32,"modulo":3,"titulo":"Humildade e Serviço","textoBase":"Mc 10.43–45","objetivo":"Ensinar que servir é o maior posto no Reino de Deus.","produzida":false},{"numero":33,"modulo":3,"titulo":"Enfrentando o Sofrimento e as Provações","textoBase":"Rm 5.3–5","objetivo":"Ensinar a ver o sofrimento como instrumento de crescimento e perseverança.","produzida":false},{"numero":34,"modulo":3,"titulo":"Alegria e Esperança em Meio à Luta","textoBase":"Fp 4.4–7","objetivo":"Ensinar a manter alegria e contentamento mesmo em combate.","produzida":false},{"numero":35,"modulo":3,"titulo":"Testemunho Público e Coerência de Vida","textoBase":"Mt 5.14–16","objetivo":"Ensinar o poder do exemplo visível do cristão no meio militar.","produzida":false},{"numero":36,"modulo":3,"titulo":"Multiplicação: O Discípulo que Forma Discípulos","textoBase":"2Tm 2.2","objetivo":"Ensinar que o ciclo do discipulado se completa quando formamos outros.","produzida":false},{"numero":37,"modulo":4,"titulo":"A Grande Comissão: O Chamado para Avançar","textoBase":"Mt 28.18–20","objetivo":"Ensinar que todo discípulo maduro é enviado.","produzida":false},{"numero":38,"modulo":4,"titulo":"Evangelismo Relacional no Contexto Militar","textoBase":"Jo 4.28–30","objetivo":"Ensinar a evangelizar com sabedoria e testemunho no dia a dia.","produzida":false},{"numero":39,"modulo":4,"titulo":"Vocação e Propósito na Corporação","textoBase":"Cl 3.23–24","objetivo":"Mostrar que o trabalho e a farda podem ser serviço ao Senhor.","produzida":false},{"numero":40,"modulo":4,"titulo":"Liderança Espiritual e Influência pelo Exemplo","textoBase":"1Pe 5.2–3","objetivo":"Ensinar que liderança cristã é serviço e autoridade moral.","produzida":false},{"numero":41,"modulo":4,"titulo":"Unidade e Cooperação no Corpo de Cristo","textoBase":"Ef 4.1–3","objetivo":"Ensinar a importância da unidade e do trabalho conjunto na missão.","produzida":false},{"numero":42,"modulo":4,"titulo":"Serviço e Diaconia: Grandeza na Humildade","textoBase":"Jo 13.12–15","objetivo":"Ensinar o valor do serviço humilde, à semelhança de Cristo.","produzida":false},{"numero":43,"modulo":4,"titulo":"Oração Intercessora e Batalha Espiritual","textoBase":"1Tm 2.1–3","objetivo":"Ensinar o poder da intercessão como combate em favor de outros.","produzida":false},{"numero":44,"modulo":4,"titulo":"Missões e Compaixão Global","textoBase":"Mc 16.15; At 1.8","objetivo":"Ampliar a visão missionária para além dos muros da caserna.","produzida":false},{"numero":45,"modulo":4,"titulo":"Perseverança e Fidelidade até o Fim","textoBase":"Hb 10.35–39","objetivo":"Ensinar a manter fé e lealdade mesmo nas provações.","produzida":false},{"numero":46,"modulo":4,"titulo":"A Volta do Rei: Prontidão e Santidade","textoBase":"Ap 22.12–13","objetivo":"Ensinar que a esperança da volta de Cristo sustenta a fidelidade presente.","produzida":false},{"numero":47,"modulo":4,"titulo":"Recompensas e Galardões do Guerreiro Fiel","textoBase":"2Tm 4.7–8","objetivo":"Mostrar que o serviço fiel tem recompensa eterna.","produzida":false},{"numero":48,"modulo":4,"titulo":"Formatura do Soldado de Cristo","textoBase":"Fp 3.13–14","objetivo":"Celebrar a conclusão do discipulado e o envio para formar outros.","produzida":false}]}</script>
 <script>(function(){
 "use strict";
-var ATOS=[{"id":0,"rotulo":"Ato 0 — A Caverna","tela":1},{"id":1,"rotulo":"Ato I — A Dor","tela":2},{"id":2,"rotulo":"Ato II — O Que Já Acontecia","tela":5},{"id":3,"rotulo":"Ato III — O Problema","tela":7},{"id":4,"rotulo":"Ato IV — A Concepção","tela":9},{"id":5,"rotulo":"Ato V — A Arquitetura","tela":13},{"id":6,"rotulo":"Ato VI — A Marcha","tela":18},{"id":7,"rotulo":"Ato VII — Identidade Visível","tela":22},{"id":8,"rotulo":"Ato VIII — O Horizonte","tela":26},{"id":9,"rotulo":"Ato IX — A Decisão","tela":29}];
-var MATRIZ={"fonte":"Guia Mestre v1.0-RC — Quadro 1 (Matriz Curricular)","total":48,"licoes":[{"numero":1,"modulo":1,"titulo":"Bem-vindo a Adulão: o quartel dos feridos","textoBase":"2Tm 2.3","objetivo":"Acolher o ferido antes de qualquer exigência: Adulão é abrigo, não vitrine de heróis.","produzida":true},{"numero":2,"modulo":1,"titulo":"O Comandante que entra na caverna","textoBase":"Jo 14.18","objetivo":"Mostrar Cristo como o Senhor que desce ao lugar do fracasso para resgatar.","produzida":true},{"numero":3,"modulo":1,"titulo":"Contemplação: resposta de gratidão ao resgate","textoBase":"2Co 3.18","objetivo":"Ensinar a contemplação como resposta ao resgate, não técnica para merecer.","produzida":true},{"numero":4,"modulo":1,"titulo":"A Bíblia: o Manual do Guerreiro","textoBase":"Sl 119.105","objetivo":"Firmar a autoridade da Escritura como manual que orienta a marcha.","produzida":true},{"numero":5,"modulo":1,"titulo":"Insubordinação: a quebra de lealdade que custa a honra","textoBase":"Rm 3.23","objetivo":"Apresentar o pecado como quebra de lealdade, com diagnóstico que cura.","produzida":true},{"numero":6,"modulo":1,"titulo":"Ordem de reintegração: a graça que devolve a patente","textoBase":"Ef 2.8-9","objetivo":"Anunciar a graça que reintegra: dom de Cristo, não salário do esforço.","produzida":true},{"numero":7,"modulo":1,"titulo":"A Fé: Confiança e Obediência","textoBase":"Hb 11.6","objetivo":"Ensinar a fé como confiança que se traduz em obediência.","produzida":true},{"numero":8,"modulo":1,"titulo":"Apresentando-se para o serviço: a rendição que restaura a confiança","textoBase":"At 3.19","objetivo":"Demonstrar que o arrependimento é reapresentar-se ao Quartel-General para servir sob novas ordens.","produzida":true},{"numero":9,"modulo":1,"titulo":"A Cruz: O Juramento de Lealdade","textoBase":"Lc 9.23","objetivo":"Ensinar o custo do discipulado como entrega diária, em resposta amorosa.","produzida":true},{"numero":10,"modulo":1,"titulo":"Nova farda, nova missão","textoBase":"Jo 3.3-8","objetivo":"Apresentar o novo nascimento como nova natureza que habilita a um propósito útil.","produzida":true},{"numero":11,"modulo":1,"titulo":"O Espírito Santo: O Instrutor Interior","textoBase":"Jo 16.13","objetivo":"Ensinar que o Espírito guia, corrige e fortalece por dentro, formando obediência.","produzida":true},{"numero":12,"modulo":1,"titulo":"Comunhão e Vida de Tropa","textoBase":"At 2.42-47","objetivo":"Demonstrar que ninguém cresce isolado: a tropa é ambiente de edificação e cuidado.","produzida":true},{"numero":13,"modulo":2,"titulo":"Oração: Comunicação com o Quartel-General","textoBase":"Fp 4.6-7","objetivo":"Ensinar a oração como diálogo vital e diário com o Comandante.","produzida":false},{"numero":14,"modulo":2,"titulo":"A Igreja: Companhia de Irmãos de Armas","textoBase":"Ef 4.11-16","objetivo":"Mostrar a Igreja como corpo que serve, se edifica e marcha junto.","produzida":false},{"numero":15,"modulo":2,"titulo":"O Batismo: Juramento de Fidelidade","textoBase":"Rm 6.3-4","objetivo":"Explicar o batismo como aliança pública de morte para o pecado e vida para Deus.","produzida":false},{"numero":16,"modulo":2,"titulo":"Santificação: Separação e Consagração","textoBase":"1Ts 4.3-7","objetivo":"Ensinar a santificação como separação do pecado e dedicação a Deus.","produzida":false},{"numero":17,"modulo":2,"titulo":"Combate Espiritual e Tentação","textoBase":"Ef 6.10-13","objetivo":"Ensinar sobre a guerra espiritual e o uso das armas de Deus.","produzida":false},{"numero":18,"modulo":2,"titulo":"Adoração: Estratégia de Combate Espiritual","textoBase":"2Cr 20.21-22","objetivo":"Mostrar que adorar é guerrear com fé e que o louvor antecede a vitória.","produzida":false},{"numero":19,"modulo":2,"titulo":"Mordomia e Obediência Financeira","textoBase":"2Co 9.6-8","objetivo":"Ensinar fidelidade nos recursos como resposta de fé e prestação de contas.","produzida":false},{"numero":20,"modulo":2,"titulo":"O Lar Cristão: A Base da Tropa","textoBase":"Js 24.15","objetivo":"Ensinar que a casa é o primeiro campo de discipulado e de lealdade.","produzida":false},{"numero":21,"modulo":2,"titulo":"Perdão e Reconciliação: Cura das Feridas de Guerra","textoBase":"Mt 18.21-22","objetivo":"Ensinar que o perdão restaura a comunhão e impede contaminação da tropa.","produzida":false},{"numero":22,"modulo":2,"titulo":"Ética e Testemunho na Corporação","textoBase":"Mt 5.13-16","objetivo":"Ensinar o valor do testemunho cristão no ambiente de serviço.","produzida":false},{"numero":23,"modulo":2,"titulo":"A Palavra e o Juramento","textoBase":"Tg 5.12","objetivo":"Ensinar integridade no falar e fidelidade aos compromissos assumidos.","produzida":false},{"numero":24,"modulo":2,"titulo":"Preparação para o Batismo: Revisão e Entrega","textoBase":"At 8.36-38","objetivo":"Revisar fundamentos e conduzir o discípulo à consagração pública.","produzida":false},{"numero":25,"modulo":3,"titulo":"O Espírito Santo e os Dons de Serviço","textoBase":"1Co 12.4-7","objetivo":"Ensinar que os dons são dados para servir e edificar o corpo de Cristo.","produzida":false},{"numero":26,"modulo":3,"titulo":"O Fruto do Espírito: Caráter do Guerreiro de Cristo","textoBase":"Gl 5.22-23","objetivo":"Mostrar que o fruto é sinal de maturidade e da patente interior.","produzida":false},{"numero":27,"modulo":3,"titulo":"A Mente de Cristo","textoBase":"Fp 2.5-8","objetivo":"Ensinar a pensar e agir com humildade, obediência e serviço.","produzida":false},{"numero":28,"modulo":3,"titulo":"Disciplina Espiritual: Treino e Constância","textoBase":"1Tm 4.7-8","objetivo":"Mostrar que a piedade se fortalece por treino, como resposta à graça.","produzida":false},{"numero":29,"modulo":3,"titulo":"Santidade no Campo de Batalha","textoBase":"1Pe 1.15-16","objetivo":"Ensinar santidade como modo de vida em qualquer ambiente.","produzida":false},{"numero":30,"modulo":3,"titulo":"Autoridade e Submissão","textoBase":"Hb 13.17","objetivo":"Ensinar a obedecer e a liderar com humildade, revelando maturidade.","produzida":false},{"numero":31,"modulo":3,"titulo":"Amor e Camaradagem","textoBase":"Jo 15.12-13","objetivo":"Ensinar o amor fraternal como vínculo da tropa espiritual.","produzida":false},{"numero":32,"modulo":3,"titulo":"Humildade e Serviço","textoBase":"Mc 10.43-45","objetivo":"Ensinar que servir é o maior posto no Reino de Deus.","produzida":false},{"numero":33,"modulo":3,"titulo":"Enfrentando o Sofrimento e as Provações","textoBase":"Rm 5.3-5","objetivo":"Ensinar a ver o sofrimento como instrumento de crescimento e perseverança.","produzida":false},{"numero":34,"modulo":3,"titulo":"Alegria e Esperança em Meio à Luta","textoBase":"Fp 4.4-7","objetivo":"Ensinar a manter alegria e contentamento mesmo em combate.","produzida":false},{"numero":35,"modulo":3,"titulo":"Testemunho Público e Coerência de Vida","textoBase":"Mt 5.14-16","objetivo":"Ensinar o poder do exemplo visível no meio da tropa.","produzida":false},{"numero":36,"modulo":3,"titulo":"Multiplicação: O Discípulo que Forma Discípulos","textoBase":"2Tm 2.2","objetivo":"Ensinar que o ciclo do discipulado se completa quando formamos outros.","produzida":false},{"numero":37,"modulo":4,"titulo":"A Grande Comissão: O Chamado para Avançar","textoBase":"Mt 28.18-20","objetivo":"Ensinar que todo discípulo maduro é enviado.","produzida":false},{"numero":38,"modulo":4,"titulo":"Evangelismo Relacional no Contexto Militar","textoBase":"Jo 4.28-30","objetivo":"Ensinar a evangelizar com sabedoria e testemunho no dia a dia.","produzida":false},{"numero":39,"modulo":4,"titulo":"Vocação e Propósito na Corporação","textoBase":"Cl 3.23-24","objetivo":"Mostrar que o trabalho e a farda podem ser serviço ao Senhor.","produzida":false},{"numero":40,"modulo":4,"titulo":"Liderança Espiritual e Influência pelo Exemplo","textoBase":"1Pe 5.2-3","objetivo":"Ensinar que liderança cristã é serviço e autoridade moral.","produzida":false},{"numero":41,"modulo":4,"titulo":"Unidade e Cooperação no Corpo de Cristo","textoBase":"Ef 4.1-3","objetivo":"Ensinar a importância da unidade e do trabalho conjunto na missão.","produzida":false},{"numero":42,"modulo":4,"titulo":"Serviço e Diaconia: Grandeza na Humildade","textoBase":"Jo 13.12-15","objetivo":"Ensinar o valor do serviço humilde, à semelhança de Cristo.","produzida":false},{"numero":43,"modulo":4,"titulo":"Oração Intercessora e Batalha Espiritual","textoBase":"1Tm 2.1-3","objetivo":"Ensinar o poder da intercessão como combate em favor de outros.","produzida":false},{"numero":44,"modulo":4,"titulo":"Missões e Compaixão Global","textoBase":"Mc 16.15; At 1.8","objetivo":"Ampliar a visão missionária para além dos muros da caserna.","produzida":false},{"numero":45,"modulo":4,"titulo":"Perseverança e Fidelidade até o Fim","textoBase":"Hb 10.35-39","objetivo":"Ensinar a manter fé e lealdade mesmo nas provações.","produzida":false},{"numero":46,"modulo":4,"titulo":"A Volta do Rei: Prontidão e Santidade","textoBase":"Ap 22.12-13","objetivo":"Ensinar que a esperança da volta de Cristo sustenta a fidelidade presente.","produzida":false},{"numero":47,"modulo":4,"titulo":"Recompensas e Galardões do Guerreiro Fiel","textoBase":"2Tm 4.7-8","objetivo":"Mostrar que o serviço fiel tem recompensa eterna.","produzida":false},{"numero":48,"modulo":4,"titulo":"Formatura do Soldado de Cristo","textoBase":"Fp 3.13-14","objetivo":"Celebrar a conclusão do discipulado e o envio para formar outros.","produzida":false}]};
-var ARMOR_FILL=[10,18,22,30];
+var ATOS=[{"id":0,"rotulo":"Ato 0 — A Caverna","tela":1},{"id":1,"rotulo":"Ato I — A Dor","tela":3},{"id":2,"rotulo":"Ato II — O Que Já Acontecia","tela":6},{"id":3,"rotulo":"Ato III — O Problema","tela":8},{"id":4,"rotulo":"Ato IV — A Concepção","tela":10},{"id":5,"rotulo":"Ato V — A Arquitetura","tela":14},{"id":6,"rotulo":"Ato VI — A Marcha","tela":19},{"id":7,"rotulo":"Ato VII — Identidade Visível","tela":23},{"id":8,"rotulo":"Ato VIII — O Horizonte","tela":27},{"id":9,"rotulo":"Ato IX — A Decisão","tela":32}];
+var MATRIZ={"fonte":"Guia Mestre v1.0-RC — Quadro 1 (Matriz Curricular)","total":48,"licoes":[{"numero":1,"modulo":1,"titulo":"Bem-vindo a Adulão: o quartel dos feridos","textoBase":"1Sm 22.1–2; 2Tm 2.3–4","objetivo":"Acolher o ferido, validar sua dor e mostrar que, pela graça, Cristo chama abatidos para iniciar restauração em comunhão.","produzida":true},{"numero":2,"modulo":1,"titulo":"O Comandante que entra na caverna","textoBase":"Jo 14.16–26","objetivo":"Apresentar o Cristo que se aproxima, revela o Pai e envia o Espírito, trazendo socorro real ao homem ferido e conduzindo-o ao caminho do Reino.","produzida":true},{"numero":3,"modulo":1,"titulo":"Contemplação: resposta de gratidão ao resgate","textoBase":"2Co 3.18","objetivo":"Ensinar que a transformação do discípulo nasce da visão da glória de Cristo como resposta de gratidão, não de esforço meramente humano.","produzida":true},{"numero":4,"modulo":1,"titulo":"A Bíblia: O Manual do Guerreiro","textoBase":"Sl 119.105","objetivo":"Estabelecer a Escritura como referência de fé e conduta para o soldado de Cristo, sob autoridade do Comandante.","produzida":true},{"numero":5,"modulo":1,"titulo":"Insubordinação: a quebra de lealdade que custa a honra","textoBase":"Rm 3.23","objetivo":"Conectar o erro teológico à experiência da perda de honra, mostrando que a deslealdade ao Comandante custa a patente espiritual.","produzida":true},{"numero":6,"modulo":1,"titulo":"Ordem de reintegração: a graça que devolve a patente","textoBase":"Ef 2.8–9","objetivo":"Apresentar a graça não apenas como perdão, mas como um ato oficial de recomissionamento, em que o Comandante assina a ordem que restaura o status e a função do soldado.","produzida":true},{"numero":7,"modulo":1,"titulo":"A Fé: Confiança e Obediência","textoBase":"Hb 11.6","objetivo":"Ensinar que fé é resposta confiante ao Comandante, mesmo sob pressão, sustentada pela graça.","produzida":true},{"numero":8,"modulo":1,"titulo":"Apresentando-se para o serviço: a rendição que restaura a confiança","textoBase":"At 3.19","objetivo":"Demonstrar que o arrependimento não é apenas remorso, mas a ação concreta de se reapresentar ao Quartel-General para servir sob novas ordens.","produzida":true},{"numero":9,"modulo":1,"titulo":"A Cruz: O Juramento de Lealdade","textoBase":"Lc 9.23","objetivo":"Ensinar o custo do discipulado como entrega diária ao Comandante, em resposta amorosa ao que Ele fez por nós.","produzida":true},{"numero":10,"modulo":1,"titulo":"Nova farda, nova missão","textoBase":"Jo 3.3–8","objetivo":"Apresentar o novo nascimento como o recebimento de uma nova farda (nova natureza), capacitando o soldado para uma nova missão (propósito útil), tirando o foco apenas da mudança de status.","produzida":true},{"numero":11,"modulo":1,"titulo":"O Espírito Santo: O Instrutor Interior","textoBase":"Jo 16.13","objetivo":"Ensinar que o Espírito Santo é quem guia, corrige e fortalece o discípulo por dentro, formando obediência.","produzida":true},{"numero":12,"modulo":1,"titulo":"Comunhão e Vida de Tropa","textoBase":"At 2.42–47","objetivo":"Demonstrar que ninguém cresce isolado e que a tropa do Cordeiro é o ambiente da edificação e do cuidado.","produzida":true},{"numero":13,"modulo":2,"titulo":"Oração: Comunicação com o Quartel-General","textoBase":"Fp 4.6–7","objetivo":"Ensinar a oração como diálogo vital e diário com o Comandante.","produzida":false},{"numero":14,"modulo":2,"titulo":"A Igreja: Companhia de Irmãos de Armas","textoBase":"Ef 4.11–16","objetivo":"Mostrar a Igreja como corpo que serve, se edifica e marcha junto.","produzida":false},{"numero":15,"modulo":2,"titulo":"O Batismo: Juramento de Fidelidade","textoBase":"Rm 6.3–4","objetivo":"Explicar o batismo como aliança pública de morte para o pecado e vida para Deus.","produzida":false},{"numero":16,"modulo":2,"titulo":"Santificação: Separação e Consagração","textoBase":"1Ts 4.3–7","objetivo":"Ensinar que santificação é processo de separação do pecado e dedicação a Deus.","produzida":false},{"numero":17,"modulo":2,"titulo":"Combate Espiritual e Tentação","textoBase":"Ef 6.10–13","objetivo":"Ensinar sobre a guerra espiritual e o uso das armas de Deus.","produzida":false},{"numero":18,"modulo":2,"titulo":"Adoração: Estratégia de Combate Espiritual","textoBase":"2Cr 20.21–22","objetivo":"Mostrar que adorar é guerrear com fé e que o louvor antecede a vitória.","produzida":false},{"numero":19,"modulo":2,"titulo":"Mordomia e Obediência Financeira","textoBase":"2Co 9.6–8","objetivo":"Ensinar fidelidade a Deus nos recursos como resposta de fé e prestação de contas ao Senhor.","produzida":false},{"numero":20,"modulo":2,"titulo":"O Lar Cristão: A Base da Tropa","textoBase":"Js 24.15","objetivo":"Ensinar que a casa é o primeiro campo de discipulado e de lealdade.","produzida":false},{"numero":21,"modulo":2,"titulo":"Perdão e Reconciliação: Cura das Feridas de Guerra","textoBase":"Mt 18.21–22","objetivo":"Ensinar que o perdão restaura a comunhão e impede contaminação da tropa.","produzida":false},{"numero":22,"modulo":2,"titulo":"Ética e Testemunho na Corporação","textoBase":"Mt 5.13–16","objetivo":"Ensinar o valor do testemunho cristão no ambiente de serviço militar.","produzida":false},{"numero":23,"modulo":2,"titulo":"A Palavra e o Juramento","textoBase":"Tg 5.12","objetivo":"Ensinar integridade no falar e fidelidade aos compromissos assumidos.","produzida":false},{"numero":24,"modulo":2,"titulo":"Preparação para o Batismo: Revisão e Entrega","textoBase":"At 8.36–38","objetivo":"Revisar fundamentos e conduzir o aluno à consagração pública.","produzida":false},{"numero":25,"modulo":3,"titulo":"O Espírito Santo e os Dons de Serviço","textoBase":"1Co 12.4–7","objetivo":"Ensinar que os dons são dados para servir e edificar o corpo de Cristo.","produzida":false},{"numero":26,"modulo":3,"titulo":"O Fruto do Espírito: Caráter do Guerreiro de Cristo","textoBase":"Gl 5.22–23","objetivo":"Mostrar que o fruto é sinal de maturidade espiritual e da patente interior.","produzida":false},{"numero":27,"modulo":3,"titulo":"A Mente de Cristo","textoBase":"Fp 2.5–8","objetivo":"Ensinar a pensar e agir com humildade, obediência e serviço.","produzida":false},{"numero":28,"modulo":3,"titulo":"Disciplina Espiritual: Treino e Constância","textoBase":"1Tm 4.7–8","objetivo":"Mostrar que piedade se fortalece por treino constante como resposta à graça, não por mérito.","produzida":false},{"numero":29,"modulo":3,"titulo":"Santidade no Campo de Batalha","textoBase":"1Pe 1.15–16","objetivo":"Ensinar santidade como modo de vida em qualquer ambiente.","produzida":false},{"numero":30,"modulo":3,"titulo":"Autoridade e Submissão","textoBase":"Hb 13.17","objetivo":"Ensinar a obedecer e a liderar com humildade, revelando maturidade.","produzida":false},{"numero":31,"modulo":3,"titulo":"Amor e Camaradagem","textoBase":"Jo 15.12–13","objetivo":"Ensinar o amor fraternal como vínculo da tropa espiritual.","produzida":false},{"numero":32,"modulo":3,"titulo":"Humildade e Serviço","textoBase":"Mc 10.43–45","objetivo":"Ensinar que servir é o maior posto no Reino de Deus.","produzida":false},{"numero":33,"modulo":3,"titulo":"Enfrentando o Sofrimento e as Provações","textoBase":"Rm 5.3–5","objetivo":"Ensinar a ver o sofrimento como instrumento de crescimento e perseverança.","produzida":false},{"numero":34,"modulo":3,"titulo":"Alegria e Esperança em Meio à Luta","textoBase":"Fp 4.4–7","objetivo":"Ensinar a manter alegria e contentamento mesmo em combate.","produzida":false},{"numero":35,"modulo":3,"titulo":"Testemunho Público e Coerência de Vida","textoBase":"Mt 5.14–16","objetivo":"Ensinar o poder do exemplo visível do cristão no meio militar.","produzida":false},{"numero":36,"modulo":3,"titulo":"Multiplicação: O Discípulo que Forma Discípulos","textoBase":"2Tm 2.2","objetivo":"Ensinar que o ciclo do discipulado se completa quando formamos outros.","produzida":false},{"numero":37,"modulo":4,"titulo":"A Grande Comissão: O Chamado para Avançar","textoBase":"Mt 28.18–20","objetivo":"Ensinar que todo discípulo maduro é enviado.","produzida":false},{"numero":38,"modulo":4,"titulo":"Evangelismo Relacional no Contexto Militar","textoBase":"Jo 4.28–30","objetivo":"Ensinar a evangelizar com sabedoria e testemunho no dia a dia.","produzida":false},{"numero":39,"modulo":4,"titulo":"Vocação e Propósito na Corporação","textoBase":"Cl 3.23–24","objetivo":"Mostrar que o trabalho e a farda podem ser serviço ao Senhor.","produzida":false},{"numero":40,"modulo":4,"titulo":"Liderança Espiritual e Influência pelo Exemplo","textoBase":"1Pe 5.2–3","objetivo":"Ensinar que liderança cristã é serviço e autoridade moral.","produzida":false},{"numero":41,"modulo":4,"titulo":"Unidade e Cooperação no Corpo de Cristo","textoBase":"Ef 4.1–3","objetivo":"Ensinar a importância da unidade e do trabalho conjunto na missão.","produzida":false},{"numero":42,"modulo":4,"titulo":"Serviço e Diaconia: Grandeza na Humildade","textoBase":"Jo 13.12–15","objetivo":"Ensinar o valor do serviço humilde, à semelhança de Cristo.","produzida":false},{"numero":43,"modulo":4,"titulo":"Oração Intercessora e Batalha Espiritual","textoBase":"1Tm 2.1–3","objetivo":"Ensinar o poder da intercessão como combate em favor de outros.","produzida":false},{"numero":44,"modulo":4,"titulo":"Missões e Compaixão Global","textoBase":"Mc 16.15; At 1.8","objetivo":"Ampliar a visão missionária para além dos muros da caserna.","produzida":false},{"numero":45,"modulo":4,"titulo":"Perseverança e Fidelidade até o Fim","textoBase":"Hb 10.35–39","objetivo":"Ensinar a manter fé e lealdade mesmo nas provações.","produzida":false},{"numero":46,"modulo":4,"titulo":"A Volta do Rei: Prontidão e Santidade","textoBase":"Ap 22.12–13","objetivo":"Ensinar que a esperança da volta de Cristo sustenta a fidelidade presente.","produzida":false},{"numero":47,"modulo":4,"titulo":"Recompensas e Galardões do Guerreiro Fiel","textoBase":"2Tm 4.7–8","objetivo":"Mostrar que o serviço fiel tem recompensa eterna.","produzida":false},{"numero":48,"modulo":4,"titulo":"Formatura do Soldado de Cristo","textoBase":"Fp 3.13–14","objetivo":"Celebrar a conclusão do discipulado e o envio para formar outros.","produzida":false}]};
+var ARMOR_FILL=[11,19,23,33];
+var ARMOR_JUMP=[10,19,23,32];
+var TOTAL=33;
+var STORAGE_KEY="dac-homologacao-v2-tela";
+var MIN_POR_TELA=20/33;
 var currentScreen=1;
 
 var deck=document.getElementById("deck");
@@ -759,7 +1093,7 @@ var sideMenu=document.getElementById("side-menu");
 var screens=[].slice.call(document.querySelectorAll(".screen"));
 
 function goToScreen(n){
-  n=Math.max(1,Math.min(30,n));
+  n=Math.max(1,Math.min(TOTAL,n));
   var el=document.getElementById("tela-"+String(n).padStart(2,"0"));
   if(el){el.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});currentScreen=n;updateUI();}
 }
@@ -796,6 +1130,19 @@ function updateUI(){
   var n=screenFromScroll();
   currentScreen=n;
   updateArmor(n);
+  try{localStorage.setItem(STORAGE_KEY,String(n));}catch(err){}
+  var chip=document.getElementById("progress-chip");
+  var arrows=document.getElementById("nav-arrows");
+  if(n>=1&&!document.body.classList.contains("versao-continua")){
+    var ato=0;
+    for(var i=0;i<ATOS.length;i++){if(n>=ATOS[i].tela)ato=i;}
+    var rest=Math.max(1,Math.ceil((TOTAL-n)*MIN_POR_TELA));
+    if(chip){chip.classList.add("visible");chip.textContent=(ato===0?"Abertura":("Ato "+["0","I","II","III","IV","V","VI","VII","VIII","IX"][ato]+" de IX"))+" · ~"+rest+" min restantes";}
+    if(arrows)arrows.classList.add("visible");
+  }else{
+    if(chip)chip.classList.remove("visible");
+  }
+  if(n<9&&chip){/* armor not yet */}
 }
 
 var reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -835,10 +1182,9 @@ document.addEventListener("keydown",function(e){
   if(e.key==="ArrowDown"||e.key==="PageDown"){e.preventDefault();goToScreen(currentScreen+1);}
   else if(e.key==="ArrowUp"||e.key==="PageUp"){e.preventDefault();goToScreen(currentScreen-1);}
   else if(e.key==="Home"){e.preventDefault();goToScreen(1);}
-  else if(e.key==="End"){e.preventDefault();goToScreen(30);}
+  else if(e.key==="End"){e.preventDefault();goToScreen(TOTAL);}
 });
 
-var ARMOR_JUMP=[9,18,22,29];
 document.querySelectorAll(".armor-piece").forEach(function(btn,i){
   btn.addEventListener("click",function(){goToScreen(ARMOR_JUMP[i]);});
 });
@@ -853,9 +1199,10 @@ document.getElementById("menu-toggle").addEventListener("click",function(){
   sideMenu.setAttribute("aria-hidden",open?"false":"true");
 });
 document.getElementById("modo-toggle").addEventListener("click",function(){
-  document.body.classList.toggle("modo-leitura");
+  document.body.classList.toggle("versao-continua");
+if(document.body.classList.contains("versao-continua")){document.documentElement.style.height="auto";document.body.style.height="auto";document.body.style.overflow="auto";if(deck){deck.style.height="auto";deck.style.overflow="visible";deck.style.scrollSnapType="none";}}else{location.reload();}
   this.setAttribute("aria-pressed",document.body.classList.contains("modo-leitura"));
-  this.textContent=document.body.classList.contains("modo-leitura")?"Modo apresentação":"Modo leitura";
+  var on=document.body.classList.contains("versao-continua");this.setAttribute("aria-pressed",on);this.textContent=on?"Versão em telas":"Versão contínua";
 });
 
 document.querySelectorAll(".flip-card").forEach(function(card){
@@ -888,32 +1235,37 @@ document.querySelectorAll(".anatomia-btn").forEach(function(btn){
   });
 });
 
-var filtroAtivo=0;
+var filtroAtivo=1;
 function applyMatrizFilter(mod){
   filtroAtivo=mod;
-  document.querySelectorAll(".matriz-tabela tbody tr").forEach(function(row){
+  document.querySelectorAll(".matriz-tabela tbody tr, .matriz-lista__item").forEach(function(row){
     var m=parseInt(row.dataset.modulo,10);
     var show=filtroAtivo===0||m===filtroAtivo;
-    if(reduceMotion){
-      row.style.display=show?"":"none";
-      row.classList.remove("is-filtering-out","is-filtering-in");
-      return;
-    }
     if(show){
-      if(row.classList.contains("is-filtering-out")||row.style.display==="none"){
-        row.style.display="";
-        row.classList.remove("is-filtering-out");
+      row.removeAttribute("hidden");
+      row.style.display="";
+      row.classList.remove("is-filtering-out");
+      if(!reduceMotion){
         row.classList.add("is-filtering-in");
         setTimeout(function(){row.classList.remove("is-filtering-in");},450);
       }
     }else{
       row.classList.remove("is-filtering-in");
-      row.classList.add("is-filtering-out");
-      setTimeout(function(){
-        if(row.classList.contains("is-filtering-out"))row.style.display="none";
-      },360);
+      if(reduceMotion){
+        row.setAttribute("hidden","");
+        row.style.display="none";
+      }else{
+        row.classList.add("is-filtering-out");
+        setTimeout(function(){
+          if(row.classList.contains("is-filtering-out")){
+            row.setAttribute("hidden","");
+            row.style.display="none";
+          }
+        },360);
+      }
     }
   });
+  updateMatrizContador();
 }
 document.querySelectorAll(".matriz-filtro").forEach(function(btn){
   btn.addEventListener("click",function(){
@@ -926,6 +1278,17 @@ document.querySelectorAll(".matriz-filtro").forEach(function(btn){
     applyMatrizFilter(parseInt(btn.dataset.modulo,10));
   });
 });
+function updateMatrizContador(){
+  var el=document.getElementById("matriz-contador");
+  if(!el)return;
+  var rows=[].slice.call(document.querySelectorAll(".matriz-tabela tbody tr"));
+  var vis=rows.filter(function(r){return !r.hasAttribute("hidden")&&r.style.display!=="none"&&!r.classList.contains("is-filtering-out");}).length;
+  el.textContent=vis+" de 48 lições";
+}
+document.querySelectorAll(".matriz-lista__item").forEach(function(li){
+  li.addEventListener("click",function(){li.classList.toggle("is-open");});
+});
+applyMatrizFilter(1);
 
 var grade=document.getElementById("grade-48");
 var gradeDone=false;
@@ -948,13 +1311,21 @@ if(grade){
 
 document.getElementById("btn-copiar").addEventListener("click",function(){
   var lines=["Resumo de decisões — Discipulando a Caserna","Data: "+new Date().toLocaleDateString("pt-BR"),""];
-  document.querySelectorAll(".checklist li").forEach(function(li,i){
-    var cb=li.querySelector("input");
-    var obs=li.querySelector(".check-obs");
-    var txt=li.querySelector("label span").textContent;
-    lines.push((cb.checked?"[x]":"[ ]")+" "+txt);
-    if(obs&&obs.value.trim())lines.push("    Obs: "+obs.value.trim());
+  document.querySelectorAll(".checklist-bloco").forEach(function(bloco){
+    var h=bloco.querySelector("h3");
+    if(h)lines.push("## "+h.textContent,"");
+    bloco.querySelectorAll(".checklist li").forEach(function(li){
+      var cb=li.querySelector("input");
+      var obs=li.querySelector(".check-obs");
+      var span=li.querySelector("label span");
+      var txt=span?span.textContent:"";
+      lines.push((cb&&cb.checked?"[x]":"[ ]")+" "+txt);
+      if(obs&&obs.value.trim())lines.push("    Obs: "+obs.value.trim());
+    });
+    lines.push("");
   });
+  var geral=document.getElementById("obs-geral");
+  if(geral&&geral.value.trim()){lines.push("Observações gerais:",geral.value.trim(),"");}
   var text=lines.join("\n");
   if(navigator.clipboard&&navigator.clipboard.writeText){
     navigator.clipboard.writeText(text).then(function(){
@@ -989,6 +1360,30 @@ if(escudoWrap&&!reduceMotion){
   escudoWrap.addEventListener("pointermove",onMove);
   escudoWrap.addEventListener("pointerleave",reset);
 }
+
+var navPrev=document.getElementById("nav-prev");
+var navNext=document.getElementById("nav-next");
+if(navPrev)navPrev.addEventListener("click",function(){goToScreen(currentScreen-1);});
+if(navNext)navNext.addEventListener("click",function(){goToScreen(currentScreen+1);});
+
+try{
+  var saved=parseInt(localStorage.getItem(STORAGE_KEY),10);
+  if(saved>1&&saved<=TOTAL){
+    var ban=document.getElementById("resume-banner");
+    var txt=document.getElementById("resume-text");
+    var atoR=0;
+    for(var ri=0;ri<ATOS.length;ri++){if(saved>=ATOS[ri].tela)atoR=ri;}
+    var rotulos=["Abertura","Ato I","Ato II","Ato III","Ato IV","Ato V","Ato VI","Ato VII","Ato VIII","Ato IX"];
+    if(txt)txt.textContent="Retomar de onde parou — "+rotulos[atoR]+"?";
+    if(ban)ban.classList.add("visible");
+    document.getElementById("resume-yes").addEventListener("click",function(){ban.classList.remove("visible");goToScreen(saved);});
+    document.getElementById("resume-no").addEventListener("click",function(){ban.classList.remove("visible");try{localStorage.removeItem(STORAGE_KEY);}catch(e){}goToScreen(1);});
+  }
+}catch(err){}
+
+window.addEventListener("beforeprint",function(){
+  document.querySelectorAll("details.faq-item").forEach(function(d){d.setAttribute("open","");});
+});
 
 updateUI();
 })();</script>

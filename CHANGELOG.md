@@ -25,6 +25,8 @@
 - Passagem editorial vs roteiro v1.1: Tela 15 sem inventário de corpo da Lição 6 (só matriz + Guia 3.4); rótulos completos do ritmo (14); Formatura (18); documento companheiro (26); versos dos símbolos alinhados a 1.6.
 - Motion onda 1: entrada em stagger por tela (`IntersectionObserver`), filete nas aberturas de ato, temperatura de fundo por ato, armadura com lock em cascata, grade-48 sob demanda, `prefers-reduced-motion`.
 - Motion onda 2: flips com spring/hover, parallax do escudo, morph do filtro da matriz, anatomia expansível, microinterações (merch, Adulão, eixos, UI).
+- **v2 documento autônomo:** 33 telas; notas do autor e fechos de ato; telas 01-B / 28-B / 29-B; matriz e checklist redesenhados; `localStorage` + setas + chip de progresso; “Versão contínua”; remoção das notas de condução.
+- **Bloqueio Guia:** prefácio removido do corpo (MD/HTML) → `[página reservada ao prefácio pastoral]`; rascunho em `fontes/guia-mestre/rascunhos/`. Matriz JSON sincronizada ao Quadro 1 (48 linhas).
 
 ## [1.0.0] — 2026-07-27
 
