@@ -1,36 +1,37 @@
 /* Componentes: barra, índice, progresso, tipografia, cartões, selos. */
 
-/* ——— Barra superior (estilo mockup institucional) ——— */
+/* ——— Barra superior ——— */
 .barra {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 45;
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
   align-items: center;
-  gap: var(--esp-4);
-  min-height: 3.75rem;
+  gap: var(--esp-5);
+  min-height: 3.5rem;
   padding: var(--esp-3) var(--esp-5);
-  background: color-mix(in srgb, var(--papel) 88%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--regua) 35%, transparent);
+  background: color-mix(in srgb, var(--papel) 90%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--regua) 28%, transparent);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   transition:
     background 200ms var(--easing),
-    border-color 200ms var(--easing),
-    color 200ms var(--easing);
+    border-color 200ms var(--easing);
 }
 
 body.nav-sobre-navy .barra {
-  background: color-mix(in srgb, var(--navy-esc) 82%, transparent);
-  border-bottom-color: color-mix(in srgb, var(--creme) 8%, transparent);
+  background: color-mix(in srgb, var(--navy-esc) 88%, transparent);
+  border-bottom-color: color-mix(in srgb, var(--creme) 6%, transparent);
 }
 
 .barra__marca {
+  flex: 0 1 auto;
+  min-width: 0;
+  margin-right: auto;
   font-family: var(--fonte-display);
-  font-size: 0.72rem;
+  font-size: 0.6875rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -39,7 +40,6 @@ body.nav-sobre-navy .barra {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 14rem;
 }
 
 body.nav-sobre-navy .barra__marca {
@@ -49,38 +49,42 @@ body.nav-sobre-navy .barra__marca {
 .barra__movimentos {
   display: none;
   align-items: center;
-  justify-content: center;
-  gap: clamp(0.75rem, 1.8vw, 1.75rem);
+  gap: 1.25rem;
 }
 
 .barra__movimento {
   position: relative;
-  padding: var(--esp-2) 0;
+  padding: 0.4rem 0;
   font-family: var(--fonte-display);
-  font-size: 0.62rem;
+  font-size: 0.625rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
-  color: color-mix(in srgb, var(--tinta) 55%, transparent);
+  color: color-mix(in srgb, var(--tinta) 48%, transparent);
   white-space: nowrap;
+  transition: color 160ms var(--easing);
 }
 
 body.nav-sobre-navy .barra__movimento {
-  color: color-mix(in srgb, var(--creme) 55%, transparent);
+  color: color-mix(in srgb, var(--creme) 48%, transparent);
 }
 
 .barra__movimento::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 50%;
+  right: 50%;
   bottom: 0;
   height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 180ms var(--easing);
+  background: var(--bronze);
+  transition:
+    left 180ms var(--easing),
+    right 180ms var(--easing);
+}
+
+body.nav-sobre-navy .barra__movimento::after {
+  background: var(--bronze-cl);
 }
 
 .barra__movimento:hover,
@@ -105,60 +109,60 @@ body.nav-sobre-navy .barra__movimento[aria-current="true"] {
 
 .barra__movimento--ativo::after,
 .barra__movimento[aria-current="true"]::after {
-  transform: scaleX(1);
+  left: 0;
+  right: 0;
 }
 
 .barra__sumario {
-  justify-self: end;
+  flex: 0 0 auto;
   min-width: 44px;
   min-height: 44px;
-  padding: 0.65rem 1.1rem;
-  background: var(--bronze);
-  color: var(--papel);
+  padding: 0.35rem 0;
+  margin-left: 0.25rem;
+  background: transparent;
+  color: var(--bronze);
   font-family: var(--fonte-display);
-  font-size: 0.62rem;
+  font-size: 0.625rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   border: 0;
+  border-bottom: 1px solid transparent;
   cursor: pointer;
-  transition: background 180ms var(--easing), color 180ms var(--easing);
+  transition:
+    color 160ms var(--easing),
+    border-color 160ms var(--easing);
 }
 
 .barra__sumario:hover,
 .barra__sumario:focus-visible {
-  background: color-mix(in srgb, var(--bronze) 82%, black);
+  border-bottom-color: currentColor;
 }
 
 body.nav-sobre-navy .barra__sumario {
-  background: var(--bronze);
-  color: var(--papel);
+  color: var(--bronze-cl);
 }
 
 body.indice-aberto .barra__sumario {
-  background: var(--bronze-cl);
-  color: var(--navy-esc);
+  color: var(--bronze-cl);
+  border-bottom-color: color-mix(in srgb, var(--bronze-cl) 55%, transparent);
 }
 
 @media (min-width: 960px) {
   .barra {
-    grid-template-columns: minmax(10rem, 1fr) auto minmax(10rem, 1fr);
     padding-inline: var(--esp-8);
+    gap: var(--esp-6);
   }
 
   .barra__movimentos {
     display: flex;
-  }
-
-  .barra__marca {
-    max-width: none;
   }
 }
 
 /* ——— Progresso sob a barra ——— */
 .progresso-topo {
   position: fixed;
-  top: 3.75rem;
+  top: 3.5rem;
   left: 0;
   right: 0;
   z-index: 44;
@@ -191,7 +195,7 @@ body.nav-sobre-navy .progresso-topo__barra {
   display: none;
 }
 
-/* ——— Índice: frontispício / sumário de livro ——— */
+/* ——— Índice: sumário de documento ——— */
 .indice {
   position: fixed;
   inset: 0;
@@ -201,11 +205,11 @@ body.nav-sobre-navy .progresso-topo__barra {
   justify-content: center;
   width: 100%;
   height: 100dvh;
-  padding: var(--esp-16) var(--esp-5) var(--esp-10);
-  background: color-mix(in srgb, var(--navy-esc) 90%, transparent);
+  padding: calc(3.5rem + var(--esp-8)) var(--esp-5) var(--esp-10);
+  background: color-mix(in srgb, var(--navy-esc) 94%, transparent);
   color: var(--creme);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -223,26 +227,27 @@ body.nav-sobre-navy .progresso-topo__barra {
 }
 
 .indice__painel {
-  width: min(22rem, 100%);
+  width: min(20rem, 100%);
   margin-block: auto;
+  padding-block: var(--esp-4);
 }
 
 .indice__rotulo {
-  margin-bottom: var(--esp-3);
+  margin-bottom: var(--esp-2);
   font-family: var(--fonte-display);
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--bronze-cl);
-  text-align: center;
+  color: color-mix(in srgb, var(--bronze-cl) 75%, transparent);
+  text-align: left;
 }
 
 .indice__progresso-wrap {
   height: 1px;
-  margin: 0 auto var(--esp-8);
-  max-width: 4rem;
-  background: color-mix(in srgb, var(--bronze-cl) 22%, transparent);
+  margin: 0 0 var(--esp-8);
+  max-width: 2.5rem;
+  background: color-mix(in srgb, var(--bronze-cl) 18%, transparent);
   overflow: hidden;
 }
 
@@ -266,14 +271,14 @@ body.nav-sobre-navy .progresso-topo__barra {
 }
 
 .indice__grupo-titulo {
-  margin-bottom: var(--esp-3);
+  margin-bottom: var(--esp-2);
   font-family: var(--fonte-display);
-  font-size: 0.625rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--bronze-cl) 70%, white);
-  text-align: center;
+  color: color-mix(in srgb, var(--bronze-cl) 55%, transparent);
+  text-align: left;
 }
 
 .indice__lista {
@@ -284,34 +289,39 @@ body.nav-sobre-navy .progresso-topo__barra {
 
 .indice__link {
   display: block;
-  padding: var(--esp-2) var(--esp-3);
+  padding: 0.55rem 0;
   min-height: 44px;
+  box-sizing: border-box;
   font-family: var(--fonte-corpo);
   font-size: var(--texto-sm);
   font-weight: 400;
-  font-style: italic;
-  line-height: 1.45;
+  font-style: normal;
+  line-height: 1.4;
   letter-spacing: 0;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
-  color: color-mix(in srgb, var(--creme) 62%, transparent);
-  border-bottom: 1px solid transparent;
+  color: color-mix(in srgb, var(--creme) 55%, transparent);
+  border: 0;
+  border-left: 1px solid transparent;
+  padding-left: 0;
   transition:
     color 160ms var(--easing),
+    padding-left 160ms var(--easing),
     border-color 160ms var(--easing);
 }
 
 .indice__link:hover,
 .indice__link:focus-visible {
-  color: var(--creme);
+  color: color-mix(in srgb, var(--creme) 88%, white);
 }
 
 .indice__link--ativo,
 .indice__link[aria-current="location"] {
   color: var(--creme);
-  border-bottom-color: color-mix(in srgb, var(--bronze-cl) 45%, transparent);
+  font-weight: 400;
   font-style: normal;
-  font-weight: 600;
+  padding-left: var(--esp-3);
+  border-left-color: var(--bronze-cl);
 }
 
 .trilho {
@@ -321,8 +331,10 @@ body.nav-sobre-navy .progresso-topo__barra {
 @media (prefers-reduced-motion: reduce) {
   .barra,
   .barra__sumario,
+  .barra__movimento,
   .barra__movimento::after,
-  .indice {
+  .indice,
+  .indice__link {
     transition: none;
   }
 }
