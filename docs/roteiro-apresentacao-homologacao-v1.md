@@ -11,7 +11,7 @@
 
 1. **Prefácio:** não é texto do Pastor nem fato consumado. É **explicação + convite** — página reservada, sem prazo. Storytelling preservado; autoria não antecipada.
 2. **Caderneta de Campanha:** proposta de instrumento para a Ordem do Dia (3.4), não exigência nomeada no Guia.
-3. **Merch (Tela 24):** nesta versão, apenas **estudo proposto** — ou omitível; salvaguardas obrigatórias se exibido.
+3. **Merch (Tela 24):** **exibir** nesta versão, como **estudo proposto** (selo visível); salvaguardas na mesma tela, peso tipográfico equivalente.
 4. **Citações bíblicas:** NAA, forma completa quando em tela (Fp 1.6).
 5. **Fonte da verdade em prosa:** Guia Mestre v1.0-RC + `conteudo/` do prospecto; campos `null` omitidos; nada inventado como homologado.
 
@@ -572,7 +572,7 @@ Mockup da caderneta aberta, rotulado **PROPOSTA**, mostrando o miolo: página de
 
 ---
 
-### Tela 24 — Identidade de tropa *(estudo opcional)*
+### Tela 24 — Identidade de tropa
 
 **Tela**
 
@@ -586,10 +586,10 @@ Não são produtos de vitrine. São sinais de pertencimento a uma tropa — o me
 Uso vinculado a discípulos, instrutores e apoiadores do projeto · Nenhuma peça condiciona participação, avanço ou bênção · Destinação de eventual receita definida e prestada em conta à liderança · Aprovação prévia de toda aplicação da marca
 
 **Visual**
-Galeria em grade, imagens em tom sóbrio, selo **ESTUDO — NÃO APROVADO**. **As salvaguardas aparecem na mesma tela**, peso tipográfico equivalente ao dos produtos. Se o risco pastoral for alto nesta sessão, **omitir esta tela** e ir da 23 à 25.
+Galeria em grade, imagens em tom sóbrio, selo **ESTUDO — NÃO APROVADO** em cada peça (ou faixa única sobre a grade). **As salvaguardas aparecem na mesma tela**, peso tipográfico equivalente ao dos produtos — não em rodapé nem em tela seguinte. Ordem do ato permanece: 22 (doutrina) → 23 (caderneta) → **24 (tropa)** → 25 (governança).
 
 **Condução**
-Não venda. Apresente e cale. Se houver hesitação: *"nada disso avança sem a aprovação do senhor."* Registre a reação no checklist da Tela 29.
+Não venda. Apresente e cale. Se houver hesitação: *"nada disso avança sem a aprovação do senhor, e a destinação de receita é decisão da liderança, não minha."* Registre a reação no checklist da Tela 29 (item de política de marca).
 
 **Fonte** — 1.1 (senso de corpo); 5.1; menção a camiseta em ritos · *demais itens = proposta*
 
@@ -712,7 +712,7 @@ Três ambientes ligados por uma linha contínua — presídio, quartel, igreja �
 ☐ Aprovar o estudo de identidade visual e a logomarca apresentados
 ☐ Autorizar a produção do **Caderno de Identidade Visual** (pendência do item 5.3)
 ☐ Autorizar o desenvolvimento dos **Apêndices Pastorais**
-☐ Definir a política de aplicação da marca e destinação de receita *(se a Tela 24 tiver sido exibida)*
+☐ Definir a política de aplicação da marca e destinação de receita *(Tela 24 — estudo de identidade de tropa)*
 ☐ Definir o fluxo de comunicação com a igreja local (item 1.4.3)
 
 ---
@@ -813,7 +813,7 @@ Terceira e última aparição da frase-âncora (**Dedicatória**, não Prefácio
 
 ## O que ainda precisa de confirmação humana antes de codificar
 
-1. Exibir ou omitir a Tela 24 (merch) nesta sessão de homologação
+1. ~~Exibir ou omitir a Tela 24~~ — **decidido: exibir** (estudo proposto + salvaguardas)
 2. Se o HTML único será artefato **irmão** do prospecto multiarquivo (recomendado) ou substituto
 
 ---
