@@ -33,6 +33,14 @@ O script lê em tempo de geração:
 - **Barra de armadura** (a partir da Tela 09): peças preenchem nas telas 10, 18, 22 e 30; clicáveis para saltar de ato
 - **Modo leitura:** revela notas de condução (não projetadas ao vivo)
 
+## Motion (onda 1)
+
+- Entrada em stagger quando a tela entra no viewport (revelação unidirecional)
+- Aberturas de ato com filete bronze; fundo muda de temperatura por ato
+- Armadura: aparece com deslize; peças “travam” em cascata ao preencher
+- Grade 48 e linha da timeline animam só quando a tela respectiva está à vista
+- Respeita `prefers-reduced-motion: reduce` (tudo estático)
+
 ## Tela 29
 
 Checklist em memória (sem `localStorage`). Botões **Copiar resumo** e **Imprimir** (checklist assinável via `@media print`).

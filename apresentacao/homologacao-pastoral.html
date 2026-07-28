@@ -17,13 +17,13 @@
 --traco:color-mix(in srgb,#C9BCA1 55%,transparent);
 --traco-forte:color-mix(in srgb,#C9BCA1 70%,transparent);
 --foco:2px solid var(--brass-cl);--foco-off:3px;
---easing:cubic-bezier(0.22,1,0.36,1);--dur:280ms
+--easing:cubic-bezier(0.22,1,0.36,1);--dur:280ms;--dur-enter:620ms;--dur-armor:480ms;--rise:1.15rem
 }
 *,*::before,*::after{box-sizing:border-box}
 html{font-size:var(--min-font);scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
-.cold-id,.timeline__linha,.flip-card__inner,.scroll-hint{transition:none!important;animation:none!important}
+.cold-id,.timeline__linha,.flip-card__inner,.scroll-hint,.screen-inner>* ,.marchas li,.marcas-arco li,.eixo,.pecas-linha li,.verbos li,.apendices article,.grade-48 span,.armor-piece,#armor-bar,.screen--ato::before{transition:none!important;animation:none!important;transform:none!important;opacity:1!important}
 }
 body{margin:0;font-family:var(--serif);color:var(--text);background:var(--bg);line-height:1.65;text-rendering:optimizeLegibility}
 .skip-link{position:absolute;left:-9999px;top:0;z-index:9999;padding:.75rem 1.1rem;background:var(--navy);color:var(--creme);text-decoration:none;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
@@ -37,6 +37,60 @@ body{margin:0;font-family:var(--serif);color:var(--text);background:var(--bg);li
 .screen-inner--matriz{max-width:56rem}
 .screen-inner--decisao{max-width:52rem}
 .screen-inner--fechamento{text-align:center}
+
+/* —— Motion onda 1 —— */
+.screen{transition:background-color var(--dur-enter) var(--easing)}
+.screen[data-act="0"],.screen[data-act="1"]{background:var(--bg)}
+.screen[data-act="2"],.screen[data-act="3"]{background:color-mix(in srgb,var(--creme) 55%,var(--bg))}
+.screen[data-act="4"],.screen[data-act="5"]{background:var(--papel)}
+.screen[data-act="6"],.screen[data-act="7"]{background:color-mix(in srgb,var(--creme) 70%,var(--papel))}
+.screen[data-act="8"]{background:color-mix(in srgb,var(--navy) 4%,var(--bg))}
+.screen[data-act="9"]{background:color-mix(in srgb,var(--brass) 5%,var(--papel))}
+.screen--ato::before{content:"";position:absolute;left:0;top:12%;bottom:12%;width:2px;background:var(--brass);transform:scaleY(0);transform-origin:center top;opacity:0;pointer-events:none}
+@media(prefers-reduced-motion:no-preference){
+.screen:not(.is-inview) .screen-inner>:not(.conducao):not(.cold-id){opacity:0;transform:translateY(var(--rise))}
+.screen .screen-inner>:not(.conducao):not(.cold-id){transition:opacity var(--dur-enter) var(--easing),transform var(--dur-enter) var(--easing)}
+.screen.is-inview .screen-inner>:not(.conducao):not(.cold-id){opacity:1;transform:none}
+.screen.is-inview .screen-inner>:nth-child(1){transition-delay:40ms}
+.screen.is-inview .screen-inner>:nth-child(2){transition-delay:110ms}
+.screen.is-inview .screen-inner>:nth-child(3){transition-delay:180ms}
+.screen.is-inview .screen-inner>:nth-child(4){transition-delay:250ms}
+.screen.is-inview .screen-inner>:nth-child(5){transition-delay:320ms}
+.screen.is-inview .screen-inner>:nth-child(6){transition-delay:390ms}
+.screen.is-inview .screen-inner>:nth-child(7){transition-delay:460ms}
+.screen.is-inview .screen-inner>:nth-child(8){transition-delay:520ms}
+.screen--ato.is-inview::before{opacity:1;transform:scaleY(1);transition:transform .75s var(--easing) .12s,opacity .4s var(--easing) .12s}
+.marchas li,.marcas-arco li,.eixo,.pecas-linha li,.verbos li,.apendices article{opacity:0;transform:translateX(-.7rem);transition:opacity .55s var(--easing),transform .55s var(--easing)}
+.screen.is-inview .marchas li,.screen.is-inview .marcas-arco li,.screen.is-inview .eixo,.screen.is-inview .pecas-linha li,.screen.is-inview .verbos li,.screen.is-inview .apendices article{opacity:1;transform:none}
+.screen.is-inview .marchas li:nth-child(1),.screen.is-inview .marcas-arco li:nth-child(1),.screen.is-inview .eixo:nth-child(1),.screen.is-inview .pecas-linha li:nth-child(1),.screen.is-inview .verbos li:nth-child(1),.screen.is-inview .apendices article:nth-child(1){transition-delay:.15s}
+.screen.is-inview .marchas li:nth-child(2),.screen.is-inview .marcas-arco li:nth-child(2),.screen.is-inview .eixo:nth-child(2),.screen.is-inview .pecas-linha li:nth-child(2),.screen.is-inview .verbos li:nth-child(2),.screen.is-inview .apendices article:nth-child(2){transition-delay:.28s}
+.screen.is-inview .marchas li:nth-child(3),.screen.is-inview .marcas-arco li:nth-child(3),.screen.is-inview .eixo:nth-child(3),.screen.is-inview .pecas-linha li:nth-child(3),.screen.is-inview .verbos li:nth-child(3){transition-delay:.4s}
+.screen.is-inview .marchas li:nth-child(4),.screen.is-inview .marcas-arco li:nth-child(4),.screen.is-inview .eixo:nth-child(4),.screen.is-inview .pecas-linha li:nth-child(4){transition-delay:.52s}
+.screen.is-inview .marcas-arco li:nth-child(5),.screen.is-inview .eixo:nth-child(5){transition-delay:.64s}
+.timeline__linha{transition:transform 1.1s var(--easing) .35s;animation:none}
+.screen.is-inview .timeline__linha{transform:scaleX(1)}
+.grade-48 span{transition:background-color .35s var(--easing),transform .35s var(--easing)}
+.grade-48 span.on{transform:scale(1.05)}
+.ritmo-bar>span{opacity:0;transform:scaleX(.92);transform-origin:left center;transition:opacity .5s var(--easing),transform .5s var(--easing)}
+.screen.is-inview .ritmo-bar>span{opacity:1;transform:none}
+.screen.is-inview .ritmo-bar>span:nth-child(1){transition-delay:.15s}
+.screen.is-inview .ritmo-bar>span:nth-child(2){transition-delay:.28s}
+.screen.is-inview .ritmo-bar>span:nth-child(3){transition-delay:.4s}
+.screen.is-inview .ritmo-bar>span:nth-child(4){transition-delay:.55s}
+.armor-piece{transition:background-color var(--dur-armor) var(--easing),border-color var(--dur-armor) var(--easing),color var(--dur-armor) var(--easing),transform var(--dur-armor) var(--easing),box-shadow var(--dur-armor) var(--easing)}
+.armor-piece.filled{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--papel) 25%,transparent)}
+.armor-piece.just-filled{animation:armorLock .55s var(--easing)}
+@keyframes armorLock{0%{transform:scale(1)}35%{transform:scale(1.1)}100%{transform:scale(1)}}
+#armor-bar{display:flex;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-110%);transition:opacity var(--dur) var(--easing),transform var(--dur) var(--easing),visibility 0s linear var(--dur)}
+#armor-bar.visible{opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:opacity var(--dur) var(--easing),transform var(--dur) var(--easing),visibility 0s}
+}
+@media(prefers-reduced-motion:reduce){
+.screen--ato::before{opacity:1;transform:none}
+.timeline__linha{transform:scaleX(1);animation:none}
+.ritmo-bar>span,.marchas li,.marcas-arco li,.eixo,.pecas-linha li,.verbos li,.apendices article{opacity:1;transform:none}
+#armor-bar{display:none;opacity:1;visibility:visible;transform:none;pointer-events:auto}
+#armor-bar.visible{display:flex}
+}
 h1{font-family:var(--sans);font-size:clamp(1.75rem,4.5vw,2.65rem);font-weight:800;margin:0 0 .65rem;color:var(--navy);letter-spacing:-0.02em;text-transform:uppercase;line-height:1.1}
 h2{font-family:var(--serif);font-size:clamp(1.4rem,3.2vw,1.85rem);font-weight:400;margin:0 0 1.1rem;line-height:1.3}
 h3{font-family:var(--sans);font-size:.95rem;font-weight:700;margin:0 0 .5rem;letter-spacing:.04em}
@@ -164,8 +218,7 @@ p{margin:0 0 1rem;max-width:68ch}
 .rodape-inst{font-size:.8rem;color:var(--struct);margin-top:1.5rem;font-family:var(--sans)}
 .conducao{display:none;margin-top:2rem;padding:1.1rem 1.2rem;background:color-mix(in srgb,var(--navy) 6%,var(--bg));border-left:2px solid var(--navy);font-size:.9rem;color:var(--struct);font-style:italic}
 body.modo-leitura .conducao{display:block}
-#armor-bar{position:fixed;top:0;left:0;right:0;z-index:100;display:none;align-items:center;justify-content:center;gap:.45rem;padding:.55rem .75rem;background:color-mix(in srgb,var(--bg) 92%,transparent);border-bottom:1px solid var(--traco);backdrop-filter:blur(6px)}
-#armor-bar.visible{display:flex}
+#armor-bar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:.45rem;padding:.55rem .75rem;background:color-mix(in srgb,var(--bg) 92%,transparent);border-bottom:1px solid var(--traco);backdrop-filter:blur(6px)}
 .armor-piece{min-width:44px;min-height:44px;border:1px solid var(--traco);background:var(--papel);cursor:pointer;padding:.35rem;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:.55rem;font-weight:700;color:var(--struct);text-transform:uppercase;letter-spacing:.06em;line-height:1.1}
 .armor-piece.filled{background:var(--brass);border-color:var(--brass);color:var(--papel)}
 #side-menu{position:fixed;top:0;right:0;z-index:200;width:min(20rem,88vw);height:100%;background:var(--papel);border-left:1px solid var(--traco);transform:translateX(100%);transition:transform var(--dur) var(--easing);padding:4.5rem 1.25rem 1.5rem;overflow-y:auto}
@@ -221,7 +274,7 @@ body.modo-leitura .conducao{display:block}
 <ul><li><a href="#tela-01" data-tela="1">Ato 0 — A Caverna</a></li><li><a href="#tela-02" data-tela="2">Ato I — A Dor</a></li><li><a href="#tela-05" data-tela="5">Ato II — O Que Já Acontecia</a></li><li><a href="#tela-07" data-tela="7">Ato III — O Problema</a></li><li><a href="#tela-09" data-tela="9">Ato IV — A Concepção</a></li><li><a href="#tela-13" data-tela="13">Ato V — A Arquitetura</a></li><li><a href="#tela-18" data-tela="18">Ato VI — A Marcha</a></li><li><a href="#tela-22" data-tela="22">Ato VII — Identidade Visível</a></li><li><a href="#tela-26" data-tela="26">Ato VIII — O Horizonte</a></li><li><a href="#tela-29" data-tela="29">Ato IX — A Decisão</a></li></ul>
 </nav>
 <main id="deck">
-<section id="tela-01" class="screen" data-screen="1" data-act="0" tabindex="-1"><div class="screen-inner screen-inner--cold">
+<section id="tela-01" class="screen screen--ato" data-screen="1" data-act="0" tabindex="-1"><div class="screen-inner screen-inner--cold">
         <blockquote class="cold-quote" cite="1Sm 22.2">
           <p>“todo homem em aperto, endividado e amargurado de espírito”</p>
           <footer>1Sm 22.2</footer>
@@ -234,7 +287,7 @@ body.modo-leitura .conducao{display:block}
         <p class="scroll-hint" aria-hidden="true">↓</p>
         <aside class="conducao" aria-label="Notas de condução"><p>Não fale nesta tela. Deixe o silêncio de três a cinco segundos. Só depois: &quot;Pastor, é daqui que tudo começa — e o senhor sabe disso melhor do que eu.&quot;</p></aside>
       </div></section>
-<section id="tela-02" class="screen" data-screen="2" data-act="1" tabindex="-1"><div class="screen-inner">
+<section id="tela-02" class="screen screen--ato" data-screen="2" data-act="1" tabindex="-1"><div class="screen-inner">
         <h2>Ele chega com a farda e com a vergonha.</h2>
         <div class="split-cols">
           <ul class="mil-labels" aria-label="O que conhece">
@@ -267,7 +320,7 @@ body.modo-leitura .conducao{display:block}
         <p class="lead">Precisa de alguém que vá à caverna com ele e aponte Cristo.</p>
         <aside class="conducao" aria-label="Notas de condução"><p>Pausa. Esta é a tela-pivô do primeiro ato. Frase única, dita uma vez, sem repetir.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-05" class="screen" data-screen="5" data-act="2" tabindex="-1"><div class="screen-inner">
+<section id="tela-05" class="screen screen--ato" data-screen="5" data-act="2" tabindex="-1"><div class="screen-inner">
         <h2>Antes que houvesse estrutura, método ou currículo, o Senhor já chamava.</h2>
         <p>Não havia matriz curricular.<br>Não havia módulos, símbolos, transições ou certificados.<br>Havia homens se assentando, Bíblia aberta, e fé reacendendo onde a culpa tentava apagar.</p>
         <p><strong>O Guia não criou esse mover. O Guia nasceu para guardar o que já estava acontecendo.</strong></p>
@@ -290,7 +343,7 @@ body.modo-leitura .conducao{display:block}
         </div>
         <aside class="conducao" aria-label="Notas de condução"><p>Primeira aparição da frase-âncora: &quot;de quebrantados, valentes.&quot; Ela volta mais duas vezes (Telas 21 e 30). Diga-a devagar e não a explique.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-07" class="screen" data-screen="7" data-act="3" tabindex="-1"><div class="screen-inner">
+<section id="tela-07" class="screen screen--ato" data-screen="7" data-act="3" tabindex="-1"><div class="screen-inner">
         <h2>Sem método, o que Deus faz se perde.</h2>
         <div class="flip-grid"><button type="button" class="flip-card" data-flip="risco-0" aria-pressed="false">
         <span class="flip-card__inner">
@@ -327,7 +380,7 @@ body.modo-leitura .conducao{display:block}
         </ul>
         <aside class="conducao" aria-label="Notas de condução"><p>Transição para o ato conceitual. &quot;O que vem agora é como esse documento foi pensado — não o que ele contém, mas por que ele tem a forma que tem.&quot;</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-09" class="screen" data-screen="9" data-act="4" tabindex="-1"><div class="screen-inner">
+<section id="tela-09" class="screen screen--ato" data-screen="9" data-act="4" tabindex="-1"><div class="screen-inner">
         <h2>Não são quatro temas. São quatro ações de Cristo.</h2>
         <div class="eixo-grid">
           <article class="eixo"><h3>Cristo Chamando</h3><p>convoca, perdoa, incorpora</p></article>
@@ -374,7 +427,7 @@ body.modo-leitura .conducao{display:block}
         </div>
         <aside class="conducao" aria-label="Notas de condução"><p>Coração pastoral do método — sem atribuir Prefácio. Planta o convite; o formalismo do pedido vem na Tela 29.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-13" class="screen" data-screen="13" data-act="5" tabindex="-1"><div class="screen-inner">
+<section id="tela-13" class="screen screen--ato" data-screen="13" data-act="5" tabindex="-1"><div class="screen-inner">
         <p class="conta-grande" aria-label="4 vezes 12 igual a 48">4 × 12 = 48</p>
         <h2>Quatro módulos sequenciais. Doze lições cada. Um ciclo anual.</h2>
         <p>Nenhum módulo repete o outro. Alguns temas retornam — com profundidade e finalidade diferentes.<br>O discípulo não gira nos mesmos assuntos: ele sobe em espiral.</p>
@@ -456,7 +509,7 @@ body.modo-leitura .conducao{display:block}
         <p class="marcas-salvaguarda">Nenhuma delas descreve perfeição alcançada. Todas descrevem <strong>caminho em andamento</strong>.</p>
         <aside class="conducao" aria-label="Notas de condução"><p>Frisar a última linha em voz alta. &quot;Isso não é um checklist de aprovação. É um mapa de leitura pastoral.&quot;</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-18" class="screen" data-screen="18" data-act="6" tabindex="-1"><div class="screen-inner">
+<section id="tela-18" class="screen screen--ato" data-screen="18" data-act="6" tabindex="-1"><div class="screen-inner">
         <h2>Cada módulo termina em um marco reconhecido pela tropa.</h2>
         <ul class="marchas">
           <li><span class="mil-label">Primeira Marcha</span> — O Recruta que se Rendeu</li>
@@ -526,7 +579,7 @@ body.modo-leitura .conducao{display:block}
         <p>Onde o contexto institucional não permitir a entrega física, <strong>o registro pastoral simples cumpre a mesma função.</strong></p>
         <aside class="conducao" aria-label="Notas de condução"><p>Segunda aparição da frase-âncora: ao mostrar o certificado, diga &quot;de quebrantados, valentes&quot; — desta vez apontando o nome em branco no documento.</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-22" class="screen" data-screen="22" data-act="7" tabindex="-1"><div class="screen-inner">
+<section id="tela-22" class="screen screen--ato" data-screen="22" data-act="7" tabindex="-1"><div class="screen-inner">
         <h2>O escudo ensina o que o programa confessa.</h2>
         <p class="estudo-tag">estudo visual — homologação pendente</p>
         <div class="escudo-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" role="img" aria-labelledby="escudo-titulo escudo-desc">
@@ -618,7 +671,7 @@ body.modo-leitura .conducao{display:block}
         <p class="pendencia">Pendência registrada: <strong>Caderno de Identidade Visual do Projeto</strong>, previsto no item 5.3 e ainda não produzido.</p>
         <aside class="conducao" aria-label="Notas de condução"><p>&quot;O Guia previu esse caderno. Ele ainda não existe. Proponho que seja o próximo entregável — sob a supervisão do senhor.&quot;</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-26" class="screen" data-screen="26" data-act="8" tabindex="-1"><div class="screen-inner">
+<section id="tela-26" class="screen screen--ato" data-screen="26" data-act="8" tabindex="-1"><div class="screen-inner">
         <h2>Duas frentes de socorro, já previstas e ainda não desenvolvidas.</h2>
         <div class="apendices">
           <article><span class="selo-planej">em planejamento</span><h3>A Marcha da Liberdade</h3><p>Associada ao Capacete da Salvação</p></article>
@@ -655,7 +708,7 @@ body.modo-leitura .conducao{display:block}
         </svg>
         <aside class="conducao" aria-label="Notas de condução"><p>Última tela de conteúdo antes da decisão. &quot;Isso exige que a igreja seja avisada do estágio do discípulo.&quot;</p></aside>
       </div><p class="stamp">v1.0-RC · documento de validação</p></section>
-<section id="tela-29" class="screen" data-screen="29" data-act="9" tabindex="-1"><div class="screen-inner screen-inner--decisao">
+<section id="tela-29" class="screen screen--ato" data-screen="29" data-act="9" tabindex="-1"><div class="screen-inner screen-inner--decisao">
         <h2>Pastor, o Guia está em v1.0-RC. Nenhum conteúdo é final antes da sua homologação.</h2>
         <ul class="checklist" id="checklist"><li><label><input type="checkbox" data-check="0" /> <span>Apreciação doutrinária e pastoral do Módulo 1 (doze lições, edições Aluno e Instrutor)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Apreciação doutrinária e pastoral do Módulo 1 (doze lições, edições Aluno e Instrutor)"></textarea></li><li><label><input type="checkbox" data-check="1" /> <span>Homologar o Guia Mestre v1.0-RC → v1.0</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Homologar o Guia Mestre v1.0-RC → v1.0"></textarea></li><li><label><input type="checkbox" data-check="2" /> <span>O prefácio do Guia Mestre — página reservada; ver convite abaixo</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para O prefácio do Guia Mestre — página reservada; ver convite abaixo"></textarea></li><li><label><input type="checkbox" data-check="3" /> <span>Liberação para produção dos Módulos 2 a 4</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Liberação para produção dos Módulos 2 a 4"></textarea></li><li><label><input type="checkbox" data-check="4" /> <span>Autorizar a turma-piloto (pergunta de implantação: local, período, número)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Autorizar a turma-piloto (pergunta de implantação: local, período, número)"></textarea></li><li><label><input type="checkbox" data-check="5" /> <span>Nomear o instrutor ou instrutores responsáveis (pergunta de implantação)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Nomear o instrutor ou instrutores responsáveis (pergunta de implantação)"></textarea></li><li><label><input type="checkbox" data-check="6" /> <span>Aprovar o estudo de identidade visual e a logomarca apresentados</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Aprovar o estudo de identidade visual e a logomarca apresentados"></textarea></li><li><label><input type="checkbox" data-check="7" /> <span>Autorizar a produção do Caderno de Identidade Visual (pendência do item 5.3)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Autorizar a produção do Caderno de Identidade Visual (pendência do item 5.3)"></textarea></li><li><label><input type="checkbox" data-check="8" /> <span>Autorizar o desenvolvimento dos Apêndices Pastorais</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Autorizar o desenvolvimento dos Apêndices Pastorais"></textarea></li><li><label><input type="checkbox" data-check="9" /> <span>Definir a política de aplicação da marca e destinação de receita (Tela 24 — estudo de identidade de tropa)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Definir a política de aplicação da marca e destinação de receita (Tela 24 — estudo de identidade de tropa)"></textarea></li><li><label><input type="checkbox" data-check="10" /> <span>Definir o fluxo de comunicação com a igreja local (item 1.4.3)</span></label><textarea class="check-obs" rows="1" placeholder="Observações" aria-label="Observações para Definir o fluxo de comunicação com a igreja local (item 1.4.3)"></textarea></li></ul>
         <div class="convite">
@@ -717,7 +770,16 @@ function updateArmor(n){
   var pieces=[].slice.call(document.querySelectorAll(".armor-piece"));
   pieces.forEach(function(p,i){
     var fillAt=ARMOR_FILL[i];
-    p.classList.toggle("filled",n>=fillAt);
+    var should=n>=fillAt;
+    var was=p.classList.contains("filled");
+    p.classList.toggle("filled",should);
+    if(should&&!was){
+      p.classList.remove("just-filled");
+      void p.offsetWidth;
+      p.classList.add("just-filled");
+      p.style.transitionDelay=(i*90)+"ms";
+      setTimeout(function(){p.classList.remove("just-filled");p.style.transitionDelay="";},700);
+    }
   });
 }
 
@@ -726,6 +788,8 @@ function updateUI(){
   currentScreen=n;
   updateArmor(n);
 }
+
+var reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if("scrollSnapType" in document.documentElement.style){
   deck.style.scrollSnapType="y mandatory";
@@ -738,6 +802,24 @@ if("scrollSnapType" in document.documentElement.style){
 
 window.addEventListener("scroll",updateUI,{passive:true});
 if(deck)deck.addEventListener("scroll",updateUI,{passive:true});
+
+function markInView(el,on){
+  if(on)el.classList.add("is-inview");
+}
+if(reduceMotion){
+  screens.forEach(function(el){el.classList.add("is-inview");});
+}else if("IntersectionObserver" in window){
+  var scrollRoot=deck&&getComputedStyle(deck).overflowY!=="visible"?deck:null;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      markInView(en.target,en.isIntersecting&&en.intersectionRatio>=0.35);
+      if(en.target.id==="tela-13"&&en.isIntersecting)runGradeOnce();
+    });
+  },{root:scrollRoot,threshold:[0.35,0.55]});
+  screens.forEach(function(el){io.observe(el);});
+}else{
+  screens.forEach(function(el){el.classList.add("is-inview");});
+}
 
 document.addEventListener("keydown",function(e){
   if(e.target.matches("textarea,input"))return;
@@ -803,13 +885,22 @@ document.querySelectorAll(".matriz-filtro").forEach(function(btn){
 });
 
 var grade=document.getElementById("grade-48");
+var gradeDone=false;
+function runGradeOnce(){
+  if(gradeDone||!grade)return;
+  gradeDone=true;
+  var cells=grade.querySelectorAll("span");
+  cells.forEach(function(el,g){
+    setTimeout(function(){el.classList.add("on");},reduceMotion?0:80+g*18);
+  });
+}
 if(grade){
   for(var g=0;g<48;g++){
     var d=document.createElement("span");
-    d.style.transitionDelay=(g*20)+"ms";
-    setTimeout(function(el,i){return function(){el.classList.add("on");};}(d,g),300+g*20);
+    d.style.transitionDelay=(g*18)+"ms";
     grade.appendChild(d);
   }
+  if(reduceMotion)runGradeOnce();
 }
 
 document.getElementById("btn-copiar").addEventListener("click",function(){

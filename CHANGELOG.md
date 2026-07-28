@@ -17,6 +17,7 @@
 - Prefácio como convite; merch como estudo; caderneta como proposta.
 - Polimento: fontes locais embutidas (Montserrat + Source Serif 4), tipografia/filetes Direção A, matriz responsiva, cantos retos.
 - Passagem editorial vs roteiro v1.1: Tela 15 sem inventário de corpo da Lição 6 (só matriz + Guia 3.4); rótulos completos do ritmo (14); Formatura (18); documento companheiro (26); versos dos símbolos alinhados a 1.6.
+- Motion onda 1: entrada em stagger por tela (`IntersectionObserver`), filete nas aberturas de ato, temperatura de fundo por ato, armadura com lock em cascata, grade-48 sob demanda, `prefers-reduced-motion`.
 
 ## [1.0.0] — 2026-07-27
 
