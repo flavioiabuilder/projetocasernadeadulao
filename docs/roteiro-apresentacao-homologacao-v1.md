@@ -818,7 +818,8 @@ Terceira e última aparição da frase-âncora (**Dedicatória**, não Prefácio
 
 ### Nota de UI (prospecto atual)
 
-Sumário do `index.html`: painel papel lateral (Direção A), não overlay navy em tela cheia.
+- Sumário: painel papel lateral (Direção A).
+- Onda 1 de consistência visual aplicada (tokens, CSS legado, ritmo 11–12).
 
 ---
 

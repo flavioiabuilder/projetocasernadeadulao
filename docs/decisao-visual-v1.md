@@ -69,12 +69,27 @@ A Direção A governa **integralmente**:
 | **Grid** | Coluna de leitura estreita (~40–45rem / medida ~62–68ch); container largo só para ferramentas curriculares quando necessário |
 | **Tipografia** | Serif dominante no corpo e nos títulos de ato (sistema editorial da Direção A); metadados discretos; sem uppercase gritado do Projeto competindo com o h1 |
 | **Paleta** | Papel/creme como superfície principal; navy para umbrais de parte e, se preciso, o umbral excepcional; bronze para regras, foco, citações e metadados — não como CTA comercial |
+| **Acento** | Em superfície papel/creme → `--bronze`; em navy/navy-esc → `--bronze-cl` |
+| **Rótulos** | Tokens `--rotulo*` e `--rotulo-tracking*` (não literais ad hoc) |
+| **Filetes** | Tokens `--traco-suave` / `--traco` / `--traco-forte` (régua); `--traco-creme*` sobre navy |
 | **Espaço** | Margens generosas; ritmo vertical de documento; espaço negativo como hierarquia |
-| **Ritmo** | Capítulos editoriais; progressão carta → contexto → necessidade → proposta → currículo → apreciação |
+| **Ritmo** | Capítulos editoriais; progressão carta → contexto → necessidade → proposta → currículo → apreciação; evitar duas seções `--papel` seguidas sem justificativa |
 | **Componentes** | Listas tipográficas, citações com filete, notas, selos, rótulos de estado editoriais, checklist final — sem cards de feature, sem stat strips, sem dashboard |
 | **Navegação** | Sumário de prospecto / índice de documento: **painel papel lateral** (não cortina navy em tela cheia); progresso de leitura discreto |
 | **Movimento** | Mínimo e progressivo; revelação discreta opcional; identidade **não** depende de animação; respeitar `prefers-reduced-motion` |
 | **Mobile** | Uma coluna; mesma identidade; currículo em estrutura vertical (acordeão, listas editoriais ou equivalente semântico) — **sem** tabela rígida em telas estreitas |
+
+### Stack CSS canônica (`index.html`)
+
+```
+css/tokens.css
+css/base.css
+css/layout.css
+css/componentes.css
+css/secoes.css
+```
+
+Legado fora do bundle: `legado/css/` (`prospecto.css`, `atos.css`) — não linkar sem revisão.
 
 ### Âncora simbólica (obrigatória na implementação futura)
 
@@ -228,3 +243,4 @@ Decisões ainda abertas (não reabrem a direção-base):
 - Protótipos permanecem como referência histórica em `prototipos/`.
 - Mockups Stitch em `referencia/stitch/` orientam composição das seções **1, 3, 9 e 12** (paleta, ritmo, comparação cream×navy, badges/filtros da matriz, chrome do folheador). Não são fonte canônica de texto nem stack (sem Tailwind/CDN/CTAs). Ver `referencia/stitch/LEIA-ME.md`.
 - Arte oficial da marca e apreciação pastoral continuam pendências humanas (`TODO.md`).
+- **28/07/2026 — consistência visual (onda 1):** CSS morto arquivado em `legado/css/`; tokens `--rotulo*` / `--traco*`; abertura sem RGBA hardcoded; `font-weight: 500` removido; seção 12 em `--creme` (quebra da dupla papel 11–12).

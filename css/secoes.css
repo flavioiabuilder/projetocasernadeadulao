@@ -50,7 +50,7 @@
 
 .abertura .sobrelinha {
   margin-bottom: var(--esp-6);
-  letter-spacing: 0.3em;
+  letter-spacing: var(--rotulo-tracking-hero);
   color: var(--bronze-cl);
 }
 
@@ -160,9 +160,9 @@
 .selo__rotulo {
   display: block;
   font-family: var(--fonte-display);
-  font-size: 0.7rem;
+  font-size: var(--rotulo-md);
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: var(--rotulo-tracking-largo);
   text-transform: uppercase;
   color: var(--bronze-esc);
 }
@@ -172,7 +172,7 @@
   font-family: var(--fonte-display);
   font-size: 0.8rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--rotulo-tracking-aperto);
   text-transform: uppercase;
   color: var(--navy);
 }

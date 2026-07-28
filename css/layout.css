@@ -36,7 +36,7 @@
   }
 }
 
-/* Cadência: 1 navy · 2 papel · 3 navy · 4 papel · 5 navy · 6 creme · 7 navy profundo */
+/* Cadência de fundo: alternar papel/creme com navy; evitar duas --papel seguidas */
 .secao {
   position: relative;
   padding-block: var(--esp-16);
@@ -68,7 +68,7 @@
   padding-block: var(--esp-20);
   background: var(--papel);
   color: var(--tinta);
-  border-top: 1px solid color-mix(in srgb, var(--regua) 55%, transparent);
+  border-top: 1px solid var(--traco);
 }
 
 .movimento {
@@ -95,7 +95,7 @@
   margin-top: var(--esp-3);
   font-size: var(--texto-sm);
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--rotulo-tracking-largo);
   text-transform: uppercase;
   color: var(--bronze);
 }
