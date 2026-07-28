@@ -1,10 +1,11 @@
 /* Tokens da identidade digital — espelham a marca impressa, com navy no comando. */
 
 :root {
-  /* Cor */
+  /* Cor — alinhada aos mockups Stitch (cores corrigidas) */
   --navy: #1a2a44;
   --navy-esc: #101d33;
-  --bronze: #8c6a45;
+  --bronze: #9a7b4f;
+  --bronze-esc: #7c6038;
   --bronze-cl: #c9a86a;
   --creme: #f5f1e7;
   --papel: #fbf8f2;

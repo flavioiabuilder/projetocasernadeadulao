@@ -6,29 +6,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-block: calc(var(--esp-20) + 2rem);
+  padding-block: calc(var(--esp-20) + 2.5rem);
 }
 
 .abertura {
-  text-align: left;
+  text-align: center;
   margin-inline: auto;
+  max-width: 40rem;
 }
 
 .abertura__brasao {
-  width: 3.25rem;
+  width: 3.5rem;
   height: auto;
-  margin-bottom: var(--esp-8);
+  margin: 0 auto var(--esp-8);
   padding: 0;
   background: transparent;
 }
 
+.abertura .sobrelinha {
+  letter-spacing: 0.28em;
+}
+
 .abertura__titulo {
+  margin-inline: auto;
   margin-bottom: var(--esp-5);
   font-size: var(--texto-2xl);
-  max-width: 12ch;
+  max-width: 14ch;
   color: var(--papel);
   text-transform: uppercase;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  line-height: var(--lh-aperto);
 }
 
 .abertura__movimento {
@@ -36,19 +43,32 @@
   color: var(--bronze-cl);
 }
 
+.abertura .secao__subtitulo {
+  margin-inline: auto;
+  margin-bottom: var(--esp-6);
+  color: color-mix(in srgb, var(--creme) 78%, var(--bronze-cl));
+}
+
 .abertura__filete {
   width: 3.5rem;
-  margin: 0 0 var(--esp-6);
+  margin: 0 auto var(--esp-8);
   border: 0;
-  border-top: 1px solid color-mix(in srgb, var(--bronze-cl) 45%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--bronze-cl) 50%, transparent);
 }
 
 .abertura .prosa {
-  color: color-mix(in srgb, var(--creme) 92%, white);
+  text-align: left;
+  color: color-mix(in srgb, var(--creme) 90%, white);
+  max-width: 36rem;
+  margin-inline: auto;
 }
 
 .abertura .selo {
   margin-top: var(--esp-8);
+}
+
+.abertura .rolar {
+  margin-top: var(--esp-10);
 }
 
 .ancora__nota {

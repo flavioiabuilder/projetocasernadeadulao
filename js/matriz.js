@@ -38,7 +38,7 @@
     }
 
     function montarLicao(l) {
-      const estado = l.produzida ? "Material produzido" : "Planejada";
+      const estado = l.produzida ? "Produzida" : "Planejada";
       const classe = l.produzida
         ? "matriz__estado--produzida"
         : "matriz__estado--planejada";

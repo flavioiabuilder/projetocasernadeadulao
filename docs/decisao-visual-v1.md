@@ -226,4 +226,5 @@ Decisões ainda abertas (não reabrem a direção-base):
 
 - Direção A aplicada no prospecto v1.0 (seções 1–15), com as duas importações autorizadas.
 - Protótipos permanecem como referência histórica em `prototipos/`.
+- Mockups Stitch em `referencia/stitch/` orientam composição das seções **1, 3, 9 e 12** (paleta, ritmo, comparação cream×navy, badges/filtros da matriz, chrome do folheador). Não são fonte canônica de texto nem stack (sem Tailwind/CDN/CTAs). Ver `referencia/stitch/LEIA-ME.md`.
 - Arte oficial da marca e apreciação pastoral continuam pendências humanas (`TODO.md`).

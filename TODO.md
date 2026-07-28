@@ -16,6 +16,7 @@
 - [ ] Arte oficial da logomarca (substituir `assets/img/brasao.svg`)
 - [ ] Artes das quatro insígnias, se existirem como peças separadas
 - [ ] Confirmar versões monocromática e reduzida no Caderno de Identidade Visual
+- [x] Mockups Stitch em `referencia/stitch/` (referência de layout; ver LEIA-ME lá)
 
 ## Decisões humanas / conteúdo (bloqueios — não inventar)
 

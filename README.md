@@ -63,7 +63,8 @@ npm run validate
 
 ## Referência de layout
 
-Mockups em `referencia/stitch/` (ignorados pelo git) orientam composição.
+Mockups em `referencia/stitch/` (ignorados pelo git) orientam composição das
+seções 1, 3, 9 e 12. Ver `referencia/stitch/LEIA-ME.md` (o que extrair / rejeitar).
 Nenhum código Tailwind/CDN deles entra no produto.
 
 ## Pendências
