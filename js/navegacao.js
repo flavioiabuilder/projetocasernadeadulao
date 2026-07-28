@@ -1,6 +1,5 @@
 /**
- * Índice em gaveta + trilho da marcha (cinco movimentos, quinze seções).
- * Desktop e mobile: sumário sob demanda. Trilho flutuante no desktop.
+ * Sumário em overlay editorial + progresso de leitura.
  * body.nav-sobre-navy adapta contraste do chrome ao fundo da seção ativa.
  */
 (function () {
@@ -128,23 +127,28 @@
     window.addEventListener("resize", onScroll, { passive: true });
     atualizar();
 
-    /* Gaveta do índice */
     const toggle = document.querySelector("[data-indice-toggle]");
     const drawer = document.querySelector("[data-indice]");
-    const overlay = document.querySelector("[data-indice-overlay]");
+    const painel = drawer && drawer.querySelector(".indice__painel");
 
     function fecharIndice() {
       if (!drawer) return;
       drawer.classList.remove("indice--aberto");
       document.body.classList.remove("indice-aberto");
-      if (toggle) toggle.setAttribute("aria-expanded", "false");
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.textContent = "Sumário";
+      }
     }
 
     function abrirIndice() {
       if (!drawer) return;
       drawer.classList.add("indice--aberto");
       document.body.classList.add("indice-aberto");
-      if (toggle) toggle.setAttribute("aria-expanded", "true");
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "true");
+        toggle.textContent = "Fechar";
+      }
     }
 
     if (toggle && drawer) {
@@ -156,8 +160,12 @@
         }
       });
     }
-    if (overlay) {
-      overlay.addEventListener("click", fecharIndice);
+    if (drawer) {
+      drawer.addEventListener("click", (ev) => {
+        if (painel && !painel.contains(ev.target)) {
+          fecharIndice();
+        }
+      });
     }
     document.addEventListener("keydown", (ev) => {
       if (ev.key === "Escape") fecharIndice();

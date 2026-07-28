@@ -5,19 +5,21 @@
   min-height: 100dvh;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding-block: var(--esp-20);
 }
 
 .abertura {
   text-align: left;
+  margin-inline: auto;
 }
 
 .abertura__brasao {
   width: 3.25rem;
   height: auto;
   margin-bottom: var(--esp-8);
-  padding: var(--esp-2);
-  background: var(--navy-esc);
+  padding: 0;
+  background: transparent;
 }
 
 .abertura__titulo {
@@ -34,8 +36,19 @@
   color: var(--bronze-cl);
 }
 
+.abertura__filete {
+  width: 3.5rem;
+  margin: 0 0 var(--esp-6);
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, var(--bronze-cl) 45%, transparent);
+}
+
 .abertura .prosa {
   color: color-mix(in srgb, var(--creme) 92%, white);
+}
+
+.abertura .selo {
+  margin-top: var(--esp-8);
 }
 
 .ancora__nota {

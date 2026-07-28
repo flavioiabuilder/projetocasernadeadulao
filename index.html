@@ -50,14 +50,20 @@
     <noscript>
       <style>
         .indice {
-          transform: none !important;
-          position: static;
-          width: auto;
-          height: auto;
-          max-height: none;
-          box-shadow: none;
-          border-left: 0;
-          padding: 1.5rem 1.25rem;
+          position: static !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          pointer-events: auto !important;
+          background: var(--papel, #fbf8f2) !important;
+          backdrop-filter: none !important;
+          color: var(--tinta, #23262b) !important;
+          padding: 1.5rem 1.25rem !important;
+          height: auto !important;
+          display: block !important;
+        }
+        .indice__painel {
+          max-width: 40rem;
+          margin-inline: auto;
         }
         .indice-toggle,
         .indice-overlay,
@@ -73,54 +79,56 @@
       data-indice
       aria-label="Sumário do prospecto"
     >
-      <p class="indice__rotulo">Sumário</p>
-      <div class="indice__progresso-wrap" aria-hidden="true">
-        <span class="indice__progresso"></span>
-      </div>
+      <div class="indice__painel">
+        <p class="indice__rotulo">Sumário</p>
+        <div class="indice__progresso-wrap" aria-hidden="true">
+          <span class="indice__progresso"></span>
+        </div>
 
-      <div class="indice__grupo">
-        <p class="indice__grupo-titulo">I · Necessidade</p>
-        <ul class="indice__lista">
-          <li><a class="indice__link" href="#secao-1">Abertura</a></li>
-          <li><a class="indice__link" href="#secao-2">O homem que chega</a></li>
-          <li>
-            <a class="indice__link" href="#secao-3"
-              >Por que o material comum não alcança</a
-            >
-          </li>
-          <li><a class="indice__link" href="#secao-4">A caverna de Adulão</a></li>
-        </ul>
-      </div>
-      <div class="indice__grupo">
-        <p class="indice__grupo-titulo">II · Resposta</p>
-        <ul class="indice__lista">
-          <li><a class="indice__link" href="#secao-5">A convicção</a></li>
-          <li><a class="indice__link" href="#secao-6">As recusas</a></li>
-          <li><a class="indice__link" href="#secao-7">A marca</a></li>
-        </ul>
-      </div>
-      <div class="indice__grupo">
-        <p class="indice__grupo-titulo">III · Programa</p>
-        <ul class="indice__lista">
-          <li><a class="indice__link" href="#secao-8">Arquitetura</a></li>
-          <li><a class="indice__link" href="#secao-9">Matriz curricular</a></li>
-          <li><a class="indice__link" href="#secao-10">Anatomia de uma lição</a></li>
-          <li><a class="indice__link" href="#secao-11">Edições e o encontro</a></li>
-        </ul>
-      </div>
-      <div class="indice__grupo">
-        <p class="indice__grupo-titulo">IV · Prova</p>
-        <ul class="indice__lista">
-          <li><a class="indice__link" href="#secao-12">O que está pronto</a></li>
-          <li><a class="indice__link" href="#secao-13">Rigor de produção</a></li>
-        </ul>
-      </div>
-      <div class="indice__grupo">
-        <p class="indice__grupo-titulo">V · Pedido</p>
-        <ul class="indice__lista">
-          <li><a class="indice__link" href="#secao-14">Progressão e marchas</a></li>
-          <li><a class="indice__link" href="#secao-15">A palavra final</a></li>
-        </ul>
+        <div class="indice__grupo">
+          <p class="indice__grupo-titulo">I · Necessidade</p>
+          <ul class="indice__lista">
+            <li><a class="indice__link" href="#secao-1">Abertura</a></li>
+            <li><a class="indice__link" href="#secao-2">O homem que chega</a></li>
+            <li>
+              <a class="indice__link" href="#secao-3"
+                >Por que o material comum não alcança</a
+              >
+            </li>
+            <li><a class="indice__link" href="#secao-4">A caverna de Adulão</a></li>
+          </ul>
+        </div>
+        <div class="indice__grupo">
+          <p class="indice__grupo-titulo">II · Resposta</p>
+          <ul class="indice__lista">
+            <li><a class="indice__link" href="#secao-5">A convicção</a></li>
+            <li><a class="indice__link" href="#secao-6">As recusas</a></li>
+            <li><a class="indice__link" href="#secao-7">A marca</a></li>
+          </ul>
+        </div>
+        <div class="indice__grupo">
+          <p class="indice__grupo-titulo">III · Programa</p>
+          <ul class="indice__lista">
+            <li><a class="indice__link" href="#secao-8">Arquitetura</a></li>
+            <li><a class="indice__link" href="#secao-9">Matriz curricular</a></li>
+            <li><a class="indice__link" href="#secao-10">Anatomia de uma lição</a></li>
+            <li><a class="indice__link" href="#secao-11">Edições e o encontro</a></li>
+          </ul>
+        </div>
+        <div class="indice__grupo">
+          <p class="indice__grupo-titulo">IV · Prova</p>
+          <ul class="indice__lista">
+            <li><a class="indice__link" href="#secao-12">O que está pronto</a></li>
+            <li><a class="indice__link" href="#secao-13">Rigor de produção</a></li>
+          </ul>
+        </div>
+        <div class="indice__grupo">
+          <p class="indice__grupo-titulo">V · Pedido</p>
+          <ul class="indice__lista">
+            <li><a class="indice__link" href="#secao-14">Progressão e marchas</a></li>
+            <li><a class="indice__link" href="#secao-15">A palavra final</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
 

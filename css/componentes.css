@@ -1,13 +1,13 @@
-/* Componentes: índice, trilho, progresso, rodapé, cartões, selos. */
+/* Componentes: índice, progresso, rodapé, cartões, selos. */
 
-/* ——— Progresso no topo (sempre discreto; reforço no mobile) ——— */
+/* ——— Progresso de leitura (filete superior) ——— */
 .progresso-topo {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 40;
-  height: 2px;
+  height: 1px;
   background: transparent;
   pointer-events: none;
 }
@@ -16,7 +16,7 @@
   display: block;
   height: 100%;
   width: 100%;
-  background: var(--bronze);
+  background: color-mix(in srgb, var(--bronze) 70%, transparent);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 80ms linear;
@@ -29,117 +29,102 @@
 }
 
 body.nav-sobre-navy .progresso-topo__barra {
-  background: var(--bronze-cl);
+  background: color-mix(in srgb, var(--bronze-cl) 75%, transparent);
 }
 
-/* ——— Toggle do índice (todas as larguras — sumário sob demanda) ——— */
+/* ——— Sumário: tipografia quieta (índice de livro, não botão de app) ——— */
 .indice-toggle {
   position: fixed;
-  top: var(--esp-4);
-  right: var(--esp-4);
-  z-index: 45;
+  top: var(--esp-5);
+  right: var(--esp-5);
+  z-index: 55;
   min-width: 44px;
   min-height: 44px;
-  padding: var(--esp-2) var(--esp-3);
-  background: color-mix(in srgb, var(--papel) 78%, transparent);
-  color: var(--navy);
+  padding: var(--esp-2) 0;
+  background: transparent;
+  color: color-mix(in srgb, var(--bronze) 88%, var(--tinta));
   font-family: var(--fonte-display);
-  font-size: var(--texto-xs);
+  font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  border: 1px solid color-mix(in srgb, var(--bronze) 40%, transparent);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  border: 0;
+  border-bottom: 1px solid transparent;
   cursor: pointer;
   transition:
-    color var(--duracao) var(--easing),
-    background var(--duracao) var(--easing),
-    border-color var(--duracao) var(--easing);
+    color 200ms var(--easing),
+    border-color 200ms var(--easing);
+}
+
+.indice-toggle:hover,
+.indice-toggle:focus-visible {
+  border-bottom-color: currentColor;
 }
 
 body.nav-sobre-navy .indice-toggle {
-  background: color-mix(in srgb, var(--navy-esc) 72%, transparent);
-  color: var(--creme);
-  border-color: color-mix(in srgb, var(--bronze-cl) 45%, transparent);
+  color: color-mix(in srgb, var(--bronze-cl) 85%, white);
 }
 
 body.indice-aberto .indice-toggle {
-  background: var(--navy-esc);
-  color: var(--creme);
-  border-color: color-mix(in srgb, var(--bronze-cl) 55%, transparent);
+  color: var(--bronze-cl);
+  border-bottom-color: color-mix(in srgb, var(--bronze-cl) 55%, transparent);
 }
 
 .indice-overlay {
   display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 48;
-  background: color-mix(in srgb, var(--navy-esc) 48%, transparent);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
 }
 
-body.indice-aberto .indice-overlay {
-  display: block;
-}
-
-/* ——— Índice — gaveta editorial (não coluna permanente) ——— */
+/* ——— Índice: frontispício / sumário de livro ——— */
 .indice {
   position: fixed;
-  top: 0;
-  right: 0;
+  inset: 0;
   z-index: 50;
-  width: min(18rem, 88vw);
+  display: flex;
+  align-items: safe center;
+  justify-content: center;
+  width: 100%;
   height: 100dvh;
-  padding: var(--esp-12) var(--esp-5) var(--esp-8);
-  background: color-mix(in srgb, var(--navy-esc) 94%, transparent);
+  padding: var(--esp-16) var(--esp-5) var(--esp-10);
+  background: color-mix(in srgb, var(--navy-esc) 88%, transparent);
   color: var(--creme);
-  border-left: 1px solid color-mix(in srgb, var(--bronze-cl) 28%, transparent);
-  box-shadow: -24px 0 48px rgba(16, 29, 51, 0.28);
-  transform: translateX(100%);
-  transition: transform var(--duracao) var(--easing);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, var(--bronze-cl) 45%, transparent) transparent;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-.indice::-webkit-scrollbar {
-  width: 4px;
-}
-
-.indice::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--bronze-cl) 45%, transparent);
-  border-radius: 2px;
+  transition:
+    opacity var(--duracao) var(--easing),
+    visibility var(--duracao) var(--easing);
 }
 
 .indice--aberto {
-  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
-@media (min-width: 900px) {
-  .indice {
-    width: min(17rem, 28vw);
-    padding: var(--esp-12) var(--esp-6) var(--esp-8);
-  }
+.indice__painel {
+  width: min(22rem, 100%);
+  margin-block: auto;
 }
 
 .indice__rotulo {
-  margin-bottom: var(--esp-4);
+  margin-bottom: var(--esp-3);
   font-family: var(--fonte-display);
-  font-size: var(--texto-xs);
+  font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--bronze-cl);
+  text-align: center;
 }
 
 .indice__progresso-wrap {
   height: 1px;
-  margin-bottom: var(--esp-6);
+  margin: 0 auto var(--esp-8);
+  max-width: 4rem;
   background: color-mix(in srgb, var(--bronze-cl) 22%, transparent);
   overflow: hidden;
 }
@@ -154,19 +139,24 @@ body.indice-aberto .indice-overlay {
 }
 
 .indice__grupo {
-  margin-bottom: var(--esp-5);
+  margin-bottom: var(--esp-6);
   list-style: none;
   padding: 0;
 }
 
+.indice__grupo:last-child {
+  margin-bottom: 0;
+}
+
 .indice__grupo-titulo {
-  margin-bottom: var(--esp-2);
+  margin-bottom: var(--esp-3);
   font-family: var(--fonte-display);
-  font-size: 0.65rem;
+  font-size: 0.625rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--bronze-cl) 78%, white);
+  color: color-mix(in srgb, var(--bronze-cl) 70%, white);
+  text-align: center;
 }
 
 .indice__lista {
@@ -177,18 +167,22 @@ body.indice-aberto .indice-overlay {
 
 .indice__link {
   display: block;
-  padding: var(--esp-2) 0;
+  padding: var(--esp-2) var(--esp-3);
   min-height: 44px;
-  font-family: var(--fonte-display);
-  font-size: var(--texto-xs);
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: 0.02em;
+  font-family: var(--fonte-corpo);
+  font-size: var(--texto-sm);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-align: center;
   text-decoration: none;
-  color: color-mix(in srgb, var(--creme) 68%, transparent);
-  border-left: 1px solid transparent;
-  padding-left: var(--esp-3);
-  transition: color 160ms var(--easing), border-color 160ms var(--easing);
+  color: color-mix(in srgb, var(--creme) 62%, transparent);
+  border-left: 0;
+  border-bottom: 1px solid transparent;
+  transition:
+    color 160ms var(--easing),
+    border-color 160ms var(--easing);
 }
 
 .indice__link:hover,
@@ -199,153 +193,27 @@ body.indice-aberto .indice-overlay {
 .indice__link--ativo,
 .indice__link[aria-current="location"] {
   color: var(--creme);
-  border-left-color: var(--bronze-cl);
+  border-bottom-color: color-mix(in srgb, var(--bronze-cl) 45%, transparent);
+  font-style: normal;
+  font-weight: 600;
 }
 
-/* ——— Trilho da marcha (desktop) — overlay, sem coluna ——— */
+/* Trilho lateral retirado — progresso só no filete; navegação pelo sumário */
 .trilho {
-  display: none;
-}
-
-@media (min-width: 900px) {
-  .trilho {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--esp-6);
-    position: fixed;
-    top: 50%;
-    left: var(--esp-5);
-    z-index: 30;
-    transform: translateY(-50%);
-    padding: var(--esp-3) var(--esp-2);
-    pointer-events: none;
-  }
-
-  .trilho::before {
-    content: "";
-    position: absolute;
-    left: calc(var(--esp-2) + 5px);
-    top: var(--esp-4);
-    bottom: var(--esp-4);
-    width: 1px;
-    background: color-mix(in srgb, var(--bronze) 35%, transparent);
-    transition: background var(--duracao) var(--easing);
-  }
-
-  body.nav-sobre-navy .trilho::before {
-    background: color-mix(in srgb, var(--bronze-cl) 40%, transparent);
-  }
-
-  .trilho__marcador {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: var(--esp-3);
-    min-height: 44px;
-    padding: 0;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color: color-mix(in srgb, var(--tinta) 42%, transparent);
-    pointer-events: auto;
-    transition: color 180ms var(--easing);
-  }
-
-  body.nav-sobre-navy .trilho__marcador {
-    color: color-mix(in srgb, var(--creme) 38%, transparent);
-  }
-
-  .trilho__ponto {
-    position: relative;
-    z-index: 1;
-    width: 9px;
-    height: 9px;
-    border-radius: 1px;
-    background: transparent;
-    border: 1px solid color-mix(in srgb, var(--bronze) 70%, transparent);
-    flex-shrink: 0;
-    transition:
-      background 180ms var(--easing),
-      border-color 180ms var(--easing),
-      transform 180ms var(--easing);
-  }
-
-  body.nav-sobre-navy .trilho__ponto {
-    border-color: color-mix(in srgb, var(--bronze-cl) 75%, transparent);
-  }
-
-  .trilho__rotulo {
-    font-family: var(--fonte-display);
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    opacity: 0;
-    transform: translateX(-0.35rem);
-    transition:
-      opacity 180ms var(--easing),
-      transform 180ms var(--easing),
-      color 180ms var(--easing);
-    pointer-events: none;
-    text-shadow: 0 1px 12px color-mix(in srgb, var(--papel) 80%, transparent);
-  }
-
-  body.nav-sobre-navy .trilho__rotulo {
-    text-shadow: 0 1px 14px color-mix(in srgb, var(--navy-esc) 85%, transparent);
-  }
-
-  .trilho:hover .trilho__rotulo,
-  .trilho:focus-within .trilho__rotulo,
-  .trilho__marcador--ativo .trilho__rotulo,
-  .trilho__marcador:focus-visible .trilho__rotulo {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .trilho__marcador--ativo {
-    color: var(--bronze);
-  }
-
-  body.nav-sobre-navy .trilho__marcador--ativo {
-    color: var(--bronze-cl);
-  }
-
-  .trilho__marcador--ativo .trilho__ponto {
-    background: var(--bronze);
-    border-color: var(--bronze);
-    transform: scale(1.15);
-  }
-
-  body.nav-sobre-navy .trilho__marcador--ativo .trilho__ponto {
-    background: var(--bronze-cl);
-    border-color: var(--bronze-cl);
-  }
-
-  .trilho__marcador:hover .trilho__ponto,
-  .trilho__marcador:focus-visible .trilho__ponto {
-    border-color: var(--bronze);
-  }
-
-  body.nav-sobre-navy .trilho__marcador:hover .trilho__ponto,
-  body.nav-sobre-navy .trilho__marcador:focus-visible .trilho__ponto {
-    border-color: var(--bronze-cl);
-  }
+  display: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .trilho__rotulo,
-  .trilho__ponto,
   .indice-toggle,
   .indice {
     transition: none;
   }
 }
 
-/* Sem JS: sumário permanece acessível (estilo complementar em <noscript>) */
 .indice:target {
-  transform: none;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* ——— Tipografia de seção ——— */
