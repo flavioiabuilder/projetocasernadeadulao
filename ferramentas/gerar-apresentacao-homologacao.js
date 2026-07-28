@@ -410,6 +410,10 @@ p{margin:0 0 1rem;max-width:68ch}
 #side-menu ul{list-style:none;padding:0;margin:0}
 #side-menu a{display:block;padding:.85rem .5rem;color:var(--text);text-decoration:none;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.04em;border-bottom:1px solid var(--traco-suave);min-height:44px}
 #side-menu a:focus-visible{outline:var(--foco);outline-offset:-2px;background:color-mix(in srgb,var(--navy) 6%,var(--papel))}
+.menu-close{position:absolute;top:.55rem;right:.55rem;min-width:44px;min-height:44px;border:1px solid var(--traco);background:var(--papel);color:var(--navy);font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;padding:.45rem .7rem;z-index:1}
+.menu-close:focus-visible{outline:var(--foco);outline-offset:var(--foco-off)}
+#menu-backdrop{position:fixed;inset:0;z-index:190;background:color-mix(in srgb,var(--navy-esc) 35%,transparent);opacity:0;pointer-events:none;transition:opacity var(--dur) var(--easing);border:none;padding:0;cursor:pointer}
+#menu-backdrop.visible{opacity:1;pointer-events:auto}
 .ui-controls{position:fixed;top:.55rem;right:.55rem;z-index:150;display:flex;gap:.4rem}
 .menu-toggle,.modo-toggle{padding:.55rem .85rem;font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--traco);background:var(--papel);color:var(--navy);cursor:pointer;min-height:44px}
 .menu-toggle:hover,.modo-toggle:hover{border-color:var(--navy)}
@@ -551,7 +555,7 @@ details.faq-item{open:true}
 .merch-list{grid-template-columns:1fr}
 }
 @media print{
-.skip-link,.watermark,.ui-controls,#armor-bar,#side-menu,.scroll-hint,.decisao-acoes,.copiar-status{display:none!important}
+.skip-link,.watermark,.ui-controls,#armor-bar,#side-menu,#menu-backdrop,.scroll-hint,.decisao-acoes,.copiar-status{display:none!important}
 #deck{height:auto;overflow:visible;scroll-snap-type:none}
 .screen{page-break-after:always;min-height:auto;padding:1.5rem;border:none;justify-content:flex-start}
 .conducao,body.modo-leitura .conducao{display:none!important}
@@ -677,14 +681,27 @@ document.querySelectorAll(".armor-piece").forEach(function(btn,i){
   btn.addEventListener("click",function(){goToScreen(ARMOR_JUMP[i]);});
 });
 document.querySelectorAll("#side-menu a").forEach(function(a){
-  a.addEventListener("click",function(e){e.preventDefault();goToScreen(parseInt(a.dataset.tela,10));sideMenu.classList.remove("open");});
+  a.addEventListener("click",function(e){e.preventDefault();goToScreen(parseInt(a.dataset.tela,10));setMenuOpen(false);});
 });
 
-document.getElementById("menu-toggle").addEventListener("click",function(){
-  sideMenu.classList.toggle("open");
-  var open=sideMenu.classList.contains("open");
-  this.setAttribute("aria-expanded",open);
+var menuToggle=document.getElementById("menu-toggle");
+var menuBackdrop=document.getElementById("menu-backdrop");
+var menuClose=document.getElementById("menu-close");
+function setMenuOpen(open){
+  sideMenu.classList.toggle("open",open);
+  if(menuBackdrop)menuBackdrop.classList.toggle("visible",open);
+  if(menuToggle)menuToggle.setAttribute("aria-expanded",open?"true":"false");
   sideMenu.setAttribute("aria-hidden",open?"false":"true");
+  if(open&&menuClose)menuClose.focus();
+  else if(!open&&menuToggle)menuToggle.focus();
+}
+if(menuToggle)menuToggle.addEventListener("click",function(){
+  setMenuOpen(!sideMenu.classList.contains("open"));
+});
+if(menuClose)menuClose.addEventListener("click",function(){setMenuOpen(false);});
+if(menuBackdrop)menuBackdrop.addEventListener("click",function(){setMenuOpen(false);});
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape"&&sideMenu.classList.contains("open")){e.preventDefault();setMenuOpen(false);}
 });
 document.getElementById("modo-toggle").addEventListener("click",function(){
   document.body.classList.toggle("versao-continua");
@@ -908,7 +925,9 @@ function buildHtml() {
 <button type="button" class="armor-piece" title="Ato VII — Calçados" aria-label="Ir para Ato VII">Calç.</button>
 <button type="button" class="armor-piece" title="Ato IX — Escudo" aria-label="Ir para Ato IX">Esc.</button>
 </nav>
+<button type="button" id="menu-backdrop" aria-label="Fechar menu" tabindex="-1"></button>
 <nav id="side-menu" aria-label="Atos da apresentação" aria-hidden="true">
+<button type="button" class="menu-close" id="menu-close" aria-label="Fechar menu">Fechar</button>
 <ul>${menuLinks}</ul>
 </nav>
 <main id="deck">
