@@ -43,6 +43,14 @@ Inventário completo da marca: [`assets/img/logo-pdac/LEIA-ME.md`](../assets/img
 - Grade 48 e linha da timeline animam só quando a tela respectiva está à vista
 - Respeita `prefers-reduced-motion: reduce` (tudo estático)
 
+## Motion (onda 2)
+
+- Flip cards: hover, flip com spring, borda bronze ao virar
+- Escudo (Tela 22): parallax leve ao pointer + vinheta brass na entrada
+- Matriz: filtro com fade/slide das linhas; underline nos chips ativos
+- Anatomia: painéis expandem/recolhem; hover nos botões
+- Microinterações: merch, checklist, Adulão tags, eixos, botões de UI
+
 ## Tela 29
 
 Checklist em memória (sem `localStorage`). Botões **Copiar resumo** e **Imprimir** (checklist assinável via `@media print`).
