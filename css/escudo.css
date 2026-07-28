@@ -1,0 +1,185 @@
+/* Escudo / marca (seção 7) — estudo visual, não arte homologada. */
+
+/* ——— Escudo / marca (seção 7) ——— */
+.marca-escudo {
+  display: grid;
+  gap: var(--esp-8);
+  margin-block: var(--esp-8);
+}
+
+@media (min-width: 768px) {
+  .marca-escudo {
+    grid-template-columns: minmax(12rem, 18rem) 1fr;
+    align-items: start;
+  }
+}
+
+.marca-escudo__figura {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: var(--esp-6);
+}
+
+.marca-escudo__img {
+  width: min(100%, 14rem);
+  height: auto;
+}
+
+.marca-escudo__hotspots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-2);
+  justify-content: center;
+  margin-top: var(--esp-4);
+  list-style: none;
+  padding: 0;
+}
+
+.marca-escudo__hotspots [role="tab"] {
+  min-height: 44px;
+  min-width: 44px;
+  padding: var(--esp-2) var(--esp-3);
+  border: 1px solid color-mix(in srgb, var(--bronze-cl) 50%, transparent);
+  font-family: var(--fonte-display);
+  font-size: var(--rotulo);
+  font-weight: 700;
+  letter-spacing: var(--rotulo-tracking-aperto);
+  text-transform: uppercase;
+  color: var(--creme);
+}
+
+.marca-escudo__hotspots [role="tab"][aria-selected="true"] {
+  background: var(--bronze-esc);
+  border-color: var(--bronze-esc);
+  color: var(--papel);
+}
+
+.marca-escudo__painel {
+  padding: var(--esp-5);
+  background: color-mix(in srgb, var(--navy) 55%, black);
+  border: 1px solid color-mix(in srgb, var(--regua) 25%, transparent);
+}
+
+.marca-escudo__painel[hidden] {
+  display: none;
+}
+
+.marca-escudo__peca {
+  margin-bottom: var(--esp-2);
+  font-family: var(--fonte-display);
+  font-size: var(--texto-md);
+  font-weight: 800;
+}
+
+.marca-escudo__modulo {
+  margin-bottom: var(--esp-4);
+  font-family: var(--fonte-display);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: var(--rotulo-tracking);
+  text-transform: uppercase;
+  color: var(--bronze-cl);
+}
+
+.marca-escudo__lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+}
+
+.marca-escudo__lista-btn {
+  width: 100%;
+  min-height: 44px;
+  text-align: left;
+  padding: var(--esp-3) var(--esp-4);
+  border: 1px solid var(--traco-suave);
+  font-family: var(--fonte-display);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  color: color-mix(in srgb, var(--creme) 80%, transparent);
+}
+
+.marca-escudo__lista-btn--ativo {
+  border-color: var(--bronze-cl);
+  color: var(--creme);
+  background: color-mix(in srgb, var(--bronze) 20%, transparent);
+}
+
+.paleta {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+  gap: var(--esp-4);
+  margin-block: var(--esp-6);
+  list-style: none;
+  padding: 0;
+}
+
+.paleta__amostra {
+  aspect-ratio: 1.4 / 1;
+  border: 1px solid var(--traco-suave);
+}
+
+.paleta__meta {
+  margin-top: var(--esp-2);
+  font-family: var(--fonte-display);
+  font-size: var(--rotulo);
+  font-weight: 700;
+  letter-spacing: var(--rotulo-tracking-aperto);
+  text-transform: uppercase;
+}
+
+.paleta__hex {
+  font-family: ui-monospace, monospace;
+  font-size: var(--rotulo-md);
+  letter-spacing: 0;
+  text-transform: none;
+  color: color-mix(in srgb, var(--creme) 65%, transparent);
+}
+
+.lista-salvaguardas {
+  margin: var(--esp-5) 0;
+  padding-left: var(--esp-6);
+  max-width: var(--medida);
+}
+
+.lista-salvaguardas li {
+  margin-bottom: var(--esp-3);
+}
+
+.marchas {
+  width: 100%;
+  max-width: var(--container-largo);
+  margin-block: var(--esp-6);
+  border-collapse: collapse;
+  font-size: var(--texto-sm);
+}
+
+.marchas th,
+.marchas td {
+  padding: var(--esp-3) var(--esp-4);
+  text-align: left;
+  border-bottom: 1px solid var(--traco-suave);
+  vertical-align: top;
+}
+
+.marchas th {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-xs);
+  letter-spacing: var(--rotulo-tracking-aperto);
+  text-transform: uppercase;
+  color: var(--bronze-cl);
+}
+
+.marchas--clara th {
+  color: var(--bronze);
+}
+
+.marchas--clara th,
+.marchas--clara td {
+  border-bottom-color: var(--traco-forte);
+  color: var(--tinta);
+}

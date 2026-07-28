@@ -13,8 +13,12 @@ Arquivos movidos de `css/` em 28/07/2026 após auditoria de consistência visual
 css/tokens.css
 css/base.css
 css/layout.css
-css/componentes.css
+css/nav.css
+css/editorial.css
+css/escudo.css
+css/curricular.css
 css/secoes.css
 ```
 
 Não reintroduzir estes arquivos no `<head>` sem revisão explícita da Direção A.
+Não reintroduzir o monólito `componentes.css`.

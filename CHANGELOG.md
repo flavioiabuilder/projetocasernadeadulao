@@ -2,12 +2,13 @@
 
 ## [Unreleased]
 
-### Consistência visual (onda 1)
+### Consistência visual (onda 1–2)
 
 - Arquivados `prospecto.css` e `atos.css` (não linkados) em `legado/css/`.
 - Tokens `--rotulo*` / `--traco*` em `tokens.css`; literais migrados no CSS vivo.
 - Abertura sem RGBA hardcoded; `font-weight: 500` → 400; seção 12 em `--creme`.
-- Sumário em painel papel (já na rodada anterior); regra bronze vs bronze-cl documentada.
+- Sumário em painel papel; regra bronze vs bronze-cl documentada.
+- `componentes.css` partido em `nav.css`, `editorial.css`, `escudo.css`, `curricular.css`.
 
 ## [1.0.0] — 2026-07-27
 

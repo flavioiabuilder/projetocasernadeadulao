@@ -85,11 +85,14 @@ A Direção A governa **integralmente**:
 css/tokens.css
 css/base.css
 css/layout.css
-css/componentes.css
-css/secoes.css
+css/nav.css          ← barra, progresso, sumário
+css/editorial.css    ← tipografia, comparação, listas, checklist, rodapé
+css/escudo.css       ← marca / escudo (estudo)
+css/curricular.css   ← matriz, anatomia, edições, folheador
+css/secoes.css       ← abertura Stitch
 ```
 
-Legado fora do bundle: `legado/css/` (`prospecto.css`, `atos.css`) — não linkar sem revisão.
+Legado fora do bundle: `legado/css/` (`prospecto.css`, `atos.css`, e o antigo monólito `componentes.css` via histórico git) — não linkar sem revisão.
 
 ### Âncora simbólica (obrigatória na implementação futura)
 
@@ -244,3 +247,4 @@ Decisões ainda abertas (não reabrem a direção-base):
 - Mockups Stitch em `referencia/stitch/` orientam composição das seções **1, 3, 9 e 12** (paleta, ritmo, comparação cream×navy, badges/filtros da matriz, chrome do folheador). Não são fonte canônica de texto nem stack (sem Tailwind/CDN/CTAs). Ver `referencia/stitch/LEIA-ME.md`.
 - Arte oficial da marca e apreciação pastoral continuam pendências humanas (`TODO.md`).
 - **28/07/2026 — consistência visual (onda 1):** CSS morto arquivado em `legado/css/`; tokens `--rotulo*` / `--traco*`; abertura sem RGBA hardcoded; `font-weight: 500` removido; seção 12 em `--creme` (quebra da dupla papel 11–12).
+- **28/07/2026 — consistência visual (onda 2):** `componentes.css` partido em `nav.css`, `editorial.css`, `escudo.css`, `curricular.css`.
