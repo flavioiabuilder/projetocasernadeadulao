@@ -36,10 +36,6 @@
     },
   ];
 
-  function movimentoDeSecao(secaoId) {
-    return MOVIMENTOS.find((m) => m.secoes.indexOf(secaoId) !== -1);
-  }
-
   function secaoEhNavy(el) {
     if (!el || !el.classList) return false;
     return (
@@ -64,8 +60,28 @@
       });
     });
 
+    const marcosMovimento = MOVIMENTOS.map((m) => ({
+      id: m.id,
+      el: document.getElementById(m.id),
+    })).filter((m) => m.el);
+
     let ticking = false;
-    let ativoId = null;
+    let ativoSecaoId = null;
+    let ativoMovimentoId = null;
+
+    function marcarMovimento(movId) {
+      if (movId === ativoMovimentoId) return;
+      ativoMovimentoId = movId;
+      marcadores.forEach((btn) => {
+        const on = btn.getAttribute("data-movimento") === movId;
+        btn.classList.toggle("barra__movimento--ativo", on);
+        if (on) {
+          btn.setAttribute("aria-current", "true");
+        } else {
+          btn.removeAttribute("aria-current");
+        }
+      });
+    }
 
     function atualizar() {
       ticking = false;
@@ -81,7 +97,19 @@
         progressoIndice.style.transform = "scaleX(" + pct + ")";
       }
 
-      const probe = y + window.innerHeight * 0.35;
+      /* Probe próximo do topo: o cabeçalho do movimento (antes da 1ª seção) conta. */
+      const probe = y + Math.min(120, window.innerHeight * 0.2);
+
+      let marcoAtual = marcosMovimento[0];
+      for (let i = 0; i < marcosMovimento.length; i++) {
+        if (marcosMovimento[i].el.offsetTop <= probe) {
+          marcoAtual = marcosMovimento[i];
+        }
+      }
+      if (marcoAtual) {
+        marcarMovimento(marcoAtual.id);
+      }
+
       let atual = secoes[0];
       for (let i = 0; i < secoes.length; i++) {
         if (secoes[i].offsetTop <= probe) {
@@ -93,8 +121,8 @@
       document.body.classList.toggle("nav-sobre-navy", secaoEhNavy(atual));
 
       const id = atual.id;
-      if (id === ativoId) return;
-      ativoId = id;
+      if (id === ativoSecaoId) return;
+      ativoSecaoId = id;
 
       links.forEach((link) => {
         const href = link.getAttribute("href") || "";
@@ -105,18 +133,6 @@
           link.setAttribute("aria-current", "location");
         } else {
           link.removeAttribute("aria-current");
-        }
-      });
-
-      const mov = movimentoDeSecao(id);
-      marcadores.forEach((btn) => {
-        const mid = btn.getAttribute("data-movimento");
-        const on = mov && mid === mov.id;
-        btn.classList.toggle("barra__movimento--ativo", on);
-        if (on) {
-          btn.setAttribute("aria-current", "true");
-        } else {
-          btn.removeAttribute("aria-current");
         }
       });
     }
@@ -130,6 +146,13 @@
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll, { passive: true });
     atualizar();
+
+    marcadores.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const mid = btn.getAttribute("data-movimento");
+        if (mid) marcarMovimento(mid);
+      });
+    });
 
     const toggle = document.querySelector("[data-indice-toggle]");
     const drawer = document.querySelector("[data-indice]");
