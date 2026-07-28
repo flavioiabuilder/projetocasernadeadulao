@@ -62,12 +62,10 @@
 
 @media (min-width: 900px) {
   :root {
-    /* Trilho flutuante — sem coluna reservada (imersão em tela cheia) */
     --rail-left: 0px;
   }
 }
 
-/* Mobile: sumário em drawer — sem reserva de trilho lateral */
 @media (max-width: 899px) {
   :root {
     --rail-left: 0px;
