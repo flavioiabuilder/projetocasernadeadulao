@@ -1,148 +1,107 @@
-/* Ajustes específicos por seção — composição Stitch (abertura) e âncoras. */
+/* Abertura — composição Stitch: hero navy + corpo papel full-bleed. */
 
-#secao-1 {
+.secao--abertura {
+  padding-block: 0;
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+.abertura__hero {
   position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-block: calc(var(--esp-20) + 2.5rem);
+  min-height: 85vh;
+  min-height: 85dvh;
+  padding-block: calc(var(--esp-20) + 3rem) var(--esp-16);
   overflow: hidden;
   isolation: isolate;
+  text-align: center;
+  color: var(--creme);
+  background: var(--navy-esc);
 }
 
-#secao-1::before {
+.abertura__hero::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(
-      ellipse 80% 55% at 50% 35%,
-      color-mix(in srgb, var(--navy) 55%, transparent) 0%,
-      transparent 70%
-    ),
     linear-gradient(
-      165deg,
-      color-mix(in srgb, var(--navy) 40%, var(--navy-esc)) 0%,
-      var(--navy-esc) 55%,
-      #0c1526 100%
+      rgba(16, 29, 51, 0.92),
+      rgba(16, 29, 51, 0.96)
     );
   pointer-events: none;
 }
 
 .abertura {
-  text-align: center;
+  z-index: 1;
   margin-inline: auto;
-  max-width: 42rem;
-}
-
-.abertura__hero {
-  margin-bottom: var(--esp-10);
+  max-width: 48rem;
 }
 
 .abertura__brasao {
-  width: 3.75rem;
+  width: 3.5rem;
   height: auto;
   margin: 0 auto var(--esp-8);
   padding: 0;
   background: transparent;
+  filter: none;
 }
 
 .abertura .sobrelinha {
+  margin-bottom: var(--esp-6);
   letter-spacing: 0.3em;
   color: var(--bronze-cl);
-  margin-bottom: var(--esp-6);
 }
 
 .abertura__titulo {
   margin-inline: auto;
-  margin-bottom: var(--esp-6);
-  font-size: clamp(2.5rem, 1.4rem + 3.2vw, 4.25rem);
-  max-width: 12ch;
-  color: var(--papel);
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
+  margin-bottom: var(--esp-8);
+  max-width: 14ch;
+  font-size: clamp(2.75rem, 1.2rem + 4vw, 4.5rem);
   font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--papel);
+  text-wrap: balance;
 }
 
 .abertura .secao__subtitulo {
   margin-inline: auto;
-  margin-bottom: var(--esp-5);
-  max-width: 28rem;
-  font-size: clamp(1.15rem, 1rem + 0.55vw, 1.45rem);
+  margin-bottom: 0;
+  max-width: 32rem;
+  font-size: clamp(1.2rem, 1rem + 0.7vw, 1.55rem);
+  font-style: italic;
+  font-weight: 400;
   color: color-mix(in srgb, var(--creme) 72%, transparent);
 }
 
-.abertura__movimento {
-  margin-bottom: var(--esp-6);
-  color: color-mix(in srgb, var(--bronze-cl) 75%, transparent);
-  font-size: var(--texto-xs);
-  letter-spacing: 0.16em;
-}
-
-.abertura__filete {
-  width: 5rem;
-  height: 0;
-  margin: 0 auto;
-  border: 0;
-  border-top: 2px solid var(--bronze);
-}
-
-.abertura__painel {
-  text-align: left;
-  margin-inline: auto;
-  max-width: 36rem;
-  padding: var(--esp-8) var(--esp-6);
-  background: var(--papel);
-  color: var(--tinta);
-  border: 1px solid color-mix(in srgb, var(--regua) 70%, transparent);
-}
-
-.abertura__painel .prosa {
-  color: var(--tinta);
-  max-width: none;
+.abertura__hero .rolar {
+  position: absolute;
+  left: 50%;
+  bottom: var(--esp-8);
+  transform: translateX(-50%);
   margin: 0;
-}
-
-.abertura__painel .prosa p + p {
-  margin-top: var(--esp-5);
-}
-
-.abertura .selo {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: var(--esp-8);
-  padding: var(--esp-5) var(--esp-4);
-  text-align: center;
-  background: var(--creme);
-  border: 2px solid var(--regua);
-  color: var(--navy);
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-}
-
-.abertura .rolar {
-  margin-top: var(--esp-10);
+  width: 2rem;
+  height: 2rem;
   color: var(--bronze-cl);
 }
 
-.abertura .rolar::after {
+.abertura__hero .rolar::after {
   content: "";
   display: block;
-  width: 0.65rem;
-  height: 0.65rem;
-  margin: var(--esp-3) auto 0;
-  border-right: 2px solid var(--bronze-cl);
-  border-bottom: 2px solid var(--bronze-cl);
+  width: 0.7rem;
+  height: 0.7rem;
+  margin: 0.35rem auto 0;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
   transform: rotate(45deg);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .abertura .rolar::after {
+  .abertura__hero .rolar::after {
     animation: abertura-rolar 1.6s var(--easing) infinite;
   }
 }
@@ -154,9 +113,69 @@
     opacity: 1;
   }
   50% {
-    transform: rotate(45deg) translateY(0.35rem);
-    opacity: 0.55;
+    transform: rotate(45deg) translateY(0.4rem);
+    opacity: 0.5;
   }
+}
+
+/* Corpo em papel — faixa full-bleed (não card sobre navy) */
+.abertura__corpo {
+  padding-block: var(--esp-20) var(--esp-16);
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+.abertura__corpo .container {
+  max-width: 40rem;
+}
+
+.abertura__movimento {
+  margin-bottom: var(--esp-8);
+  color: var(--bronze);
+}
+
+.abertura__corpo .prosa {
+  color: var(--tinta);
+  max-width: none;
+}
+
+.abertura__corpo .prosa p + p {
+  margin-top: var(--esp-6);
+}
+
+.abertura__corpo .selo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--esp-3);
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: var(--esp-12);
+  padding: var(--esp-8) var(--esp-6);
+  text-align: center;
+  background: var(--creme);
+  border: 2px solid var(--regua);
+  color: var(--navy);
+}
+
+.selo__rotulo {
+  display: block;
+  font-family: var(--fonte-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bronze-esc);
+}
+
+.selo__texto {
+  display: block;
+  font-family: var(--fonte-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
 }
 
 .ancora__nota {

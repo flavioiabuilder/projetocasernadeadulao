@@ -12,18 +12,16 @@
   gap: var(--esp-5);
   min-height: 3.5rem;
   padding: var(--esp-3) var(--esp-5);
-  background: color-mix(in srgb, var(--papel) 90%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--regua) 28%, transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: var(--papel);
+  border-bottom: 1px solid color-mix(in srgb, var(--regua) 40%, transparent);
   transition:
     background 200ms var(--easing),
     border-color 200ms var(--easing);
 }
 
 body.nav-sobre-navy .barra {
-  background: color-mix(in srgb, var(--navy-esc) 88%, transparent);
-  border-bottom-color: color-mix(in srgb, var(--creme) 6%, transparent);
+  background: color-mix(in srgb, var(--navy-esc) 94%, black);
+  border-bottom-color: color-mix(in srgb, var(--creme) 8%, transparent);
 }
 
 .barra__marca {
@@ -61,13 +59,13 @@ body.nav-sobre-navy .barra__marca {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
-  color: color-mix(in srgb, var(--tinta) 62%, transparent);
+  color: color-mix(in srgb, var(--tinta) 72%, transparent);
   white-space: nowrap;
   transition: color 160ms var(--easing);
 }
 
 body.nav-sobre-navy .barra__movimento {
-  color: color-mix(in srgb, var(--creme) 62%, transparent);
+  color: color-mix(in srgb, var(--creme) 72%, transparent);
 }
 
 .barra__movimento::after {

@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="css/componentes.css" />
     <link rel="stylesheet" href="css/secoes.css" />
   </head>
-  <body class="nav-sobre-navy">
+  <body>
     <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
 
     <header class="barra">
@@ -170,9 +170,9 @@
         <!-- ========== MOVIMENTO I ========== -->
         <div id="movimento-1">
         <!-- Seção 1 — Abertura -->
-        <section class="secao secao--navy-esc" id="secao-1" aria-labelledby="titulo-1">
-          <div class="container abertura" data-revelar>
-            <div class="abertura__hero">
+        <section class="secao secao--abertura" id="secao-1" aria-labelledby="titulo-1">
+          <div class="abertura__hero">
+            <div class="container abertura" data-revelar>
               <img
                 class="abertura__brasao"
                 src="assets/img/brasao.svg"
@@ -186,10 +186,14 @@
                 Um discipulado cristocêntrico para a caserna e para os que estão em
                 aperto
               </p>
-              <p class="movimento__titulo abertura__movimento">I · A necessidade</p>
-              <hr class="abertura__filete" aria-hidden="true" />
             </div>
-            <div class="abertura__painel">
+            <p class="rolar">
+              <span class="visually-hidden">Role para continuar</span>
+            </p>
+          </div>
+          <div class="abertura__corpo" id="abertura-intro">
+            <div class="container" data-revelar>
+              <p class="movimento__titulo abertura__movimento">I · A necessidade</p>
               <div class="prosa">
                 <p>
                   Não começo esta apresentação pelo material. Começo pelo homem
@@ -210,10 +214,16 @@
                 </p>
               </div>
               <p class="selo">
-                Versão candidata — aguardando apreciação pastoral
+                <span class="selo__rotulo">Versão candidata</span>
+                <span class="selo__texto"
+                  >Aguardando apreciação pastoral</span
+                >
               </p>
+              <!-- texto contínuo para testes / leitores -->
+              <span class="visually-hidden"
+                >Versão candidata — aguardando apreciação pastoral</span
+              >
             </div>
-            <p class="rolar">Role para continuar</p>
           </div>
         </section>
 
