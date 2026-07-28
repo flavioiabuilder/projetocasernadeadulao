@@ -1,6 +1,7 @@
 /**
- * Índice lateral + trilho da marcha (cinco movimentos, quinze seções).
- * Mobile: barra de progresso no topo; desktop: trilho vertical à esquerda.
+ * Índice em gaveta + trilho da marcha (cinco movimentos, quinze seções).
+ * Desktop e mobile: sumário sob demanda. Trilho flutuante no desktop.
+ * body.nav-sobre-navy adapta contraste do chrome ao fundo da seção ativa.
  */
 (function () {
   const MOVIMENTOS = [
@@ -38,6 +39,14 @@
 
   function movimentoDeSecao(secaoId) {
     return MOVIMENTOS.find((m) => m.secoes.indexOf(secaoId) !== -1);
+  }
+
+  function secaoEhNavy(el) {
+    if (!el || !el.classList) return false;
+    return (
+      el.classList.contains("secao--navy") ||
+      el.classList.contains("secao--navy-esc")
+    );
   }
 
   function initNavegacao() {
@@ -82,6 +91,8 @@
       }
       if (!atual) return;
 
+      document.body.classList.toggle("nav-sobre-navy", secaoEhNavy(atual));
+
       const id = atual.id;
       if (id === ativoId) return;
       ativoId = id;
@@ -117,7 +128,7 @@
     window.addEventListener("resize", onScroll, { passive: true });
     atualizar();
 
-    /* Drawer do índice no mobile */
+    /* Gaveta do índice */
     const toggle = document.querySelector("[data-indice-toggle]");
     const drawer = document.querySelector("[data-indice]");
     const overlay = document.querySelector("[data-indice-overlay]");
@@ -148,6 +159,9 @@
     if (overlay) {
       overlay.addEventListener("click", fecharIndice);
     }
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape") fecharIndice();
+    });
     links.forEach((link) => {
       link.addEventListener("click", fecharIndice);
     });

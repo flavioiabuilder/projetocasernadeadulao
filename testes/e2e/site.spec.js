@@ -39,7 +39,9 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
   });
 
   test("índice navega até a seção 15", async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
     await page.goto("/");
+    await page.locator("[data-indice-toggle]").click();
     const link = page.locator('.indice__link[href="#secao-15"]');
     await link.evaluate((el) => el.scrollIntoView({ block: "nearest" }));
     await link.click();
