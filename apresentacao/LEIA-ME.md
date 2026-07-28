@@ -2,9 +2,11 @@
 
 Artefato irmão do prospecto multiarquivo (`index.html`). Destinado ao **Pr. Glaydston** para apreciação, orientação e validação pastoral do Guia Mestre v1.0-RC.
 
-## Arquivo gerado
+## Tipografia e offline
 
-- `homologacao-pastoral.html` — HTML único, autocontido (CSS e JS inline). Abre offline com duplo clique.
+- Fontes **Montserrat** + **Source Serif 4** embutidas em base64 no HTML (mesmas do prospecto).
+- Abre offline com duplo clique; sem CDN.
+- Paleta alinhada à Direção A; cantos retos (sem `border-radius`); filetes editoriais.
 
 ## Regenerar
 

@@ -15,6 +15,7 @@
 - HTML único em `apresentacao/homologacao-pastoral.html` (gerado por `npm run generate:apresentacao`).
 - 30 telas / 9 atos conforme `docs/roteiro-apresentacao-homologacao-v1.md`.
 - Prefácio como convite; merch como estudo; caderneta como proposta.
+- Polimento: fontes locais embutidas (Montserrat + Source Serif 4), tipografia/filetes Direção A, matriz responsiva, cantos retos.
 
 ## [1.0.0] — 2026-07-27
 
