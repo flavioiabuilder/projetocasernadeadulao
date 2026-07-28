@@ -1,6 +1,6 @@
 /**
  * Escudo anatomizado (seção 7 — A marca).
- * Trocar o SVG em assets/img/ não exige refazer esta interação.
+ * A arte ativa está em assets/img/logo-pdac/ (ver LEIA-ME.md).
  */
 (function () {
   function syncLista(root, indice) {

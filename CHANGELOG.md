@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+### Logomarca oficial (PDAC)
+
+- Arquivos em `assets/img/logo-pdac/` (canônico; inventário em `LEIA-ME.md`).
+- Prospecto: favicon, barra (clara/navy), abertura e seção 7 usam a marca oficial.
+- Apresentação (Tela 22): master flat colorida; tag de apreciação pastoral pendente.
+
 ### Consistência visual (onda 1–2)
 
 - Arquivados `prospecto.css` e `atos.css` (não linkados) em `legado/css/`.

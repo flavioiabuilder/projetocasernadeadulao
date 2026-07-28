@@ -69,5 +69,6 @@ Nenhum código Tailwind/CDN deles entra no produto.
 
 ## Pendências
 
-Ver [`TODO.md`](TODO.md). Decisões humanas (marca oficial, licença, apreciação
-pastoral, indexação) permanecem abertas — não inventar.
+Ver [`TODO.md`](TODO.md). Decisões humanas (apreciação pastoral da marca, licença,
+indexação) permanecem abertas — não inventar. Arte oficial em
+`assets/img/logo-pdac/` (ver `LEIA-ME.md` lá).

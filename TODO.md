@@ -13,10 +13,11 @@
 
 ## Arte e identidade
 
-- [ ] Arte oficial da logomarca (substituir `assets/img/brasao.svg`)
+- [x] Arte oficial da logomarca em `assets/img/logo-pdac/` (inventário em `LEIA-ME.md`; aplicada no prospecto e na apresentação)
 - [ ] Artes das quatro insígnias, se existirem como peças separadas
-- [ ] Confirmar versões monocromática e reduzida no Caderno de Identidade Visual
+- [ ] Confirmar versões monocromática e reduzida no Caderno de Identidade Visual (arquivos 1C e Micro XS já versionados; caderno ainda pendente)
 - [x] Mockups Stitch em `referencia/stitch/` (referência de layout; ver LEIA-ME lá)
+- [ ] Apreciação pastoral da logomarca oficial
 
 ## Decisões humanas / conteúdo (bloqueios — não inventar)
 

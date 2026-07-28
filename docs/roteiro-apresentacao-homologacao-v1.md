@@ -541,7 +541,7 @@ Encimado pelo **capacete**. Atravessado pela **espada**.
 O discípulo não coleciona medalhas. **Ele é revestido por Cristo.**
 
 **Visual**
-A logomarca em tela cheia (`assets/img/marca-escudo.svg`), com anotações que se acendem uma a uma apontando cada elemento e seu significado. É a única tela em que a marca aparece grande. Rotular como **estudo visual** — homologação pendente.
+A logomarca em tela cheia (`assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png`). É a única tela em que a marca aparece grande. Rotular como **logomarca oficial — apreciação pastoral pendente**. Inventário: `assets/img/logo-pdac/LEIA-ME.md`.
 
 **Condução**
 **Esta tela precisa vir antes de qualquer aplicação.** Ela estabelece que a identidade visual é doutrina antes de ser design. Só depois disso é legítimo mostrar a marca aplicada em objetos.
@@ -807,9 +807,9 @@ Terceira e última aparição da frase-âncora (**Dedicatória**, não Prefácio
 
 ## Assets disponíveis no repositório
 
-- `assets/img/marca-escudo.svg`
-- `assets/img/brasao.svg`
-- Sem fotografias reais; sem arte de capa do Guia — tipografia + SVG.
+- `assets/img/logo-pdac/` — logomarca oficial do Discipulando a Caserna (ver `LEIA-ME.md`)
+- `assets/img/marca-escudo.svg`, `assets/img/brasao.svg` — estudos legados (não ativos na UI)
+- Sem fotografias reais; sem arte de capa do Guia — tipografia + marca oficial.
 
 ## O que ainda precisa de confirmação humana antes de codificar
 

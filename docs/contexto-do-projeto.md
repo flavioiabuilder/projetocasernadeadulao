@@ -143,7 +143,7 @@ Registradas sem preenchimento inventado:
 
 1. **Definição institucional completa** do Projeto Caserna de Adulão (missão, governança, escopo) — ausente no repositório.
 2. **Virtude, tema e temaRef** dos Módulos 3 e 4 estão `null` em `modulos.json` (já documentado em `conteudo/LEIA-ME.md`) — omitir na UI.
-3. **Arte oficial** da logomarca/brasão: apenas estudos visuais; homologação pendente.
+3. **Arte oficial** da logomarca: arquivos em `assets/img/logo-pdac/` (ver `LEIA-ME.md`); apreciação pastoral ainda pendente.
 4. **Licença** de código e conteúdo pastoral: indefinida.
 5. **Política de acesso**: prévia pública vs. área restrita real — pendente (`TODO.md`).
 6. **Papel exacto do Pr. Glaydston** em relação à autoria e à liderança do Projeto.

@@ -40,7 +40,8 @@
 }
 
 .abertura__brasao {
-  width: 3.5rem;
+  display: block;
+  width: min(10rem, 42vw);
   height: auto;
   margin: 0 auto var(--esp-8);
   padding: 0;

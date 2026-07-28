@@ -26,7 +26,8 @@ function esc(s) {
 
 const matriz = JSON.parse(ler("conteudo/matriz-curricular.json"));
 const modulos = JSON.parse(ler("conteudo/modulos.json"));
-const escudoSvg = ler("assets/img/marca-escudo.svg").trim();
+const escudoPng =
+  "../assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png";
 
 const licao6 = matriz.licoes.find((l) => l.numero === 6);
 
@@ -619,8 +620,8 @@ function buildScreens() {
       7,
       `<div class="screen-inner">
         <h2>O escudo ensina o que o programa confessa.</h2>
-        <p class="estudo-tag">estudo visual — homologação pendente</p>
-        <div class="escudo-wrap">${escudoSvg}</div>
+        <p class="estudo-tag">logomarca oficial — apreciação pastoral pendente</p>
+        <div class="escudo-wrap"><img class="escudo-img" src="${escudoPng}" width="320" height="320" alt="Logomarca do Discipulando a Caserna" decoding="async" /></div>
         <p>Um escudo com as insígnias cravadas — o cinto, a couraça, os calçados e, no quarto campo, o próprio escudo do Projeto.<br>Encimado pelo <strong>capacete</strong>. Atravessado pela <strong>espada</strong>.</p>
         <p>O discípulo não coleciona medalhas. <strong>Ele é revestido por Cristo.</strong></p>
         ${blocoConducao("Esta tela precisa vir antes de qualquer aplicação. A identidade visual é doutrina antes de ser design.")}
@@ -971,7 +972,7 @@ p{margin:0 0 1rem;max-width:68ch}
 .proposta-tag,.estudo-tag{display:inline-block;font-family:var(--sans);font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--brass);border:1px solid var(--brass);padding:.35rem .65rem;margin-bottom:1rem}
 .estudo-tag--block{display:block;text-align:center;font-size:.75rem;padding:.65rem;margin:1.1rem 0;background:color-mix(in srgb,var(--brass) 8%,var(--bg))}
 .escudo-wrap{max-width:14rem;margin:1.25rem auto;text-align:center;padding:1rem;border:1px solid var(--traco-suave);background:var(--papel)}
-.escudo-wrap svg{width:100%;height:auto}
+.escudo-wrap svg,.escudo-img{width:100%;height:auto;display:block}
 .caderneta-mock{border:1px dashed var(--traco);padding:1.35rem;margin:1.75rem 0;font-family:var(--sans);font-size:.85rem;background:var(--papel)}
 .caderneta-mock strong{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.7rem;color:var(--navy)}
 .merch-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(8.5rem,1fr));gap:.5rem;list-style:none;padding:0;margin:1.1rem 0}

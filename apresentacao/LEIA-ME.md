@@ -23,7 +23,9 @@ node ferramentas/gerar-apresentacao-homologacao.js
 O script lê em tempo de geração:
 
 - `conteudo/matriz-curricular.json` (matriz filtrável, Tela 16)
-- `assets/img/marca-escudo.svg` (Tela 22)
+- `assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png` (Tela 22)
+
+Inventário completo da marca: [`assets/img/logo-pdac/LEIA-ME.md`](../assets/img/logo-pdac/LEIA-ME.md).
 
 ## Navegação
 
@@ -50,7 +52,7 @@ Checklist em memória (sem `localStorage`). Botões **Copiar resumo** e **Imprim
 - Prefácio: apenas **convite** — página reservada, sem autoria pastoral antecipada
 - Merch (Tela 24): **ESTUDO — NÃO APROVADO**
 - Caderneta (Tela 23): **PROPOSTA**
-- Logomarca (Tela 22): **estudo visual** — homologação pendente
+- Logomarca (Tela 22): arte oficial em `assets/img/logo-pdac/` — apreciação pastoral pendente
 
 ## Fonte do roteiro
 

@@ -245,6 +245,7 @@ Decisões ainda abertas (não reabrem a direção-base):
 - Direção A aplicada no prospecto v1.0 (seções 1–15), com as duas importações autorizadas.
 - Protótipos permanecem como referência histórica em `prototipos/`.
 - Mockups Stitch em `referencia/stitch/` orientam composição das seções **1, 3, 9 e 12** (paleta, ritmo, comparação cream×navy, badges/filtros da matriz, chrome do folheador). Não são fonte canônica de texto nem stack (sem Tailwind/CDN/CTAs). Ver `referencia/stitch/LEIA-ME.md`.
-- Arte oficial da marca e apreciação pastoral continuam pendências humanas (`TODO.md`).
+- Logomarca oficial do Discipulando em `assets/img/logo-pdac/` (inventário no `LEIA-ME.md` da pasta); apreciação pastoral da marca continua pendência humana (`TODO.md`).
 - **28/07/2026 — consistência visual (onda 1):** CSS morto arquivado em `legado/css/`; tokens `--rotulo*` / `--traco*`; abertura sem RGBA hardcoded; `font-weight: 500` removido; seção 12 em `--creme` (quebra da dupla papel 11–12).
 - **28/07/2026 — consistência visual (onda 2):** `componentes.css` partido em `nav.css`, `editorial.css`, `escudo.css`, `curricular.css`.
+- **28/07/2026 — marca oficial:** favicon, barra, abertura e seção 7 passam a usar `assets/img/logo-pdac/`.

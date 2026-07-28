@@ -25,6 +25,9 @@ body.nav-sobre-navy .barra {
 }
 
 .barra__marca {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-3);
   flex: 0 1 auto;
   min-width: 0;
   margin-right: auto;
@@ -40,8 +43,33 @@ body.nav-sobre-navy .barra {
   text-overflow: ellipsis;
 }
 
+.barra__marca-icone {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+}
+
+.barra__marca-icone--navy {
+  display: none;
+}
+
+.barra__marca-texto {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 body.nav-sobre-navy .barra__marca {
   color: var(--papel);
+}
+
+body.nav-sobre-navy .barra__marca-icone--clara {
+  display: none;
+}
+
+body.nav-sobre-navy .barra__marca-icone--navy {
+  display: block;
 }
 
 .barra__movimentos {
