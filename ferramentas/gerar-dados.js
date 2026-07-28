@@ -165,11 +165,11 @@ function montarFallback(modulos, matriz) {
       Esta página funciona sem JavaScript. Abaixo estão o mapa dos módulos e a
       matriz curricular completos do programa Discipulando a Caserna.
     </p>
-    <section class="fallback-mapa" aria-label="Mapa dos módulos">
+    <section class="fallback-mapa" aria-label="Mapa dos módulos sem JavaScript">
       <h3 class="fallback-titulo">Mapa dos módulos</h3>
       ${mapa}
     </section>
-    <section class="fallback-matriz" aria-label="Matriz curricular">
+    <section class="fallback-matriz" aria-label="Tabela da matriz curricular sem JavaScript">
       <h3 class="fallback-titulo">Matriz curricular (48 lições)</h3>
       <div class="fallback-tabela-wrap">
         <table class="fallback-tabela">

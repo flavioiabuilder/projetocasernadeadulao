@@ -1,10 +1,10 @@
 # Contexto do projeto — apresentação Discipulando a Caserna
 
-Documento de orientação para a reformulação visual, narrativa, editorial e técnica.  
+Documento de orientação permanente.  
 Não inventa fatos: lacunas aparecem como **dúvidas**.
 
-Versão de referência do site atual: **v0.4.0**.  
-Branch de trabalho da reformulação: `redesign/apresentacao-discipulando-caserna`.
+Versão de referência do site atual: **v1.0** (Movimentos I–V; seções 1–15).  
+Trabalho cotidiano na branch `main` (ver `.cursor/rules/commits-na-main.mdc`).
 
 ---
 
@@ -15,7 +15,7 @@ Projeto ministerial, missionário e institucional mais amplo, sediado em Fortale
 No material atual, aparece como:
 
 - contexto da metáfora de Adulão (1Sm 22.2): refúgio de homens feridos, não academia de elite;
-- instituição que apresenta o programa e figura na marca, rodapé e metadados;
+- instituição à qual o discipulado serve e que figura na marca, rodapé e metadados;
 - portador de CNPJ e contato institucional publicados no site.
 
 **Dúvida:** além do que o prospecto e o rodapé já dizem, não há neste repositório um estatuto, missão institucional completa ou descrição autônoma do Projeto Caserna de Adulão (escopo missionário, estrutura, relação com igrejas/capelanias, etc.).
@@ -33,7 +33,7 @@ Características documentadas nas fontes canônicas (`conteudo/`, `index.html`):
 - metáfora da armadura de Efésios 6 a serviço do evangelho (nunca o contrário);
 - público primário: militares e custodiados, em restauração; secundário: instrutores, capelanias e lideranças;
 - Módulo 1 produzido (edições Aluno e Instrutor); Módulos 2–4 com matriz definida e produção condicionada à validação pastoral do Módulo 1;
-- fonte de conteúdo citada: Guia Mestre v1.0-RC (não versionado neste repositório).
+- fonte pastoral de referência: Guia Mestre v1.0-RC em `fontes/guia-mestre/` (homologação pendente). O site publica apenas o que está em `conteudo/`.
 
 ---
 
@@ -45,8 +45,6 @@ Características documentadas nas fontes canônicas (`conteudo/`, `index.html`):
 | Discipulando a Caserna | Protagonista da apresentação; programa/projeto de discipulado |
 
 Não são sinônimos. O discipulado serve ao Projeto; o site não substitui um portal institucional do Projeto.
-
-**Tensão com o texto atual:** a abertura e o README ainda formulam “Projeto Caserna de Adulão apresenta o programa…”. Isso é compatível com autoria/apresentação institucional, mas pode competir com a regra de protagonismo do Discipulando a Caserna — a reformulação editorial deverá resolver essa hierarquia sem inventar fatos.
 
 ---
 
@@ -82,6 +80,22 @@ Natureza desejada da experiência: prospecto pastoral digital; carta institucion
 
 ---
 
+## Arquitetura narrativa vigente
+
+Cinco movimentos, quinze seções (ver `README.md` e `TODO.md`):
+
+| Movimento | Seções | Função |
+|---|---|---|
+| I — A necessidade | 1–4 | Carta, homem, material comum, Adulão |
+| II — A resposta | 5–7 | Convicção, recusas, marca |
+| III — O programa | 8–11 | Arquitetura, matriz, anatomia, edições/encontro |
+| IV — A prova | 12–13 | Material pronto, rigor de produção |
+| V — O pedido | 14–15 | Progressão/certificados, portão pastoral |
+
+Direção visual aprovada: **A — Prospecto pastoral editorial** ([`docs/decisao-visual-v1.md`](decisao-visual-v1.md)), com umbral atmosférico único (de B) e rótulos/checklist editoriais (de C).
+
+---
+
 ## O que o site deve comunicar
 
 - Hierarquia clara: Discipulando a Caserna em primeiro plano; Projeto como contexto.
@@ -112,13 +126,13 @@ Também fora do escopo técnico atual (`TODO.md`): formulários, analytics, cook
 ## Estado técnico atual (síntese)
 
 - Site estático de página única (`index.html`), sem bundler.
-- CSS: `tokens`, `base`, `layout`, `componentes`, `atos`, `prospecto`.
+- CSS: `tokens`, `base`, `layout`, `componentes`, `secoes`.
 - JS modular clássico; dados gerados em `js/dados/*` a partir de `conteudo/*.json`.
 - Publicação: GitHub Pages; `noindex`/`nofollow` (não é autenticação).
 - Qualidade: `npm run validate` (generate, encoding, lint HTML/CSS/JS, testes unitários e e2e).
-- Seções futuras reservadas (não publicadas): anatomia da lição, encontro, duas edições (`js/anatomia.js`, `js/encontro.js`, `js/edicoes.js`).
 
-Fontes canônicas de conteúdo: `conteudo/*.json`, `conteudo/*.md`.  
+Fontes canônicas de conteúdo do site: `conteudo/*.json`, `conteudo/*.md`.  
+Referência pastoral (não editar no site): `fontes/guia-mestre/`.  
 Não editar manualmente `js/dados/*.js` nem o bloco gerado `FALLBACK-DADOS` em `index.html`.
 
 ---
@@ -128,20 +142,18 @@ Não editar manualmente `js/dados/*.js` nem o bloco gerado `FALLBACK-DADOS` em `
 Registradas sem preenchimento inventado:
 
 1. **Definição institucional completa** do Projeto Caserna de Adulão (missão, governança, escopo) — ausente no repositório.
-2. **Guia Mestre v1.0-RC** é citado como fonte, mas não está versionado aqui; não há como o agente conferir trechos fora do que já está em `conteudo/` e no HTML.
-3. **Virtude, tema e temaRef** dos Módulos 3 e 4 estão `null` em `modulos.json` (já documentado em `conteudo/LEIA-ME.md`).
-4. **Arte oficial** da logomarca/brasão: apenas estudos visuais; homologação pendente.
-5. **Licença** de código e conteúdo pastoral: indefinida.
-6. **Política de acesso**: prévia pública vs. área restrita real — pendente (`TODO.md`).
-7. **Papel exacto do Pr. Glaydston** em relação à autoria e à liderança do Projeto.
-8. **Necessidade pastoral** está narrada (Adulão/ferimento), mas não há documento separado que a sistematize como diagnóstico pastoral formal.
-9. **Metodologia do encontro** e anatomia da lição: previstas, ainda sem conteúdo publicado.
-10. **Integração operacional** Discipulando × Projeto (como o programa se encaixa na rotina ministerial do Projeto) — só implícita.
-11. **Domínio próprio / remoção de `noindex`**: decisão futura.
-12. **Conflito de regras de Git**: `.cursor/rules/commits-na-main.mdc` pede commits na `main`; esta reformulação foi instruída a trabalhar na branch `redesign/apresentacao-discipulando-caserna`. Seguir o pedido explícito da etapa em curso; alinhar a regra de commits quando a reformulação for concluída ou quando o usuário decidir o fluxo permanente.
+2. **Virtude, tema e temaRef** dos Módulos 3 e 4 estão `null` em `modulos.json` (já documentado em `conteudo/LEIA-ME.md`) — omitir na UI.
+3. **Arte oficial** da logomarca/brasão: apenas estudos visuais; homologação pendente.
+4. **Licença** de código e conteúdo pastoral: indefinida.
+5. **Política de acesso**: prévia pública vs. área restrita real — pendente (`TODO.md`).
+6. **Papel exacto do Pr. Glaydston** em relação à autoria e à liderança do Projeto.
+7. **Integração operacional** Discipulando × Projeto (como o programa se encaixa na rotina ministerial do Projeto) — só implícita.
+8. **Domínio próprio / remoção de `noindex`**: decisão futura.
+9. **Dossiê de apreciação em PDF** (previsto na seção 15): arquivo ainda não versionado no repositório — link só quando o PDF existir.
+10. **Nota histórica:** commits `fea9267` e `b837b6d` adicionaram o Guia Mestre em `fontes/`; as mensagens falavam em seções 8–15/16–20, mas esses commits não publicaram essas seções no `index.html`.
 
 ---
 
 ## Próxima etapa recomendada
 
-Alinhar **narrativa e hierarquia editorial** (protagonismo do Discipulando a Caserna) em um plano de reformulação — sem redesenhar ainda — listando seções a manter, reescrever ou acrescentar, e as dúvidas humanas que bloqueiam copy ou marca.
+Manter fidelidade a `conteudo/`, completar coerência visual da Direção A onde ainda faltar, e respeitar as pendências humanas do `TODO.md` (apreciação pastoral, marca oficial, licença, indexação).

@@ -3,13 +3,13 @@
 Prospecto pastoral digital do programa **Discipulando a Caserna**, submetido ao
 **Pr. Glaydston** para apreciação, orientação e validação.
 
-Versão em construção neste branch: **v1.0** (Movimentos I e II — seções 1 a 7).
+Versão: **v1.0** (cinco movimentos — seções 1 a 15).
 
 ## O que é
 
 Não é landing page, portal de igreja nem plataforma de cursos. É uma **carta que
-se abre em prospecto**: começa pessoal e desenvolve a necessidade, a resposta e
-(em PRs seguintes) o programa, a prova e o pedido pastoral.
+se abre em prospecto**: começa pessoal e desenvolve a necessidade, a resposta, o
+programa, a prova e o pedido pastoral.
 
 ## Hierarquia
 
@@ -22,11 +22,11 @@ Cinco movimentos, quinze seções:
 
 | Movimento | Seções | Status |
 |---|---|---|
-| I — A necessidade | 1–4 | neste PR |
-| II — A resposta | 5–7 | neste PR |
-| III — O programa | 8–11 | âncoras (próximo PR) |
-| IV — A prova | 12–13 | âncoras (próximo PR) |
-| V — O pedido | 14–15 | âncoras (próximo PR) |
+| I — A necessidade | 1–4 | publicado |
+| II — A resposta | 5–7 | publicado |
+| III — O programa | 8–11 | publicado |
+| IV — A prova | 12–13 | publicado |
+| V — O pedido | 14–15 | publicado |
 
 ## Como abrir
 
@@ -43,7 +43,9 @@ Zero CDN. Fontes self-hosted em `assets/fonts/`.
 
 ## Conteúdo
 
-Fonte da verdade: `conteudo/`. Ver `conteudo/LEIA-ME.md`.
+Fonte da verdade do site: `conteudo/`. Ver `conteudo/LEIA-ME.md`.
+
+Referência pastoral (não substitui `conteudo/`): `fontes/guia-mestre/`.
 
 Citações (`>`) nos Markdown são literais — não parafrasear.
 
@@ -66,4 +68,5 @@ Nenhum código Tailwind/CDN deles entra no produto.
 
 ## Pendências
 
-Ver [`TODO.md`](TODO.md).
+Ver [`TODO.md`](TODO.md). Decisões humanas (marca oficial, licença, apreciação
+pastoral, indexação) permanecem abertas — não inventar.

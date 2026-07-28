@@ -51,3 +51,37 @@
   color: var(--navy);
   max-width: var(--medida);
 }
+
+/* Umbral atmosférico único (Direção B redesenhada em A) */
+.umbral {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--esp-5);
+  padding: var(--esp-12) var(--gutter-mobile);
+  background: var(--navy);
+  color: var(--creme);
+}
+
+@media (min-width: 768px) {
+  .umbral {
+    padding-inline: max(var(--gutter-desktop), calc((100% - var(--medida)) / 2));
+  }
+}
+
+.umbral__marca {
+  color: var(--bronze-cl);
+}
+
+.umbral__simbolo {
+  display: block;
+}
+
+.umbral__frase {
+  max-width: 28ch;
+  font-family: var(--fonte-corpo);
+  font-size: var(--texto-lg);
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--creme);
+}

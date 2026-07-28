@@ -70,10 +70,19 @@ describe("estrutura HTML v1", () => {
     assert.equal((html.match(/data-escudo-indice=/g) || []).length, 6);
   });
 
-  it("não menciona remição nem aprovação pastoral conclusiva", () => {
-    assert.doesNotMatch(html, /remi[cç][aã]o/i);
+  it("esclarece remição sem concedê-la e sem aprovação conclusiva", () => {
+    assert.match(html, /não concede remição de pena/i);
     assert.doesNotMatch(html, /aprovado pastoralmente/i);
-    assert.doesNotMatch(html, /homologado/i);
+    assert.doesNotMatch(html, /homologado(?!as)/i);
+  });
+
+  it("seções 8–15 não são mais âncoras vazias", () => {
+    assert.doesNotMatch(html, /secao--ancora/);
+    assert.match(html, /data-matriz/);
+    assert.match(html, /data-anatomia/);
+    assert.match(html, /data-folheador/);
+    assert.match(html, /checklist-pastoral/);
+    assert.match(html, /class="umbral"/);
   });
 
   it("numeração de seções é contínua 1–15", () => {

@@ -9,7 +9,7 @@ const VIEWPORTS = [
   { width: 1280, height: 800 },
 ];
 
-test.describe("prospecto v1.0 — seções 1 a 7", () => {
+test.describe("prospecto v1.0 — seções 1 a 15", () => {
   test("carrega sem erros de console e com fontes locais", async ({ page }) => {
     const erros = [];
     page.on("pageerror", (err) => erros.push(String(err)));
@@ -38,13 +38,31 @@ test.describe("prospecto v1.0 — seções 1 a 7", () => {
     expect(fontFace).toBeTruthy();
   });
 
-  test("índice navega até âncoras 8–15", async ({ page }) => {
+  test("índice navega até a seção 15", async ({ page }) => {
     await page.goto("/");
     const link = page.locator('.indice__link[href="#secao-15"]');
     await link.evaluate((el) => el.scrollIntoView({ block: "nearest" }));
     await link.click();
     await expect(page.locator("#secao-15")).toBeInViewport();
-    await expect(page.locator("#titulo-15")).toHaveText("O portão pastoral");
+    await expect(page.locator("#titulo-15")).toHaveText("A palavra final");
+  });
+
+  test("matriz e folheador operáveis", async ({ page }) => {
+    await page.goto("/");
+    await page.locator("#secao-9").scrollIntoViewIfNeeded();
+    await expect(page.locator("[data-matriz-lista] .matriz__modulo")).toHaveCount(
+      4
+    );
+    await page.locator('[data-filtro="1"]').click();
+    await expect(page.locator("[data-matriz-lista] .matriz__modulo")).toHaveCount(
+      1
+    );
+
+    await page.locator("#secao-12").scrollIntoViewIfNeeded();
+    await page.locator('[data-folheador-edicao="instrutor"]').click();
+    await expect(page.locator("[data-folheador-rotulo]")).toContainText(
+      "Instrutor"
+    );
   });
 
   test("escudo operável por clique e teclado", async ({ page }) => {

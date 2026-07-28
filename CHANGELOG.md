@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.0.0] — 2026-07-27
+
+### Prospecto v1 — cinco movimentos (seções 1–15)
+
+- Reconstrução narrativa em cinco movimentos; protagonismo do Discipulando a Caserna.
+- Seções 1–4 (A necessidade) e 5–7 (A resposta, inclusive a marca).
+- Seções 8–11 (arquitetura, matriz, anatomia, edições e encontro).
+- Seções 12–15 (material pronto com folheador, rigor, progressão/remição, portão pastoral).
+- Direção A: umbral atmosférico único (B), rótulos de estado e checklist de apreciação (C), âncora simbólica de Adulão (não logo oficial).
+- Conteúdo canônico em `conteudo/`; fallback noscript da matriz; Stitch só como referência de layout.
+- Guia Mestre v1.0-RC em `fontes/guia-mestre/` (referência; homologação pendente).
+
+### Nota sobre commits intermediários
+
+Os commits `fea9267` e `b837b6d` adicionaram o Guia Mestre em `fontes/guia-mestre/`. As mensagens mencionavam seções 8–15 / 16–20, mas esses commits **não** publicaram essas seções no `index.html`.
+
 ## [0.4.0] — 2026-07-25
 
 ### Correção técnica e consolidação editorial

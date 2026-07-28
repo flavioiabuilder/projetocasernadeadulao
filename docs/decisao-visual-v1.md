@@ -13,7 +13,7 @@ Não implementa o redesign. A próxima etapa é o planejamento da implementaçã
 | **Branch** | `redesign/apresentacao-discipulando-caserna` |
 | **Direção-base aprovada** | **A — Prospecto pastoral editorial** |
 | **Responsável pela decisão** | Decisão humana registrada nesta conversa (aprovação expressa do usuário do repositório) |
-| **Status** | Aprovada para planejamento da implementação |
+| **Status** | Implementada no prospecto v1.0 (`index.html`) — umbral B, checklist C e âncora simbólica Adulão |
 
 Fontes da decisão: reavaliação dos protótipos em `prototipos/direcao-{a,b,c}/`, [`pesquisa-visual-v1.md`](pesquisa-visual-v1.md), [`arquitetura-narrativa-v1.md`](arquitetura-narrativa-v1.md), [`comparativo-prototipos-v1.md`](comparativo-prototipos-v1.md), e resposta humana de escolha da direção-base.
 
@@ -224,6 +224,6 @@ Decisões ainda abertas (não reabrem a direção-base):
 
 ## Registro
 
-- **Não implementado** nesta fase.  
-- Site principal (`index.html`, CSS/JS de produção, conteúdo canônico, imagens, Pages) **não** alterado por este documento.  
+- Direção A aplicada no prospecto v1.0 (seções 1–15), com as duas importações autorizadas.
 - Protótipos permanecem como referência histórica em `prototipos/`.
+- Arte oficial da marca e apreciação pastoral continuam pendências humanas (`TODO.md`).

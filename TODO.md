@@ -1,23 +1,15 @@
 # Pendências — site v1.0
 
-## Este PR (seções 1–7)
+## Feito
 
 - [x] Fundação (tokens, base, layout, componentes, seções)
 - [x] Índice + trilho da marcha (5 movimentos)
 - [x] Seções 1–4 — A Necessidade
 - [x] Seções 5–7 — A Resposta
-- [x] Âncoras das seções 8–15
+- [x] Seções 8–15 — Programa, prova e pedido
+- [x] Guia Mestre v1.0-RC em `fontes/guia-mestre/` (referência; homologação pendente)
 
-## Próximo PR — seções 8 a 15
-
-- [ ] Seção 8 — Arquitetura do programa
-- [ ] Seção 9 — Matriz curricular (reativar `FALLBACK-DADOS` / `gerar-dados` no HTML)
-- [ ] Seção 10 — Anatomia de uma lição
-- [ ] Seção 11 — As duas edições e o encontro
-- [ ] Seção 12 — O que está pronto (folheador)
-- [ ] Seção 13 — Rigor de produção
-- [ ] Seção 14 — Progressão, marchas e certificados
-- [ ] Seção 15 — O portão pastoral
+> Nota: os commits `fea9267` e `b837b6d` apenas versionaram o Guia em `fontes/`; a publicação das seções 8–15 no site é independente disso.
 
 ## Arte e identidade
 
@@ -25,13 +17,14 @@
 - [ ] Artes das quatro insígnias, se existirem como peças separadas
 - [ ] Confirmar versões monocromática e reduzida no Caderno de Identidade Visual
 
-## Decisões humanas / conteúdo
+## Decisões humanas / conteúdo (bloqueios — não inventar)
 
 - [ ] Confirmar se a menção nominal à PMCE permanece caso o site circule além do destinatário
 - [ ] Definir se a Seção 2 recebe algum elemento gráfico além da tipografia
 - [ ] Apreciação pastoral do Módulo 1 e deste prospecto
 - [ ] Licença do código e do conteúdo pastoral
 - [ ] Domínio próprio e política de indexação (`noindex`)
+- [ ] Incluir PDF do dossiê de apreciação (7 páginas) quando disponível — link na seção 15
 
 ## Explícitamente fora
 
