@@ -1,17 +1,8 @@
 /**
- * Ponto de entrada: saudação, navegação, revelação e interações.
+ * Ponto de entrada: navegação, revelação e interações.
  */
 (function () {
-  function aplicarSaudacao() {
-    const cfg = window.SITE_CONFIG;
-    if (!cfg || !cfg.destinatario) return;
-    const el = document.querySelector("[data-saudacao]");
-    if (!el) return;
-    el.textContent = "Pastor " + cfg.destinatario + ",";
-  }
-
   function init() {
-    aplicarSaudacao();
     if (!window.Caserna) return;
     if (window.Caserna.initNavegacao) window.Caserna.initNavegacao();
     if (window.Caserna.initRevelar) window.Caserna.initRevelar();

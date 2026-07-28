@@ -119,8 +119,8 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
     const page = await context.newPage();
     await page.goto("/");
     await expect(page.locator("h1")).toHaveText("Discipulando a Caserna");
-    await expect(page.locator("[data-saudacao]")).toHaveText(
-      "Pastor Glaydston,"
+    await expect(page.locator("#secao-1")).toContainText(
+      "Não começo esta apresentação pelo material"
     );
     await expect(page.locator("#secao-3")).toContainText(
       "Por que o material comum não alcança"

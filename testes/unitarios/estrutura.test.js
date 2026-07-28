@@ -97,8 +97,9 @@ describe("estrutura HTML v1", () => {
     }
   });
 
-  it("saudação com fallback estático", () => {
-    assert.match(html, /data-saudacao/);
-    assert.match(html, /Pastor Glaydston,/);
+  it("abertura institucional sem saudação nominal", () => {
+    assert.doesNotMatch(html, /data-saudacao/);
+    assert.doesNotMatch(html, /Pastor Glaydston,/);
+    assert.match(html, /Estas páginas são versão candidata/i);
   });
 });

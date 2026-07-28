@@ -34,13 +34,6 @@
   color: var(--bronze-cl);
 }
 
-.abertura__saudacao {
-  margin-bottom: var(--esp-4);
-  font-family: var(--fonte-display);
-  font-weight: 700;
-  font-size: var(--texto-base);
-}
-
 .abertura .prosa {
   color: color-mix(in srgb, var(--creme) 92%, white);
 }

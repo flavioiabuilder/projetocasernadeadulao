@@ -2,7 +2,8 @@
 
 > Texto literal para o site. Não parafrasear, não resumir, não "melhorar".
 > Fonte: Guia Mestre v1.0-RC (§1.2, Nota do Autor) e decisões editoriais do autor.
-> Registro: primeira pessoa, do autor ao pastor. Sóbrio, sem adjetivação emotiva.
+> Registro: primeira pessoa institucional. Sóbrio, sem adjetivação emotiva.
+> A abertura não nomeia o destinatário pastoral; o pedido nominal fica no Movimento V.
 
 ---
 
@@ -12,17 +13,13 @@
 **Título:** `Discipulando a Caserna`
 **Subtítulo:** `Um discipulado cristocêntrico para a caserna e para os que estão em aperto`
 
-**Saudação** (de `SITE_CONFIG.destinatario`):
-
-> Pastor Glaydston,
-
 **Parágrafos:**
 
 > Não começo esta apresentação pelo material. Começo pelo homem que o tornou necessário.
 
-> O senhor conhece essa história de perto, mas peço licença para recontá-la em ordem — porque foi essa ordem que produziu tudo o que veio depois. Primeiro apareceu um homem que a igreja tinha dificuldade de alcançar. Depois ficou claro que o material disponível não o alcançava. Só então nasceu a decisão de escrever outro.
+> A história é recontada em ordem — porque foi essa ordem que produziu tudo o que veio depois. Primeiro apareceu um homem que a igreja tinha dificuldade de alcançar. Depois ficou claro que o material disponível não o alcançava. Só então nasceu a decisão de escrever outro.
 
-> O que o senhor vai ver aqui é o resultado dessa sequência: uma convicção, um método e doze lições prontas. Nada disto é definitivo. O senhor lê estas páginas como quem tem a palavra final.
+> O que se apresenta aqui é o resultado dessa sequência: uma convicção, um método e doze lições prontas. Nada disto é definitivo. Estas páginas são versão candidata, submetidas à apreciação pastoral.
 
 **Selo:** `VERSÃO CANDIDATA — AGUARDANDO APRECIAÇÃO PASTORAL`
 

@@ -47,7 +47,7 @@ Prospecto pastoral editorial: aparência de documento tipográfico (capítulos, 
 
 ### Qualidades determinantes a preservar
 
-- Superfície clara para a carta ao Pr. Glaydston.
+- Superfície clara para o pedido pastoral no fechamento (não na abertura).
 - Tipografia serif de leitura; hierarquia por espaço e filetes.
 - Capítulos / folios; selo de documento de trabalho.
 - Protagonismo tipográfico do nome **Discipulando a Caserna**.
@@ -82,12 +82,12 @@ A Direção A governa **integralmente**:
 - **Não** é a logomarca oficial; **não** homologa arte de marca.
 - Não substitui o umbral atmosférico autorizado nem se multiplica em ornamentos.
 
-### Carta pastoral
+### Carta pastoral / pedido final
 
-- Superfície clara.
-- Medida de leitura confortável.
-- Tratamento editorial solene.
-- Destinatário explícito (Pr. Glaydston / saudação pastoral conforme config).
+- Superfície clara no Movimento V (Seção 15), não na abertura.
+- Medida de leitura confortável; tratamento editorial solene.
+- Destinatário pastoral permanece no propósito do site (`SITE_CONFIG`); a abertura não o nomeia.
+- Tom de documento submetido: selo de versão candidata; checklist; convite ao prefácio.
 
 ### Números formativos (4, 12, 48)
 
@@ -196,8 +196,8 @@ A implementação será aceita visualmente quando:
 
 | Área | Critério verificável |
 |---|---|
-| **Abertura** | Discipulando é o sinal dominante; Projeto aparece como contexto; não parece landing |
-| **Carta** | Superfície clara; medida confortável; saudação e submissão legíveis |
+| **Abertura** | Discipulando é o sinal dominante; Projeto aparece como contexto; tom institucional, sem saudação nominal |
+| **Pedido pastoral** | Superfície clara no fechamento; checklist e submissão legíveis |
 | **Contexto** | Adulão e citação com tratamento editorial |
 | **Umbral (B)** | Um único momento entre contexto e necessidade; redesenhado em A; sem fullscreen/pausa vazia/animação obrigatória |
 | **Narrativa** | Progressão problema → proposta compreensível |

@@ -73,7 +73,7 @@ Natureza desejada da experiência: prospecto pastoral digital; carta institucion
 ## Destinatário
 
 - Configurado em `js/config.js`: destinatário `Glaydston`; nome formal `Pr. Glaydston Gama Lopes`; cargo `Pastor-presidente`.
-- Saudação da abertura: “Pastor Glaydston,”.
+- A abertura é institucional (sem saudação nominal). O pedido pastoral nominal fica no Movimento V (Seção 15).
 - Fechamento lista nome, cargo e e-mail institucional.
 
 **Dúvida:** o repositório não documenta se o Pr. Glaydston é apenas o destinatário da apreciação, também autor/responsável editorial, ou ambos. O cargo “Pastor-presidente” aparece no encerramento sem esclarecer a relação jurídica ou eclesial com o Projeto.
@@ -86,7 +86,7 @@ Cinco movimentos, quinze seções (ver `README.md` e `TODO.md`):
 
 | Movimento | Seções | Função |
 |---|---|---|
-| I — A necessidade | 1–4 | Carta, homem, material comum, Adulão |
+| I — A necessidade | 1–4 | Abertura institucional, homem, material comum, Adulão |
 | II — A resposta | 5–7 | Convicção, recusas, marca |
 | III — O programa | 8–11 | Arquitetura, matriz, anatomia, edições/encontro |
 | IV — A prova | 12–13 | Material pronto, rigor de produção |
