@@ -77,8 +77,43 @@ body{margin:0;background:var(--base);color:var(--chumbo);font-family:var(--serif
   background:var(--base);transition:background .6s}
 .slide.bg-caserna{background:var(--caserna);color:var(--base)}
 .slide.bg-sombra{background:var(--sombra);color:var(--base)}
-.slide.bg-transicao{background:linear-gradient(180deg,var(--sombra) 0%,var(--sombra) 22%,var(--base) 78%)}
-.slide.bg-transicao,.slide.bg-transicao h2{color:var(--chumbo)}
+/* Transição Sombra→Base: zona superior escura (texto claro) + zona inferior clara (texto chumbo).
+   A mudança fica no vão entre o bloco superior e identidade/tabela — sem texto no meio do fade. */
+.slide.bg-transicao{
+  background:linear-gradient(180deg,
+    var(--sombra) 0%,
+    var(--sombra) 48%,
+    #2a2c2e 52%,
+    #d9d7d0 56%,
+    var(--base) 60%,
+    var(--base) 100%);
+  color:var(--base);
+  align-items:flex-start;
+  padding-top:calc(var(--barra) + 5vh);
+}
+.slide.bg-transicao h2{color:var(--base);max-width:22ch}
+.slide.bg-transicao .intro{color:rgba(244,244,241,.78)}
+.slide.bg-transicao .texto>p{color:rgba(244,244,241,.92)}
+.slide.bg-transicao .identidade{
+  margin-top:clamp(48px,10vh,110px);
+  padding-top:28px;
+  border-top-color:rgba(74,74,74,.28);
+  color:var(--chumbo);
+}
+.slide.bg-transicao .identidade h3{color:var(--chumbo)}
+.slide.bg-transicao .identidade p{color:var(--estrut)}
+.slide.bg-transicao .identidade .v{color:var(--estrut)}
+.slide.bg-transicao .tab-equiv{
+  margin-top:clamp(28px,6vh,64px);
+  padding:18px 20px 8px;
+  background:var(--base);
+  color:var(--chumbo);
+  border:1px solid rgba(74,74,74,.12);
+}
+.slide.bg-transicao .tab-equiv th{color:var(--latao)}
+.slide.bg-transicao .tab-equiv td{color:var(--chumbo);border-bottom-color:rgba(74,74,74,.16)}
+.slide.bg-transicao .tab-equiv tr.destaque td{background:rgba(140,106,70,.14)}
+.slide.bg-transicao .tab-equiv tr.destaque td strong{color:var(--latao)}
 .slide.bg-caserna h2,.slide.bg-sombra h2{color:var(--base)}
 .slide.sem-chrome{padding-top:0}
 .quadro{width:100%;max-width:1320px;margin:0 auto}
@@ -376,7 +411,9 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
     border-top:.4pt solid #bbb;padding-top:7mm}
   .slide:first-of-type{border-top:0}
   .slide.bg-caserna,.slide.bg-sombra,.slide.bg-transicao{background:#fff !important;color:#2B2B2B !important}
-  .slide.bg-caserna h2,.slide.bg-sombra h2{color:#2B2B2B !important}
+  .slide.bg-caserna h2,.slide.bg-sombra h2,.slide.bg-transicao h2{color:#2B2B2B !important}
+  .slide.bg-transicao .intro,.slide.bg-transicao .texto>p{color:#2B2B2B !important}
+  .slide.bg-transicao .tab-equiv{background:transparent !important;border:0 !important;padding:0 !important}
   .bg-caserna .intro,.bg-sombra .intro,.bg-caserna .card p,.bg-sombra .card p,
   .bg-sombra .nota-slide,.bg-caserna .nota-slide,.bg-sombra .fecho,.bg-caserna .fecho{color:#4A4A4A !important}
   .bg-caserna .card,.bg-sombra .card{border-color:#bbb !important}
@@ -656,7 +693,7 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
     var s=slides[i]; if(!s) return;
     atual=i;
     var ato=+s.dataset.ato, arm=+s.dataset.arm;
-    var escuro=s.className.indexOf('bg-sombra')>-1||s.className.indexOf('bg-caserna')>-1;
+    var escuro=s.className.indexOf('bg-sombra')>-1||s.className.indexOf('bg-caserna')>-1||s.className.indexOf('bg-transicao')>-1;
     topo.classList.toggle('escuro',escuro);
     var semC=s.className.indexOf('sem-chrome')>-1;
     topo.classList.toggle('oculto',semC);
