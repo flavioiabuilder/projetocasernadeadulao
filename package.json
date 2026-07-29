@@ -11,7 +11,7 @@
     "lint:css": "stylelint css/**/*.css",
     "lint:js": "eslint js/**/*.js ferramentas/**/*.js testes/**/*.js",
     "format:check": "prettier --check css/**/*.css js/**/*.js ferramentas/**/*.js testes/**/*.js *.md conteudo/**/*.md docs/**/*.md",
-    "test": "node --test testes/unitarios/estrutura.test.js testes/unitarios/dados.test.js",
+    "test": "node --test testes/unitarios/estrutura.test.js testes/unitarios/dados.test.js testes/unitarios/apresentacao.test.js",
     "test:a11y": "playwright test testes/e2e/site.spec.js -g \"a11y\"",
     "test:e2e": "playwright test testes/e2e",
     "validate": "npm run generate && npm run check:encoding && npm run lint:html && npm run lint:css && npm run lint:js && npm run test && npm run test:e2e"
