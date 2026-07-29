@@ -1219,9 +1219,28 @@ document.addEventListener("keydown",function(e){
 });
 document.getElementById("modo-toggle").addEventListener("click",function(){
   document.body.classList.toggle("versao-continua");
-if(document.body.classList.contains("versao-continua")){document.documentElement.style.height="auto";document.body.style.height="auto";document.body.style.overflow="auto";if(deck){deck.style.height="auto";deck.style.overflow="visible";deck.style.scrollSnapType="none";}}else{location.reload();}
-  this.setAttribute("aria-pressed",document.body.classList.contains("modo-leitura"));
-  var on=document.body.classList.contains("versao-continua");this.setAttribute("aria-pressed",on);this.textContent=on?"Versão em telas":"Versão contínua";
+  var on=document.body.classList.contains("versao-continua");
+  if(on){
+    document.documentElement.style.height="auto";
+    document.body.style.height="auto";
+    document.body.style.overflow="auto";
+    if(deck){deck.style.height="auto";deck.style.overflow="visible";deck.style.scrollSnapType="none";}
+  }else if("scrollSnapType" in document.documentElement.style){
+    // Restaura o modo em telas sem reload — preserva checklist e observações pastorais.
+    document.documentElement.style.height="100%";
+    document.body.style.height="100%";
+    document.body.style.overflow="hidden";
+    if(deck){deck.style.height="100vh";deck.style.overflowY="auto";deck.style.scrollSnapType="y mandatory";}
+    goToScreen(currentScreen);
+  }else{
+    document.documentElement.style.height="";
+    document.body.style.height="";
+    document.body.style.overflow="";
+    if(deck){deck.style.height="";deck.style.overflow="";deck.style.scrollSnapType="";}
+    goToScreen(currentScreen);
+  }
+  this.setAttribute("aria-pressed",on?"true":"false");
+  this.textContent=on?"Versão em telas":"Versão contínua";
 });
 
 document.querySelectorAll(".flip-card").forEach(function(card){
