@@ -3,7 +3,7 @@
 
 **Natureza:** apresentação de leitura autônoma. Não depende de apresentador. Todo o conteúdo necessário está em tela.
 **Extensão:** 69 slides · 10 atos · tempo estimado de leitura: 28 a 35 minutos
-**Tratamento:** o texto conversa com o leitor em segunda pessoa ("você"). *Na versão para apreciação pastoral, substituir por "o senhor" em todas as ocorrências.*
+**Tratamento:** o texto conversa com o leitor em segunda pessoa ("você") — voz de leitura imersiva, sem hierarquia. Esta é uma **apresentação institucional**: o leitor pode ser pastor, secretaria, obreiro ou outra liderança. Não endereçar o leitor como "o senhor" nem com vocativo "Pastor,". Pedidos de homologação e prefácio falam da **liderança pastoral** em terceira pessoa, sem tratar quem lê como essa pessoa.
 **Base:** Plano Narrativo Mestre v1.0 · Guia Mestre v1.0-RC
 
 ---
@@ -1619,7 +1619,7 @@ Esta é a versão institucional plena. As demais são recortes desta, não peça
 
 | Público | Slides mantidos | Ajustes |
 |---|---|---|
-| **Apreciação pastoral** | Todos, mais o bloco de decisões após S63 | Trocar "você" por "o senhor" em todas as ocorrências; acrescentar as telas de decisão, de convite ao prefácio e de "e se a resposta for não" |
+| **Apreciação / decisão** | Todos, mais o bloco de decisões após S63 | Manter "você" de leitura; acrescentar telas de homologação, convite ao prefácio e "se a resposta for não" em voz institucional (liderança pastoral em 3ª pessoa — sem tratar o leitor como o pastor) |
 | **Institucional / comando** | S01–S12, S20–S37, S64–S69 | Suprimir Ato VII quase inteiro; reforçar limites de escopo do S64 |
 | **Igreja local** | S01–S19, S26–S37, S64–S69 | Suprimir Atos VII e IX; acrescentar chamada à participação |
 | **Formação de instrutores** | S38–S63 integralmente | Suprimir Atos I e II; abrir direto no método |

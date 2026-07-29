@@ -7,18 +7,20 @@ Fonte da apresentação institucional em 10 atos (slides S01–S69).
 | Arquivo | Papel |
 |---|---|
 | `Plano_de_Slides_Discipulando_a_Caserna.md` | Spec: sistema de design, narrativa, layouts, regras C.1–C.4 |
-| `Discipulando_a_Caserna_Apresentacao.html` | Entregável de referência (deck institucional, voz “você”) |
+| `Discipulando_a_Caserna_Apresentacao.html` | Entregável de referência (deck com voz “você”) |
 | `Discipulando_a_Caserna_Apresentacao.pdf` / `.pptx` | Referência — **não** editar a UI a partir deles |
 | `Relatorio Conversa.pdf` | Contexto de conversa |
 | `auditoria-fidelidade-v1.md` | Gate de claims vs fontes canônicas do repositório |
 
 ## Protótipo vivo
 
-O protótipo editável (variante de **apreciação pastoral**) está em:
+O protótipo editável (**apresentação institucional** imersiva) está em:
 
 [`prototipos/storytelling-v1/`](../../prototipos/storytelling-v1/)
 
 Abrir `prototipos/storytelling-v1/index.html` no navegador (offline).
+
+Voz: “você” de leitura; pedidos de homologação em terceira pessoa (liderança pastoral), sem tratar o leitor como o pastor.
 
 ## O que isto não é
 

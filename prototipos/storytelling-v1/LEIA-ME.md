@@ -1,4 +1,4 @@
-# Protótipo — Storytelling v1 (apreciação pastoral)
+# Protótipo — Storytelling v1 (apresentação institucional)
 
 Deck autoexplicativo em 10 atos, derivado de [`docs/storytelling/`](../../docs/storytelling/).
 
@@ -10,9 +10,15 @@ Duplo clique em `index.html` (offline; fontes e emblema embutidos). Sem CDN.
 
 | É | Não é |
 |---|---|
-| Variante pastoral do plano de slides (voz “o senhor”) | Prospecto multiarquivo da raiz |
+| Apresentação institucional imersiva (voz “você” de leitura) | Carta endereçada ao pastor (“o senhor”) |
 | Documento de trabalho para validação | Homologação publicada em `apresentacao/` |
-| Isolado até auditoria + revisão humana | Canônico para Pages |
+| Público amplo: pastor, secretaria, obreiros, liderança | Prospecto multiarquivo da raiz |
+
+## Voz
+
+- Corpo: segunda pessoa de leitura (**você**), sem hierarquia.
+- Homologação / prefácio / “se a resposta for não”: **liderança pastoral** em terceira pessoa — quem lê não é tratado como o pastor.
+- Manter “vocês” só em citações bíblicas; “você” nos exemplos da Ordem do Dia é discurso ao discípulo.
 
 ## Regras C.3 (não violar)
 
@@ -29,15 +35,15 @@ Ver [`docs/storytelling/auditoria-fidelidade-v1.md`](../../docs/storytelling/aud
 
 ## O que já foi aplicado neste protótipo
 
-- Voz pastoral (“o senhor”) no endereçamento ao leitor
+- Voz institucional (“você” de leitura; fechamento sem vocativo ao pastor-leitor)
 - Selo de estudo em claims institucionais sem fonte canônica no repo (Casa de Oração; P1–P9)
 - Frase-âncora restaurada em S31 (regra C.3)
-- Telas pastorais após S63: pedidos, prefácio, “se a resposta for não”
+- Telas após S63: homologação, prefácio, “se a resposta for não” (3ª pessoa institucional)
 - `noindex`, skip link, `:focus-visible`, impressão com acordeões/matriz abertos, scroll sem smooth sob `prefers-reduced-motion`
 
 ## Revisão humana (próximo passo)
 
-1. Abrir `index.html` e percorrer os 10 atos + bloco pastoral.
+1. Abrir `index.html` e percorrer os 10 atos + bloco de homologação.
 2. Confirmar ou retirar claims marcados como estudo (auditoria em `docs/storytelling/auditoria-fidelidade-v1.md`).
 3. Teste C.4: entregar o arquivo a alguém de fora e pedir — *o que é isto, por que existe, o que se espera de quem lê?*
 4. Só então decidir promoção (irmão, substituto da homologação, ou gerar via tooling).
@@ -45,3 +51,15 @@ Ver [`docs/storytelling/auditoria-fidelidade-v1.md`](../../docs/storytelling/aud
 ## Promoção
 
 Não altera `index.html` da raiz nem `apresentacao/homologacao-pastoral.html` sem pedido explícito.
+
+## Tooling
+
+```bash
+# Pipeline completa (fidelidade + a11y + voz institucional)
+node ferramentas/aplicar-storytelling-institucional.js
+
+# Só ajustar voz num deck já patchado
+node ferramentas/aplicar-storytelling-voz-institucional.js
+```
+
+`aplicar-storytelling-pastoral.js` é alias depreciado (encaminha para a pipeline institucional).

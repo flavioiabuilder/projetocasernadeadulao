@@ -41,11 +41,11 @@ Caderneta de Campanha / merch: no plano como proposta — manter selo `PROPOSTA`
 
 ## Voz
 
-Versão de referência em `docs/storytelling/*.html` usa “você”. Variante pastoral em `prototipos/storytelling-v1/` usa “o senhor” no endereçamento ao leitor; mantém “vocês” em Fp 1.6 e “você” em exemplos da Ordem do Dia dirigidos ao discípulo.
+Apresentação institucional imersiva: “você” de leitura (sem hierarquia). O protótipo em `prototipos/storytelling-v1/` **não** endereça o leitor como “o senhor” nem com vocativo “Pastor,”. Homologação e prefácio falam da liderança pastoral em terceira pessoa. Mantém “vocês” em Fp 1.6 e “você” em exemplos da Ordem do Dia dirigidos ao discípulo. “Senhor” teológico (Cristo) na matriz permanece.
 
-## Bloco pastoral (C.1)
+## Bloco de homologação (C.1)
 
-Após S63, o protótipo inclui telas de decisão, convite ao prefácio e “se a resposta for não”, com prosa de [`conteudo/secoes-12-15-a-prova-e-o-pedido.md`](../conteudo/secoes-12-15-a-prova-e-o-pedido.md) e padrões de `apresentacao/homologacao-pastoral.html` — sem prazo e sem prefácio preenchido.
+Após S63, o protótipo inclui telas de estado de homologação, convite ao prefácio e “se a resposta for não”, com prosa adaptada de [`conteudo/secoes-12-15-a-prova-e-o-pedido.md`](../conteudo/secoes-12-15-a-prova-e-o-pedido.md) — em voz institucional (liderança pastoral em 3ª pessoa), sem prazo e sem prefácio preenchido.
 
 ## Pendências humanas
 
