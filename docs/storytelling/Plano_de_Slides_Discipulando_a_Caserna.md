@@ -2,7 +2,7 @@
 ## Discipulando a Caserna · Projeto Caserna de Adulão
 
 **Natureza:** apresentação de leitura autônoma. Não depende de apresentador. Todo o conteúdo necessário está em tela.
-**Extensão:** 66 slides · 10 atos · tempo estimado de leitura: 28 a 35 minutos
+**Extensão:** 69 slides · 10 atos · tempo estimado de leitura: 28 a 35 minutos
 **Tratamento:** o texto conversa com o leitor em segunda pessoa ("você"). *Na versão para apreciação pastoral, substituir por "o senhor" em todas as ocorrências.*
 **Base:** Plano Narrativo Mestre v1.0 · Guia Mestre v1.0-RC
 
