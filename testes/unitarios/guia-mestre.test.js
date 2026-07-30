@@ -13,12 +13,17 @@ const {
 } = require("../../ferramentas/verificar-guia-mestre");
 
 describe("proteção do prefácio não homologado", () => {
-  it("detecta um marcador distintivo mesmo quando dividido por tags", () => {
-    assert.equal(
-      encontrarMarcadores("Eu o <strong>valido pastoralmente</strong>.").length,
-      1
-    );
-  });
+  for (const marcador of [
+    "Eu o <strong>valido pastoralmente</strong>.",
+    "Obra que acompanhei de perto.",
+    "Processo de revisão e validação.",
+    "Pastor-presidente do Projeto Caserna de Adulão.",
+    "Prefácio — Pr. Glaydston.",
+  ]) {
+    it(`detecta atribuição indevida: ${marcador.replace(/<[^>]+>/g, "")}`, () => {
+      assert.equal(encontrarMarcadores(marcador).length, 1);
+    });
+  }
 
   it("aceita a ressalva editorial e a indicação nominal do futuro validador", () => {
     const texto = "Homologação pastoral pendente. Validador previsto: Pastor Glaydston.";
