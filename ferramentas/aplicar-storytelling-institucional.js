@@ -10,6 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 
+pipeline: {
 const htmlPath = path.join(
   __dirname,
   '..',
@@ -65,6 +66,28 @@ if (h.includes('Apreciação pastoral (protótipo)')) {
     '<meta charset="utf-8">\n<meta name="robots" content="noindex,nofollow">',
     'noindex-inject'
   );
+}
+
+// Mantém os metadados de compartilhamento e a canonical após reaplicar a pipeline.
+const socialMetadata = `<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Projeto Caserna de Adulão">
+<meta property="og:title" content="Discipulando a Caserna — apresentação para apreciação pastoral">
+<meta property="og:description" content="Documento de trabalho em versão candidata. Leitura de cerca de 30 minutos, sem necessidade de apresentador.">
+<meta property="og:image" content="https://flavioiabuilder.github.io/projetocasernadeadulao/assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png">
+<meta property="og:image:alt" content="Escudo do Projeto Caserna de Adulão">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://flavioiabuilder.github.io/projetocasernadeadulao/prototipos/storytelling-v1/">`;
+
+if (!h.includes('property="og:type"')) {
+  h = replaceOnce(
+    h,
+    '<meta name="author" content="Obr. Flávio Alves da Costa">',
+    '<meta name="author" content="Obr. Flávio Alves da Costa">\n' + socialMetadata,
+    'social-metadata'
+  );
+} else {
+  console.log('SKIP: social metadata already present');
 }
 
 h = replaceAllLiteral(
@@ -169,7 +192,7 @@ if (/\bo senhor\b|\bO senhor\b|\bao senhor\b/.test(h) || h.includes('Pastor, o G
   fs.writeFileSync(htmlPath, h, 'utf8');
   console.log('→ aplicando voz institucional…');
   require('./aplicar-storytelling-voz-institucional.js');
-  return;
+  break pipeline;
 }
 
 // Storage / motion
@@ -251,3 +274,4 @@ console.log('Pastor, vocative:', v.includes('Pastor, o Guia'));
 console.log('s63a', v.includes('id="s63a"'));
 console.log('você', (v.match(/você/gi) || []).length);
 console.log('vocês', (v.match(/vocês/gi) || []).length);
+}
