@@ -22,10 +22,7 @@ describe("estrutura HTML v1", () => {
   });
 
   it("skip link aponta para main#conteudo", () => {
-    assert.match(
-      html,
-      /href="#conteudo"[^>]*>\s*Ir para o conteúdo principal/
-    );
+    assert.match(html, /href="#conteudo"[^>]*>\s*Ir para o conteúdo principal/);
     assert.match(html, /<main[^>]*id="conteudo"/);
   });
 
@@ -48,6 +45,33 @@ describe("estrutura HTML v1", () => {
     assert.match(html, /property="og:title"/);
     assert.match(html, /rel="icon"/);
     assert.match(html, /noindex/);
+  });
+
+  it("protege canonical, Open Graph e Twitter Card", () => {
+    const urlPublica = "https://flavioiabuilder.github.io/projetocasernadeadulao/";
+    const imagemPublica = `${urlPublica}assets/img/logo-pdac/LOGO_DaC_Primaria_Hero_3D_Color.png`;
+
+    assert.equal((html.match(/rel="canonical"/g) || []).length, 1);
+    assert.match(html, new RegExp(`rel="canonical"\\s+href="${urlPublica}"`));
+    assert.match(html, /property="og:type" content="website"/);
+    assert.match(html, /property="og:locale" content="pt_BR"/);
+    assert.match(html, new RegExp(`property="og:url"\\s+content="${urlPublica}"`));
+    assert.match(html, /property="og:title"/);
+    assert.match(html, /property="og:description"/);
+    assert.match(html, new RegExp(`property="og:image"\\s+content="${imagemPublica}"`));
+    assert.match(html, /property="og:image:width" content="1563"/);
+    assert.match(html, /property="og:image:height" content="1563"/);
+    assert.match(html, /property="og:image:alt"/);
+    assert.match(html, /name="twitter:card" content="summary"/);
+    assert.match(html, /name="twitter:title"/);
+    assert.match(html, /name="twitter:description"/);
+    assert.match(html, new RegExp(`name="twitter:image"\\s+content="${imagemPublica}"`));
+    assert.match(html, /name="twitter:image:alt"/);
+    assert.ok(
+      fs.existsSync(
+        path.join(raiz, "assets/img/logo-pdac/LOGO_DaC_Primaria_Hero_3D_Color.png")
+      )
+    );
   });
 
   it("abertura com protagonismo Discipulando", () => {

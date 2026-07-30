@@ -1,0 +1,35 @@
+name: Qualidade
+
+on:
+  push:
+    branches: [main, work]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    name: Validar protótipo
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Obter código-fonte
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Instalar dependências
+        run: npm ci
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Validar codificação
+        run: npm run check:encoding
+      - name: Validar HTML
+        run: npm run lint:html
+      - name: Executar testes unitários
+        run: npm test
+      - name: Executar testes de navegador
+        run: npm run test:e2e
