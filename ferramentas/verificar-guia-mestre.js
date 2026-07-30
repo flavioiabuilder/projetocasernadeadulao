@@ -1,8 +1,8 @@
 /**
  * Protege a condição editorial do Guia Mestre enquanto a homologação pastoral
  * estiver pendente. A verificação é deliberadamente estreita: examina apenas
- * os derivados textuais publicáveis e confere a identidade dos binários já
- * auditados, sem tentar reescrevê-los.
+ * os derivados textuais publicáveis e impede a liberação dos binários já
+ * auditados como divergentes, sem tentar reescrevê-los.
  */
 "use strict";
 
@@ -17,14 +17,20 @@ const textuais = [
   "Guia_Mestre_Discipulando_a_Caserna_v1_0-RC_revisado.html",
 ];
 
-const binariosAuditados = new Map([
+const binariosBloqueados = new Map([
   [
     "Guia_Mestre_Discipulando_a_Caserna_v1_0-RC_revisado.docx",
-    "1462d908c83956b3ccd04e1e088ebc051d7f1ff3e1d6740d7ab2c4cc82c37784",
+    {
+      hash: "1462d908c83956b3ccd04e1e088ebc051d7f1ff3e1d6740d7ab2c4cc82c37784",
+      motivo: "contém prefácio não homologado",
+    },
   ],
   [
     "Guia_Mestre_Discipulando_a_Caserna_v1_0-RC_revisado.pdf",
-    "de2f7dae5a621f7f5ead3a8095764a832c78b8ebbe220344a8e79162d4fb3588",
+    {
+      hash: "de2f7dae5a621f7f5ead3a8095764a832c78b8ebbe220344a8e79162d4fb3588",
+      motivo: "não teve o conteúdo semanticamente confirmado",
+    },
   ],
 ]);
 
@@ -61,11 +67,15 @@ async function verificar() {
     }
   }
 
-  for (const [arquivo, hashEsperado] of binariosAuditados) {
+  for (const [arquivo, bloqueio] of binariosBloqueados) {
     const conteudo = await readFile(path.join(base, arquivo));
     const hashAtual = createHash("sha256").update(conteudo).digest("hex");
 
-    if (hashAtual !== hashEsperado) {
+    if (hashAtual === bloqueio.hash) {
+      falhas.push(
+        `${arquivo}: binário bloqueado (${bloqueio.motivo}) e não pode ser distribuído`
+      );
+    } else {
       falhas.push(`${arquivo}: binário mudou e exige nova auditoria documental`);
     }
   }
@@ -76,7 +86,7 @@ async function verificar() {
     process.exitCode = 1;
   } else {
     console.log(
-      "Guia Mestre verificado: derivados textuais protegidos e binários auditados inalterados."
+      "Guia Mestre verificado: todos os formatos estão aptos para distribuição."
     );
   }
 }
