@@ -27,12 +27,12 @@ rascunho, mas não alterou DOCX ou PDF. Sua apresentação diz que o Guia comple
 “segue em anexo”; nenhum segundo anexo externo é identificável ou recuperável
 pelo Git, logo não foi inspecionado.
 
-| Artefato | SHA-256 antes/depois desta auditoria | Inspeção e resultado |
-| --- | --- | --- |
-| MD | `a13279f48ffaa303204162124d7f2ffd5e23620e9f7ea823bda8f89540b27e64` | UTF-8 textual; reserva presente, sumário por âncoras e homologação pendente |
-| HTML | `e185b074d84b3b54a5d73d84c56e53e19feaaf2e6ee5b17ed152da297dcd6d3e` | UTF-8 textual; reserva presente, sumário navegável e estado editorial pendente |
-| DOCX | `1462d908c83956b3ccd04e1e088ebc051d7f1ff3e1d6740d7ab2c4cc82c37784` | XML extraído com `unzip`; contém prefácio completo, “Eu o valido pastoralmente”, assinatura e cargo atribuídos; 221 páginas declaradas, TOC com campos `PAGEREF`, 13 quebras explícitas, um `sectPr` e cabeçalhos/rodapés sem texto |
-| PDF | `de2f7dae5a621f7f5ead3a8095764a832c78b8ebbe220344a8e79162d4fb3588` | Arquivo presente e hash conferido; conteúdo, metadados, sumário e paginação não confirmados, pois não há extrator de PDF confiável instalado |
+| Artefato | SHA-256 antes/depois desta auditoria                               | Inspeção e resultado                                                                                                                                                                                                                |
+| -------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MD       | `a13279f48ffaa303204162124d7f2ffd5e23620e9f7ea823bda8f89540b27e64` | UTF-8 textual; reserva presente, sumário por âncoras e homologação pendente                                                                                                                                                         |
+| HTML     | `e185b074d84b3b54a5d73d84c56e53e19feaaf2e6ee5b17ed152da297dcd6d3e` | UTF-8 textual; reserva presente, sumário navegável e estado editorial pendente                                                                                                                                                      |
+| DOCX     | `1462d908c83956b3ccd04e1e088ebc051d7f1ff3e1d6740d7ab2c4cc82c37784` | XML extraído com `unzip`; contém prefácio completo, “Eu o valido pastoralmente”, assinatura e cargo atribuídos; 221 páginas declaradas, TOC com campos `PAGEREF`, 13 quebras explícitas, um `sectPr` e cabeçalhos/rodapés sem texto |
+| PDF      | `de2f7dae5a621f7f5ead3a8095764a832c78b8ebbe220344a8e79162d4fb3588` | Arquivo presente e hash conferido; conteúdo, metadados, sumário e paginação não confirmados, pois não há extrator de PDF confiável instalado                                                                                        |
 
 Os hashes são idênticos antes e depois porque esta auditoria não altera os
 quatro artefatos. No pai de `c583ef1`, MD e HTML tinham respectivamente os
@@ -71,7 +71,7 @@ estado apenas “inalterado” seja confundido com um estado aprovado.
 | Markdown | Reserva o prefácio e declara a homologação pendente                                   | Proposto como fonte canônica; decisão humana pendente        |
 | HTML     | Reserva o prefácio, mas não explicitava o estado editorial junto aos dados editoriais | Corrigido para declarar a homologação pendente               |
 | DOCX     | Contém prefácio, alegação de validação e assinatura pastoral não homologados          | Mantido sem alteração; hash registrado e distribuição vedada |
-| PDF      | Não pôde ser semanticamente confirmado com ferramenta confiável                      | Mantido sem alteração; hash registrado e distribuição vedada |
+| PDF      | Não pôde ser semanticamente confirmado com ferramenta confiável                       | Mantido sem alteração; hash registrado e distribuição vedada |
 
 O rascunho removido permanece isolado em
 `fontes/guia-mestre/rascunhos/prefacio-rascunho-referencia.md`, com aviso de que
@@ -80,17 +80,24 @@ conteúdo homologado.
 
 ## Proteção proporcional da TASK-P0-02
 
-O comando `npm run check:guia-mestre` aplica duas salvaguardas:
+O comando `npm run check:guia-mestre` examina os arquivos oficiais MD e HTML e
+extrai `word/document.xml` do DOCX com o `unzip` já disponível no ambiente. A
+leitura limitada ao corpo do DOCX evita falsos positivos causados pelo nome do
+futuro validador em metadados. Três trechos distintivos e curtos detectam a
+alegação de validação, uma frase exclusiva do prefácio e a assinatura com cargo,
+sem reproduzir o prefácio completo no código.
 
-1. nos derivados textuais publicáveis (MD e HTML), rejeita as três marcas
-   específicas do prefácio indevido e exige a ressalva de homologação pendente;
-2. nos binários, confere os hashes SHA-256 dos artefatos bloqueados e falha tanto
-   para os hashes contaminados conhecidos quanto para troca sem nova auditoria.
+A lista de entrada contém somente os artefatos oficiais nomeados. Portanto,
+`fontes/guia-mestre/rascunhos/` fica explicitamente fora da varredura e pode
+preservar a evidência histórica segregada. Casos unitários confirmam a detecção,
+a aceitação da ressalva editorial e a imunidade a um marcador em metadados DOCX.
 
-A regra não proíbe genericamente palavras como “assinatura” ou o nome do pastor,
-pois elas podem aparecer legitimamente em metáforas doutrinárias ou na indicação
-do futuro validador. Assim, evita falsos positivos e protege exatamente o risco
-identificado. A verificação também integra `npm run validate`.
+O PDF ainda não é extraído: não há biblioteca ou executável de extração PDF
+adotado pelo projeto. A lacuna não é silenciosa; o comando informa o formato e
+falha até que exista um procedimento determinístico autorizado. Não foi
+adicionada dependência apenas para esse formato. A verificação integra
+`npm run validate` e, no estado herdado da TASK-P0-01, também falha corretamente
+porque o DOCX oficial ainda contém os marcadores não homologados.
 
 ## Critério para uma futura homologação
 

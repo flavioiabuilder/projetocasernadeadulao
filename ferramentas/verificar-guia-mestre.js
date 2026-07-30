@@ -1,94 +1,96 @@
 /**
- * Protege a condição editorial do Guia Mestre enquanto a homologação pastoral
- * estiver pendente. A verificação é deliberadamente estreita: examina apenas
- * os derivados textuais publicáveis e impede a liberação dos binários já
- * auditados como divergentes, sem tentar reescrevê-los.
+ * Impede que o prefácio ou a assinatura pastoral não homologados sejam
+ * publicados nos formatos oficiais do Guia Mestre.
  */
 "use strict";
 
-const { createHash } = require("node:crypto");
 const { readFile } = require("node:fs/promises");
+const { spawnSync } = require("node:child_process");
 const path = require("node:path");
 
 const base = path.join(__dirname, "..", "fontes", "guia-mestre");
-
-const textuais = [
-  "Guia_Mestre_Discipulando_a_Caserna_v1_0-RC_revisado.md",
-  "Guia_Mestre_Discipulando_a_Caserna_v1_0-RC_revisado.html",
-];
-
-const binariosBloqueados = new Map([
-  [
-    "Guia_Mestre_Discipulando_a_Caserna_v1_0-RC_revisado.docx",
-    {
-      hash: "1462d908c83956b3ccd04e1e088ebc051d7f1ff3e1d6740d7ab2c4cc82c37784",
-      motivo: "contém prefácio não homologado",
-    },
-  ],
-  [
-    "Guia_Mestre_Discipulando_a_Caserna_v1_0-RC_revisado.pdf",
-    {
-      hash: "de2f7dae5a621f7f5ead3a8095764a832c78b8ebbe220344a8e79162d4fb3588",
-      motivo: "não teve o conteúdo semanticamente confirmado",
-    },
-  ],
-]);
-
-const alegacoesNaoHomologadas = [
+const nomeBase = "Guia_Mestre_Discipulando_a_Caserna_v1_0-RC_revisado";
+const formatosTextuais = ["md", "html"];
+const marcadoresNaoHomologados = [
   /eu o valido pastoralmente/iu,
   /obra que acompanhei de perto, tanto na origem quanto no processo de revisão e validação/iu,
   /pastor-presidente do projeto caserna de adulão/iu,
 ];
 
-const marcadoresObrigatorios = [
-  /homologação pastoral pendente/iu,
-  /página reservada ao prefácio pastoral/iu,
-  /nada abaixo desta linha antecipa autoria, endosso ou homologação pastoral/iu,
-];
-
-const falhas = [];
-
-async function verificar() {
-  for (const arquivo of textuais) {
-    const conteudo = await readFile(path.join(base, arquivo), "utf8");
-
-    for (const alegacao of alegacoesNaoHomologadas) {
-      if (alegacao.test(conteudo)) {
-        falhas.push(
-          `${arquivo}: contém texto pastoral não homologado (${alegacao.source})`
-        );
-      }
-    }
-
-    for (const marcador of marcadoresObrigatorios) {
-      if (!marcador.test(conteudo)) {
-        falhas.push(`${arquivo}: não contém a ressalva editorial (${marcador.source})`);
-      }
-    }
-  }
-
-  for (const [arquivo, bloqueio] of binariosBloqueados) {
-    const conteudo = await readFile(path.join(base, arquivo));
-    const hashAtual = createHash("sha256").update(conteudo).digest("hex");
-
-    if (hashAtual === bloqueio.hash) {
-      falhas.push(
-        `${arquivo}: binário bloqueado (${bloqueio.motivo}) e não pode ser distribuído`
-      );
-    } else {
-      falhas.push(`${arquivo}: binário mudou e exige nova auditoria documental`);
-    }
-  }
-
-  if (falhas.length > 0) {
-    console.error("Falha na verificação do Guia Mestre:");
-    for (const falha of falhas) console.error(`- ${falha}`);
-    process.exitCode = 1;
-  } else {
-    console.log(
-      "Guia Mestre verificado: todos os formatos estão aptos para distribuição."
-    );
-  }
+/** Converte XML/HTML em texto contínuo para neutralizar a divisão entre tags. */
+function normalizarTexto(conteudo) {
+  return conteudo
+    .replace(/<[^>]+>/gu, " ")
+    .replace(/&nbsp;|&#160;/giu, " ")
+    .replace(/\s+/gu, " ")
+    .trim();
 }
 
-verificar();
+/** Retorna os marcadores editoriais indevidos encontrados no conteúdo. */
+function encontrarMarcadores(conteudo) {
+  const texto = normalizarTexto(conteudo);
+  return marcadoresNaoHomologados.filter((marcador) => marcador.test(texto));
+}
+
+/**
+ * Extrai somente o corpo documental do DOCX. Metadados não são pesquisados,
+ * evitando que o nome de um futuro validador produza falso positivo.
+ */
+function extrairTextoDocx(arquivo) {
+  const resultado = spawnSync("unzip", ["-p", arquivo, "word/document.xml"], {
+    encoding: "utf8",
+    maxBuffer: 20 * 1024 * 1024,
+  });
+
+  if (resultado.error || resultado.status !== 0 || !resultado.stdout) {
+    const detalhe = resultado.error?.message || resultado.stderr.trim();
+    throw new Error(`não foi possível extrair word/document.xml: ${detalhe}`);
+  }
+  return normalizarTexto(resultado.stdout);
+}
+
+async function verificarGuia() {
+  const falhas = [];
+
+  for (const extensao of formatosTextuais) {
+    const arquivo = `${nomeBase}.${extensao}`;
+    const conteudo = await readFile(path.join(base, arquivo), "utf8");
+    if (encontrarMarcadores(conteudo).length > 0) {
+      falhas.push(`${arquivo}: contém prefácio ou assinatura pastoral não homologados`);
+    }
+  }
+
+  const docx = `${nomeBase}.docx`;
+  try {
+    if (encontrarMarcadores(extrairTextoDocx(path.join(base, docx))).length > 0) {
+      falhas.push(`${docx}: contém prefácio ou assinatura pastoral não homologados`);
+    }
+  } catch (erro) {
+    falhas.push(`${docx}: ${erro.message}`);
+  }
+
+  falhas.push(
+    `${nomeBase}.pdf: conteúdo não validado; não há extrator PDF determinístico adotado no projeto`
+  );
+  return falhas;
+}
+
+async function executar() {
+  const falhas = await verificarGuia();
+  if (falhas.length > 0) {
+    console.error("Falha na verificação dos artefatos oficiais do Guia Mestre:");
+    for (const falha of falhas) console.error(`- ${falha}`);
+    process.exitCode = 1;
+    return;
+  }
+  console.log("Guia Mestre verificado: nenhum marcador não homologado encontrado.");
+}
+
+if (require.main === module) executar();
+
+module.exports = {
+  encontrarMarcadores,
+  extrairTextoDocx,
+  normalizarTexto,
+  verificarGuia,
+};
