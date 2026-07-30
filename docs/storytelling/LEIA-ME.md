@@ -11,6 +11,7 @@ Fonte da apresentação institucional em 10 atos (slides S01–S69).
 | `Discipulando_a_Caserna_Apresentacao.pdf` / `.pptx` | Referência — **não** editar a UI a partir deles |
 | `Relatorio Conversa.pdf` | Contexto de conversa |
 | `auditoria-fidelidade-v1.md` | Gate de claims vs fontes canônicas do repositório |
+| `auditoria-visual-v1.md` | Achados visuais/UX e correções P0–P1 aplicadas |
 
 ## Protótipo vivo
 

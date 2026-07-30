@@ -31,7 +31,7 @@ Duplo clique em `index.html` (offline; fontes e emblema embutidos). Sem CDN.
 
 ## Fidelidade
 
-Ver [`docs/storytelling/auditoria-fidelidade-v1.md`](../../docs/storytelling/auditoria-fidelidade-v1.md). Claims institucionais sem fonte canônica no repo estão marcados como estudo/pendente no deck.
+Ver [`docs/storytelling/auditoria-fidelidade-v1.md`](../../docs/storytelling/auditoria-fidelidade-v1.md) e [`docs/storytelling/auditoria-visual-v1.md`](../../docs/storytelling/auditoria-visual-v1.md). Claims institucionais sem fonte canônica no repo estão marcados como estudo/pendente no deck.
 
 ## O que já foi aplicado neste protótipo
 
