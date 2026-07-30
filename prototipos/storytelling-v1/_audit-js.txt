@@ -1,0 +1,95 @@
+
+(function(){
+  var deck=document.getElementById('deck');
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var topo=document.getElementById('topo'), rodape=document.getElementById('rodape');
+  var posEl=document.getElementById('pos'), tempoEl=document.getElementById('tempo');
+  var armIcs=[].slice.call(document.querySelectorAll('.arm-ic'));
+  var ROM=['I','II','III','IV','V','VI','VII','VIII','IX','X'];
+  var atual=0;
+
+  function aplica(i){
+    var s=slides[i]; if(!s) return;
+    atual=i;
+    var ato=+s.dataset.ato, arm=+s.dataset.arm;
+    var escuro=s.className.indexOf('bg-sombra')>-1||s.className.indexOf('bg-caserna')>-1||s.className.indexOf('bg-transicao')>-1;
+    topo.classList.toggle('escuro',escuro);
+    var semC=s.className.indexOf('sem-chrome')>-1;
+    topo.classList.toggle('oculto',semC);
+    rodape.classList.toggle('oculto',semC);
+    rodape.classList.toggle('claro',escuro);
+    posEl.textContent='Ato '+ROM[ato-1]+' de X';
+    var rest=Math.max(1,Math.round((slides.length-i)*0.42));
+    tempoEl.textContent='~'+rest+' min restantes';
+    armIcs.forEach(function(ic,k){ic.classList.toggle('on',k<arm);});
+    try{localStorage.setItem('dac_story_v1_pos',s.id);}catch(e){}
+    if(history.replaceState) history.replaceState(null,'','#'+s.id);
+  }
+
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('visivel');aplica(slides.indexOf(e.target));}
+    });
+  },{root:deck,threshold:0.55});
+  slides.forEach(function(s){io.observe(s);});
+
+  function vai(d){var i=Math.min(slides.length-1,Math.max(0,atual+d));
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    slides[i].scrollIntoView({behavior:reduce?'auto':'smooth'});}
+  document.getElementById('ant').onclick=function(){vai(-1);};
+  document.getElementById('prox').onclick=function(){vai(1);};
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '){e.preventDefault();vai(1);}
+    if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();vai(-1);}
+    if(e.key==='Escape'){idx.classList.remove('aberto');}
+  });
+
+  var idx=document.getElementById('indice');
+  document.getElementById('menu').onclick=function(){idx.classList.toggle('aberto');};
+  idx.addEventListener('click',function(e){if(e.target.closest('a'))idx.classList.remove('aberto');});
+  document.querySelector('.armadura').onclick=function(){idx.classList.toggle('aberto');};
+
+  // retomada
+  try{
+    var salvo=localStorage.getItem('dac_story_v1_pos');
+    if(salvo&&salvo!=='s01'&&!location.hash){
+      var b=document.getElementById('retomar');
+      var alvo=document.getElementById(salvo);
+      if(alvo){
+        var ato=+alvo.dataset.ato;
+        b.textContent='Retomar de onde parou — Ato '+ROM[ato-1];
+        b.classList.add('ver');
+        b.onclick=function(){alvo.scrollIntoView();b.classList.remove('ver');};
+        setTimeout(function(){b.classList.remove('ver');},14000);
+      }
+    }
+  }catch(e){}
+
+  // matriz
+  var body=document.getElementById('mtbody');
+  if(body){
+    var cont=document.getElementById('mtcont');
+    function filtra(m){
+      var v=0;
+      [].forEach.call(body.rows,function(r){
+        var ok=(m===0)||(+r.dataset.mod===m);
+        r.classList.toggle('oculta',!ok); if(ok)v++;
+      });
+      cont.textContent=v+' de 48 lições';
+    }
+    [].forEach.call(document.querySelectorAll('.fbtn'),function(b){
+      b.onclick=function(){
+        [].forEach.call(document.querySelectorAll('.fbtn'),function(x){x.classList.remove('ativo');});
+        b.classList.add('ativo'); filtra(+b.dataset.f);
+      };
+    });
+    filtra(1);
+  }
+
+  // anatomia
+  [].forEach.call(document.querySelectorAll('.acc-cab'),function(b){
+    b.onclick=function(){b.parentNode.classList.toggle('aberto');};
+  });
+
+  if(location.hash){var h=document.querySelector(location.hash);if(h)setTimeout(function(){h.scrollIntoView();},60);}
+})();

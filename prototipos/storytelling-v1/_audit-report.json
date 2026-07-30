@@ -1,0 +1,1040 @@
+{
+  "slideCount": 72,
+  "ids": [
+    "s01",
+    "s02",
+    "s03",
+    "s04",
+    "s05",
+    "s06",
+    "s07",
+    "s08",
+    "s09",
+    "s10",
+    "s11",
+    "s12",
+    "s13",
+    "s14",
+    "s15",
+    "s16",
+    "s17",
+    "s18",
+    "s19",
+    "s20",
+    "s21",
+    "s22",
+    "s23",
+    "s24",
+    "s25",
+    "s26",
+    "s27",
+    "s28",
+    "s29",
+    "s30",
+    "s31",
+    "s32",
+    "s33",
+    "s34",
+    "s35",
+    "s36",
+    "s37",
+    "s38",
+    "s39",
+    "s40",
+    "s41",
+    "s42",
+    "s43",
+    "s44",
+    "s45",
+    "s46",
+    "s47",
+    "s48",
+    "s49",
+    "s50",
+    "s51",
+    "s52",
+    "s53",
+    "s54",
+    "s55",
+    "s56",
+    "s57",
+    "s58",
+    "s59",
+    "s60",
+    "s61",
+    "s62",
+    "s63",
+    "s63a",
+    "s63b",
+    "s63c",
+    "s64",
+    "s65",
+    "s66",
+    "s67",
+    "s68",
+    "s69"
+  ],
+  "anchors": [
+    null,
+    null,
+    null
+  ],
+  "fechos": [
+    {
+      "id": "s01",
+      "text": "Três mil anos depois, a mesma caverna tem outro endereço."
+    },
+    {
+      "id": "s07",
+      "text": "Essa é a necessidade. O que vem agora é a resposta que a Escritura oferece."
+    },
+    {
+      "id": "s13",
+      "text": "Sabemos o que precisa ser feito. Falta saber em que língua dizê-lo."
+    },
+    {
+      "id": "s20",
+      "text": "A ponte existe. Falta mostrar o lugar de onde ela parte."
+    },
+    {
+      "id": "s26",
+      "text": "A leitura teológica está feita. O que se construiu a partir dela vem a seguir."
+    },
+    {
+      "id": "s32",
+      "text": "Essa é a instituição. O que segue é o programa que ela carrega."
+    },
+    {
+      "id": "s38",
+      "text": "O que se vive em sala precisa ter forma visível fora dela."
+    },
+    {
+      "id": "s52",
+      "text": "Nada disso sobrevive sozinho. Falta o que garante que se repita."
+    },
+    {
+      "id": "s58",
+      "text": "É tudo o que já existe. A partir daqui, o que ainda não existe."
+    }
+  ],
+  "silent": [
+    {
+      "id": "s12",
+      "cls": "slide l-L1 bg-base",
+      "arm": "0",
+      "ato": "2",
+      "hasFecho": true,
+      "fechoText": "Essa é a necessidade. O que vem agora é a resposta que a Escritura oferece.",
+      "hasSvg": false,
+      "hasEmblema": false,
+      "cavernaSvg": false,
+      "anchor": 0,
+      "estudo": 0,
+      "senhorReader": false,
+      "slideNumRef": false,
+      "textSample": "Ele já se cobra o suficiente. O que falta não é alguém que aponte o erro — isso o sistema inteiro já fez, com competência. O que falta é alguém que entre na caverna com ele e apont",
+      "len": 425
+    },
+    {
+      "id": "s19",
+      "cls": "slide l-L1 bg-base",
+      "arm": "0",
+      "ato": "3",
+      "hasFecho": true,
+      "fechoText": "Sabemos o que precisa ser feito. Falta saber em que língua dizê-lo.",
+      "hasSvg": false,
+      "hasEmblema": false,
+      "cavernaSvg": false,
+      "anchor": 0,
+      "estudo": 0,
+      "senhorReader": false,
+      "slideNumRef": false,
+      "textSample": "Vale guardar esta frase, porque ela volta no final: Um homem evangelizado é um homem alcançado. Um homem discipulado é uma linhagem. Sabemos o que precisa ser feito. Falta saber em",
+      "len": 325
+    },
+    {
+      "id": "s29",
+      "cls": "slide l-L1 bg-sombra",
+      "arm": "0",
+      "ato": "5",
+      "hasFecho": false,
+      "fechoText": "",
+      "hasSvg": false,
+      "hasEmblema": false,
+      "cavernaSvg": false,
+      "anchor": 0,
+      "estudo": 0,
+      "senhorReader": false,
+      "slideNumRef": false,
+      "textSample": "Os nomes que a Escritura registra depois como os valentes de Davi — os homens que fizeram feitos militares que atravessaram três milênios de memória — saíram todos daquela lista de",
+      "len": 350
+    },
+    {
+      "id": "s67",
+      "cls": "slide l-L1 bg-base",
+      "arm": "4",
+      "ato": "10",
+      "hasFecho": false,
+      "fechoText": "",
+      "hasSvg": false,
+      "hasEmblema": false,
+      "cavernaSvg": false,
+      "anchor": 0,
+      "estudo": 0,
+      "senhorReader": false,
+      "slideNumRef": false,
+      "textSample": "A pergunta que mede este projeto não é quantas turmas foram abertas, nem quantos certificados foram entregues, nem quantas unidades foram alcançadas. Quantos discípulos se tornaram",
+      "len": 448
+    }
+  ],
+  "armBySlide": [
+    {
+      "id": "s01",
+      "arm": "0"
+    },
+    {
+      "id": "s02",
+      "arm": "0"
+    },
+    {
+      "id": "s03",
+      "arm": "0"
+    },
+    {
+      "id": "s04",
+      "arm": "0"
+    },
+    {
+      "id": "s05",
+      "arm": "0"
+    },
+    {
+      "id": "s06",
+      "arm": "0"
+    },
+    {
+      "id": "s07",
+      "arm": "0"
+    },
+    {
+      "id": "s08",
+      "arm": "0"
+    },
+    {
+      "id": "s09",
+      "arm": "0"
+    },
+    {
+      "id": "s10",
+      "arm": "0"
+    },
+    {
+      "id": "s11",
+      "arm": "0"
+    },
+    {
+      "id": "s12",
+      "arm": "0"
+    },
+    {
+      "id": "s13",
+      "arm": "0"
+    },
+    {
+      "id": "s14",
+      "arm": "0"
+    },
+    {
+      "id": "s15",
+      "arm": "0"
+    },
+    {
+      "id": "s16",
+      "arm": "0"
+    },
+    {
+      "id": "s17",
+      "arm": "0"
+    },
+    {
+      "id": "s18",
+      "arm": "0"
+    },
+    {
+      "id": "s19",
+      "arm": "0"
+    },
+    {
+      "id": "s20",
+      "arm": "0"
+    },
+    {
+      "id": "s21",
+      "arm": "0"
+    },
+    {
+      "id": "s22",
+      "arm": "0"
+    },
+    {
+      "id": "s23",
+      "arm": "0"
+    },
+    {
+      "id": "s24",
+      "arm": "0"
+    },
+    {
+      "id": "s25",
+      "arm": "0"
+    },
+    {
+      "id": "s26",
+      "arm": "0"
+    },
+    {
+      "id": "s27",
+      "arm": "0"
+    },
+    {
+      "id": "s28",
+      "arm": "0"
+    },
+    {
+      "id": "s29",
+      "arm": "0"
+    },
+    {
+      "id": "s30",
+      "arm": "0"
+    },
+    {
+      "id": "s31",
+      "arm": "0"
+    },
+    {
+      "id": "s32",
+      "arm": "0"
+    },
+    {
+      "id": "s33",
+      "arm": "0"
+    },
+    {
+      "id": "s34",
+      "arm": "0"
+    },
+    {
+      "id": "s35",
+      "arm": "0"
+    },
+    {
+      "id": "s36",
+      "arm": "0"
+    },
+    {
+      "id": "s37",
+      "arm": "0"
+    },
+    {
+      "id": "s38",
+      "arm": "0"
+    },
+    {
+      "id": "s39",
+      "arm": "1"
+    },
+    {
+      "id": "s40",
+      "arm": "1"
+    },
+    {
+      "id": "s41",
+      "arm": "1"
+    },
+    {
+      "id": "s42",
+      "arm": "1"
+    },
+    {
+      "id": "s43",
+      "arm": "2"
+    },
+    {
+      "id": "s44",
+      "arm": "3"
+    },
+    {
+      "id": "s45",
+      "arm": "4"
+    },
+    {
+      "id": "s46",
+      "arm": "4"
+    },
+    {
+      "id": "s47",
+      "arm": "4"
+    },
+    {
+      "id": "s48",
+      "arm": "4"
+    },
+    {
+      "id": "s49",
+      "arm": "4"
+    },
+    {
+      "id": "s50",
+      "arm": "4"
+    },
+    {
+      "id": "s51",
+      "arm": "4"
+    },
+    {
+      "id": "s52",
+      "arm": "4"
+    },
+    {
+      "id": "s53",
+      "arm": "4"
+    },
+    {
+      "id": "s54",
+      "arm": "4"
+    },
+    {
+      "id": "s55",
+      "arm": "4"
+    },
+    {
+      "id": "s56",
+      "arm": "4"
+    },
+    {
+      "id": "s57",
+      "arm": "4"
+    },
+    {
+      "id": "s58",
+      "arm": "4"
+    },
+    {
+      "id": "s59",
+      "arm": "4"
+    },
+    {
+      "id": "s60",
+      "arm": "4"
+    },
+    {
+      "id": "s61",
+      "arm": "4"
+    },
+    {
+      "id": "s62",
+      "arm": "4"
+    },
+    {
+      "id": "s63",
+      "arm": "4"
+    },
+    {
+      "id": "s63a",
+      "arm": "4"
+    },
+    {
+      "id": "s63b",
+      "arm": "4"
+    },
+    {
+      "id": "s63c",
+      "arm": "4"
+    },
+    {
+      "id": "s64",
+      "arm": "4"
+    },
+    {
+      "id": "s65",
+      "arm": "4"
+    },
+    {
+      "id": "s66",
+      "arm": "4"
+    },
+    {
+      "id": "s67",
+      "arm": "4"
+    },
+    {
+      "id": "s68",
+      "arm": "4"
+    },
+    {
+      "id": "s69",
+      "arm": "4"
+    }
+  ],
+  "firstArm1": {
+    "id": "s39",
+    "cls": "slide l-L4 bg-base",
+    "arm": "1",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "A armadura que unifica tudo Existe uma narrativa bíblica única que dá unidade aos quatro módulos, e ela está em Efésios 6: a armadura de Deus. A escolha diz algo sobre a natureza d",
+    "len": 2709
+  },
+  "firstArm2": {
+    "id": "s43",
+    "cls": "slide l-L7 bg-base",
+    "arm": "2",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "MÓDULO 2 · LIÇÕES 13 A 24 · COURAÇA DA JUSTIÇA Cristo Treinando O segundo módulo constrói rotina. Ele vai da oração como comunicação diária até a preparação para o batismo, passand",
+    "len": 2306
+  },
+  "firstArm3": {
+    "id": "s44",
+    "cls": "slide l-L7 bg-base",
+    "arm": "3",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "MÓDULO 3 · LIÇÕES 25 A 36 · CALÇADOS DO EVANGELHO DA PAZ Cristo Moldando O terceiro módulo trabalha o caráter, que é a parte mais lenta e menos visível da formação. Vai dos dons do",
+    "len": 2309
+  },
+  "firstArm4": {
+    "id": "s45",
+    "cls": "slide l-L7 bg-base",
+    "arm": "4",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "MÓDULO 4 · LIÇÕES 37 A 48 · ESCUDO DA FÉ Cristo Enviando O quarto módulo é sobre saída. Vai da Grande Comissão até a formatura, passando por evangelismo relacional, vocação, lidera",
+    "len": 2230
+  },
+  "s66": {
+    "id": "s66",
+    "cls": "slide l-L5 bg-base",
+    "arm": "4",
+    "ato": "10",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": false,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "Os três critérios que não se negociam E qualquer expansão está condicionada a três critérios. Eles existem porque a tentação natural de todo projeto que dá certo é crescer mais ráp",
+    "len": 920
+  },
+  "s41": {
+    "id": "s41",
+    "cls": "slide l-L4 bg-base",
+    "arm": "1",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "A progressão é em espiral Um cuidado que vale explicar: nenhum módulo repete o anterior, mas alguns temas retornam. Oração aparece no Módulo 2 como disciplina pessoal e volta no Mó",
+    "len": 2834
+  },
+  "s42": {
+    "id": "s42",
+    "cls": "slide l-L7 bg-base",
+    "arm": "1",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "MÓDULO 1 · LIÇÕES 1 A 12 · CINTO DA VERDADE Cristo Chamando O primeiro módulo trata de acolhimento e fundamento. Ele começa recebendo o ferido antes de qualquer exigência — a prime",
+    "len": 2328
+  },
+  "s45": {
+    "id": "s45",
+    "cls": "slide l-L7 bg-base",
+    "arm": "4",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "MÓDULO 4 · LIÇÕES 37 A 48 · ESCUDO DA FÉ Cristo Enviando O quarto módulo é sobre saída. Vai da Grande Comissão até a formatura, passando por evangelismo relacional, vocação, lidera",
+    "len": 2230
+  },
+  "s46": {
+    "id": "s46",
+    "cls": "slide l-L6 bg-base",
+    "arm": "4",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": false,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "As 48 lições Aqui está o ano inteiro, lição por lição. Você pode percorrer no seu ritmo — o filtro abaixo mostra um módulo de cada vez. O texto integral de cada lição está nas ediç",
+    "len": 11746
+  },
+  "s47": {
+    "id": "s47",
+    "cls": "slide l-L5 bg-base",
+    "arm": "4",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": false,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "Toda lição tem sete elementos Cada uma das 48 lições segue exatamente a mesma estrutura interna. São sete elementos, sempre nesta ordem. Toque em cada um para ver como o Guia o def",
+    "len": 4002
+  },
+  "s39": {
+    "id": "s39",
+    "cls": "slide l-L4 bg-base",
+    "arm": "1",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "A armadura que unifica tudo Existe uma narrativa bíblica única que dá unidade aos quatro módulos, e ela está em Efésios 6: a armadura de Deus. A escolha diz algo sobre a natureza d",
+    "len": 2709
+  },
+  "s01": {
+    "id": "s01",
+    "cls": "slide l-L1 bg-sombra sem-chrome",
+    "arm": "0",
+    "ato": "1",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": false,
+    "hasEmblema": true,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": true,
+    "textSample": "",
+    "len": 189771
+  },
+  "s52": {
+    "id": "s52",
+    "cls": "slide l-L1 bg-sombra",
+    "arm": "4",
+    "ato": "8",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": false,
+    "hasEmblema": true,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": true,
+    "textSample": "Você viu esta imagem na primeira tela desta apresentação, sem nenhuma explicação. Agora ela pode ser lida.",
+    "len": 189890
+  },
+  "caves": [
+    "s02",
+    "s24",
+    "s25",
+    "s26",
+    "s66",
+    "s67",
+    "s68"
+  ],
+  "estudoSlides": [
+    "s33",
+    "s34"
+  ],
+  "seloEstudo": [
+    "p{color:#2B2B2B !important}\n  .bg-caserna .intro,.bg-sombra .intro,.bg-caserna .card p,.bg-sombra .card p,\n  .bg-sombra .nota-slide,.bg-caserna .nota-slide,.bg-sombra .fecho,.bg-caserna .fecho{color:#4A4A4A !important}\n  .bg-caserna .card,.bg-sombra .card{border-color:#bbb !important}\n  h2{font-size:19pt;margin-bottom:10pt}\n  .display{font-size:17pt;margin-top:12pt}\n  .numerao{font-size:38pt}\n  .criterio{font-size:14pt}\n  .nota-slide,.fecho{position:static;text-align:left;margin-top:10pt;max-width:none}\n  .fig{max-height:66mm}\n  .fig-caverna{max-height:56mm}\n  .emblema-grande{max-width:52mm}\n  .matriz-rolagem{max-height:none;overflow:visible}\n  .tabela-licoes tr.oculta{display:table-row !important}\n  .tabela-licoes th{position:static}\n  .acc-corpo{display:block !important}\n  .acc-s{display:none}\n  .slide.visivel .quadro>*>*,.arm-item,.cel{animation:none !important;opacity:1 !important;transform:none !important}\n  .cena .figura,.dupla{page-break-inside:avoid}\n  .caverna-print{display:block}\n  .fig-caverna path{stroke:#666 !important}\n  .fig-caverna rect{display:none}\n  .faixa-caverna{display:none}\n  .cert-corpo,.cad-miolo,.guia-livro{box-shadow:none !important}\n}\n",
+    "Estudo · pendente de validação pastoral",
+    "Estudo",
+    "Estudo · estrutura em validação"
+  ],
+  "senhorHits": [
+    "d><td class=\"obj\">Mostrar Cristo como o Senhor que desce ao lugar do fracasso pa",
+    "trabalho e a farda podem ser serviço ao Senhor.</td></tr><tr data-mod=\"4\"><td cl"
+  ],
+  "motion": {
+    "sobe": true,
+    "reduced": true,
+    "stagger": true,
+    "fill": false,
+    "armOn": false
+  },
+  "root": ":root{\n  --base:#F4F4F1; --chumbo:#2B2B2B; --estrut:#4A4A4A;\n  --latao:#8C6A46; --caserna:#1A2A44; --sombra:#111418;\n  --serif:\"Iowan Old Style\",\"Palatino Linotype\",Palatino,Georgia,\"Liberation Serif\",\"DejaVu Serif\",serif;\n  --sans:\"Helvetica Neue\",Helvetica,Arial,\"Liberation Sans\",\"DejaVu Sans\",system-ui,sans-serif;\n  --mx:8vw; --barra:46px;\n  --logo:...\n}",
+  "fontsFromCss": [
+    "--serif:\"Iowan Old Style\",\"Palatino Linotype\",Palatino,Georgia,\"Liberation Serif\",\"DejaVu Serif\",serif",
+    "--sans:\"Helvetica Neue\",Helvetica,Arial,\"Liberation Sans\",\"DejaVu Sans\",system-ui,sans-serif"
+  ],
+  "displaySize": ".display{font-size:clamp(24px,3.4vw,50px);line-height:1.22;margin:34px 0 0;max-width:22ch;font-weight:500}",
+  "barra": "--barra:46px",
+  "grid12": false,
+  "lLayouts": [
+    ".l-L3",
+    ".l-L5",
+    ".l-L6"
+  ],
+  "jsArmLogic": [
+    "arm-ic",
+    "armadura').onclick=function(){idx.classList.toggle('aberto');};\n\n  // retomada\n  try{\n    var salvo=localStorage.getItem('dac_story_v1_pos');\n    if(salvo&&salvo!=='s01'&&!location.hash){\n      var b=document"
+  ],
+  "slideNumRefs": [
+    "s01",
+    "s52",
+    "s69"
+  ],
+  "metricsHints": [],
+  "figCavernaCount": 7,
+  "s02HasCave": true,
+  "s26HasCave": true,
+  "s68HasCave": true,
+  "s03CaveBg": true,
+  "s68Figures": true,
+  "armFillCss": [
+    ".arm-ic{opacity:.28;transition:opacity .5s}",
+    ".arm-ic.on{opacity:1}"
+  ],
+  "armJs": "armIcs=[].slice.call(document.querySelectorAll('.arm-ic'));\n  var ROM=['I','II','III','IV','V','VI','VII','VIII','IX','X'];\n  var atual=0;\n\n  function aplica(i){\n    var s=slides[i]; if(!s) return;\n    atual=i;\n    var ato=+s.dataset.ato, arm=+s.dataset.arm;\n    var escuro=s.className.indexOf('bg-sombra')>-1||s.className.indexOf('bg-caserna')>-1||s.className.indexOf('bg-transicao')>-1;\n    topo.classList.toggle('escuro',escuro);\n    var semC=s.className.indexOf('sem-chrome')>-1;\n    topo.classList.toggle('oculto',semC);\n    rodape.classList.toggle('oculto',semC);\n    rodape.classList.toggle('claro',escuro);\n    posEl.textContent='Ato '+ROM[ato-1]+' de X';\n    var rest=Math.max(1,Math.round((slides.length-i)*0.42));\n    tempoEl.textContent='~'+rest+' min restantes';\n    armIcs.forEach(funct",
+  "armJsCtx": "none",
+  "s12_detail": {
+    "id": "s12",
+    "cls": "slide l-L1 bg-base",
+    "arm": "0",
+    "ato": "2",
+    "hasFecho": true,
+    "fechoText": "Essa é a necessidade. O que vem agora é a resposta que a Escritura oferece.",
+    "hasSvg": false,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "Ele já se cobra o suficiente. O que falta não é alguém que aponte o erro — isso o sistema inteiro já fez, com competência. O que falta é alguém que entre na caverna com ele e apont",
+    "len": 425
+  },
+  "s19_detail": {
+    "id": "s19",
+    "cls": "slide l-L1 bg-base",
+    "arm": "0",
+    "ato": "3",
+    "hasFecho": true,
+    "fechoText": "Sabemos o que precisa ser feito. Falta saber em que língua dizê-lo.",
+    "hasSvg": false,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "Vale guardar esta frase, porque ela volta no final: Um homem evangelizado é um homem alcançado. Um homem discipulado é uma linhagem. Sabemos o que precisa ser feito. Falta saber em",
+    "len": 325
+  },
+  "s29_detail": {
+    "id": "s29",
+    "cls": "slide l-L1 bg-sombra",
+    "arm": "0",
+    "ato": "5",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": false,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "Os nomes que a Escritura registra depois como os valentes de Davi — os homens que fizeram feitos militares que atravessaram três milênios de memória — saíram todos daquela lista de",
+    "len": 350
+  },
+  "s67_detail": {
+    "id": "s67",
+    "cls": "slide l-L1 bg-base",
+    "arm": "4",
+    "ato": "10",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": false,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "A pergunta que mede este projeto não é quantas turmas foram abertas, nem quantos certificados foram entregues, nem quantas unidades foram alcançadas. Quantos discípulos se tornaram",
+    "len": 448
+  },
+  "s04_detail": {
+    "id": "s04",
+    "cls": "slide l-L1 bg-sombra",
+    "arm": "0",
+    "ato": "1",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": false,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 1,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "Aqueles homens se tornaram os valentes de Davi. Os mesmos nomes que a Escritura registra depois como heróis de guerra saíram todos daquela lista de fugitivos. De quebrantados, vale",
+    "len": 279
+  },
+  "s01_detail": {
+    "id": "s01",
+    "cls": "slide l-L1 bg-sombra sem-chrome",
+    "arm": "0",
+    "ato": "1",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": false,
+    "hasEmblema": true,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": true,
+    "textSample": "",
+    "len": 189771
+  },
+  "s52_detail": {
+    "id": "s52",
+    "cls": "slide l-L1 bg-sombra",
+    "arm": "4",
+    "ato": "8",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": false,
+    "hasEmblema": true,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": true,
+    "textSample": "Você viu esta imagem na primeira tela desta apresentação, sem nenhuma explicação. Agora ela pode ser lida.",
+    "len": 189890
+  },
+  "s39_detail": {
+    "id": "s39",
+    "cls": "slide l-L4 bg-base",
+    "arm": "1",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "A armadura que unifica tudo Existe uma narrativa bíblica única que dá unidade aos quatro módulos, e ela está em Efésios 6: a armadura de Deus. A escolha diz algo sobre a natureza d",
+    "len": 2709
+  },
+  "s41_detail": {
+    "id": "s41",
+    "cls": "slide l-L4 bg-base",
+    "arm": "1",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "A progressão é em espiral Um cuidado que vale explicar: nenhum módulo repete o anterior, mas alguns temas retornam. Oração aparece no Módulo 2 como disciplina pessoal e volta no Mó",
+    "len": 2834
+  },
+  "s42_detail": {
+    "id": "s42",
+    "cls": "slide l-L7 bg-base",
+    "arm": "1",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "MÓDULO 1 · LIÇÕES 1 A 12 · CINTO DA VERDADE Cristo Chamando O primeiro módulo trata de acolhimento e fundamento. Ele começa recebendo o ferido antes de qualquer exigência — a prime",
+    "len": 2328
+  },
+  "s66_detail": {
+    "id": "s66",
+    "cls": "slide l-L5 bg-base",
+    "arm": "4",
+    "ato": "10",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": false,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "Os três critérios que não se negociam E qualquer expansão está condicionada a três critérios. Eles existem porque a tentação natural de todo projeto que dá certo é crescer mais ráp",
+    "len": 920
+  },
+  "s25_detail": {
+    "id": "s25",
+    "cls": "slide l-L1 bg-base",
+    "arm": "0",
+    "ato": "4",
+    "hasFecho": true,
+    "fechoText": "A ponte existe. Falta mostrar o lugar de onde ela parte.",
+    "hasSvg": false,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "Então o desafio é duplo. É preciso falar a língua da caserna. E é preciso falar a homens que chegaram ao fundo. Existe um lugar na Escritura onde essas duas coisas acontecem ao mes",
+    "len": 467
+  },
+  "s50_detail": {
+    "id": "s50",
+    "cls": "slide l-L4 bg-base",
+    "arm": "4",
+    "ato": "7",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "O certificado O certificado de cada marcha existe como memória pastoral, não como comprovação de mérito. O texto-base é sempre o mesmo, e ele deixa claro de quem é a obra: “Certifi",
+    "len": 1424
+  },
+  "s57_detail": {
+    "id": "s57",
+    "cls": "slide l-L4 bg-base",
+    "arm": "4",
+    "ato": "8",
+    "hasFecho": true,
+    "fechoText": "Nada disso sobrevive sozinho. Falta o que garante que se repita.",
+    "hasSvg": false,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 0,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "A identidade fora da sala Há uma peça material que o método praticamente exige, e é justo apresentá-la antes de qualquer outra. Como toda lição termina em Ordem do Dia, e a Ordem d",
+    "len": 1748
+  },
+  "s33_detail": {
+    "id": "s33",
+    "cls": "slide l-L4 bg-base",
+    "arm": "0",
+    "ato": "6",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": false,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 2,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "O que é o Projeto Caserna de Adulão Estudo · pendente de validação pastoral O Projeto Caserna de Adulão é um programa de evangelização e discipulado voltado aos profissionais de se",
+    "len": 1009
+  },
+  "s34_detail": {
+    "id": "s34",
+    "cls": "slide l-L4 bg-base",
+    "arm": "0",
+    "ato": "6",
+    "hasFecho": false,
+    "fechoText": "",
+    "hasSvg": true,
+    "hasEmblema": false,
+    "cavernaSvg": false,
+    "anchor": 0,
+    "estudo": 1,
+    "senhorReader": false,
+    "slideNumRef": false,
+    "textSample": "Por que uma estrutura em setores Estudo · estrutura em validação O projeto propõe organizar-se em setores nomeados de P1 a P9, seguindo a lógica de estado-maior que qualquer milita",
+    "len": 3598
+  },
+  "casaCtx": "gelização e discipulado VÍNCULO ECLESIÁSTICO Estudo Casa de Oração para Todos os Povos PÚBLICO Profissionais de segurança pública CNPJ 63.724.286/0001-78 <",
+  "pCtx": "5yqMjIdU7VCJRZSwaKwfVkRmCgHZrYc25aMuf8XP37PGwcGsP39/f57wOPxvOrwDqrH4/mOoL+/38jAgP1nffdszAXyvZUoRnj5a0/rwjIVQNUKX9ivPH7MokBb3rCuHZpSwsg8VCIlmxLG5yyxVcQadnQr7bnFjNSXy1G11slURW02HQYtGf0loG/X0JCPnPJ4PF6gejwez7Wwa5cTUqtb5IcK+VShWK7GL2fuKSSuqXG/Ts0IXzmoHBpRVrQYblkl7OqF3malHAlDY4ZK5GpSZyvKdBGG56AUh/TmLRvbLc0ZJxwtL4dQVYwoRjClWqTZNB/8me+"
+}

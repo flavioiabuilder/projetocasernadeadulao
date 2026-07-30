@@ -1,0 +1,127 @@
+{
+  "s01": {
+    "text": "",
+    "seta": false,
+    "surgeAnim": false,
+    "emblemaAnim": false,
+    "semChrome": true
+  },
+  "emblemaCssAnim": false,
+  "setaCss": ".seta-rolar{margin-top:40px;color:var(--base);opacity:0;animation:surge .8s 4s forwards}",
+  "staggerDelays": [
+    "animation-delay:var(--d)",
+    "animation-delay:var(--d)"
+  ],
+  "siblingStagger": false,
+  "s04": "Aqueles homens se tornaram os valentes de Davi. Os mesmos nomes que a Escritura registra depois como heróis de guerra saíram todos daquela lista de fugitivos. De quebrantados, valentes.",
+  "s12": {
+    "html": "<section \nclass=\"slide l-L1 bg-base\" id=\"s12\" data-ato=\"2\" data-arm=\"0\" aria-label=\"Slide 12\"><div \nclass=\"quadro\"><div \nclass=\"bloco-central\"><p>Ele já se cobra o suficiente. O que falta não é alguém que aponte o erro — isso o sistema inteiro já fez, com competência. O que falta é alguém que entre na caverna com ele e aponte Cristo.</p><p \nclass=\"display\">Uma coisa esse homem não precisa: de mais cobrança.</p></div><p \nclass=\"fecho\">Essa é a necessidade. O que vem agora é a resposta que a Escritura oferece.</p></div></section>",
+    "text": "Ele já se cobra o suficiente. O que falta não é alguém que aponte o erro — isso o sistema inteiro já fez, com competência. O que falta é alguém que entre na caverna com ele e aponte Cristo. Uma coisa esse homem não precisa: de mais cobrança. Essa é a necessidade. O que vem agora é a resposta que a Escritura oferece.",
+    "display": true,
+    "fecho": "Essa é a necessidade. O que vem agora é a resposta que a Escritura oferece."
+  },
+  "s19": {
+    "text": "Vale guardar esta frase, porque ela volta no final: Um homem evangelizado é um homem alcançado. Um homem discipulado é uma linhagem. Sabemos o que precisa ser feito. Falta saber em que língua dizê-lo.",
+    "fecho": "Sabemos o que precisa ser feito. Falta saber em que língua dizê-lo.",
+    "display": true
+  },
+  "s25": {
+    "faixa": true,
+    "text": "Então o desafio é duplo. É preciso falar a língua da caserna. E é preciso falar a homens que chegaram ao fundo. Existe um lugar na Escritura onde essas duas coisas acontecem ao mesmo tempo. Você já esteve nele, no início desta apresentação. A ponte existe. Falta mostrar o lugar de onde ela parte."
+  },
+  "s31": {
+    "anchors": 1,
+    "fecho": "A leitura teológica está feita. O que se construiu a partir dela vem a seguir.",
+    "text": "Por que a analogia sustenta Uma analogia decorativa ilustra o que já foi dito. Esta faz outra coisa: ela responde à pergunta teológica que o homem recluso realmente carrega, e que ele quase nunca formula em voz alta. Se eu falhei desse jeito, ainda existe posto para mim? Adulão responde que sim. A caverna não é o fim da carreira — é onde ela recomeça, sob um novo comando. E os homens que passaram "
+  },
+  "s39": {
+    "text": "A armadura que unifica tudo Existe uma narrativa bíblica única que dá unidade aos quatro módulos, e ela está em Efésios 6: a armadura de Deus. A escolha diz algo sobre a natureza do programa. O discípulo não coleciona conteúdos concluídos — ele é revestido , peça por peça, por alguém que não é ele mesmo. Cada módulo corresponde a uma peça: o Cinto da Verdade, a Couraça da Justiça, os Calçados do Evangelho da Paz e o Escudo da Fé. E se você olhar para o alto desta página, vai reconhecer esses qua",
+    "armItems": 4,
+    "hasFillSeq": true
+  },
+  "s40": {
+    "cells": 48,
+    "numerao": true
+  },
+  "s48": {
+    "hasBar": true,
+    "svg": true
+  },
+  "s50": {
+    "proposta": true,
+    "mock": true,
+    "blankName": true
+  },
+  "s57": {
+    "proposta": true,
+    "cad": true,
+    "estudoMerch": true
+  },
+  "s65": {
+    "svg": true,
+    "rings": true
+  },
+  "s68": {
+    "cave": true,
+    "rects": 4,
+    "text": "ue agora ele não é quem chegou. Ele é quem recebe. Diante dele há outro homem, que acabou de entrar, e que carrega exatamente o que ele carregava. A caverna é a mesma. Mudou quem está em cada cadeira."
+  },
+  "s69": {
+    "arm": "4",
+    "emblema": true,
+    "anchors": 1,
+    "cnpj": true,
+    "text": "Este versículo está no certificado de cada marcha, e está aqui pelo mesmo motivo. O que foi construído até agora não é obra de quem escreveu, e o que vier também não será. O trabalho foi apenas organizar, em papel, aquilo que já se via acontecer numa caverna. De quebrantados, valentes. aquele que começou boa obra em vocês há de completá-la Filipenses 1.6 Projeto Caserna de Adulão · CNPJ 63.724.286/0001-78 Discipulando a Caserna · Guia Mestre v1.0-RC · Fortaleza, 2026"
+  },
+  "s33": "O que é o Projeto Caserna de Adulão Estudo · pendente de validação pastoral O Projeto Caserna de Adulão é um programa de evangelização e discipulado voltado aos profissionais de segurança pública, com atuação prioritária junto a militares estaduais. Opera sob liderança pastoral definida e possui CNPJ próprio. A formulação completa do vínculo eclesiástico e da governança institucional permanece em validação neste documento de trabalho — e não deve ser lida como estatuto homologado. NATUREZA Programa de evangelização e discipulado VÍNCULO ECLESIÁSTICO Estudo Casa de Oração para Todos os Povos PÚBLICO Profissionais de segurança pública CNPJ 63.724.286/0001-78",
+  "s03": {
+    "labels": true,
+    "caveOpacity": true,
+    "svg": true
+  },
+  "s07": {
+    "hierarquia": true,
+    "culpa": true
+  },
+  "s09": true,
+  "s10": true,
+  "s14": true,
+  "s16": true,
+  "s22": false,
+  "s36": true,
+  "s37": true,
+  "armTransitions": [
+    {
+      "id": "s01",
+      "arm": 0
+    },
+    {
+      "id": "s39",
+      "arm": 1
+    },
+    {
+      "id": "s43",
+      "arm": 2
+    },
+    {
+      "id": "s44",
+      "arm": 3
+    },
+    {
+      "id": "s45",
+      "arm": 4
+    }
+  ],
+  "anchorLocations": [
+    "s04",
+    "s31",
+    "s69"
+  ],
+  "proseSlideRefs": [],
+  "voiceHits": [],
+  "s63a": "O Guia está em v1.0-RC. Nenhum conteúdo é final antes da homologação pastoral. Neste ponto a apresentação deixa de ser apenas informativa. Nada do que se viu até aqui é definitivo. O Guia Mestre está em versão candidata; as doze lições do Módulo 1 estão escritas, mas não homologadas; os Módulos 2 a 4 estão planejados, e sua produção não começa ante",
+  "s63b": "O portão pastoral Convite O prefácio Há uma página do Guia Mestre que continua em branco por decisão do autor: o prefácio. Não é uma formalidade de abertura, e não se pede que seja escrito por cortesia. O Guia descreve um método, mas quem pode dizer se esse método é fiel ao Cristo das Escrituras — e se serve de fato aos homens para quem foi escrito",
+  "s63c": "Se a decisão for que ainda não é hora, ou que não é assim. Este material está em versão candidata. Ele não foi impresso para distribuição ampla sob homologação, e nada precisa ser desfeito. Se a resposta for “ainda não” , o material aguarda. Se for “não desse jeito” , o texto será revisado — e é preferível revisar agora. Se for “não” , o trabalho n",
+  "hasL9": false,
+  "condensed": false
+}
