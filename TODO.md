@@ -21,7 +21,12 @@
 
 ## Decisões humanas / conteúdo (bloqueios — não inventar)
 
-- [ ] Confirmar se a menção nominal à PMCE permanece caso o site circule além do destinatário
+- [ ] Obter confirmações documentais dos dados institucionais e pessoais para
+      eventual circulação ampliada — a TASK-P0-08 selecionou a Rota B e a
+      TASK-P0-10 manteve a apresentação restrita; ver
+      `docs/validacoes/task-p0-08-e-p0-10-validacao-institucional.md`
+- [ ] Confirmar com a autoridade competente se a menção nominal à PMCE pode
+      permanecer caso o material circule além do destinatário
 - [ ] Definir se a Seção 2 recebe algum elemento gráfico além da tipografia
 - [ ] Apreciação pastoral do Módulo 1 e deste prospecto
 - [ ] Licença do código e do conteúdo pastoral
