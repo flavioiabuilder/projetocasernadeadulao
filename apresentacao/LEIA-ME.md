@@ -11,10 +11,14 @@ Artefato irmão do prospecto multiarquivo (`index.html`). Destinado ao **Pr. Gla
 - Matriz com filtro padrão no Módulo 1; checklist em três blocos
 - Prefácio do Guia: página reservada (rascunho fora do documento enviado)
 
-## Tipografia e offline
+## Tipografia e offline (perfil P2 — ADR-003)
 
 - Fontes **Montserrat** + **Source Serif 4** embutidas em base64 no HTML.
-- Abre offline com duplo clique; sem CDN (exceto se a logomarca PNG for carregada por caminho relativo — mantenha a pasta `assets` ao lado).
+- Sem CDN de script ou fonte tipográfica.
+- Abre offline com duplo clique **desde que** a pasta `assets/` continue acessível
+  via `../assets/img/logo-pdac/` (a logomarca PNG **não** está inline).
+- “Autocontido” neste artefato = CSS + JS + fontes tipográficas no HTML; não
+  significa arquivo único portátil sem o restante do clone.
 
 ## Regenerar
 

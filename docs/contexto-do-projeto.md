@@ -119,22 +119,27 @@ Direção visual aprovada: **A — Prospecto pastoral editorial** ([`docs/decisa
 - Plataforma de cursos / LMS
 - Site de captação de participantes
 
-Também fora do escopo técnico atual (`TODO.md`): formulários, analytics, cookies, back-end, frameworks, bundlers, migração para React/Vue/Next/Astro/Tailwind.
+Também fora do escopo de **produto** (`TODO.md`): formulários, analytics,
+cookies, back-end. Stack e publicação: ver
+[`docs/arquitetura/`](arquitetura/README.md) (ADR-001…006). Migração para
+framework de UI (React/Vue/Next/etc.) exige nova ADR — não é proibição eterna
+sem critério, mas **não** é o caminho padrão.
 
 ---
 
 ## Estado técnico atual (síntese)
 
-- Site estático de página única (`index.html`), sem bundler.
+- Site estático de página única (`index.html`); runtime sem framework de UI
+  (ADR-001). Pipeline Node para geração de dados e apresentação.
 - CSS: `tokens`, `base`, `layout`, `nav`, `editorial`, `escudo`, `curricular`, `secoes`.
 - JS modular clássico; dados gerados em `js/dados/*` a partir de `conteudo/*.json` e do manifesto da Lição 1.
-- Publicação: GitHub Pages via Actions com artefato filtrado (`docs/publicacao.md`); `noindex`/`nofollow` (não é autenticação).
+- Publicação: GitHub Pages via Actions com artefato filtrado (ADR-002 / `docs/publicacao.md`); `noindex`/`nofollow` (não é autenticação).
 - Qualidade: `npm run validate` (generate + apresentação, encoding, Guia, paridade editorial, lint HTML/CSS/JS, Prettier, testes unitários e e2e).
-- Skills de agente: canônicas em `.claude/skills/` (`docs/skills.md`).
+- Skills de agente: canônicas em `.claude/skills/` (ADR-006 / `docs/skills.md`).
 
-Fontes canônicas de conteúdo do site: `conteudo/*.json`, `conteudo/*.md`.  
-Referência pastoral (não editar no site): `fontes/guia-mestre/`.  
-Não editar manualmente `js/dados/*.js` nem o bloco gerado `FALLBACK-DADOS` em `index.html`.
+Fontes canônicas: `conteudo/*.json`, `conteudo/*.md` (ADR-004).  
+Referência pastoral (não editar o site a partir dela): `fontes/guia-mestre/`.  
+Não editar manualmente `js/dados/*.js` nem o bloco gerado `FALLBACK-DADOS` em `index.html` (ADR-005).
 
 ---
 

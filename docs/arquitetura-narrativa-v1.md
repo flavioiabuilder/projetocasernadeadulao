@@ -547,9 +547,14 @@ Essa combinação preserva solenidade e legibilidade, dá ferramentas de decisã
 
 ---
 
-## 6. Implicações técnicas (para fase futura — não implementar agora)
+## 6. Implicações técnicas
 
-- Manter HTML/CSS/JS clássico; sem bundler/framework.
+> Atualização 2026-07-31: a norma de stack vive em
+> [`docs/arquitetura/`](arquitetura/README.md) (ADR-001…006). O parágrafo abaixo
+> permanece como histórico da fase narrativa.
+
+- Runtime: HTML/CSS/JS clássico sem framework de UI (ADR-001); ferramentas Node
+  de geração/qualidade são permitidas.
 - Reordenar seções no DOM e no índice; preservar redirects/âncoras legadas se necessário.
 - Cortar do HTML visível: `.paleta`, `.tipografia-amostra` (ou mover a apêndice não publicado).
 - Substituir `.cartoes` de recusas e `.destaques` de stats por padrões tipográficos.

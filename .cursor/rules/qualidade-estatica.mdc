@@ -20,6 +20,8 @@ alwaysApply: true
 
 - Rodar validações antes de concluir alterações relevantes
 - Não inventar conteúdo institucional, endossos, aprovações, cargos, datas ou resultados
+- Decisões de stack: consultar `docs/arquitetura/` (não cristalizar “sem bundler”
+  como proibição de ferramentas de desenvolvimento)
 
 ## Acessibilidade essencial
 

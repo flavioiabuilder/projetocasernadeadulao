@@ -29,3 +29,12 @@ visível e sem texto substituto.
 
 Todo texto marcado como citação (`>`) nos arquivos `.md` é **literal**. Não parafrasear,
 não resumir, não "melhorar". Faltando algo, registrar em `TODO.md`.
+
+## Fluxo até o HTML do prospecto
+
+- `*.json` → `npm run generate` → `js/dados/*.js` + fallback noscript (ADR-005).
+- `*.md` → historicamente embutidos à mão em `index.html`, com
+  `npm run check:paridade` nas âncoras.
+- Pipeline paralelo: `npm run generate:editorial` emite fragmentos em
+  `_gerado/editorial/` **sem** substituir `index.html` até go/no-go humano
+  (ADR-004). Ver `docs/validacoes/poc-editorial-movimento-i-2026-07-31.md`.

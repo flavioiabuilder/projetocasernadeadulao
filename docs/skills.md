@@ -1,6 +1,8 @@
 # Skills de agente — fonte canônica
 
-## Decisão D2 (default técnico da auditoria integral)
+Norma detalhada: [`docs/arquitetura/ADR-006-ferramentas-de-ia.md`](arquitetura/ADR-006-ferramentas-de-ia.md).
+
+## Decisão D2 (default técnico)
 
 A árvore canônica de skills do projeto é:
 
@@ -11,14 +13,27 @@ slides, banner-design, ui-styling, web-design-guidelines, astryx, Higgsfield
 (`higgsfield-generate`, soul-id, product-photoshoot, marketplace-cards, websites,
 video-explainer, game-generation) etc.
 
-Espelho em `.agents/skills/` para o agente Cursor. Lock: `skills-lock.json`.
+## Espelhos
+
+| Árvore            | Papel                            |
+| ----------------- | -------------------------------- |
+| `.cursor/skills/` | Subconjunto para o IDE Cursor    |
+| `.agents/skills/` | Subconjunto para o agente Cursor |
+| `.github/skills/` | **Removida** — não reintroduzir  |
+
+Os espelhos **não** precisam ser cópias 1:1 do canônico. Lock: `skills-lock.json`.
 CLI: `@higgsfield/cli` (devDependency); autenticar com `higgsfield auth login`.
 
-## `.github/skills/`
+## Hooks
 
-Removida a duplicata. Hooks em [`.github/hooks/impeccable.json`](../.github/hooks/impeccable.json)
+Hooks em [`.github/hooks/impeccable.json`](../.github/hooks/impeccable.json)
 apontam para `.claude/skills/impeccable/`.
 
 Se uma ferramenta externa ainda procurar `.github/skills/impeccable`, atualize o
 caminho ou restaure um symlink local não versionado — não reintroduza a cópia
 completa no Git.
+
+## Política de sync (default)
+
+Disciplina documental + `skills-lock.json`. Script automático de sync ou
+submódulo externo fica como decisão humana futura (ADR-006).

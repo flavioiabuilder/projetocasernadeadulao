@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+### Revisão arquitetural (governança e pipeline)
+
+- ADRs em `docs/arquitetura/` (stack, Pages/CDN, offline, fontes da verdade,
+  artefatos gerados, skills de IA).
+- README reescrito: mapa de superfícies, canônico vs gerado, links às ADRs;
+  proibições absolutas de bundler/framework removidas do TODO/contexto.
+- `npm run generate:editorial` — fragmentos MD→HTML em `_gerado/` (paralelo;
+  não substitui `index.html`). PoC: cobertura ~95% das quotes; go condicional.
+- Pages: workflow regenera dados (`npm run generate`) antes de montar `_site/`.
+- Skills: norma de espelho documentada (ADR-006); `.github/skills/` não retorna.
+- `prototipos/LEIA-ME.md` classifica legado vs protótipo testado.
+- Baseline: `docs/validacoes/baseline-arquitetura-2026-07-31.md`.
+
 ### Auditoria integral (qualidade e governança)
 
 - Gate `validate` alinhado à CI: encoding read-only, paridade editorial, apresentação gerada, Prettier, lint CSS/JS e Guia Mestre.

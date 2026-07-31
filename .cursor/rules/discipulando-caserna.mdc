@@ -36,9 +36,12 @@ Prospecto pastoral + carta institucional + apresentação de projeto + manifesto
 
 ## Conteúdo e arquivos
 
-- Canônicos: `conteudo/*.json`, `conteudo/*.md` (e HTML editorial já publicado, enquanto não migrado).
+- Canônicos: `conteudo/*.json`, `conteudo/*.md` (ADR-004). HTML editorial em
+  `index.html` permanece canônico de produção até go/no-go da geração editorial.
 - **Não** editar manualmente `js/dados/*.js` nem blocos `FALLBACK-DADOS` em `index.html`.
 - Após alterar JSON: `npm run generate` e `npm run check:encoding`.
+- Stack/runtime/publicação/offline: `docs/arquitetura/` (ADR-001…006) — não
+  inventar proibições de bundler/framework além do que as ADRs registram.
 
 ## Qualidade e a11y
 

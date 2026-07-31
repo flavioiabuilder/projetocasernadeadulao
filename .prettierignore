@@ -3,3 +3,5 @@ js/dados/
 package-lock.json
 playwright-report/
 test-results/
+_gerado/
+docs/reference-audit/

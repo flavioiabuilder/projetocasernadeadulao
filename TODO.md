@@ -33,9 +33,13 @@
 - [ ] Domínio próprio e política de indexação (`noindex`)
 - [ ] Incluir PDF do dossiê de apreciação (7 páginas) quando disponível — link na seção 15
 
-## Explícitamente fora
+## Explícitamente fora (produto)
 
 - Formulários, analytics, cookies, back-end
-- Framework, bundler, CDN de runtime
 - Barra de navegação superior tipo portal / CTA de captação
 - Fotografias ou ilustrações de pessoas
+
+Restrições de **stack** (runtime sem framework de UI, zero CDN de runtime,
+perfis offline, artefatos gerados) vivem em
+[`docs/arquitetura/`](docs/arquitetura/README.md) — não neste TODO.
+Decisões humanas de licença, indexação e apreciação pastoral permanecem acima.

@@ -1,5 +1,8 @@
 # Publicação — superfície autorizada
 
+Norma detalhada: [`docs/arquitetura/ADR-002-publicacao-e-github-pages.md`](arquitetura/ADR-002-publicacao-e-github-pages.md).
+Perfis offline: [`ADR-003`](arquitetura/ADR-003-requisito-offline.md).
+
 ## Decisão D1 (default técnico da auditoria integral)
 
 Enquanto a matriz institucional da Rota B permanecer sem confirmações
@@ -21,12 +24,13 @@ controlado):
 - `docs/`
 - `prototipos/`
 - `conteudo/` (fonte editorial; não precisa estar no Pages)
-- `.claude/`, `.github/skills/`, `legado/`, `ferramentas/`, `testes/`
+- `.claude/`, `legado/`, `ferramentas/`, `testes/`
 
 ## Mecanismo
 
-O workflow [`.github/workflows/pages.yml`](../.github/workflows/pages.yml) monta
-a pasta `_site` com a lista acima e faz deploy via GitHub Pages.
+O workflow [`.github/workflows/pages.yml`](../.github/workflows/pages.yml)
+instala dependências, roda `npm run generate` e monta a pasta `_site` com a
+lista acima para deploy via GitHub Pages.
 
 É necessário, uma vez, configurar o repositório para **GitHub Actions** como
 fonte do Pages (Settings → Pages → Source: GitHub Actions), em substituição a
@@ -39,5 +43,5 @@ indexação. O controle de exposição é a lista do artefato.
 
 ## Offline
 
-Abertura local por `index.html` (duplo clique) ou `npx serve .` na raiz do
-clone continua válida para desenvolvimento e para a apresentação de homologação.
+Ver ADR-003: prospecto por duplo clique ou `npx serve .`; apresentação com
+fontes tipográficas embutidas (logo PNG ainda depende de `assets/`).

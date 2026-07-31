@@ -202,7 +202,8 @@ A próxima fase (planejamento e, depois, implementação) deverá observar:
 - Conteúdo real a partir das fontes canônicas; `npm run generate` após JSON.
 - Expansão para módulos, matriz, princípios e lacunas declaradas — sem inventar.
 - Suporte a textos longos (carta, Adulão, princípios).
-- JavaScript progressivo; sem frameworks/bundlers desnecessários.
+- JavaScript progressivo; stack de runtime em
+  [`docs/arquitetura/ADR-001-stack-do-projeto.md`](arquitetura/ADR-001-stack-do-projeto.md).
 - Compatibilidade com a base atual (`index.html` + CSS modular + JS clássico).
 - Não editar à mão `js/dados/*.js` nem `FALLBACK-DADOS`.
 

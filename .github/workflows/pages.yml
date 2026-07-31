@@ -2,6 +2,7 @@ name: Publicar Pages
 
 # Publica somente a superfície autorizada do prospecto (Rota B / D1).
 # Apresentação, Guia, docs internos, protótipos e skills ficam fora do artefato.
+# Ver docs/arquitetura/ADR-002-publicacao-e-github-pages.md
 
 on:
   push:
@@ -24,6 +25,15 @@ jobs:
     steps:
       - name: Obter código-fonte
         uses: actions/checkout@v4
+      - name: Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - name: Instalar dependências
+        run: npm ci
+      - name: Regenerar dados do prospecto
+        run: npm run generate
       - name: Montar pasta pública
         run: |
           set -euo pipefail

@@ -25,6 +25,7 @@ referencia/
 fontes/guia-mestre/_guia_tmp.pdf
 fontes/guia-mestre/*_tmp.pdf
 _site/
+_gerado/
 
 # impeccable-ignore-start
 # Ephemeral output, runtime state, and per-dev overrides.
