@@ -1,6 +1,30 @@
 {
   "version": 1,
   "skills": {
+    "a11y-debugging": {
+      "source": "ChromeDevTools/chrome-devtools-mcp",
+      "sourceType": "github",
+      "skillPath": "skills/a11y-debugging/SKILL.md",
+      "computedHash": "f2ee15c98641fd101275fcfe25083de0fe38f0d2145c17d6fcbe11d454b1d286"
+    },
+    "chrome-devtools": {
+      "source": "ChromeDevTools/chrome-devtools-mcp",
+      "sourceType": "github",
+      "skillPath": "skills/chrome-devtools/SKILL.md",
+      "computedHash": "9878a3260c5d73caa8448606cfcaf1d73db53d76c7cbb903e6c716e8c2510e3c"
+    },
+    "chrome-devtools-cli": {
+      "source": "ChromeDevTools/chrome-devtools-mcp",
+      "sourceType": "github",
+      "skillPath": "skills/chrome-devtools-cli/SKILL.md",
+      "computedHash": "7382e3581eebfce8ccdb1f2f08e725e02f389fb0cc4ac5173dac8ca8272c6b3f"
+    },
+    "debug-optimize-lcp": {
+      "source": "ChromeDevTools/chrome-devtools-mcp",
+      "sourceType": "github",
+      "skillPath": "skills/debug-optimize-lcp/SKILL.md",
+      "computedHash": "3617cbbc6437865295b48b30a250bcb3d5a989eef97fc8a6552b2783ea9d6bad"
+    },
     "higgsfield-game-generation": {
       "source": "higgsfield-ai/skills",
       "sourceType": "github",
@@ -43,6 +67,12 @@
       "skillPath": "higgsfield-websites/SKILL.md",
       "computedHash": "98c635c016c70f0eae506fdd4011059184ec97be1eb18f505a0680d89750c7b4"
     },
+    "memory-leak-debugging": {
+      "source": "ChromeDevTools/chrome-devtools-mcp",
+      "sourceType": "github",
+      "skillPath": "skills/memory-leak-debugging/SKILL.md",
+      "computedHash": "d0c5a08e3189ae28a61bd5964d48e5b0dd6253dd30679187733f9c8a6b31c2b6"
+    },
     "pdf": {
       "source": "anthropics/skills",
       "sourceType": "github",
@@ -54,6 +84,12 @@
       "sourceType": "github",
       "skillPath": "agent-skills/web-design/scroll-world-storytelling/SKILL.md",
       "computedHash": "9572e09ab38c2ed7ad1122de63342de8cebe110b76f4e78b696f1ad3e392cc5d"
+    },
+    "troubleshooting": {
+      "source": "ChromeDevTools/chrome-devtools-mcp",
+      "sourceType": "github",
+      "skillPath": "skills/troubleshooting/SKILL.md",
+      "computedHash": "f7deca2af0ea0f6519b350a0fcb1e05d948228eac86f23d71ff3985508cf331f"
     },
     "web-a11y-authoring": {
       "source": "klovaaxel/web-a11y-agent-skills",

@@ -11,7 +11,9 @@ A árvore canônica de skills do projeto é:
 Ali ficam Impeccable, brand, design, design-system, frontend-design, ui-ux-pro-max,
 slides, banner-design, ui-styling, web-design-guidelines, astryx, Higgsfield
 (`higgsfield-generate`, soul-id, product-photoshoot, marketplace-cards, websites,
-video-explainer, game-generation) etc.
+video-explainer, game-generation), Chrome DevTools MCP (`chrome-devtools`,
+`chrome-devtools-cli`, `debug-optimize-lcp`, `memory-leak-debugging`,
+`a11y-debugging`, `troubleshooting`) etc.
 
 ## Espelhos
 
