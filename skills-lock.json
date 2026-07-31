@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "skills": {
+    "pdf": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/pdf/SKILL.md",
+      "computedHash": "37226d4220d844377e6b2a386c51a011df4cd130855ff0b80bcc22f9c28abd57"
+    },
+    "scroll-world-storytelling": {
+      "source": "MengTo/Skills",
+      "sourceType": "github",
+      "skillPath": "agent-skills/web-design/scroll-world-storytelling/SKILL.md",
+      "computedHash": "9572e09ab38c2ed7ad1122de63342de8cebe110b76f4e78b696f1ad3e392cc5d"
+    },
+    "web-a11y-authoring": {
+      "source": "klovaaxel/web-a11y-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-a11y-authoring/SKILL.md",
+      "computedHash": "0bfb3b444068eb2a6059bd7cc2ad79af84b9f0464c2bc694ffe7c6456b1abe9b"
+    },
+    "web-a11y-css": {
+      "source": "klovaaxel/web-a11y-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-a11y-css/SKILL.md",
+      "computedHash": "591199d1b16c02d25b90590969426019c2837138e663f6a60e1172f1e53fefc3"
+    },
+    "web-a11y-debugging": {
+      "source": "klovaaxel/web-a11y-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-a11y-debugging/SKILL.md",
+      "computedHash": "213374ecf5c794e5ca3984a7b3e6d90f83d0fe059d2338e4264493ac0eadeec9"
+    },
+    "web-a11y-dynamic-ui": {
+      "source": "klovaaxel/web-a11y-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-a11y-dynamic-ui/SKILL.md",
+      "computedHash": "39516807ca381ba7c79edfbc39f376f4c0ce96e0f361ee701bc835e88ce2a9ca"
+    },
+    "web-a11y-forms": {
+      "source": "klovaaxel/web-a11y-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-a11y-forms/SKILL.md",
+      "computedHash": "3203b6e09f815b322df1403ae7562e2f5b70a08b5cb4b316e167206431bf15d7"
+    },
+    "web-a11y-navigation": {
+      "source": "klovaaxel/web-a11y-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-a11y-navigation/SKILL.md",
+      "computedHash": "a23bbab45b65a513e15fb379ab15b8ae92c94b201adabde9e90324573b09922f"
+    },
+    "web-a11y-orchestrator": {
+      "source": "klovaaxel/web-a11y-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-a11y-orchestrator/SKILL.md",
+      "computedHash": "c72a51d55bbdcc972c911f0335ae47ea3d8553cd573c605ffc611127bd143764"
+    },
+    "web-a11y-review": {
+      "source": "klovaaxel/web-a11y-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-a11y-review/SKILL.md",
+      "computedHash": "fc8a072724da1572895dc62d44faae79ec40dca16b797838f8048b0018424e6d"
+    },
+    "web-a11y-testing": {
+      "source": "klovaaxel/web-a11y-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-a11y-testing/SKILL.md",
+      "computedHash": "b12ebdc5bf31d459822f3c2e70d5e397468eaa2a3e85f090ea5847fba8bbfc22"
+    },
+    "web-a11y-web-components": {
+      "source": "klovaaxel/web-a11y-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-a11y-web-components/SKILL.md",
+      "computedHash": "e15778710a4c3525194dba05e7f62d493ea747e3d2eef71b67d006111d5e6d3f"
+    },
+    "writing-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/writing-guidelines/SKILL.md",
+      "computedHash": "25aa3a33a97bddbcb1847ce4a6169106ec25e5b19b15b99c66e75ab383866ef2"
+    }
+  }
+}
