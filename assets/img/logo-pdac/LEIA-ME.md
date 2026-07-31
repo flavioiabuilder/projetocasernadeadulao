@@ -52,7 +52,7 @@ Todos os PNGs são **RGBA com fundo transparente**.
 
 Alinhada aos tokens do prospecto (`--navy`, `--bronze`, `--creme` / `--papel`).
 
-## Inventário (32 arquivos)
+## Inventário (33 arquivos)
 
 ### Referência
 
@@ -73,6 +73,7 @@ Alinhada aos tokens do prospecto (`--navy`, `--bronze`, `--creme` / `--papel`).
 |---|---|
 | `LOGO_DaC_Emblema_1C_Branca_FFFFFF.png` | Escuro |
 | `LOGO_DaC_Emblema_1C_Preta_000000.png` | Claro |
+| `LOGO_DaC_Emblema_Metal_Latao.png` | Escuro / Sombra — emblema monocromático metalizado (latão); uso no storytelling S01/S52/S69 |
 | `LOGO_DaC_Mono_Positiva_1C.png` | Claro |
 | `LOGO_DaC_Mono_Negativa_1C.png` | Escuro |
 

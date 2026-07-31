@@ -113,7 +113,7 @@ _(Sem prosa. Sem título editorial. Sem legenda do emblema.)_
 **Desvio consciente (meio-termo):** após ~3s, surge só a assinatura tipográfica `Discipulando a Caserna` em Rótulo latão — identificação mínima para quem abre o documento solto. Não há subtítulo de apreciação, tempo de leitura nem versão. Esse contexto fica para S05/S06.
 
 **Visual**
-O emblema do projeto — o escudo com as insígnias cravadas, encimado pelo capacete e atravessado pela espada — centralizado, em versão monocromática latão sobre fundo quase preto. Ocupa cerca de 30% da altura da tela. Ao redor, nada no primeiro olhar.
+O emblema do projeto — o escudo com as insígnias cravadas, encimado pelo capacete e atravessado pela espada — centralizado, em versão **monocromática metalizada (latão)** sobre fundo quase preto (`LOGO_DaC_Emblema_Metal_Latao.png`). Ocupa cerca de 30% da altura da tela. Ao redor, nada no primeiro olhar.
 
 **Layout**
 Emblema centralizado nos dois eixos. Barra da armadura oculta neste slide. Rodapé oculto. Assinatura mínima abaixo do emblema (após o atraso). Uma seta fina de rolagem, opacidade 40%, que só aparece após 4 segundos.

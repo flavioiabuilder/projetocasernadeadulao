@@ -12,6 +12,10 @@
 - S01 em meio-termo: emblema + assinatura mínima `Discipulando a Caserna`
   (sem subtítulos); chrome oculto corrigido (`.claro` não sobrescreve mais
   `.oculto`).
+- Emblema metalizado latão (`LOGO_DaC_Emblema_Metal_Latao.png`) no storytelling;
+  data-URIs removidos em favor do asset em `assets/img/logo-pdac/`.
+- S01 usa a versão metalizada fornecida (renomeada para o nome canônico acima;
+  fundo preto externo removido por flood-fill).
 
 ### Revisão arquitetural (governança e pipeline)
 
