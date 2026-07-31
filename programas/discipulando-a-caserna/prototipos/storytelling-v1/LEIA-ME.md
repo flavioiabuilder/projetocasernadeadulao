@@ -8,11 +8,11 @@ Duplo clique em `index.html` (offline; fontes e emblema embutidos). Sem CDN.
 
 ## Escopo
 
-| É | Não é |
-|---|---|
-| Apresentação institucional imersiva (voz “você” de leitura) | Carta endereçada ao pastor (“o senhor”) |
-| Documento de trabalho para validação | Homologação publicada em `apresentacao/` |
-| Público amplo: pastor, secretaria, obreiros, liderança | Prospecto multiarquivo da raiz |
+| É                                                           | Não é                                    |
+| ----------------------------------------------------------- | ---------------------------------------- |
+| Apresentação institucional imersiva (voz “você” de leitura) | Carta endereçada ao pastor (“o senhor”)  |
+| Documento de trabalho para validação                        | Homologação publicada em `apresentacao/` |
+| Público amplo: pastor, secretaria, obreiros, liderança      | Prospecto multiarquivo da raiz           |
 
 ## Voz
 
@@ -45,12 +45,13 @@ Ver [`docs/storytelling/auditoria-fidelidade-v1.md`](../../docs/storytelling/aud
 
 1. Abrir `index.html` e percorrer os 10 atos + bloco de homologação.
 2. Confirmar ou retirar claims marcados como estudo (auditoria em `docs/storytelling/auditoria-fidelidade-v1.md`).
-3. Teste C.4: entregar o arquivo a alguém de fora e pedir — *o que é isto, por que existe, o que se espera de quem lê?*
+3. Teste C.4: entregar o arquivo a alguém de fora e pedir — _o que é isto, por que existe, o que se espera de quem lê?_
 4. Só então decidir promoção (irmão, substituto da homologação, ou gerar via tooling).
 
 ## Promoção
 
-Não altera `index.html` da raiz nem `apresentacao/homologacao-pastoral.html` sem pedido explícito.
+Não altera o prospecto (`prototipos/prospecto-v1/`) nem a homologação
+(`prototipos/homologacao-pastoral-v1/`) sem pedido explícito.
 
 ## Tooling
 

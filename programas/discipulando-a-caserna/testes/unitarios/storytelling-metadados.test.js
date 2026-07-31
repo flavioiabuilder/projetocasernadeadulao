@@ -21,7 +21,7 @@ const metadadosEsperados = new Map([
   ],
   [
     "og:image",
-    "https://flavioiabuilder.github.io/projetocasernadeadulao/assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png",
+    "https://flavioiabuilder.github.io/projetocasernadeadulao/programas/discipulando-a-caserna/assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png",
   ],
   ["og:image:alt", "Escudo do Projeto Caserna de Adulão"],
 ]);
@@ -61,7 +61,7 @@ describe("metadados do protótipo storytelling-v1", () => {
     assert.equal(ocorrencias.length, 1);
     assert.match(
       head,
-      /<link\s+rel="canonical"\s+href="https:\/\/flavioiabuilder\.github\.io\/projetocasernadeadulao\/prototipos\/storytelling-v1\/">/
+      /<link\s+rel="canonical"\s+href="https:\/\/flavioiabuilder\.github\.io\/projetocasernadeadulao\/programas\/discipulando-a-caserna\/prototipos\/storytelling-v1\/">/
     );
   });
 

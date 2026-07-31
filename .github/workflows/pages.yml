@@ -1,8 +1,9 @@
 name: Publicar Pages
 
-# Publica o prospecto e os protótipos (storytelling-v1 e direções).
-# Apresentação, Guia, docs internos e skills ficam fora do artefato.
-# Ver docs/arquitetura/ADR-002-publicacao-e-github-pages.md
+# Publica índices, assets e protótipos públicos do Discipulando.
+# Homologação, Guia, docs internos, ferramentas, testes e referências
+# DevTools ficam fora do artefato.
+# Ver programas/discipulando-a-caserna/docs/publicacao.md
 
 on:
   push:
@@ -33,13 +34,26 @@ jobs:
       - name: Instalar dependências
         run: npm ci
       - name: Regenerar dados do prospecto
-        run: npm run generate
+        run: npm run generate:discipulando
       - name: Montar pasta pública
         run: |
           set -euo pipefail
-          mkdir -p _site
+          P=programas/discipulando-a-caserna
+          mkdir -p _site/$P/prototipos
           cp index.html robots.txt 404.html _site/
-          cp -r css js assets prototipos _site/
+          cp $P/index.html _site/$P/
+          cp -r $P/assets _site/$P/
+          cp -r $P/prototipos/prospecto-v1 _site/$P/prototipos/
+          cp -r $P/prototipos/storytelling-v1 _site/$P/prototipos/
+          cp -r $P/prototipos/direcoes-visuais-v1 _site/$P/prototipos/
+          mkdir -p _site/prototipos/storytelling-v1
+          mkdir -p _site/prototipos/direcao-a
+          mkdir -p _site/prototipos/direcao-b
+          mkdir -p _site/prototipos/direcao-c
+          cp prototipos/storytelling-v1/index.html _site/prototipos/storytelling-v1/
+          cp prototipos/direcao-a/index.html _site/prototipos/direcao-a/
+          cp prototipos/direcao-b/index.html _site/prototipos/direcao-b/
+          cp prototipos/direcao-c/index.html _site/prototipos/direcao-c/
           touch _site/.nojekyll
       - name: Enviar artefato
         uses: actions/upload-pages-artifact@v3

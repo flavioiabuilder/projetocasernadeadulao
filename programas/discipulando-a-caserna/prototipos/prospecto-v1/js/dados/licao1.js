@@ -6,129 +6,129 @@ window.DADOS_LICAO1 = [
   {
     "edicao": "aluno",
     "pagina": 1,
-    "arquivo": "assets/img/licao1/aluno-l1-01.webp",
+    "arquivo": "../../assets/img/licao1/aluno-l1-01.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/aluno-l1-01-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/aluno-l1-01-sm.webp"
   },
   {
     "edicao": "aluno",
     "pagina": 2,
-    "arquivo": "assets/img/licao1/aluno-l1-02.webp",
+    "arquivo": "../../assets/img/licao1/aluno-l1-02.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/aluno-l1-02-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/aluno-l1-02-sm.webp"
   },
   {
     "edicao": "aluno",
     "pagina": 3,
-    "arquivo": "assets/img/licao1/aluno-l1-03.webp",
+    "arquivo": "../../assets/img/licao1/aluno-l1-03.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/aluno-l1-03-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/aluno-l1-03-sm.webp"
   },
   {
     "edicao": "aluno",
     "pagina": 4,
-    "arquivo": "assets/img/licao1/aluno-l1-04.webp",
+    "arquivo": "../../assets/img/licao1/aluno-l1-04.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/aluno-l1-04-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/aluno-l1-04-sm.webp"
   },
   {
     "edicao": "aluno",
     "pagina": 5,
-    "arquivo": "assets/img/licao1/aluno-l1-05.webp",
+    "arquivo": "../../assets/img/licao1/aluno-l1-05.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/aluno-l1-05-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/aluno-l1-05-sm.webp"
   },
   {
     "edicao": "aluno",
     "pagina": 6,
-    "arquivo": "assets/img/licao1/aluno-l1-06.webp",
+    "arquivo": "../../assets/img/licao1/aluno-l1-06.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/aluno-l1-06-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/aluno-l1-06-sm.webp"
   },
   {
     "edicao": "aluno",
     "pagina": 7,
-    "arquivo": "assets/img/licao1/aluno-l1-07.webp",
+    "arquivo": "../../assets/img/licao1/aluno-l1-07.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/aluno-l1-07-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/aluno-l1-07-sm.webp"
   },
   {
     "edicao": "instrutor",
     "pagina": 1,
-    "arquivo": "assets/img/licao1/instrutor-l1-01.webp",
+    "arquivo": "../../assets/img/licao1/instrutor-l1-01.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/instrutor-l1-01-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/instrutor-l1-01-sm.webp"
   },
   {
     "edicao": "instrutor",
     "pagina": 2,
-    "arquivo": "assets/img/licao1/instrutor-l1-02.webp",
+    "arquivo": "../../assets/img/licao1/instrutor-l1-02.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/instrutor-l1-02-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/instrutor-l1-02-sm.webp"
   },
   {
     "edicao": "instrutor",
     "pagina": 3,
-    "arquivo": "assets/img/licao1/instrutor-l1-03.webp",
+    "arquivo": "../../assets/img/licao1/instrutor-l1-03.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/instrutor-l1-03-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/instrutor-l1-03-sm.webp"
   },
   {
     "edicao": "instrutor",
     "pagina": 4,
-    "arquivo": "assets/img/licao1/instrutor-l1-04.webp",
+    "arquivo": "../../assets/img/licao1/instrutor-l1-04.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/instrutor-l1-04-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/instrutor-l1-04-sm.webp"
   },
   {
     "edicao": "instrutor",
     "pagina": 5,
-    "arquivo": "assets/img/licao1/instrutor-l1-05.webp",
+    "arquivo": "../../assets/img/licao1/instrutor-l1-05.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/instrutor-l1-05-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/instrutor-l1-05-sm.webp"
   },
   {
     "edicao": "instrutor",
     "pagina": 6,
-    "arquivo": "assets/img/licao1/instrutor-l1-06.webp",
+    "arquivo": "../../assets/img/licao1/instrutor-l1-06.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/instrutor-l1-06-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/instrutor-l1-06-sm.webp"
   },
   {
     "edicao": "instrutor",
     "pagina": 7,
-    "arquivo": "assets/img/licao1/instrutor-l1-07.webp",
+    "arquivo": "../../assets/img/licao1/instrutor-l1-07.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/instrutor-l1-07-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/instrutor-l1-07-sm.webp"
   },
   {
     "edicao": "instrutor",
     "pagina": 8,
-    "arquivo": "assets/img/licao1/instrutor-l1-08.webp",
+    "arquivo": "../../assets/img/licao1/instrutor-l1-08.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/instrutor-l1-08-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/instrutor-l1-08-sm.webp"
   },
   {
     "edicao": "instrutor",
     "pagina": 9,
-    "arquivo": "assets/img/licao1/instrutor-l1-09.webp",
+    "arquivo": "../../assets/img/licao1/instrutor-l1-09.webp",
     "largura": 1100,
     "altura": 1669,
-    "arquivo_sm": "assets/img/licao1/instrutor-l1-09-sm.webp"
+    "arquivo_sm": "../../assets/img/licao1/instrutor-l1-09-sm.webp"
   }
 ];

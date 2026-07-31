@@ -43,7 +43,9 @@ function normalizar(texto) {
 }
 
 function main() {
-  const html = normalizar(fs.readFileSync(path.join(raiz, "index.html"), "utf8"));
+  const html = normalizar(
+    fs.readFileSync(path.join(raiz, "prototipos", "prospecto-v1", "index.html"), "utf8")
+  );
   let falhas = 0;
 
   ANCORAS.forEach(({ fonte, trecho }) => {

@@ -3,9 +3,9 @@
 module.exports = [
   {
     files: [
-      "js/**/*.js",
-      "ferramentas/**/*.js",
-      "testes/**/*.js",
+      "programas/discipulando-a-caserna/prototipos/prospecto-v1/js/**/*.js",
+      "programas/discipulando-a-caserna/ferramentas/**/*.js",
+      "programas/discipulando-a-caserna/testes/**/*.js",
       "referencias-devtools/aramco-birth-of-oil/design-system/js/**/*.js",
       "referencias-devtools/aramco-birth-of-oil/ferramentas/**/*.js",
       "referencias-devtools/aramco-birth-of-oil/testes/**/*.js",
@@ -47,7 +47,7 @@ module.exports = [
     },
   },
   {
-    files: ["testes/e2e/**/*.js"],
+    files: ["programas/discipulando-a-caserna/testes/e2e/**/*.js"],
     languageOptions: {
       globals: {
         getComputedStyle: "readonly",
@@ -55,5 +55,3 @@ module.exports = [
     },
   },
 ];
-
-

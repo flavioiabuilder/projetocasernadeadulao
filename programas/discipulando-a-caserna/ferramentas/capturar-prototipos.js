@@ -33,7 +33,10 @@ function startServer() {
   return new Promise((resolve) => {
     const server = http.createServer((req, res) => {
       const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
-      let rel = urlPath === "/" ? "/prototipos/direcao-a/index.html" : urlPath;
+      let rel =
+        urlPath === "/"
+          ? "/prototipos/direcoes-visuais-v1/direcao-a/index.html"
+          : urlPath;
       const filePath = path.join(ROOT, rel.replace(/^\//, "").replace(/\//g, path.sep));
       if (
         !filePath.startsWith(ROOT) ||
@@ -67,7 +70,7 @@ async function captureAll() {
           viewport: { width: vp.width, height: vp.height },
           reducedMotion: "reduce",
         });
-        const url = `http://127.0.0.1:${port}/prototipos/${proto}/index.html`;
+        const url = `http://127.0.0.1:${port}/prototipos/direcoes-visuais-v1/${proto}/index.html`;
         await page.goto(url, { waitUntil: "networkidle" });
         await page.waitForTimeout(200);
 
@@ -107,7 +110,7 @@ async function captureAll() {
     [
       "# Capturas dos protótipos",
       "",
-      "Geradas por `node ferramentas/capturar-prototipos.js`.",
+      "Geradas por `node programas/discipulando-a-caserna/ferramentas/capturar-prototipos.js`.",
       "Viewports: 360×800, 768×1024, 1440×900.",
       "Posições: topo, meio (~40% da página), fim.",
       "`prefers-reduced-motion: reduce` ativo nas capturas.",

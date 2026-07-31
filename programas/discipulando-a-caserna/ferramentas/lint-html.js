@@ -8,7 +8,10 @@ const fs = require("fs");
 const path = require("path");
 
 const raiz = path.join(__dirname, "..");
-const html = fs.readFileSync(path.join(raiz, "index.html"), "utf8");
+const html = fs.readFileSync(
+  path.join(raiz, "prototipos", "prospecto-v1", "index.html"),
+  "utf8"
+);
 
 const htmlvalidate = new HtmlValidate({
   extends: ["html-validate:recommended"],
@@ -27,7 +30,7 @@ const htmlvalidate = new HtmlValidate({
 });
 
 htmlvalidate
-  .validateString(html, "index.html")
+  .validateString(html, "prototipos/prospecto-v1/index.html")
   .then((report) => {
     const errors = report.results.flatMap((r) =>
       (r.messages || []).filter((m) => m.severity === 2)

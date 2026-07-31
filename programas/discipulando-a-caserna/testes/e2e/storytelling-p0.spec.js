@@ -2,7 +2,7 @@
 
 const { test, expect } = require("@playwright/test");
 
-const caminho = "/prototipos/storytelling-v1/";
+const caminho = "/programas/discipulando-a-caserna/prototipos/storytelling-v1/";
 
 test.describe("storytelling-v1 — decisão pastoral", () => {
   test.beforeEach(async ({ page }) => {

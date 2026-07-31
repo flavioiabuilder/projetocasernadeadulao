@@ -2,10 +2,10 @@
 
 Arquivos movidos de `css/` em 28/07/2026 após auditoria de consistência visual.
 
-| Arquivo | Motivo |
-|---|---|
+| Arquivo         | Motivo                                                                    |
+| --------------- | ------------------------------------------------------------------------- |
 | `prospecto.css` | Não estava linkado em `index.html`; padrões conflitantes (sombra, radius) |
-| `atos.css` | Não estava linkado; vestígio de protótipo de atos |
+| `atos.css`      | Não estava linkado; vestígio de protótipo de atos                         |
 
 ## Stack canônica (viva)
 

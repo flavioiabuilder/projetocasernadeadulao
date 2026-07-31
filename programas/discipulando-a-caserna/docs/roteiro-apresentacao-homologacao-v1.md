@@ -815,7 +815,7 @@ Terceira e última aparição da frase-âncora (**Dedicatória**, não Prefácio
 ## O que ainda precisa de confirmação humana antes de codificar
 
 1. ~~Exibir ou omitir a Tela 24~~ — **decidido: exibir** (estudo proposto + salvaguardas)
-2. Se o HTML único será artefato **irmão** do prospecto multiarquivo — **decidido: irmão** em `apresentacao/homologacao-pastoral.html` (gerado por `npm run generate:apresentacao`)
+2. Se o HTML único será artefato **irmão** do prospecto multiarquivo — **decidido: irmão** em `prototipos/homologacao-pastoral-v1/index.html` (gerado por `npm run generate:discipulando:apresentacao`; caminho legado: `apresentacao/homologacao-pastoral.html`)
 
 ---
 

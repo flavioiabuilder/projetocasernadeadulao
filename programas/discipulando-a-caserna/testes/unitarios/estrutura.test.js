@@ -6,7 +6,10 @@ const fs = require("fs");
 const path = require("path");
 
 const raiz = path.join(__dirname, "..", "..");
-const html = fs.readFileSync(path.join(raiz, "index.html"), "utf8");
+const html = fs.readFileSync(
+  path.join(raiz, "prototipos", "prospecto-v1", "index.html"),
+  "utf8"
+);
 
 describe("estrutura HTML v1", () => {
   it("tem exatamente um h1", () => {
@@ -59,8 +62,10 @@ describe("estrutura HTML v1", () => {
   });
 
   it("protege canonical, Open Graph e Twitter Card", () => {
-    const urlPublica = "https://flavioiabuilder.github.io/projetocasernadeadulao/";
-    const imagemPublica = `${urlPublica}assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png`;
+    const urlPublica =
+      "https://flavioiabuilder.github.io/projetocasernadeadulao/programas/discipulando-a-caserna/prototipos/prospecto-v1/";
+    const imagemPublica =
+      "https://flavioiabuilder.github.io/projetocasernadeadulao/programas/discipulando-a-caserna/assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png";
 
     assert.equal((html.match(/rel="canonical"/g) || []).length, 1);
     assert.match(html, new RegExp(`rel="canonical"\\s+href="${urlPublica}"`));

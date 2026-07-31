@@ -30,9 +30,10 @@ describe("geração editorial (pipeline paralelo)", () => {
   });
 
   it("gera fragmentos sem substituir index.html", () => {
-    const antes = fs.readFileSync(path.join(raiz, "index.html"), "utf8");
+    const indexPath = path.join(raiz, "prototipos", "prospecto-v1", "index.html");
+    const antes = fs.readFileSync(indexPath, "utf8");
     const rel = main();
-    const depois = fs.readFileSync(path.join(raiz, "index.html"), "utf8");
+    const depois = fs.readFileSync(indexPath, "utf8");
     assert.equal(antes, depois);
     assert.equal(rel.substituiIndex, false);
     assert.ok(rel.totais.secoes >= 15);

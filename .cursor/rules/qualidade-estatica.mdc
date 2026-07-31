@@ -1,32 +1,34 @@
 ---
-description: Governança do site estático Caserna de Adulão
-alwaysApply: true
+description: Governança de qualidade do Discipulando a Caserna
+globs:
+  - programas/discipulando-a-caserna/**
+alwaysApply: false
 ---
 
 # Qualidade do prospecto estático
 
 ## Comandos
 
-- Regenerar dados: `npm run generate` (ou `node ferramentas/gerar-dados.js`)
-- Validação completa: `npm run validate`
+- Regenerar dados: `npm run generate:discipulando`
+- Validação do programa: `npm run validate:discipulando`
+- Validação do repositório: `npm run validate`
 
 ## Dados
 
-- Fonte canônica: `conteudo/*.json` e `conteudo/*.md`
-- Não editar manualmente `js/dados/*.js`
-- Após alterar JSON, rodar generate e check:encoding
+- Fonte canônica: `programas/discipulando-a-caserna/conteudo/*.json` e `*.md`
+- Não editar manualmente `prototipos/prospecto-v1/js/dados/*.js`
+- Após alterar JSON: generate + check:encoding do programa
 
 ## Entrega
 
 - Rodar validações antes de concluir alterações relevantes
 - Não inventar conteúdo institucional, endossos, aprovações, cargos, datas ou resultados
-- Decisões de stack: consultar `docs/arquitetura/` (não cristalizar “sem bundler”
-  como proibição de ferramentas de desenvolvimento)
+- Decisões de stack: `programas/discipulando-a-caserna/docs/arquitetura/`
 
 ## Acessibilidade essencial
 
 - Um único `h1`; headings em ordem lógica
 - Skip link para `#conteudo`
-- Foco visível com `:focus-visible` (sem remover outline globalmente sem alternativa)
+- Foco visível com `:focus-visible`
 - Controles com nome acessível e alvo adequado (≥44×44 quando possível)
 - Contraste AA para texto e componentes

@@ -74,10 +74,10 @@ pipeline: {
 <meta property="og:site_name" content="Projeto Caserna de Adulão">
 <meta property="og:title" content="Discipulando a Caserna — apresentação para apreciação pastoral">
 <meta property="og:description" content="Documento de trabalho em versão candidata. Leitura de cerca de 30 minutos, sem necessidade de apresentador.">
-<meta property="og:image" content="https://flavioiabuilder.github.io/projetocasernadeadulao/assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png">
+<meta property="og:image" content="https://flavioiabuilder.github.io/projetocasernadeadulao/programas/discipulando-a-caserna/assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png">
 <meta property="og:image:alt" content="Escudo do Projeto Caserna de Adulão">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://flavioiabuilder.github.io/projetocasernadeadulao/prototipos/storytelling-v1/">`;
+<link rel="canonical" href="https://flavioiabuilder.github.io/projetocasernadeadulao/programas/discipulando-a-caserna/prototipos/storytelling-v1/">`;
 
   if (!h.includes('property="og:type"')) {
     h = replaceOnce(

@@ -1,7 +1,7 @@
 /**
- * Gera apresentacao/homologacao-pastoral.html — HTML único autocontido
+ * Gera prototipos/homologacao-pastoral-v1/index.html — HTML único autocontido
  * para homologação pastoral v1.0-RC.
- * Uso: node ferramentas/gerar-apresentacao-homologacao.js
+ * Uso: node programas/discipulando-a-caserna/ferramentas/gerar-apresentacao-homologacao.js
  */
 "use strict";
 
@@ -9,8 +9,8 @@ const fs = require("fs");
 const path = require("path");
 
 const raiz = path.join(__dirname, "..");
-const saidaDir = path.join(raiz, "apresentacao");
-const saidaArq = path.join(saidaDir, "homologacao-pastoral.html");
+const saidaDir = path.join(raiz, "prototipos", "homologacao-pastoral-v1");
+const saidaArq = path.join(saidaDir, "index.html");
 const screensV2 = require("./apresentacao-screens-v2.js");
 
 function ler(caminhoRel) {
@@ -27,7 +27,7 @@ function esc(s) {
 
 const matriz = JSON.parse(ler("conteudo/matriz-curricular.json"));
 const modulos = JSON.parse(ler("conteudo/modulos.json"));
-const escudoPng = "../assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png";
+const escudoPng = "../../assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png";
 
 const licao6 = matriz.licoes.find((l) => l.numero === 6);
 

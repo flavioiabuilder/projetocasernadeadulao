@@ -1,47 +1,51 @@
 # Publicação — superfície autorizada
 
-Norma detalhada: [`docs/arquitetura/ADR-002-publicacao-e-github-pages.md`](arquitetura/ADR-002-publicacao-e-github-pages.md).
+Norma detalhada: [`arquitetura/ADR-002-publicacao-e-github-pages.md`](arquitetura/ADR-002-publicacao-e-github-pages.md).
 Perfis offline: [`ADR-003`](arquitetura/ADR-003-requisito-offline.md).
 
-## Decisão D1 (default técnico da auditoria integral)
+## Decisão D1 (default técnico)
 
 Enquanto a matriz institucional da Rota B permanecer sem confirmações
-documentais (`docs/validacoes/task-p0-08-e-p0-10-validacao-institucional.md`),
-a publicação pública no GitHub Pages deve expor o prospecto e os protótipos:
+documentais (`validacoes/task-p0-08-e-p0-10-validacao-institucional.md`),
+a publicação pública no GitHub Pages deve expor:
 
-- `index.html`
+Na raiz do artefato:
+
+- `index.html` (índice do Projeto Caserna de Adulão)
 - `404.html`
 - `robots.txt`
-- `css/`
-- `js/`
+- shims em `prototipos/` (redirecionamentos das URLs antigas)
+
+Sob `programas/discipulando-a-caserna/`:
+
+- `index.html` (índice técnico de protótipos)
 - `assets/`
-- `prototipos/` (inclui `storytelling-v1` e direções A/B/C)
+- `prototipos/prospecto-v1/`
+- `prototipos/storytelling-v1/`
+- `prototipos/direcoes-visuais-v1/`
 
-Fora do artefato público (circulação restrita / uso local ou compartilhamento
-controlado):
+Fora do artefato público:
 
-- `apresentacao/`
-- `fontes/`
-- `docs/`
-- `conteudo/` (fonte editorial; não precisa estar no Pages)
-- `.claude/`, `legado/`, `ferramentas/`, `testes/`
+- `prototipos/homologacao-pastoral-v1/`
+- `fontes/`, `docs/`, `conteudo/`
+- `ferramentas/`, `testes/`, `legado/`
+- `referencias-devtools/`
+- skills e configurações de agentes
 
 ## Mecanismo
 
-O workflow [`.github/workflows/pages.yml`](../.github/workflows/pages.yml)
-instala dependências, roda `npm run generate` e monta a pasta `_site` com a
-lista acima para deploy via GitHub Pages.
+O workflow [`.github/workflows/pages.yml`](../../../.github/workflows/pages.yml)
+instala dependências, roda `npm run generate:discipulando` e monta `_site`
+seletivamente.
 
-É necessário, uma vez, configurar o repositório para **GitHub Actions** como
-fonte do Pages (Settings → Pages → Source: GitHub Actions), em substituição a
-“Deploy from branch” da raiz, se ainda estiver ativo.
+Configure Pages com fonte **GitHub Actions** (Settings → Pages).
 
 ## Indexação
 
-`robots.txt` e `noindex` permanecem. Não são autenticação: apenas reduzem
-indexação. O controle de exposição é a lista do artefato.
+`robots.txt` e `noindex` permanecem. Não são autenticação.
 
 ## Offline
 
-Ver ADR-003: prospecto por duplo clique ou `npx serve .`; apresentação com
-fontes tipográficas embutidas (logo PNG ainda depende de `assets/`).
+Ver ADR-003: prospecto por `file://` ou `npx serve .` na raiz do repositório;
+homologação com fontes tipográficas embutidas (logo PNG ainda depende de
+`assets/`).

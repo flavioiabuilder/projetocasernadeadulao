@@ -212,7 +212,7 @@ function cobrirNoIndex(quotes, indexNorm) {
 
 function main() {
   const t0 = Date.now();
-  const indexHtml = lerUtf8(path.join(raiz, "index.html"));
+  const indexHtml = lerUtf8(path.join(raiz, "prototipos", "prospecto-v1", "index.html"));
   const indexNorm = normalizar(indexHtml);
   const relatorio = {
     geradoEm: new Date().toISOString(),

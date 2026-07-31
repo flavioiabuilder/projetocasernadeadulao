@@ -22,7 +22,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
       if (res.status() >= 400) falhas.push(`${res.status()} ${res.url()}`);
     });
 
-    await page.goto("/");
+    await page.goto("/programas/discipulando-a-caserna/prototipos/prospecto-v1/");
     await expect(page.locator("h1")).toHaveCount(1);
     await expect(page.locator("h1")).toHaveText("Discipulando a Caserna");
     await page.waitForFunction(() => window.Caserna && window.SITE_CONFIG);
@@ -40,7 +40,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
 
   test("índice navega até a seção 15", async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
-    await page.goto("/");
+    await page.goto("/programas/discipulando-a-caserna/prototipos/prospecto-v1/");
     await page.locator("[data-indice-toggle]").click();
     const link = page.locator('.indice__link[href="#secao-15"]');
     await expect(link).toBeVisible();
@@ -51,7 +51,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
 
   test("barra marca o movimento clicado", async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
-    await page.goto("/");
+    await page.goto("/programas/discipulando-a-caserna/prototipos/prospecto-v1/");
     await page.locator('.barra__movimento[data-movimento="movimento-2"]').click();
     await expect(page.locator("#movimento-2")).toBeInViewport();
     await expect(page.locator(".barra__movimento--ativo")).toHaveAttribute(
@@ -61,7 +61,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
   });
 
   test("matriz e folheador operáveis", async ({ page }) => {
-    await page.goto("/");
+    await page.goto("/programas/discipulando-a-caserna/prototipos/prospecto-v1/");
     await page.locator("#secao-9").scrollIntoViewIfNeeded();
     await expect(page.locator("[data-matriz-lista] .matriz__modulo")).toHaveCount(4);
     await page.locator('[data-filtro="1"]').click();
@@ -73,7 +73,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
   });
 
   test("escudo operável por clique e teclado", async ({ page }) => {
-    await page.goto("/");
+    await page.goto("/programas/discipulando-a-caserna/prototipos/prospecto-v1/");
     await page.locator("#secao-7").scrollIntoViewIfNeeded();
     await page.locator("#tab-couraca").click();
     await expect(page.locator("#painel-couraca")).toBeVisible();
@@ -88,7 +88,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
   });
 
   test("navegação por teclado e skip link", async ({ page }) => {
-    await page.goto("/");
+    await page.goto("/programas/discipulando-a-caserna/prototipos/prospecto-v1/");
     await page.keyboard.press("Tab");
     const skip = page.locator(".skip-link");
     await expect(skip).toBeFocused();
@@ -98,7 +98,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
 
   test("comparação da seção 3 sem overflow em 360px", async ({ page }) => {
     await page.setViewportSize({ width: 360, height: 740 });
-    await page.goto("/");
+    await page.goto("/programas/discipulando-a-caserna/prototipos/prospecto-v1/");
     await page.locator("#secao-3").scrollIntoViewIfNeeded();
     const overflow = await page.evaluate(() => {
       const doc = document.documentElement;
@@ -111,7 +111,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
   for (const vp of VIEWPORTS) {
     test(`sem overflow horizontal em ${vp.width}px`, async ({ page }) => {
       await page.setViewportSize(vp);
-      await page.goto("/");
+      await page.goto("/programas/discipulando-a-caserna/prototipos/prospecto-v1/");
       await page.waitForTimeout(200);
       const overflow = await page.evaluate(() => {
         const doc = document.documentElement;
@@ -124,7 +124,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
   test("conteúdo legível sem JavaScript", async ({ browser }) => {
     const context = await browser.newContext({ javaScriptEnabled: false });
     const page = await context.newPage();
-    await page.goto("/");
+    await page.goto("/programas/discipulando-a-caserna/prototipos/prospecto-v1/");
     await expect(page.locator("h1")).toHaveText("Discipulando a Caserna");
     await expect(page.locator("#secao-1")).toContainText(
       "Não começo esta apresentação pelo material"
@@ -138,7 +138,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
 
   test("a11y automatizável com axe", async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
-    await page.goto("/");
+    await page.goto("/programas/discipulando-a-caserna/prototipos/prospecto-v1/");
     await page.waitForTimeout(300);
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag22aa"])
@@ -150,7 +150,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
   });
 
   test("caminhos relativos (sem barra absoluta na raiz)", async ({ page }) => {
-    await page.goto("/");
+    await page.goto("/programas/discipulando-a-caserna/prototipos/prospecto-v1/");
     const html = await page.content();
     expect(html).toContain('href="css/tokens.css"');
     expect(html).toContain('src="js/main.js"');

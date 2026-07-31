@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Discipulando a Caserna — índice de protótipos</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --texto: #1a1f24;
+        --fundo: #f7f5f1;
+        --linha: #d4cfc4;
+        --link: #2c4a3e;
+        --aviso: #5c4a2e;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--texto);
+        background: var(--fundo);
+        line-height: 1.55;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 4rem;
+      }
+      h1 {
+        font-size: 1.65rem;
+        margin: 0 0 0.5rem;
+      }
+      h2 {
+        font-size: 1.15rem;
+        margin: 2rem 0 0.75rem;
+      }
+      p,
+      li {
+        margin: 0 0 0.75rem;
+      }
+      ul {
+        padding-left: 1.25rem;
+      }
+      a {
+        color: var(--link);
+      }
+      a:focus-visible {
+        outline: 2px solid var(--link);
+        outline-offset: 3px;
+      }
+      .aviso {
+        color: var(--aviso);
+        border-left: 3px solid var(--linha);
+        padding-left: 0.85rem;
+      }
+      .skip {
+        position: absolute;
+        left: -9999px;
+      }
+      .skip:focus {
+        left: 1rem;
+        top: 1rem;
+        background: #fff;
+        padding: 0.5rem 0.75rem;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+    <main id="conteudo">
+      <h1>Discipulando a Caserna</h1>
+      <p class="aviso">
+        Índice técnico. Todas as versões listadas são protótipos experimentais
+        — não há implementação principal promovida a produto oficial.
+      </p>
+      <h2>Protótipos públicos</h2>
+      <ul>
+        <li>
+          <a href="prototipos/prospecto-v1/">Prospecto v1</a> — carta pastoral
+          em rolagem (versão candidata)
+        </li>
+        <li>
+          <a href="prototipos/storytelling-v1/">Storytelling v1</a> — deck
+          institucional em slides
+        </li>
+        <li>
+          <a href="prototipos/direcoes-visuais-v1/direcao-a/">Direção A</a> —
+          prospecto pastoral editorial (histórico)
+        </li>
+        <li>
+          <a href="prototipos/direcoes-visuais-v1/direcao-b/">Direção B</a> —
+          jornada narrativa imersiva (histórico)
+        </li>
+        <li>
+          <a href="prototipos/direcoes-visuais-v1/direcao-c/">Direção C</a> —
+          dossiê institucional contemporâneo (histórico)
+        </li>
+      </ul>
+      <h2>Circulação restrita</h2>
+      <p>
+        Existe também o protótipo de homologação pastoral (deck gerado). Ele
+        permanece fora do artefato público do GitHub Pages e não é linkado
+        aqui.
+      </p>
+      <p><a href="../../">Voltar ao Projeto Caserna de Adulão</a></p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Projeto Caserna de Adulão</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --texto: #1a1f24;
+        --fundo: #f7f5f1;
+        --linha: #d4cfc4;
+        --link: #2c4a3e;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--texto);
+        background: var(--fundo);
+        line-height: 1.55;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 4rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin: 0 0 0.75rem;
+      }
+      p {
+        margin: 0 0 1rem;
+      }
+      ul {
+        margin: 0;
+        padding-left: 1.25rem;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+      a {
+        color: var(--link);
+      }
+      a:focus-visible {
+        outline: 2px solid var(--link);
+        outline-offset: 3px;
+      }
+      .skip {
+        position: absolute;
+        left: -9999px;
+      }
+      .skip:focus {
+        left: 1rem;
+        top: 1rem;
+        background: #fff;
+        padding: 0.5rem 0.75rem;
+        z-index: 1;
+      }
+      hr {
+        border: 0;
+        border-top: 1px solid var(--linha);
+        margin: 2rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+    <main id="conteudo">
+      <h1>Projeto Caserna de Adulão</h1>
+      <p>
+        Repositório técnico com programas em desenvolvimento e estudos
+        independentes. Este índice não é um portal institucional público.
+      </p>
+      <ul>
+        <li>
+          <a href="programas/discipulando-a-caserna/"
+            >Discipulando a Caserna</a
+          >
+          — programa em desenvolvimento (protótipos)
+        </li>
+      </ul>
+      <hr />
+      <p>
+        Estudos técnicos em <code>referencias-devtools/</code> permanecem no
+        código-fonte e não fazem parte do artefato público deste site.
+      </p>
+    </main>
+  </body>
+</html>

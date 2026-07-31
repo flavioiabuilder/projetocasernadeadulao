@@ -11,13 +11,13 @@ const raiz = path.join(__dirname, "..");
 const MOJIBAKE = /Ã.|Â.|â€|ðŸ|�/;
 
 const alvos = [
-  "js/dados/modulos.js",
-  "js/dados/matriz.js",
-  "js/dados/licao1.js",
+  "prototipos/prospecto-v1/js/dados/modulos.js",
+  "prototipos/prospecto-v1/js/dados/matriz.js",
+  "prototipos/prospecto-v1/js/dados/licao1.js",
   "conteudo/modulos.json",
   "conteudo/matriz-curricular.json",
   "assets/img/licao1/manifest.json",
-  "index.html",
+  "prototipos/prospecto-v1/index.html",
   "assets/img/brasao.svg",
   "assets/img/marca-escudo.svg",
 ];
@@ -47,10 +47,19 @@ alvos.forEach((rel) => {
 try {
   const modulosJson = JSON.parse(ler("conteudo/modulos.json"));
   const matrizJson = JSON.parse(ler("conteudo/matriz-curricular.json"));
-  const modulosJs = extrairGlobal(ler("js/dados/modulos.js"), "DADOS_MODULOS");
-  const matrizJs = extrairGlobal(ler("js/dados/matriz.js"), "DADOS_MATRIZ");
+  const modulosJs = extrairGlobal(
+    ler("prototipos/prospecto-v1/js/dados/modulos.js"),
+    "DADOS_MODULOS"
+  );
+  const matrizJs = extrairGlobal(
+    ler("prototipos/prospecto-v1/js/dados/matriz.js"),
+    "DADOS_MATRIZ"
+  );
   const manifesto = JSON.parse(ler("assets/img/licao1/manifest.json"));
-  const licao1Js = extrairGlobal(ler("js/dados/licao1.js"), "DADOS_LICAO1");
+  const licao1Js = extrairGlobal(
+    ler("prototipos/prospecto-v1/js/dados/licao1.js"),
+    "DADOS_LICAO1"
+  );
 
   if (JSON.stringify(modulosJson) !== JSON.stringify(modulosJs)) {
     console.error("FALHA round-trip: modulos");
@@ -70,10 +79,10 @@ try {
     ({ edicao, pagina, arquivo, largura, altura, arquivo_sm }) => ({
       edicao,
       pagina,
-      arquivo,
+      arquivo: `../../${arquivo}`,
       largura,
       altura,
-      arquivo_sm,
+      arquivo_sm: `../../${arquivo_sm}`,
     })
   );
   if (JSON.stringify(esperadoLicao1) !== JSON.stringify(licao1Js)) {

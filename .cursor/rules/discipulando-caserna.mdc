@@ -1,50 +1,42 @@
 ---
 description: Hierarquia, finalidade e governança da apresentação Discipulando a Caserna
-alwaysApply: true
+globs:
+  - programas/discipulando-a-caserna/**
+alwaysApply: false
 ---
 
 # Discipulando a Caserna — contexto permanente
 
 ## Hierarquia (não sinônimos)
 
-- **Projeto Caserna de Adulão** — projeto ministerial, missionário e institucional mais amplo.
-- **Discipulando a Caserna** — projeto específico de discipulado que serve ao Projeto Caserna de Adulão.
-- Protagonista desta apresentação: **Discipulando a Caserna**.
-- O Projeto Caserna de Adulão é o **contexto** institucional ao qual o discipulado serve — não o assunto principal do site.
+- **Projeto Caserna de Adulão** — projeto ministerial, missionário e institucional mais amplo (raiz do repositório).
+- **Discipulando a Caserna** — programa específico em `programas/discipulando-a-caserna/`.
+- Protagonista das superfícies do programa: **Discipulando a Caserna**.
+- Todas as versões HTML exibíveis atuais são **protótipos** sob `prototipos/`.
 
-## Finalidade do site
+## Finalidade
 
-Apresentação digital do Discipulando a Caserna ao **Pr. Glaydston** (apreciação, orientação e validação pastoral).
-
-Não é o portal público do Projeto Caserna de Adulão.
-
-Deve permitir compreender: origem/necessidade; o que é e a quem se destina; fundamentos bíblicos e princípios; metodologia e currículo; integração com o Projeto; o produzido, o em desenvolvimento e o que pede validação.
-
-## Natureza da experiência
-
-Prospecto pastoral + carta institucional + apresentação de projeto + manifesto + documento editorial interativo + narrativa em rolagem + apresentação curricular.
-
-**Não** tratar como: portal de igreja, eventos, notícias, catálogo de ministérios, arrecadação, landing comercial, template religioso genérico, plataforma de cursos ou captação de participantes.
+Apresentação digital do Discipulando a Caserna ao **Pr. Glaydston** (apreciação, orientação e validação pastoral). Não é o portal público do Projeto Caserna de Adulão.
 
 ## Tom e fidelidade
 
 - Tom pastoral e institucional; português brasileiro natural.
 - Não inventar conteúdo institucional, endossos, aprovações, cargos, datas, resultados ou lacunas do Guia Mestre.
 - Preservar fidelidade bíblica (texto governa a aplicação; Escrituras na NAA, refs. decimais).
-- Não copiar literalmente referências externas fora das fontes canônicas do repositório; citações `>` em `conteudo/*.md` são literais — não parafrasear.
+- Citações `>` em `conteudo/*.md` são literais — não parafrasear.
 - Campos `null` em JSON: omitir na UI, sem placeholder inventado.
 
-## Conteúdo e arquivos
+## Conteúdo e arquivos (caminhos relativos ao programa)
 
-- Canônicos: `conteudo/*.json`, `conteudo/*.md` (ADR-004). HTML editorial em
-  `index.html` permanece canônico de produção até go/no-go da geração editorial.
-- **Não** editar manualmente `js/dados/*.js` nem blocos `FALLBACK-DADOS` em `index.html`.
-- Após alterar JSON: `npm run generate` e `npm run check:encoding`.
-- Stack/runtime/publicação/offline: `docs/arquitetura/` (ADR-001…006) — não
-  inventar proibições de bundler/framework além do que as ADRs registram.
+- Canônicos: `conteudo/*.json`, `conteudo/*.md`.
+- Protótipo prospecto: `prototipos/prospecto-v1/`.
+- **Não** editar manualmente `prototipos/prospecto-v1/js/dados/*.js` nem `FALLBACK-DADOS`.
+- Após alterar JSON: `npm run generate:discipulando` e `npm run check:discipulando:encoding`.
+- ADRs do programa: `docs/arquitetura/` neste diretório.
+- Não aplicar esta regra a `referencias-devtools/`.
 
 ## Qualidade e a11y
 
-Antes de declarar tarefa concluída: `npm run validate` (ou, no mínimo, generate + checks relevantes + inspeção do que mudou).
+Antes de declarar tarefa concluída: `npm run validate:discipulando` (ou `npm run validate`).
 
 Mínimos: um `h1`; headings em ordem; skip link `#conteudo`; `:focus-visible`; nomes acessíveis; alvos ≥44×44 quando possível; contraste AA.

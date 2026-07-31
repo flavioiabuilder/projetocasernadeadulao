@@ -1,6 +1,7 @@
 /**
- * Converte conteudo/*.json → js/dados/*.js e injeta fallback noscript em index.html.
- * Uso: node ferramentas/gerar-dados.js
+ * Converte conteudo/*.json → prototipos/prospecto-v1/js/dados/*.js
+ * e injeta fallback noscript em prototipos/prospecto-v1/index.html.
+ * Uso: node programas/discipulando-a-caserna/ferramentas/gerar-dados.js
  * Não é etapa de build do site no navegador — rode após editar JSON.
  */
 "use strict";
@@ -215,7 +216,7 @@ ${MARK_FIM}`;
 }
 
 function injetarFallback(modulos, matriz) {
-  const indexPath = path.join(raiz, "index.html");
+  const indexPath = path.join(raiz, "prototipos", "prospecto-v1", "index.html");
   let html = lerUtf8(indexPath);
   const bloco = montarFallback(modulos, matriz);
   assertSemMojibake(bloco, "fallback noscript");
@@ -243,7 +244,7 @@ function injetarFallback(modulos, matriz) {
 
 function gerarLicao1() {
   const origemRel = "assets/img/licao1/manifest.json";
-  const destinoRel = "js/dados/licao1.js";
+  const destinoRel = "prototipos/prospecto-v1/js/dados/licao1.js";
   const bruto = lerUtf8(path.join(raiz, origemRel));
   assertSemMojibake(bruto, origemRel);
   let manifesto;
@@ -264,13 +265,16 @@ function gerarLicao1() {
         }
       }
     );
+    // Manifesto guarda caminhos a partir da raiz do programa; o prospecto
+    // vive em prototipos/prospecto-v1/, então o browser precisa de ../../.
+    const paraProspecto = (rel) => (String(rel).startsWith("../") ? rel : `../../${rel}`);
     return {
       edicao: p.edicao,
       pagina: p.pagina,
-      arquivo: p.arquivo,
+      arquivo: paraProspecto(p.arquivo),
       largura: p.largura,
       altura: p.altura,
-      arquivo_sm: p.arquivo_sm,
+      arquivo_sm: paraProspecto(p.arquivo_sm),
     };
   });
 
@@ -290,13 +294,13 @@ window.DADOS_LICAO1 = ${corpo};
 function main() {
   const modulos = gerarScript(
     "conteudo/modulos.json",
-    "js/dados/modulos.js",
+    "prototipos/prospecto-v1/js/dados/modulos.js",
     "DADOS_MODULOS",
     validarModulos
   );
   const matriz = gerarScript(
     "conteudo/matriz-curricular.json",
-    "js/dados/matriz.js",
+    "prototipos/prospecto-v1/js/dados/matriz.js",
     "DADOS_MATRIZ",
     validarMatriz
   );

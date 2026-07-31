@@ -1,9 +1,11 @@
 node_modules/
-js/dados/
+programas/discipulando-a-caserna/prototipos/prospecto-v1/js/dados/
 package-lock.json
 playwright-report/
 test-results/
-_gerado/
+programas/discipulando-a-caserna/_gerado/
+programas/discipulando-a-caserna/fontes/
+programas/discipulando-a-caserna/prototipos/homologacao-pastoral-v1/
 referencias-devtools/aramco-birth-of-oil/auditoria/
 
 # Artefato gerado por referencias-devtools/aramco-birth-of-oil/ferramentas/gerar-tokens.js

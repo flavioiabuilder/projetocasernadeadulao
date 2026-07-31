@@ -21,10 +21,11 @@ playwright-report/
 test-results/
 blob-report/
 .npm-cache/
-referencia/
-fontes/guia-mestre/_guia_tmp.pdf
-fontes/guia-mestre/*_tmp.pdf
+programas/discipulando-a-caserna/referencia/
+programas/discipulando-a-caserna/fontes/guia-mestre/_guia_tmp.pdf
+programas/discipulando-a-caserna/fontes/guia-mestre/*_tmp.pdf
 _site/
+programas/discipulando-a-caserna/_gerado/
 _gerado/
 
 # impeccable-ignore-start

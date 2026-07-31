@@ -2,10 +2,18 @@
 
 ## [Unreleased]
 
+### Estrutura
+
+- Programa consolidado em `programas/discipulando-a-caserna/`.
+- Prospecto raiz virou `prototipos/prospecto-v1/`; homologação virou
+  `prototipos/homologacao-pastoral-v1/`; direções sob `direcoes-visuais-v1/`.
+- URLs públicas canônicas com prefixo `/programas/discipulando-a-caserna/`;
+  shims preservam `/prototipos/…` antigos.
+
 ### Publicação
 
-- Pages volta a incluir `prototipos/` (storytelling-v1 e direções A/B/C) no
-  artefato público; ADR-002 e `docs/publicacao.md` emendados.
+- Artefato Pages seletivo: índices, assets e protótipos públicos; homologação,
+  docs, fontes, ferramentas e testes fora do `_site`.
 
 ### Storytelling v1
 

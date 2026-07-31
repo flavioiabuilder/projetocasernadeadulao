@@ -3,7 +3,7 @@
 const { defineConfig } = require("@playwright/test");
 
 module.exports = defineConfig({
-  testDir: "testes/e2e",
+  testDir: "programas/discipulando-a-caserna/testes/e2e",
   timeout: 60000,
   expect: { timeout: 10000 },
   fullyParallel: true,

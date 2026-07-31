@@ -29,10 +29,10 @@ describe("dados gerados", () => {
 
   it("gera sem mojibake", () => {
     [
-      "js/dados/modulos.js",
-      "js/dados/matriz.js",
-      "js/dados/licao1.js",
-      "index.html",
+      "prototipos/prospecto-v1/js/dados/modulos.js",
+      "prototipos/prospecto-v1/js/dados/matriz.js",
+      "prototipos/prospecto-v1/js/dados/licao1.js",
+      "prototipos/prospecto-v1/index.html",
     ].forEach((rel) => {
       assert.equal(MOJIBAKE.test(ler(rel)), false, rel);
     });
@@ -41,36 +41,48 @@ describe("dados gerados", () => {
   it("round-trip corresponde aos JSON", () => {
     const modulosJson = JSON.parse(ler("conteudo/modulos.json"));
     const matrizJson = JSON.parse(ler("conteudo/matriz-curricular.json"));
-    const modulosJs = extrair(ler("js/dados/modulos.js"), "DADOS_MODULOS");
-    const matrizJs = extrair(ler("js/dados/matriz.js"), "DADOS_MATRIZ");
+    const modulosJs = extrair(
+      ler("prototipos/prospecto-v1/js/dados/modulos.js"),
+      "DADOS_MODULOS"
+    );
+    const matrizJs = extrair(
+      ler("prototipos/prospecto-v1/js/dados/matriz.js"),
+      "DADOS_MATRIZ"
+    );
     assert.deepEqual(modulosJs, modulosJson);
     assert.deepEqual(matrizJs, matrizJson);
   });
 
   it("licao1.js espelha o manifesto sem campos auxiliares", () => {
     const manifesto = JSON.parse(ler("assets/img/licao1/manifest.json"));
-    const licao1 = extrair(ler("js/dados/licao1.js"), "DADOS_LICAO1");
+    const licao1 = extrair(
+      ler("prototipos/prospecto-v1/js/dados/licao1.js"),
+      "DADOS_LICAO1"
+    );
     const esperado = manifesto.map(
       ({ edicao, pagina, arquivo, largura, altura, arquivo_sm }) => ({
         edicao,
         pagina,
-        arquivo,
+        arquivo: `../../${arquivo}`,
         largura,
         altura,
-        arquivo_sm,
+        arquivo_sm: `../../${arquivo_sm}`,
       })
     );
     assert.deepEqual(licao1, esperado);
   });
 
   it("matriz tem 48 lições", () => {
-    const matriz = extrair(ler("js/dados/matriz.js"), "DADOS_MATRIZ");
+    const matriz = extrair(
+      ler("prototipos/prospecto-v1/js/dados/matriz.js"),
+      "DADOS_MATRIZ"
+    );
     assert.equal(matriz.total, 48);
     assert.equal(matriz.licoes.length, 48);
   });
 
   it("injeta fallback noscript delimitado", () => {
-    const html = ler("index.html");
+    const html = ler("prototipos/prospecto-v1/index.html");
     assert.match(html, /FALLBACK-DADOS:START/);
     assert.match(html, /FALLBACK-DADOS:END/);
     assert.match(html, /<noscript[\s\S]*Matriz curricular/);

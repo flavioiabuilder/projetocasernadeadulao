@@ -7,7 +7,7 @@ const path = require("node:path");
 const { execFileSync } = require("node:child_process");
 
 const raiz = path.join(__dirname, "..", "..");
-const htmlPath = path.join(raiz, "apresentacao", "homologacao-pastoral.html");
+const htmlPath = path.join(raiz, "prototipos", "homologacao-pastoral-v1", "index.html");
 
 describe("apresentação de homologação", () => {
   before(() => {

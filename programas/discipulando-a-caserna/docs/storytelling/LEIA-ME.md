@@ -28,5 +28,5 @@ Voz: “você” de leitura; pedidos de homologação em terceira pessoa (lidera
 ## O que isto não é
 
 - Não substitui o prospecto multiarquivo (`index.html` na raiz).
-- Não substitui a homologação atual em `apresentacao/homologacao-pastoral.html` até promoção explícita.
+- Não substitui a homologação atual em `prototipos/homologacao-pastoral-v1/` até promoção explícita.
 - Não editar `js/dados/*.js` a partir desta pasta.

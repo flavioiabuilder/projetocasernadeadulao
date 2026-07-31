@@ -1,21 +1,19 @@
-# Protótipos
+# Protótipos — Discipulando a Caserna
 
-Mapa de retenção (revisão arquitetural 2026-07-31; emenda Pages 2026-07-31).
-A pasta `prototipos/` entra no artefato GitHub Pages (ADR-002). Homologação,
-Guia e docs internos continuam fora.
+Todas as implementações exibíveis do programa estão aqui. Nenhuma é a
+implementação principal do repositório nem o portal do Projeto Caserna de
+Adulão.
 
-| Caminho            | Status                         | Papel                                                                                 |
-| ------------------ | ------------------------------ | ------------------------------------------------------------------------------------- |
-| `direcao-a/`       | Legado de decisão              | Direção visual A (editorial) — referência histórica; versão de UI pode estar em 0.4.0 |
-| `direcao-b/`       | Legado de decisão              | Direção B (atmosférica) — não produção                                                |
-| `direcao-c/`       | Legado de decisão              | Direção C (ferramentas) — não produção                                                |
-| `storytelling-v1/` | Protótipo oficial testado (D4) | Deck institucional; testes e2e/unitários específicos                                  |
+| Caminho                                                | Papel                                   | Pages |
+| ------------------------------------------------------ | --------------------------------------- | ----- |
+| [`prospecto-v1/`](prospecto-v1/)                       | Protótipo Prospecto v1 (carta pastoral) | Sim   |
+| [`storytelling-v1/`](storytelling-v1/)                 | Deck institucional em slides            | Sim   |
+| [`direcoes-visuais-v1/`](direcoes-visuais-v1/)         | Direções A/B/C históricas               | Sim   |
+| [`homologacao-pastoral-v1/`](homologacao-pastoral-v1/) | Deck gerado para circulação restrita    | Não   |
 
-Exports grandes em `docs/storytelling/*.html` e o HTML do Guia em `fontes/` são
-**referência**, não UI a editar para o prospecto.
+URLs públicas canônicas usam o prefixo
+`/programas/discipulando-a-caserna/prototipos/…`.
 
-Para a superfície de produção, use `index.html` na raiz.
-Para homologação pastoral restrita, use `apresentacao/homologacao-pastoral.html`.
-
-URL pública do storytelling:
-`https://flavioiabuilder.github.io/projetocasernadeadulao/prototipos/storytelling-v1/`
+Compatibilidade com URLs antigas (`/prototipos/storytelling-v1/`,
+`/prototipos/direcao-a/` etc.) é feita por shims na raiz do repositório — ver
+[`../publicacao/redirects-manifest.md`](../publicacao/redirects-manifest.md).
