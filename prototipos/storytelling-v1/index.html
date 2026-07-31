@@ -499,27 +499,35 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
   .cert-corpo,.cad-miolo,.guia-livro{box-shadow:none !important}
 }
 
-.s01-id{position:relative;margin:.85rem auto 0;padding:0;text-align:center;opacity:0;animation:s01IdIn .8s ease 3s forwards;width:auto;max-width:100%;align-self:center;line-height:1.2;background:transparent}
+.s01-id{position:relative;margin:.85rem auto 0;padding:0;text-align:center;opacity:0;animation:s01IdIn .8s ease 3s forwards;width:auto;max-width:100%;align-self:center;line-height:1.2;background:transparent;pointer-events:none}
+.s01-id.interativo{pointer-events:auto}
 .s01-id .emblema-brilho{display:none!important}
 .s01-id strong{
   display:inline-block;width:auto;max-width:100%;
   font-family:var(--sans);font-size:clamp(.8rem,1.35vw,.95rem);font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:rgba(140,106,70,.92);text-align:center;background:transparent;
-  transition:color .18s ease,background .18s ease,-webkit-text-fill-color .18s ease;
+  color:rgba(140,106,70,.92);-webkit-text-fill-color:rgba(140,106,70,.92);
+  text-align:center;background:transparent;background-image:none;
+  transition:color .15s ease,-webkit-text-fill-color .15s ease;
 }
 .s01-id.brilhando strong{
   color:transparent;
   -webkit-text-fill-color:transparent;
   background-image:radial-gradient(
-    140px circle at var(--ex,50%) var(--ey,50%),
+    72px circle at var(--ex,50%) var(--ey,50%),
     #fff6e4 0%,
-    #e8c48a 32%,
-    #b8894f 58%,
-    #8C6A46 82%,
-    #6a4e32 100%
+    #e8c48a 34%,
+    #b8894f 62%,
+    #8C6A46 100%
   );
   -webkit-background-clip:text;
   background-clip:text;
+}
+.s01-id:not(.brilhando) strong{
+  color:rgba(140,106,70,.92);
+  -webkit-text-fill-color:rgba(140,106,70,.92);
+  background-image:none;
+  -webkit-background-clip:border-box;
+  background-clip:border-box;
 }
 @media(prefers-reduced-motion:reduce){.s01-id{opacity:1;animation:none}}
 @keyframes s01IdIn{to{opacity:1}}
@@ -540,42 +548,61 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
 /* Luz suave na ponta do cursor + reflexo metálico na logo */
 .luz-cursor{
   position:fixed;inset:0;z-index:70;pointer-events:none;opacity:0;
-  transition:opacity .45s ease;
+  transition:opacity .3s ease;
   background:radial-gradient(
-    160px circle at var(--lx,50%) var(--ly,50%),
-    rgba(244,244,241,.10) 0%,
-    rgba(140,106,70,.055) 32%,
-    transparent 68%
+    52px circle at var(--lx,50%) var(--ly,50%),
+    rgba(244,244,241,.16) 0%,
+    rgba(140,106,70,.07) 40%,
+    transparent 72%
   );
 }
 .luz-cursor.ativa{opacity:1}
 body.chrome-escuro .luz-cursor{
   background:radial-gradient(
-    190px circle at var(--lx,50%) var(--ly,50%),
-    rgba(244,244,241,.14) 0%,
-    rgba(140,106,70,.08) 34%,
-    transparent 70%
+    64px circle at var(--lx,50%) var(--ly,50%),
+    rgba(244,244,241,.2) 0%,
+    rgba(140,106,70,.1) 38%,
+    transparent 72%
   );
 }
-.emblema-metal{position:relative;display:inline-block;isolation:isolate;line-height:0}
-.emblema-metal .emblema{position:relative;z-index:0;transition:filter .18s ease}
+.emblema-metal{position:relative;display:inline-block;isolation:isolate;line-height:0;pointer-events:none}
+.emblema-metal.interativo{pointer-events:auto}
+.emblema-metal .emblema{position:relative;z-index:0;transition:filter .12s ease}
 .emblema-brilho{
   position:absolute;inset:0;z-index:1;pointer-events:none;
-  opacity:calc(var(--brilho,0) * 1);
+  opacity:calc(var(--brilho,0) * 1.2);
   background:
+    /* hotspot local — só no ponto do cursor */
     radial-gradient(
-      150px circle at var(--ex,50%) var(--ey,50%),
-      rgba(255,252,240,.9) 0%,
-      rgba(255,230,180,.45) 18%,
-      rgba(200,160,100,.18) 40%,
-      transparent 64%
+      ellipse 18% 14% at var(--ex,50%) var(--ey,50%),
+      rgba(255,248,230,1) 0%,
+      rgba(255,214,140,.75) 28%,
+      rgba(200,150,80,.28) 55%,
+      transparent 78%
     ),
-    linear-gradient(
-      118deg,
-      transparent 32%,
-      rgba(255,255,255,calc(var(--brilho,0) * .22)) 49%,
-      transparent 66%
+    radial-gradient(
+      ellipse 28% 12% at var(--ex,50%) var(--ey,50%),
+      rgba(255,236,190,.55) 0%,
+      transparent 70%
     );
+  mix-blend-mode:color-dodge;
+  -webkit-mask-image:var(--emblema-src);
+  mask-image:var(--emblema-src);
+  -webkit-mask-size:contain;
+  mask-size:contain;
+  -webkit-mask-repeat:no-repeat;
+  mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  mask-position:center;
+}
+.emblema-brilho:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(
+    ellipse 10% 8% at var(--ex,50%) var(--ey,50%),
+    rgba(255,255,255,.95) 0%,
+    rgba(255,230,180,.45) 40%,
+    transparent 75%
+  );
   mix-blend-mode:overlay;
   -webkit-mask-image:var(--emblema-src);
   mask-image:var(--emblema-src);
@@ -586,8 +613,6 @@ body.chrome-escuro .luz-cursor{
   -webkit-mask-position:center;
   mask-position:center;
 }
-.emblema-metal.brilhando .emblema{filter:brightness(1.12) contrast(1.04) saturate(1.05)}
-.emblema-metal:not(.brilhando) .emblema{filter:none}
 @media (hover:none),(pointer:coarse){.luz-cursor,.emblema-brilho{display:none}}
 @media (prefers-reduced-motion:reduce){.luz-cursor,.emblema-brilho{display:none}}
 @media print{
@@ -1052,25 +1077,51 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
 
   if(location.hash){var h=document.querySelector(location.hash);if(h)setTimeout(function(){h.scrollIntoView();},60);}
 
-  /* Brilho suave do cursor + reflexo metálico (logo e assinatura) */
+  /* Brilho do cursor + reflexo metálico (logo e assinatura) */
   (function(){
-    var fine=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(!fine||reduce) return;
+    var mqFine=window.matchMedia('(hover: hover) and (pointer: fine)');
+    var mqReduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+    if(!mqFine.matches||mqReduce.matches) return;
+
     var luz=document.createElement('div');
     luz.className='luz-cursor';
     luz.setAttribute('aria-hidden','true');
     document.body.appendChild(luz);
 
     var metais=[];
+    var raf=0;
+    var x=innerWidth/2,y=innerHeight/2,tx=x,ty=y,ativa=false;
+
+    function limparAlvo(wrap){
+      wrap.style.setProperty('--brilho','0');
+      wrap.classList.remove('brilhando');
+      var img=wrap.querySelector&&wrap.querySelector('img.emblema');
+      if(img) img.style.filter='';
+    }
+    function limparTudo(){
+      ativa=false;
+      luz.classList.remove('ativa');
+      for(var i=0;i<metais.length;i++) limparAlvo(metais[i]);
+    }
     function addBrilho(alvo){
-      if(!alvo||alvo.querySelector(':scope > .emblema-brilho')) return;
+      if(!alvo||alvo.querySelector('.emblema-brilho')) return;
       var brilho=document.createElement('span');
       brilho.className='emblema-brilho';
       brilho.setAttribute('aria-hidden','true');
       alvo.appendChild(brilho);
       metais.push(alvo);
     }
+    function marcarInterativo(el,ligado){
+      if(!el) return;
+      el.classList.toggle('interativo',!!ligado);
+    }
+    function syncInterativo(){
+      metais.forEach(function(el){
+        var op=parseFloat(getComputedStyle(el).opacity);
+        marcarInterativo(el,op>0.55);
+      });
+    }
+
     [].forEach.call(document.querySelectorAll('img.emblema'),function(img){
       if(img.closest('.emblema-metal')) return;
       var wrap=document.createElement('span');
@@ -1087,46 +1138,68 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
     });
     [].forEach.call(document.querySelectorAll('.s01-id'),function(el){ metais.push(el); });
 
-    var x=innerWidth/2,y=innerHeight/2,tx=x,ty=y,ativa=false;
+    /* habilita hit-test só depois do fade-in (opacity 0 ainda captura mouse) */
+    setTimeout(syncInterativo,50);
+    setTimeout(syncInterativo,1400);
+    setTimeout(syncInterativo,4200);
+    metais.forEach(function(el){
+      el.addEventListener('animationend',function(){ marcarInterativo(el,true); });
+    });
+
     function frame(){
-      x+=(tx-x)*0.16;
-      y+=(ty-y)*0.16;
+      if(document.hidden){ raf=requestAnimationFrame(frame); return; }
+      x+=(tx-x)*0.22;
+      y+=(ty-y)*0.22;
       luz.style.setProperty('--lx',x.toFixed(1)+'px');
       luz.style.setProperty('--ly',y.toFixed(1)+'px');
       for(var i=0;i<metais.length;i++){
         var wrap=metais[i];
         var isTexto=wrap.classList.contains('s01-id');
-        var alvo=isTexto?(wrap.querySelector('strong')||wrap):wrap;
-        var r=alvo.getBoundingClientRect();
-        if(r.width<2||r.height<2){
-          wrap.style.setProperty('--brilho','0');
-          wrap.classList.remove('brilhando');
+        if(!wrap.classList.contains('interativo')){
+          limparAlvo(wrap);
           continue;
         }
-        var ex=((x-r.left)/r.width)*100;
-        var ey=((y-r.top)/r.height)*100;
-        wrap.style.setProperty('--ex',ex.toFixed(2)+'%');
-        wrap.style.setProperty('--ey',ey.toFixed(2)+'%');
-        var cx=r.left+r.width/2, cy=r.top+r.height/2;
-        var reach=isTexto
-          ? Math.max(r.width,r.height)*1.1+120
-          : Math.max(r.width,r.height)*0.7+140;
-        var prox=Math.max(0,1-(Math.hypot(x-cx,y-cy)/reach));
-        prox=prox*prox;
-        wrap.style.setProperty('--brilho',ativa?prox.toFixed(3):'0');
-        wrap.classList.toggle('brilhando',ativa&&prox>0.04);
+        var alvo=isTexto?(wrap.querySelector('strong')||wrap):wrap;
+        var r=alvo.getBoundingClientRect();
+        if(r.width<2||r.height<2){ limparAlvo(wrap); continue; }
+
+        /* inset na logo: ignora margens escuras do PNG */
+        var insetX=isTexto?0:r.width*0.08;
+        var insetY=isTexto?0:r.height*0.06;
+        var left=r.left+insetX, right=r.right-insetX, top=r.top+insetY, bottom=r.bottom-insetY;
+        var sobre=ativa&&tx>=left&&tx<=right&&ty>=top&&ty<=bottom;
+        if(!sobre){ limparAlvo(wrap); continue; }
+
+        var hitW=Math.max(1,right-left), hitH=Math.max(1,bottom-top);
+        var ex=((tx-left)/hitW)*100;
+        var ey=((ty-top)/hitH)*100;
+        wrap.style.setProperty('--ex',Math.max(0,Math.min(100,ex)).toFixed(2)+'%');
+        wrap.style.setProperty('--ey',Math.max(0,Math.min(100,ey)).toFixed(2)+'%');
+        wrap.style.setProperty('--brilho','1');
+        wrap.classList.add('brilhando');
+        if(!isTexto){
+          var img=wrap.querySelector('img.emblema');
+          if(img) img.style.filter='brightness(1.28) contrast(1.12) saturate(1.14)';
+        }
       }
-      requestAnimationFrame(frame);
+      raf=requestAnimationFrame(frame);
     }
-    document.addEventListener('pointermove',function(e){
+
+    function onMove(e){
       if(e.pointerType&&e.pointerType!=='mouse') return;
       tx=e.clientX; ty=e.clientY;
-      if(!ativa){ativa=true;luz.classList.add('ativa');}
-    },{passive:true});
-    document.addEventListener('pointerleave',function(){
-      ativa=false;luz.classList.remove('ativa');
+      if(!ativa){ ativa=true; luz.classList.add('ativa'); }
+    }
+    function onLeave(){ limparTudo(); }
+
+    document.addEventListener('pointermove',onMove,{passive:true});
+    document.documentElement.addEventListener('mouseleave',onLeave);
+    window.addEventListener('blur',onLeave);
+    document.addEventListener('visibilitychange',function(){
+      if(document.hidden) limparTudo();
     });
-    requestAnimationFrame(frame);
+
+    raf=requestAnimationFrame(frame);
   })();
 })();
 </script>
