@@ -269,16 +269,17 @@ img.emblema{aspect-ratio:auto;height:auto;background:none}
 @media(prefers-reduced-motion:reduce){.emblema-grande{opacity:1;animation:none}}
 /* S01: emblema dominante (~30% da altura) + assinatura centrada sob a marca */
 #s01 .bloco-central{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:min(860px,92vw)}
-#s01 .emblema-grande{width:min(760px,84vw);max-width:min(760px,84vw);max-height:54vh;margin:0 auto;opacity:0;animation:emblemaIn 1.2s ease forwards}
+#s01 .emblema-metal{display:block;width:min(760px,84vw);max-width:min(760px,84vw);margin:0 auto;opacity:0;animation:emblemaIn 1.2s ease forwards}
+#s01 .emblema-metal .emblema-grande{width:100%;max-width:100%;max-height:54vh;margin:0;opacity:1;animation:none}
 #s01.slide.visivel .bloco-central>*{animation:none}
-#s01.slide.visivel .emblema-grande{animation:emblemaIn 1.2s ease forwards}
+#s01.slide.visivel .emblema-metal{animation:emblemaIn 1.2s ease forwards}
 #s01.slide.visivel .s01-id{animation:s01IdIn .8s ease 3s forwards}
 #s01.slide.visivel .seta-rolar{animation:surge .8s 4s forwards}
 #s01 .s01-id{opacity:0}
 #s01 .seta-rolar{opacity:0;margin-top:1.5rem}
 @media(prefers-reduced-motion:reduce){
-  #s01 .emblema-grande,#s01 .s01-id,#s01 .seta-rolar,
-  #s01.slide.visivel .emblema-grande,#s01.slide.visivel .s01-id,#s01.slide.visivel .seta-rolar{opacity:1;animation:none}
+  #s01 .emblema-metal,#s01 .s01-id,#s01 .seta-rolar,
+  #s01.slide.visivel .emblema-metal,#s01.slide.visivel .s01-id,#s01.slide.visivel .seta-rolar{opacity:1;animation:none}
 }
 .emblema-pequeno{max-width:132px;margin-top:30px;opacity:.95}
 .emblema-anotado{display:flex;gap:26px;align-items:center;width:100%}
@@ -516,7 +517,7 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
 .copiar-status{font-size:.9rem;color:var(--latao);min-height:1.5rem;margin:.35rem 0}
 .retorno-caminho{font-size:.92rem;line-height:1.5;color:var(--estrut);margin:.75rem 0}
 .slide-pastoral a.mailto{color:inherit;text-decoration:underline;text-underline-offset:2px}
-/* Luz suave na ponta do cursor */
+/* Luz suave na ponta do cursor + reflexo metálico na logo */
 .luz-cursor{
   position:fixed;inset:0;z-index:70;pointer-events:none;opacity:0;
   transition:opacity .45s ease;
@@ -536,12 +537,43 @@ body.chrome-escuro .luz-cursor{
     transparent 70%
   );
 }
-@media (hover:none),(pointer:coarse){.luz-cursor{display:none}}
-@media (prefers-reduced-motion:reduce){.luz-cursor{display:none}}
+.emblema-metal{position:relative;display:inline-block;isolation:isolate;line-height:0}
+.emblema-metal .emblema{position:relative;z-index:0;transition:filter .18s ease}
+.emblema-brilho{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  opacity:calc(var(--brilho,0) * 1);
+  background:
+    radial-gradient(
+      150px circle at var(--ex,50%) var(--ey,50%),
+      rgba(255,252,240,.9) 0%,
+      rgba(255,230,180,.45) 18%,
+      rgba(200,160,100,.18) 40%,
+      transparent 64%
+    ),
+    linear-gradient(
+      118deg,
+      transparent 32%,
+      rgba(255,255,255,calc(var(--brilho,0) * .22)) 49%,
+      transparent 66%
+    );
+  mix-blend-mode:overlay;
+  -webkit-mask-image:var(--emblema-src);
+  mask-image:var(--emblema-src);
+  -webkit-mask-size:contain;
+  mask-size:contain;
+  -webkit-mask-repeat:no-repeat;
+  mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  mask-position:center;
+}
+.emblema-metal.brilhando .emblema{filter:brightness(1.12) contrast(1.04) saturate(1.05)}
+.emblema-metal:not(.brilhando) .emblema{filter:none}
+@media (hover:none),(pointer:coarse){.luz-cursor,.emblema-brilho{display:none}}
+@media (prefers-reduced-motion:reduce){.luz-cursor,.emblema-brilho{display:none}}
 @media print{
   .s01-id{opacity:1;animation:none}
   .decisao-acoes,.copiar-status{display:none!important}
-  .luz-cursor{display:none!important}
+  .luz-cursor,.emblema-brilho{display:none!important}
 }
 </style>
 </head>
@@ -1000,7 +1032,7 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
 
   if(location.hash){var h=document.querySelector(location.hash);if(h)setTimeout(function(){h.scrollIntoView();},60);}
 
-  /* Brilho suave seguindo o cursor */
+  /* Brilho suave do cursor + reflexo metálico na logo */
   (function(){
     var fine=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1009,12 +1041,52 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
     luz.className='luz-cursor';
     luz.setAttribute('aria-hidden','true');
     document.body.appendChild(luz);
+
+    var metais=[];
+    [].forEach.call(document.querySelectorAll('img.emblema'),function(img){
+      if(img.closest('.emblema-metal')) return;
+      var wrap=document.createElement('span');
+      wrap.className='emblema-metal';
+      img.parentNode.insertBefore(wrap,img);
+      wrap.appendChild(img);
+      var brilho=document.createElement('span');
+      brilho.className='emblema-brilho';
+      brilho.setAttribute('aria-hidden','true');
+      wrap.appendChild(brilho);
+      function aplicaSrc(){
+        var src=img.currentSrc||img.src;
+        if(src) wrap.style.setProperty('--emblema-src','url("'+src.replace(/"/g,'%22')+'")');
+      }
+      if(img.complete) aplicaSrc();
+      else img.addEventListener('load',aplicaSrc,{once:true});
+      metais.push(wrap);
+    });
+
     var x=innerWidth/2,y=innerHeight/2,tx=x,ty=y,ativa=false;
     function frame(){
       x+=(tx-x)*0.16;
       y+=(ty-y)*0.16;
       luz.style.setProperty('--lx',x.toFixed(1)+'px');
       luz.style.setProperty('--ly',y.toFixed(1)+'px');
+      for(var i=0;i<metais.length;i++){
+        var wrap=metais[i];
+        var r=wrap.getBoundingClientRect();
+        if(r.width<2||r.height<2){
+          wrap.style.setProperty('--brilho','0');
+          wrap.classList.remove('brilhando');
+          continue;
+        }
+        var ex=((x-r.left)/r.width)*100;
+        var ey=((y-r.top)/r.height)*100;
+        wrap.style.setProperty('--ex',ex.toFixed(2)+'%');
+        wrap.style.setProperty('--ey',ey.toFixed(2)+'%');
+        var cx=r.left+r.width/2, cy=r.top+r.height/2;
+        var reach=Math.max(r.width,r.height)*0.7+140;
+        var prox=Math.max(0,1-(Math.hypot(x-cx,y-cy)/reach));
+        prox=prox*prox;
+        wrap.style.setProperty('--brilho',ativa?prox.toFixed(3):'0');
+        wrap.classList.toggle('brilhando',ativa&&prox>0.04);
+      }
       requestAnimationFrame(frame);
     }
     document.addEventListener('pointermove',function(e){
