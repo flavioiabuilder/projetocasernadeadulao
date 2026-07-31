@@ -72,7 +72,7 @@ os pesos e o ritmo não dependem da família específica.
 | Referência                              | Tamanho | Substituto                          |
 | --------------------------------------- | ------- | ----------------------------------- |
 | `models/BirthOfOil.glb`                 | 1148 KB | esfera implícita no fragment shader |
-| `textures/earth-topography.jpg`         | 1476 KB | fBm de 5 oitavas, procedural        |
+| `textures/earth-topography.jpg`         | 1476 KB | fBm de 3 oitavas, procedural        |
 | `textures/earth-lightmap.jpg`           | 320 KB  | Lambert analítico no shader         |
 | `textures/depths.jpg`                   | 452 KB  | gradiente de campo no shader        |
 | `textures/rock-RG_normal-B_Diffuse.jpg` | 181 KB  | ruído por valor, procedural         |

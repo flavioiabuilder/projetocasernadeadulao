@@ -65,11 +65,22 @@
   overflow: hidden;
 }
 
+/*
+ * Progresso por scaleX, não por width: animar largura provoca layout a cada
+ * quadro. O eixo X é escalado a partir da borda inicial, o que dá o mesmo
+ * resultado visual num elemento de cor sólida, mas fica na camada composta.
+ */
 .es-carregamento__progresso {
   height: 100%;
-  width: calc(var(--es-progresso, 0) * 100%);
+  width: 100%;
   background: var(--es-cor-brasa-clara);
-  transition: width var(--es-dur-media) var(--es-ease-suave);
+  transform: scaleX(var(--es-progresso, 0));
+  transform-origin: left center;
+  transition: transform var(--es-dur-media) var(--es-ease-suave);
+}
+
+[dir="rtl"] .es-carregamento__progresso {
+  transform-origin: right center;
 }
 
 /* ============================================================

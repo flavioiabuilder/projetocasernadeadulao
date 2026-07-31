@@ -109,7 +109,38 @@ acompanha `.es-controle` no atributo `class`.
 `fatiarLinhas` copiava o `textContent` com indentação do HTML para o elemento
 `.es-sr-only`. Normalizado com `replace(/\s+/g, " ").trim()`.
 
-### 4. Seletor do cursor divergente
+### 4. Shader caro demais — `PAGE_HUNG` no Lighthouse
+
+O achado mais sério. A primeira versão do shader avaliava fBm de **5 oitavas
+duas vezes** por pixel (~10 avaliações de ruído), a 1440×900 sem redução de
+resolução. Medição:
+
+| Métrica             | Antes     | Depois  |
+| ------------------- | --------- | ------- |
+| Pixels renderizados | 1.296.000 | 466.560 |
+| Quadro mediano      | 19.2 ms   | 16.9 ms |
+| Quadro P95          | 67.5 ms   | 21.9 ms |
+| Quadro máximo       | 91.7 ms   | 66.7 ms |
+
+O Lighthouse abortava com `PAGE_HUNG` — a página deixava de responder sob a
+instrumentação. Não era artefato da ferramenta: os picos de 67–91 ms são reais.
+
+**Correção em duas frentes**, ambas parametrizadas por token:
+
+1. `--es-amb-escala-render: 0.6` — a cena é um campo de gradiente suave;
+   renderizar a 60% e deixar o navegador escalar corta 64% dos pixels sem
+   diferença perceptível.
+2. fBm reduzido de 5 para 3 oitavas, e a segunda passada de detalhe removida.
+
+Depois disso o Lighthouse completa e pontua 100 em acessibilidade e boas
+práticas.
+
+**Lição:** procedural não é automaticamente barato. A referência usa texturas
+assadas e lightmap justamente porque ruído em tempo real por pixel é caro — a
+troca "sem ativos binários" tem um custo de GPU que precisa ser medido, não
+presumido.
+
+### 5. Seletor do cursor divergente
 
 O controlador procurava `[data-es-cursor]`, que é o atributo dos **gatilhos**;
 o elemento do cursor usa `[data-es-cursor-elemento]`.

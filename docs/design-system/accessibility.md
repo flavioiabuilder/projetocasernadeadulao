@@ -159,6 +159,31 @@ A tipografia usa `rem` nos tetos (`min(8.4vh, 4.375rem)`), então respeita o
 tamanho de fonte do navegador. `text-size-adjust: 100%` impede o ajuste
 automático do iOS.
 
+## Resultado Lighthouse (verificado)
+
+Executado em `http://localhost:8099/design-system/demo.html`, modo navigation,
+desktop, Chrome 150:
+
+| Categoria        | Nota    |
+| ---------------- | ------- |
+| Acessibilidade   | **100** |
+| Best Practices   | **100** |
+| Agentic Browsing | **100** |
+| SEO              | 63      |
+
+50 auditorias aprovadas, 1 reprovada: `is-crawlable`, porque a página declara
+`noindex, nofollow` — **deliberado**, alinhado ao `robots.txt` do repositório.
+Não é defeito.
+
+Auditorias de acessibilidade aprovadas incluem `color-contrast`,
+`button-name`, `link-name`, `aria-allowed-attr`, `aria-required-attr`,
+`heading-order`, `html-has-lang`, `landmark-one-main` e `meta-viewport`.
+
+> **Ressalva sobre `color-contrast`:** o Lighthouse aprova, mas a auditoria
+> automática não avalia com confiança texto sobre `<canvas>`, cuja luminância
+> varia por pixel. A nota 100 **não** substitui a medição pontual listada
+> abaixo como pendente.
+
 ## O que ainda não foi verificado
 
 | Item                                              | Situação                                                    |

@@ -42,7 +42,7 @@ por `z = √(r² − d²)`.
 1. **Campo atmosférico** — interpolação vertical entre `--es-cor-mineral` e
    `--es-cor-bruma`.
 2. **Corpo mineral** — esfera implícita; normal analítica; superfície por fBm de
-   5 oitavas sobre ruído por valor, amostrado em coordenadas **rotacionadas**
+   3 oitavas sobre ruído por valor, amostrado em coordenadas **rotacionadas**
    pelo tempo e pelo progresso narrativo (é isso que faz o corpo "girar" sem
    geometria).
 3. **Iluminação** — difusa Lambert com luz fixa, mais um termo rasante
