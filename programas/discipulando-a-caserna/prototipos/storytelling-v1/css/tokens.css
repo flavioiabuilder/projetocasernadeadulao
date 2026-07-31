@@ -1,0 +1,15 @@
+:root{
+  --base:#F4F4F1; --chumbo:#2B2B2B; --estrut:#4A4A4A;
+  --latao:#8C6A46; --caserna:#1A2A44; --sombra:#111418;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Liberation Serif","DejaVu Serif",serif;
+  --sans:"Helvetica Neue",Helvetica,Arial,"Liberation Sans","DejaVu Sans",system-ui,sans-serif;
+  --mx:8vw; --barra:44px;
+  --logo:url(../../../assets/img/logo-pdac/LOGO_DaC_Emblema_Metal_Latao.png);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--base);color:var(--chumbo);font-family:var(--serif);
+  font-size:20px;line-height:1.62;-webkit-font-smoothing:antialiased}
+@media(max-width:900px){:root{--mx:6vw}body{font-size:17px}}
+@media(max-width:560px){:root{--mx:5vw}}
+

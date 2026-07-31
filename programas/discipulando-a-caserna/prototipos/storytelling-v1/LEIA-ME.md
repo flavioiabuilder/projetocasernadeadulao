@@ -2,9 +2,33 @@
 
 Deck autoexplicativo em 10 atos, derivado de [`docs/storytelling/`](../../docs/storytelling/).
 
+## Estrutura
+
+```
+storytelling-v1/
+  index.html       # chrome + slides
+  css/tokens.css   # variáveis e base
+  css/layout.css   # deck, cromo, impressão
+  css/components.css
+  js/deck.js       # navegação, índice, resume
+  js/shine.js      # brilho metálico (ponteiro fino)
+```
+
+Runtime estático: HTML + CSS + JS clássico, sem bundler e sem CDN. Emblema em `../../assets/img/logo-pdac/`.
+
 ## Como abrir
 
-Duplo clique em `index.html` (offline; fontes e emblema embutidos). Sem CDN.
+Servir a pasta do repositório (ou do programa) e abrir o protótipo:
+
+```bash
+npx --yes serve . -l 4174
+# http://localhost:4174/programas/discipulando-a-caserna/prototipos/storytelling-v1/
+```
+
+Na prévia pública (GitHub Pages):  
+`…/programas/discipulando-a-caserna/prototipos/storytelling-v1/`
+
+Duplo clique em `file://` não é o modo suportado (CSS/JS externos).
 
 ## Escopo
 
@@ -40,12 +64,13 @@ Ver [`docs/storytelling/auditoria-fidelidade-v1.md`](../../docs/storytelling/aud
 - Frase-âncora restaurada em S31 (regra C.3)
 - Telas após S63: homologação, prefácio, “se a resposta for não” (3ª pessoa institucional)
 - `noindex`, skip link, `:focus-visible`, impressão com acordeões/matriz abertos, scroll sem smooth sob `prefers-reduced-motion`
+- CSS/JS extraídos do monólito HTML (mesma forma multiarquivo do prospecto)
 
 ## Revisão humana (próximo passo)
 
-1. Abrir `index.html` e percorrer os 10 atos + bloco de homologação.
+1. Abrir o deck no navegador (via `serve` ou Pages) e percorrer os 10 atos + bloco de homologação.
 2. Confirmar ou retirar claims marcados como estudo (auditoria em `docs/storytelling/auditoria-fidelidade-v1.md`).
-3. Teste C.4: entregar o arquivo a alguém de fora e pedir — _o que é isto, por que existe, o que se espera de quem lê?_
+3. Teste C.4: entregar a URL a alguém de fora e pedir — _o que é isto, por que existe, o que se espera de quem lê?_
 4. Só então decidir promoção (irmão, substituto da homologação, ou gerar via tooling).
 
 ## Promoção
@@ -63,4 +88,5 @@ node ferramentas/aplicar-storytelling-institucional.js
 node ferramentas/aplicar-storytelling-voz-institucional.js
 ```
 
+Scripts em `ferramentas/` leem/escrevem `index.html`, `css/*` e `js/*` conforme o trecho.  
 `aplicar-storytelling-pastoral.js` é alias depreciado (encaminha para a pipeline institucional).

@@ -1,25 +1,25 @@
 "use strict";
 /**
  * Pipeline do protótipo storytelling-v1: fidelidade + a11y + voz institucional.
- * Parte do HTML em prototipos/storytelling-v1/index.html (cópia de docs/storytelling).
+ * Protótipo multiarquivo: index.html + css/ + js/ (ver _storytelling-paths.js).
  * Uso: node ferramentas/aplicar-storytelling-institucional.js
  *
  * Para só ajustar a voz num deck já patchado:
  *   node ferramentas/aplicar-storytelling-voz-institucional.js
  */
 const fs = require("fs");
-const path = require("path");
+const paths = require("./_storytelling-paths");
 
 pipeline: {
-  const htmlPath = path.join(
-    __dirname,
-    "..",
-    "prototipos",
-    "storytelling-v1",
-    "index.html"
-  );
+  const htmlPath = paths.html;
+  const layoutCssPath = paths.css.layout;
+  const componentsCssPath = paths.css.components;
+  const deckJsPath = paths.js.deck;
 
   let h = fs.readFileSync(htmlPath, "utf8");
+  let layoutCss = fs.readFileSync(layoutCssPath, "utf8");
+  let componentsCss = fs.readFileSync(componentsCssPath, "utf8");
+  let deckJs = fs.readFileSync(deckJsPath, "utf8");
 
   function replaceOnce(hay, needle, repl, label) {
     const i = hay.indexOf(needle);
@@ -120,15 +120,15 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
 .slide-pastoral .convite-rotulo{font-family:var(--sans);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--latao);margin:0 0 .4rem}
 .slide-pastoral .convite h3{margin:.2rem 0 .75rem;font-size:1.35rem}
 `;
-    h = replaceOnce(
-      h,
+    layoutCss = replaceOnce(
+      layoutCss,
       "@media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}",
       a11yCss +
         "@media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}",
       "a11y-css"
     );
-    h = replaceOnce(
-      h,
+    layoutCss = replaceOnce(
+      layoutCss,
       "@media print{",
       `@media print{
   .acc{display:block !important}
@@ -200,10 +200,11 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
     break pipeline;
   }
 
-  // Storage / motion
-  h = replaceAllLiteral(h, "dac_pos", "dac_story_v1_pos", "storage-key");
-  h = replaceOnce(
-    h,
+  // Storage / motion (JS em deck.js)
+  deckJs = replaceAllLiteral(deckJs, "dac_pos", "dac_story_v1_pos", "storage-key");
+  h = replaceAllLiteral(h, "dac_pos", "dac_story_v1_pos", "storage-key-html");
+  deckJs = replaceOnce(
+    deckJs,
     "function vai(d){var i=Math.min(slides.length-1,Math.max(0,atual+d));\n    slides[i].scrollIntoView({behavior:'smooth'});}",
     "function vai(d){var i=Math.min(slides.length-1,Math.max(0,atual+d));\n    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;\n    slides[i].scrollIntoView({behavior:reduce?'auto':'smooth'});}",
     "scroll-reduced-motion"
@@ -275,7 +276,13 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
   }
 
   fs.writeFileSync(htmlPath, h, "utf8");
+  fs.writeFileSync(layoutCssPath, layoutCss, "utf8");
+  fs.writeFileSync(componentsCssPath, componentsCss, "utf8");
+  fs.writeFileSync(deckJsPath, deckJs, "utf8");
   console.log("Wrote", htmlPath);
+  console.log("Wrote", layoutCssPath);
+  console.log("Wrote", componentsCssPath);
+  console.log("Wrote", deckJsPath);
 
   const v = fs.readFileSync(htmlPath, "utf8");
   const endereco = (v.match(/\bo senhor\b|\bO senhor\b|\bao senhor\b/g) || []).length;
