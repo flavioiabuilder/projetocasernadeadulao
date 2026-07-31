@@ -28,6 +28,34 @@ function normalizarTexto(conteudo) {
     .trim();
 }
 
+/**
+ * Extrai texto de word/document.xml preservando palavras partidas entre
+ * runs adjacentes (<w:t>). Espaços só entram em limites semânticos
+ * (parágrafo, tab, quebra) — não entre tags internas de formatação.
+ */
+function textoDeDocumentXml(xml) {
+  const comLimites = xml
+    .replace(/<\/w:p>/giu, "\n")
+    .replace(/<w:tab\b[^>]*\/?>/giu, "\t")
+    .replace(/<w:br\b[^>]*\/?>/giu, "\n")
+    .replace(/<w:cr\b[^>]*\/?>/giu, "\n");
+
+  return comLimites
+    .replace(/<[^>]+>/gu, "")
+    .replace(/&nbsp;|&#160;/giu, " ")
+    .replace(/&amp;/giu, "&")
+    .replace(/&lt;/giu, "<")
+    .replace(/&gt;/giu, ">")
+    .replace(/&quot;/giu, '"')
+    .replace(/&#39;|&apos;/giu, "'")
+    .replace(/&#(\d+);/gu, (_, codigo) => String.fromCodePoint(Number(codigo)))
+    .replace(/&#x([0-9a-f]+);/giu, (_, codigo) =>
+      String.fromCodePoint(Number.parseInt(codigo, 16))
+    )
+    .replace(/\s+/gu, " ")
+    .trim();
+}
+
 /** Retorna os marcadores editoriais indevidos encontrados no conteúdo. */
 function encontrarMarcadores(conteudo) {
   const texto = normalizarTexto(conteudo);
@@ -45,7 +73,7 @@ function extrairTextoDocx(arquivo) {
   });
 
   if (!viaUnzip.error && viaUnzip.status === 0 && viaUnzip.stdout) {
-    return normalizarTexto(viaUnzip.stdout);
+    return textoDeDocumentXml(viaUnzip.stdout);
   }
 
   // Fallback Windows / ambientes sem unzip: PowerShell ZipFile
@@ -67,7 +95,7 @@ try {
   );
 
   if (!viaPs.error && viaPs.status === 0 && viaPs.stdout) {
-    return normalizarTexto(viaPs.stdout);
+    return textoDeDocumentXml(viaPs.stdout);
   }
 
   const detalhe =
@@ -122,5 +150,6 @@ module.exports = {
   encontrarMarcadores,
   extrairTextoDocx,
   normalizarTexto,
+  textoDeDocumentXml,
   verificarGuia,
 };

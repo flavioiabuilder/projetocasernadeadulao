@@ -8,6 +8,7 @@ const path = require("node:path");
 const {
   encontrarMarcadores,
   extrairTextoDocx,
+  textoDeDocumentXml,
   verificarGuia,
 } = require("../../ferramentas/verificar-guia-mestre");
 
@@ -102,6 +103,14 @@ describe("proteção do prefácio não homologado", () => {
     assert.deepEqual(encontrarMarcadores(texto), []);
   });
 
+  it("detecta marcador partido no meio da palavra entre runs DOCX", () => {
+    const xml =
+      "<w:document><w:body><w:p><w:r><w:t>Eu o vali</w:t></w:r>" +
+      "<w:r><w:t>do pastoralmente.</w:t></w:r></w:p></w:body></w:document>";
+    assert.equal(textoDeDocumentXml(xml), "Eu o valido pastoralmente.");
+    assert.equal(encontrarMarcadores(textoDeDocumentXml(xml)).length, 1);
+  });
+
   it("lê apenas o corpo do DOCX e ignora marcador presente em metadados", () => {
     const temporario = fs.mkdtempSync(path.join(os.tmpdir(), "guia-mestre-"));
     const docx = path.join(temporario, "fixture.docx");
@@ -120,6 +129,24 @@ describe("proteção do prefácio não homologado", () => {
     ]);
 
     assert.deepEqual(encontrarMarcadores(extrairTextoDocx(docx)), []);
+    fs.rmSync(temporario, { recursive: true, force: true });
+  });
+
+  it("detecta marcador partido entre runs no DOCX extraído via zip", () => {
+    const temporario = fs.mkdtempSync(path.join(os.tmpdir(), "guia-mestre-"));
+    const docx = path.join(temporario, "fixture-split.docx");
+    escreverZipStore(docx, [
+      {
+        nome: "word/document.xml",
+        dados: Buffer.from(
+          "<w:document><w:body><w:p><w:r><w:t>Eu o vali</w:t></w:r>" +
+            "<w:r><w:t>do pastoralmente.</w:t></w:r></w:p></w:body></w:document>",
+          "utf8"
+        ),
+      },
+    ]);
+
+    assert.equal(encontrarMarcadores(extrairTextoDocx(docx)).length, 1);
     fs.rmSync(temporario, { recursive: true, force: true });
   });
 
