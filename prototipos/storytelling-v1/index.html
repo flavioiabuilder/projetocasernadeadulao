@@ -883,8 +883,7 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
     });
     lines.push('','Observações:');
     lines.push((observacoes&&observacoes.value.trim())||'(nenhuma)');
-    return lines.join('
-');
+    return lines.join('\n');
   }
   function atualizarEmail(){
     if(!responder)return;

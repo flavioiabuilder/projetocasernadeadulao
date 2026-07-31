@@ -2,7 +2,6 @@
 
 const { describe, it } = require("node:test");
 const assert = require("node:assert/strict");
-const { execFileSync } = require("node:child_process");
 const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
@@ -11,6 +10,79 @@ const {
   extrairTextoDocx,
   verificarGuia,
 } = require("../../ferramentas/verificar-guia-mestre");
+
+function crc32(buf) {
+  let c = ~0;
+  for (let i = 0; i < buf.length; i++) {
+    c ^= buf[i];
+    for (let k = 0; k < 8; k++) {
+      c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1;
+    }
+  }
+  return ~c >>> 0;
+}
+
+/** ZIP store (sem compressão) suficiente para fixture DOCX. */
+function escreverZipStore(destino, arquivos) {
+  const partes = [];
+  const centrais = [];
+  let offset = 0;
+
+  for (const { nome, dados } of arquivos) {
+    const nomeBuf = Buffer.from(nome, "utf8");
+    const soma = crc32(dados);
+    const local = Buffer.alloc(30 + nomeBuf.length);
+    local.writeUInt32LE(0x04034b50, 0);
+    local.writeUInt16LE(20, 4);
+    local.writeUInt16LE(0, 6);
+    local.writeUInt16LE(0, 8);
+    local.writeUInt16LE(0, 10);
+    local.writeUInt16LE(0, 12);
+    local.writeUInt32LE(soma, 14);
+    local.writeUInt32LE(dados.length, 18);
+    local.writeUInt32LE(dados.length, 22);
+    local.writeUInt16LE(nomeBuf.length, 26);
+    local.writeUInt16LE(0, 28);
+    nomeBuf.copy(local, 30);
+
+    const central = Buffer.alloc(46 + nomeBuf.length);
+    central.writeUInt32LE(0x02014b50, 0);
+    central.writeUInt16LE(20, 4);
+    central.writeUInt16LE(20, 6);
+    central.writeUInt16LE(0, 8);
+    central.writeUInt16LE(0, 10);
+    central.writeUInt16LE(0, 12);
+    central.writeUInt16LE(0, 14);
+    central.writeUInt32LE(soma, 16);
+    central.writeUInt32LE(dados.length, 20);
+    central.writeUInt32LE(dados.length, 24);
+    central.writeUInt16LE(nomeBuf.length, 28);
+    central.writeUInt16LE(0, 30);
+    central.writeUInt16LE(0, 32);
+    central.writeUInt16LE(0, 34);
+    central.writeUInt16LE(0, 36);
+    central.writeUInt32LE(0, 38);
+    central.writeUInt32LE(offset, 42);
+    nomeBuf.copy(central, 46);
+
+    partes.push(local, dados);
+    centrais.push(central);
+    offset += local.length + dados.length;
+  }
+
+  const centralDir = Buffer.concat(centrais);
+  const end = Buffer.alloc(22);
+  end.writeUInt32LE(0x06054b50, 0);
+  end.writeUInt16LE(0, 4);
+  end.writeUInt16LE(0, 6);
+  end.writeUInt16LE(arquivos.length, 8);
+  end.writeUInt16LE(arquivos.length, 10);
+  end.writeUInt32LE(centralDir.length, 12);
+  end.writeUInt32LE(offset, 16);
+  end.writeUInt16LE(0, 20);
+
+  fs.writeFileSync(destino, Buffer.concat([...partes, centralDir, end]));
+}
 
 describe("proteção do prefácio não homologado", () => {
   for (const marcador of [
@@ -32,19 +104,20 @@ describe("proteção do prefácio não homologado", () => {
 
   it("lê apenas o corpo do DOCX e ignora marcador presente em metadados", () => {
     const temporario = fs.mkdtempSync(path.join(os.tmpdir(), "guia-mestre-"));
-    const pasta = path.join(temporario, "fixture");
-    fs.mkdirSync(path.join(pasta, "word"), { recursive: true });
-    fs.mkdirSync(path.join(pasta, "docProps"), { recursive: true });
-    fs.writeFileSync(
-      path.join(pasta, "word", "document.xml"),
-      "<w:document><w:t>Homologação pastoral pendente.</w:t></w:document>"
-    );
-    fs.writeFileSync(
-      path.join(pasta, "docProps", "core.xml"),
-      "<metadata>Eu o valido pastoralmente.</metadata>"
-    );
     const docx = path.join(temporario, "fixture.docx");
-    execFileSync("zip", ["-qr", docx, "."], { cwd: pasta });
+    escreverZipStore(docx, [
+      {
+        nome: "word/document.xml",
+        dados: Buffer.from(
+          "<w:document><w:t>Homologação pastoral pendente.</w:t></w:document>",
+          "utf8"
+        ),
+      },
+      {
+        nome: "docProps/core.xml",
+        dados: Buffer.from("<metadata>Eu o valido pastoralmente.</metadata>", "utf8"),
+      },
+    ]);
 
     assert.deepEqual(encontrarMarcadores(extrairTextoDocx(docx)), []);
     fs.rmSync(temporario, { recursive: true, force: true });

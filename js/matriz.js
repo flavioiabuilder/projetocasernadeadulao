@@ -122,10 +122,7 @@
 
     function anunciar(mods) {
       if (!live) return;
-      const total = mods.reduce(
-        (acc, m) => acc + licoesDoModulo(m.numero).length,
-        0
-      );
+      const total = mods.reduce((acc, m) => acc + licoesDoModulo(m.numero).length, 0);
       if (filtroAtual === "todos") {
         live.textContent = `Exibindo ${total} encontros de todos os módulos.`;
       } else {

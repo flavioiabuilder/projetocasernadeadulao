@@ -8,14 +8,16 @@
     "generate:apresentacao": "node ferramentas/gerar-apresentacao-homologacao.js",
     "check:encoding": "node ferramentas/check-encoding.js",
     "check:guia-mestre": "node ferramentas/verificar-guia-mestre.js",
+    "check:paridade": "node ferramentas/verificar-paridade-editorial.js",
     "lint:html": "node ferramentas/lint-html.js",
     "lint:css": "stylelint css/**/*.css",
     "lint:js": "eslint js/**/*.js ferramentas/**/*.js testes/**/*.js",
+    "format": "prettier --write css/**/*.css js/**/*.js ferramentas/**/*.js testes/**/*.js *.md conteudo/**/*.md docs/**/*.md",
     "format:check": "prettier --check css/**/*.css js/**/*.js ferramentas/**/*.js testes/**/*.js *.md conteudo/**/*.md docs/**/*.md",
     "test": "node --test testes/unitarios/*.test.js",
     "test:a11y": "playwright test testes/e2e/site.spec.js -g \"a11y\"",
     "test:e2e": "playwright test testes/e2e",
-    "validate": "npm run generate && npm run check:encoding && npm run check:guia-mestre && npm run lint:html && npm run lint:css && npm run lint:js && npm run test && npm run test:e2e"
+    "validate": "npm run generate && npm run generate:apresentacao && npm run check:encoding && npm run check:guia-mestre && npm run check:paridade && npm run lint:html && npm run lint:css && npm run lint:js && npm run format:check && npm run test && npm run test:e2e"
   },
   "engines": {
     "node": ">=18"

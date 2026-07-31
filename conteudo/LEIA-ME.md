@@ -3,16 +3,16 @@
 Arquivos de conteúdo para o site de apresentação. **São a fonte da verdade do site.**
 O agente deve consumir estes arquivos e nunca PDF ou DOCX.
 
-| Arquivo | Conteúdo | Uso |
-|---|---|---|
-| `secoes-01-04-a-necessidade.md` | Texto literal das seções 1 a 4 | Movimento I |
-| `secoes-05-07-a-resposta.md` | Texto das seções 5–6 e transição da 7 | Movimento II |
-| `secoes-08-11-o-programa.md` | Texto das seções 8 a 11 | Movimento III |
-| `secoes-12-15-a-prova-e-o-pedido.md` | Texto das seções 12 a 15 | Movimentos IV–V |
-| `identidade.md` | Logomarca, símbolos e sistema gráfico | Seção 7 — A marca |
-| `programa.md` | Arquitetura, público, princípios, matriz (espelho) | Movimento III |
-| `matriz-curricular.json` | As 48 lições | Seção 9 — Matriz curricular |
-| `modulos.json` | Os 4 módulos (ênfase, peça, marcha, estado) | Seções 7, 8 e 14 |
+| Arquivo                              | Conteúdo                                           | Uso                         |
+| ------------------------------------ | -------------------------------------------------- | --------------------------- |
+| `secoes-01-04-a-necessidade.md`      | Texto literal das seções 1 a 4                     | Movimento I                 |
+| `secoes-05-07-a-resposta.md`         | Texto das seções 5–6 e transição da 7              | Movimento II                |
+| `secoes-08-11-o-programa.md`         | Texto das seções 8 a 11                            | Movimento III               |
+| `secoes-12-15-a-prova-e-o-pedido.md` | Texto das seções 12 a 15                           | Movimentos IV–V             |
+| `identidade.md`                      | Logomarca, símbolos e sistema gráfico              | Seção 7 — A marca           |
+| `programa.md`                        | Arquitetura, público, princípios, matriz (espelho) | Movimento III               |
+| `matriz-curricular.json`             | As 48 lições                                       | Seção 9 — Matriz curricular |
+| `modulos.json`                       | Os 4 módulos (ênfase, peça, marcha, estado)        | Seções 7, 8 e 14            |
 
 ## Lacunas registradas
 

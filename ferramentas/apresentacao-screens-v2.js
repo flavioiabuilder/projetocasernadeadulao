@@ -183,7 +183,9 @@ module.exports = function buildScreensV2(ctx) {
         </div>
         ${notaAutor(
           [
-            esc("Preciso dizer isto antes de mostrar qualquer estrutura: nada aqui é invenção metodológica minha. O que descrevo nas próximas telas é a organização, em papel, de algo que o senhor viu acontecer antes de existir qualquer documento. Se em algum ponto a estrutura parecer maior do que aquilo que ela serve, é erro meu de proporção — e é exatamente esse tipo de erro que peço que o senhor aponte."),
+            esc(
+              "Preciso dizer isto antes de mostrar qualquer estrutura: nada aqui é invenção metodológica minha. O que descrevo nas próximas telas é a organização, em papel, de algo que o senhor viu acontecer antes de existir qualquer documento. Se em algum ponto a estrutura parecer maior do que aquilo que ela serve, é erro meu de proporção — e é exatamente esse tipo de erro que peço que o senhor aponte."
+            ),
           ],
           true
         )}
@@ -528,7 +530,9 @@ module.exports = function buildScreensV2(ctx) {
         <p>Nenhum discípulo deve ser constrangido ou exposto.</p>
         ${notaAutor(
           [
-            esc("Esta foi a preocupação que mais me ocupou na revisão. Um sistema de insígnias, num ambiente onde a hierarquia já é linguagem corrente, tem caminho curto para virar vaidade. O Guia condena triunfalismo em cinco seções distintas, e não como ressalva de rodapé: como critério de condução. Ainda assim, é o ponto do projeto em que eu mais precisaria da sua correção, porque é o ponto em que a boa intenção do autor não basta."),
+            esc(
+              "Esta foi a preocupação que mais me ocupou na revisão. Um sistema de insígnias, num ambiente onde a hierarquia já é linguagem corrente, tem caminho curto para virar vaidade. O Guia condena triunfalismo em cinco seções distintas, e não como ressalva de rodapé: como critério de condução. Ainda assim, é o ponto do projeto em que eu mais precisaria da sua correção, porque é o ponto em que a boa intenção do autor não basta."
+            ),
           ],
           false
         )}
@@ -587,7 +591,9 @@ module.exports = function buildScreensV2(ctx) {
         </div>
         ${notaAutor(
           [
-            esc("A caderneta é a única peça material que o próprio Guia praticamente exige, porque a Ordem do Dia precisa ser registrada em algum lugar. Coloco-a antes de qualquer outra aplicação da marca de propósito: quero que fique claro que ela nasceu da pedagogia. O que vem na tela seguinte não tem essa justificativa, e por isso está marcado como estudo."),
+            esc(
+              "A caderneta é a única peça material que o próprio Guia praticamente exige, porque a Ordem do Dia precisa ser registrada em algum lugar. Coloco-a antes de qualquer outra aplicação da marca de propósito: quero que fique claro que ela nasceu da pedagogia. O que vem na tela seguinte não tem essa justificativa, e por isso está marcado como estudo."
+            ),
           ],
           false
         )}
@@ -608,7 +614,9 @@ module.exports = function buildScreensV2(ctx) {
         ${notaAutor(
           [
             esc("Esta tela não é um pedido. É uma consulta."),
-            esc("Trago o estudo porque acho que o senhor precisa saber que ele existe e que eu pensei nele — não porque queira aprovação hoje. Se a resposta for que o projeto não deve ter esse tipo de aplicação, ou não agora, isso encerra o assunto e não haverá insistência. Registrei salvaguardas abaixo porque, se um dia houver decisão favorável, ela já deve nascer com limite."),
+            esc(
+              "Trago o estudo porque acho que o senhor precisa saber que ele existe e que eu pensei nele — não porque queira aprovação hoje. Se a resposta for que o projeto não deve ter esse tipo de aplicação, ou não agora, isso encerra o assunto e não haverá insistência. Registrei salvaguardas abaixo porque, se um dia houver decisão favorável, ela já deve nascer com limite."
+            ),
           ],
           false
         )}
@@ -820,7 +828,9 @@ module.exports = function buildScreensV2(ctx) {
         <div class="convite">
           <p class="convite-rotulo">CONVITE</p>
           <h3>O prefácio</h3>
-          ${CONVITE.split("\n\n").map((p) => `<p>${esc(p)}</p>`).join("")}
+          ${CONVITE.split("\n\n")
+            .map((p) => `<p>${esc(p)}</p>`)
+            .join("")}
         </div>
         <div class="obs-geral-bloco">
           <label for="obs-geral">Observações gerais</label>

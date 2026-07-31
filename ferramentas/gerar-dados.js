@@ -20,7 +20,25 @@ function lerUtf8(caminho) {
 function escreverUtf8(caminho, conteudo) {
   const saida = conteudo.endsWith("\n") ? conteudo : `${conteudo}\n`;
   fs.mkdirSync(path.dirname(caminho), { recursive: true });
-  fs.writeFileSync(caminho, saida, { encoding: "utf8" });
+  let ultimoErro;
+  for (let tentativa = 0; tentativa < 5; tentativa++) {
+    try {
+      fs.writeFileSync(caminho, saida, { encoding: "utf8" });
+      return;
+    } catch (err) {
+      ultimoErro = err;
+      const codigo = err && err.code;
+      if (codigo !== "EBUSY" && codigo !== "EPERM" && codigo !== "UNKNOWN") {
+        throw err;
+      }
+      const espera = 40 * (tentativa + 1);
+      const inicio = Date.now();
+      while (Date.now() - inicio < espera) {
+        /* espera breve contra lock do Windows/AV */
+      }
+    }
+  }
+  throw ultimoErro;
 }
 
 function assertSemMojibake(texto, rotulo) {
@@ -70,7 +88,9 @@ function validarMatriz(dados) {
       }
     });
     if (typeof l.produzida !== "boolean") {
-      throw new Error(`matriz-curricular.json: lição ${l.numero} — produzida deve ser boolean`);
+      throw new Error(
+        `matriz-curricular.json: lição ${l.numero} — produzida deve ser boolean`
+      );
     }
   });
 }
@@ -221,6 +241,52 @@ function injetarFallback(modulos, matriz) {
   console.log("OK", "index.html (fallback noscript)");
 }
 
+function gerarLicao1() {
+  const origemRel = "assets/img/licao1/manifest.json";
+  const destinoRel = "js/dados/licao1.js";
+  const bruto = lerUtf8(path.join(raiz, origemRel));
+  assertSemMojibake(bruto, origemRel);
+  let manifesto;
+  try {
+    manifesto = JSON.parse(bruto);
+  } catch (err) {
+    throw new Error(`JSON inválido em ${origemRel}: ${err.message}`);
+  }
+  if (!Array.isArray(manifesto) || !manifesto.length) {
+    throw new Error(`${origemRel}: esperado array de páginas`);
+  }
+
+  const dados = manifesto.map((p, i) => {
+    ["edicao", "pagina", "arquivo", "largura", "altura", "arquivo_sm"].forEach(
+      (campo) => {
+        if (p[campo] == null) {
+          throw new Error(`${origemRel}: item ${i} sem campo "${campo}"`);
+        }
+      }
+    );
+    return {
+      edicao: p.edicao,
+      pagina: p.pagina,
+      arquivo: p.arquivo,
+      largura: p.largura,
+      altura: p.altura,
+      arquivo_sm: p.arquivo_sm,
+    };
+  });
+
+  const corpo = JSON.stringify(dados, null, 2);
+  const saida = `/**
+ * Gerado a partir de ${origemRel}.
+ * Não edite à mão — altere o manifesto e rode: node ferramentas/gerar-dados.js
+ */
+window.DADOS_LICAO1 = ${corpo};
+`;
+  assertSemMojibake(saida, destinoRel);
+  escreverUtf8(path.join(raiz, destinoRel), saida);
+  console.log("OK", destinoRel);
+  return dados;
+}
+
 function main() {
   const modulos = gerarScript(
     "conteudo/modulos.json",
@@ -234,6 +300,7 @@ function main() {
     "DADOS_MATRIZ",
     validarMatriz
   );
+  gerarLicao1();
   injetarFallback(modulos, matriz);
 }
 

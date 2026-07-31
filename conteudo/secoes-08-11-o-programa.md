@@ -13,12 +13,12 @@
 
 **Números de destaque:**
 
-| Valor | Rótulo |
-|---|---|
-| 4 | módulos sequenciais |
-| 12 | lições por módulo |
-| 48 | encontros ao todo |
-| ~1 | ano de percurso |
+| Valor | Rótulo              |
+| ----- | ------------------- |
+| 4     | módulos sequenciais |
+| 12    | lições por módulo   |
+| 48    | encontros ao todo   |
+| ~1    | ano de percurso     |
 
 **Texto:**
 
@@ -76,16 +76,16 @@
 
 **Camadas do material impresso (Módulo 1 produzido):**
 
-| Camada | Nome | Descrição |
-|---|---|---|
-| 1 | Leitura Bíblica em Classe | O texto é lido diretamente das Escrituras, com a turma, antes de qualquer comentário. A Palavra vem primeiro. |
-| 2 | Introdução | Situa o discípulo na jornada: onde ele está, o que já recebeu e o que esta lição trata. |
-| 3 | Comentário em três seções | A exposição avança em três movimentos (I, II, III), cada um com pontos numerados, sempre voltando o olhar para Cristo. |
-| 4 | Para contemplar | Uma caixa que interrompe a exposição de propósito e devolve o olhar ao Comandante. Contemplar vem antes de aplicar. |
-| 5 | Ampliando o conhecimento | Aprofundamento de um termo grego, uma imagem bíblica ou um dado histórico que ilumina o texto. |
-| 6 | Conclusão | Sintetiza a lição, oferece uma confissão-âncora para o discípulo levar consigo e faz a ponte para a lição seguinte. |
-| 7 | Perguntas para partilha | Cinco perguntas de aplicação. Na Edição do Instrutor, cada uma vem com orientação de condução. |
-| 8 | Oração e Ordem do Dia | Fecha o encontro com oração, compromisso escrito e ordens concretas para a semana. |
+| Camada | Nome                      | Descrição                                                                                                              |
+| ------ | ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 1      | Leitura Bíblica em Classe | O texto é lido diretamente das Escrituras, com a turma, antes de qualquer comentário. A Palavra vem primeiro.          |
+| 2      | Introdução                | Situa o discípulo na jornada: onde ele está, o que já recebeu e o que esta lição trata.                                |
+| 3      | Comentário em três seções | A exposição avança em três movimentos (I, II, III), cada um com pontos numerados, sempre voltando o olhar para Cristo. |
+| 4      | Para contemplar           | Uma caixa que interrompe a exposição de propósito e devolve o olhar ao Comandante. Contemplar vem antes de aplicar.    |
+| 5      | Ampliando o conhecimento  | Aprofundamento de um termo grego, uma imagem bíblica ou um dado histórico que ilumina o texto.                         |
+| 6      | Conclusão                 | Sintetiza a lição, oferece uma confissão-âncora para o discípulo levar consigo e faz a ponte para a lição seguinte.    |
+| 7      | Perguntas para partilha   | Cinco perguntas de aplicação. Na Edição do Instrutor, cada uma vem com orientação de condução.                         |
+| 8      | Oração e Ordem do Dia     | Fecha o encontro com oração, compromisso escrito e ordens concretas para a semana.                                     |
 
 **Nota do Guia (elementos mínimos de planejamento):**
 
@@ -104,23 +104,23 @@
 
 **Exclusivo do Instrutor:**
 
-| Item | Descrição |
-|---|---|
-| Objetivos da lição | O que se espera que o discípulo contemple, creia e pratique. |
-| Plano de aula cronometrado | A hora e meia dividida em blocos, com o que fazer em cada um. |
-| Subsídio de condução | Diretriz pastoral sobre o tom da lição: o que enfatizar e o que evitar. |
-| Orientação sob cada pergunta | Para onde conduzir a partilha, sem constranger nem expor ninguém. |
-| Resultado esperado | O que deve ter mudado quando o encontro terminar. |
+| Item                         | Descrição                                                               |
+| ---------------------------- | ----------------------------------------------------------------------- |
+| Objetivos da lição           | O que se espera que o discípulo contemple, creia e pratique.            |
+| Plano de aula cronometrado   | A hora e meia dividida em blocos, com o que fazer em cada um.           |
+| Subsídio de condução         | Diretriz pastoral sobre o tom da lição: o que enfatizar e o que evitar. |
+| Orientação sob cada pergunta | Para onde conduzir a partilha, sem constranger nem expor ninguém.       |
+| Resultado esperado           | O que deve ter mudado quando o encontro terminar.                       |
 
 **Ritmo do encontro (Guia 3.3):**
 
 > Adota-se, como referência, a realização de um encontro semanal, com duração entre 1h30 e 2h.
 
-| Momento | Faixa | Finalidade |
-|---|---|---|
-| Contemplação na Palavra | 15 a 25 min | Leitura e exposição bíblica; ver a pessoa e a obra de Cristo. |
-| Discernimento e aplicação em grupo | 25 a 35 min | Conectar o princípio bíblico à realidade militar/prisional. |
-| Oração e compromisso | 10 a 15 min | Resposta espiritual nascida da graça, não de desempenho. |
-| Ordem do Dia | — | Ação prática simples e verificável para a semana. |
+| Momento                            | Faixa       | Finalidade                                                    |
+| ---------------------------------- | ----------- | ------------------------------------------------------------- |
+| Contemplação na Palavra            | 15 a 25 min | Leitura e exposição bíblica; ver a pessoa e a obra de Cristo. |
+| Discernimento e aplicação em grupo | 25 a 35 min | Conectar o princípio bíblico à realidade militar/prisional.   |
+| Oração e compromisso               | 10 a 15 min | Resposta espiritual nascida da graça, não de desempenho.      |
+| Ordem do Dia                       | —           | Ação prática simples e verificável para a semana.             |
 
 > Essa ordem não é régua de “quem é mais espiritual”, mas treino de prontidão para prolongar, na rotina, aquilo que Cristo começou a trabalhar no encontro.

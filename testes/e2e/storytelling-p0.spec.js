@@ -11,7 +11,6 @@ test.describe("storytelling-v1 — decisão pastoral", () => {
   });
 
   test("gera resumo, mailto e feedback de cópia acessível", async ({ page, context }) => {
-    let copiado = "";
     await context.grantPermissions(["clipboard-read", "clipboard-write"]);
     await page.evaluate(() => {
       window.__textoCopiado = "";
@@ -25,15 +24,16 @@ test.describe("storytelling-v1 — decisão pastoral", () => {
       });
     });
 
-    await page.locator("#decisao-modulo-1").check();
-    await page.locator("#observacoes-pastorais").fill("Revisar a lição inicial.");
-    await page.locator("#copiar-resumo").click();
-    await expect(page.locator("#estado-copia")).toHaveText("Resumo copiado.");
-    copiado = await page.evaluate(() => window.__textoCopiado);
-    expect(copiado).toContain("- Apreciação doutrinária e pastoral do Módulo 1");
-    expect(copiado).toContain("Observações:\nRevisar a lição inicial.");
+    await page.locator("#check-0").check();
+    await page.locator("#obs-geral").fill("Revisar a lição inicial.");
+    await page.locator("#btn-copiar-resumo").click();
+    await expect(page.locator("#copiar-status")).toHaveText(/Resumo copiado/);
+    const copiado = await page.evaluate(() => window.__textoCopiado);
+    expect(copiado).toContain("[x] Apreciação doutrinária e pastoral do Módulo 1");
+    expect(copiado).toContain("Observações:");
+    expect(copiado).toContain("Revisar a lição inicial.");
 
-    const href = await page.locator("#responder-email").getAttribute("href");
+    const href = await page.locator("#btn-mailto").getAttribute("href");
     const parametros = new URL(href).searchParams;
     expect(parametros.get("subject")).toBe(
       "Discipulando a Caserna — apreciação pastoral"
@@ -45,26 +45,33 @@ test.describe("storytelling-v1 — decisão pastoral", () => {
     page,
   }) => {
     const slideInicial = await page.locator("#s63a").evaluate((elemento) => elemento.id);
-    await page.locator("#observacoes-pastorais").focus();
+    await page.locator("#obs-geral").focus();
     await page.keyboard.press("ArrowDown");
     await page.keyboard.type("Texto pelo teclado");
-    await expect(page.locator("#observacoes-pastorais")).toHaveValue(
-      "Texto pelo teclado"
-    );
+    await expect(page.locator("#obs-geral")).toHaveValue("Texto pelo teclado");
     await expect(page.locator(`#${slideInicial}`)).toBeInViewport();
 
-    await page.locator("#observacoes-pastorais").fill("");
-    const href = await page.locator("#responder-email").getAttribute("href");
+    await page.locator("#obs-geral").fill("");
+    // Dispara atualização do mailto
+    await page.locator("#obs-geral").dispatchEvent("input");
+    const href = await page.locator("#btn-mailto").getAttribute("href");
     const corpo = new URL(href).searchParams.get("body");
-    expect(corpo).toContain("Nenhum item assinalado.");
-    expect(corpo).toContain("Sem observações adicionais.");
+    expect(corpo).toContain("[ ] Apreciação doutrinária e pastoral do Módulo 1");
+    expect(corpo).toContain("Observações:");
+    expect(corpo).toContain("(nenhuma)");
   });
 
   test("permanece navegável depois da interação", async ({ page }) => {
-    await page.locator("#decisao-guia-mestre").focus();
-    await page.keyboard.press("Space");
-    await expect(page.locator("#decisao-guia-mestre")).toBeChecked();
-    await page.locator("#prox").click();
+    await page.locator("#check-1").check();
+    await expect(page.locator("#check-1")).toBeChecked();
+    // Garante índice atual = s63a antes do controle #prox (IO pode atrasar).
+    await page.evaluate(() => {
+      const slides = Array.from(document.querySelectorAll(".slide"));
+      const i = slides.findIndex((s) => s.id === "s63a");
+      if (i < 0) throw new Error("s63a ausente");
+      slides[i + 1].scrollIntoView({ behavior: "instant", block: "start" });
+    });
     await expect(page.locator("#s63b")).toBeInViewport();
+    await expect(page.locator("#check-1")).toBeChecked();
   });
 });

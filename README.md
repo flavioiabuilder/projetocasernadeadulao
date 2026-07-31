@@ -20,13 +20,13 @@ programa, a prova e o pedido pastoral.
 
 Cinco movimentos, quinze seções:
 
-| Movimento | Seções | Status |
-|---|---|---|
-| I — A necessidade | 1–4 | publicado |
-| II — A resposta | 5–7 | publicado |
-| III — O programa | 8–11 | publicado |
-| IV — A prova | 12–13 | publicado |
-| V — O pedido | 14–15 | publicado |
+| Movimento         | Seções | Status    |
+| ----------------- | ------ | --------- |
+| I — A necessidade | 1–4    | publicado |
+| II — A resposta   | 5–7    | publicado |
+| III — O programa  | 8–11   | publicado |
+| IV — A prova      | 12–13  | publicado |
+| V — O pedido      | 14–15  | publicado |
 
 ## Como abrir
 
@@ -53,19 +53,25 @@ Citações (`>`) nos Markdown são literais — não parafrasear.
 
 ```bash
 npm install
+npx playwright install chromium
 npm run validate
 ```
 
+`validate` regenera dados e a apresentação, confere encoding/paridade editorial,
+lint HTML/CSS/JS, Prettier, testes unitários e e2e.
+
 ## Publicação
 
-- URL prevista: <https://flavioiabuilder.github.io/projetocasernadeadulao/>
+- URL: <https://flavioiabuilder.github.io/projetocasernadeadulao/>
 - Indexação bloqueada (`robots.txt` + `noindex`)
+- Artefato público filtrado via GitHub Actions — ver [`docs/publicacao.md`](docs/publicacao.md)
+- Apresentação de homologação, Guia Mestre e protótipos ficam fora do Pages público (Rota B)
 
 ## Referência de layout
 
-Mockups em `referencia/stitch/` (ignorados pelo git) orientam composição das
-seções 1, 3, 9 e 12. Ver `referencia/stitch/LEIA-ME.md` (o que extrair / rejeitar).
-Nenhum código Tailwind/CDN deles entra no produto.
+Mockups em `referencia/stitch/` (ignorados pelo git; só em clones que os tenham)
+orientam composição das seções 1, 3, 9 e 12. Nenhum código Tailwind/CDN deles
+entra no produto.
 
 ## Pendências
 

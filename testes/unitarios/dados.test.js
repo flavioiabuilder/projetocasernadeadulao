@@ -14,9 +14,7 @@ function ler(rel) {
 }
 
 function extrair(fonte, nome) {
-  const match = fonte.match(
-    new RegExp(`window\\.${nome}\\s*=\\s*([\\s\\S]*);\\s*$`)
-  );
+  const match = fonte.match(new RegExp(`window\\.${nome}\\s*=\\s*([\\s\\S]*);\\s*$`));
   assert.ok(match, `${nome} inválido`);
   return JSON.parse(match[1]);
 }
@@ -30,7 +28,12 @@ describe("dados gerados", () => {
   });
 
   it("gera sem mojibake", () => {
-    ["js/dados/modulos.js", "js/dados/matriz.js", "index.html"].forEach((rel) => {
+    [
+      "js/dados/modulos.js",
+      "js/dados/matriz.js",
+      "js/dados/licao1.js",
+      "index.html",
+    ].forEach((rel) => {
       assert.equal(MOJIBAKE.test(ler(rel)), false, rel);
     });
   });
@@ -44,15 +47,32 @@ describe("dados gerados", () => {
     assert.deepEqual(matrizJs, matrizJson);
   });
 
+  it("licao1.js espelha o manifesto sem campos auxiliares", () => {
+    const manifesto = JSON.parse(ler("assets/img/licao1/manifest.json"));
+    const licao1 = extrair(ler("js/dados/licao1.js"), "DADOS_LICAO1");
+    const esperado = manifesto.map(
+      ({ edicao, pagina, arquivo, largura, altura, arquivo_sm }) => ({
+        edicao,
+        pagina,
+        arquivo,
+        largura,
+        altura,
+        arquivo_sm,
+      })
+    );
+    assert.deepEqual(licao1, esperado);
+  });
+
   it("matriz tem 48 lições", () => {
     const matriz = extrair(ler("js/dados/matriz.js"), "DADOS_MATRIZ");
     assert.equal(matriz.total, 48);
     assert.equal(matriz.licoes.length, 48);
   });
 
-  it("gera scripts de dados sem exigir fallback no HTML deste PR", () => {
-    assert.ok(fs.existsSync(path.join(raiz, "js/dados/modulos.js")));
-    assert.ok(fs.existsSync(path.join(raiz, "js/dados/matriz.js")));
-    /* Fallback noscript volta com a seção 9 (matriz) no próximo PR. */
+  it("injeta fallback noscript delimitado", () => {
+    const html = ler("index.html");
+    assert.match(html, /FALLBACK-DADOS:START/);
+    assert.match(html, /FALLBACK-DADOS:END/);
+    assert.match(html, /<noscript[\s\S]*Matriz curricular/);
   });
 });

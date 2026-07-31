@@ -6,32 +6,32 @@ Classificação: **canônico** | **proposto/estudo** | **lacuna** | **corrigido 
 
 ## Contagem
 
-| Item | Spec MD (após correção) | HTML |
-|---|---|---|
-| Slides | 69 (S01–S69) | 69 seções `.slide` |
-| Atos | 10 | `data-ato` 1–10 |
+| Item   | Spec MD (após correção) | HTML               |
+| ------ | ----------------------- | ------------------ |
+| Slides | 69 (S01–S69)            | 69 seções `.slide` |
+| Atos   | 10                      | `data-ato` 1–10    |
 
 ## Regras C.3
 
-| Regra | Status no HTML de referência |
-|---|---|
-| Emblema sem explicação antes de S52 | OK (S01 só imagem; texto em S52) |
-| Frase-âncora 3× (S04, S31, S69) | **Faltava em S31** — adicionada no protótipo |
+| Regra                                    | Status no HTML de referência                                                |
+| ---------------------------------------- | --------------------------------------------------------------------------- |
+| Emblema sem explicação antes de S52      | OK (S01 só imagem; texto em S52)                                            |
+| Frase-âncora 3× (S04, S31, S69)          | **Faltava em S31** — adicionada no protótipo                                |
 | Silêncios S12, S19, S29, S67 sem gráfico | OK (sem ícones); fechos tipográficos em S12/S19 herdados — não densificados |
-| Caverna 3× (S02, S26, S68) | OK (SVG repetido) |
-| Sem referência a slide por número | OK |
-| Sem métricas de alcance como valor | OK |
+| Caverna 3× (S02, S26, S68)               | OK (SVG repetido)                                                           |
+| Sem referência a slide por número        | OK                                                                          |
+| Sem métricas de alcance como valor       | OK                                                                          |
 
 ## Claims institucionais (prioridade alta)
 
-| Claim | Onde | Classificação | Ação no protótipo |
-|---|---|---|---|
-| CNPJ 63.724.286/0001-78 | S33, S69 | **canônico** (Guia + `conteudo/secoes-12-15`) | Mantido |
-| Programa de evangelização/discipulado; público segurança pública | S33 | **canônico** / alinhado ao contexto do projeto | Mantido |
-| “Casa de Oração para Todos os Povos” (vínculo eclesiástico) | S33 | **lacuna** no repositório (`conteudo/` e contexto não documentam) | Texto e ficha marcados `ESTUDO · PENDENTE DE VALIDAÇÃO` |
-| “Personalidade jurídica própria” além do CNPJ | S33 | **parcial** — CNPJ canônico; formulação ampla não detalhada em `conteudo/` | Mantida com selo de estudo junto ao vínculo |
-| Setores P1–P9 / estado-maior | S34 | **lacuna** no repositório | Prosa e organograma com rótulo `ESTUDO · ESTRUTURA EM VALIDAÇÃO` |
-| Liderança pastoral definida | S33–S34 | **proposto** (destinatário Pr. Glaydston em config; relação jurídica não esclarecida no contexto) | Sem cargo inventado; organograma sem nomes |
+| Claim                                                            | Onde     | Classificação                                                                                     | Ação no protótipo                                                |
+| ---------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| CNPJ 63.724.286/0001-78                                          | S33, S69 | **canônico** (Guia + `conteudo/secoes-12-15`)                                                     | Mantido                                                          |
+| Programa de evangelização/discipulado; público segurança pública | S33      | **canônico** / alinhado ao contexto do projeto                                                    | Mantido                                                          |
+| “Casa de Oração para Todos os Povos” (vínculo eclesiástico)      | S33      | **lacuna** no repositório (`conteudo/` e contexto não documentam)                                 | Texto e ficha marcados `ESTUDO · PENDENTE DE VALIDAÇÃO`          |
+| “Personalidade jurídica própria” além do CNPJ                    | S33      | **parcial** — CNPJ canônico; formulação ampla não detalhada em `conteudo/`                        | Mantida com selo de estudo junto ao vínculo                      |
+| Setores P1–P9 / estado-maior                                     | S34      | **lacuna** no repositório                                                                         | Prosa e organograma com rótulo `ESTUDO · ESTRUTURA EM VALIDAÇÃO` |
+| Liderança pastoral definida                                      | S33–S34  | **proposto** (destinatário Pr. Glaydston em config; relação jurídica não esclarecida no contexto) | Sem cargo inventado; organograma sem nomes                       |
 
 ## Conteúdo doutrinário / programa
 

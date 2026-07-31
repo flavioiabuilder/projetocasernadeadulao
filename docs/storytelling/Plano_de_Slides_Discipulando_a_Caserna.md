@@ -1,4 +1,5 @@
 # Plano de Slides — Apresentação Institucional Autoexplicativa
+
 ## Discipulando a Caserna · Projeto Caserna de Adulão
 
 **Natureza:** apresentação de leitura autônoma. Não depende de apresentador. Todo o conteúdo necessário está em tela.
@@ -10,28 +11,28 @@
 
 # PARTE A — SISTEMA DE DESIGN
 
-*Definido uma vez. Cada slide referencia este sistema em vez de repeti-lo.*
+_Definido uma vez. Cada slide referencia este sistema em vez de repeti-lo._
 
 ## A.1 Tela e grade
 
-A apresentação é uma sequência vertical de seções de altura total, com ancoragem por rolagem (*scroll-snap*). Cada slide ocupa exatamente uma tela.
+A apresentação é uma sequência vertical de seções de altura total, com ancoragem por rolagem (_scroll-snap_). Cada slide ocupa exatamente uma tela.
 
 **Grade:** 12 colunas. Margem lateral de 8% da largura em telas grandes, 6% em telas médias, 5% no celular. Margem superior de 12% (abaixo da barra fixa) e inferior de 10%.
 
-**Área útil:** todo conteúdo vive dentro dessa moldura. Nada encosta na borda, exceto os elementos de página inteira explicitamente marcados como *full-bleed*.
+**Área útil:** todo conteúdo vive dentro dessa moldura. Nada encosta na borda, exceto os elementos de página inteira explicitamente marcados como _full-bleed_.
 
 **Celular:** a grade de 12 colunas colapsa para coluna única. Layouts de duas colunas empilham — sempre a coluna da esquerda primeiro. Tabelas viram listas de cartões.
 
 ## A.2 Paleta
 
-| Nome | Código | Uso |
-|---|---|---|
-| Base | `#F4F4F1` | fundo padrão de quase todos os slides |
-| Chumbo | `#2B2B2B` | texto corrido e títulos |
-| Estrutura | `#4A4A4A` | filetes, legendas, rótulos secundários |
-| Latão | `#8C6A46` | insígnias, destaques doutrinários, filete das notas do autor |
-| Caserna | `#1A2A44` | fundo dos slides de imersão, faixas de módulo |
-| Sombra | `#111418` | fundo dos três slides de caverna (abertura e fechamento) |
+| Nome      | Código    | Uso                                                          |
+| --------- | --------- | ------------------------------------------------------------ |
+| Base      | `#F4F4F1` | fundo padrão de quase todos os slides                        |
+| Chumbo    | `#2B2B2B` | texto corrido e títulos                                      |
+| Estrutura | `#4A4A4A` | filetes, legendas, rótulos secundários                       |
+| Latão     | `#8C6A46` | insígnias, destaques doutrinários, filete das notas do autor |
+| Caserna   | `#1A2A44` | fundo dos slides de imersão, faixas de módulo                |
+| Sombra    | `#111418` | fundo dos três slides de caverna (abertura e fechamento)     |
 
 **Regra de inversão:** quando o fundo é Caserna ou Sombra, o texto passa a `#F4F4F1` e o latão permanece latão — é a única cor que atravessa os dois regimes.
 
@@ -39,15 +40,15 @@ A apresentação é uma sequência vertical de seções de altura total, com anc
 
 Duas famílias, no máximo. Serifa para narrativa e Escritura; sem serifa condensada, em caixa alta, apenas para rótulos militares e nomes de marcha.
 
-| Estilo | Tamanho (desktop / celular) | Uso |
-|---|---|---|
-| **D1 — Display** | 76 / 40 px, serifa, peso médio | frases isoladas de slide silencioso |
-| **D2 — Título de slide** | 46 / 28 px, serifa | título de quase todo slide |
-| **H1 — Subtítulo** | 28 / 20 px, serifa | divisões internas |
-| **Corpo** | 20 / 17 px, serifa, entrelinha 1,6 | narrativa — o estilo mais usado da apresentação |
-| **Rótulo** | 13 / 11 px, sem serifa condensada, caixa alta, espaçamento +0,12em | nomes de peça, marcha, estado de aprovação |
-| **Legenda** | 15 / 13 px, sem serifa, cor Estrutura | notas de rodapé de slide, fontes, referências |
-| **Escritura** | 24 / 19 px, serifa, itálico | citações bíblicas, sempre com referência ao lado |
+| Estilo                   | Tamanho (desktop / celular)                                        | Uso                                              |
+| ------------------------ | ------------------------------------------------------------------ | ------------------------------------------------ |
+| **D1 — Display**         | 76 / 40 px, serifa, peso médio                                     | frases isoladas de slide silencioso              |
+| **D2 — Título de slide** | 46 / 28 px, serifa                                                 | título de quase todo slide                       |
+| **H1 — Subtítulo**       | 28 / 20 px, serifa                                                 | divisões internas                                |
+| **Corpo**                | 20 / 17 px, serifa, entrelinha 1,6                                 | narrativa — o estilo mais usado da apresentação  |
+| **Rótulo**               | 13 / 11 px, sem serifa condensada, caixa alta, espaçamento +0,12em | nomes de peça, marcha, estado de aprovação       |
+| **Legenda**              | 15 / 13 px, sem serifa, cor Estrutura                              | notas de rodapé de slide, fontes, referências    |
+| **Escritura**            | 24 / 19 px, serifa, itálico                                        | citações bíblicas, sempre com referência ao lado |
 
 **Medida de linha:** o texto corrido nunca ultrapassa 66 caracteres por linha. Em telas largas isso significa que o texto ocupa 6 ou 7 colunas, nunca 12.
 
@@ -96,16 +97,18 @@ Discreto e uniforme. Ao entrar na viewport, o conteúdo sobe 16px e ganha opacid
 ---
 
 ## ATO I — A CAVERNA
-*Abertura fria. Nada é explicado. Fundo Sombra nos quatro primeiros slides.*
+
+_Abertura fria. Nada é explicado. Fundo Sombra nos quatro primeiros slides._
 
 ---
 
 ### S01 · O emblema
+
 **Ato I · Layout L1 · Fundo Sombra**
 
 **Narrativa**
 
-*(Nenhum texto. Nenhum título. Nenhuma legenda.)*
+_(Nenhum texto. Nenhum título. Nenhuma legenda.)_
 
 **Visual**
 O emblema do projeto — o escudo com as insígnias cravadas, encimado pelo capacete e atravessado pela espada — centralizado, em versão monocromática latão sobre fundo quase preto. Ocupa cerca de 30% da altura da tela. Ao redor, nada.
@@ -119,6 +122,7 @@ O emblema surge em 1,2s de opacidade. Fica sozinho por 4 segundos antes que qual
 ---
 
 ### S02 · A caverna
+
 **Ato I · Layout L8 · Fundo Sombra**
 
 **Narrativa**
@@ -138,6 +142,7 @@ Texto nas colunas 1–6, alinhado à esquerda, centralizado verticalmente. Ilust
 ---
 
 ### S03 · Quem apareceu lá
+
 **Ato I · Layout L8 · Fundo Sombra**
 
 **Narrativa**
@@ -157,6 +162,7 @@ Texto nas colunas 1–6. Bloco das três condições nas colunas 8–11. Referê
 ---
 
 ### S04 · O que aconteceu com eles
+
 **Ato I · Layout L1 · Fundo Sombra**
 
 **Narrativa**
@@ -179,6 +185,7 @@ A frase final entra 600ms depois do restante. É a primeira das três apariçõe
 ---
 
 ### S05 · A pergunta, e o nome
+
 **Ato I · Layout L2 · Transição de Sombra para Base**
 
 **Narrativa**
@@ -189,7 +196,7 @@ A frase final entra 600ms depois do restante. É a primeira das três apariçõe
 >
 > Não é uma pergunta teórica. Ela é feita todos os dias, em silêncio, por homens que carregam farda e carregam vergonha ao mesmo tempo.
 
-*(Abaixo, separado por filete)*
+_(Abaixo, separado por filete)_
 
 **Discipulando a Caserna**
 Programa de discipulado do Projeto Caserna de Adulão
@@ -204,6 +211,7 @@ Pergunta em D2, colunas 1–8. Parágrafo de apoio em Corpo, colunas 1–7. Bloc
 ---
 
 ### S06 · Como ler este documento
+
 **Ato I · Layout L2**
 
 **Narrativa**
@@ -223,11 +231,13 @@ Texto nas colunas 1–7. Linha dos dez pontos abaixo, ocupando as colunas 1–10
 ---
 
 ## ATO II — O HOMEM
-*O protagonista aparece. Descida emocional deliberada.*
+
+_O protagonista aparece. Descida emocional deliberada._
 
 ---
 
 ### S07 · Ele chega com a farda e com a vergonha
+
 **Ato II · Layout L2**
 
 **Narrativa**
@@ -247,17 +257,18 @@ Texto nas colunas 1–6. Composição tipográfica nas colunas 8–12. Legenda n
 ---
 
 ### S08 · O que a farda dá, e o que ela cobra
+
 **Ato II · Layout L3**
 
 **Narrativa**
 
-*(Coluna esquerda)*
+_(Coluna esquerda)_
 
 **O que a farda dá**
 
 > A caserna forma homem, e isso precisa ser dito com respeito. Ela oferece identidade, pertencimento e propósito. Dá um código que organiza a vida inteira e uma honra que é reconhecida publicamente. Para muitos, foi o primeiro lugar onde alguém exigiu algo deles e acreditou que eram capazes de entregar.
 
-*(Coluna direita)*
+_(Coluna direita)_
 
 **O que a farda cobra**
 
@@ -272,6 +283,7 @@ Coluna esquerda nas colunas 1–5, direita nas 8–12. Subtítulos em H1. No cel
 ---
 
 ### S09 · O ambiente de reclusão
+
 **Ato II · Layout L4**
 
 **Narrativa**
@@ -291,6 +303,7 @@ Texto nas colunas 1–6, diagrama nas colunas 8–12, centralizado verticalmente
 ---
 
 ### S10 · A ferida que é específica deste homem
+
 **Ato II · Layout L2**
 
 **Narrativa**
@@ -310,6 +323,7 @@ Texto nas colunas 1–7. Diagrama de estratos nas colunas 8–12, alinhado ao ce
 ---
 
 ### S11 · O que ele acredita sobre Deus
+
 **Ato II · Layout L2 · Fundo Caserna**
 
 **Narrativa**
@@ -331,6 +345,7 @@ Texto centralizado horizontalmente, colunas 3–10, com muito respiro vertical.
 ---
 
 ### S12 · O que ele não precisa
+
 **Ato II · Layout L1**
 
 **Narrativa**
@@ -351,26 +366,31 @@ Este é um dos quatro slides silenciosos da apresentação. **Não adensar.** O 
 ---
 
 ## ATO III — O DISCIPULADO
-*Fundamento doutrinário. O antagonista entra em cena.*
+
+_Fundamento doutrinário. O antagonista entra em cena._
 
 ---
 
 ### S13 · Discipulado não é curso
+
 **Ato III · Layout L3**
 
 **Narrativa**
 
 > Antes de mostrar o programa, é preciso alinhar o que se entende por discipulado — porque a palavra virou sinônimo de coisas muito diferentes.
 
-*(Coluna esquerda)*
+_(Coluna esquerda)_
 **Curso**
+
 > Transmite informação. Tem começo e fim definidos. Avalia por retenção de conteúdo. Termina quando o conteúdo acaba. Quem conclui sabe mais do que sabia.
 
-*(Coluna direita)*
+_(Coluna direita)_
 **Discipulado**
+
 > Forma pessoa. Não tem data de encerramento. Avalia por transformação de vida. Continua quando o conteúdo acaba. Quem conclui é diferente de quem começou.
 
-*(Abaixo, largura total)*
+_(Abaixo, largura total)_
+
 > A confusão entre os dois é a razão pela qual tanto material bom não produz fruto nenhum.
 
 **Visual**
@@ -382,6 +402,7 @@ Introdução nas colunas 1–8. Colunas comparativas em 1–5 e 8–12. Frase de
 ---
 
 ### S14 · O que a Escritura chama de discípulo
+
 **Ato III · Layout L4**
 
 **Narrativa**
@@ -401,6 +422,7 @@ Texto nas colunas 1–6, diagrama nas colunas 7–12.
 ---
 
 ### S15 · O mandato
+
 **Ato III · Layout L2**
 
 **Narrativa**
@@ -420,6 +442,7 @@ Texto nas colunas 1–7. Diagrama abaixo, largura total, altura de 120px. Refer�
 ---
 
 ### S16 · Contemplar antes de obedecer
+
 **Ato III · Layout L4**
 
 **Narrativa**
@@ -441,6 +464,7 @@ Texto nas colunas 1–6, diagrama nas colunas 7–12, centralizado verticalmente
 ---
 
 ### S17 · Por que não basta evangelizar
+
 **Ato III · Layout L5**
 
 **Narrativa**
@@ -449,12 +473,13 @@ Texto nas colunas 1–6, diagrama nas colunas 7–12, centralizado verticalmente
 >
 > Porque cada uma dessas coisas faz uma parte, e nenhuma faz o todo.
 
-*(Cartão 1)* **Evangelismo** — Apresenta Cristo e vai embora. Indispensável como porta de entrada, insuficiente como caminho.
-*(Cartão 2)* **Aconselhamento** — Trata a ferida e encerra o atendimento. Necessário, mas episódico por natureza.
-*(Cartão 3)* **Assistência religiosa pontual** — Alcança quem está presente naquele dia. Não constrói progressão.
-*(Cartão 4)* **Discipulado** — Permanece, forma caráter e produz quem forma. É o único dos quatro que se reproduz sozinho.
+_(Cartão 1)_ **Evangelismo** — Apresenta Cristo e vai embora. Indispensável como porta de entrada, insuficiente como caminho.
+_(Cartão 2)_ **Aconselhamento** — Trata a ferida e encerra o atendimento. Necessário, mas episódico por natureza.
+_(Cartão 3)_ **Assistência religiosa pontual** — Alcança quem está presente naquele dia. Não constrói progressão.
+_(Cartão 4)_ **Discipulado** — Permanece, forma caráter e produz quem forma. É o único dos quatro que se reproduz sozinho.
 
-*(Abaixo)*
+_(Abaixo)_
+
 > Num ambiente de reclusão, os três primeiros isolados tendem a produzir decisão emocional sem raiz. E decisão sem raiz, ali dentro, costuma virar recaída em pouco tempo.
 
 **Visual**
@@ -466,6 +491,7 @@ Introdução nas colunas 1–8, grade nas colunas 1–10, fecho nas colunas 1–
 ---
 
 ### S18 · O que trabalha contra
+
 **Ato III · Layout L2 · Fundo Caserna**
 
 **Narrativa**
@@ -494,6 +520,7 @@ Este é o slide que nomeia o antagonista da narrativa. Ele será derrotado expli
 ---
 
 ### S19 · Alcançar não é o mesmo que formar
+
 **Ato III · Layout L1**
 
 **Narrativa**
@@ -511,11 +538,13 @@ Bloco centralizado, colunas 3–10. A frase em D1, dividida em duas linhas — a
 ---
 
 ## ATO IV — A LINGUAGEM
-*A ponte cultural, e a blindagem contra a objeção principal.*
+
+_A ponte cultural, e a blindagem contra a objeção principal._
 
 ---
 
 ### S20 · Toda cultura tem língua própria
+
 **Ato IV · Layout L2**
 
 **Narrativa**
@@ -533,13 +562,14 @@ Texto nas colunas 1–7, alinhado ao centro vertical.
 ---
 
 ### S21 · A caserna é uma cultura
+
 **Ato IV · Layout L5**
 
 **Narrativa**
 
 > E a caserna é uma cultura — não um jargão profissional, mas um sistema de valores que organiza a identidade de quem vive nela.
 
-*(Seis cartões, 3×2)*
+_(Seis cartões, 3×2)_
 **Hierarquia** — a ordem tem lugar e origem reconhecidos.
 **Disciplina** — a constância vale mais que o impulso.
 **Missão** — existe algo acima do interesse individual.
@@ -547,7 +577,8 @@ Texto nas colunas 1–7, alinhado ao centro vertical.
 **Honra** — a palavra dada tem peso de compromisso.
 **Prontidão** — estar preparado antes de precisar.
 
-*(Abaixo)*
+_(Abaixo)_
+
 > Um homem formado nesses seis valores não abandona esse vocabulário quando entra numa igreja. Ele apenas não encontra, do outro lado, quem fale com ele nessa língua.
 
 **Visual**
@@ -559,6 +590,7 @@ Grade 3×2 nas colunas 1–12. No celular, coluna única de seis cartões.
 ---
 
 ### S22 · Quando a igreja fala outra língua
+
 **Ato IV · Layout L2**
 
 **Narrativa**
@@ -578,19 +610,21 @@ Texto nas colunas 1–6, elemento nas colunas 8–12.
 ---
 
 ### S23 · Paulo já fazia isto
+
 **Ato IV · Layout L5**
 
 **Narrativa**
 
 > Esta não é uma invenção do projeto. É um método que a própria Escritura oferece — e o apóstolo Paulo o usava com frequência.
 
-*(Quatro cartões, 1×4)*
-**O soldado** — Paulo diz a Timóteo que suporte as dificuldades como bom soldado, e que quem milita não se envolve com os negócios da vida civil. *(2Tm 2.3–4)*
-**O atleta e o lavrador** — na mesma passagem, quem compete só é coroado se competir conforme as regras, e o lavrador que trabalha é o primeiro a participar dos frutos. *(2Tm 2.5–6)*
-**A armadura completa** — a imagem mais desenvolvida de todas, peça por peça, para descrever a vida cristã em combate. *(Ef 6.10–18)*
-**Companheiro de milícia** — é assim que Paulo chama Epafrodito, um irmão da igreja. *(Fp 2.25)*
+_(Quatro cartões, 1×4)_
+**O soldado** — Paulo diz a Timóteo que suporte as dificuldades como bom soldado, e que quem milita não se envolve com os negócios da vida civil. _(2Tm 2.3–4)_
+**O atleta e o lavrador** — na mesma passagem, quem compete só é coroado se competir conforme as regras, e o lavrador que trabalha é o primeiro a participar dos frutos. _(2Tm 2.5–6)_
+**A armadura completa** — a imagem mais desenvolvida de todas, peça por peça, para descrever a vida cristã em combate. _(Ef 6.10–18)_
+**Companheiro de milícia** — é assim que Paulo chama Epafrodito, um irmão da igreja. _(Fp 2.25)_
 
-*(Abaixo)*
+_(Abaixo)_
+
 > **Paulo falou caserna para falar Evangelho.** O projeto não inventou esse método: ele o herdou.
 
 **Visual**
@@ -602,6 +636,7 @@ Cartões nas colunas 1–12. Fecho centralizado, colunas 3–10.
 ---
 
 ### S24 · O critério que impede o erro
+
 **Ato IV · Layout L2 · Fundo Caserna**
 
 **Narrativa**
@@ -626,6 +661,7 @@ Este slide antecipa a objeção antes que ela se consolide. Objeção respondida
 ---
 
 ### S25 · Por isso, um nome
+
 **Ato IV · Layout L1**
 
 **Narrativa**
@@ -643,11 +679,13 @@ Texto centralizado, colunas 3–9.
 ---
 
 ## ATO V — ADULÃO
-*O giro. Pico intelectual da apresentação.*
+
+_O giro. Pico intelectual da apresentação._
 
 ---
 
 ### S26 · De volta à caverna
+
 **Ato V · Layout L8 · Fundo Sombra**
 
 **Narrativa**
@@ -665,17 +703,18 @@ Idêntico ao S02. Texto nas colunas 1–6, ilustração nas colunas 8–12 com s
 ---
 
 ### S27 · As três condições, relidas
+
 **Ato V · Layout L6 · Fundo Sombra**
 
 **Narrativa**
 
 > Releia agora as três condições daqueles homens, pensando no militar recluso que você conheceu no início desta apresentação.
 
-| Em Adulão | No presídio militar |
-|---|---|
+| Em Adulão                                       | No presídio militar                                                             |
+| ----------------------------------------------- | ------------------------------------------------------------------------------- |
 | **Aperto** — pressão que não se resolve sozinho | Processo em curso, futuro indefinido, ausência de controle sobre a própria vida |
-| **Dívida** — obrigação sem meio de pagar | Culpa real por um ato que não se pode desfazer, e uma família que paga junto |
-| **Amargura de espírito** — ferida que azedou | Revolta contra a corporação, contra si mesmo, e frequentemente contra Deus |
+| **Dívida** — obrigação sem meio de pagar        | Culpa real por um ato que não se pode desfazer, e uma família que paga junto    |
+| **Amargura de espírito** — ferida que azedou    | Revolta contra a corporação, contra si mesmo, e frequentemente contra Deus      |
 
 > Não são categorias antigas. É o retrato exato do homem de quem falamos há dez minutos.
 
@@ -688,16 +727,19 @@ Tabela nas colunas 2–11. Frase de fecho centralizada abaixo, em D2.
 ---
 
 ### S28 · O que Davi não fez
+
 **Ato V · Layout L3 · Fundo Sombra**
 
 **Narrativa**
 
-*(Coluna esquerda)*
+_(Coluna esquerda)_
 **O que Davi não fez**
+
 > Não exigiu correção como pré-requisito para o acolhimento. Não montou processo seletivo. Não separou os que tinham chance dos que não tinham. Não pediu que resolvessem primeiro as próprias dívidas e voltassem depois.
 
-*(Coluna direita)*
+_(Coluna direita)_
 **O que Davi fez**
+
 > Recebeu aqueles homens exatamente no estado em que chegaram. Assumiu a chefia deles. Conviveu com eles. E os formou dentro da crise, não depois que ela passasse — porque a crise não ia passar tão cedo, e esperar teria sido perdê-los.
 
 **Visual**
@@ -709,6 +751,7 @@ Colunas 1–5 e 8–12. No celular, empilham na ordem.
 ---
 
 ### S29 · O que eles se tornaram
+
 **Ato V · Layout L1 · Fundo Sombra**
 
 **Narrativa**
@@ -726,19 +769,20 @@ Centralizado, colunas 3–10.
 ---
 
 ### S30 · A equivalência
+
 **Ato V · Layout L6 · Transição de Sombra para Base**
 
 **Narrativa**
 
 > Aqui está a razão de o projeto se chamar Caserna de Adulão. Não é um nome escolhido por soar bem — é uma leitura teológica, e ela se sustenta ponto a ponto.
 
-| Em Adulão | No Projeto Caserna de Adulão |
-|---|---|
+| Em Adulão                                             | No Projeto Caserna de Adulão                                            |
+| ----------------------------------------------------- | ----------------------------------------------------------------------- |
 | A caverna: esconderijo de quem não tinha para onde ir | O presídio militar e o quartel: onde o militar ferido efetivamente está |
-| Homens em aperto, dívida e amargura | Militares com culpa real, desonra pública e isolamento |
-| Davi: ungido, mas ainda perseguido e sem trono | **Cristo: o Comandante maior que Davi, que desce ao lugar do fracasso** |
-| Formação acontecendo dentro da crise | Discipulado dentro da reclusão, sem esperar que ela termine |
-| Proscritos que se tornaram valentes | Discípulos que se tornam formadores de outros discípulos |
+| Homens em aperto, dívida e amargura                   | Militares com culpa real, desonra pública e isolamento                  |
+| Davi: ungido, mas ainda perseguido e sem trono        | **Cristo: o Comandante maior que Davi, que desce ao lugar do fracasso** |
+| Formação acontecendo dentro da crise                  | Discipulado dentro da reclusão, sem esperar que ela termine             |
+| Proscritos que se tornaram valentes                   | Discípulos que se tornam formadores de outros discípulos                |
 
 **Visual**
 Tabela de duas colunas ocupando a largura útil. A terceira linha — Davi/Cristo — recebe fundo levemente destacado e o texto da coluna direita em latão: é o eixo da equivalência inteira e precisa ser visualmente identificável em uma varredura rápida. O fundo do slide transiciona de Sombra para Base durante a rolagem, marcando a saída definitiva da caverna narrativa.
@@ -749,6 +793,7 @@ Introdução nas colunas 1–8. Tabela nas colunas 1–12, com linhas de 72px de
 ---
 
 ### S31 · Por que a analogia sustenta
+
 **Ato V · Layout L2**
 
 **Narrativa**
@@ -773,11 +818,13 @@ Segunda das três aparições da frase-âncora. A partir daqui ela já significa
 ---
 
 ## ATO VI — O PROJETO CASERNA DE ADULÃO
-*Da narrativa para a instituição.*
+
+_Da narrativa para a instituição._
 
 ---
 
 ### S32 · Antes da estrutura, o mover
+
 **Ato VI · Layout L4**
 
 **Narrativa**
@@ -797,6 +844,7 @@ Texto nas colunas 1–6, linha do tempo nas colunas 7–12.
 ---
 
 ### S33 · O que é o Projeto Caserna de Adulão
+
 **Ato VI · Layout L2**
 
 **Narrativa**
@@ -814,6 +862,7 @@ Texto nas colunas 1–6, ficha nas colunas 8–12.
 ---
 
 ### S34 · Por que uma estrutura em setores
+
 **Ato VI · Layout L4**
 
 **Narrativa**
@@ -831,13 +880,14 @@ Texto nas colunas 1–6, organograma nas colunas 7–12.
 ---
 
 ### S35 · Onde o projeto atua
+
 **Ato VI · Layout L5**
 
 **Narrativa**
 
 > A atuação acontece em frentes distintas, e a ordem entre elas não é acidental.
 
-*(Cinco cartões)*
+_(Cinco cartões)_
 **Ambiente de reclusão militar** — onde o projeto nasceu e onde a necessidade é mais aguda.
 **Unidades operacionais** — quartéis e batalhões, com o militar em serviço ativo.
 **Igreja local** — recebendo e dando continuidade a quem sai da reclusão.
@@ -853,6 +903,7 @@ Cartões nas colunas 1–12, altura uniforme. No celular, coluna única.
 ---
 
 ### S36 · Onde entra o Discipulando a Caserna
+
 **Ato VI · Layout L4**
 
 **Narrativa**
@@ -872,6 +923,7 @@ Texto nas colunas 1–6, diagrama nas colunas 7–12.
 ---
 
 ### S37 · Uma só progressão, em qualquer ambiente
+
 **Ato VI · Layout L4**
 
 **Narrativa**
@@ -891,24 +943,27 @@ Texto nas colunas 1–6, diagrama nas colunas 7–12.
 ---
 
 ## ATO VII — O PROGRAMA
-*Arquitetura pedagógica. O trecho mais denso — o ritmo visual precisa compensar.*
+
+_Arquitetura pedagógica. O trecho mais denso — o ritmo visual precisa compensar._
 
 ---
 
 ### S38 · Não são quatro temas
+
 **Ato VII · Layout L5**
 
 **Narrativa**
 
 > O programa se divide em quatro módulos. Mas eles não são quatro assuntos escolhidos por conveniência — são quatro ações de Cristo, na ordem em que a graça costuma agir na vida de um homem.
 
-*(Quatro cartões em linha)*
+_(Quatro cartões em linha)_
 **Cristo Chamando** — Ele convoca, perdoa e incorpora.
 **Cristo Treinando** — Ele ensina, corrige e firma fundamentos.
 **Cristo Moldando** — Ele amadurece afetos, vontade e caráter.
 **Cristo Enviando** — Ele comissiona, sustenta e multiplica.
 
-*(Abaixo)*
+_(Abaixo)_
+
 > Repare no sujeito das quatro frases. Em todas, é Cristo — não o instrutor, e não o discípulo. Isso não é preciosismo retórico: é exatamente o que impede o programa de virar autoajuda com vocabulário militar.
 
 **Visual**
@@ -920,6 +975,7 @@ Cartões nas colunas 1–12. Fecho nas colunas 1–8.
 ---
 
 ### S39 · A armadura que unifica tudo
+
 **Ato VII · Layout L4**
 
 **Narrativa**
@@ -944,6 +1000,7 @@ Pagamento da segunda arma de Tchékhov. A barra existe desde o slide S05 sem nen
 ---
 
 ### S40 · Quatro por doze
+
 **Ato VII · Layout L1**
 
 **Narrativa**
@@ -963,6 +1020,7 @@ Número em D1 gigante, centralizado. Texto abaixo, colunas 3–10. Grade de 48 a
 ---
 
 ### S41 · A progressão é em espiral
+
 **Ato VII · Layout L4**
 
 **Narrativa**
@@ -982,6 +1040,7 @@ Texto nas colunas 1–6, espiral nas colunas 8–11.
 ---
 
 ### S42 · Módulo 1 — Cristo Chamando
+
 **Ato VII · Layout L7 · Faixa superior em latão**
 
 **Narrativa**
@@ -1007,6 +1066,7 @@ Faixa em largura total. Insígnia nas colunas 1–3, texto nas colunas 4–11.
 ---
 
 ### S43 · Módulo 2 — Cristo Treinando
+
 **Ato VII · Layout L7 · Faixa superior em Caserna**
 
 **Narrativa**
@@ -1032,6 +1092,7 @@ Idêntico ao S42.
 ---
 
 ### S44 · Módulo 3 — Cristo Moldando
+
 **Ato VII · Layout L7 · Faixa superior em Estrutura**
 
 **Narrativa**
@@ -1057,6 +1118,7 @@ Idêntico ao S42.
 ---
 
 ### S45 · Módulo 4 — Cristo Enviando
+
 **Ato VII · Layout L7 · Faixa superior em Sombra**
 
 **Narrativa**
@@ -1082,6 +1144,7 @@ Idêntico ao S42.
 ---
 
 ### S46 · As 48 lições
+
 **Ato VII · Layout L6**
 
 **Narrativa**
@@ -1099,13 +1162,14 @@ Introdução nas colunas 1–8. Filtro e contador em linha, largura total. Tabel
 ---
 
 ### S47 · Toda lição tem sete elementos
+
 **Ato VII · Layout L5**
 
 **Narrativa**
 
 > Cada uma das 48 lições segue exatamente a mesma estrutura interna. São sete elementos, sempre nesta ordem.
 
-*(Sete blocos expansíveis)*
+_(Sete blocos expansíveis)_
 **Título** · **Texto-base** · **Objetivo** · **Síntese teológica** · **Aplicação militar** · **Ordem do Dia** · **Perguntas de reflexão**
 
 > Toque em cada elemento para ver como o Guia o define.
@@ -1121,6 +1185,7 @@ Introdução nas colunas 1–8, blocos nas colunas 1–10.
 ---
 
 ### S48 · A Ordem do Dia
+
 **Ato VII · Layout L4**
 
 **Narrativa**
@@ -1140,6 +1205,7 @@ Texto nas colunas 1–6. Diagrama ocupando as colunas 7–12 e sangrando na bord
 ---
 
 ### S49 · As marchas, e a sobriedade dos ritos
+
 **Ato VII · Layout L3**
 
 **Narrativa**
@@ -1150,10 +1216,11 @@ Texto nas colunas 1–6. Diagrama ocupando as colunas 7–12 e sangrando na bord
 >
 > E porque um sistema de insígnias, num ambiente onde a hierarquia já é linguagem corrente, tem caminho curto para virar vaidade, o programa define com precisão o que essas cerimônias são e o que elas não são.
 
-*(Coluna esquerda)* **O que a transição é** — leitura bíblica breve, oração, entrega da insígnia, testemunho de quem concluiu e registro pastoral simples.
-*(Coluna direita)* **O que a transição não é** — premiação, ranking, comparação entre discípulos, espetáculo público ou condicionamento de bênçãos ao desempenho.
+_(Coluna esquerda)_ **O que a transição é** — leitura bíblica breve, oração, entrega da insígnia, testemunho de quem concluiu e registro pastoral simples.
+_(Coluna direita)_ **O que a transição não é** — premiação, ranking, comparação entre discípulos, espetáculo público ou condicionamento de bênçãos ao desempenho.
 
-*(Abaixo)*
+_(Abaixo)_
+
 > Nenhum discípulo deve ser constrangido ou exposto. Onde o contexto institucional não permitir cerimônia, o registro pastoral cumpre a mesma função.
 
 **Visual**
@@ -1165,13 +1232,14 @@ Faixas nas colunas 1–12. Colunas comparativas em 1–5 e 8–12. Fecho central
 ---
 
 ### S50 · O certificado
+
 **Ato VII · Layout L4**
 
 **Narrativa**
 
 > O certificado de cada marcha existe como memória pastoral, não como comprovação de mérito. O texto-base é sempre o mesmo, e ele deixa claro de quem é a obra:
 >
-> *"Certificamos que [nome] concluiu, pela graça de Cristo, a [marcha correspondente] do Discipulando a Caserna, como testemunho da obra que Deus começou e haverá de completar."*
+> _"Certificamos que [nome] concluiu, pela graça de Cristo, a [marcha correspondente] do Discipulando a Caserna, como testemunho da obra que Deus começou e haverá de completar."_
 >
 > A referência é Filipenses 1.6 — e ela volta na última página desta apresentação, pelo mesmo motivo.
 
@@ -1184,16 +1252,18 @@ Texto nas colunas 1–6, mockup nas colunas 7–12.
 ---
 
 ### S51 · O que se espera ao fim do ciclo
+
 **Ato VII · Layout L5**
 
 **Narrativa**
 
 > Ao fim das 48 lições, o programa espera reconhecer cinco marcas no discípulo. Elas não são critérios de aprovação — são sinais de uma obra de graça, e servem para leitura pastoral, não para avaliação.
 
-*(Cinco cartões)*
+_(Cinco cartões)_
 **Fé bíblica e cristocêntrica** · **Identidade restaurada e honra redimida** · **Disciplina espiritual e vida em comunhão** · **Caráter obediente e servidor** · **Compromisso com a missão e a multiplicação**
 
-*(Abaixo, em destaque)*
+_(Abaixo, em destaque)_
+
 > Nenhuma delas descreve perfeição alcançada. Todas descrevem caminho em andamento. Essa distinção não é uma amenização de linguagem: ela é o que impede o perfil de virar régua de cobrança sobre homens que já vivem sob cobrança suficiente.
 
 **Visual**
@@ -1205,11 +1275,13 @@ Cartões nas colunas 1–12, faixa de ressalva em largura total abaixo.
 ---
 
 ## ATO VIII — A IDENTIDADE VISUAL
-*Pagamento da primeira arma de Tchékhov. Quebra do platô técnico.*
+
+_Pagamento da primeira arma de Tchékhov. Quebra do platô técnico._
 
 ---
 
 ### S52 · O emblema volta
+
 **Ato VIII · Layout L1 · Fundo Sombra**
 
 **Narrativa**
@@ -1227,6 +1299,7 @@ Idêntico ao S01, com o texto acrescentado abaixo, em Corpo, colunas 4–9.
 ---
 
 ### S53 · O escudo é um catecismo
+
 **Ato VIII · Layout L4**
 
 **Narrativa**
@@ -1248,18 +1321,19 @@ Texto nas colunas 1–5, marca anotada nas colunas 6–12.
 ---
 
 ### S54 · Por que cada insígnia está no módulo em que está
+
 **Ato VIII · Layout L6**
 
 **Narrativa**
 
 > A correspondência entre peça da armadura e módulo não foi escolhida por conveniência estética. Cada peça está onde está por uma razão que vem do próprio texto de Efésios 6.
 
-| Módulo | Peça bíblica | Nome na caserna | Por que esta peça neste módulo |
-|---|---|---|---|
-| **1 · Chamando** | Cinto da Verdade *(Ef 6.14)* | Cinto de guarnição | O cinto é a primeira peça a ser posta e a que sustenta todas as outras. No módulo do chamado, o homem recebe a verdade do Evangelho que sustenta a nova identidade. Sem ele, nenhuma outra peça se prende ao corpo. |
-| **2 · Treinando** | Couraça da Justiça *(Ef 6.14)* | Colete balístico | A couraça protege o que é vital. No módulo do treinamento, o discípulo aprende a guardar o coração e a integridade na rotina — a proteção daquilo que, se atingido, encerra o combate. |
-| **3 · Moldando** | Calçados do Evangelho da Paz *(Ef 6.15)* | Coturno | O calçado é o que permite permanecer de pé em terreno hostil. No módulo do caráter, o discípulo é firmado para andar dignamente em qualquer terreno, com mansidão e constância. |
-| **4 · Enviando** | Escudo da Fé *(Ef 6.16)* | Insígnia final | O escudo é a única peça que **protege também o companheiro ao lado**, e não apenas quem o carrega. No módulo do envio, a fé se torna ativa, missionária e coletiva. |
+| Módulo            | Peça bíblica                             | Nome na caserna    | Por que esta peça neste módulo                                                                                                                                                                                      |
+| ----------------- | ---------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1 · Chamando**  | Cinto da Verdade _(Ef 6.14)_             | Cinto de guarnição | O cinto é a primeira peça a ser posta e a que sustenta todas as outras. No módulo do chamado, o homem recebe a verdade do Evangelho que sustenta a nova identidade. Sem ele, nenhuma outra peça se prende ao corpo. |
+| **2 · Treinando** | Couraça da Justiça _(Ef 6.14)_           | Colete balístico   | A couraça protege o que é vital. No módulo do treinamento, o discípulo aprende a guardar o coração e a integridade na rotina — a proteção daquilo que, se atingido, encerra o combate.                              |
+| **3 · Moldando**  | Calçados do Evangelho da Paz _(Ef 6.15)_ | Coturno            | O calçado é o que permite permanecer de pé em terreno hostil. No módulo do caráter, o discípulo é firmado para andar dignamente em qualquer terreno, com mansidão e constância.                                     |
+| **4 · Enviando**  | Escudo da Fé _(Ef 6.16)_                 | Insígnia final     | O escudo é a única peça que **protege também o companheiro ao lado**, e não apenas quem o carrega. No módulo do envio, a fé se torna ativa, missionária e coletiva.                                                 |
 
 **Visual**
 Tabela de quatro colunas com a insígnia desenhada na primeira célula de cada linha, em latão, com cerca de 48px. Linhas separadas por filetes finos. A quarta linha recebe destaque discreto de fundo, porque é a justificativa mais forte do conjunto e a que melhor demonstra que a atribuição não é arbitrária.
@@ -1270,6 +1344,7 @@ Tabela nas colunas 1–12. No celular, cada linha vira um cartão com insígnia 
 ---
 
 ### S55 · As duas peças que não pertencem a módulo nenhum
+
 **Ato VIII · Layout L4**
 
 **Narrativa**
@@ -1291,17 +1366,19 @@ Texto nas colunas 1–6, diagrama nas colunas 7–12.
 ---
 
 ### S56 · O que pode mudar e o que não pode
+
 **Ato VIII · Layout L3**
 
 **Narrativa**
 
 > Uma regra de governança fecha este assunto, e ela vale para qualquer unidade que venha a adotar o programa.
 
-*(Coluna esquerda)* **Pode variar** — o recurso gráfico usado para cada símbolo, conforme o que estiver disponível: um impresso, um cartão, uma insígnia bordada, uma projeção, ou mesmo apenas a menção verbal na cerimônia.
+_(Coluna esquerda)_ **Pode variar** — o recurso gráfico usado para cada símbolo, conforme o que estiver disponível: um impresso, um cartão, uma insígnia bordada, uma projeção, ou mesmo apenas a menção verbal na cerimônia.
 
-*(Coluna direita)* **Não pode variar** — o significado espiritual de cada peça e a ordem em que os símbolos são entregues.
+_(Coluna direita)_ **Não pode variar** — o significado espiritual de cada peça e a ordem em que os símbolos são entregues.
 
-*(Abaixo)*
+_(Abaixo)_
+
 > Em outras palavras: se faltar recurso, a cerimônia acontece do mesmo jeito. O que não pode acontecer é a insígnia significar outra coisa, ou vir fora de ordem.
 >
 > O Caderno de Identidade Visual que consolidará essas regras está previsto e ainda não foi produzido.
@@ -1315,6 +1392,7 @@ Colunas 1–5 e 8–12. Faixa de pendência em largura total.
 ---
 
 ### S57 · A identidade fora da sala
+
 **Ato VIII · Layout L4**
 
 **Narrativa**
@@ -1336,11 +1414,13 @@ Texto nas colunas 1–6, mockup nas colunas 7–12.
 ---
 
 ## ATO IX — O GUIA MESTRE
-*Clímax argumentativo. O antagonista é derrotado.*
+
+_Clímax argumentativo. O antagonista é derrotado._
 
 ---
 
 ### S58 · O problema que ainda não foi resolvido
+
 **Ato IX · Layout L2 · Fundo Caserna**
 
 **Narrativa**
@@ -1360,6 +1440,7 @@ Texto nas colunas 1–7, elemento nas colunas 10–11.
 ---
 
 ### S59 · O que é o Guia Mestre
+
 **Ato IX · Layout L4**
 
 **Narrativa**
@@ -1379,19 +1460,21 @@ Texto nas colunas 1–6, mockup nas colunas 8–11.
 ---
 
 ### S60 · As quatro exigências que o Guia assumiu
+
 **Ato IX · Layout L5**
 
 **Narrativa**
 
 > O documento foi escrito com quatro obrigações declaradas desde a primeira página.
 
-*(Quatro cartões)*
+_(Quatro cartões)_
 **Unificar a doutrina** — que todos ensinem a mesma coisa, com a mesma ênfase.
 **Servir de referência ao instrutor** — que ninguém precise improvisar o que já foi decidido.
 **Estabelecer jornada progressiva** — que o discípulo saiba onde está e para onde vai.
 **Garantir replicabilidade fiel** — que o programa possa existir sem quem o escreveu.
 
-*(Abaixo)*
+_(Abaixo)_
+
 > A quarta é a mais importante, e é a que resolve o problema do slide anterior.
 
 **Visual**
@@ -1403,18 +1486,20 @@ Cartões nas colunas 1–12, fecho nas colunas 1–7.
 ---
 
 ### S61 · Um conteúdo, três profundidades
+
 **Ato IX · Layout L5**
 
 **Narrativa**
 
 > O material se organiza em três edições, cada uma para um uso diferente.
 
-*(Três cartões)*
+_(Três cartões)_
 **Guia Mestre** — doutrina, método, estrutura e governança. Destinado à liderança e à formação de instrutores. É o documento de referência.
 **Edição do Instrutor** — a condução de cada lição, com notas pastorais, sugestões de aplicação e as perguntas de reflexão comentadas.
 **Edição do Aluno** — o texto da lição, o espaço de registro e a Ordem do Dia da semana.
 
-*(Abaixo)*
+_(Abaixo)_
+
 > É um só conteúdo em três níveis de profundidade. Isso significa que o discípulo, o instrutor e a liderança estão sempre falando exatamente da mesma coisa.
 
 **Visual**
@@ -1426,6 +1511,7 @@ Cartões nas colunas 2–11.
 ---
 
 ### S62 · Como isso torna o programa replicável
+
 **Ato IX · Layout L4**
 
 **Narrativa**
@@ -1445,21 +1531,25 @@ Texto nas colunas 1–6, diagrama nas colunas 7–12.
 ---
 
 ### S63 · O que o Guia deliberadamente não faz
+
 **Ato IX · Layout L3**
 
 **Narrativa**
 
 > É importante dizer também os limites do documento, porque método sem limite vira legalismo.
 
-*(Coluna esquerda)*
+_(Coluna esquerda)_
 **O Guia não substitui**
+
 > Não substitui o Espírito Santo, que é quem de fato forma. Não dispensa sensibilidade pastoral diante do caso concreto. Não impede que o instrutor adapte a linguagem ao seu grupo.
 
-*(Coluna direita)*
+_(Coluna direita)_
 **O Guia estabelece**
+
 > Ajustes pedagógicos são bem-vindos e esperados. Alteração doutrinária, não: ela exige deliberação pastoral formal, e não decisão individual de quem estiver conduzindo.
 
-*(Abaixo)*
+_(Abaixo)_
+
 > O documento é versionado, as alterações são registradas, e há previsão de instância responsável pela guarda doutrinária. É isso que permite que o programa sobreviva ao seu autor — que é, no fim das contas, o objetivo dele.
 
 **Visual**
@@ -1471,23 +1561,26 @@ Colunas 1–5 e 8–12, linha de versionamento em largura total.
 ---
 
 ## ATO X — O HORIZONTE
-*Visão futura e fechamento em espelho.*
+
+_Visão futura e fechamento em espelho._
 
 ---
 
 ### S64 · O que ainda não existe
+
 **Ato X · Layout L5**
 
 **Narrativa**
 
 > Antes de falar do que vem pela frente, é honesto listar o que ainda não está pronto. A clareza sobre as pendências é o que dá crédito ao que já está feito.
 
-*(Três cartões, todos com rótulo `EM PLANEJAMENTO`)*
+_(Três cartões, todos com rótulo `EM PLANEJAMENTO`)_
 **Formação de instrutores** — o Guia forma o discípulo; falta um percurso formal para formar quem forma. É a pendência mais crítica das três.
-**Apêndices Pastorais** — dois documentos companheiros para situações de crise aguda: *A Marcha da Liberdade*, associada ao Capacete da Salvação, e *Vigília na Tempestade*, associada à Espada do Espírito.
+**Apêndices Pastorais** — dois documentos companheiros para situações de crise aguda: _A Marcha da Liberdade_, associada ao Capacete da Salvação, e _Vigília na Tempestade_, associada à Espada do Espírito.
 **Caderno de Identidade Visual** — a consolidação das regras de uso da marca e dos símbolos.
 
-*(Abaixo, em faixa)*
+_(Abaixo, em faixa)_
+
 > **Limites de escopo, declarados:** nada disso substitui acompanhamento profissional, jurídico ou clínico. O projeto não faz promessas sobre processos institucionais ou progressão de pena. Toda condução acontece em comunhão com a igreja e, onde houver, com a capelania.
 
 **Visual**
@@ -1499,6 +1592,7 @@ Cartões nas colunas 1–12, faixa abaixo em largura total.
 ---
 
 ### S65 · Para onde isso cresce
+
 **Ato X · Layout L4**
 
 **Narrativa**
@@ -1518,18 +1612,20 @@ Texto nas colunas 1–6, anéis nas colunas 8–11.
 ---
 
 ### S66 · Os três critérios que não se negociam
+
 **Ato X · Layout L5**
 
 **Narrativa**
 
 > E qualquer expansão está condicionada a três critérios. Eles existem porque a tentação natural de todo projeto que dá certo é crescer mais rápido do que consegue sustentar.
 
-*(Três cartões)*
+_(Três cartões)_
 **Fidelidade doutrinária** — não relativizar o que o Guia estabeleceu para agradar a um contexto novo.
 **Coerência pedagógica** — não pular etapas por pressa, nem comprimir módulos para caber num calendário.
 **Integridade pastoral** — não sacrificar o cuidado com as almas em nome do alcance.
 
-*(Abaixo)*
+_(Abaixo)_
+
 > Se em algum momento crescer significar violar um destes três, o projeto não cresce.
 
 **Visual**
@@ -1541,6 +1637,7 @@ Cartões nas colunas 2–11, fecho centralizado.
 ---
 
 ### S67 · A meta não é numérica
+
 **Ato X · Layout L1**
 
 **Narrativa**
@@ -1563,6 +1660,7 @@ Retorno literal da frase plantada no Ato III. O leitor deve reconhecê-la.
 ---
 
 ### S68 · A mesma caverna
+
 **Ato X · Layout L8 · Fundo Sombra**
 
 **Narrativa**
@@ -1586,17 +1684,18 @@ Texto nas colunas 1–6, ilustração nas colunas 8–12 com sangria à direita.
 ---
 
 ### S69 · Fechamento
+
 **Ato X · Layout L1 · Fundo Sombra**
 
 **Narrativa**
 
 > **De quebrantados, valentes.**
 
-> *"aquele que começou boa obra em vocês há de completá-la"* — Filipenses 1.6
+> _"aquele que começou boa obra em vocês há de completá-la"_ — Filipenses 1.6
 
 > Este versículo está no certificado de cada marcha, e está aqui pelo mesmo motivo. O que foi construído até agora não é obra de quem escreveu, e o que vier também não será. O trabalho foi apenas organizar, em papel, aquilo que já se via acontecer numa caverna.
 
-*(Rodapé institucional)*
+_(Rodapé institucional)_
 Projeto Caserna de Adulão · CNPJ 63.724.286/0001-78
 Discipulando a Caserna · Guia Mestre v1.0-RC · Fortaleza, 2026
 
@@ -1617,12 +1716,12 @@ Terceira e última aparição da frase-âncora. Nenhum botão de reinício, nenh
 
 Esta é a versão institucional plena. As demais são recortes desta, não peças distintas.
 
-| Público | Slides mantidos | Ajustes |
-|---|---|---|
-| **Apreciação / decisão** | Todos, mais o bloco de decisões após S63 | Manter "você" de leitura; acrescentar telas de homologação, convite ao prefácio e "se a resposta for não" em voz institucional (liderança pastoral em 3ª pessoa — sem tratar o leitor como o pastor) |
-| **Institucional / comando** | S01–S12, S20–S37, S64–S69 | Suprimir Ato VII quase inteiro; reforçar limites de escopo do S64 |
-| **Igreja local** | S01–S19, S26–S37, S64–S69 | Suprimir Atos VII e IX; acrescentar chamada à participação |
-| **Formação de instrutores** | S38–S63 integralmente | Suprimir Atos I e II; abrir direto no método |
+| Público                     | Slides mantidos                          | Ajustes                                                                                                                                                                                              |
+| --------------------------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Apreciação / decisão**    | Todos, mais o bloco de decisões após S63 | Manter "você" de leitura; acrescentar telas de homologação, convite ao prefácio e "se a resposta for não" em voz institucional (liderança pastoral em 3ª pessoa — sem tratar o leitor como o pastor) |
+| **Institucional / comando** | S01–S12, S20–S37, S64–S69                | Suprimir Ato VII quase inteiro; reforçar limites de escopo do S64                                                                                                                                    |
+| **Igreja local**            | S01–S19, S26–S37, S64–S69                | Suprimir Atos VII e IX; acrescentar chamada à participação                                                                                                                                           |
+| **Formação de instrutores** | S38–S63 integralmente                    | Suprimir Atos I e II; abrir direto no método                                                                                                                                                         |
 
 ## C.2 Impressão
 
@@ -1639,8 +1738,8 @@ Todo o conteúdo precisa existir na versão impressa, inclusive o que hoje está
 
 ## C.4 Teste de validação
 
-Entregue o link a alguém que não conheça o projeto, sem nenhuma explicação prévia, e peça que responda depois a três perguntas: *o que é isto, por que existe, e o que se espera de quem lê?* Se as três respostas vierem corretas, a apresentação cumpriu o objetivo de ser autoexplicativa.
+Entregue o link a alguém que não conheça o projeto, sem nenhuma explicação prévia, e peça que responda depois a três perguntas: _o que é isto, por que existe, e o que se espera de quem lê?_ Se as três respostas vierem corretas, a apresentação cumpriu o objetivo de ser autoexplicativa.
 
 ---
 
-*Plano de slides v1.0 — Fortaleza, 2026. Conteúdo doutrinário rastreável ao Guia Mestre do Discipulando a Caserna v1.0-RC. O homem descrito nos Atos II e X é composição narrativa e não corresponde a caso individual identificável.*
+_Plano de slides v1.0 — Fortaleza, 2026. Conteúdo doutrinário rastreável ao Guia Mestre do Discipulando a Caserna v1.0-RC. O homem descrito nos Atos II e X é composição narrativa e não corresponde a caso individual identificável._

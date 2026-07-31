@@ -1,4 +1,5 @@
 # Roteiro da Apresentação Institucional
+
 ## Discipulando a Caserna — Projeto Caserna de Adulão
 
 **Destinatário primário:** Pr. Glaydston Gama Lopes (pastor-presidente / validador pastoral)
@@ -50,17 +51,17 @@ Regra transversal: **nenhuma tela depende de narrador para fazer sentido.** O Pa
 >
 > 1Sm 22.2
 
-*(abaixo, muito menor, após três segundos)*
+_(abaixo, muito menor, após três segundos)_
 
 **Discipulando a Caserna**
 Projeto Caserna de Adulão · Guia Mestre v1.0-RC
 Apresentação institucional para validação pastoral
 
 **Visual**
-Fundo off-white #F4F4F1 quase vazio. Texto centralizado, serifa grande. A citação aparece primeiro; o bloco de identificação faz *fade-in* depois. Nenhum ornamento. Uma seta discreta de scroll no rodapé.
+Fundo off-white #F4F4F1 quase vazio. Texto centralizado, serifa grande. A citação aparece primeiro; o bloco de identificação faz _fade-in_ depois. Nenhum ornamento. Uma seta discreta de scroll no rodapé.
 
 **Condução**
-Não fale nesta tela. Deixe o silêncio de três a cinco segundos. É a única vez na apresentação em que o silêncio é parte do argumento. Só depois: *"Pastor, é daqui que tudo começa — e o senhor sabe disso melhor do que eu."*
+Não fale nesta tela. Deixe o silêncio de três a cinco segundos. É a única vez na apresentação em que o silêncio é parte do argumento. Só depois: _"Pastor, é daqui que tudo começa — e o senhor sabe disso melhor do que eu."_
 
 **Fonte** — Dedicatória; 1.2
 
@@ -90,7 +91,7 @@ Tela dividida verticalmente. À esquerda, quatro palavras empilhadas em sans con
 **Condução**
 Este é o primeiro momento de conteúdo. Diga em voz baixa. Não dramatize — o texto já carrega. Se o Pastor comentar aqui, deixe-o comentar; esta tela existe para provocar reconhecimento, não para ser vencida rápido.
 
-**Fonte** — Nota do Autor; 1.4.1 *(linguagem do Prefácio-rascunho do Guia não é citada como autoria pastoral)*
+**Fonte** — Nota do Autor; 1.4.1 _(linguagem do Prefácio-rascunho do Guia não é citada como autoria pastoral)_
 
 ---
 
@@ -110,7 +111,7 @@ Não é um lugar onde se improvisa discipulado.
 Diagrama sóbrio em SVG: uma planta esquemática simplificada, sem identificar instalação real, com quatro restrições rotuladas em torno (tempo, circulação, material, rotatividade). Traço fino, sem preenchimento, cor chumbo.
 
 **Condução**
-Aqui você estabelece a credencial do documento: ele não foi escrito de gabinete. *"Tudo o que vem a seguir foi desenhado para funcionar neste terreno — não em uma sala de aula ideal."*
+Aqui você estabelece a credencial do documento: ele não foi escrito de gabinete. _"Tudo o que vem a seguir foi desenhado para funcionar neste terreno — não em uma sala de aula ideal."_
 
 **Fonte** — 1.4.3; 6.7.2
 
@@ -156,7 +157,7 @@ O Guia não criou esse mover. O Guia nasceu para **guardar** o que já estava ac
 Linha do tempo horizontal minimalista, sem datas: um ponto marcado "o mover" bem à esquerda, e o ponto "o Guia" bem depois. O espaço entre eles é o argumento. Anima da esquerda para a direita ao entrar na tela.
 
 **Condução**
-Esta tela protege o projeto de soar tecnocrático. Diga: *"Nada aqui é invenção metodológica. É organização pastoral de algo que Deus começou antes."* Se o Pastor tem alguma reserva quanto a "sistematizar demais", ela se dissolve aqui.
+Esta tela protege o projeto de soar tecnocrático. Diga: _"Nada aqui é invenção metodológica. É organização pastoral de algo que Deus começou antes."_ Se o Pastor tem alguma reserva quanto a "sistematizar demais", ela se dissolve aqui.
 
 **Fonte** — Agradecimentos; 1.2
 
@@ -204,7 +205,7 @@ Um homem que avança no presídio e, na igreja, é convidado a recomeçar do zer
 Quatro cartões em grade 2×2, cada um com o risco escrito. Ao passar o cursor (ou tocar), o cartão vira e mostra a salvaguarda correspondente prevista no Guia — matriz única, progressão em espiral, padrão didático fixo, remissão de módulo concluído.
 
 **Condução**
-Esta é a tela mais argumentativa da apresentação. Deixe o Pastor virar os cartões ele mesmo se estiver com o dispositivo em mãos. *"Cada risco à esquerda tem uma resposta desenhada no Guia. Nenhum deles é hipotético."*
+Esta é a tela mais argumentativa da apresentação. Deixe o Pastor virar os cartões ele mesmo se estiver com o dispositivo em mãos. _"Cada risco à esquerda tem uma resposta desenhada no Guia. Nenhum deles é hipotético."_
 
 **Fonte** — 1.2; 3.1; 3.5; 1.4.3
 
@@ -227,7 +228,7 @@ Quatro exigências que o documento assumiu desde a primeira linha:
 Mockup da capa do Guia Mestre, em perspectiva leve, com os quatro verbos dispostos ao lado. Se houver arte de capa pronta, usar; se não, composição tipográfica com o escudo.
 
 **Condução**
-Transição para o ato conceitual. *"O que vem agora é como esse documento foi pensado — não o que ele contém, mas por que ele tem a forma que tem."*
+Transição para o ato conceitual. _"O que vem agora é como esse documento foi pensado — não o que ele contém, mas por que ele tem a forma que tem."_
 
 **Fonte** — 1.1; 1.2
 
@@ -256,7 +257,7 @@ A ordem não é organizacional. É o próprio caminho da graça na vida do homem
 Quatro blocos horizontais que se acendem em sequência ao entrar na tela. Cada um com o verbo em destaque e a referência bíblica em corpo pequeno. Elemento central da apresentação: **é aqui que a barra de armadura aparece pela primeira vez no topo**, ainda apagada.
 
 **Condução**
-Marque explicitamente: *"Repare que o sujeito de todas as quatro frases é Cristo, não o instrutor e não o discípulo. Isso não é retórica — é o que impede o programa de virar autoajuda com linguagem militar."*
+Marque explicitamente: _"Repare que o sujeito de todas as quatro frases é Cristo, não o instrutor e não o discípulo. Isso não é retórica — é o que impede o programa de virar autoajuda com linguagem militar."_
 
 **Fonte** — 1.5; 3.2
 
@@ -276,7 +277,7 @@ Cinto da Verdade → Couraça da Justiça → Calçados do Evangelho da Paz → 
 Os quatro ícones de insígnia em linha, ainda em contorno vazado. Conforme o scroll avança dentro da própria tela, cada um se preenche em latão. Simultaneamente, a barra de armadura no topo acende a primeira peça — **estabelecendo, para o resto da apresentação, que a barra de progresso é a armadura.**
 
 **Condução**
-Aponte a barra do topo explicitamente uma única vez, aqui: *"O senhor vai reparar que a barra lá em cima vai se completando conforme avançamos. Ela é a armadura. A navegação desta apresentação é a própria doutrina do projeto."* Não volte a mencionar depois.
+Aponte a barra do topo explicitamente uma única vez, aqui: _"O senhor vai reparar que a barra lá em cima vai se completando conforme avançamos. Ela é a armadura. A navegação desta apresentação é a própria doutrina do projeto."_ Não volte a mencionar depois.
 
 **Fonte** — 1.6; 3.1
 
@@ -322,9 +323,9 @@ A prática não paga culpa. Ela responde à graça.
 Três círculos concêntricos ou três etapas encadeadas, com a seta de retorno indicando que o ciclo se repete a cada encontro. Sóbrio, sem cores fortes.
 
 **Condução**
-Coração pastoral do método — sem atribuir Prefácio. Diga: *"Este é o critério com que cada uma das 48 lições foi revista. A página do Prefácio do Guia está em branco de propósito: quando o senhor entender que é o tempo, essa palavra será a sua — não a minha."* Planta o convite sem quebrar o arco; o formalismo do pedido vem na Tela 29.
+Coração pastoral do método — sem atribuir Prefácio. Diga: _"Este é o critério com que cada uma das 48 lições foi revista. A página do Prefácio do Guia está em branco de propósito: quando o senhor entender que é o tempo, essa palavra será a sua — não a minha."_ Planta o convite sem quebrar o arco; o formalismo do pedido vem na Tela 29.
 
-**Fonte** — 1.1; 1.2; 3.6; Nota do Autor *(critério metodológico do Guia; Prefácio reservado)*
+**Fonte** — 1.1; 1.2; 3.6; Nota do Autor _(critério metodológico do Guia; Prefácio reservado)_
 
 ---
 
@@ -368,10 +369,10 @@ Dentro de cada encontro:
 Contemplação na Palavra (15–25 min) · Discernimento e aplicação (25–35 min) · Oração e compromisso (10–15 min) · **Ordem do Dia**
 
 **Visual**
-Barra horizontal proporcional representando os blocos de tempo do encontro, com a Ordem do Dia destacada como extensão que sai da barra e se prolonga para fora — sinalizando que ela ocorre *fora* da sala, durante a semana.
+Barra horizontal proporcional representando os blocos de tempo do encontro, com a Ordem do Dia destacada como extensão que sai da barra e se prolonga para fora — sinalizando que ela ocorre _fora_ da sala, durante a semana.
 
 **Condução**
-Enfatize o gesto visual da Ordem do Dia saindo da barra: *"O encontro termina, mas a lição não. A Ordem do Dia é o que atravessa a semana."* Prepara a Tela 23 (Caderneta).
+Enfatize o gesto visual da Ordem do Dia saindo da barra: _"O encontro termina, mas a lição não. A Ordem do Dia é o que atravessa a semana."_ Prepara a Tela 23 (Caderneta).
 
 **Fonte** — 3.3
 
@@ -404,13 +405,13 @@ Deixe o Pastor abrir os elementos. Se o tempo estiver curto, abra apenas "Aplica
 
 **As 48 lições, em visão anual.**
 
-*Filtre por módulo para ver a progressão completa.*
+_Filtre por módulo para ver a progressão completa._
 
 **Visual**
 **A interação mais importante da apresentação.** Tabela filtrável: número, título, texto-base, objetivo sintético. Quatro botões de filtro (um por módulo) mais "todas". Ao filtrar, a linha do símbolo correspondente se destaca no topo. Rolagem interna, altura fixa, sem quebrar o scroll-snap da página. Dados: `conteudo/matriz-curricular.json`.
 
 **Condução**
-Esta é a tela em que você **para de apresentar e deixa o Pastor navegar.** Diga apenas: *"Fique à vontade para percorrer. Se quiser abrir alguma lição específica, o Guia completo está no anexo."* Silêncio produtivo. Não preencha com fala.
+Esta é a tela em que você **para de apresentar e deixa o Pastor navegar.** Diga apenas: _"Fique à vontade para percorrer. Se quiser abrir alguma lição específica, o Guia completo está no anexo."_ Silêncio produtivo. Não preencha com fala.
 
 **Fonte** — 3.9 (Quadro 1)
 
@@ -430,7 +431,7 @@ Nenhuma delas descreve perfeição alcançada. Todas descrevem **caminho em anda
 Cinco marcas dispostas em arco, com a ressalva final em corpo menor e destacada em faixa. A ressalva é tão importante quanto as marcas — não a diminua visualmente demais.
 
 **Condução**
-Frisar a última linha em voz alta. É a salvaguarda pastoral que impede o perfil de virar régua de cobrança. *"Isso não é um checklist de aprovação. É um mapa de leitura pastoral."*
+Frisar a última linha em voz alta. É a salvaguarda pastoral que impede o perfil de virar régua de cobrança. _"Isso não é um checklist de aprovação. É um mapa de leitura pastoral."_
 
 **Fonte** — 3.8
 
@@ -457,7 +458,7 @@ Frisar a última linha em voz alta. É a salvaguarda pastoral que impede o perfi
 Quatro faixas horizontais empilhadas, cada uma com o nome da marcha e a insígnia correspondente à esquerda. Entram em cascata, de cima para baixo, com leve atraso entre elas.
 
 **Condução**
-Leia os quatro nomes em voz alta, na sequência, sem comentar entre eles. Os nomes fazem o trabalho. Comente só ao final: *"Repare na progressão do substantivo: recruta, combatente, guerreiro, soldado. É a mesma pessoa em quatro estágios."*
+Leia os quatro nomes em voz alta, na sequência, sem comentar entre eles. Os nomes fazem o trabalho. Comente só ao final: _"Repare na progressão do substantivo: recruta, combatente, guerreiro, soldado. É a mesma pessoa em quatro estágios."_
 
 **Fonte** — 1.6; 5.2
 
@@ -469,13 +470,13 @@ Leia os quatro nomes em voz alta, na sequência, sem comentar entre eles. Os nom
 
 **Quatro insígnias. Nenhuma é troféu.**
 
-*Toque em cada uma para ver o sentido bíblico.*
+_Toque em cada uma para ver o sentido bíblico._
 
 **Visual**
 Quatro cartões viráveis. Frente: a insígnia e seu nome duplo (bíblico + militar) — Cinto da Verdade / Cinto de Guarnição; Couraça da Justiça / Colete Balístico; Calçados do Evangelho da Paz / Coturno; Escudo da Fé / insígnia final. Verso: significado espiritual e pedagógico, com referência em Ef 6, em texto curto.
 
 **Condução**
-Chame atenção para o nome duplo: *"Cada peça tem o nome que a Escritura dá e o nome que a caserna reconhece. Essa é a ponte pedagógica inteira do projeto em duas palavras."*
+Chame atenção para o nome duplo: _"Cada peça tem o nome que a Escritura dá e o nome que a caserna reconhece. Essa é a ponte pedagógica inteira do projeto em duas palavras."_
 
 **Fonte** — 1.6 (tabela)
 
@@ -497,7 +498,7 @@ Nenhum discípulo deve ser constrangido ou exposto.
 Duas colunas em contraste — "é" / "não é". A coluna da direita em cor mais apagada, quase riscada. Nenhuma animação. Deliberadamente austera.
 
 **Condução**
-Tela de salvaguarda. Ela existe para responder, **antes que seja feita**, a preocupação pastoral mais previsível: que a simbologia militar produza vaidade. *"O Guia condena triunfalismo em cinco seções diferentes. Isso não é ressalva de rodapé — é critério de condução."*
+Tela de salvaguarda. Ela existe para responder, **antes que seja feita**, a preocupação pastoral mais previsível: que a simbologia militar produza vaidade. _"O Guia condena triunfalismo em cinco seções diferentes. Isso não é ressalva de rodapé — é critério de condução."_
 
 **Fonte** — 5.1; 1.6
 
@@ -517,7 +518,7 @@ Onde o contexto institucional não permitir a entrega física, **o registro past
 Mockup do certificado da Primeira Marcha, em proporção real, com o escudo, a insígnia do cinto e o texto-base. Ao lado, miniaturas das outras três marchas. Se a arte definitiva ainda não existir, apresentar como **proposta**, rotulada como tal.
 
 **Condução**
-Segunda aparição da frase-âncora: ao mostrar o certificado, diga *"de quebrantados, valentes"* — desta vez apontando o nome em branco no documento. É o momento mais emotivo da apresentação. Não o alongue.
+Segunda aparição da frase-âncora: ao mostrar o certificado, diga _"de quebrantados, valentes"_ — desta vez apontando o nome em branco no documento. É o momento mais emotivo da apresentação. Não o alongue.
 
 **Fonte** — 5.3
 
@@ -566,9 +567,9 @@ Ela nasce da pedagogia, não da loja. **Ainda não é entregável aprovado.**
 Mockup da caderneta aberta, rotulado **PROPOSTA**, mostrando o miolo: página de Ordem do Dia com campos (lição, data, ação, registro). O miolo importa mais que a capa — mostre-o maior.
 
 **Condução**
-**Tela decisiva do ato.** Reenquadra o que vem depois. Diga: *"O Guia exige a Ordem do Dia. A caderneta é só uma forma que estou propondo para registrá-la — não um produto já decidido."*
+**Tela decisiva do ato.** Reenquadra o que vem depois. Diga: _"O Guia exige a Ordem do Dia. A caderneta é só uma forma que estou propondo para registrá-la — não um produto já decidido."_
 
-**Fonte** — 3.4 (Ordem do Dia); 3.3 · *nome “Caderneta de Campanha” = proposta desta apresentação*
+**Fonte** — 3.4 (Ordem do Dia); 3.3 · _nome “Caderneta de Campanha” = proposta desta apresentação_
 
 ---
 
@@ -589,9 +590,9 @@ Uso vinculado a discípulos, instrutores e apoiadores do projeto · Nenhuma peç
 Galeria em grade, imagens em tom sóbrio, selo **ESTUDO — NÃO APROVADO** em cada peça (ou faixa única sobre a grade). **As salvaguardas aparecem na mesma tela**, peso tipográfico equivalente ao dos produtos — não em rodapé nem em tela seguinte. Ordem do ato permanece: 22 (doutrina) → 23 (caderneta) → **24 (tropa)** → 25 (governança).
 
 **Condução**
-Não venda. Apresente e cale. Se houver hesitação: *"nada disso avança sem a aprovação do senhor, e a destinação de receita é decisão da liderança, não minha."* Registre a reação no checklist da Tela 29 (item de política de marca).
+Não venda. Apresente e cale. Se houver hesitação: _"nada disso avança sem a aprovação do senhor, e a destinação de receita é decisão da liderança, não minha."_ Registre a reação no checklist da Tela 29 (item de política de marca).
 
-**Fonte** — 1.1 (senso de corpo); 5.1; menção a camiseta em ritos · *demais itens = proposta*
+**Fonte** — 1.1 (senso de corpo); 5.1; menção a camiseta em ritos · _demais itens = proposta_
 
 ---
 
@@ -610,7 +611,7 @@ Pendência registrada: **Caderno de Identidade Visual do Projeto**, previsto no 
 Bloco de governança sóbrio, com a pendência destacada em faixa. Sem imagens.
 
 **Condução**
-*"O Guia previu esse caderno. Ele ainda não existe. Proponho que seja o próximo entregável — sob a supervisão do senhor."*
+_"O Guia previu esse caderno. Ele ainda não existe. Proponho que seja o próximo entregável — sob a supervisão do senhor."_
 
 **Fonte** — 1.6; 5.3
 
@@ -639,7 +640,7 @@ Mantidas em documento companheiro próprio, fora do corpo do Guia, por serem int
 Dois cartões, ambos marcados com selo "em planejamento". Os limites de escopo abaixo, em bloco de igual peso visual.
 
 **Condução**
-*"Não vou apresentar isso como pronto, porque não está."*
+_"Não vou apresentar isso como pronto, porque não está."_
 
 **Fonte** — 8.1; 1.6
 
@@ -662,7 +663,7 @@ Critérios já estabelecidos para qualquer expansão:
 Diagrama simples de multiplicação: um instrutor → uma turma → discípulos que se tornam instrutores. Os três critérios circundam o diagrama como condições, não como etapas.
 
 **Condução**
-*"O item 6.4.2 já prevê a multiplicação. O que não existe ainda é o percurso formal de formação do instrutor. É uma pendência que trago com transparência."*
+_"O item 6.4.2 já prevê a multiplicação. O que não existe ainda é o percurso formal de formação do instrutor. É uma pendência que trago com transparência."_
 
 **Fonte** — 6.4.2; 8.1; 2Tm 2.2
 
@@ -685,7 +686,7 @@ Para isso, é preciso fluxo pastoral entre quem discipula dentro e quem recebe f
 Três ambientes ligados por uma linha contínua — presídio, quartel, igreja — com a barra dos quatro símbolos atravessando todos, sem interrupção. A continuidade da linha é o argumento.
 
 **Condução**
-Última tela de conteúdo antes da decisão. *"Isso exige que a igreja seja avisada do estágio do discípulo. É uma decisão de fluxo — e depende do senhor."*
+Última tela de conteúdo antes da decisão. _"Isso exige que a igreja seja avisada do estágio do discípulo. É uma decisão de fluxo — e depende do senhor."_
 
 **Fonte** — 1.4.3
 
@@ -707,12 +708,12 @@ Três ambientes ligados por uma linha contínua — presídio, quartel, igreja �
 ☐ Homologar o Guia Mestre v1.0-RC → v1.0
 ☐ **O prefácio do Guia Mestre** — página reservada; ver convite abaixo
 ☐ Liberação para produção dos Módulos 2 a 4
-☐ Autorizar a turma-piloto *(pergunta de implantação: local, período, número)*
-☐ Nomear o instrutor ou instrutores responsáveis *(pergunta de implantação)*
+☐ Autorizar a turma-piloto _(pergunta de implantação: local, período, número)_
+☐ Nomear o instrutor ou instrutores responsáveis _(pergunta de implantação)_
 ☐ Aprovar o estudo de identidade visual e a logomarca apresentados
 ☐ Autorizar a produção do **Caderno de Identidade Visual** (pendência do item 5.3)
 ☐ Autorizar o desenvolvimento dos **Apêndices Pastorais**
-☐ Definir a política de aplicação da marca e destinação de receita *(Tela 24 — estudo de identidade de tropa)*
+☐ Definir a política de aplicação da marca e destinação de receita _(Tela 24 — estudo de identidade de tropa)_
 ☐ Definir o fluxo de comunicação com a igreja local (item 1.4.3)
 
 ---
@@ -757,8 +758,8 @@ Obr. Flávio Alves da Costa
 Projeto Caserna de Adulão · Fortaleza-CE
 ```
 
-*Projeto Caserna de Adulão · CNPJ 63.724.286/0001-78*
-*Guia Mestre v1.0-RC — documento de validação · circulação restrita · Fortaleza, 2026*
+_Projeto Caserna de Adulão · CNPJ 63.724.286/0001-78_
+_Guia Mestre v1.0-RC — documento de validação · circulação restrita · Fortaleza, 2026_
 
 **Visual**
 Retorno ao off-white vazio da Tela 01 — **fechamento visual do ciclo.** A barra de armadura no topo, agora completa, com as quatro peças acesas. É a única tela em que a barra está inteira.
@@ -793,13 +794,13 @@ Terceira e última aparição da frase-âncora (**Dedicatória**, não Prefácio
 
 ## Paleta e tipografia propostas
 
-| Uso | Cor |
-|---|---|
-| Fundo base | `#F4F4F1` off-white |
-| Texto principal | `#2B2B2B` chumbo |
-| Estrutura e filetes | `#4A4A4A` |
-| Insígnias e destaques | `#8C6A46` latão |
-| Acento institucional | `#1A2A44` azul-caserna |
+| Uso                   | Cor                    |
+| --------------------- | ---------------------- |
+| Fundo base            | `#F4F4F1` off-white    |
+| Texto principal       | `#2B2B2B` chumbo       |
+| Estrutura e filetes   | `#4A4A4A`              |
+| Insígnias e destaques | `#8C6A46` latão        |
+| Acento institucional  | `#1A2A44` azul-caserna |
 
 **Evitar:** preto absoluto, vermelho, estética tática-agressiva, caveira/armamento, gradientes vibrantes.
 
@@ -818,4 +819,4 @@ Terceira e última aparição da frase-âncora (**Dedicatória**, não Prefácio
 
 ---
 
-*Roteiro v1.1 — ajustado após auditoria contra Guia Mestre v1.0-RC (revisão de 10/06/2026) e `conteudo/`. Prefácio tratado como convite. Afirmações em tela rastreáveis ao campo Fonte.*
+_Roteiro v1.1 — ajustado após auditoria contra Guia Mestre v1.0-RC (revisão de 10/06/2026) e `conteudo/`. Prefácio tratado como convite. Afirmações em tela rastreáveis ao campo Fonte._

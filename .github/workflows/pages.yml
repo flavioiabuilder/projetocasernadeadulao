@@ -1,0 +1,49 @@
+name: Publicar Pages
+
+# Publica somente a superfície autorizada do prospecto (Rota B / D1).
+# Apresentação, Guia, docs internos, protótipos e skills ficam fora do artefato.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Montar artefato público
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter código-fonte
+        uses: actions/checkout@v4
+      - name: Montar pasta pública
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp index.html robots.txt 404.html _site/
+          cp -r css js assets _site/
+          touch _site/.nojekyll
+      - name: Enviar artefato
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

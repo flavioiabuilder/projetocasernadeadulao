@@ -21,6 +21,17 @@ describe("estrutura HTML v1", () => {
     assert.ok(iH1 < iH2);
   });
 
+  it("não salta de h1 para h3 no Movimento I", () => {
+    const iH1 = html.search(/<h1[\s>]/);
+    const iH2 = html.search(/<h2[\s>]/);
+    const iH3 = html.search(/<h3[\s>]/);
+    assert.ok(iH1 < iH2 && iH2 < iH3);
+    assert.match(
+      html,
+      /<h2 class="movimento__titulo abertura__movimento">\s*I · A necessidade\s*<\/h2>/
+    );
+  });
+
   it("skip link aponta para main#conteudo", () => {
     assert.match(html, /href="#conteudo"[^>]*>\s*Ir para o conteúdo principal/);
     assert.match(html, /<main[^>]*id="conteudo"/);
@@ -49,7 +60,7 @@ describe("estrutura HTML v1", () => {
 
   it("protege canonical, Open Graph e Twitter Card", () => {
     const urlPublica = "https://flavioiabuilder.github.io/projetocasernadeadulao/";
-    const imagemPublica = `${urlPublica}assets/img/logo-pdac/LOGO_DaC_Primaria_Hero_3D_Color.png`;
+    const imagemPublica = `${urlPublica}assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png`;
 
     assert.equal((html.match(/rel="canonical"/g) || []).length, 1);
     assert.match(html, new RegExp(`rel="canonical"\\s+href="${urlPublica}"`));
@@ -69,7 +80,7 @@ describe("estrutura HTML v1", () => {
     assert.match(html, /name="twitter:image:alt"/);
     assert.ok(
       fs.existsSync(
-        path.join(raiz, "assets/img/logo-pdac/LOGO_DaC_Primaria_Hero_3D_Color.png")
+        path.join(raiz, "assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png")
       )
     );
   });

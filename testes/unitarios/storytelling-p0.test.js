@@ -12,22 +12,25 @@ const html = fs.readFileSync(
 
 describe("achados P0 do storytelling-v1", () => {
   it("oferece três decisões nativas com rótulos associados", () => {
-    const ids = ["decisao-modulo-1", "decisao-guia-mestre", "decisao-modulos-2-4"];
+    const ids = ["check-0", "check-1", "check-2"];
     for (const id of ids) {
-      assert.match(html, new RegExp(`<input id="${id}"[^>]+type="checkbox"`));
-      assert.match(html, new RegExp(`<label for="${id}">`));
+      assert.match(html, new RegExp(`<input type="checkbox" id="${id}"`));
+      assert.match(
+        html,
+        new RegExp(`<label><input type="checkbox" id="${id}"[^>]*>\\s*<span>`)
+      );
     }
     assert.match(html, /<fieldset class="decisao" id="decisao-pastoral">/);
   });
 
   it("inclui observações, ações e retorno acessível", () => {
-    assert.match(html, /<textarea id="observacoes-pastorais"/);
-    assert.match(html, /id="copiar-resumo"[^>]*>Copiar resumo/);
+    assert.match(html, /<textarea id="obs-geral"/);
+    assert.match(html, /id="btn-copiar-resumo"[^>]*>Copiar resumo/);
+    assert.match(html, /id="btn-mailto"[^>]*href="mailto:casernadeadulao@gmail.com"/);
     assert.match(
       html,
-      /id="responder-email"[^>]*href="mailto:casernadeadulao@gmail.com"/
+      /id="copiar-status" class="copiar-status" role="status" aria-live="polite"/
     );
-    assert.match(html, /id="estado-copia" role="status" aria-live="polite"/);
   });
 
   it("declara no Ato VI a ausência de registros publicáveis sem placeholders", () => {

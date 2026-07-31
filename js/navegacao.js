@@ -39,8 +39,7 @@
   function secaoEhNavy(el) {
     if (!el || !el.classList) return false;
     return (
-      el.classList.contains("secao--navy") ||
-      el.classList.contains("secao--navy-esc")
+      el.classList.contains("secao--navy") || el.classList.contains("secao--navy-esc")
     );
   }
 
@@ -116,8 +115,7 @@
     function atualizar() {
       ticking = false;
       const y = window.scrollY || window.pageYOffset;
-      const docH =
-        document.documentElement.scrollHeight - window.innerHeight;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
       const pct = docH > 0 ? Math.min(1, Math.max(0, y / docH)) : 0;
 
       if (barra) {

@@ -54,27 +54,22 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
     await page.goto("/");
     await page.locator('.barra__movimento[data-movimento="movimento-2"]').click();
     await expect(page.locator("#movimento-2")).toBeInViewport();
-    await expect(
-      page.locator(".barra__movimento--ativo")
-    ).toHaveAttribute("data-movimento", "movimento-2");
+    await expect(page.locator(".barra__movimento--ativo")).toHaveAttribute(
+      "data-movimento",
+      "movimento-2"
+    );
   });
 
   test("matriz e folheador operáveis", async ({ page }) => {
     await page.goto("/");
     await page.locator("#secao-9").scrollIntoViewIfNeeded();
-    await expect(page.locator("[data-matriz-lista] .matriz__modulo")).toHaveCount(
-      4
-    );
+    await expect(page.locator("[data-matriz-lista] .matriz__modulo")).toHaveCount(4);
     await page.locator('[data-filtro="1"]').click();
-    await expect(page.locator("[data-matriz-lista] .matriz__modulo")).toHaveCount(
-      1
-    );
+    await expect(page.locator("[data-matriz-lista] .matriz__modulo")).toHaveCount(1);
 
     await page.locator("#secao-12").scrollIntoViewIfNeeded();
     await page.locator('[data-folheador-edicao="instrutor"]').click();
-    await expect(page.locator("[data-folheador-rotulo]")).toContainText(
-      "Instrutor"
-    );
+    await expect(page.locator("[data-folheador-rotulo]")).toContainText("Instrutor");
   });
 
   test("escudo operável por clique e teclado", async ({ page }) => {
@@ -151,10 +146,7 @@ test.describe("prospecto v1.0 — seções 1 a 15", () => {
     const graves = results.violations.filter((v) =>
       ["critical", "serious"].includes(v.impact)
     );
-    expect(
-      graves,
-      graves.map((v) => `${v.id}: ${v.help}`).join("\n")
-    ).toEqual([]);
+    expect(graves, graves.map((v) => `${v.id}: ${v.help}`).join("\n")).toEqual([]);
   });
 
   test("caminhos relativos (sem barra absoluta na raiz)", async ({ page }) => {

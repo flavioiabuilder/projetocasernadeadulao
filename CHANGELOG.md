@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+### Auditoria integral (qualidade e governança)
+
+- Gate `validate` alinhado à CI: encoding read-only, paridade editorial, apresentação gerada, Prettier, lint CSS/JS e Guia Mestre.
+- Testes do storytelling-v1 alinhados aos controles atuais; fixture DOCX sem depender de `zip` externo.
+- `js/dados/licao1.js` passa a ser gerado a partir de `assets/img/licao1/manifest.json`.
+- Removidos `js/marcha.js` (código morto) e `fontes/guia-mestre/_guia_tmp.pdf`.
+- Skills canônicas em `.claude/skills/`; duplicata `.github/skills/` removida.
+- Pages: workflow de artefato filtrado (`docs/publicacao.md`) + `404.html`.
+- Hierarquia de headings do Movimento I corrigida (`h2` “A necessidade”).
+- Open Graph/Twitter usam master flat 2D (menor) em vez do PNG hero 3D.
+- Corrigido `lines.join` quebrado no JS do storytelling-v1 (token inválido impedia cópia/mailto).
+
 ### Logomarca oficial (PDAC)
 
 - Arquivos em `assets/img/logo-pdac/` (canônico; inventário em `LEIA-ME.md`).

@@ -4,14 +4,14 @@ Fonte da apresentação institucional em 10 atos (slides S01–S69).
 
 ## Conteúdo desta pasta
 
-| Arquivo | Papel |
-|---|---|
-| `Plano_de_Slides_Discipulando_a_Caserna.md` | Spec: sistema de design, narrativa, layouts, regras C.1–C.4 |
-| `Discipulando_a_Caserna_Apresentacao.html` | Entregável de referência (deck com voz “você”) |
-| `Discipulando_a_Caserna_Apresentacao.pdf` / `.pptx` | Referência — **não** editar a UI a partir deles |
-| `Relatorio Conversa.pdf` | Contexto de conversa |
-| `auditoria-fidelidade-v1.md` | Gate de claims vs fontes canônicas do repositório |
-| `auditoria-visual-v1.md` | Achados visuais/UX e correções P0–P1 aplicadas |
+| Arquivo                                             | Papel                                                       |
+| --------------------------------------------------- | ----------------------------------------------------------- |
+| `Plano_de_Slides_Discipulando_a_Caserna.md`         | Spec: sistema de design, narrativa, layouts, regras C.1–C.4 |
+| `Discipulando_a_Caserna_Apresentacao.html`          | Entregável de referência (deck com voz “você”)              |
+| `Discipulando_a_Caserna_Apresentacao.pdf` / `.pptx` | Referência — **não** editar a UI a partir deles             |
+| `Relatorio Conversa.pdf`                            | Contexto de conversa                                        |
+| `auditoria-fidelidade-v1.md`                        | Gate de claims vs fontes canônicas do repositório           |
+| `auditoria-visual-v1.md`                            | Achados visuais/UX e correções P0–P1 aplicadas              |
 
 ## Protótipo vivo
 

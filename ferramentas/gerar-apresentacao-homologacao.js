@@ -27,8 +27,7 @@ function esc(s) {
 
 const matriz = JSON.parse(ler("conteudo/matriz-curricular.json"));
 const modulos = JSON.parse(ler("conteudo/modulos.json"));
-const escudoPng =
-  "../assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png";
+const escudoPng = "../assets/img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png";
 
 const licao6 = matriz.licoes.find((l) => l.numero === 6);
 
@@ -109,16 +108,20 @@ const FLIP_RISCOS = [
     verso: "Matriz curricular única — 48 lições com progressão definida e reconhecível.",
   },
   {
-    frente: "Temas repetidos sem aprofundamento, e lacunas doutrinárias que ninguém percebe.",
-    verso: "Progressão em espiral — temas retornam com profundidade e finalidade diferentes.",
+    frente:
+      "Temas repetidos sem aprofundamento, e lacunas doutrinárias que ninguém percebe.",
+    verso:
+      "Progressão em espiral — temas retornam com profundidade e finalidade diferentes.",
   },
   {
     frente: "Instrutores bem-intencionados produzindo materiais incompatíveis.",
     verso: "Padrão didático fixo — sete elementos em toda lição, Guia 3.4.",
   },
   {
-    frente: "Um homem que avança no presídio e, na igreja, é convidado a recomeçar do zero.",
-    verso: "Remissão de módulo concluído — mesma linguagem e progressão em todos os ambientes.",
+    frente:
+      "Um homem que avança no presídio e, na igreja, é convidado a recomeçar do zero.",
+    verso:
+      "Remissão de módulo concluído — mesma linguagem e progressão em todos os ambientes.",
   },
 ];
 
@@ -896,7 +899,8 @@ updateUI();
 
 function buildHtml() {
   const menuLinks = ATOS.map(
-    (a) => `<li><a href="#tela-${String(a.tela).padStart(2, "0")}" data-tela="${a.tela}">${esc(a.rotulo)}</a></li>`
+    (a) =>
+      `<li><a href="#tela-${String(a.tela).padStart(2, "0")}" data-tela="${a.tela}">${esc(a.rotulo)}</a></li>`
   ).join("");
 
   return `<!DOCTYPE html>

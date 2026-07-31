@@ -39,10 +39,10 @@ Características documentadas nas fontes canônicas (`conteudo/`, `index.html`):
 
 ## Relação entre os dois
 
-| Nome | Papel |
-|---|---|
-| Projeto Caserna de Adulão | Contexto institucional, missionário e ministerial |
-| Discipulando a Caserna | Protagonista da apresentação; programa/projeto de discipulado |
+| Nome                      | Papel                                                         |
+| ------------------------- | ------------------------------------------------------------- |
+| Projeto Caserna de Adulão | Contexto institucional, missionário e ministerial             |
+| Discipulando a Caserna    | Protagonista da apresentação; programa/projeto de discipulado |
 
 Não são sinônimos. O discipulado serve ao Projeto; o site não substitui um portal institucional do Projeto.
 
@@ -84,13 +84,13 @@ Natureza desejada da experiência: prospecto pastoral digital; carta institucion
 
 Cinco movimentos, quinze seções (ver `README.md` e `TODO.md`):
 
-| Movimento | Seções | Função |
-|---|---|---|
-| I — A necessidade | 1–4 | Abertura institucional, homem, material comum, Adulão |
-| II — A resposta | 5–7 | Convicção, recusas, marca |
-| III — O programa | 8–11 | Arquitetura, matriz, anatomia, edições/encontro |
-| IV — A prova | 12–13 | Material pronto, rigor de produção |
-| V — O pedido | 14–15 | Progressão/certificados, portão pastoral |
+| Movimento         | Seções | Função                                                |
+| ----------------- | ------ | ----------------------------------------------------- |
+| I — A necessidade | 1–4    | Abertura institucional, homem, material comum, Adulão |
+| II — A resposta   | 5–7    | Convicção, recusas, marca                             |
+| III — O programa  | 8–11   | Arquitetura, matriz, anatomia, edições/encontro       |
+| IV — A prova      | 12–13  | Material pronto, rigor de produção                    |
+| V — O pedido      | 14–15  | Progressão/certificados, portão pastoral              |
 
 Direção visual aprovada: **A — Prospecto pastoral editorial** ([`docs/decisao-visual-v1.md`](decisao-visual-v1.md)), com umbral atmosférico único (de B) e rótulos/checklist editoriais (de C).
 
@@ -126,10 +126,11 @@ Também fora do escopo técnico atual (`TODO.md`): formulários, analytics, cook
 ## Estado técnico atual (síntese)
 
 - Site estático de página única (`index.html`), sem bundler.
-- CSS: `tokens`, `base`, `layout`, `componentes`, `secoes`.
-- JS modular clássico; dados gerados em `js/dados/*` a partir de `conteudo/*.json`.
-- Publicação: GitHub Pages; `noindex`/`nofollow` (não é autenticação).
-- Qualidade: `npm run validate` (generate, encoding, lint HTML/CSS/JS, testes unitários e e2e).
+- CSS: `tokens`, `base`, `layout`, `nav`, `editorial`, `escudo`, `curricular`, `secoes`.
+- JS modular clássico; dados gerados em `js/dados/*` a partir de `conteudo/*.json` e do manifesto da Lição 1.
+- Publicação: GitHub Pages via Actions com artefato filtrado (`docs/publicacao.md`); `noindex`/`nofollow` (não é autenticação).
+- Qualidade: `npm run validate` (generate + apresentação, encoding, Guia, paridade editorial, lint HTML/CSS/JS, Prettier, testes unitários e e2e).
+- Skills de agente: canônicas em `.claude/skills/` (`docs/skills.md`).
 
 Fontes canônicas de conteúdo do site: `conteudo/*.json`, `conteudo/*.md`.  
 Referência pastoral (não editar no site): `fontes/guia-mestre/`.  

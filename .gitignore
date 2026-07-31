@@ -22,6 +22,9 @@ test-results/
 blob-report/
 .npm-cache/
 referencia/
+fontes/guia-mestre/_guia_tmp.pdf
+fontes/guia-mestre/*_tmp.pdf
+_site/
 
 # impeccable-ignore-start
 # Ephemeral output, runtime state, and per-dev overrides.
