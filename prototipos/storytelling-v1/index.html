@@ -499,33 +499,27 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
   .cert-corpo,.cad-miolo,.guia-livro{box-shadow:none !important}
 }
 
-.s01-id{position:relative;margin:.85rem auto 0;padding:.15rem 0;text-align:center;opacity:0;animation:s01IdIn .8s ease 3s forwards;width:100%;max-width:100%;align-self:center;isolation:isolate;line-height:1.2}
-.s01-id strong{position:relative;z-index:0;display:block;width:100%;font-family:var(--sans);font-size:clamp(.8rem,1.35vw,.95rem);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(140,106,70,.92);text-align:center;transition:filter .18s ease,text-shadow .18s ease,color .18s ease}
-.s01-id .emblema-brilho{
-  -webkit-mask-image:none;mask-image:none;
-  border-radius:2px;
-  background:
-    radial-gradient(
-      90px circle at var(--ex,50%) var(--ey,50%),
-      rgba(255,252,240,.95) 0%,
-      rgba(255,230,180,.5) 22%,
-      rgba(200,160,100,.16) 48%,
-      transparent 70%
-    ),
-    linear-gradient(
-      110deg,
-      transparent 28%,
-      rgba(255,255,255,calc(var(--brilho,0) * .28)) 50%,
-      transparent 72%
-    );
-  mix-blend-mode:soft-light;
+.s01-id{position:relative;margin:.85rem auto 0;padding:0;text-align:center;opacity:0;animation:s01IdIn .8s ease 3s forwards;width:auto;max-width:100%;align-self:center;line-height:1.2;background:transparent}
+.s01-id .emblema-brilho{display:none!important}
+.s01-id strong{
+  display:inline-block;width:auto;max-width:100%;
+  font-family:var(--sans);font-size:clamp(.8rem,1.35vw,.95rem);font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(140,106,70,.92);text-align:center;background:transparent;
+  transition:color .18s ease,background .18s ease,-webkit-text-fill-color .18s ease;
 }
 .s01-id.brilhando strong{
-  color:#d4af78;
-  filter:brightness(1.2) saturate(1.1);
-  text-shadow:
-    0 0 12px rgba(255,236,200,.45),
-    0 0 3px rgba(255,255,255,.3);
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+  background-image:radial-gradient(
+    140px circle at var(--ex,50%) var(--ey,50%),
+    #fff6e4 0%,
+    #e8c48a 32%,
+    #b8894f 58%,
+    #8C6A46 82%,
+    #6a4e32 100%
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
 }
 @media(prefers-reduced-motion:reduce){.s01-id{opacity:1;animation:none}}
 @keyframes s01IdIn{to{opacity:1}}
@@ -1091,7 +1085,7 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
       if(img.complete) aplicaSrc();
       else img.addEventListener('load',aplicaSrc,{once:true});
     });
-    [].forEach.call(document.querySelectorAll('.s01-id'),addBrilho);
+    [].forEach.call(document.querySelectorAll('.s01-id'),function(el){ metais.push(el); });
 
     var x=innerWidth/2,y=innerHeight/2,tx=x,ty=y,ativa=false;
     function frame(){
@@ -1101,7 +1095,9 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
       luz.style.setProperty('--ly',y.toFixed(1)+'px');
       for(var i=0;i<metais.length;i++){
         var wrap=metais[i];
-        var r=wrap.getBoundingClientRect();
+        var isTexto=wrap.classList.contains('s01-id');
+        var alvo=isTexto?(wrap.querySelector('strong')||wrap):wrap;
+        var r=alvo.getBoundingClientRect();
         if(r.width<2||r.height<2){
           wrap.style.setProperty('--brilho','0');
           wrap.classList.remove('brilhando');
@@ -1112,9 +1108,8 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
         wrap.style.setProperty('--ex',ex.toFixed(2)+'%');
         wrap.style.setProperty('--ey',ey.toFixed(2)+'%');
         var cx=r.left+r.width/2, cy=r.top+r.height/2;
-        var isTexto=wrap.classList.contains('s01-id');
         var reach=isTexto
-          ? Math.max(r.width,r.height)*0.9+160
+          ? Math.max(r.width,r.height)*1.1+120
           : Math.max(r.width,r.height)*0.7+140;
         var prox=Math.max(0,1-(Math.hypot(x-cx,y-cy)/reach));
         prox=prox*prox;
