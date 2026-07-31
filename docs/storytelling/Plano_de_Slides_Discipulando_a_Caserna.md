@@ -108,16 +108,18 @@ _Abertura fria. Nada é explicado. Fundo Sombra nos quatro primeiros slides._
 
 **Narrativa**
 
-_(Nenhum texto. Nenhum título. Nenhuma legenda.)_
+_(Sem prosa. Sem título editorial. Sem legenda do emblema.)_
+
+**Desvio consciente (meio-termo):** após ~3s, surge só a assinatura tipográfica `Discipulando a Caserna` em Rótulo latão — identificação mínima para quem abre o documento solto. Não há subtítulo de apreciação, tempo de leitura nem versão. Esse contexto fica para S05/S06.
 
 **Visual**
-O emblema do projeto — o escudo com as insígnias cravadas, encimado pelo capacete e atravessado pela espada — centralizado, em versão monocromática latão sobre fundo quase preto. Ocupa cerca de 30% da altura da tela. Ao redor, nada.
+O emblema do projeto — o escudo com as insígnias cravadas, encimado pelo capacete e atravessado pela espada — centralizado, em versão monocromática latão sobre fundo quase preto. Ocupa cerca de 30% da altura da tela. Ao redor, nada no primeiro olhar.
 
 **Layout**
-Emblema centralizado nos dois eixos. Barra da armadura oculta neste slide. Rodapé oculto. Uma seta fina de rolagem no rodapé, opacidade 40%, que só aparece após 4 segundos.
+Emblema centralizado nos dois eixos. Barra da armadura oculta neste slide. Rodapé oculto. Assinatura mínima abaixo do emblema (após o atraso). Uma seta fina de rolagem, opacidade 40%, que só aparece após 4 segundos.
 
 **Comportamento**
-O emblema surge em 1,2s de opacidade. Fica sozinho por 4 segundos antes que qualquer indicação de continuidade apareça. **Este slide não explica o emblema, e nenhum slide o explicará até o Ato VIII.** É a primeira arma de Tchékhov da apresentação: quem chega ao fim descobre que viu a tese inteira antes de ler a primeira palavra.
+O emblema surge em 1,2s de opacidade. Fica sozinho ~3s; então entra a assinatura; aos 4s, a seta. **Este slide não explica o emblema, e nenhum slide o explicará até o Ato VIII.** É a primeira arma de Tchékhov da apresentação: quem chega ao fim descobre que viu a tese inteira antes de ler a primeira palavra.
 
 ---
 

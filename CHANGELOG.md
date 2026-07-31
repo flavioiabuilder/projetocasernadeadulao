@@ -7,6 +7,12 @@
 - Pages volta a incluir `prototipos/` (storytelling-v1 e direções A/B/C) no
   artefato público; ADR-002 e `docs/publicacao.md` emendados.
 
+### Storytelling v1
+
+- S01 em meio-termo: emblema + assinatura mínima `Discipulando a Caserna`
+  (sem subtítulos); chrome oculto corrigido (`.claro` não sobrescreve mais
+  `.oculto`).
+
 ### Revisão arquitetural (governança e pipeline)
 
 - ADRs em `docs/arquitetura/` (stack, Pages/CDN, offline, fontes da verdade,
