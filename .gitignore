@@ -5,6 +5,10 @@ node_modules/
 .cursor/*
 !.cursor/rules/
 !.cursor/rules/**
+!.cursor/skills/
+!.cursor/skills/**
+!.cursor/hooks.json
+!.cursor/mcp.json
 .cursor/plans/
 .env
 .env.*
