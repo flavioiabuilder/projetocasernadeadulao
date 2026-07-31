@@ -499,8 +499,34 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
   .cert-corpo,.cad-miolo,.guia-livro{box-shadow:none !important}
 }
 
-.s01-id{margin:.85rem auto 0;padding:0;text-align:center;opacity:0;animation:s01IdIn .8s ease 3s forwards;width:100%;max-width:100%;align-self:center}
-.s01-id strong{display:block;width:100%;font-family:var(--sans);font-size:clamp(.8rem,1.35vw,.95rem);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(140,106,70,.92);text-align:center}
+.s01-id{position:relative;margin:.85rem auto 0;padding:.15rem 0;text-align:center;opacity:0;animation:s01IdIn .8s ease 3s forwards;width:100%;max-width:100%;align-self:center;isolation:isolate;line-height:1.2}
+.s01-id strong{position:relative;z-index:0;display:block;width:100%;font-family:var(--sans);font-size:clamp(.8rem,1.35vw,.95rem);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(140,106,70,.92);text-align:center;transition:filter .18s ease,text-shadow .18s ease,color .18s ease}
+.s01-id .emblema-brilho{
+  -webkit-mask-image:none;mask-image:none;
+  border-radius:2px;
+  background:
+    radial-gradient(
+      90px circle at var(--ex,50%) var(--ey,50%),
+      rgba(255,252,240,.95) 0%,
+      rgba(255,230,180,.5) 22%,
+      rgba(200,160,100,.16) 48%,
+      transparent 70%
+    ),
+    linear-gradient(
+      110deg,
+      transparent 28%,
+      rgba(255,255,255,calc(var(--brilho,0) * .28)) 50%,
+      transparent 72%
+    );
+  mix-blend-mode:soft-light;
+}
+.s01-id.brilhando strong{
+  color:#d4af78;
+  filter:brightness(1.2) saturate(1.1);
+  text-shadow:
+    0 0 12px rgba(255,236,200,.45),
+    0 0 3px rgba(255,255,255,.3);
+}
 @media(prefers-reduced-motion:reduce){.s01-id{opacity:1;animation:none}}
 @keyframes s01IdIn{to{opacity:1}}
 .reserva-foto{border:1px dashed var(--latao);min-height:12rem;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;gap:.65rem;background:rgba(140,106,70,.04)}
@@ -1032,7 +1058,7 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
 
   if(location.hash){var h=document.querySelector(location.hash);if(h)setTimeout(function(){h.scrollIntoView();},60);}
 
-  /* Brilho suave do cursor + reflexo metálico na logo */
+  /* Brilho suave do cursor + reflexo metálico (logo e assinatura) */
   (function(){
     var fine=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1043,24 +1069,29 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
     document.body.appendChild(luz);
 
     var metais=[];
+    function addBrilho(alvo){
+      if(!alvo||alvo.querySelector(':scope > .emblema-brilho')) return;
+      var brilho=document.createElement('span');
+      brilho.className='emblema-brilho';
+      brilho.setAttribute('aria-hidden','true');
+      alvo.appendChild(brilho);
+      metais.push(alvo);
+    }
     [].forEach.call(document.querySelectorAll('img.emblema'),function(img){
       if(img.closest('.emblema-metal')) return;
       var wrap=document.createElement('span');
       wrap.className='emblema-metal';
       img.parentNode.insertBefore(wrap,img);
       wrap.appendChild(img);
-      var brilho=document.createElement('span');
-      brilho.className='emblema-brilho';
-      brilho.setAttribute('aria-hidden','true');
-      wrap.appendChild(brilho);
+      addBrilho(wrap);
       function aplicaSrc(){
         var src=img.currentSrc||img.src;
         if(src) wrap.style.setProperty('--emblema-src','url("'+src.replace(/"/g,'%22')+'")');
       }
       if(img.complete) aplicaSrc();
       else img.addEventListener('load',aplicaSrc,{once:true});
-      metais.push(wrap);
     });
+    [].forEach.call(document.querySelectorAll('.s01-id'),addBrilho);
 
     var x=innerWidth/2,y=innerHeight/2,tx=x,ty=y,ativa=false;
     function frame(){
@@ -1081,7 +1112,10 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
         wrap.style.setProperty('--ex',ex.toFixed(2)+'%');
         wrap.style.setProperty('--ey',ey.toFixed(2)+'%');
         var cx=r.left+r.width/2, cy=r.top+r.height/2;
-        var reach=Math.max(r.width,r.height)*0.7+140;
+        var isTexto=wrap.classList.contains('s01-id');
+        var reach=isTexto
+          ? Math.max(r.width,r.height)*0.9+160
+          : Math.max(r.width,r.height)*0.7+140;
         var prox=Math.max(0,1-(Math.hypot(x-cx,y-cy)/reach));
         prox=prox*prox;
         wrap.style.setProperty('--brilho',ativa?prox.toFixed(3):'0');
