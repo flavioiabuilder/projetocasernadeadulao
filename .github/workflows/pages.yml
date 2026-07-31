@@ -1,7 +1,7 @@
 name: Publicar Pages
 
-# Publica somente a superfície autorizada do prospecto (Rota B / D1).
-# Apresentação, Guia, docs internos, protótipos e skills ficam fora do artefato.
+# Publica o prospecto e os protótipos (storytelling-v1 e direções).
+# Apresentação, Guia, docs internos e skills ficam fora do artefato.
 # Ver docs/arquitetura/ADR-002-publicacao-e-github-pages.md
 
 on:
@@ -39,7 +39,7 @@ jobs:
           set -euo pipefail
           mkdir -p _site
           cp index.html robots.txt 404.html _site/
-          cp -r css js assets _site/
+          cp -r css js assets prototipos _site/
           touch _site/.nojekyll
       - name: Enviar artefato
         uses: actions/upload-pages-artifact@v3

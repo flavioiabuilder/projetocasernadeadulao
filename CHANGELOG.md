@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Publicação
+
+- Pages volta a incluir `prototipos/` (storytelling-v1 e direções A/B/C) no
+  artefato público; ADR-002 e `docs/publicacao.md` emendados.
+
 ### Revisão arquitetural (governança e pipeline)
 
 - ADRs em `docs/arquitetura/` (stack, Pages/CDN, offline, fontes da verdade,

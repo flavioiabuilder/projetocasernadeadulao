@@ -7,7 +7,7 @@ Perfis offline: [`ADR-003`](arquitetura/ADR-003-requisito-offline.md).
 
 Enquanto a matriz institucional da Rota B permanecer sem confirmações
 documentais (`docs/validacoes/task-p0-08-e-p0-10-validacao-institucional.md`),
-a publicação pública no GitHub Pages deve expor **somente** o prospecto:
+a publicação pública no GitHub Pages deve expor o prospecto e os protótipos:
 
 - `index.html`
 - `404.html`
@@ -15,6 +15,7 @@ a publicação pública no GitHub Pages deve expor **somente** o prospecto:
 - `css/`
 - `js/`
 - `assets/`
+- `prototipos/` (inclui `storytelling-v1` e direções A/B/C)
 
 Fora do artefato público (circulação restrita / uso local ou compartilhamento
 controlado):
@@ -22,7 +23,6 @@ controlado):
 - `apresentacao/`
 - `fontes/`
 - `docs/`
-- `prototipos/`
 - `conteudo/` (fonte editorial; não precisa estar no Pages)
 - `.claude/`, `legado/`, `ferramentas/`, `testes/`
 

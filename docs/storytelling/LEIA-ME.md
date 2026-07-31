@@ -19,7 +19,9 @@ O protótipo editável (**apresentação institucional** imersiva) está em:
 
 [`prototipos/storytelling-v1/`](../../prototipos/storytelling-v1/)
 
-Abrir `prototipos/storytelling-v1/index.html` no navegador (offline).
+Abrir `prototipos/storytelling-v1/index.html` no navegador (offline) ou a URL
+pública em
+`https://flavioiabuilder.github.io/projetocasernadeadulao/prototipos/storytelling-v1/`.
 
 Voz: “você” de leitura; pedidos de homologação em terceira pessoa (liderança pastoral), sem tratar o leitor como o pastor.
 

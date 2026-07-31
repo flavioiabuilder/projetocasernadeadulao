@@ -43,8 +43,8 @@ npm run validate
 | Prospecto         | `index.html`                             | Experiência oficial de leitura              | Sim           |
 | 404               | `404.html`                               | Página não encontrada do deploy             | Sim           |
 | Homologação       | `apresentacao/homologacao-pastoral.html` | Deck gerado (33 telas), circulação restrita | Não           |
-| Storytelling      | `prototipos/storytelling-v1/`            | Protótipo institucional testado             | Não           |
-| Direções A/B/C    | `prototipos/direcao-*`                   | Referência histórica de direção visual      | Não           |
+| Storytelling      | `prototipos/storytelling-v1/`            | Protótipo institucional testado             | Sim           |
+| Direções A/B/C    | `prototipos/direcao-*`                   | Referência histórica de direção visual      | Sim           |
 | Guia Mestre       | `fontes/guia-mestre/`                    | Referência pastoral (não é fonte do site)   | Não           |
 | Spec storytelling | `docs/storytelling/`                     | Roteiro e exports de referência             | Não           |
 

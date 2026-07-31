@@ -1,7 +1,8 @@
-# Protótipos e superfícies não públicas
+# Protótipos
 
-Mapa de retenção (revisão arquitetural 2026-07-31). Nenhuma destas pastas entra
-no artefato GitHub Pages (ADR-002).
+Mapa de retenção (revisão arquitetural 2026-07-31; emenda Pages 2026-07-31).
+A pasta `prototipos/` entra no artefato GitHub Pages (ADR-002). Homologação,
+Guia e docs internos continuam fora.
 
 | Caminho            | Status                         | Papel                                                                                 |
 | ------------------ | ------------------------------ | ------------------------------------------------------------------------------------- |
@@ -15,3 +16,6 @@ Exports grandes em `docs/storytelling/*.html` e o HTML do Guia em `fontes/` são
 
 Para a superfície de produção, use `index.html` na raiz.
 Para homologação pastoral restrita, use `apresentacao/homologacao-pastoral.html`.
+
+URL pública do storytelling:
+`https://flavioiabuilder.github.io/projetocasernadeadulao/prototipos/storytelling-v1/`
