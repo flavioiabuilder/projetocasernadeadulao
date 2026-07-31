@@ -5,3 +5,6 @@ playwright-report/
 test-results/
 _gerado/
 docs/reference-audit/
+
+# Artefato gerado por ferramentas/gerar-tokens.js
+design-system/css/tokens.css

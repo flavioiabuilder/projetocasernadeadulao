@@ -2,7 +2,12 @@
 
 module.exports = [
   {
-    files: ["js/**/*.js", "ferramentas/**/*.js", "testes/**/*.js"],
+    files: [
+      "js/**/*.js",
+      "ferramentas/**/*.js",
+      "testes/**/*.js",
+      "design-system/js/**/*.js",
+    ],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: "script",
@@ -25,6 +30,10 @@ module.exports = [
         DocumentFragment: "readonly",
         history: "readonly",
         getComputedStyle: "readonly",
+        performance: "readonly",
+        matchMedia: "readonly",
+        CSSRule: "readonly",
+        Float32Array: "readonly",
       },
     },
     rules: {

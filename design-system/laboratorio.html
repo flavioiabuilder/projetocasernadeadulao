@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="Inventário vivo do design system Estratos: tokens, tipografia, cores, grade, componentes, estados, movimento e comportamento responsivo."
+    />
+    <title>Estratos — laboratório visual</title>
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/foundations.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <style>
+      /*
+       * Estilos exclusivos da página de laboratório. Nenhum valor aqui
+       * pertence ao design system — é só a moldura de documentação.
+       */
+      body {
+        margin: 0;
+        background: var(--es-cor-abismo);
+        color: var(--es-cor-texto-corpo);
+        font-family: var(--es-tipo-familia-corpo);
+        font-weight: var(--es-tipo-peso-corpo);
+        font-size: 1rem;
+        line-height: var(--es-tipo-lh-corpo);
+      }
+
+      .lab {
+        max-width: 72rem;
+        margin-inline: auto;
+        padding: var(--es-esp-16) var(--es-esp-6) var(--es-esp-20);
+      }
+
+      .lab__cabecalho {
+        border-bottom: 1px solid var(--es-cor-filete);
+        padding-bottom: var(--es-esp-8);
+        margin-bottom: var(--es-esp-16);
+      }
+
+      .lab section {
+        margin-bottom: var(--es-esp-20);
+        scroll-margin-top: var(--es-esp-8);
+      }
+
+      .lab h2 {
+        font-family: var(--es-tipo-familia-display);
+        font-weight: var(--es-tipo-peso-display);
+        font-size: 1.75rem;
+        line-height: 1.2;
+        margin-bottom: var(--es-esp-2);
+        color: var(--es-cor-texto);
+      }
+
+      .lab h3 {
+        font-size: var(--es-tipo-rotulo);
+        letter-spacing: var(--es-tipo-tracking-micro);
+        text-transform: uppercase;
+        color: var(--es-cor-texto-tenue);
+        margin: var(--es-esp-8) 0 var(--es-esp-4);
+        font-weight: 400;
+      }
+
+      .lab__nota {
+        color: var(--es-cor-texto-tenue);
+        max-width: 62ch;
+        margin-bottom: var(--es-esp-6);
+      }
+
+      .lab__grade {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: var(--es-esp-4);
+      }
+
+      .lab__amostra {
+        border: 1px solid var(--es-cor-filete);
+        border-radius: var(--es-raio-sutil);
+        overflow: hidden;
+      }
+
+      .lab__chapa {
+        height: 72px;
+      }
+
+      .lab__meta {
+        padding: var(--es-esp-3);
+        font-size: 0.75rem;
+        line-height: 1.5;
+      }
+
+      .lab__meta code {
+        display: block;
+        color: var(--es-cor-texto-tenue);
+        font-family: ui-monospace, monospace;
+        font-size: 0.6875rem;
+        word-break: break-all;
+      }
+
+      .lab__palco {
+        position: relative;
+        height: 460px;
+        border: 1px solid var(--es-cor-filete);
+        border-radius: var(--es-raio-sutil);
+        overflow: hidden;
+      }
+
+      .lab__palco .es-palco {
+        height: 100%;
+        min-height: 0;
+      }
+
+      .lab__linha {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--es-esp-4);
+        padding: var(--es-esp-6);
+        border: 1px solid var(--es-cor-filete);
+        border-radius: var(--es-raio-sutil);
+        background: var(--es-grad-atmosfera);
+      }
+
+      .lab__grade-demo {
+        background: var(--es-grad-atmosfera);
+        border-radius: var(--es-raio-sutil);
+        padding: var(--es-esp-4);
+      }
+
+      .lab__grade-demo > * {
+        background: var(--es-cor-filete);
+        text-align: center;
+        font-size: 0.6875rem;
+        padding: var(--es-esp-3) 0;
+        border-radius: 2px;
+      }
+
+      .lab__tabela {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.8125rem;
+      }
+
+      .lab__tabela th,
+      .lab__tabela td {
+        text-align: start;
+        padding: var(--es-esp-2) var(--es-esp-3);
+        border-bottom: 1px solid var(--es-cor-filete-tenue);
+        vertical-align: top;
+      }
+
+      .lab__tabela th {
+        color: var(--es-cor-texto-tenue);
+        font-weight: 400;
+        font-size: 0.6875rem;
+        letter-spacing: var(--es-tipo-tracking-micro);
+        text-transform: uppercase;
+      }
+
+      .lab__tabela code {
+        font-family: ui-monospace, monospace;
+        font-size: 0.75rem;
+        color: var(--es-cor-brasa-clara);
+      }
+
+      .lab__aviso {
+        border-inline-start: 2px solid var(--es-cor-brasa);
+        padding: var(--es-esp-3) var(--es-esp-5);
+        background: var(--es-cor-filete-tenue);
+        border-radius: 0 var(--es-raio-sutil) var(--es-raio-sutil) 0;
+        margin-bottom: var(--es-esp-6);
+      }
+
+      .lab__indice {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--es-esp-4);
+        font-size: 0.8125rem;
+      }
+
+      .lab__indice a {
+        color: var(--es-cor-texto-tenue);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lab">
+      <header class="lab__cabecalho">
+        <h1
+          style="
+            font-family: var(--es-tipo-familia-display);
+            font-weight: 300;
+            font-size: 2.5rem;
+            margin: 0 0 var(--es-esp-3);
+          "
+        >
+          Estratos — laboratório visual
+        </h1>
+        <p class="lab__nota">
+          Inventário vivo do design system. Todos os valores exibidos são lidos
+          em tempo real das custom properties geradas por
+          <code>ferramentas/gerar-tokens.js</code>; nada nesta página duplica um
+          token.
+        </p>
+        <nav class="lab__indice" aria-label="Seções do laboratório">
+          <a href="#cores">Cores</a>
+          <a href="#tipografia">Tipografia</a>
+          <a href="#espaco">Espaço</a>
+          <a href="#grade">Grade</a>
+          <a href="#componentes">Componentes</a>
+          <a href="#estados">Estados</a>
+          <a href="#movimento">Movimento</a>
+          <a href="#responsivo">Responsivo</a>
+          <a href="#narrativa">Narrativa</a>
+        </nav>
+      </header>
+
+      <section id="cores">
+        <h2>Cores</h2>
+        <p class="lab__nota">
+          Campo atmosférico dessaturado, texto quase branco com tintura do
+          ambiente, e um único acento luminoso. A superfície sólida branca é o
+          único elemento de alto contraste do sistema — é ela que carrega a ação
+          primária.
+        </p>
+        <div class="lab__grade" data-lab-cores></div>
+
+        <h3>Gradientes</h3>
+        <div class="lab__grade" data-lab-gradientes></div>
+      </section>
+
+      <section id="tipografia">
+        <h2>Tipografia</h2>
+        <div class="lab__aviso">
+          <strong>Decisão estrutural:</strong> a escala tipográfica responde à
+          <em>altura</em> do viewport, não à largura, porque cada cena é um palco
+          de viewport fixo. Redimensione a janela verticalmente para ver o
+          display acompanhar.
+        </div>
+        <p class="es-display">Display — min(8.4vh, 70px), entrelinha 0.80</p>
+        <p class="es-titulo" style="margin-top: var(--es-esp-6)">
+          Título — min(5.2vh, 36px), entrelinha 1.05
+        </p>
+        <p class="es-corpo" style="margin-top: var(--es-esp-6); max-width: 450px">
+          Corpo — min(2.2vh, 16px), entrelinha 1.60. A medida editorial é fixa em
+          450px no desktop e 300px no mobile: uma coluna medida, não uma fração
+          da tela.
+        </p>
+        <p class="es-rotulo" style="margin-top: var(--es-esp-6)">
+          Rótulo — 12px, entrelinha 1.30, tracking 0.08em
+        </p>
+        <p class="es-micro" style="margin-top: var(--es-esp-4)">
+          Micro — 11px, caixa alta, tracking 0.16em
+        </p>
+        <h3>Valores computados agora</h3>
+        <table class="lab__tabela" data-lab-tipo>
+          <thead>
+            <tr>
+              <th>Papel</th>
+              <th>Token</th>
+              <th>Computado</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section id="espaco">
+        <h2>Espaço e geometria</h2>
+        <p class="lab__nota">
+          Escala de 4px, com dois valores de moldura medidos na referência:
+          60px no desktop, 30px no mobile.
+        </p>
+        <table class="lab__tabela" data-lab-espaco>
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Valor</th>
+              <th>Amostra</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section id="grade">
+        <h2>Grade</h2>
+        <div class="lab__grade-demo es-grade">
+          <span>1</span><span>2</span><span>3</span><span>4</span>
+          <span>5</span><span>6</span><span>7</span><span>8</span>
+          <span>9</span><span>10</span><span>11</span><span>12</span>
+        </div>
+        <h3>Coluna editorial</h3>
+        <div class="lab__grade-demo">
+          <div
+            class="es-coluna-editorial"
+            style="background: var(--es-cor-filete); padding: var(--es-esp-4)"
+          >
+            Largura da coluna editorial neste viewport:
+            <strong data-lab-coluna></strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="componentes">
+        <h2>Componentes</h2>
+
+        <h3>Ação primária (única superfície de alto contraste)</h3>
+        <div class="lab__linha">
+          <button type="button" class="es-acao-solida">
+            Ação primária
+            <span class="es-acao-solida__marca" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="es-controle es-acao-contorno">
+            Ação secundária
+            <svg class="es-acao-contorno__icone" viewBox="0 0 12 12" aria-hidden="true">
+              <path d="M1 4V1h3M11 8v3H8" />
+            </svg>
+          </button>
+          <button type="button" class="es-controle">Controle neutro</button>
+          <button type="button" class="es-controle" disabled>Desabilitado</button>
+        </div>
+
+        <h3>Controle de som e menu</h3>
+        <div class="lab__linha">
+          <button type="button" class="es-som" aria-pressed="true" aria-label="Som ativo">
+            <span class="es-som__rotulo">Som</span>
+            <svg class="es-som__onda" viewBox="0 0 68 12" aria-hidden="true">
+              <g class="es-som__onda-grupo">
+                <path d="M0 6 l17 0 c8.5 0 8.5 -4 17 -4 s8.5 4 17 4 l17 0" />
+                <path d="M68 6 l17 0 c8.5 0 8.5 -4 17 -4 s8.5 4 17 4 l17 0" />
+              </g>
+            </svg>
+          </button>
+          <button type="button" class="es-menu-botao" aria-label="Abrir índice">
+            <span class="es-menu-botao__traco"></span>
+            <span class="es-menu-botao__traco"></span>
+          </button>
+          <span class="es-prompt">
+            <span class="es-prompt__pulso" aria-hidden="true"></span>
+            Prompt de descoberta
+          </span>
+        </div>
+
+        <h3>Trilho de progresso</h3>
+        <div class="lab__linha" style="display: block; padding: 0; height: 90px">
+          <nav
+            class="es-trilho"
+            style="position: relative"
+            aria-label="Exemplo de trilho"
+          >
+            <button type="button" class="es-trilho__extremo" disabled>Anterior</button>
+            <ol class="es-trilho__marcadores" aria-hidden="true">
+              <li class="es-trilho__marcador" data-estado="visitado"></li>
+              <li class="es-trilho__marcador" data-estado="atual"></li>
+              <li class="es-trilho__marcador" data-estado="futuro"></li>
+              <li class="es-trilho__marcador" data-estado="futuro"></li>
+            </ol>
+            <span class="es-trilho__legenda">Cena atual</span>
+            <button type="button" class="es-trilho__extremo">Próxima</button>
+          </nav>
+        </div>
+
+        <h3>Item do mapa de cenas</h3>
+        <div class="lab__linha" style="flex-direction: column; align-items: stretch">
+          <button type="button" class="es-mapa__item" aria-current="true">
+            <span class="es-mapa__ordinal">I</span>
+            <span class="es-titulo">Item atual</span>
+          </button>
+          <button type="button" class="es-mapa__item">
+            <span class="es-mapa__ordinal">II</span>
+            <span class="es-titulo">Item disponível</span>
+          </button>
+        </div>
+
+        <h3>Camadas ambientais</h3>
+        <div class="lab__palco">
+          <div class="es-palco es-superficie-atmosfera">
+            <div class="es-camada es-camada--ambiente">
+              <div class="es-granulacao"></div>
+              <div class="es-horizonte"></div>
+              <div class="es-vinheta"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="estados">
+        <h2>Estados</h2>
+        <p class="lab__nota">
+          Use Tab para percorrer os controles e ver o anel de foco. Todos os
+          alvos respeitam a área mínima de 44px.
+        </p>
+        <table class="lab__tabela">
+          <thead>
+            <tr>
+              <th>Estado</th>
+              <th>Tratamento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>default</td>
+              <td>Filete a 20% de opacidade, texto pleno</td>
+            </tr>
+            <tr>
+              <td>hover</td>
+              <td>Filete a 42%, fundo a 10%, elevação de 1px na ação primária</td>
+            </tr>
+            <tr>
+              <td>focus-visible</td>
+              <td>Anel de 2px na cor de acento, deslocamento de 3px</td>
+            </tr>
+            <tr>
+              <td>disabled</td>
+              <td>Opacidade 0.42, cursor não permitido, sem resposta a hover</td>
+            </tr>
+            <tr>
+              <td>atual (trilho)</td>
+              <td>Marcador em acento luminoso com escala vertical 3×</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="movimento">
+        <h2>Movimento</h2>
+        <div class="lab__aviso" data-lab-movimento>
+          Verificando preferência de movimento…
+        </div>
+        <p class="lab__nota">
+          A substituição de movimento reduzido acontece no nível do token: em
+          <code>prefers-reduced-motion</code>, as durações caem para 1ms e as
+          distâncias para 0. Nenhum componente precisa saber que a preferência
+          existe.
+        </p>
+        <table class="lab__tabela" data-lab-motion>
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Valor atual</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <h3>Revelação por linhas</h3>
+        <p class="lab__nota">
+          O texto é fatiado em linhas com deslocamento horizontal escalonado. As
+          fatias são <code>aria-hidden</code> e o texto íntegro é preservado, de
+          modo que o leitor de tela leia a frase uma única vez.
+        </p>
+        <div class="lab__linha" style="display: block">
+          <p class="es-display" data-lab-fatiar style="max-width: 450px">
+            A revelação acontece linha a linha, com atraso escalonado
+          </p>
+          <button
+            type="button"
+            class="es-controle"
+            data-lab-repetir
+            style="margin-top: var(--es-esp-6)"
+          >
+            Repetir revelação
+          </button>
+        </div>
+      </section>
+
+      <section id="responsivo">
+        <h2>Responsividade</h2>
+        <p class="lab__nota">
+          Um único breakpoint estrutural, medido na referência em
+          <strong>768px</strong>. Abaixo dele mudam moldura, coluna editorial,
+          escala do display e entrelinha do corpo.
+        </p>
+        <table class="lab__tabela">
+          <thead>
+            <tr>
+              <th>Propriedade</th>
+              <th>≥ 768px</th>
+              <th>&lt; 768px</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Moldura</td><td>60px</td><td>30px (32px no topo)</td></tr>
+            <tr><td>Coluna editorial</td><td>450px</td><td>300px</td></tr>
+            <tr><td>Display</td><td>min(8.4vh, 70px)</td><td>45px</td></tr>
+            <tr><td>Corpo</td><td>min(2.2vh, 16px) / 1.60</td><td>14px / 1.45</td></tr>
+            <tr><td>Altura do cabeçalho</td><td>134px</td><td>80px</td></tr>
+            <tr><td>Trilho</td><td>Marcadores</td><td>Rótulos textuais</td></tr>
+          </tbody>
+        </table>
+        <p class="lab__nota" style="margin-top: var(--es-esp-4)">
+          Viewport atual: <strong data-lab-viewport></strong>
+        </p>
+      </section>
+
+      <section id="narrativa">
+        <h2>Sequência narrativa</h2>
+        <p class="lab__nota">
+          Demonstração completa em
+          <a class="es-link" href="demo.html">demo.html</a> — quatro cenas com
+          entrada atmosférica, progressão por gesto e teclado, transição
+          editorial, corpo com profundidade, navegação contextual e conclusão.
+        </p>
+      </section>
+    </div>
+
+    <script src="js/matematica.js"></script>
+    <script src="js/estratos.js"></script>
+    <script src="js/motion.js"></script>
+    <script>
+      (function () {
+        "use strict";
+        var E = window.Estratos;
+
+        function lerToken(nome) {
+          return getComputedStyle(document.documentElement)
+            .getPropertyValue("--es-" + nome)
+            .trim();
+        }
+
+        /* ---------- Cores ---------- */
+        var cores = [
+          "abismo", "profundo", "mineral", "pedra", "limo", "bruma", "vapor",
+          "alvorada", "luz", "brasa", "brasa-clara", "filete", "filete-forte",
+          "veu", "foco",
+        ];
+        var alvoCores = document.querySelector("[data-lab-cores]");
+        cores.forEach(function (nome) {
+          var valor = lerToken("cor-" + nome);
+          var el = document.createElement("div");
+          el.className = "lab__amostra";
+          el.innerHTML =
+            '<div class="lab__chapa" style="background:' + valor + '"></div>' +
+            '<div class="lab__meta">' + nome +
+            "<code>--es-cor-" + nome + "</code><code>" + valor + "</code></div>";
+          alvoCores.append(el);
+        });
+
+        var gradientes = ["atmosfera", "atmosfera-profunda", "horizonte", "vinheta", "painel"];
+        var alvoGrad = document.querySelector("[data-lab-gradientes]");
+        gradientes.forEach(function (nome) {
+          var valor = lerToken("grad-" + nome);
+          var el = document.createElement("div");
+          el.className = "lab__amostra";
+          el.innerHTML =
+            '<div class="lab__chapa" style="background:' + valor +
+            ";background-color:var(--es-cor-mineral)\"></div>" +
+            '<div class="lab__meta">' + nome + "<code>--es-grad-" + nome + "</code></div>";
+          alvoGrad.append(el);
+        });
+
+        /* ---------- Tipografia computada ---------- */
+        var papeis = [
+          ["Display", "es-display", "tipo-display-fluido"],
+          ["Título", "es-titulo", "tipo-titulo-fluido"],
+          ["Corpo", "es-corpo", "tipo-corpo-fluido"],
+          ["Rótulo", "es-rotulo", "tipo-rotulo"],
+          ["Micro", "es-micro", "tipo-micro"],
+        ];
+        var corpoTipo = document.querySelector("[data-lab-tipo] tbody");
+        function atualizarTipo() {
+          corpoTipo.innerHTML = "";
+          papeis.forEach(function (p) {
+            var sonda = document.createElement("span");
+            sonda.className = p[1];
+            sonda.style.position = "absolute";
+            sonda.style.visibility = "hidden";
+            sonda.textContent = "M";
+            document.body.append(sonda);
+            var cs = getComputedStyle(sonda);
+            var linha = document.createElement("tr");
+            linha.innerHTML =
+              "<td>" + p[0] + "</td><td><code>--es-" + p[2] + "</code></td><td>" +
+              cs.fontSize + " / " + cs.lineHeight + "</td>";
+            corpoTipo.append(linha);
+            sonda.remove();
+          });
+        }
+
+        /* ---------- Espaço ---------- */
+        var espacos = ["1","2","3","4","5","6","8","10","12","16","20","moldura","moldura-mobile"];
+        var corpoEspaco = document.querySelector("[data-lab-espaco] tbody");
+        espacos.forEach(function (nome) {
+          var valor = lerToken("esp-" + nome);
+          var linha = document.createElement("tr");
+          linha.innerHTML =
+            "<td><code>--es-esp-" + nome + "</code></td><td>" + valor +
+            '</td><td><span style="display:inline-block;height:10px;background:var(--es-cor-brasa);width:' +
+            valor + '"></span></td>';
+          corpoEspaco.append(linha);
+        });
+
+        /* ---------- Movimento ---------- */
+        var motionTokens = [
+          "dur-rapida","dur-media","dur-lenta","dur-cena","ease-padrao","ease-entrada",
+          "stagger-linha","stagger-bloco","mov-dist-curta","mov-dist-media","mov-dist-longa",
+        ];
+        var corpoMotion = document.querySelector("[data-lab-motion] tbody");
+        function atualizarMotion() {
+          corpoMotion.innerHTML = "";
+          motionTokens.forEach(function (nome) {
+            var linha = document.createElement("tr");
+            linha.innerHTML =
+              "<td><code>--es-" + nome + "</code></td><td>" + lerToken(nome) + "</td>";
+            corpoMotion.append(linha);
+          });
+          var aviso = document.querySelector("[data-lab-movimento]");
+          aviso.textContent = E.movimentoReduzido()
+            ? "prefers-reduced-motion está ATIVO: durações e distâncias foram neutralizadas nos tokens abaixo."
+            : "prefers-reduced-motion está inativo. Ative-o no sistema operacional para ver os tokens trocarem de valor.";
+        }
+
+        /* ---------- Revelação demonstrativa ---------- */
+        var alvoFatiar = document.querySelector("[data-lab-fatiar]");
+        alvoFatiar.setAttribute("data-es-revelar", "");
+        E.motion.fatiarLinhas(alvoFatiar);
+        function repetir() {
+          alvoFatiar.classList.remove("is-revelado");
+          void alvoFatiar.offsetWidth;
+          alvoFatiar.classList.add("is-revelado");
+        }
+        document.querySelector("[data-lab-repetir]").addEventListener("click", repetir);
+        repetir();
+
+        /* ---------- Leituras dependentes do viewport ---------- */
+        function atualizarViewport() {
+          document.querySelector("[data-lab-viewport]").textContent =
+            window.innerWidth + " × " + window.innerHeight +
+            (window.innerWidth < 768 ? " (mobile)" : " (desktop)");
+          var col = document.querySelector(".es-coluna-editorial");
+          document.querySelector("[data-lab-coluna]").textContent =
+            Math.round(col.getBoundingClientRect().width) + "px";
+          atualizarTipo();
+        }
+
+        atualizarViewport();
+        atualizarMotion();
+        window.addEventListener("resize", atualizarViewport, { passive: true });
+        E.observarMovimento(atualizarMotion);
+      })();
+    </script>
+  </body>
+</html>

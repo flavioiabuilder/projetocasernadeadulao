@@ -1,0 +1,730 @@
+/*
+ * Estratos — componentes
+ *
+ * Cada bloco corresponde a um componente observado na referência
+ * (ver docs/design-system/components.md para o mapa de equivalência).
+ * Depende de tokens.css e foundations.css.
+ */
+
+/* ============================================================
+   Carregamento — texto letra a letra sobre o palco vazio
+   ============================================================ */
+
+.es-carregamento {
+  position: absolute;
+  inset: 0;
+  z-index: var(--es-z-carregamento);
+  display: grid;
+  place-items: center;
+  background: var(--es-grad-atmosfera-profunda);
+  transition: opacity var(--es-dur-lenta) var(--es-ease-padrao);
+}
+
+.es-carregamento[hidden] {
+  display: none;
+}
+
+.es-carregamento.is-saindo {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.es-carregamento__texto {
+  display: flex;
+  gap: 0.06em;
+}
+
+/* A letra é decorativa: o nome acessível vive no aria-label do container. */
+.es-carregamento__letra {
+  display: inline-block;
+  font-family: var(--es-tipo-familia-display);
+  font-size: var(--es-tipo-rotulo);
+  letter-spacing: var(--es-tipo-tracking-micro);
+  text-transform: uppercase;
+  color: var(--es-cor-texto-tenue);
+  animation: es-pulsar-letra 1600ms var(--es-ease-suave) infinite;
+  animation-delay: calc(var(--es-i, 0) * var(--es-stagger-item));
+}
+
+@keyframes es-pulsar-letra {
+  0%,
+  100% {
+    opacity: var(--es-opac-fantasma);
+  }
+
+  50% {
+    opacity: var(--es-opac-pleno);
+  }
+}
+
+.es-carregamento__barra {
+  width: 120px;
+  height: var(--es-tam-trilho);
+  margin-top: var(--es-esp-6);
+  background: var(--es-cor-filete-tenue);
+  overflow: hidden;
+}
+
+.es-carregamento__progresso {
+  height: 100%;
+  width: calc(var(--es-progresso, 0) * 100%);
+  background: var(--es-cor-brasa-clara);
+  transition: width var(--es-dur-media) var(--es-ease-suave);
+}
+
+/* ============================================================
+   Pórtico — entrada da experiência (gate)
+   ============================================================ */
+
+.es-portico {
+  position: absolute;
+  inset: 0;
+  z-index: var(--es-z-editorial);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--es-esp-8);
+  text-align: center;
+  padding: var(--es-esp-moldura);
+}
+
+.es-portico[hidden] {
+  display: none;
+}
+
+.es-portico__marca {
+  opacity: var(--es-opac-quase);
+}
+
+.es-portico__titulo {
+  text-transform: uppercase;
+  max-width: 18ch;
+}
+
+/* ============================================================
+   Cabeçalho da experiência
+   ============================================================ */
+
+.es-cabecalho {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: var(--es-z-cabecalho);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--es-esp-moldura) var(--es-esp-moldura) 0;
+  pointer-events: none;
+}
+
+.es-cabecalho > * {
+  pointer-events: auto;
+}
+
+@media (max-width: 767px) {
+  .es-cabecalho {
+    padding: var(--es-esp-moldura-topo-mobile) var(--es-esp-moldura-mobile) 0;
+  }
+}
+
+/* ---------- Controle de som ---------- */
+
+.es-som {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--es-esp-3);
+
+  /*
+   * Alvo mínimo nas DUAS dimensões: com o rótulo oculto no mobile, resta só a
+   * onda (34px), que ficaria abaixo do mínimo na horizontal.
+   */
+  min-height: var(--es-tam-alvo-minimo);
+  min-width: var(--es-tam-alvo-minimo);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--es-cor-texto);
+  cursor: pointer;
+}
+
+.es-som__rotulo {
+  font-size: var(--es-tipo-rotulo);
+  line-height: var(--es-tipo-lh-rotulo);
+}
+
+@media (max-width: 767px) {
+  .es-som__rotulo {
+    /* O rótulo some no mobile; o nome acessível permanece no aria-label. */
+    display: none;
+  }
+}
+
+.es-som__onda {
+  width: 34px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.es-som__onda path {
+  stroke: currentcolor;
+  stroke-width: 1;
+  fill: none;
+}
+
+.es-som__onda-grupo {
+  animation: es-deslizar-onda 2400ms linear infinite;
+}
+
+.es-som[aria-pressed="false"] .es-som__onda-grupo {
+  animation-play-state: paused;
+}
+
+.es-som[aria-pressed="false"] .es-som__onda {
+  opacity: var(--es-opac-tenue);
+}
+
+@keyframes es-deslizar-onda {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-34px, 0, 0);
+  }
+}
+
+/* ---------- Botão de menu ---------- */
+
+.es-menu-botao {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: var(--es-tam-alvo-minimo);
+  height: var(--es-tam-alvo-minimo);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.es-menu-botao__traco {
+  display: block;
+  width: 20px;
+  height: 1px;
+  margin-inline-start: auto;
+  background: var(--es-cor-texto);
+  transition: transform var(--es-dur-rapida) var(--es-ease-padrao);
+}
+
+.es-menu-botao:hover .es-menu-botao__traco:nth-child(2) {
+  transform: scaleX(0.7);
+  transform-origin: right;
+}
+
+/* ============================================================
+   Cena — palco de uma unidade narrativa
+   ============================================================ */
+
+.es-cena {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.es-cena[hidden] {
+  display: none;
+}
+
+.es-cena__conteudo {
+  pointer-events: auto;
+  padding-inline-start: max(var(--es-esp-moldura), 46vw);
+}
+
+@media (max-width: 767px) {
+  .es-cena__conteudo {
+    padding-inline: var(--es-esp-moldura-mobile);
+  }
+}
+
+/* ============================================================
+   Painel editorial
+   ============================================================ */
+
+.es-editorial {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.es-editorial__sobrancelha {
+  margin-block-end: var(--es-esp-4);
+}
+
+.es-editorial__titulo {
+  margin-block-end: var(--es-esp-8);
+}
+
+.es-editorial__corpo > * + * {
+  margin-block-start: var(--es-esp-4);
+}
+
+.es-editorial__acoes {
+  display: flex;
+  align-items: center;
+  gap: var(--es-esp-4);
+  margin-block-start: var(--es-esp-8);
+}
+
+/* ============================================================
+   Ações
+   ============================================================ */
+
+/* Única superfície de alto contraste do sistema. */
+.es-acao-solida {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--es-esp-3);
+  min-height: var(--es-tam-alvo-minimo);
+  padding: var(--es-esp-3) var(--es-esp-5);
+  border: 0;
+  border-radius: var(--es-raio-sutil);
+  background: var(--es-cor-superficie-solida);
+  color: var(--es-cor-texto-inverso);
+  font-size: var(--es-tipo-rotulo);
+  line-height: var(--es-tipo-lh-rotulo);
+  cursor: pointer;
+  transition:
+    transform var(--es-dur-rapida) var(--es-ease-padrao),
+    box-shadow var(--es-dur-rapida) var(--es-ease-padrao);
+}
+
+.es-acao-solida:hover {
+  box-shadow: var(--es-sombra-controle);
+  transform: translate3d(0, -1px, 0);
+}
+
+.es-acao-solida__marca {
+  width: var(--es-tam-marcador);
+  height: var(--es-tam-marcador);
+  border-radius: var(--es-raio-circulo);
+  background: var(--es-cor-brasa);
+  transition: transform var(--es-dur-rapida) var(--es-ease-padrao);
+}
+
+.es-acao-solida:hover .es-acao-solida__marca {
+  transform: scale(1.35);
+}
+
+/* Ação secundária: contorno em pílula. Herda a base de .es-controle. */
+.es-acao-contorno {
+  text-transform: uppercase;
+  letter-spacing: var(--es-tipo-tracking-micro);
+  font-size: var(--es-tipo-micro);
+}
+
+.es-acao-contorno__icone {
+  width: 12px;
+  height: 12px;
+  stroke: currentcolor;
+  stroke-width: 1.25;
+  fill: none;
+}
+
+/* ============================================================
+   Prompt de descoberta
+   ============================================================ */
+
+.es-prompt {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--es-esp-3);
+  font-size: var(--es-tipo-micro);
+  letter-spacing: var(--es-tipo-tracking-micro);
+  text-transform: uppercase;
+  color: var(--es-cor-texto-tenue);
+}
+
+.es-prompt__pulso {
+  width: var(--es-tam-marcador);
+  height: var(--es-tam-marcador);
+  border: 1px solid currentcolor;
+  border-radius: var(--es-raio-circulo);
+  animation: es-pulsar 2200ms var(--es-ease-suave) infinite;
+}
+
+@keyframes es-pulsar {
+  0%,
+  100% {
+    opacity: var(--es-opac-tenue);
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: var(--es-opac-pleno);
+    transform: scale(1.3);
+  }
+}
+
+/* ============================================================
+   Trilho de progresso
+   ============================================================ */
+
+.es-trilho {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  z-index: var(--es-z-trilho);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--es-esp-4);
+  padding: var(--es-esp-5) var(--es-esp-moldura);
+}
+
+@media (max-width: 767px) {
+  .es-trilho {
+    padding: var(--es-esp-4) var(--es-esp-moldura-mobile);
+  }
+}
+
+.es-trilho__extremo {
+  flex-shrink: 0;
+  font-size: var(--es-tipo-micro);
+  letter-spacing: var(--es-tipo-tracking-micro);
+  text-transform: uppercase;
+  color: var(--es-cor-texto-tenue);
+  background: none;
+  border: 0;
+  padding: var(--es-esp-2);
+  min-height: var(--es-tam-alvo-minimo);
+  cursor: pointer;
+}
+
+.es-trilho__extremo:disabled {
+  opacity: var(--es-opac-fantasma);
+  cursor: default;
+}
+
+.es-trilho__marcadores {
+  display: flex;
+  align-items: center;
+  gap: var(--es-esp-2);
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.es-trilho__marcador {
+  width: 22px;
+  height: var(--es-tam-trilho);
+  background: var(--es-cor-filete);
+  transition:
+    background-color var(--es-dur-media) var(--es-ease-padrao),
+    transform var(--es-dur-media) var(--es-ease-padrao);
+}
+
+.es-trilho__marcador[data-estado="visitado"] {
+  background: var(--es-cor-filete-forte);
+}
+
+.es-trilho__marcador[data-estado="atual"] {
+  background: var(--es-cor-brasa-clara);
+  transform: scaleY(3);
+}
+
+.es-trilho__legenda {
+  flex-shrink: 0;
+  font-size: var(--es-tipo-micro);
+  letter-spacing: var(--es-tipo-tracking-micro);
+  text-transform: uppercase;
+  color: var(--es-cor-texto);
+}
+
+/* No mobile os marcadores dão lugar a rótulos textuais. */
+@media (max-width: 767px) {
+  .es-trilho__marcadores {
+    display: none;
+  }
+}
+
+/* ============================================================
+   Mapa de capítulos (revelado por pressão longa ou pelo menu)
+   ============================================================ */
+
+.es-mapa {
+  position: absolute;
+  inset: 0;
+  z-index: var(--es-z-mapa);
+  display: grid;
+  place-items: center;
+  background: var(--es-cor-veu);
+  backdrop-filter: var(--es-desfoque-painel);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--es-dur-media) var(--es-ease-padrao),
+    visibility var(--es-dur-media);
+}
+
+.es-mapa[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.es-mapa__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--es-esp-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.es-mapa__item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--es-esp-4);
+  min-height: var(--es-tam-alvo-minimo);
+  padding: var(--es-esp-2) var(--es-esp-4);
+  border: 0;
+  border-inline-start: 1px solid var(--es-cor-filete);
+  background: none;
+  color: var(--es-cor-texto-tenue);
+  text-align: start;
+  cursor: pointer;
+  transition:
+    color var(--es-dur-rapida) var(--es-ease-padrao),
+    border-color var(--es-dur-rapida) var(--es-ease-padrao);
+}
+
+.es-mapa__item:hover,
+.es-mapa__item[aria-current="true"] {
+  color: var(--es-cor-texto);
+  border-inline-start-color: var(--es-cor-brasa-clara);
+}
+
+.es-mapa__ordinal {
+  font-size: var(--es-tipo-micro);
+  letter-spacing: var(--es-tipo-tracking-micro);
+  min-width: 3ch;
+}
+
+/* ============================================================
+   Camadas ambientais
+   ============================================================ */
+
+.es-horizonte {
+  position: absolute;
+  inset-inline: -10%;
+  inset-block-start: var(--es-horizonte-y, 62%);
+  height: 1px;
+  background: var(--es-grad-horizonte);
+  filter: drop-shadow(var(--es-sombra-brilho));
+  pointer-events: none;
+}
+
+.es-vinheta {
+  position: absolute;
+  inset: 0;
+  background: var(--es-grad-vinheta);
+  pointer-events: none;
+}
+
+/*
+ * Granulação procedural: um SVG de ruído embutido, sem arquivo de textura.
+ * Fica fora do fluxo de composição e nunca captura ponteiro.
+ */
+.es-granulacao {
+  position: absolute;
+  inset: 0;
+  opacity: var(--es-amb-granulacao);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  background-image: var(--es-granulacao-fonte);
+  background-size: 180px 180px;
+}
+
+.es-veu {
+  position: absolute;
+  inset: 0;
+  background: var(--es-grad-painel);
+  pointer-events: none;
+}
+
+/* ============================================================
+   Cena WebGL e seu fallback
+   ============================================================ */
+
+.es-tela {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/*
+ * Fallback sem WebGL: gradiente + esfera em CSS puro.
+ * Mesma linguagem de profundidade, custo zero de GPU.
+ */
+.es-cena-alternativa {
+  position: absolute;
+  inset: 0;
+  background: var(--es-grad-atmosfera);
+  overflow: hidden;
+}
+
+.es-cena-alternativa__corpo {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 34%;
+  width: min(62vh, 62vw);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: var(--es-raio-circulo);
+  background: radial-gradient(
+    circle at 32% 28%,
+    var(--es-cor-bruma) 0%,
+    var(--es-cor-limo) 38%,
+    var(--es-cor-mineral) 78%,
+    var(--es-cor-profundo) 100%
+  );
+  box-shadow: var(--es-sombra-painel);
+}
+
+/* ============================================================
+   Cursor customizado (apenas em ponteiro fino)
+   ============================================================ */
+
+.es-cursor {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  z-index: var(--es-z-cursor);
+  display: none;
+  align-items: center;
+  gap: var(--es-esp-2);
+  pointer-events: none;
+  font-size: var(--es-tipo-micro);
+  letter-spacing: var(--es-tipo-tracking-micro);
+  text-transform: uppercase;
+  color: var(--es-cor-texto);
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .es-cursor {
+    display: flex;
+  }
+}
+
+.es-cursor__anel {
+  width: 14px;
+  height: 14px;
+  border: 1px solid currentcolor;
+  border-radius: var(--es-raio-circulo);
+  transition: transform var(--es-dur-rapida) var(--es-ease-padrao);
+}
+
+.es-cursor[data-estado="acionavel"] .es-cursor__anel {
+  transform: scale(1.7);
+}
+
+/* ============================================================
+   Estado final
+   ============================================================ */
+
+.es-fim {
+  position: absolute;
+  inset: 0;
+  z-index: var(--es-z-editorial);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--es-esp-6);
+  text-align: center;
+  padding: var(--es-esp-moldura);
+  background: var(--es-grad-atmosfera-profunda);
+}
+
+.es-fim[hidden] {
+  display: none;
+}
+
+/* ============================================================
+   Primitivas de revelação (consumidas por motion.js)
+   ============================================================ */
+
+/*
+ * O texto é fatiado em linhas para animar. As fatias são aria-hidden e o
+ * nome acessível permanece intacto no elemento hospedeiro — a referência
+ * falha exatamente aqui (ver docs/design-system/accessibility.md).
+ */
+.es-linha {
+  display: block;
+  overflow: hidden;
+}
+
+.es-linha__interior {
+  display: block;
+  opacity: 0;
+  transform: translate3d(var(--es-mov-dist-curta), 0, 0);
+  transition:
+    opacity var(--es-dur-lenta) var(--es-ease-entrada),
+    transform var(--es-dur-lenta) var(--es-ease-entrada);
+  transition-delay: calc(var(--es-i, 0) * var(--es-stagger-linha));
+}
+
+.es-display .es-linha__interior {
+  transform: translate3d(var(--es-mov-dist-media), 0, 0);
+}
+
+[data-es-revelar].is-revelado .es-linha__interior {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Blocos inteiros (não fatiados) usam a mesma gramática. */
+[data-es-revelar="bloco"] {
+  opacity: 0;
+  transform: translate3d(var(--es-mov-dist-curta), 0, 0);
+  transition:
+    opacity var(--es-dur-lenta) var(--es-ease-entrada),
+    transform var(--es-dur-lenta) var(--es-ease-entrada);
+  transition-delay: calc(var(--es-i, 0) * var(--es-stagger-bloco));
+}
+
+[data-es-revelar="bloco"].is-revelado {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Transição de saída de cena: recuo em profundidade. */
+.es-cena.is-saindo .es-cena__conteudo {
+  opacity: 0;
+  transform: translate3d(var(--es-mov-dist-saida), 0, 0) scale(var(--es-mov-escala-recuo));
+  transition:
+    opacity var(--es-dur-media) var(--es-ease-saida),
+    transform var(--es-dur-media) var(--es-ease-saida);
+}
+
+/* Flutuação ambiental de elementos em primeiro plano. */
+.es-flutuar {
+  animation: es-flutuar 9s var(--es-ease-suave) infinite;
+}
+
+@keyframes es-flutuar {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, calc(var(--es-amb-amplitude-flutuacao) * -1), 0);
+  }
+}

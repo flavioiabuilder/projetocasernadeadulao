@@ -1,0 +1,212 @@
+/*
+ * Estratos — tokens v1.0.0
+ *
+ * ARQUIVO GERADO. Não edite à mão.
+ * Fonte: design-system/tokens/tokens.json → ferramentas/gerar-tokens.js
+ */
+
+:root {
+  /* color → es-cor-* */
+  --es-cor-abismo: #0d1418;
+  --es-cor-profundo: #132029;
+  --es-cor-mineral: #24333c;
+  --es-cor-pedra: #43555e;
+  --es-cor-limo: #6b7f86;
+  --es-cor-bruma: #a9bcc0;
+  --es-cor-vapor: #d7e3e3;
+  --es-cor-alvorada: #f2f7f4;
+  --es-cor-luz: #fff;
+  --es-cor-brasa: #c98b4b;
+  --es-cor-brasa-clara: #e8b177;
+  --es-cor-texto: #f2f7f4;
+  --es-cor-texto-corpo: #fff;
+  --es-cor-texto-tenue: #a9bcc0;
+  --es-cor-texto-inverso: #24333c;
+  --es-cor-superficie-solida: #fff;
+  --es-cor-filete: rgba(242, 247, 244, 0.2);
+  --es-cor-filete-forte: rgba(242, 247, 244, 0.42);
+  --es-cor-filete-tenue: rgba(242, 247, 244, 0.1);
+  --es-cor-veu: rgba(13, 20, 24, 0.5);
+  --es-cor-veu-tenue: rgba(13, 20, 24, 0.28);
+  --es-cor-foco: #e8b177;
+
+  /* gradient → es-grad-* */
+  --es-grad-atmosfera: linear-gradient(160deg, #24333c 0%, #43555e 38%, #6b7f86 68%, #a9bcc0 100%);
+  --es-grad-atmosfera-profunda: linear-gradient(170deg, #0d1418 0%, #132029 45%, #24333c 100%);
+  --es-grad-horizonte: linear-gradient(90deg, transparent 0%, rgba(232,177,119,0.85) 45%, rgba(242,247,244,0.95) 55%, transparent 100%);
+  --es-grad-vinheta: radial-gradient(120% 90% at 50% 45%, transparent 45%, rgba(13,20,24,0.45) 100%);
+  --es-grad-painel: linear-gradient(90deg, rgba(13,20,24,0.55) 0%, rgba(13,20,24,0) 100%);
+
+  /* typography → es-tipo-* */
+  --es-tipo-familia-display: "Estratos Display", "Archivo", "Inter", system-ui, sans-serif;
+  --es-tipo-familia-corpo: "Estratos Texto", "Inter", system-ui, sans-serif;
+  --es-tipo-peso-display: 300;
+  --es-tipo-peso-corpo: 300;
+  --es-tipo-peso-rotulo: 400;
+  --es-tipo-display-fluido: min(8.4vh, 4.375rem);
+  --es-tipo-display-mobile: 2.8125rem;
+  --es-tipo-titulo-fluido: min(5.2vh, 2.25rem);
+  --es-tipo-corpo-fluido: min(2.2vh, 1rem);
+  --es-tipo-corpo-mobile: 0.875rem;
+  --es-tipo-rotulo: 0.75rem;
+  --es-tipo-micro: 0.6875rem;
+  --es-tipo-lh-display: 0.8;
+  --es-tipo-lh-titulo: 1.05;
+  --es-tipo-lh-corpo: 1.6;
+  --es-tipo-lh-corpo-mobile: 1.45;
+  --es-tipo-lh-rotulo: 1.3;
+  --es-tipo-tracking-display: normal;
+  --es-tipo-tracking-rotulo: 0.08em;
+  --es-tipo-tracking-micro: 0.16em;
+  --es-tipo-medida-editorial: 450px;
+  --es-tipo-medida-editorial-mobile: 300px;
+
+  /* spacing → es-esp-* */
+  --es-esp-0: 0;
+  --es-esp-1: 0.25rem;
+  --es-esp-2: 0.5rem;
+  --es-esp-3: 0.75rem;
+  --es-esp-4: 1rem;
+  --es-esp-5: 1.25rem;
+  --es-esp-6: 1.5rem;
+  --es-esp-8: 2rem;
+  --es-esp-10: 2.5rem;
+  --es-esp-12: 3rem;
+  --es-esp-16: 4rem;
+  --es-esp-20: 5rem;
+  --es-esp-moldura: 3.75rem;
+  --es-esp-moldura-mobile: 1.875rem;
+  --es-esp-moldura-topo-mobile: 2rem;
+
+  /* sizing → es-tam-* */
+  --es-tam-alvo-minimo: 44px;
+  --es-tam-controle: 2rem;
+  --es-tam-controle-pilula: 3.125rem;
+  --es-tam-cabecalho: 8.375rem;
+  --es-tam-cabecalho-mobile: 5rem;
+  --es-tam-trilho: 1px;
+  --es-tam-marcador: 0.5rem;
+
+  /* border → es-borda-* */
+  --es-borda-filete: 1px solid rgba(242, 247, 244, 0.2);
+  --es-borda-filete-forte: 1px solid rgba(242, 247, 244, 0.42);
+  --es-borda-nenhuma: 0 none;
+
+  /* radius → es-raio-* */
+  --es-raio-nenhum: 0;
+  --es-raio-sutil: 5px;
+  --es-raio-pilula: 30px;
+  --es-raio-circulo: 50%;
+
+  /* opacity → es-opac-* */
+  --es-opac-oculto: 0;
+  --es-opac-fantasma: 0.2;
+  --es-opac-tenue: 0.42;
+  --es-opac-meio: 0.6;
+  --es-opac-quase: 0.85;
+  --es-opac-pleno: 1;
+
+  /* blur → es-desfoque-* */
+  --es-desfoque-nenhum: 0px;
+  --es-desfoque-leve: 4px;
+  --es-desfoque-medio: 12px;
+  --es-desfoque-forte: 28px;
+  --es-desfoque-painel: saturate(140%) blur(12px);
+
+  /* shadow → es-sombra-* */
+  --es-sombra-nenhuma: none;
+  --es-sombra-controle: 0 2px 18px rgba(13, 20, 24, 0.28);
+  --es-sombra-painel: 0 24px 80px rgba(13, 20, 24, 0.45);
+  --es-sombra-brilho: 0 0 24px rgba(232, 177, 119, 0.55);
+
+  /* zIndex → es-z-* */
+  --es-z-cena: 0;
+  --es-z-ambiente: 1;
+  --es-z-editorial: 2;
+  --es-z-trilho: 3;
+  --es-z-cabecalho: 10;
+  --es-z-mapa: 15;
+  --es-z-cursor: 20;
+  --es-z-carregamento: 30;
+
+  /* grid → es-grade-* */
+  --es-grade-colunas: 12;
+  --es-grade-gutter: 1.5rem;
+  --es-grade-gutter-mobile: 1rem;
+  --es-grade-largura-maxima: 90rem;
+
+  /* breakpoint → es-bp-* */
+  --es-bp-mobile: 768px;
+  --es-bp-tablet: 1024px;
+  --es-bp-desktop: 1440px;
+
+  /* duration → es-dur-* */
+  --es-dur-instantanea: 120ms;
+  --es-dur-rapida: 260ms;
+  --es-dur-media: 520ms;
+  --es-dur-lenta: 900ms;
+  --es-dur-cena: 1400ms;
+  --es-dur-capitulo: 2000ms;
+
+  /* easing → es-ease-* */
+  --es-ease-padrao: cubic-bezier(0.22, 1, 0.36, 1);
+  --es-ease-entrada: cubic-bezier(0.16, 1, 0.3, 1);
+  --es-ease-saida: cubic-bezier(0.55, 0, 0.45, 1);
+  --es-ease-suave: cubic-bezier(0.4, 0, 0.2, 1);
+  --es-ease-linear: linear;
+
+  /* stagger → es-stagger-* */
+  --es-stagger-linha: 90ms;
+  --es-stagger-item: 60ms;
+  --es-stagger-bloco: 140ms;
+
+  /* motionDistance → es-mov-dist-* */
+  --es-mov-dist-curta: 50px;
+  --es-mov-dist-media: 150px;
+  --es-mov-dist-longa: 300px;
+  --es-mov-dist-saida: -40px;
+
+  /* motionScale → es-mov-escala-* */
+  --es-mov-escala-recuo: 0.94;
+  --es-mov-escala-repouso: 1;
+  --es-mov-escala-avanco: 1.06;
+
+  /* perspective → es-persp-* */
+  --es-persp-cena: 1200px;
+  --es-persp-proxima: 600px;
+  --es-persp-camada-fundo: -0.35;
+  --es-persp-camada-meio: -0.15;
+  --es-persp-camada-frente: 0.08;
+
+  /* environment → es-amb-* */
+  --es-amb-dpr-maximo: 2;
+  --es-amb-escala-render: 0.6;
+  --es-amb-granulacao: 0.045;
+  --es-amb-vinheta-forca: 0.45;
+  --es-amb-densidade-nevoa: 0.55;
+  --es-amb-velocidade-ambiente: 0.06;
+  --es-amb-amplitude-flutuacao: 6px;
+}
+
+/* Substituição de movimento: mesmos nomes, valores neutros. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --es-dur-instantanea: 1ms;
+    --es-dur-rapida: 1ms;
+    --es-dur-media: 1ms;
+    --es-dur-lenta: 1ms;
+    --es-dur-cena: 1ms;
+    --es-dur-capitulo: 1ms;
+    --es-mov-dist-curta: 0px;
+    --es-mov-dist-media: 0px;
+    --es-mov-dist-longa: 0px;
+    --es-mov-dist-saida: 0px;
+    --es-stagger-linha: 0ms;
+    --es-stagger-item: 0ms;
+    --es-stagger-bloco: 0ms;
+    --es-mov-escala-recuo: 1;
+    --es-mov-escala-avanco: 1;
+    --es-amb-amplitude-flutuacao: 0px;
+    --es-amb-velocidade-ambiente: 0;
+  }
+}

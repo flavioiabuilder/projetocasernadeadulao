@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="Demonstração narrativa do design system Estratos: quatro cenas com entrada atmosférica, progressão por gesto e teclado, profundidade procedural e movimento reduzido."
+    />
+    <title>Estratos — demonstração narrativa</title>
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/foundations.css" />
+    <link rel="stylesheet" href="css/components.css" />
+  </head>
+  <body>
+    <a class="es-sr-only" href="#conteudo">Pular para o conteúdo</a>
+
+    <main
+      id="conteudo"
+      class="es-palco"
+      data-es-palco
+      aria-roledescription="experiência narrativa"
+      aria-label="Quatro tempos da luz — demonstração do sistema Estratos"
+    >
+      <!-- Camada 0 — cena procedural -->
+      <canvas class="es-tela" data-es-tela aria-hidden="true"></canvas>
+      <div
+        class="es-cena-alternativa"
+        data-es-cena-alternativa
+        aria-hidden="true"
+        hidden
+      >
+        <div class="es-cena-alternativa__corpo"></div>
+      </div>
+
+      <!-- Camada 1 — ambiente -->
+      <div class="es-camada es-camada--ambiente" aria-hidden="true">
+        <div class="es-veu"></div>
+        <div class="es-granulacao"></div>
+        <div class="es-vinheta"></div>
+      </div>
+
+      <!-- Cabeçalho -->
+      <header class="es-cabecalho">
+        <button
+          type="button"
+          class="es-som"
+          aria-pressed="false"
+          aria-label="Ativar som ambiente"
+          data-es-som
+          data-es-cursor="alternar"
+        >
+          <span class="es-som__rotulo">Som</span>
+          <svg class="es-som__onda" viewBox="0 0 68 12" aria-hidden="true">
+            <g class="es-som__onda-grupo">
+              <path d="M0 6 l17 0 c8.5 0 8.5 -4 17 -4 s8.5 4 17 4 l17 0" />
+              <path d="M68 6 l17 0 c8.5 0 8.5 -4 17 -4 s8.5 4 17 4 l17 0" />
+            </g>
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          class="es-menu-botao"
+          aria-label="Abrir índice de cenas"
+          aria-expanded="false"
+          aria-controls="mapa-cenas"
+          data-es-abrir-mapa
+          data-es-cursor="índice"
+        >
+          <span class="es-menu-botao__traco"></span>
+          <span class="es-menu-botao__traco"></span>
+        </button>
+      </header>
+
+      <!-- Cenas -->
+      <section
+        class="es-cena"
+        data-es-cena
+        data-es-titulo="Antes da luz"
+        aria-label="Cena 1: Antes da luz"
+      >
+        <div class="es-cena__conteudo">
+          <div class="es-editorial es-coluna-editorial">
+            <p class="es-micro es-editorial__sobrancelha" data-es-revelar="bloco">
+              Primeiro tempo
+            </p>
+            <h2
+              class="es-display es-editorial__titulo"
+              data-es-fatiar
+              data-es-revelar
+            >
+              Antes da luz
+            </h2>
+            <div class="es-editorial__corpo es-corpo">
+              <p data-es-fatiar data-es-revelar>
+                Há um intervalo em que nada ainda tem contorno. O ar guarda a
+                temperatura da noite e a matéria permanece indistinta, sem
+                aresta que a separe do fundo.
+              </p>
+              <p data-es-revelar="bloco">
+                É deste intervalo que tudo o mais decorre.
+              </p>
+            </div>
+            <div class="es-editorial__acoes" data-es-revelar="bloco">
+              <span class="es-prompt">
+                <span class="es-prompt__pulso" aria-hidden="true"></span>
+                Avance para continuar
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="es-cena"
+        data-es-cena
+        data-es-titulo="Primeiro traço"
+        aria-label="Cena 2: Primeiro traço"
+        hidden
+      >
+        <div class="es-cena__conteudo">
+          <div class="es-editorial es-coluna-editorial">
+            <p class="es-micro es-editorial__sobrancelha" data-es-revelar="bloco">
+              Segundo tempo
+            </p>
+            <h2
+              class="es-display es-editorial__titulo"
+              data-es-fatiar
+              data-es-revelar
+            >
+              Primeiro traço
+            </h2>
+            <div class="es-editorial__corpo es-corpo">
+              <p data-es-fatiar data-es-revelar>
+                A primeira linha não ilumina: apenas divide. De um lado fica o
+                que se pode nomear; do outro, o que segue sem nome. A separação
+                é o começo da forma.
+              </p>
+            </div>
+            <div class="es-editorial__acoes" data-es-revelar="bloco">
+              <button
+                type="button"
+                class="es-acao-solida"
+                data-es-cursor="abrir"
+                aria-label="Ler nota sobre o segundo tempo"
+              >
+                Ler a nota
+                <span class="es-acao-solida__marca" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="es-cena"
+        data-es-cena
+        data-es-titulo="Pleno meio-dia"
+        aria-label="Cena 3: Pleno meio-dia"
+        hidden
+      >
+        <div class="es-cena__conteudo">
+          <div class="es-editorial es-coluna-editorial">
+            <p class="es-micro es-editorial__sobrancelha" data-es-revelar="bloco">
+              Terceiro tempo
+            </p>
+            <h2
+              class="es-display es-editorial__titulo"
+              data-es-fatiar
+              data-es-revelar
+            >
+              Pleno meio-dia
+            </h2>
+            <div class="es-editorial__corpo es-corpo">
+              <p data-es-fatiar data-es-revelar>
+                No ponto mais alto a sombra encurta até quase desaparecer. Sem
+                sombra, some também o relevo: o excesso de luz apaga o que a
+                pouca luz apenas escondia.
+              </p>
+            </div>
+            <div class="es-editorial__acoes" data-es-revelar="bloco">
+              <button
+                type="button"
+                class="es-controle es-acao-contorno"
+                data-es-cursor="ampliar"
+                aria-label="Examinar a superfície em detalhe"
+              >
+                Examinar
+                <svg class="es-acao-contorno__icone" viewBox="0 0 12 12" aria-hidden="true">
+                  <path d="M1 4V1h3M11 8v3H8" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="es-cena"
+        data-es-cena
+        data-es-titulo="Retorno"
+        aria-label="Cena 4: Retorno"
+        hidden
+      >
+        <div class="es-cena__conteudo">
+          <div class="es-editorial es-coluna-editorial">
+            <p class="es-micro es-editorial__sobrancelha" data-es-revelar="bloco">
+              Quarto tempo
+            </p>
+            <h2
+              class="es-display es-editorial__titulo"
+              data-es-fatiar
+              data-es-revelar
+            >
+              Retorno
+            </h2>
+            <div class="es-editorial__corpo es-corpo">
+              <p data-es-fatiar data-es-revelar>
+                A luz recolhe-se pelo mesmo caminho, e o contorno que ela havia
+                emprestado volta a ser devolvido. Fica a memória do relevo — que
+                é, afinal, tudo o que se leva.
+              </p>
+            </div>
+            <div class="es-editorial__acoes" data-es-revelar="bloco">
+              <span class="es-micro">Fim da demonstração</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trilho de progresso -->
+      <nav class="es-trilho" aria-label="Navegação entre cenas">
+        <button
+          type="button"
+          class="es-trilho__extremo"
+          data-es-anterior
+          aria-label="Cena anterior"
+          data-es-cursor="voltar"
+        >
+          Anterior
+        </button>
+
+        <ol class="es-trilho__marcadores" aria-hidden="true">
+          <li class="es-trilho__marcador" data-es-marcador></li>
+          <li class="es-trilho__marcador" data-es-marcador></li>
+          <li class="es-trilho__marcador" data-es-marcador></li>
+          <li class="es-trilho__marcador" data-es-marcador></li>
+        </ol>
+
+        <span class="es-trilho__legenda" data-es-legenda></span>
+
+        <button
+          type="button"
+          class="es-trilho__extremo"
+          data-es-proximo
+          aria-label="Próxima cena"
+          data-es-cursor="avançar"
+        >
+          Próxima
+        </button>
+      </nav>
+
+      <!-- Mapa de cenas -->
+      <div
+        class="es-mapa"
+        id="mapa-cenas"
+        data-es-mapa
+        role="dialog"
+        aria-modal="true"
+        aria-label="Índice de cenas"
+        aria-hidden="true"
+      >
+        <div>
+          <ol class="es-mapa__lista">
+            <li>
+              <button type="button" class="es-mapa__item" data-es-ir-para>
+                <span class="es-mapa__ordinal">I</span>
+                <span class="es-titulo">Antes da luz</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="es-mapa__item" data-es-ir-para>
+                <span class="es-mapa__ordinal">II</span>
+                <span class="es-titulo">Primeiro traço</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="es-mapa__item" data-es-ir-para>
+                <span class="es-mapa__ordinal">III</span>
+                <span class="es-titulo">Pleno meio-dia</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="es-mapa__item" data-es-ir-para>
+                <span class="es-mapa__ordinal">IV</span>
+                <span class="es-titulo">Retorno</span>
+              </button>
+            </li>
+          </ol>
+          <button
+            type="button"
+            class="es-controle"
+            data-es-fechar-mapa
+            style="margin-top: var(--es-esp-8)"
+          >
+            Fechar índice
+          </button>
+        </div>
+      </div>
+
+      <!-- Cursor -->
+      <div class="es-cursor" data-es-cursor-elemento aria-hidden="true">
+        <span class="es-cursor__anel"></span>
+        <span class="es-cursor__rotulo"></span>
+      </div>
+
+      <!-- Anúncio de mudança de cena para tecnologia assistiva -->
+      <p class="es-sr-only" role="status" aria-live="polite" data-es-anunciador></p>
+    </main>
+
+    <script src="js/matematica.js"></script>
+    <script src="js/estratos.js"></script>
+    <script src="js/motion.js"></script>
+    <script src="js/cena.js"></script>
+    <script src="js/experiencia.js"></script>
+    <script>
+      (function () {
+        "use strict";
+        var palco = document.querySelector("[data-es-palco]");
+        var experiencia = window.Estratos.criarExperiencia(palco);
+
+        // Alternância do som ambiente: sem arquivo de áudio, apenas o estado
+        // visual do controle. A demo não carrega mídia licenciável.
+        var som = document.querySelector("[data-es-som]");
+        som.addEventListener("click", function () {
+          var ativo = som.getAttribute("aria-pressed") === "true";
+          som.setAttribute("aria-pressed", String(!ativo));
+          som.setAttribute(
+            "aria-label",
+            ativo ? "Ativar som ambiente" : "Desativar som ambiente"
+          );
+        });
+
+        window.addEventListener("pagehide", function () {
+          experiencia.destruir();
+        });
+      })();
+    </script>
+  </body>
+</html>
