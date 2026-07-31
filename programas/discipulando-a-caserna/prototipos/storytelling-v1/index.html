@@ -272,8 +272,8 @@ img.emblema{aspect-ratio:auto;height:auto;background:none}
 #s01 .emblema-grande,
 #s01 .emblema-metal{display:block;width:min(760px,84vw);max-width:min(760px,84vw);max-height:54vh;margin:0 auto;opacity:0;animation:emblemaIn 1.2s ease forwards}
 #s01 .emblema-metal .emblema-grande{width:100%;max-width:100%;max-height:54vh;margin:0;opacity:1;animation:none}
-/* Não cancelar fade-in do emblema: em touch o wrap .emblema-metal não é criado */
-#s01.slide.visivel .bloco-central>*:not(.emblema-grande):not(.emblema-metal){animation:none}
+/* Cancela o "sobe" global; reativa fades do S01 em seguida (mesma especificidade, ordem vence) */
+#s01.slide.visivel .bloco-central>*{animation:none}
 #s01.slide.visivel .emblema-grande,
 #s01.slide.visivel .emblema-metal{animation:emblemaIn 1.2s ease forwards}
 #s01.slide.visivel .s01-id{animation:s01IdIn .8s ease 3s forwards}
