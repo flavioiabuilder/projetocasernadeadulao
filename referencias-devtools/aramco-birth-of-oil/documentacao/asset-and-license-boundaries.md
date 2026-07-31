@@ -8,7 +8,7 @@ domínio deles em runtime.**
 ## Verificação
 
 ```bash
-grep -ri "aramco" design-system/
+grep -ri "aramco" referencias-devtools/aramco-birth-of-oil/design-system/
 ```
 
 Resultado verificado: **uma** ocorrência, no campo `$meta.origem` de
@@ -17,14 +17,14 @@ proveniência. É uma referência bibliográfica, não um ativo. Nenhum arquivo 
 código, estilo ou marcação contém o nome.
 
 ```bash
-grep -rEo "https?://[^\"')  ]+" design-system/
+grep -rEo "https?://[^\"')  ]+" referencias-devtools/aramco-birth-of-oil/design-system/
 ```
 
 Resultado verificado: **uma** ocorrência, `http://www.w3.org/2000/svg` — o
 namespace XML do SVG, exigido pela especificação. Namespaces não são
 requisições: nenhum byte é buscado nesse endereço.
 
-Nenhum arquivo em `design-system/` faz requisição de rede. A demo e o
+Nenhum arquivo em `referencias-devtools/aramco-birth-of-oil/design-system/` faz requisição de rede. A demo e o
 laboratório funcionam offline, abertos por `file://`.
 
 ---
@@ -53,7 +53,7 @@ domínio da Aramco. Os arquivos `.woff2` **não foram baixados**.
 **Estado atual:** os tokens declaram `"Estratos Display"` e `"Estratos Texto"`
 como primeiro nome, com fallback para Archivo, Inter e `system-ui`. **Nenhum
 arquivo de fonte é distribuído aqui.** Para auto-hospedar, baixe as famílias do
-Google Fonts, coloque os `.woff2` em `design-system/fontes/` e declare:
+Google Fonts, coloque os `.woff2` em `design-system/fontes/` (nesta referência) e declare:
 
 ```css
 @font-face {

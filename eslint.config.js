@@ -6,7 +6,9 @@ module.exports = [
       "js/**/*.js",
       "ferramentas/**/*.js",
       "testes/**/*.js",
-      "design-system/js/**/*.js",
+      "referencias-devtools/aramco-birth-of-oil/design-system/js/**/*.js",
+      "referencias-devtools/aramco-birth-of-oil/ferramentas/**/*.js",
+      "referencias-devtools/aramco-birth-of-oil/testes/**/*.js",
     ],
     languageOptions: {
       ecmaVersion: 2022,

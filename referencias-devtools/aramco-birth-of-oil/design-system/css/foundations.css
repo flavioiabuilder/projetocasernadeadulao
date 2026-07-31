@@ -5,7 +5,7 @@
  *
  * Princípio estrutural da referência que este arquivo implementa:
  * a tipografia escala pela ALTURA do viewport, não pela largura, porque cada
- * cena é um palco de viewport fixo. Ver docs/design-system/foundations.md.
+ * cena é um palco de viewport fixo. Ver documentacao/foundations.md.
  */
 
 /* ---------- Reset ---------- */

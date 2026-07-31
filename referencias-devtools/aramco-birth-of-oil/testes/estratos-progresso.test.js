@@ -10,7 +10,7 @@ const assert = require("node:assert");
 const path = require("path");
 
 const { limitar, normalizar, interpolar, aproximar, criarProgresso } = require(
-  path.resolve(__dirname, "../../design-system/js/matematica.js")
+  path.resolve(__dirname, "../design-system/js/matematica.js")
 );
 
 test("limitar mantém o valor dentro do intervalo", () => {

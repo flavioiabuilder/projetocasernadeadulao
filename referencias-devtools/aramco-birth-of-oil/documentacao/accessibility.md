@@ -161,7 +161,7 @@ automático do iOS.
 
 ## Resultado Lighthouse (verificado)
 
-Executado em `http://localhost:8099/design-system/demo.html`, modo navigation,
+Executado em `http://localhost:8099/referencias-devtools/aramco-birth-of-oil/design-system/demo.html`, modo navigation,
 desktop, Chrome 150:
 
 | Categoria        | Nota    |

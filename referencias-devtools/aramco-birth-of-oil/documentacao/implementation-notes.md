@@ -3,18 +3,21 @@
 ## Onde as coisas estão
 
 ```
-design-system/
-  tokens/tokens.json        fonte canônica — edite aqui
-  css/tokens.css            GERADO por ferramentas/gerar-tokens.js
-  css/foundations.css       reset, tipografia, camadas, foco, preferências
-  css/components.css        componentes
-  js/matematica.js          camada pura (sem DOM) — testável em Node
-  js/estratos.js            namespace, tokens, laço rAF único
-  js/motion.js              primitivas de movimento
-  js/cena.js                cena WebGL procedural + detecção de fallback
-  js/experiencia.js         controlador de cenas, trilho, mapa, anúncios
-  laboratorio.html          inventário vivo
-  demo.html                 narrativa de 4 cenas
+referencias-devtools/aramco-birth-of-oil/
+  design-system/
+    tokens/tokens.json        fonte canônica — edite aqui
+    css/tokens.css            GERADO por ../ferramentas/gerar-tokens.js
+    css/foundations.css       reset, tipografia, camadas, foco, preferências
+    css/components.css        componentes
+    js/matematica.js          camada pura (sem DOM) — testável em Node
+    js/estratos.js            namespace, tokens, laço rAF único
+    js/motion.js              primitivas de movimento
+    js/cena.js                cena WebGL procedural + detecção de fallback
+    js/experiencia.js         controlador de cenas, trilho, mapa, anúncios
+    laboratorio.html          inventário vivo
+    demo.html                 narrativa de 4 cenas
+  ferramentas/gerar-tokens.js
+  testes/estratos-progresso.test.js
 ```
 
 Ordem de carregamento dos scripts é obrigatória:
@@ -25,16 +28,16 @@ Ordem de carregamento dos scripts é obrigatória:
 Sem instalação, sem servidor:
 
 ```bash
-start design-system/laboratorio.html
+start referencias-devtools/aramco-birth-of-oil/design-system/laboratorio.html
 ```
 
-Ou com servidor estático:
+Ou com servidor estático na raiz do repositório:
 
 ```bash
 npx serve .
 ```
 
-Depois: `/design-system/laboratorio.html` e `/design-system/demo.html`.
+Depois: `/referencias-devtools/aramco-birth-of-oil/design-system/laboratorio.html` e `/referencias-devtools/aramco-birth-of-oil/design-system/demo.html`.
 
 ## Como regerar os tokens
 
@@ -64,7 +67,7 @@ idêntico.
 
 `matematica.js` não referencia `window`, `document` nem timers. Isso permite
 testá-la em Node sem DOM nem navegador
-(`testes/unitarios/estratos-progresso.test.js`, 11 casos).
+(`../testes/estratos-progresso.test.js` / `npm run test:referencias:aramco`, 11 casos).
 
 Essa separação **surgiu de uma falha real**: a primeira versão punha as funções
 puras em `estratos.js`, que acessa `matchMedia` no carregamento. O teste
@@ -192,22 +195,22 @@ intocado), não altera o `index.html`, e não entra no `npm run validate` do sit
 
 Foi acrescentado ao pipeline apenas o que lhe diz respeito:
 
-- `npm run generate:tokens` — geração dos tokens;
-- `npm run lint:js` e `lint:css` — passaram a cobrir `design-system/`;
-- `npm test` — inclui os testes da camada pura.
+- `npm run generate:tokens` — geração dos tokens desta referência;
+- `npm run lint:js` e `lint:css` — cobrem o JS/CSS desta referência;
+- `npm test` / `npm run test:referencias:aramco` — incluem os testes da camada pura.
 
 Nenhuma alteração foi feita em arquivos do prospecto.
 
 ## Próximos passos realmente necessários
 
-| #   | Item                                                     | Motivo                                                                                         |
-| --- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| 1   | Auto-hospedar Archivo e Inter em `design-system/fontes/` | Hoje o sistema cai em `system-ui`; a escala funciona, a personalidade não                      |
-| 2   | Painel editorial longo com scroll interno                | O equivalente ao `.learn-more-section` da referência; ficou fora de escopo                     |
-| 3   | Medir contraste pixel a pixel sobre a cena WebGL         | O véu mitiga, mas não foi medido sob a cena real                                               |
-| 4   | Teste com leitor de tela real (NVDA / VoiceOver)         | A árvore de acessibilidade do Chrome não substitui                                             |
-| 5   | Versão em documento único do conteúdo narrativo          | Alternativa para quem não deve navegar cena a cena                                             |
-| 6   | Estado por URL (`#cena-2`)                               | Hoje recarregar volta ao início e o botão voltar sai da página — mesma limitação da referência |
-| 7   | Teste e2e Playwright do percurso por teclado             | O projeto já tem Playwright; o percurso não está coberto                                       |
+| #   | Item                                                                        | Motivo                                                                                         |
+| --- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| 1   | Auto-hospedar Archivo e Inter em `design-system/fontes/` (desta referência) | Hoje o sistema cai em `system-ui`; a escala funciona, a personalidade não                      |
+| 2   | Painel editorial longo com scroll interno                                   | O equivalente ao `.learn-more-section` da referência; ficou fora de escopo                     |
+| 3   | Medir contraste pixel a pixel sobre a cena WebGL                            | O véu mitiga, mas não foi medido sob a cena real                                               |
+| 4   | Teste com leitor de tela real (NVDA / VoiceOver)                            | A árvore de acessibilidade do Chrome não substitui                                             |
+| 5   | Versão em documento único do conteúdo narrativo                             | Alternativa para quem não deve navegar cena a cena                                             |
+| 6   | Estado por URL (`#cena-2`)                                                  | Hoje recarregar volta ao início e o botão voltar sai da página — mesma limitação da referência |
+| 7   | Teste e2e Playwright do percurso por teclado                                | O projeto já tem Playwright; o percurso não está coberto                                       |
 
 Os itens 1 e 6 são os de maior retorno.

@@ -1,7 +1,7 @@
 # Estratos — componentes
 
 Todos os componentes são HTML + CSS; o JS apenas orquestra estado. Inventário
-vivo em [`design-system/laboratorio.html`](../../design-system/laboratorio.html).
+vivo em [`../design-system/laboratorio.html`](../design-system/laboratorio.html).
 
 ## Mapa de equivalência com a referência
 

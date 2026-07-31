@@ -95,7 +95,7 @@ conteúdo      → HTML; nenhuma primitiva escreve texto
 ```
 
 `criarProgresso` é deliberadamente puro e testado em
-`testes/unitarios/estratos-progresso.test.js` — a matemática de percurso não
+`../testes/estratos-progresso.test.js` — a matemática de percurso não
 deve depender de DOM para ser verificável.
 
 ## Laço único

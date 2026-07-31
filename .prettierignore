@@ -4,7 +4,7 @@ package-lock.json
 playwright-report/
 test-results/
 _gerado/
-docs/reference-audit/
+referencias-devtools/aramco-birth-of-oil/auditoria/
 
-# Artefato gerado por ferramentas/gerar-tokens.js
-design-system/css/tokens.css
+# Artefato gerado por referencias-devtools/aramco-birth-of-oil/ferramentas/gerar-tokens.js
+referencias-devtools/aramco-birth-of-oil/design-system/css/tokens.css

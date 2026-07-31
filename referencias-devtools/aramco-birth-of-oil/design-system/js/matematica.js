@@ -3,7 +3,7 @@
  *
  * Camada deliberadamente pura: nenhuma referência a window, document ou timer.
  * É o "cálculo de progresso" da separação de responsabilidades descrita em
- * docs/design-system/motion-system.md, e é o que permite testar a lógica de
+ * documentacao/motion-system.md, e é o que permite testar a lógica de
  * navegação sem navegador.
  *
  * Funciona como script no navegador (define globalThis.EstratosMatematica) e

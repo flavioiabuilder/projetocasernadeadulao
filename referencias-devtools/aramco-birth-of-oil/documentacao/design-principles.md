@@ -1,7 +1,7 @@
 # Estratos — princípios de design
 
 Sete princípios destilados da auditoria em
-[`../reference-audit/aramco-birth-of-oil-audit.md`](../reference-audit/aramco-birth-of-oil-audit.md).
+[`../auditoria/aramco-birth-of-oil-audit.md`](../auditoria/aramco-birth-of-oil-audit.md).
 São a razão de ser do sistema: os tokens e componentes existem para servi-los.
 
 ---

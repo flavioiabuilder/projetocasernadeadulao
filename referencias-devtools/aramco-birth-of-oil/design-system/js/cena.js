@@ -58,7 +58,7 @@
     }
 
     // 3 oitavas: medido como o ponto em que reduzir mais degrada a silhueta
-    // sem ganho de quadro perceptível. Ver docs/design-system/three-dimensional-language.md.
+    // sem ganho de quadro perceptível. Ver documentacao/three-dimensional-language.md.
     float fbm(vec3 p) {
       float soma = 0.0;
       float amp = 0.5;

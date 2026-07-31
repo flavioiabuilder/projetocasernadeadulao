@@ -2,7 +2,7 @@
  * Estratos — componentes
  *
  * Cada bloco corresponde a um componente observado na referência
- * (ver docs/design-system/components.md para o mapa de equivalência).
+ * (ver documentacao/components.md para o mapa de equivalência).
  * Depende de tokens.css e foundations.css.
  */
 
@@ -674,7 +674,7 @@
 /*
  * O texto é fatiado em linhas para animar. As fatias são aria-hidden e o
  * nome acessível permanece intacto no elemento hospedeiro — a referência
- * falha exatamente aqui (ver docs/design-system/accessibility.md).
+ * falha exatamente aqui (ver documentacao/accessibility.md).
  */
 .es-linha {
   display: block;

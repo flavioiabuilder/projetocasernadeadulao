@@ -111,7 +111,7 @@ monumental ao título.
 
 Famílias proprietárias, **não transferidas**: `ManifaPro2` (display, 400/453) e
 `Ghawar` (corpo, 300). Substituição documentada em
-[`asset-and-license-boundaries.md`](../design-system/asset-and-license-boundaries.md).
+[`asset-and-license-boundaries.md`](../documentacao/asset-and-license-boundaries.md).
 
 ### 5.2 Cor
 
@@ -253,4 +253,4 @@ O que faz esta experiência funcionar, independente da marca:
    o tempo todo.
 
 Estes sete princípios são o que a reconstrução preserva. Ver
-[`design-principles.md`](../design-system/design-principles.md).
+[`design-principles.md`](../documentacao/design-principles.md).

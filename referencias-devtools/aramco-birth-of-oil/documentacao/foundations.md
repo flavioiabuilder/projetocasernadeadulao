@@ -1,13 +1,13 @@
 # Estratos — foundations
 
-Fonte canônica dos tokens: [`design-system/tokens/tokens.json`](../../design-system/tokens/tokens.json).
+Fonte canônica dos tokens: [`../design-system/tokens/tokens.json`](../design-system/tokens/tokens.json).
 O CSS consumido pelo projeto é **gerado**:
 
 ```bash
 npm run generate:tokens
 ```
 
-`design-system/css/tokens.css` é artefato — não edite à mão. 157 custom
+`../design-system/css/tokens.css` é artefato — não edite à mão. 157 custom
 properties, prefixo `--es-`.
 
 ---

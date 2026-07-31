@@ -267,6 +267,19 @@ img.emblema{aspect-ratio:auto;height:auto;background:none}
 .emblema-grande{max-width:min(360px,48vh);opacity:0;animation:emblemaIn 1.2s ease forwards}
 @keyframes emblemaIn{to{opacity:1}}
 @media(prefers-reduced-motion:reduce){.emblema-grande{opacity:1;animation:none}}
+/* S01: emblema dominante (~30% da altura) + assinatura centrada sob a marca */
+#s01 .bloco-central{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:min(860px,92vw)}
+#s01 .emblema-grande{width:min(760px,84vw);max-width:min(760px,84vw);max-height:54vh;margin:0 auto;opacity:0;animation:emblemaIn 1.2s ease forwards}
+#s01.slide.visivel .bloco-central>*{animation:none}
+#s01.slide.visivel .emblema-grande{animation:emblemaIn 1.2s ease forwards}
+#s01.slide.visivel .s01-id{animation:s01IdIn .8s ease 3s forwards}
+#s01.slide.visivel .seta-rolar{animation:surge .8s 4s forwards}
+#s01 .s01-id{opacity:0}
+#s01 .seta-rolar{opacity:0;margin-top:1.5rem}
+@media(prefers-reduced-motion:reduce){
+  #s01 .emblema-grande,#s01 .s01-id,#s01 .seta-rolar,
+  #s01.slide.visivel .emblema-grande,#s01.slide.visivel .s01-id,#s01.slide.visivel .seta-rolar{opacity:1;animation:none}
+}
 .emblema-pequeno{max-width:132px;margin-top:30px;opacity:.95}
 .emblema-anotado{display:flex;gap:26px;align-items:center;width:100%}
 .emblema-anotado .emblema{max-width:210px;margin:0}
@@ -485,8 +498,8 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
   .cert-corpo,.cad-miolo,.guia-livro{box-shadow:none !important}
 }
 
-.s01-id{margin-top:2rem;text-align:center;opacity:0;animation:s01IdIn .8s ease 3s forwards;max-width:22rem}
-.s01-id strong{display:block;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(140,106,70,.88)}
+.s01-id{margin:.85rem auto 0;padding:0;text-align:center;opacity:0;animation:s01IdIn .8s ease 3s forwards;width:100%;max-width:100%;align-self:center}
+.s01-id strong{display:block;width:100%;font-family:var(--sans);font-size:clamp(.8rem,1.35vw,.95rem);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(140,106,70,.92);text-align:center}
 @media(prefers-reduced-motion:reduce){.s01-id{opacity:1;animation:none}}
 @keyframes s01IdIn{to{opacity:1}}
 .reserva-foto{border:1px dashed var(--latao);min-height:12rem;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;gap:.65rem;background:rgba(140,106,70,.04)}
@@ -503,9 +516,32 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
 .copiar-status{font-size:.9rem;color:var(--latao);min-height:1.5rem;margin:.35rem 0}
 .retorno-caminho{font-size:.92rem;line-height:1.5;color:var(--estrut);margin:.75rem 0}
 .slide-pastoral a.mailto{color:inherit;text-decoration:underline;text-underline-offset:2px}
+/* Luz suave na ponta do cursor */
+.luz-cursor{
+  position:fixed;inset:0;z-index:70;pointer-events:none;opacity:0;
+  transition:opacity .45s ease;
+  background:radial-gradient(
+    160px circle at var(--lx,50%) var(--ly,50%),
+    rgba(244,244,241,.10) 0%,
+    rgba(140,106,70,.055) 32%,
+    transparent 68%
+  );
+}
+.luz-cursor.ativa{opacity:1}
+body.chrome-escuro .luz-cursor{
+  background:radial-gradient(
+    190px circle at var(--lx,50%) var(--ly,50%),
+    rgba(244,244,241,.14) 0%,
+    rgba(140,106,70,.08) 34%,
+    transparent 70%
+  );
+}
+@media (hover:none),(pointer:coarse){.luz-cursor{display:none}}
+@media (prefers-reduced-motion:reduce){.luz-cursor{display:none}}
 @media print{
   .s01-id{opacity:1;animation:none}
   .decisao-acoes,.copiar-status{display:none!important}
+  .luz-cursor{display:none!important}
 }
 </style>
 </head>
@@ -963,6 +999,34 @@ Se for <strong>“não”</strong>, o trabalho não terá sido perdido: ele já 
   });
 
   if(location.hash){var h=document.querySelector(location.hash);if(h)setTimeout(function(){h.scrollIntoView();},60);}
+
+  /* Brilho suave seguindo o cursor */
+  (function(){
+    var fine=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!fine||reduce) return;
+    var luz=document.createElement('div');
+    luz.className='luz-cursor';
+    luz.setAttribute('aria-hidden','true');
+    document.body.appendChild(luz);
+    var x=innerWidth/2,y=innerHeight/2,tx=x,ty=y,ativa=false;
+    function frame(){
+      x+=(tx-x)*0.16;
+      y+=(ty-y)*0.16;
+      luz.style.setProperty('--lx',x.toFixed(1)+'px');
+      luz.style.setProperty('--ly',y.toFixed(1)+'px');
+      requestAnimationFrame(frame);
+    }
+    document.addEventListener('pointermove',function(e){
+      if(e.pointerType&&e.pointerType!=='mouse') return;
+      tx=e.clientX; ty=e.clientY;
+      if(!ativa){ativa=true;luz.classList.add('ativa');}
+    },{passive:true});
+    document.addEventListener('pointerleave',function(){
+      ativa=false;luz.classList.remove('ativa');
+    });
+    requestAnimationFrame(frame);
+  })();
 })();
 </script>
 </body>

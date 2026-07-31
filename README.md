@@ -38,15 +38,16 @@ npm run validate
 
 ## Mapa de superfícies
 
-| Superfície        | Caminho                                  | Papel                                       | Público Pages |
-| ----------------- | ---------------------------------------- | ------------------------------------------- | ------------- |
-| Prospecto         | `index.html`                             | Experiência oficial de leitura              | Sim           |
-| 404               | `404.html`                               | Página não encontrada do deploy             | Sim           |
-| Homologação       | `apresentacao/homologacao-pastoral.html` | Deck gerado (33 telas), circulação restrita | Não           |
-| Storytelling      | `prototipos/storytelling-v1/`            | Protótipo institucional testado             | Sim           |
-| Direções A/B/C    | `prototipos/direcao-*`                   | Referência histórica de direção visual      | Sim           |
-| Guia Mestre       | `fontes/guia-mestre/`                    | Referência pastoral (não é fonte do site)   | Não           |
-| Spec storytelling | `docs/storytelling/`                     | Roteiro e exports de referência             | Não           |
+| Superfície           | Caminho                                  | Papel                                          | Público Pages |
+| -------------------- | ---------------------------------------- | ---------------------------------------------- | ------------- |
+| Prospecto            | `index.html`                             | Experiência oficial de leitura                 | Sim           |
+| 404                  | `404.html`                               | Página não encontrada do deploy                | Sim           |
+| Homologação          | `apresentacao/homologacao-pastoral.html` | Deck gerado (33 telas), circulação restrita    | Não           |
+| Storytelling         | `prototipos/storytelling-v1/`            | Protótipo institucional testado                | Sim           |
+| Direções A/B/C       | `prototipos/direcao-*`                   | Referência histórica de direção visual         | Sim           |
+| Guia Mestre          | `fontes/guia-mestre/`                    | Referência pastoral (não é fonte do site)      | Não           |
+| Spec storytelling    | `docs/storytelling/`                     | Roteiro e exports de referência                | Não           |
+| Referências DevTools | `referencias-devtools/`                  | Estudos e reconstruções técnicas independentes | Não           |
 
 Ver também [`prototipos/LEIA-ME.md`](prototipos/LEIA-ME.md).
 
@@ -119,6 +120,15 @@ Três perfis ([ADR-003](docs/arquitetura/ADR-003-requisito-offline.md)):
 Skills canônicas em `.claude/skills/` ([ADR-006](docs/arquitetura/ADR-006-ferramentas-de-ia.md),
 [`docs/skills.md`](docs/skills.md)). Regras Cursor em `.cursor/rules/` cobrem
 fidelidade pastoral e qualidade — stack aponta para as ADRs.
+
+## Referências DevTools
+
+Pesquisas e reconstruções técnicas independentes, isoladas do prospecto oficial.
+Índice e convenção para novos estudos:
+[`referencias-devtools/README.md`](referencias-devtools/README.md).
+
+Não fazem parte do produto Discipulando a Caserna nem entram no artefato do
+GitHub Pages.
 
 ## Referência de layout
 
