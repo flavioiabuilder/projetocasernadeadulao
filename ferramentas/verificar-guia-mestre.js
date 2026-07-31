@@ -39,16 +39,44 @@ function encontrarMarcadores(conteudo) {
  * evitando que o nome de um futuro validador produza falso positivo.
  */
 function extrairTextoDocx(arquivo) {
-  const resultado = spawnSync("unzip", ["-p", arquivo, "word/document.xml"], {
+  const viaUnzip = spawnSync("unzip", ["-p", arquivo, "word/document.xml"], {
     encoding: "utf8",
     maxBuffer: 20 * 1024 * 1024,
   });
 
-  if (resultado.error || resultado.status !== 0 || !resultado.stdout) {
-    const detalhe = resultado.error?.message || resultado.stderr.trim();
-    throw new Error(`não foi possível extrair word/document.xml: ${detalhe}`);
+  if (!viaUnzip.error && viaUnzip.status === 0 && viaUnzip.stdout) {
+    return normalizarTexto(viaUnzip.stdout);
   }
-  return normalizarTexto(resultado.stdout);
+
+  // Fallback Windows / ambientes sem unzip: PowerShell ZipFile
+  const ps = `
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+$path = ${JSON.stringify(arquivo)}
+$z = [System.IO.Compression.ZipFile]::OpenRead($path)
+try {
+  $e = $z.GetEntry('word/document.xml')
+  if ($null -eq $e) { throw 'entry missing' }
+  $sr = New-Object System.IO.StreamReader($e.Open())
+  try { $sr.ReadToEnd() } finally { $sr.Dispose() }
+} finally { $z.Dispose() }
+`.trim();
+  const viaPs = spawnSync(
+    "powershell",
+    ["-NoProfile", "-NonInteractive", "-Command", ps],
+    { encoding: "utf8", maxBuffer: 20 * 1024 * 1024 }
+  );
+
+  if (!viaPs.error && viaPs.status === 0 && viaPs.stdout) {
+    return normalizarTexto(viaPs.stdout);
+  }
+
+  const detalhe =
+    viaPs.error?.message ||
+    viaPs.stderr.trim() ||
+    viaUnzip.error?.message ||
+    viaUnzip.stderr.trim() ||
+    "extrator indisponível";
+  throw new Error(`não foi possível extrair word/document.xml: ${detalhe}`);
 }
 
 async function verificarGuia() {
