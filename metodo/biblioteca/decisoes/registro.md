@@ -96,3 +96,20 @@ Formato por entrada:
   [`02-painel-referencias.md`](../../../programas/discipulando-a-caserna/docs/metodo/02-painel-referencias.md);
   [`fase-2/inventario-e-triagem.md`](../../../programas/discipulando-a-caserna/docs/metodo/fase-2/inventario-e-triagem.md);
   [`prompts/curadoria-referencias.md`](../../prompts/curadoria-referencias.md).
+
+## 2026-08-01 — Fase 3 tokens candidatos (ME-T)
+
+- **Hipótese:** JSON canônico + gerador próprio unifica drift sem migrar
+  runtime nem antecipar componentes.
+- **Decisão:** (1) SoT em
+  `programas/discipulando-a-caserna/design-system/tokens/tokens.json`
+  (`0.1.0-candidate`); (2) contrato ME-T com folhas tipadas; (3) scripts
+  `*:discipulando:tokens` sem colidir com Aramco; (4) bronze default
+  `#8C6A45` (D3-05); (5) hex-first; sem dark mode; (6) protótipos intocados;
+  (7) V1/V2 e D3-12 humanos para `1.0.0`.
+- **Justificativa:** Plano Fase 3; Direção A; identidade Guia.
+- **Resultado observado:** JSON/CSS/gerador/validador/testes e docs fase-3;
+  painel permanece EM REVISÃO.
+- **Links:**
+  [`03-direcao-tokens.md`](../../../programas/discipulando-a-caserna/docs/metodo/03-direcao-tokens.md);
+  [`design-system/tokens/`](../../../programas/discipulando-a-caserna/design-system/tokens/).

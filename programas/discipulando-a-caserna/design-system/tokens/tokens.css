@@ -1,0 +1,215 @@
+/*
+ * Discipulando a Caserna — design tokens v0.1.0-candidate
+ * Status: EM REVISAO · Formato: ME-T
+ *
+ * ARQUIVO GERADO. Não edite à mão.
+ * Fonte: design-system/tokens/tokens.json
+ * Gerador: programas/discipulando-a-caserna/ferramentas/gerar-tokens.js
+ * npm run generate:discipulando:tokens
+ */
+:root {
+  /* ——— Primitivos ——— */
+  --primitivo-borda-fina: 1px;
+  --primitivo-borda-forte: 2px;
+  --primitivo-borda-padrao: 1px;
+  /* Currículo em duas colunas */
+  --primitivo-breakpoints-curriculo-duas-colunas: 960px;
+  /* Leitura com mais respiro */
+  --primitivo-breakpoints-leitura-ampla: 700px;
+  /* Painel/nav documental compacta */
+  --primitivo-breakpoints-nav-compacta: 900px;
+  /* Bronze muito claro */
+  --primitivo-cor-bronze-100: #E8D9C0;
+  /* Bronze claro — foco e acento sobre navy */
+  --primitivo-cor-bronze-300: #C9A86A;
+  /* Bronze canônico — acento editorial (D3-05 default) */
+  --primitivo-cor-bronze-500: #8C6A45;
+  /* Latão logo — alias perceptivo de 500 */
+  --primitivo-cor-bronze-600: #8C6A46;
+  /* Bronze escuro — texto/acento sobre papel quando 500 falha contraste */
+  --primitivo-cor-bronze-700: #7C6038;
+  /* Bronze prospecto v1 — LEGADO; não usar em semânticos novos */
+  --primitivo-cor-bronze-legado-prospecto: #9A7B4F;
+  /* Aviso quente contido */
+  --primitivo-cor-estado-aviso: #7A5A28;
+  /* Erro contido — não alarme comercial */
+  --primitivo-cor-estado-erro: #6B2E2E;
+  /* Informação alinhada ao navy */
+  --primitivo-cor-estado-informacao: #3D4F66;
+  /* Sucesso dessaturado (Dir C ok) — nunca único portador */
+  --primitivo-cor-estado-sucesso: #2F5D3A;
+  /* Navy claro */
+  --primitivo-cor-navy-100: #C5CEDC;
+  /* Navy médio */
+  --primitivo-cor-navy-300: #6B7F9C;
+  /* Navy muito claro — raramente superfície; apoio de escala */
+  --primitivo-cor-navy-50: #E8ECF2;
+  /* Navy intermediário (estudo Dir B) */
+  --primitivo-cor-navy-600: #243656;
+  /* Navy âncora — superfície profunda */
+  --primitivo-cor-navy-800: #1A2A44;
+  /* Navy escuro — profundidade máxima */
+  --primitivo-cor-navy-900: #101D33;
+  /* Papel — superfície principal de leitura */
+  --primitivo-cor-neutro-quente-0: #FBF8F2;
+  /* Base storytelling / logo 1C negativa — legado de superfície */
+  --primitivo-cor-neutro-quente-100: #F4F4F1;
+  /* Régua — filetes e divisórias */
+  --primitivo-cor-neutro-quente-200: #C9BCA1;
+  /* Taupe de apoio (logo kit) */
+  --primitivo-cor-neutro-quente-400: #5B5349;
+  /* Creme — caixas e blocos */
+  --primitivo-cor-neutro-quente-50: #F5F1E7;
+  /* Estrutural / 1C positiva */
+  --primitivo-cor-neutro-quente-500: #4A4A4A;
+  /* Chumbo storytelling — legado vs tinta */
+  --primitivo-cor-neutro-quente-700: #2B2B2B;
+  /* Tinta — texto corrido */
+  --primitivo-cor-neutro-quente-800: #23262B;
+  /* Sombra / chumbo profundo — elevação, não navy */
+  --primitivo-cor-neutro-quente-950: #111418;
+  /* Exceção; preferir filete */
+  --primitivo-elevacao-discreta: 0 12px 40px color-mix(in srgb, #101D33 12%, transparent);
+  --primitivo-elevacao-nenhuma: none;
+  --primitivo-espacamento-0: 0;
+  --primitivo-espacamento-1: 0.25rem;
+  --primitivo-espacamento-10: 2.5rem;
+  --primitivo-espacamento-12: 3rem;
+  --primitivo-espacamento-16: 4rem;
+  --primitivo-espacamento-2: 0.5rem;
+  --primitivo-espacamento-20: 5rem;
+  --primitivo-espacamento-24: 6rem;
+  --primitivo-espacamento-3: 0.75rem;
+  --primitivo-espacamento-32: 8rem;
+  --primitivo-espacamento-4: 1rem;
+  --primitivo-espacamento-5: 1.25rem;
+  --primitivo-espacamento-6: 1.5rem;
+  --primitivo-espacamento-8: 2rem;
+  /* Anel sobre papel/creme — bronze canônico (≥3:1 UI; ≈ AAA Focus Appearance com 2px) */
+  --primitivo-foco-cor-sobre-papel: #8C6A45;
+  /* Anel sobre navy — bronze claro (≥3:1 UI) */
+  --primitivo-foco-cor-sobre-profunda: #C9A86A;
+  --primitivo-foco-estilo: solid;
+  --primitivo-foco-largura: 2px;
+  --primitivo-foco-offset: 3px;
+  --primitivo-layout-container-amplo: 64rem;
+  --primitivo-layout-container-leitura: 40rem;
+  --primitivo-layout-gutter-desktop: 2.5rem;
+  --primitivo-layout-gutter-mobile: 1.25rem;
+  --primitivo-layout-gutter-tablet: 2rem;
+  --primitivo-layout-medida-prosa: 68ch;
+  --primitivo-motion-duracao-lenta: 320ms;
+  --primitivo-motion-duracao-padrao: 200ms;
+  --primitivo-motion-duracao-rapida: 120ms;
+  --primitivo-motion-duracao-reduced: 0.01ms;
+  --primitivo-motion-easing-entrada: cubic-bezier(0.22, 1, 0.36, 1);
+  --primitivo-motion-easing-padrao: cubic-bezier(0.22, 1, 0.36, 1);
+  --primitivo-motion-easing-saida: cubic-bezier(0.4, 0, 1, 1);
+  --primitivo-raio-circular: 9999px;
+  --primitivo-raio-controle: 4px;
+  --primitivo-raio-nenhum: 0;
+  --primitivo-raio-sutil: 2px;
+  --primitivo-tipografia-altura-linha-aperto: 1.15;
+  --primitivo-tipografia-altura-linha-corpo: 1.7;
+  --primitivo-tipografia-escala-2xl: clamp(2.35rem, 1.55rem + 2.4vw, 3.5rem);
+  --primitivo-tipografia-escala-base: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
+  --primitivo-tipografia-escala-lg: clamp(1.375rem, 1.15rem + 0.9vw, 1.85rem);
+  --primitivo-tipografia-escala-md: clamp(1.125rem, 1.05rem + 0.45vw, 1.375rem);
+  --primitivo-tipografia-escala-sm: clamp(0.875rem, 0.82rem + 0.25vw, 0.9375rem);
+  --primitivo-tipografia-escala-xl: clamp(1.85rem, 1.35rem + 1.6vw, 2.75rem);
+  --primitivo-tipografia-escala-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.8125rem);
+  /* Prosa de leitura — 400/400i/600 locais */
+  --primitivo-tipografia-familia-corpo: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  /* Display / rótulos — pesos 700–800 locais */
+  --primitivo-tipografia-familia-display: "Montserrat", sans-serif;
+  /* LEGADO storytelling — fallback */
+  --primitivo-tipografia-familia-fallback-sistema-sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  /* LEGADO storytelling — fallback, não canônico */
+  --primitivo-tipografia-familia-fallback-sistema-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --primitivo-tipografia-rotulo: 0.65rem;
+  --primitivo-tipografia-tracking-hero: 0.3em;
+  --primitivo-tipografia-tracking-rotulo: 0.14em;
+  --primitivo-tipografia-tracking-rotulo-largo: 0.18em;
+
+  /* ——— Semânticos ——— */
+  --borda-separador: 1px;
+  --breakpoints-curriculo-duas-colunas: 960px;
+  --breakpoints-leitura-ampla: 700px;
+  --breakpoints-nav-compacta: 900px;
+  /* Filetes, rótulos, citações, selos — não superfície dominante (~5% composição) */
+  --cor-acento-editorial: #8C6A45;
+  --cor-borda-forte: #7C6038;
+  --cor-borda-sutil: #C9BCA1;
+  --cor-citacao: #7C6038;
+  --cor-estado-aviso: #7A5A28;
+  --cor-estado-erro: #6B2E2E;
+  --cor-estado-informacao: #3D4F66;
+  --cor-estado-sucesso: #2F5D3A;
+  --cor-foco-sobre-papel: #8C6A45;
+  --cor-foco-sobre-profunda: #C9A86A;
+  --cor-superficie-creme: #F5F1E7;
+  --cor-superficie-papel: #FBF8F2;
+  --cor-superficie-profunda: #1A2A44;
+  --cor-superficie-profunda-escura: #101D33;
+  --cor-texto-inverso: #F5F1E7;
+  --cor-texto-primario: #23262B;
+  --cor-texto-sobre-profunda: #F5F1E7;
+  --cor-texto-suave: #4A4A4A;
+  --elevacao-nenhuma: none;
+  --elevacao-painel: 0 12px 40px color-mix(in srgb, #101D33 12%, transparent);
+  --espacamento-bloco: 2rem;
+  --espacamento-grupo: 1rem;
+  --espacamento-inline: 0.5rem;
+  --espacamento-pagina-gutter: 2.5rem;
+  --espacamento-secao: 4rem;
+  --foco-anel-offset: 3px;
+  --foco-anel-sobre-papel: 2px;
+  --layout-container-amplo: 64rem;
+  --layout-container-leitura: 40rem;
+  --layout-medida-prosa: 68ch;
+  --layout-nav-compacta: 900px;
+  --motion-easing-entrada: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-easing-padrao: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-easing-saida: cubic-bezier(0.4, 0, 1, 1);
+  --motion-feedback-rapido: 120ms;
+  --motion-reduced-duration: 0.01ms;
+  --motion-respeitar-reduced-motion: 1;
+  --motion-revelacao-lenta: 320ms;
+  --motion-transicao-padrao: 200ms;
+  --raio-controle: 4px;
+  --raio-midia: 0;
+  --tipografia-altura-linha-corpo: 1.7;
+  --tipografia-altura-linha-titulo: 1.15;
+  --tipografia-citacao: clamp(1.125rem, 1.05rem + 0.45vw, 1.375rem);
+  --tipografia-familia-corpo: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --tipografia-familia-display: "Montserrat", sans-serif;
+  --tipografia-folio: clamp(0.75rem, 0.7rem + 0.2vw, 0.8125rem);
+  --tipografia-nota: clamp(0.875rem, 0.82rem + 0.25vw, 0.9375rem);
+  --tipografia-pagina-titulo: clamp(2.35rem, 1.55rem + 2.4vw, 3.5rem);
+  --tipografia-prosa-corpo: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
+  --tipografia-prosa-introducao: clamp(1.125rem, 1.05rem + 0.45vw, 1.375rem);
+  --tipografia-rotulo: 0.65rem;
+  --tipografia-secao-titulo: clamp(1.85rem, 1.35rem + 1.6vw, 2.75rem);
+}
+
+/* Contextos de superfície (não é dark mode) */
+[data-superficie="profunda"] {
+  color: var(--cor-texto-sobre-profunda);
+  background-color: var(--cor-superficie-profunda);
+}
+
+[data-superficie="papel"] {
+  color: var(--cor-texto-primario);
+  background-color: var(--cor-superficie-papel);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-feedback-rapido: 0.01ms;
+    --motion-transicao-padrao: 0.01ms;
+    --motion-revelacao-lenta: 0.01ms;
+    --primitivo-motion-duracao-rapida: 0.01ms;
+    --primitivo-motion-duracao-padrao: 0.01ms;
+    --primitivo-motion-duracao-lenta: 0.01ms;
+  }
+}

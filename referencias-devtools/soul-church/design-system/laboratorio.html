@@ -24,9 +24,9 @@
         <h1 class="at-display-lg">Átrio — laboratório</h1>
         <p class="at-corpo-lg lab__intro">
           Inventário vivo do sistema reconstruído a partir do estudo em
-          <code>referencias-devtools/soul-church/</code>. Cada espécime abaixo
-          usa os mesmos tokens e as mesmas classes da demonstração — se algo
-          quebrar aqui, quebrou no sistema.
+          <code>referencias-devtools/soul-church/</code>. Cada espécime abaixo usa os
+          mesmos tokens e as mesmas classes da demonstração — se algo quebrar aqui,
+          quebrou no sistema.
         </p>
 
         <nav class="lab__sumario" aria-label="Sumário do laboratório">
@@ -44,7 +44,9 @@
             <li><a class="at-hover-sublinha" href="#marquee">11. Marquee</a></li>
             <li><a class="at-hover-sublinha" href="#formularios">12. Formulários</a></li>
             <li><a class="at-hover-sublinha" href="#movimento">13. Movimento</a></li>
-            <li><a class="at-hover-sublinha" href="#preferencias">14. Preferências</a></li>
+            <li>
+              <a class="at-hover-sublinha" href="#preferencias">14. Preferências</a>
+            </li>
           </ol>
         </nav>
       </header>
@@ -54,19 +56,25 @@
         <section id="principios" aria-labelledby="principios-t">
           <h2 id="principios-t">1. Princípios</h2>
           <p class="lab__nota">
-            Sete decisões que sustentam a experiência estudada, independentes
-            da marca de origem. A justificativa de cada uma está em
+            Sete decisões que sustentam a experiência estudada, independentes da marca de
+            origem. A justificativa de cada uma está em
             <code>documentacao/design-principles.md</code>.
           </p>
           <div class="lab__rolagem">
             <table class="lab__tabela">
               <thead>
-                <tr><th>Princípio</th><th>Consequência no sistema</th></tr>
+                <tr>
+                  <th>Princípio</th>
+                  <th>Consequência no sistema</th>
+                </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>A escala é uma só</td>
-                  <td>Tudo em <code>em</code>; um único <code>font-size</code> fluido comanda tipografia, molduras e raios</td>
+                  <td>
+                    Tudo em <code>em</code>; um único <code>font-size</code> fluido
+                    comanda tipografia, molduras e raios
+                  </td>
                 </tr>
                 <tr>
                   <td>Seções são lajes</td>
@@ -102,8 +110,8 @@
           <h2 id="escala-t">2. Escala fluida</h2>
           <p class="lab__nota">
             O achado estrutural da referência. O <code>font-size</code> do
-            <code>body</code> é a única entrada fluida; todo o resto é
-            <code>em</code>. Redimensione a janela e observe os valores.
+            <code>body</code> é a única entrada fluida; todo o resto é <code>em</code>.
+            Redimensione a janela e observe os valores.
           </p>
           <div class="lab__linha">
             <div class="lab__estado">
@@ -121,11 +129,29 @@
           </div>
           <div class="lab__rolagem">
             <table class="lab__tabela">
-              <thead><tr><th>Regime</th><th>Fórmula</th><th>Efeito</th></tr></thead>
+              <thead>
+                <tr>
+                  <th>Regime</th>
+                  <th>Fórmula</th>
+                  <th>Efeito</th>
+                </tr>
+              </thead>
               <tbody>
-                <tr><td>≤ 991px</td><td><code>calc(0.71875em + 0.250908vw)</code></td><td>rampa suave: o texto não encolhe demais no celular</td></tr>
-                <tr><td>992–1511px</td><td><code>calc(0.454808em + 0.576923vw)</code></td><td>rampa principal</td></tr>
-                <tr><td>≥ 1512px</td><td><code>1em</code></td><td>teto: a escala trava, só a largura cresce</td></tr>
+                <tr>
+                  <td>≤ 991px</td>
+                  <td><code>calc(0.71875em + 0.250908vw)</code></td>
+                  <td>rampa suave: o texto não encolhe demais no celular</td>
+                </tr>
+                <tr>
+                  <td>992–1511px</td>
+                  <td><code>calc(0.454808em + 0.576923vw)</code></td>
+                  <td>rampa principal</td>
+                </tr>
+                <tr>
+                  <td>≥ 1512px</td>
+                  <td><code>1em</code></td>
+                  <td>teto: a escala trava, só a largura cresce</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -135,16 +161,21 @@
         <section id="cor" aria-labelledby="cor-t">
           <h2 id="cor-t">3. Cor</h2>
           <p class="lab__nota">
-            Neutros quentes com um único acento frio. A paleta é original —
-            os valores medidos na referência ficam registrados apenas na
-            auditoria, não no produto.
+            Neutros quentes com um único acento frio. A paleta é original — os valores
+            medidos na referência ficam registrados apenas na auditoria, não no produto.
           </p>
 
           <h3>Superfícies</h3>
-          <div class="lab__grade" data-lab-cores="papel,linho,areia,areia-profunda,tinta-suave,tinta"></div>
+          <div
+            class="lab__grade"
+            data-lab-cores="papel,linho,areia,areia-profunda,tinta-suave,tinta"
+          ></div>
 
           <h3>Texto e filetes</h3>
-          <div class="lab__grade" data-lab-cores="texto,texto-tenue,pedra,grafite,filete-tenue"></div>
+          <div
+            class="lab__grade"
+            data-lab-cores="texto,texto-tenue,pedra,grafite,filete-tenue"
+          ></div>
 
           <h3>Acento e sinal</h3>
           <div class="lab__grade" data-lab-cores="acento,acento-suave,sucesso,erro"></div>
@@ -154,39 +185,70 @@
         <section id="tipografia" aria-labelledby="tipografia-t">
           <h2 id="tipografia-t">4. Tipografia</h2>
           <p class="lab__nota">
-            Quatro vozes com papéis fixos. O salto entre <code>display-xl</code>
-            e <code>display-lg</code> é quase o dobro; de <code>display-md</code>
+            Quatro vozes com papéis fixos. O salto entre <code>display-xl</code> e
+            <code>display-lg</code> é quase o dobro; de <code>display-md</code>
             para baixo a razão cai para ~1.2. O contraste mora no topo.
           </p>
 
           <h3>Display — títulos</h3>
           <div class="lab__pilha">
-            <div class="lab__degrau"><code>display-xl · 8.33em · lh 0.7</code><span class="at-display-xl">Portas abertas</span></div>
-            <div class="lab__degrau"><code>display-lg · 4.5em · lh 1</code><span class="at-display-lg">Portas abertas</span></div>
-            <div class="lab__degrau"><code>display-md · 2.25em · lh 1.22</code><span class="at-display-md">Portas abertas</span></div>
-            <div class="lab__degrau"><code>display-sm · 1.88em</code><span class="at-display-sm">Portas abertas</span></div>
-            <div class="lab__degrau"><code>display-xs · 1.46em</code><span class="at-display-xs">Portas abertas</span></div>
+            <div class="lab__degrau">
+              <code>display-xl · 8.33em · lh 0.7</code
+              ><span class="at-display-xl">Portas abertas</span>
+            </div>
+            <div class="lab__degrau">
+              <code>display-lg · 4.5em · lh 1</code
+              ><span class="at-display-lg">Portas abertas</span>
+            </div>
+            <div class="lab__degrau">
+              <code>display-md · 2.25em · lh 1.22</code
+              ><span class="at-display-md">Portas abertas</span>
+            </div>
+            <div class="lab__degrau">
+              <code>display-sm · 1.88em</code
+              ><span class="at-display-sm">Portas abertas</span>
+            </div>
+            <div class="lab__degrau">
+              <code>display-xs · 1.46em</code
+              ><span class="at-display-xs">Portas abertas</span>
+            </div>
           </div>
 
           <h3>Cartaz — a voz condensada</h3>
           <div class="lab__pilha">
-            <div class="lab__degrau"><code>cartaz-lg · 7.88em</code><span class="at-cartaz-lg">Bem-vindo</span></div>
-            <div class="lab__degrau"><code>cartaz-md · 4.4em</code><span class="at-cartaz-md">Bem-vindo</span></div>
+            <div class="lab__degrau">
+              <code>cartaz-lg · 7.88em</code><span class="at-cartaz-lg">Bem-vindo</span>
+            </div>
+            <div class="lab__degrau">
+              <code>cartaz-md · 4.4em</code><span class="at-cartaz-md">Bem-vindo</span>
+            </div>
           </div>
 
           <h3>Corpo, rótulo e micro</h3>
           <div class="lab__pilha">
-            <div class="lab__degrau"><code>corpo-lg · 1.5em</code><span class="at-corpo-lg">Chegue quando puder.</span></div>
-            <div class="lab__degrau"><code>corpo · 1em · lh 1.52</code><span class="at-corpo">Chegue quando puder.</span></div>
-            <div class="lab__degrau"><code>rotulo · 1.19em</code><span class="at-rotulo">Chegue quando puder</span></div>
-            <div class="lab__degrau"><code>micro · 0.8em mono</code><span class="at-micro">Chegue quando puder</span></div>
+            <div class="lab__degrau">
+              <code>corpo-lg · 1.5em</code
+              ><span class="at-corpo-lg">Chegue quando puder.</span>
+            </div>
+            <div class="lab__degrau">
+              <code>corpo · 1em · lh 1.52</code
+              ><span class="at-corpo">Chegue quando puder.</span>
+            </div>
+            <div class="lab__degrau">
+              <code>rotulo · 1.19em</code
+              ><span class="at-rotulo">Chegue quando puder</span>
+            </div>
+            <div class="lab__degrau">
+              <code>micro · 0.8em mono</code
+              ><span class="at-micro">Chegue quando puder</span>
+            </div>
           </div>
 
           <h3>Medida de leitura</h3>
           <p class="at-corpo at-medida-texto">
-            A medida máxima é <code>62ch</code>. Acima disso o olho perde a
-            linha no retorno. Este parágrafo demonstra o limite: ele para de
-            crescer mesmo que a janela continue.
+            A medida máxima é <code>62ch</code>. Acima disso o olho perde a linha no
+            retorno. Este parágrafo demonstra o limite: ele para de crescer mesmo que a
+            janela continue.
           </p>
         </section>
 
@@ -194,9 +256,9 @@
         <section id="espaco" aria-labelledby="espaco-t">
           <h2 id="espaco-t">5. Espaço e grade</h2>
           <p class="lab__nota">
-            Escala de espaçamento em <code>em</code>, portanto fluida junto
-            com a tipografia. Os degraus largos (20, 24, 32, 40) são o que
-            produz o silêncio entre seções.
+            Escala de espaçamento em <code>em</code>, portanto fluida junto com a
+            tipografia. Os degraus largos (20, 24, 32, 40) são o que produz o silêncio
+            entre seções.
           </p>
           <div class="lab__pilha" data-lab-espacos="2,4,6,8,12,14,16,20,24,32"></div>
 
@@ -205,12 +267,14 @@
 
           <h3>Grade editorial assimétrica (≥992px)</h3>
           <p class="lab__nota">
-            A coluna de mídia é mais larga que a de texto — 36.19em contra
-            30em. Abaixo de 992px vira coluna única.
+            A coluna de mídia é mais larga que a de texto — 36.19em contra 30em. Abaixo de
+            992px vira coluna única.
           </p>
           <div class="at-grade-editorial">
             <div class="lab__caixa"><p class="at-corpo">Coluna de texto — 30em</p></div>
-            <div class="lab__caixa"><p class="at-corpo">Coluna de mídia — 36.19em</p></div>
+            <div class="lab__caixa">
+              <p class="at-corpo">Coluna de mídia — 36.19em</p>
+            </div>
           </div>
         </section>
 
@@ -218,21 +282,26 @@
         <section id="forma" aria-labelledby="forma-t">
           <h2 id="forma-t">6. Forma e mídia</h2>
           <p class="lab__nota">
-            A moldura em arco é a assinatura formal: canto superior esquerdo
-            com raio enorme, os demais quase retos. Toda mídia reserva
-            proporção antes de carregar.
+            A moldura em arco é a assinatura formal: canto superior esquerdo com raio
+            enorme, os demais quase retos. Toda mídia reserva proporção antes de carregar.
           </p>
           <div class="at-grade-cartoes">
             <div>
-              <div class="at-midia at-midia--arco"><div class="at-midia__preenchimento"></div></div>
+              <div class="at-midia at-midia--arco">
+                <div class="at-midia__preenchimento"></div>
+              </div>
               <p class="lab__legenda">at-midia--arco</p>
             </div>
             <div>
-              <div class="at-midia at-midia--editorial"><div class="at-midia__preenchimento"></div></div>
+              <div class="at-midia at-midia--editorial">
+                <div class="at-midia__preenchimento"></div>
+              </div>
               <p class="lab__legenda">at-midia--editorial · 4/5</p>
             </div>
             <div>
-              <div class="at-midia at-midia--paisagem at-midia--escura"><div class="at-midia__preenchimento"></div></div>
+              <div class="at-midia at-midia--paisagem at-midia--escura">
+                <div class="at-midia__preenchimento"></div>
+              </div>
               <p class="lab__legenda">at-midia--paisagem · escura</p>
             </div>
           </div>
@@ -245,26 +314,40 @@
         <section id="acoes" aria-labelledby="acoes-t">
           <h2 id="acoes-t">7. Ações e estados</h2>
           <p class="lab__nota">
-            Um só formato — pílula. O que distingue as ações é a superfície.
-            Todos os alvos têm no mínimo 44×44px. Use Tab para ver o anel de
-            foco, que a referência não possui.
+            Um só formato — pílula. O que distingue as ações é a superfície. Todos os
+            alvos têm no mínimo 44×44px. Use Tab para ver o anel de foco, que a referência
+            não possui.
           </p>
           <div class="lab__linha">
-            <button class="at-botao at-botao--primario" type="button">Ação primária</button>
-            <button class="at-botao at-botao--secundario" type="button">Ação secundária</button>
-            <button class="at-botao at-botao--fantasma" type="button">Ação discreta</button>
-            <button class="at-botao at-botao--primario" type="button" disabled>Indisponível</button>
+            <button class="at-botao at-botao--primario" type="button">
+              Ação primária
+            </button>
+            <button class="at-botao at-botao--secundario" type="button">
+              Ação secundária
+            </button>
+            <button class="at-botao at-botao--fantasma" type="button">
+              Ação discreta
+            </button>
+            <button class="at-botao at-botao--primario" type="button" disabled>
+              Indisponível
+            </button>
             <button class="at-botao-circulo" type="button">
-              <span aria-hidden="true">→</span><span class="at-visualmente-oculto">Avançar</span>
+              <span aria-hidden="true">→</span
+              ><span class="at-visualmente-oculto">Avançar</span>
             </button>
           </div>
 
           <h3>Sobre superfície escura</h3>
           <div class="lab__linha lab__caixa--escura at-superficie-tinta">
-            <button class="at-botao at-botao--secundario" type="button">Ação secundária</button>
-            <button class="at-botao at-botao--fantasma" type="button">Ação discreta</button>
+            <button class="at-botao at-botao--secundario" type="button">
+              Ação secundária
+            </button>
+            <button class="at-botao at-botao--fantasma" type="button">
+              Ação discreta
+            </button>
             <button class="at-botao-circulo" type="button">
-              <span aria-hidden="true">→</span><span class="at-visualmente-oculto">Avançar</span>
+              <span aria-hidden="true">→</span
+              ><span class="at-visualmente-oculto">Avançar</span>
             </button>
             <a class="at-link" href="#acoes">Link com filete</a>
           </div>
@@ -272,7 +355,9 @@
           <h3>Links</h3>
           <div class="lab__linha">
             <a class="at-link" href="#acoes">Link com filete</a>
-            <a class="at-hover-sublinha at-corpo" href="#acoes">Link com sublinhado varrido</a>
+            <a class="at-hover-sublinha at-corpo" href="#acoes"
+              >Link com sublinhado varrido</a
+            >
           </div>
         </section>
 
@@ -280,33 +365,54 @@
         <section id="cartoes" aria-labelledby="cartoes-t">
           <h2 id="cartoes-t">8. Cartões</h2>
           <p class="lab__nota">
-            O acento existe para marcar exatamente um item por grade. Dois
-            cartões azuis lado a lado significam hierarquia perdida.
+            O acento existe para marcar exatamente um item por grade. Dois cartões azuis
+            lado a lado significam hierarquia perdida.
           </p>
           <div class="at-grade-cartoes">
             <article class="at-cartao at-hover-eleva">
               <h3 class="at-display-md">Cartão padrão</h3>
-              <p class="at-corpo">Superfície clara, sombra mínima, ação alinhada à esquerda.</p>
-              <button class="at-botao at-botao--secundario at-cartao__acao" type="button">Saber mais</button>
+              <p class="at-corpo">
+                Superfície clara, sombra mínima, ação alinhada à esquerda.
+              </p>
+              <button class="at-botao at-botao--secundario at-cartao__acao" type="button">
+                Saber mais
+              </button>
             </article>
             <article class="at-cartao at-cartao--acento at-hover-eleva">
               <h3 class="at-display-md">Cartão em destaque</h3>
-              <p class="at-corpo">Único acento da grade. Reservado a utilidades e atalhos.</p>
-              <button class="at-botao at-botao--primario at-cartao__acao" type="button">Abrir</button>
+              <p class="at-corpo">
+                Único acento da grade. Reservado a utilidades e atalhos.
+              </p>
+              <button class="at-botao at-botao--primario at-cartao__acao" type="button">
+                Abrir
+              </button>
             </article>
             <article class="at-evento at-hover-eleva">
               <p class="at-rotulo at-evento__quando">Sábado · 9h</p>
               <h3 class="at-display-md">Cartão de agenda</h3>
-              <p class="at-corpo">O quando vem antes do quê; a ação encosta no canto inferior direito.</p>
-              <button class="at-botao at-botao--secundario at-evento__acao" type="button">Participar</button>
+              <p class="at-corpo">
+                O quando vem antes do quê; a ação encosta no canto inferior direito.
+              </p>
+              <button class="at-botao at-botao--secundario at-evento__acao" type="button">
+                Participar
+              </button>
             </article>
           </div>
 
           <h3>Bloco de horários</h3>
           <div class="at-horarios lab__caixa">
-            <div class="at-horarios__linha"><span class="at-horarios__quando">Quarta · 19h</span><span class="at-corpo">Encontro aberto</span></div>
-            <div class="at-horarios__linha"><span class="at-horarios__quando">Sábado · 9h</span><span class="at-corpo">Atividades comunitárias</span></div>
-            <div class="at-horarios__linha"><span class="at-horarios__quando">Domingo · 10h</span><span class="at-corpo">Encontro principal</span></div>
+            <div class="at-horarios__linha">
+              <span class="at-horarios__quando">Quarta · 19h</span
+              ><span class="at-corpo">Encontro aberto</span>
+            </div>
+            <div class="at-horarios__linha">
+              <span class="at-horarios__quando">Sábado · 9h</span
+              ><span class="at-corpo">Atividades comunitárias</span>
+            </div>
+            <div class="at-horarios__linha">
+              <span class="at-horarios__quando">Domingo · 10h</span
+              ><span class="at-corpo">Encontro principal</span>
+            </div>
           </div>
         </section>
 
@@ -314,10 +420,9 @@
         <section id="navegacao" aria-labelledby="navegacao-t">
           <h2 id="navegacao-t">9. Navegação</h2>
           <p class="lab__nota">
-            O gatilho não abre o menu: ele vira o menu. A pílula mede 10em×4em;
-            aberta, o mesmo plano cobre a viewport com raio constante. Abra
-            com o teclado e note que o foco entra no painel, Escape fecha e o
-            foco volta ao gatilho.
+            O gatilho não abre o menu: ele vira o menu. A pílula mede 10em×4em; aberta, o
+            mesmo plano cobre a viewport com raio constante. Abra com o teclado e note que
+            o foco entra no painel, Escape fecha e o foco volta ao gatilho.
           </p>
           <div class="lab__linha">
             <button
@@ -331,12 +436,22 @@
                 <span>Menu</span><span>Fechar</span>
               </span>
               <span class="at-visualmente-oculto">Abrir menu de navegação</span>
-              <span class="at-menu-gatilho__icone" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="at-menu-gatilho__icone" aria-hidden="true"
+                ><i></i><i></i><i></i
+              ></span>
             </button>
             <span class="lab__legenda">estado espelhado em aria-expanded</span>
           </div>
 
-          <div class="at-menu" id="lab-menu" data-menu data-estado="fechado" role="dialog" aria-label="Navegação de exemplo" hidden>
+          <div
+            class="at-menu"
+            id="lab-menu"
+            data-menu
+            data-estado="fechado"
+            role="dialog"
+            aria-label="Navegação de exemplo"
+            hidden
+          >
             <nav class="at-menu__coluna-principal" aria-label="Seções de exemplo">
               <ul class="at-menu__lista">
                 <li><a class="at-menu__link" href="#navegacao">Primeira visita</a></li>
@@ -357,17 +472,32 @@
           <h3>Barra de serviços persistente</h3>
           <div class="at-barra-servicos" style="position: static">
             <ul class="at-barra-servicos__horarios at-rotulo">
-              <li>Encontros</li><li>Qua 19h</li><li>Dom 10h</li>
+              <li>Encontros</li>
+              <li>Qua 19h</li>
+              <li>Dom 10h</li>
             </ul>
             <div class="at-marquee at-barra-servicos__marquee">
               <div class="at-marquee__trilho">
-                <span class="at-marquee__item"><span class="at-rotulo">Aviso de exemplo</span><span class="at-rotulo at-marquee__separador">·</span></span>
-                <span class="at-marquee__item"><span class="at-rotulo">Segundo aviso</span><span class="at-rotulo at-marquee__separador">·</span></span>
+                <span class="at-marquee__item"
+                  ><span class="at-rotulo">Aviso de exemplo</span
+                  ><span class="at-rotulo at-marquee__separador">·</span></span
+                >
+                <span class="at-marquee__item"
+                  ><span class="at-rotulo">Segundo aviso</span
+                  ><span class="at-rotulo at-marquee__separador">·</span></span
+                >
               </div>
             </div>
             <div class="at-barra-servicos__acoes">
-              <button class="at-botao-circulo" type="button" data-painel-gatilho aria-controls="lab-painel" aria-expanded="false">
-                <span aria-hidden="true">✎</span><span class="at-visualmente-oculto">Abrir painel</span>
+              <button
+                class="at-botao-circulo"
+                type="button"
+                data-painel-gatilho
+                aria-controls="lab-painel"
+                aria-expanded="false"
+              >
+                <span aria-hidden="true">✎</span
+                ><span class="at-visualmente-oculto">Abrir painel</span>
               </button>
             </div>
           </div>
@@ -377,9 +507,8 @@
         <section id="painel" aria-labelledby="painel-t">
           <h2 id="painel-t">10. Painel contextual</h2>
           <p class="lab__nota">
-            Diálogo real: <code>role="dialog"</code>,
-            <code>aria-modal</code>, foco preso, Escape e clique fora
-            fechando, fundo inerte. O gatilho está na barra acima.
+            Diálogo real: <code>role="dialog"</code>, <code>aria-modal</code>, foco preso,
+            Escape e clique fora fechando, fundo inerte. O gatilho está na barra acima.
           </p>
           <div class="at-painel-veu" id="lab-painel" data-painel hidden>
             <div class="at-painel" aria-labelledby="lab-painel-t">
@@ -389,18 +518,37 @@
                   <h3 class="at-display-md" id="lab-painel-t">Como podemos ajudar?</h3>
                 </div>
                 <button class="at-botao-circulo" type="button" data-painel-fechar>
-                  <span aria-hidden="true">✕</span><span class="at-visualmente-oculto">Fechar painel</span>
+                  <span aria-hidden="true">✕</span
+                  ><span class="at-visualmente-oculto">Fechar painel</span>
                 </button>
               </div>
               <div class="at-painel__assuntos">
-                <button class="at-painel__assunto" type="button" data-assunto aria-controls="lab-assunto-1" aria-expanded="false">
-            <span class="at-painel__assunto__rotulo">Quero visitar</span>
-          </button>
-                <div id="lab-assunto-1" hidden><p class="at-corpo" style="padding: 1em 0">Conteúdo do assunto.</p></div>
-                <button class="at-painel__assunto" type="button" data-assunto aria-controls="lab-assunto-2" aria-expanded="false">
-            <span class="at-painel__assunto__rotulo">Preciso conversar</span>
-          </button>
-                <div id="lab-assunto-2" hidden><p class="at-corpo" style="padding: 1em 0">Um assunto aberto por vez.</p></div>
+                <button
+                  class="at-painel__assunto"
+                  type="button"
+                  data-assunto
+                  aria-controls="lab-assunto-1"
+                  aria-expanded="false"
+                >
+                  <span class="at-painel__assunto__rotulo">Quero visitar</span>
+                </button>
+                <div id="lab-assunto-1" hidden>
+                  <p class="at-corpo" style="padding: 1em 0">Conteúdo do assunto.</p>
+                </div>
+                <button
+                  class="at-painel__assunto"
+                  type="button"
+                  data-assunto
+                  aria-controls="lab-assunto-2"
+                  aria-expanded="false"
+                >
+                  <span class="at-painel__assunto__rotulo">Preciso conversar</span>
+                </button>
+                <div id="lab-assunto-2" hidden>
+                  <p class="at-corpo" style="padding: 1em 0">
+                    Um assunto aberto por vez.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -410,16 +558,24 @@
         <section id="marquee" aria-labelledby="marquee-t">
           <h2 id="marquee-t">11. Marquee</h2>
           <p class="lab__nota">
-            Velocidade constante, medida em <code>em/s</code>, e não duração
-            fixa: dois marquees com textos de tamanhos diferentes precisam
-            andar no mesmo passo. Pausa ao passar o ponteiro, ao sair da
-            viewport e quando a aba fica oculta.
+            Velocidade constante, medida em <code>em/s</code>, e não duração fixa: dois
+            marquees com textos de tamanhos diferentes precisam andar no mesmo passo.
+            Pausa ao passar o ponteiro, ao sair da viewport e quando a aba fica oculta.
           </p>
           <div class="at-marquee at-marquee--cartaz">
             <div class="at-marquee__trilho">
-              <span class="at-marquee__item"><span class="at-cartaz-md">Portas abertas</span><span class="at-cartaz-md at-marquee__separador">—</span></span>
-              <span class="at-marquee__item"><span class="at-cartaz-md">Escuta antes da resposta</span><span class="at-cartaz-md at-marquee__separador">—</span></span>
-              <span class="at-marquee__item"><span class="at-cartaz-md">Trabalho partilhado</span><span class="at-cartaz-md at-marquee__separador">—</span></span>
+              <span class="at-marquee__item"
+                ><span class="at-cartaz-md">Portas abertas</span
+                ><span class="at-cartaz-md at-marquee__separador">—</span></span
+              >
+              <span class="at-marquee__item"
+                ><span class="at-cartaz-md">Escuta antes da resposta</span
+                ><span class="at-cartaz-md at-marquee__separador">—</span></span
+              >
+              <span class="at-marquee__item"
+                ><span class="at-cartaz-md">Trabalho partilhado</span
+                ><span class="at-cartaz-md at-marquee__separador">—</span></span
+              >
             </div>
           </div>
         </section>
@@ -429,19 +585,32 @@
           <h2 id="formularios-t">12. Formulários</h2>
           <p class="lab__nota">
             Todo campo tem rótulo visível. O erro é ligado ao campo por
-            <code>aria-describedby</code> e <code>aria-invalid</code>, o foco
-            vai para o primeiro inválido e o resultado é anunciado por região
-            viva. Envie vazio para ver os estados de erro.
+            <code>aria-describedby</code> e <code>aria-invalid</code>, o foco vai para o
+            primeiro inválido e o resultado é anunciado por região viva. Envie vazio para
+            ver os estados de erro.
           </p>
           <form class="lab__form" data-form-local id="lab-form" novalidate>
             <div class="lab__campo">
               <label for="lab-nome">Nome</label>
-              <input id="lab-nome" name="nome" type="text" required minlength="2" autocomplete="name" />
+              <input
+                id="lab-nome"
+                name="nome"
+                type="text"
+                required
+                minlength="2"
+                autocomplete="name"
+              />
               <span class="at-erro-campo" id="lab-form-erro-nome" hidden></span>
             </div>
             <div class="lab__campo">
               <label for="lab-email">E-mail</label>
-              <input id="lab-email" name="email" type="email" required autocomplete="email" />
+              <input
+                id="lab-email"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+              />
               <span class="at-erro-campo" id="lab-form-erro-email" hidden></span>
             </div>
             <div class="lab__campo">
@@ -451,12 +620,16 @@
             </div>
             <div class="lab__consentimento">
               <input id="lab-aceite" name="aceite" type="checkbox" required />
-              <label for="lab-aceite">Concordo com o uso desta mensagem para responder ao contato</label>
+              <label for="lab-aceite"
+                >Concordo com o uso desta mensagem para responder ao contato</label
+              >
               <span class="at-erro-campo" id="lab-form-erro-aceite" hidden></span>
             </div>
             <p class="at-micro">Demonstração local: nada é transmitido.</p>
             <div class="at-feedback" data-form-feedback hidden></div>
-            <button class="at-botao at-botao--primario" type="submit">Enviar (simulado)</button>
+            <button class="at-botao at-botao--primario" type="submit">
+              Enviar (simulado)
+            </button>
           </form>
 
           <h3>Estados isolados</h3>
@@ -467,14 +640,24 @@
             </div>
             <div class="lab__campo">
               <label for="lab-invalido">Campo inválido</label>
-              <input id="lab-invalido" type="text" aria-invalid="true" aria-describedby="lab-invalido-erro" value="a" />
-              <span class="at-erro-campo" id="lab-invalido-erro">Precisa de pelo menos 2 caracteres.</span>
+              <input
+                id="lab-invalido"
+                type="text"
+                aria-invalid="true"
+                aria-describedby="lab-invalido-erro"
+                value="a"
+              />
+              <span class="at-erro-campo" id="lab-invalido-erro"
+                >Precisa de pelo menos 2 caracteres.</span
+              >
             </div>
             <div class="lab__campo">
               <label for="lab-desabilitado">Campo desabilitado</label>
               <input id="lab-desabilitado" type="text" value="Indisponível" disabled />
             </div>
-            <div class="at-feedback at-feedback--sucesso">Demonstração: nenhum dado foi enviado.</div>
+            <div class="at-feedback at-feedback--sucesso">
+              Demonstração: nenhum dado foi enviado.
+            </div>
             <div class="at-feedback at-feedback--erro">2 campos precisam de atenção.</div>
           </div>
         </section>
@@ -484,18 +667,44 @@
           <h2 id="movimento-t">13. Movimento</h2>
           <p class="lab__nota">
             Cinco primitivas. Todas animam só <code>transform</code> e
-            <code>opacity</code>; o estado de repouso é o estado visível, de
-            modo que a página continua legível sem JavaScript.
+            <code>opacity</code>; o estado de repouso é o estado visível, de modo que a
+            página continua legível sem JavaScript.
           </p>
           <div class="lab__rolagem">
             <table class="lab__tabela">
-              <thead><tr><th>Primitiva</th><th>Uso</th><th>Parâmetros</th></tr></thead>
+              <thead>
+                <tr>
+                  <th>Primitiva</th>
+                  <th>Uso</th>
+                  <th>Parâmetros</th>
+                </tr>
+              </thead>
               <tbody>
-                <tr><td><code>at-revelar</code></td><td>títulos, por palavra</td><td>800ms · saída cúbica · stagger total 200ms</td></tr>
-                <tr><td><code>at-subir</code></td><td>blocos e cartões</td><td>800ms · deslocamento 2.5em · escalonável</td></tr>
-                <tr><td><code>at-midia-revela</code></td><td>imagens</td><td>1120ms · escala 1.08 → 1</td></tr>
-                <tr><td><code>at-parallax</code></td><td>mídia editorial</td><td>só ponteiro fino · amplitude por token</td></tr>
-                <tr><td><code>data-palco</code></td><td>letras espalhadas</td><td>scrub por scroll · faixas sobrepostas</td></tr>
+                <tr>
+                  <td><code>at-revelar</code></td>
+                  <td>títulos, por palavra</td>
+                  <td>800ms · saída cúbica · stagger total 200ms</td>
+                </tr>
+                <tr>
+                  <td><code>at-subir</code></td>
+                  <td>blocos e cartões</td>
+                  <td>800ms · deslocamento 2.5em · escalonável</td>
+                </tr>
+                <tr>
+                  <td><code>at-midia-revela</code></td>
+                  <td>imagens</td>
+                  <td>1120ms · escala 1.08 → 1</td>
+                </tr>
+                <tr>
+                  <td><code>at-parallax</code></td>
+                  <td>mídia editorial</td>
+                  <td>só ponteiro fino · amplitude por token</td>
+                </tr>
+                <tr>
+                  <td><code>data-palco</code></td>
+                  <td>letras espalhadas</td>
+                  <td>scrub por scroll · faixas sobrepostas</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -516,37 +725,45 @@
         <section id="preferencias" aria-labelledby="preferencias-t">
           <h2 id="preferencias-t">14. Preferências do usuário</h2>
           <p class="lab__nota">
-            A referência não declara nenhuma regra para estas preferências em
-            1685 regras de estilo. Aqui as três são atendidas.
+            A referência não declara nenhuma regra para estas preferências em 1685 regras
+            de estilo. Aqui as três são atendidas.
           </p>
           <div class="lab__linha">
             <div class="lab__estado">
               <span class="lab__legenda">prefers-reduced-motion</span>
-              <strong class="at-display-md" data-lab-pref="(prefers-reduced-motion: reduce)">—</strong>
+              <strong
+                class="at-display-md"
+                data-lab-pref="(prefers-reduced-motion: reduce)"
+                >—</strong
+              >
             </div>
             <div class="lab__estado">
               <span class="lab__legenda">prefers-contrast</span>
-              <strong class="at-display-md" data-lab-pref="(prefers-contrast: more)">—</strong>
+              <strong class="at-display-md" data-lab-pref="(prefers-contrast: more)"
+                >—</strong
+              >
             </div>
             <div class="lab__estado">
               <span class="lab__legenda">forced-colors</span>
-              <strong class="at-display-md" data-lab-pref="(forced-colors: active)">—</strong>
+              <strong class="at-display-md" data-lab-pref="(forced-colors: active)"
+                >—</strong
+              >
             </div>
           </div>
 
           <div class="lab__aviso">
             <p class="at-corpo">
-              <strong>Movimento reduzido:</strong> distâncias, escalas e
-              staggers vão a zero pelos tokens — os nomes semânticos não mudam.
-              O marquee para e passa a rolar por gesto; a transição de página
-              é ignorada e a navegação vira imediata.
+              <strong>Movimento reduzido:</strong> distâncias, escalas e staggers vão a
+              zero pelos tokens — os nomes semânticos não mudam. O marquee para e passa a
+              rolar por gesto; a transição de página é ignorada e a navegação vira
+              imediata.
             </p>
           </div>
 
           <h3>Anel de foco</h3>
           <p class="lab__nota">
-            Percorra a página com Tab. O anel tem 3px, deslocamento de 3px e
-            inverte a cor sobre superfície escura.
+            Percorra a página com Tab. O anel tem 3px, deslocamento de 3px e inverte a cor
+            sobre superfície escura.
           </p>
         </section>
       </main>
@@ -590,7 +807,9 @@
           pilha.dataset.labEspacos.split(",").forEach(function (degrau) {
             const variavel = "--at-esp-" + degrau.trim();
             const linha = criar("div", "lab__degrau");
-            linha.appendChild(criar("code", null, "esp-" + degrau.trim() + " · " + A.token(variavel)));
+            linha.appendChild(
+              criar("code", null, "esp-" + degrau.trim() + " · " + A.token(variavel))
+            );
             const barra = criar("div", "lab__barra");
             barra.style.width = "var(" + variavel + ")";
             linha.appendChild(barra);
@@ -601,7 +820,8 @@
         // ---- colunas ----------------------------------------------------
         const colunas = doc.querySelector("[data-lab-colunas]");
         if (colunas) {
-          for (let i = 0; i < 12; i += 1) colunas.appendChild(criar("div", "lab__coluna"));
+          for (let i = 0; i < 12; i += 1)
+            colunas.appendChild(criar("div", "lab__coluna"));
         }
 
         // ---- raios ------------------------------------------------------
@@ -624,7 +844,14 @@
         // ---- palco de letras -------------------------------------------
         const palco = doc.querySelector("[data-lab-palco]");
         if (palco) {
-          const posicoes = [[6, 12], [22, 40], [38, 8], [54, 46], [70, 16], [84, 52]];
+          const posicoes = [
+            [6, 12],
+            [22, 40],
+            [38, 8],
+            [54, 46],
+            [70, 16],
+            [84, 52],
+          ];
           "átrio".split("").forEach(function (letra, i) {
             const span = criar("span", "at-letra", letra);
             span.style.left = posicoes[i % posicoes.length][0] + "%";

@@ -59,7 +59,10 @@ documental) + REF-07 (progressão sem depender de espetáculo) + REF-05
 
 ---
 
-## Seleção final (8)
+## Seleção proposta (8)
+
+> Enquanto V1 estiver pendente, esta seção permanece **proposta**, não “final”.
+> Após confirmação humana (V1), o heading pode voltar a “Seleção final”.
 
 | ID     | Nome                                            | 60/30/10              | Eixo primário |
 | ------ | ----------------------------------------------- | --------------------- | ------------- |
@@ -230,33 +233,35 @@ documental) + REF-07 (progressão sem depender de espetáculo) + REF-05
 | Direitos e limitações          | © The Marshall Project; sem redistribuir conteúdo/imagens de pessoas                                                                                            |
 | Status da seleção              | PROMOVIDA AO PAINEL                                                                                                                                             |
 
-### REF-06 — Primary Paper (Lapa Ninja)
+### REF-06 — Primary Paper
 
-| Campo                         | Conteúdo                                                                               |
-| ----------------------------- | -------------------------------------------------------------------------------------- |
-| ID                            | REF-06                                                                                 |
-| Nome                          | Primary Paper                                                                          |
-| Organização                   | Case publicado via Lapa Ninja (estúdio / projeto tipográfico)                          |
-| URL ou path                   | https://www.lapa.ninja/post/primary-paper/                                             |
-| Data de acesso/análise        | 2026-08-01 (status: promover; revalidar galeria na DH)                                 |
-| Estado da URL                 | Assumida a partir da pesquisa-v1; confirmar na validação humana                        |
-| Setor                         | Design editorial / papel digital                                                       |
-| Classificação 60/30/10        | Fora do setor                                                                          |
-| Eixo primário                 | Atmosfera                                                                              |
-| Problema que resolveu         | Apresentar edição tipográfica como objeto de leitura, não como app                     |
-| O que extrair                 | Sensação de edição/papel; hierarquia tipográfica; medida de leitura; chrome silencioso |
-| Por que serve ao briefing     | Direção A exige prospecto tipográfico e superfície de papel/creme                      |
-| Aplicação possível            | Margens, folha, notas, capítulos; índice como sumário de livro                         |
-| O que descartar               | Layout integral; moda/studio; qualquer token pronto de terceiros                       |
-| Anti-padrões observados       | Galeria de design como SSOT de produto                                                 |
-| Evidência visual              | Case tipográfico indexado em pesquisa-visual-v1 (R12)                                  |
-| Evidência versus inferência   | Princípios de “edição não app” = inferência a partir do case                           |
-| Compatibilidade com Direção A | Alta                                                                                   |
-| Compatibilidade mobile        | Não copiar grelha impressa rígida                                                      |
-| Risco de aparência comercial  | Baixo                                                                                  |
-| Risco de cópia                | Alto se clonar layout                                                                  |
-| Direitos e limitações         | Direitos do estúdio/projeto; só princípios; sem assets                                 |
-| Status da seleção             | PROMOVIDA AO PAINEL                                                                    |
+| Campo                         | Conteúdo                                                                                                                                                            |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ID                            | REF-06                                                                                                                                                              |
+| Nome                          | Primary Paper (revista fotográfica impressa + site editorial)                                                                                                       |
+| Organização                   | Primary Paper (fundadores Coquito Cassibba & Jessica McGowan; ISSN 2642-9306)                                                                                       |
+| URL ou path                   | Site original: https://www.primary-paper.com/ · Fonte secundária (galeria case): https://www.lapa.ninja/post/primary-paper/ · Loja: https://shop.primary-paper.com/ |
+| Data de acesso/análise        | 2026-08-01 (revalidação: site + galeria acessíveis)                                                                                                                 |
+| Estado da URL                 | **Acessível** — site oficial e galeria Lapa Ninja confirmados (não mais “assumida”)                                                                                 |
+| Natureza da publicação        | Revista/exposição fotográfica impressa (print-first); site como vitrine editorial/arquivo/loja — não produto SaaS                                                   |
+| Disponibilidade               | Site público; issues impressas limitadas via shop; galeria Lapa Ninja como evidência de apresentação web                                                            |
+| Setor                         | Design editorial / fotografia / papel digital                                                                                                                       |
+| Classificação 60/30/10        | Fora do setor                                                                                                                                                       |
+| Eixo primário                 | Atmosfera                                                                                                                                                           |
+| Problema que resolveu         | Apresentar edição tipográfica/fotográfica como objeto de leitura e exposição, não como app                                                                          |
+| O que extrair                 | Sensação de edição/papel; hierarquia tipográfica; chrome silencioso; ritmo de revista; abertura por tema cultural                                                   |
+| Por que serve ao briefing     | Direção A exige prospecto tipográfico e superfície de papel/creme                                                                                                   |
+| Aplicação possível            | Margens, folha, notas, capítulos; índice como sumário de livro                                                                                                      |
+| O que descartar               | Layout integral; moda/studio; shop/cart; qualquer token pronto de terceiros; fotografia de vulneráveis                                                              |
+| Anti-padrões observados       | Galeria de design como SSOT de produto; e-commerce competindo com leitura                                                                                           |
+| Evidência visual              | Site oficial (nav magazine/exhibition/archive/shop; tipografia display); case Lapa Ninja com recording/screens; pesquisa-visual-v1 (R12)                            |
+| Evidência versus inferência   | Existência e natureza print-first = evidência; “edição ≠ app” como princípio portável = inferência de curadoria                                                     |
+| Compatibilidade com Direção A | Alta (atmosfera de edição); baixa se importar fotografia fashion                                                                                                    |
+| Compatibilidade mobile        | Não copiar grelha impressa rígida nem shop                                                                                                                          |
+| Risco de aparência comercial  | Médio se importar loja/exhibition promo                                                                                                                             |
+| Risco de cópia                | Alto se clonar layout ou imagens; extrair só princípios                                                                                                             |
+| Direitos e limitações         | © Primary Paper; reprodução proibida sem permissão; só princípios; sem assets no repo                                                                               |
+| Status da seleção             | PROMOVIDA AO PAINEL                                                                                                                                                 |
 
 ### REF-08 — Guia Mestre + identidade PDAC + capturas Direção A
 
@@ -296,6 +301,22 @@ documental) + REF-07 (progressão sem depender de espetáculo) + REF-05
 - **Solenidade:** tipográfica, não cinematográfica.
 - **Limites da metáfora militar / Adulão:** um único umbral atmosférico autorizado (import B); sem bravata, memorial de guerra ou trailer.
 - **Limites de imagem/ilustração:** sem artwork BibleProject; sem foto de vulneráveis; escudo próprio com cuidado (H10).
+
+### Complementar — contribuições éticas/editoriais (não estruturais)
+
+REF-04 (BibleProject) e REF-05 (Marshall Project Inside) permanecem na seleção
+proposta de 8, mas a inspeção e a reavaliação 2026-08-01 mostram que a maior
+parte do valor para o briefing é **ética e editorial**, não mecanismo de layout.
+
+| REF    | Mecanismos visuais concretos observados                                                            | Contribuição dominante                                                                            |
+| ------ | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| REF-04 | Organização por jornadas/temas; hierarquia missão→recursos; tipografia de marca forte (não portar) | Ética pedagógica + continuidade de materiais; **risco alto de artwork**                           |
+| REF-05 | Página About/FAQ textual; pouca “grelha de documento”; densidade jornalística                      | Ética de dignidade/sobriedade em contexto de custódia; **quase sem detalhe tipográfico portável** |
+
+**Decisão de curadoria (agente; V1 humano pode emendar):** manter ambas na
+seleção como Atmosfera/adjacência, com rótulo explícito de contribuição ética;
+não inflar o eixo Detalhe com elas; extrair só temperatura e limites de
+exposição — nunca foto, nunca artwork, nunca magazine news.
 
 ---
 
@@ -339,6 +360,22 @@ documental) + REF-07 (progressão sem depender de espetáculo) + REF-05
 - **Reduced motion:** conteúdo completo sem animação; princípios do estudo Aramco, não tokens Estratos no produto.
 - **Microinterações permitidas:** foco visível; acordeão/expanse para profundidade sob demanda; hover discreto em links.
 - **Microinterações proibidas:** glow, bounce, carrossel, contadores animados, fullscreen vazio.
+
+### Segunda fonte de detalhe (justificativa formal)
+
+O eixo Detalhe **não** depende exclusivamente da Aramco (REF-07). A segunda
+fonte nomeada é o **acervo interno** (REF-08 + protótipos Direção A/C):
+
+| Fonte interna                               | Contribuição de detalhe                                                                     |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Prospecto v1 (`tokens.css`, nav, editorial) | Folios; filetes `color-mix`; foco 2px/offset 3px; medida ~68ch; progresso/índice documental |
+| Import C (estados + checklist)              | Rótulos editoriais de estado; checklist de apreciação — sem cor como único portador         |
+| Capturas `docs/capturas-prototipos/`        | Evidência multi-viewport da Dir A (topo/meio/fim)                                           |
+| Identidade / logo-pdac                      | Bronze/latão como acento; escudo sem bravata                                                |
+
+**Concentração Aramco justificada:** REF-07 cobre progressão/revelação/RM
+documentados no estudo DevTools; identidade Estratos e assets permanecem
+proibidos. Não se adiciona REF externa só para cumprir quantidade.
 
 ---
 

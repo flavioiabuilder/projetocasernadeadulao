@@ -31,6 +31,19 @@ Legenda de status:
 | Google Stitch                 | DEPENDÊNCIA EXTERNA                      | Mockups em `referencia/stitch/` — composição não canônica                |
 | Claude Design                 | NÃO NECESSÁRIA NESTA FASE                | Processo humano opcional                                                 |
 | Claude Code                   | DEPENDÊNCIA EXTERNA                      | Template `05-regras-agente.md` portável; sem `CLAUDE.md` inchado na raiz |
+| image-convert (agent-media)   | CONFIGURADA PARCIALMENTE                 | Ver exceção abaixo — não bloqueia tokens                                 |
+
+## Exceção — skill `image-convert`
+
+- Árvore canônica de skills: `.claude/skills/` (ADR-007 / `docs/skills.md`).
+- `image-convert` existe hoje em `.agents/skills/image-convert/` (espelho agents),
+  com lock em `skills-lock.json` (`agntswrm/agent-media`, hash pinado).
+- **Exceção documentada:** não é obrigatório regularizar na árvore canônica nesta
+  fase; conversão de imagem não faz parte do pipeline de design tokens.
+- Automações futuras devem evitar `npx agent-media@latest` sem pin; preferir a
+  versão/hash do `skills-lock.json` ou instalar versão fixa.
+- Regularizar cópia/symlink sob `.claude/skills/` é tarefa separada (não misturar
+  com direção visual / Fase 3).
 
 ## Segredos e credenciais
 
@@ -40,8 +53,10 @@ Legenda de status:
 - `npm run validate:metodo` procura padrões óbvios de segredo em `metodo/`,
   valida links relativos em `metodo/**/*.md` e em
   `programas/discipulando-a-caserna/docs/metodo/**/*.md`, proíbe
-  `metodo/skills/**/SKILL.md` e exige contrato mínimo de `PROMPT EXECUTÁVEL`
-  (seção, bloco de código, placeholder, aceite/autoavaliação, proibições).
+  `metodo/skills/**/SKILL.md`, exige contrato mínimo de `PROMPT EXECUTÁVEL`
+  (descoberta, análise-concorrência, curadoria-referências, direção-arte) e
+  aplica checagem semântica leve do painel Fase 2. Em cada verificação, `OK`
+  só é emitido se não houver `FAIL` naquele check.
 
 ## Teste de disponibilidade (humano)
 

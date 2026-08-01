@@ -122,6 +122,7 @@ function checkIntegracao(manifesto) {
 function checkTokensTemplate() {
   if (!fs.existsSync(TOKENS_TEMPLATE)) return;
   let tokens;
+  const beforeStruct = failures;
   try {
     tokens = readJson(TOKENS_TEMPLATE);
   } catch (e) {
@@ -151,9 +152,10 @@ function checkTokensTemplate() {
       }
     }
   }
-  ok("03-tokens.json estrutura mínima");
+  if (failures === beforeStruct) ok("03-tokens.json estrutura mínima");
 
   if (fs.existsSync(SCHEMA_PATH)) {
+    const beforeSchema = failures;
     try {
       const schema = readJson(SCHEMA_PATH);
       for (const key of schema.required || []) {
@@ -171,7 +173,7 @@ function checkTokensTemplate() {
           fail(`tokens.semanticos falta categoria do schema: ${key}`);
         }
       }
-      ok("03-tokens.json vs schema (checagem leve)");
+      if (failures === beforeSchema) ok("03-tokens.json vs schema (checagem leve)");
     } catch (e) {
       fail(`schema inválido: ${e.message}`);
     }
@@ -181,15 +183,17 @@ function checkTokensTemplate() {
 function checkNoCanonicalSkills() {
   const skillsDir = path.join(METODO, "skills");
   if (!fs.existsSync(skillsDir)) return;
+  const before = failures;
   const skillFiles = walkFiles(skillsDir).filter((f) => path.basename(f) === "SKILL.md");
   for (const skillMd of skillFiles) {
     const rel = path.relative(skillsDir, skillMd).replace(/\\/g, "/");
     fail(`proibido SKILL.md canônico em metodo/skills/${rel} (use .claude/skills/)`);
   }
-  ok("sem SKILL.md canônico sob metodo/skills/**");
+  if (failures === before) ok("sem SKILL.md canônico sob metodo/skills/**");
 }
 
 function checkMdInternalLinks(rootDir, label) {
+  const before = failures;
   const mdFiles = walkFiles(rootDir).filter((f) => f.endsWith(".md"));
   const linkRe = /\]\(([^)]+)\)/g;
   for (const file of mdFiles) {
@@ -205,7 +209,7 @@ function checkMdInternalLinks(rootDir, label) {
       }
     }
   }
-  ok(`links internos relativos em ${label}`);
+  if (failures === before) ok(`links internos relativos em ${label}`);
 }
 
 function checkInternalLinks() {
@@ -222,6 +226,7 @@ function checkInternalLinks() {
 }
 
 function checkSecrets() {
+  const before = failures;
   const files = walkFiles(METODO);
   for (const file of files) {
     if (file.endsWith(".png") || file.endsWith(".jpg")) continue;
@@ -232,7 +237,7 @@ function checkSecrets() {
       }
     }
   }
-  ok("sem padrões óbvios de segredo em metodo/");
+  if (failures === before) ok("sem padrões óbvios de segredo em metodo/");
 }
 
 function checkPromptExecutavel() {
@@ -240,6 +245,7 @@ function checkPromptExecutavel() {
     "prompts/descoberta.md",
     "prompts/analise-concorrencia.md",
     "prompts/curadoria-referencias.md",
+    "prompts/direcao-arte.md",
   ];
   for (const rel of promptRels) {
     const abs = path.join(METODO, rel);
@@ -275,6 +281,61 @@ function checkPromptExecutavel() {
     }
     ok(`PROMPT EXECUTÁVEL contrato mínimo em ${rel}`);
   }
+}
+
+/**
+ * Validação semântica leve do painel da Fase 2 (heurísticas; não substitui revisão humana).
+ */
+function checkPainelFase2Semantico() {
+  const painelPath = path.join(
+    ROOT,
+    "programas/discipulando-a-caserna/docs/metodo/02-painel-referencias.md"
+  );
+  if (!fs.existsSync(painelPath)) {
+    fail(
+      "painel Fase 2 ausente: programas/discipulando-a-caserna/docs/metodo/02-painel-referencias.md"
+    );
+    return;
+  }
+  const before = failures;
+  const text = fs.readFileSync(painelPath, "utf8");
+  if (!/\*\*Status:\*\*|\bStatus:\s*|EM REVISÃO|APROVADO/i.test(text)) {
+    fail("painel F2: status ausente ou irreconhecível");
+  }
+  const refIds = text.match(/\bREF-\d{2}\b/g) || [];
+  const uniqueRefs = new Set(refIds);
+  if (uniqueRefs.size < 6 || uniqueRefs.size > 10) {
+    fail(
+      `painel F2: esperadas 6–10 referências positivas (REF-##); encontradas ${uniqueRefs.size}`
+    );
+  }
+  for (const eixo of ["Estrutura", "Atmosfera", "Detalhe"]) {
+    if (!new RegExp(eixo, "i").test(text)) {
+      fail(`painel F2: eixo "${eixo}" não mencionado`);
+    }
+  }
+  if (!/\b20\d{2}-\d{2}-\d{2}\b|\bData\b/i.test(text)) {
+    fail("painel F2: data de acesso/análise ausente");
+  }
+  if (!/direitos|licen[cç]a|copyright|fair use|risco de c[oó]pia/i.test(text)) {
+    fail("painel F2: menção a direitos/licença ausente");
+  }
+  if (!/O que extrair|Extrair:/i.test(text)) {
+    fail('painel F2: campo "O que extrair" ausente');
+  }
+  if (!/Por que serve|Por qu[eê] serve/i.test(text)) {
+    fail('painel F2: campo "Por que serve" ausente');
+  }
+  if (!/O que descartar|Descartar:/i.test(text)) {
+    fail('painel F2: campo "O que descartar" ausente');
+  }
+  if (!/Frase de dire[cç][aã]o/i.test(text)) {
+    fail("painel F2: seção de frase de direção ausente");
+  }
+  if (!/[Aa]nti-?refer/i.test(text)) {
+    fail("painel F2: seção de anti-referências ausente");
+  }
+  if (failures === before) ok("painel F2: campos semânticos mínimos presentes");
 }
 
 function rmRecursive(dir) {
@@ -335,6 +396,7 @@ function main() {
   checkTokensTemplate();
   checkNoCanonicalSkills();
   checkPromptExecutavel();
+  checkPainelFase2Semantico();
   checkInternalLinks();
   checkSecrets();
   if (bootstrap) bootstrapTest();

@@ -1,132 +1,202 @@
 {
-  "$comentario": "Template genérico — substituir placeholders. Sem valores de marca de um projeto específico.",
+  "$comentario": "Template GLOBAL ME-T — placeholders apenas. Não embutir paleta de um piloto. Folhas tipadas usam $value/$type/$description; aliases: {primitivos.caminho.do.token}.",
   "meta": {
     "projeto": "{{NOME_DO_PROJETO}}",
+    "programa": "{{NOME_DO_PROGRAMA}}",
     "versao": "0.0.0",
+    "status": "TEMPLATE",
+    "formato": "ME-T",
+    "contratoVersao": "1.0",
     "unidadeEspacamentoBase": "{{4px|outro}}",
     "notacaoCor": "{{hex|oklch|mista}}",
-    "fonteVerdadeRuntime": "{{css|json|figma}}"
+    "fonteVerdadeRuntime": "json",
+    "arquivosGerados": ["tokens.css"]
   },
   "primitivos": {
     "cor": {
       "neutro": {
-        "0": "{{PLACEHOLDER}}",
-        "50": "{{PLACEHOLDER}}",
-        "100": "{{PLACEHOLDER}}",
-        "500": "{{PLACEHOLDER}}",
-        "900": "{{PLACEHOLDER}}"
+        "0": {
+          "$value": "{{PLACEHOLDER}}",
+          "$type": "color",
+          "$description": "Superfície mais clara"
+        },
+        "50": { "$value": "{{PLACEHOLDER}}", "$type": "color" },
+        "100": { "$value": "{{PLACEHOLDER}}", "$type": "color" },
+        "500": { "$value": "{{PLACEHOLDER}}", "$type": "color" },
+        "900": { "$value": "{{PLACEHOLDER}}", "$type": "color" }
       },
       "marca": {
-        "primaria": "{{PLACEHOLDER}}",
-        "secundaria": "{{PLACEHOLDER}}",
-        "destaque": "{{PLACEHOLDER}}"
+        "primaria": { "$value": "{{PLACEHOLDER}}", "$type": "color" },
+        "secundaria": { "$value": "{{PLACEHOLDER}}", "$type": "color" },
+        "destaque": { "$value": "{{PLACEHOLDER}}", "$type": "color" }
       }
     },
     "tipografia": {
-      "familiaDisplay": "{{PLACEHOLDER}}",
-      "familiaCorpo": "{{PLACEHOLDER}}",
-      "tamanhoBase": "{{PLACEHOLDER}}",
+      "familiaDisplay": {
+        "$value": "{{PLACEHOLDER}}",
+        "$type": "fontFamily"
+      },
+      "familiaCorpo": {
+        "$value": "{{PLACEHOLDER}}",
+        "$type": "fontFamily"
+      },
+      "tamanhoBase": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
       "escala": {
-        "xs": "{{PLACEHOLDER}}",
-        "sm": "{{PLACEHOLDER}}",
-        "md": "{{PLACEHOLDER}}",
-        "lg": "{{PLACEHOLDER}}",
-        "xl": "{{PLACEHOLDER}}"
+        "xs": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+        "sm": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+        "md": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+        "lg": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+        "xl": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" }
       },
       "alturaLinha": {
-        "aperto": "{{PLACEHOLDER}}",
-        "corpo": "{{PLACEHOLDER}}"
+        "aperto": { "$value": "{{PLACEHOLDER}}", "$type": "number" },
+        "corpo": { "$value": "{{PLACEHOLDER}}", "$type": "number" }
       }
     },
     "espacamento": {
-      "1": "{{PLACEHOLDER}}",
-      "2": "{{PLACEHOLDER}}",
-      "3": "{{PLACEHOLDER}}",
-      "4": "{{PLACEHOLDER}}",
-      "6": "{{PLACEHOLDER}}",
-      "8": "{{PLACEHOLDER}}",
-      "12": "{{PLACEHOLDER}}",
-      "16": "{{PLACEHOLDER}}"
+      "1": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "2": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "3": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "4": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "6": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "8": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "12": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "16": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" }
     },
     "layout": {
-      "container": "{{PLACEHOLDER}}",
-      "gutter": "{{PLACEHOLDER}}"
+      "container": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "gutter": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" }
     },
     "raio": {
-      "nenhum": "0",
-      "sm": "{{PLACEHOLDER}}",
-      "md": "{{PLACEHOLDER}}",
-      "lg": "{{PLACEHOLDER}}"
+      "nenhum": { "$value": "0", "$type": "dimension" },
+      "sutil": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "controle": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "circular": { "$value": "9999px", "$type": "dimension" }
     },
     "borda": {
-      "fina": "{{PLACEHOLDER}}",
-      "media": "{{PLACEHOLDER}}"
+      "fina": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "media": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" }
     },
     "elevacao": {
-      "nenhuma": "none",
-      "suave": "{{PLACEHOLDER}}"
+      "nenhuma": { "$value": "none", "$type": "shadow" },
+      "discreta": { "$value": "{{PLACEHOLDER}}", "$type": "shadow" }
     },
     "motion": {
-      "duracaoRapida": "{{PLACEHOLDER}}",
-      "duracaoBase": "{{PLACEHOLDER}}",
-      "easing": "{{PLACEHOLDER}}"
+      "duracaoRapida": { "$value": "{{PLACEHOLDER}}", "$type": "duration" },
+      "duracaoPadrao": { "$value": "{{PLACEHOLDER}}", "$type": "duration" },
+      "duracaoLenta": { "$value": "{{PLACEHOLDER}}", "$type": "duration" },
+      "easingPadrao": { "$value": "{{PLACEHOLDER}}", "$type": "cubicBezier" }
     },
     "foco": {
-      "largura": "{{PLACEHOLDER}}",
-      "cor": "{{PLACEHOLDER}}",
-      "offset": "{{PLACEHOLDER}}"
+      "largura": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "cor": { "$value": "{{PLACEHOLDER}}", "$type": "color" },
+      "offset": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" }
     },
     "breakpoints": {
-      "sm": "{{PLACEHOLDER}}",
-      "md": "{{PLACEHOLDER}}",
-      "lg": "{{PLACEHOLDER}}"
+      "navCompacta": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "leituraAmpla": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" },
+      "layoutAmplo": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" }
     }
   },
   "semanticos": {
     "cor": {
-      "superficie": "{{ref:primitivos.cor…}}",
-      "texto": "{{ref:primitivos.cor…}}",
-      "textoSuave": "{{PLACEHOLDER}}",
-      "borda": "{{PLACEHOLDER}}",
-      "acao": "{{PLACEHOLDER}}",
-      "acaoTexto": "{{PLACEHOLDER}}",
-      "foco": "{{ref:primitivos.foco.cor}}"
+      "superficie": {
+        "$value": "{primitivos.cor.neutro.0}",
+        "$type": "color"
+      },
+      "texto": {
+        "$value": "{primitivos.cor.neutro.900}",
+        "$type": "color"
+      },
+      "textoSuave": { "$value": "{{PLACEHOLDER}}", "$type": "color" },
+      "borda": { "$value": "{{PLACEHOLDER}}", "$type": "color" },
+      "acentoEditorial": {
+        "$value": "{primitivos.cor.marca.destaque}",
+        "$type": "color"
+      },
+      "foco": {
+        "$value": "{primitivos.foco.cor}",
+        "$type": "color"
+      }
     },
     "tipografia": {
-      "tituloPagina": "{{PLACEHOLDER}}",
-      "tituloSecao": "{{PLACEHOLDER}}",
-      "corpo": "{{PLACEHOLDER}}",
-      "rotulo": "{{PLACEHOLDER}}"
+      "tituloPagina": { "$value": "{{PLACEHOLDER}}", "$type": "typography" },
+      "tituloSecao": { "$value": "{{PLACEHOLDER}}", "$type": "typography" },
+      "corpo": { "$value": "{{PLACEHOLDER}}", "$type": "typography" },
+      "rotulo": { "$value": "{{PLACEHOLDER}}", "$type": "typography" }
     },
     "espacamento": {
-      "secao": "{{PLACEHOLDER}}",
-      "bloco": "{{PLACEHOLDER}}",
-      "inline": "{{PLACEHOLDER}}"
+      "secao": {
+        "$value": "{primitivos.espacamento.16}",
+        "$type": "dimension"
+      },
+      "bloco": {
+        "$value": "{primitivos.espacamento.8}",
+        "$type": "dimension"
+      },
+      "inline": {
+        "$value": "{primitivos.espacamento.2}",
+        "$type": "dimension"
+      }
     },
     "layout": {
-      "larguraConteudo": "{{PLACEHOLDER}}",
-      "gutterPagina": "{{PLACEHOLDER}}"
+      "larguraConteudo": {
+        "$value": "{primitivos.layout.container}",
+        "$type": "dimension"
+      },
+      "gutterPagina": {
+        "$value": "{primitivos.layout.gutter}",
+        "$type": "dimension"
+      },
+      "medidaProsa": { "$value": "{{PLACEHOLDER}}", "$type": "dimension" }
     },
     "raio": {
-      "controle": "{{PLACEHOLDER}}",
-      "midia": "{{PLACEHOLDER}}"
+      "controle": {
+        "$value": "{primitivos.raio.controle}",
+        "$type": "dimension"
+      },
+      "midia": {
+        "$value": "{primitivos.raio.nenhum}",
+        "$type": "dimension"
+      }
     },
     "borda": {
-      "separador": "{{PLACEHOLDER}}"
+      "separador": {
+        "$value": "{primitivos.borda.fina}",
+        "$type": "dimension"
+      }
     },
     "elevacao": {
-      "painel": "{{PLACEHOLDER}}"
+      "painel": {
+        "$value": "{primitivos.elevacao.discreta}",
+        "$type": "shadow"
+      }
     },
     "motion": {
-      "transicaoUi": "{{PLACEHOLDER}}",
-      "respeitarReducedMotion": true
+      "transicaoUi": {
+        "$value": "{primitivos.motion.duracaoPadrao}",
+        "$type": "duration"
+      },
+      "respeitarReducedMotion": {
+        "$value": true,
+        "$type": "boolean"
+      }
     },
     "foco": {
-      "anel": "{{PLACEHOLDER}}"
+      "anel": {
+        "$value": "{primitivos.foco.largura}",
+        "$type": "dimension"
+      }
     },
     "breakpoints": {
-      "navCompacta": "{{PLACEHOLDER}}",
-      "layoutAmplo": "{{PLACEHOLDER}}"
+      "navCompacta": {
+        "$value": "{primitivos.breakpoints.navCompacta}",
+        "$type": "dimension"
+      },
+      "layoutAmplo": {
+        "$value": "{primitivos.breakpoints.layoutAmplo}",
+        "$type": "dimension"
+      }
     }
   }
 }

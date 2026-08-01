@@ -265,7 +265,8 @@ Uso: fundamentar voluntariedade e não coerção na comunicação.
 **Não é parecer jurídico.** Interpretação aprofundada = LACUNA / revisão
 competente.
 
-SAMHSA (EXTERNO SECUNDÁRIO): apenas princípios de segurança, voz/escolha e
+SAMHSA SMA14-4884 (EXTERNO SECUNDÁRIO; PDF em library.samhsa.gov): apenas
+princípios de segurança, voz/escolha e
 confiança na comunicação — não transformar o programa em intervenção de saúde
 mental.
 

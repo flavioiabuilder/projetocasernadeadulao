@@ -17,6 +17,14 @@ Template genérico (para novos projetos):
 | ADRs do programa   | [`../arquitetura/`](../arquitetura/)                                                           |
 | Skills             | [`../../../../docs/skills.md`](../../../../docs/skills.md)                                     |
 
+## Tokens (Fase 3)
+
+- Fonte de verdade candidata: `design-system/tokens/tokens.json`
+- CSS gerado: `design-system/tokens/tokens.css` — não editar à mão
+- Comandos: `generate:discipulando:tokens` · `validate:discipulando:tokens`
+- Não usar `generate:tokens` (Aramco). Não migrar protótipos sem Fase 6.
+- Ver [`03-direcao-tokens.md`](03-direcao-tokens.md).
+
 ## Validação
 
 ```bash

@@ -32,22 +32,22 @@ Classes de proveniência: `CANÔNICO INTERNO` · `INTERNO NÃO CANÔNICO` ·
 
 ## 2. Matriz de proveniência (temas críticos)
 
-| Afirmação ou tema                     | Classe                          | Fonte                         | Pode entrar no briefing?               | Ação                               |
-| ------------------------------------- | ------------------------------- | ----------------------------- | -------------------------------------- | ---------------------------------- |
-| Discipulando ≠ Projeto Caserna        | CANÔNICO INTERNO                | README, rules, contexto       | Sim                                    | Citar                              |
-| 4×12=48; eixo Cristo chama…           | CANÔNICO INTERNO                | `programa.md`, JSON           | Sim                                    | Citar                              |
-| Sete princípios inegociáveis          | CANÔNICO INTERNO                | `programa.md`                 | Sim                                    | Citar                              |
-| M1 produzido; M2–4 condicionados      | CANÔNICO INTERNO                | `programa.md`, `modulos.json` | Sim                                    | Não chamar M2–4 finalizados        |
-| Nulls M3/M4 virtude/tema              | CANÔNICO INTERNO                | `modulos.json`                | Sim como restrição                     | Nunca completar                    |
-| Destinatário Pr. Glaydston (config)   | CANÔNICO INTERNO                | `config.js`                   | Sim como destinatário configurado      | Separar de papel eclesial          |
-| Papel “validador pastoral”            | INTERNO NÃO CANÔNICO + LACUNA   | roteiro; P0-08                | Só como candidato                      | Roteiro humano                     |
-| Ação = checklist Tela 29              | INTERNO NÃO CANÔNICO            | roteiro                       | Como HIPÓTESE de ação                  | Confirmar humano                   |
-| PMCE como terreno                     | INTERNO + LACUNA circulação     | conteúdo/roteiro; TODO; P0-08 | Com status Rota B                      | Não inferir vínculo                |
-| CNPJ, email, Fortaleza                | Em config; P0-08 não confirmado | config; P0-08                 | Candidatos NÃO CONFIRMADO p/ ampliação | Não como parceria                  |
-| Movimentos shipped Necessidade→Pedido | CANÔNICO de arquitetura do site | contexto, LEIA-ME, TODO       | Sim                                    | Não trocar por narrativa-concepção |
-| Análogos externos                     | EXTERNO OFICIAL                 | URLs §3                       | Sim na matriz                          | Data de acesso                     |
-| CF / leis assistência religiosa       | EXTERNO OFICIAL                 | Planalto                      | Contexto de restrição                  | Sem parecer jurídico               |
-| SAMHSA trauma-informed                | EXTERNO SECUNDÁRIO              | samhsa.gov                    | Só salvaguarda de comunicação          | Não medicalizar                    |
+| Afirmação ou tema                     | Classe                          | Fonte                                           | Pode entrar no briefing?               | Ação                               |
+| ------------------------------------- | ------------------------------- | ----------------------------------------------- | -------------------------------------- | ---------------------------------- |
+| Discipulando ≠ Projeto Caserna        | CANÔNICO INTERNO                | README, rules, contexto                         | Sim                                    | Citar                              |
+| 4×12=48; eixo Cristo chama…           | CANÔNICO INTERNO                | `programa.md`, JSON                             | Sim                                    | Citar                              |
+| Sete princípios inegociáveis          | CANÔNICO INTERNO                | `programa.md`                                   | Sim                                    | Citar                              |
+| M1 produzido; M2–4 condicionados      | CANÔNICO INTERNO                | `programa.md`, `modulos.json`                   | Sim                                    | Não chamar M2–4 finalizados        |
+| Nulls M3/M4 virtude/tema              | CANÔNICO INTERNO                | `modulos.json`                                  | Sim como restrição                     | Nunca completar                    |
+| Destinatário Pr. Glaydston (config)   | CANÔNICO INTERNO                | `config.js`                                     | Sim como destinatário configurado      | Separar de papel eclesial          |
+| Papel “validador pastoral”            | INTERNO NÃO CANÔNICO + LACUNA   | roteiro; P0-08                                  | Só como candidato                      | Roteiro humano                     |
+| Ação = checklist Tela 29              | INTERNO NÃO CANÔNICO            | roteiro                                         | Como HIPÓTESE de ação                  | Confirmar humano                   |
+| PMCE como terreno                     | INTERNO + LACUNA circulação     | conteúdo/roteiro; TODO; P0-08                   | Com status Rota B                      | Não inferir vínculo                |
+| CNPJ, email, Fortaleza                | Em config; P0-08 não confirmado | config; P0-08                                   | Candidatos NÃO CONFIRMADO p/ ampliação | Não como parceria                  |
+| Movimentos shipped Necessidade→Pedido | CANÔNICO de arquitetura do site | contexto, LEIA-ME, TODO                         | Sim                                    | Não trocar por narrativa-concepção |
+| Análogos externos                     | EXTERNO OFICIAL                 | URLs §3                                         | Sim na matriz                          | Data de acesso                     |
+| CF / leis assistência religiosa       | EXTERNO OFICIAL                 | Planalto                                        | Contexto de restrição                  | Sem parecer jurídico               |
+| SAMHSA trauma-informed (SMA14-4884)   | EXTERNO SECUNDÁRIO              | library.samhsa.gov PDF + índice trauma-informed | Só salvaguarda de comunicação          | Não medicalizar                    |
 
 ---
 
@@ -156,7 +156,7 @@ Ver briefing § métricas (compreensão, decisão, fidelidade, completude). Anal
 
 ---
 
-## 6. Pesquisa externa — análogos (amostra de 7)
+## 6. Pesquisa externa — análogos (amostra de 6)
 
 Data de acesso deste dossiê: **2026-07-31**; revalidação parcial **2026-08-01**.
 
@@ -318,12 +318,12 @@ como INCOMPLETO / arquivado.
 
 Separar **autoridade da fonte** de **aplicabilidade ao projeto**.
 
-| Título / norma                    | Organização                    | URL / path                                                         | Data de acesso | Trecho ou tema utilizado                                   | Autoridade         | Aplicabilidade                                               | Limitação                                                                     |
-| --------------------------------- | ------------------------------ | ------------------------------------------------------------------ | -------------- | ---------------------------------------------------------- | ------------------ | ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
-| CF art. 5º VI, VII, X             | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm | 2026-07-31     | Liberdade religiosa; assistência em internação; intimidade | EXTERNO OFICIAL    | COMPLEMENTAR — restrição de coerção/exposição na comunicação | Sem parecer jurídico; não autoriza conteúdo clínico                           |
-| Lei 9.982/2000                    | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/leis/l9982.htm                | 2026-07-31     | Acesso à assistência religiosa com acordo do assistido     | EXTERNO OFICIAL    | COMPLEMENTAR — voluntariedade                                | Sem parecer; não define currículo do programa                                 |
-| LEP art. 24                       | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/leis/l7210.htm                | 2026-07-31     | Liberdade de culto; não obrigar participação               | EXTERNO OFICIAL    | COMPLEMENTAR — voluntariedade em custódia                    | Sem parecer; não expor pessoas                                                |
-| Trauma-Informed Approach (SAMHSA) | SAMHSA (EUA)                   | https://www.samhsa.gov/                                            | 2026-07-31     | Segurança, voz/escolha, confiança                          | EXTERNO SECUNDÁRIO | COMPLEMENTAR / **NÃO CLÍNICA**                               | Só salvaguarda de comunicação; não medicalizar nem importar protocolo clínico |
+| Título / norma                                                                          | Organização                    | URL / path                                                                                                                                                       | Data de acesso | Trecho ou tema utilizado                                                                                        | Autoridade         | Aplicabilidade                                               | Limitação                                                                                                       |
+| --------------------------------------------------------------------------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- | --------------------------------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| CF art. 5º VI, VII, X                                                                   | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm                                                                                               | 2026-07-31     | Liberdade religiosa; assistência em internação; intimidade                                                      | EXTERNO OFICIAL    | COMPLEMENTAR — restrição de coerção/exposição na comunicação | Sem parecer jurídico; não autoriza conteúdo clínico                                                             |
+| Lei 9.982/2000                                                                          | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/leis/l9982.htm                                                                                                              | 2026-07-31     | Acesso à assistência religiosa com acordo do assistido                                                          | EXTERNO OFICIAL    | COMPLEMENTAR — voluntariedade                                | Sem parecer; não define currículo do programa                                                                   |
+| LEP art. 24                                                                             | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/leis/l7210.htm                                                                                                              | 2026-07-31     | Liberdade de culto; não obrigar participação                                                                    | EXTERNO OFICIAL    | COMPLEMENTAR — voluntariedade em custódia                    | Sem parecer; não expor pessoas                                                                                  |
+| SAMHSA’s Concept of Trauma and Guidance for a Trauma-Informed Approach (HHS SMA14-4884) | SAMHSA / HHS (EUA)             | https://library.samhsa.gov/sites/default/files/sma14-4884.pdf · índice: https://www.samhsa.gov/mental-health/trauma-violence/trauma-informed-approaches-programs | 2026-08-01     | Princípios: segurança; confiança/transparência; empoderamento, voz e escolha (não o protocolo clínico completo) | EXTERNO SECUNDÁRIO | COMPLEMENTAR / **NÃO CLÍNICA**                               | Só salvaguarda de comunicação na superfície digital; não medicalizar nem importar protocolo clínico do programa |
 
 Qualquer interpretação normativa → **requer revisão jurídica/institucional competente** (LACUNA se aprofundar).
 

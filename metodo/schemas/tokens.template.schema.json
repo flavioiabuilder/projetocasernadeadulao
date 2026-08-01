@@ -1,11 +1,26 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://projetocasernadeadulao.local/metodo/schemas/tokens.template.schema.json",
-  "title": "Template de tokens — O Sistema",
+  "title": "Template de tokens — O Sistema (ME-T)",
+  "description": "Contrato Método Estendido Tipado: camadas primitivos/semanticos; folhas tipadas ($value/$type) ou strings placeholder no template GLOBAL. Sem camada de componentes.",
   "type": "object",
   "required": ["primitivos", "semanticos"],
   "properties": {
-    "meta": { "type": "object" },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "projeto": { "type": "string" },
+        "programa": { "type": "string" },
+        "versao": { "type": "string" },
+        "status": { "type": "string" },
+        "formato": { "type": "string" },
+        "contratoVersao": { "type": "string" },
+        "unidadeEspacamentoBase": { "type": "string" },
+        "notacaoCor": { "type": "string" },
+        "fonteVerdadeRuntime": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
     "primitivos": {
       "type": "object",
       "required": [
@@ -36,6 +51,11 @@
         "foco",
         "breakpoints"
       ],
+      "additionalProperties": true
+    },
+    "compat": {
+      "type": "object",
+      "description": "Mapa legado opcional (não gera tokens de componente).",
       "additionalProperties": true
     }
   },

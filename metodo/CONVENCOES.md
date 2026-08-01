@@ -16,19 +16,20 @@ Escopos: `GLOBAL` (futuros projetos do método) · `REPO` (este repositório) ·
 
 ## Cor
 
-| Escopo    | Decisão                                                                                                | Fonte                        |
-| --------- | ------------------------------------------------------------------------------------------------------ | ---------------------------- |
-| PROGRAMA  | Variáveis CSS hex por protótipo; navy compartilhado `#1A2A44` / `#1a2a44`                              | tokens.css de cada protótipo |
-| PROTOTIPO | Prospecto: bronze `#9a7b4f` + creme; storytelling: latão `#8C6A46` + base `#F4F4F1` — **drift aceito** | Não unificar na Fase 0       |
-| GLOBAL    | Template com camadas primitivo/semântico; **sem mandato OKLCH** nesta fase                             | Fase 3                       |
+| Escopo    | Decisão                                                                                  | Fonte                |
+| --------- | ---------------------------------------------------------------------------------------- | -------------------- |
+| PROGRAMA  | Âncoras canônicas candidatas em `design-system/tokens/tokens.json` (hex); navy `#1A2A44` | Fase 3 candidate     |
+| PROTOTIPO | Prospecto/storytelling ainda com drift de runtime — **não migrados** na Fase 3           | Mapa `compat.legado` |
+| GLOBAL    | Template ME-T; **sem mandato OKLCH**; hex-first no piloto candidate                      | Fase 3               |
 
 ## Tokens (primitivos e semânticos)
 
-| Escopo   | Decisão                                                                    | Fonte                                  |
-| -------- | -------------------------------------------------------------------------- | -------------------------------------- |
-| PROGRAMA | Runtime canônico = CSS vivo por protótipo; não há `tokens.json` de produto | ADR-004, tokens.css                    |
-| GLOBAL   | Template JSON com `primitivos` e `semanticos`                              | `templates/projeto-web/03-tokens.json` |
-| GLOBAL   | O template **não** substitui tokens do piloto                              | ADR-007                                |
+| Escopo   | Decisão                                                                                          | Fonte                                  |
+| -------- | ------------------------------------------------------------------------------------------------ | -------------------------------------- |
+| PROGRAMA | SoT visual = `design-system/tokens/tokens.json` → CSS gerado; runtime de protótipos ainda legado | Fase 3 `0.1.0-candidate`               |
+| GLOBAL   | Template JSON ME-T com `primitivos` e `semanticos` (folhas tipadas)                              | `templates/projeto-web/03-tokens.json` |
+| GLOBAL   | O template **não** embute paleta do piloto                                                       | ADR-007                                |
+| GLOBAL   | Não colidir com `npm run generate:tokens` (Aramco); usar scripts `*:discipulando:tokens`         | `package.json`                         |
 
 ## Nomenclatura
 

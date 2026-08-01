@@ -203,10 +203,15 @@ body {
   transform: none;
 }
 
+/*
+ * Destaque por régua superior, não por tarja lateral. O sistema já tem um
+ * recurso editorial próprio para isto — a régua de 3px que fecha o marquee e
+ * abre o rodapé. Reaproveitá-lo mantém o laboratório falando a mesma língua
+ * que a demonstração.
+ */
 .lab__aviso {
-  padding: var(--at-esp-4) var(--at-esp-5);
-  border-left: 3px solid var(--at-cor-tinta);
-  background-color: var(--at-cor-linho);
+  padding: var(--at-esp-4) 0 0;
+  border-top: var(--at-borda-regua);
   max-width: var(--at-tipo-medida-texto);
 }
 
