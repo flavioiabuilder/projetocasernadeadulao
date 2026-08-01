@@ -1,0 +1,274 @@
+/*
+ * Átrio — motion system
+ *
+ * Primitivas de movimento reutilizáveis. Cada primitiva é uma classe que
+ * um componente aplica; nenhuma delas conhece conteúdo.
+ *
+ * Contrato:
+ *   1. só transform e opacity são animados (nada que force layout);
+ *   2. o estado de repouso é o estado VISÍVEL — sem JS, tudo aparece;
+ *   3. `prefers-reduced-motion` neutraliza distância, escala e stagger
+ *      pelos tokens, mantendo os nomes semânticos (ver tokens.css);
+ *   4. o runtime só marca `data-revelado`; a curva mora aqui.
+ *
+ * Carregue depois de foundations.css e components.css.
+ */
+
+/* ============================================ estado sem JavaScript ===== */
+
+/*
+ * `at-js` é adicionada pelo runtime na primeira linha de main.js. Enquanto
+ * ela não existir, nenhuma primitiva esconde conteúdo. Isso é o que faz a
+ * página continuar compreensível com JS desligado ou quebrado — a falha
+ * exata que a referência sofre hoje (script de animação bloqueado por ORB).
+ */
+html:not(.at-js) .at-revelar .at-palavra,
+html:not(.at-js) .at-subir,
+html:not(.at-js) .at-letra {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ================================== revelação por palavras (stagger) ==== */
+
+/*
+ * Medido na referência: opacidade 0→1 e deslocamento horizontal de 1em,
+ * 0.8s, ease de saída cúbica, com o stagger total distribuído em ~0.2s
+ * entre todas as palavras (não um atraso fixo por palavra). Preservado.
+ */
+
+/*
+ * Recorte só no eixo horizontal.
+ *
+ * Antes de revelar, cada palavra está deslocada 1em à direita. Num título de
+ * 8.33em isso são dezenas de pixels que criam rolagem horizontal na página
+ * inteira — mesmo com a palavra invisível.
+ *
+ * `overflow-x: clip` resolve sem tocar no eixo vertical: com entrelinha 0.7
+ * a caixa de linha é menor que os glifos, e recortar em Y comeria cedilhas,
+ * acentos e descidas. `hidden` não serve aqui porque forçaria o outro eixo
+ * a `auto`; `clip` permite manter Y visível.
+ */
+.at-revelar {
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.at-revelar .at-palavra {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(var(--at-mov-dist-palavra));
+  will-change: opacity, transform;
+}
+
+.at-revelar[data-revelado="true"] .at-palavra {
+  animation: at-palavra-entra var(--at-dur-revelacao) var(--at-ease-saida-cubica) both;
+  animation-delay: var(--at-palavra-atraso, 0ms);
+}
+
+@keyframes at-palavra-entra {
+  from {
+    opacity: 0;
+    transform: translateX(var(--at-mov-dist-palavra));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Variante vertical: para títulos-cartaz, onde o eixo horizontal compete
+   com a largura da palavra. */
+.at-revelar--vertical .at-palavra {
+  transform: translateY(var(--at-mov-dist-palavra));
+}
+
+.at-revelar--vertical[data-revelado="true"] .at-palavra {
+  animation-name: at-palavra-sobe;
+}
+
+@keyframes at-palavra-sobe {
+  from {
+    opacity: 0;
+    transform: translateY(var(--at-mov-dist-palavra));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================================== revelação de bloco (fade + sobe) == */
+
+.at-subir {
+  opacity: 0;
+  transform: translateY(var(--at-mov-dist-bloco));
+  transition:
+    opacity var(--at-dur-revelacao) var(--at-ease-saida-cubica),
+    transform var(--at-dur-revelacao) var(--at-ease-saida-cubica);
+  transition-delay: var(--at-bloco-atraso, 0ms);
+  will-change: opacity, transform;
+}
+
+.at-subir[data-revelado="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ========================================== revelação de mídia (escala) = */
+
+/*
+ * Mídia nunca desliza: ela fecha a escala. Deslocar uma imagem grande
+ * arrasta a atenção; fechar a escala devolve a moldura ao lugar.
+ */
+.at-midia-revela > img,
+.at-midia-revela > video,
+.at-midia-revela > .at-midia__preenchimento {
+  transform: scale(var(--at-mov-escala-midia-entrada));
+  transition: transform calc(var(--at-dur-revelacao) * 1.4) var(--at-ease-saida-quart);
+  will-change: transform;
+}
+
+.at-midia-revela[data-revelado="true"] > img,
+.at-midia-revela[data-revelado="true"] > video,
+.at-midia-revela[data-revelado="true"] > .at-midia__preenchimento {
+  transform: scale(1);
+}
+
+/* ================================================= hover de link ======== */
+
+/*
+ * Sublinhado que varre da esquerda. Usa scaleX sobre um pseudoelemento —
+ * nada de animar background-size, que repinta a caixa inteira.
+ */
+.at-hover-sublinha {
+  position: relative;
+  text-decoration: none;
+}
+
+.at-hover-sublinha::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.12em;
+  width: 100%;
+  height: 1px;
+  background-color: currentcolor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--at-dur-rapida) var(--at-ease-saida-quart);
+}
+
+.at-hover-sublinha:hover::after,
+.at-hover-sublinha:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ================================================= hover de cartão ====== */
+
+/*
+ * Em ponteiro fino, o cartão sobe alguns pixels. Em toque, nada acontece —
+ * `hover: hover` evita o estado preso que aparece em telas táteis.
+ */
+@media (hover: hover) and (pointer: fine) {
+  .at-hover-eleva {
+    transition:
+      transform var(--at-dur-rapida) var(--at-ease-saida-quart),
+      box-shadow var(--at-dur-rapida) var(--at-ease-padrao);
+  }
+
+  .at-hover-eleva:hover,
+  .at-hover-eleva:focus-within {
+    transform: translateY(calc(var(--at-esp-1) * -1));
+    box-shadow: var(--at-sombra-flutuante);
+  }
+}
+
+/* ================================================= paralaxe leve ======== */
+
+/*
+ * Deslocamento discreto conduzido por --at-parallax (0 a 1), escrito pelo
+ * runtime a partir de um IntersectionObserver + rAF. Sem listener de scroll.
+ */
+.at-parallax {
+  transform: translate3d(
+    0,
+    calc(var(--at-parallax, 0) * var(--at-parallax-amplitude, 2em)),
+    0
+  );
+  will-change: transform;
+}
+
+/* ================================================= transição de página == */
+
+.at-transicao[data-estado="entrando"] {
+  animation: at-transicao-entra var(--at-dur-transicao-pagina) var(--at-ease-saida-quart)
+    forwards;
+}
+
+.at-transicao[data-estado="saindo"] {
+  animation: at-transicao-sai var(--at-dur-transicao-pagina) var(--at-ease-entrada)
+    forwards;
+}
+
+@keyframes at-transicao-entra {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes at-transicao-sai {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+  }
+}
+
+/* ============================================ substituições reduzidas === */
+
+/*
+ * Os tokens já zeram distância, escala e stagger. Aqui desligamos o que é
+ * estrutural: animações contínuas e o gesto de escala da transição, que não
+ * têm token equivalente.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .at-revelar .at-palavra,
+  .at-subir,
+  .at-letra {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+
+  .at-midia-revela > img,
+  .at-midia-revela > video,
+  .at-midia-revela > .at-midia__preenchimento {
+    transform: none;
+  }
+
+  .at-parallax {
+    transform: none;
+  }
+
+  .at-transicao[data-estado="entrando"],
+  .at-transicao[data-estado="saindo"] {
+    animation: none;
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  .at-hover-eleva:hover,
+  .at-hover-eleva:focus-within {
+    transform: none;
+  }
+}

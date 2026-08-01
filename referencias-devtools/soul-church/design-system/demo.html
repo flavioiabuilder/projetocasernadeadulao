@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="pt-BR" class="at-demo">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="Demonstração editorial do design system Átrio: atmosfera acolhedora, navegação por expansão, palco de scroll e formulário local simulado."
+    />
+    <title>Átrio — demonstração editorial</title>
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/foundations.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/motion.css" />
+    <link rel="stylesheet" href="css/demo.css" />
+  </head>
+  <body>
+    <a class="at-pular" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- Transição de página: escala de 0 e anuncia o destino pelo nome. -->
+    <div class="at-transicao" data-transicao aria-hidden="true">
+      <p class="at-rotulo">Centro Comunitário</p>
+      <p class="at-display-lg" data-transicao-rotulo>Vale do Bosque</p>
+    </div>
+
+    <div class="at-casca">
+      <header class="at-cabecalho">
+        <a class="at-marca" href="#conteudo"> Vale<br />do<br />Bosque </a>
+
+        <button
+          class="at-menu-gatilho"
+          type="button"
+          data-menu-gatilho
+          aria-controls="menu-global"
+          aria-expanded="false"
+        >
+          <span class="at-menu-gatilho__rotulo" aria-hidden="true">
+            <span>Menu</span>
+            <span>Fechar</span>
+          </span>
+          <span class="at-visualmente-oculto">Abrir menu de navegação</span>
+          <span class="at-menu-gatilho__icone" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </span>
+        </button>
+      </header>
+
+      <!--
+        O menu é o mesmo plano da pílula, recortado. Ver
+        navigation-and-page-transitions.md.
+      -->
+      <div
+        class="at-menu"
+        id="menu-global"
+        data-menu
+        data-estado="fechado"
+        role="dialog"
+        aria-label="Navegação principal"
+        hidden
+      >
+        <nav class="at-menu__coluna-principal" aria-label="Seções do site">
+          <ul class="at-menu__lista">
+            <li><a class="at-menu__link" href="#conteudo">Primeira visita</a></li>
+            <li><a class="at-menu__link" href="#agenda">Agenda</a></li>
+            <li><a class="at-menu__link" href="#caminhos">Caminhos</a></li>
+            <li><a class="at-menu__link" href="#horarios">Horários</a></li>
+            <li><a class="at-menu__link" href="#bairro">O bairro</a></li>
+            <li><a class="at-menu__link" href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div class="at-menu__coluna-apoio">
+          <div class="at-menu__contato at-pilha">
+            <div>
+              <span class="at-rotulo at-menu__grupo-rotulo">Onde estamos</span>
+              <p class="at-corpo">
+                Rua das Oficinas, 120<br />
+                Vale do Bosque
+              </p>
+            </div>
+            <div>
+              <span class="at-rotulo at-menu__grupo-rotulo">Escrever</span>
+              <p class="at-corpo">contato@exemplo.invalid</p>
+            </div>
+          </div>
+
+          <p class="at-micro">Identidade demonstrativa. Dados fictícios.</p>
+        </div>
+
+        <div class="at-menu__rodape"></div>
+      </div>
+
+      <div class="at-casca__conteudo" data-inertizavel>
+        <main id="conteudo">
+          <!-- ================================================== hero -- -->
+          <header class="at-hero">
+            <div class="at-hero__midia at-midia at-midia-revela" aria-hidden="true">
+              <div class="at-midia__preenchimento"></div>
+            </div>
+
+            <div class="at-hero__cartao">
+              <p class="at-rotulo">Nesta semana</p>
+              <h1 class="at-display-lg at-revelar">Todo mundo cabe aqui</h1>
+              <p class="at-corpo at-medida at-subir">
+                Um centro comunitário de bairro, com portas abertas em dias úteis e fins
+                de semana. Chegue quando puder; não é preciso avisar antes.
+              </p>
+              <p class="at-demo-acoes">
+                <button class="at-botao at-botao--primario" type="button">
+                  O que esperar na primeira visita
+                </button>
+              </p>
+            </div>
+          </header>
+
+          <!-- ==================================== barra de serviços -- -->
+          <div class="at-barra-servicos">
+            <h2 class="at-visualmente-oculto">Horários e avisos</h2>
+
+            <ul class="at-barra-servicos__horarios at-rotulo">
+              <li>Encontros</li>
+              <li>Qua 19h</li>
+              <li>Sáb 9h</li>
+              <li>Dom 10h</li>
+            </ul>
+
+            <div class="at-marquee at-barra-servicos__marquee">
+              <div class="at-marquee__trilho" data-demo-avisos></div>
+            </div>
+
+            <div class="at-barra-servicos__acoes">
+              <button
+                class="at-botao-circulo"
+                type="button"
+                data-painel-gatilho
+                aria-controls="painel-contato"
+                aria-expanded="false"
+              >
+                <span aria-hidden="true">✎</span>
+                <span class="at-visualmente-oculto">Abrir painel de contato</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- ================================= boas-vindas editorial -- -->
+          <section class="at-secao at-superficie-papel at-laje-base at-demo-boas-vindas">
+            <div class="at-container-editorial">
+              <div class="at-grade-editorial">
+                <div class="at-demo-coluna-texto">
+                  <h2 class="at-display-xl at-revelar">Portas abertas</h2>
+                  <p class="at-corpo-lg at-medida at-subir">
+                    Funcionamos há doze anos no mesmo quarteirão. Servimos café,
+                    emprestamos ferramentas, cuidamos de uma horta e guardamos uma
+                    biblioteca que qualquer pessoa pode usar.
+                  </p>
+                </div>
+
+                <div
+                  class="at-midia at-midia--arco at-midia-revela at-parallax"
+                  aria-hidden="true"
+                >
+                  <div class="at-midia__preenchimento"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========================================= palco de scroll -- -->
+          <section
+            class="at-superficie-linho at-demo-palco-alcance"
+            data-palco
+            data-demo-palco-secao
+            aria-labelledby="palco-titulo"
+          >
+            <div class="at-palco" data-demo-palco>
+              <div class="at-palco__circulo" aria-hidden="true"></div>
+              <div class="at-palco__legenda">
+                <h2 class="at-rotulo" id="palco-titulo">O que nos orienta</h2>
+                <p class="at-rotulo">Ninguém precisa se explicar para entrar</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================== caminhos -- -->
+          <section
+            class="at-secao at-superficie-tinta at-laje at-demo-slab"
+            id="caminhos"
+            aria-labelledby="caminhos-titulo"
+          >
+            <div class="at-container">
+              <h2
+                class="at-display-xl at-revelar at-demo-titulo-sangrado"
+                id="caminhos-titulo"
+              >
+                Por onde começar
+              </h2>
+
+              <div
+                class="at-grade-cartoes at-demo-caminhos"
+                data-escalonar
+                data-demo-caminhos
+              ></div>
+            </div>
+          </section>
+
+          <!-- ================================================ agenda -- -->
+          <section
+            class="at-secao at-superficie-areia"
+            id="agenda"
+            aria-labelledby="agenda-titulo"
+          >
+            <div class="at-container">
+              <div class="at-demo-cabecalho-secao">
+                <h2
+                  class="at-cartaz-lg at-revelar at-revelar--vertical"
+                  id="agenda-titulo"
+                >
+                  Agenda
+                </h2>
+                <p class="at-corpo at-medida at-subir">
+                  Programação aberta do semestre. Todas as atividades são gratuitas e não
+                  exigem inscrição prévia, salvo indicação.
+                </p>
+              </div>
+
+              <!--
+                O papel de grupo fica no contêiner, não na <ul>: sobrescrever
+                o papel de lista órfã os <li> na árvore acessível.
+              -->
+              <div
+                class="at-carrossel"
+                data-carrossel
+                role="group"
+                aria-roledescription="carrossel"
+                aria-label="Próximas atividades"
+              >
+                <ul
+                  class="at-carrossel__pista"
+                  data-carrossel-pista
+                  data-demo-agenda
+                ></ul>
+
+                <div class="at-carrossel__controles">
+                  <button class="at-botao-circulo" type="button" data-carrossel-anterior>
+                    <span aria-hidden="true">←</span>
+                    <span class="at-visualmente-oculto">Atividade anterior</span>
+                  </button>
+                  <button class="at-botao-circulo" type="button" data-carrossel-proximo>
+                    <span aria-hidden="true">→</span>
+                    <span class="at-visualmente-oculto">Próxima atividade</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================== horários -- -->
+          <section
+            class="at-secao at-superficie-papel"
+            id="horarios"
+            aria-labelledby="horarios-titulo"
+          >
+            <div class="at-container at-demo-horarios-grade">
+              <div>
+                <h2 class="at-display-lg at-revelar" id="horarios-titulo">
+                  Quando estamos abertos
+                </h2>
+                <p class="at-corpo at-medida at-subir">
+                  A sala de acolhimento abre trinta minutos antes de cada encontro. Há
+                  estacionamento acessível e banheiro adaptado no térreo.
+                </p>
+              </div>
+
+              <div class="at-horarios at-subir" data-demo-horarios></div>
+            </div>
+          </section>
+
+          <!-- ============================================== valores -- -->
+          <section
+            class="at-superficie-papel"
+            id="bairro"
+            aria-labelledby="valores-titulo"
+          >
+            <h2 class="at-visualmente-oculto" id="valores-titulo">Princípios da casa</h2>
+            <div
+              class="at-marquee at-marquee--cartaz"
+              data-velocidade="--at-marquee-velocidade-lenta"
+            >
+              <div class="at-marquee__trilho" data-demo-valores></div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <!--
+        O rodapé é IRMÃO do conteúdo, não filho: preso ao fundo da viewport
+        e pintado atrás, ele só aparece quando o conteúdo termina de passar
+        por cima. Dentro do contêiner de conteúdo ficaria visível o tempo todo.
+      -->
+      <footer class="at-rodape" id="contato" data-inertizavel>
+        <div class="at-container">
+          <div class="at-rodape__grade">
+            <div class="at-rodape__marca" aria-hidden="true">
+              Vale<br />do<br />Bosque
+            </div>
+
+            <div class="at-rodape__coluna">
+              <h2 class="at-rotulo">Onde estamos</h2>
+              <p class="at-corpo">
+                Rua das Oficinas, 120<br />
+                Vale do Bosque<br />
+                contato@exemplo.invalid
+              </p>
+            </div>
+
+            <div class="at-rodape__coluna">
+              <h2 class="at-rotulo">Navegar</h2>
+              <ul class="at-corpo">
+                <li><a class="at-hover-sublinha" href="#agenda">Agenda</a></li>
+                <li><a class="at-hover-sublinha" href="#caminhos">Caminhos</a></li>
+                <li><a class="at-hover-sublinha" href="#horarios">Horários</a></li>
+                <li>
+                  <a class="at-hover-sublinha" href="laboratorio.html"
+                    >Laboratório do sistema</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="at-rodape__coluna">
+              <h2 class="at-rotulo">Receber notícias</h2>
+              <p class="at-corpo">
+                Um resumo por mês com a programação e os pedidos de ajuda do bairro.
+              </p>
+              <button
+                class="at-botao at-botao--primario at-demo-inscrever"
+                type="button"
+                data-painel-gatilho-secundario
+              >
+                Assinar o resumo
+              </button>
+            </div>
+          </div>
+
+          <p class="at-micro at-rodape__legal">
+            Peça demonstrativa do design system Átrio. Organização, endereço, contatos,
+            horários e atividades são fictícios e não representam nenhuma entidade real.
+            Nenhum dado é transmitido por esta página.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ====================================== painel de contato -- -->
+    <div class="at-painel-veu" id="painel-contato" data-painel hidden>
+      <div class="at-painel" aria-labelledby="painel-titulo">
+        <div class="at-painel__cabecalho">
+          <div>
+            <p class="at-rotulo">Fale com a gente</p>
+            <h2 class="at-display-md" id="painel-titulo">Como podemos ajudar?</h2>
+          </div>
+          <button class="at-botao-circulo" type="button" data-painel-fechar>
+            <span aria-hidden="true">✕</span>
+            <span class="at-visualmente-oculto">Fechar painel de contato</span>
+          </button>
+        </div>
+
+        <div class="at-painel__assuntos">
+          <button
+            class="at-painel__assunto"
+            type="button"
+            data-assunto
+            aria-controls="assunto-visita"
+            aria-expanded="false"
+          >
+            Quero visitar
+          </button>
+          <div id="assunto-visita" hidden>
+            <p class="at-corpo at-demo-assunto-texto">
+              Conte quando pretende vir e alguém combina de receber você na porta.
+            </p>
+          </div>
+
+          <button
+            class="at-painel__assunto"
+            type="button"
+            data-assunto
+            aria-controls="assunto-escuta"
+            aria-expanded="false"
+          >
+            Preciso conversar
+          </button>
+          <div id="assunto-escuta" hidden>
+            <form class="at-demo-form" data-form-local id="form-escuta" novalidate>
+              <p class="at-corpo at-demo-assunto-texto">
+                A equipe de escuta responde em até dois dias úteis.
+              </p>
+
+              <div class="at-demo-campo">
+                <label for="escuta-nome">Como podemos chamar você</label>
+                <input
+                  id="escuta-nome"
+                  name="nome"
+                  type="text"
+                  required
+                  minlength="2"
+                  autocomplete="name"
+                />
+                <span class="at-erro-campo" id="form-escuta-erro-nome" hidden></span>
+              </div>
+
+              <div class="at-demo-campo">
+                <label for="escuta-email">E-mail para resposta</label>
+                <input
+                  id="escuta-email"
+                  name="email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                />
+                <span class="at-erro-campo" id="form-escuta-erro-email" hidden></span>
+              </div>
+
+              <div class="at-demo-campo">
+                <label for="escuta-mensagem">O que gostaria de contar</label>
+                <textarea
+                  id="escuta-mensagem"
+                  name="mensagem"
+                  required
+                  minlength="10"
+                ></textarea>
+                <span class="at-erro-campo" id="form-escuta-erro-mensagem" hidden></span>
+              </div>
+
+              <div class="at-demo-consentimento">
+                <input id="escuta-aceite" name="aceite" type="checkbox" required />
+                <label for="escuta-aceite" class="at-demo-consentimento__rotulo">
+                  Concordo que a equipe de escuta leia esta mensagem
+                </label>
+                <span class="at-erro-campo" id="form-escuta-erro-aceite" hidden></span>
+              </div>
+
+              <p class="at-micro at-demo-aviso-local">
+                Demonstração local: o envio é interceptado e nenhum dado sai do seu
+                navegador.
+              </p>
+
+              <div class="at-feedback" data-form-feedback hidden></div>
+
+              <button class="at-botao at-botao--primario" type="submit">
+                Enviar (simulado)
+              </button>
+            </form>
+          </div>
+
+          <button
+            class="at-painel__assunto"
+            type="button"
+            data-assunto
+            aria-controls="assunto-ajudar"
+            aria-expanded="false"
+          >
+            Quero ajudar
+          </button>
+          <div id="assunto-ajudar" hidden>
+            <p class="at-corpo at-demo-assunto-texto">
+              Há vagas na cozinha, na recepção e na horta. Diga quantas horas por mês você
+              tem e a gente encaixa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/motion.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/demo.js"></script>
+    <script>
+      // Ordem obrigatória: o conteúdo precisa existir antes de as primitivas
+      // observarem o DOM — elas observam cada elemento uma única vez.
+      window.Atrio.demo.montar(document);
+      window.Atrio.iniciar(document);
+
+      // O botão do rodapé reaproveita o painel de contato: um só caminho de
+      // conversa em toda a página.
+      document
+        .querySelector("[data-painel-gatilho-secundario]")
+        .addEventListener("click", function () {
+          document.querySelector("[data-painel-gatilho]").click();
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+/*
+ * Átrio — tokens v1.0.0
+ *
+ * ARQUIVO GERADO. Não edite à mão.
+ * Fonte: design-system/tokens/tokens.json → referencias-devtools/soul-church/ferramentas/gerar-tokens.js
+ */
+
+:root {
+  /* color → at-cor-* */
+  --at-cor-tinta: #1b1a17;
+  --at-cor-tinta-suave: #2b2926;
+  --at-cor-grafite: #4a4640;
+  --at-cor-pedra: #8a8378;
+  --at-cor-areia: #e6ded2;
+  --at-cor-areia-profunda: #d5c8b4;
+  --at-cor-linho: #f0ebe3;
+  --at-cor-papel: #faf8f5;
+  --at-cor-luz: #fff;
+  --at-cor-acento: #7ba7e8;
+  --at-cor-acento-suave: #bed3f4;
+  --at-cor-texto: #1b1a17;
+  --at-cor-texto-tenue: #4a4640;
+  --at-cor-texto-inverso: #faf8f5;
+  --at-cor-texto-sobre-acento: #12213a;
+  --at-cor-filete: #1b1a17;
+  --at-cor-filete-tenue: rgba(27, 26, 23, 0.18);
+  --at-cor-veu: rgba(27, 26, 23, 0.55);
+  --at-cor-foco: #1b1a17;
+  --at-cor-foco-inverso: #faf8f5;
+  --at-cor-sucesso: #2f6b4f;
+  --at-cor-sucesso-fundo: #e2efe8;
+  --at-cor-erro: #93331f;
+  --at-cor-erro-fundo: #f7e4df;
+
+  /* gradient → at-grad-* */
+  --at-grad-midia-vazia: linear-gradient(148deg, #d5c8b4 0%, #e6ded2 46%, #f0ebe3 100%);
+  --at-grad-midia-vazia-escura: linear-gradient(148deg, #2b2926 0%, #4a4640 58%, #8a8378 100%);
+  --at-grad-veu-inferior: linear-gradient(180deg, rgba(27,26,23,0) 0%, rgba(27,26,23,0.45) 100%);
+  --at-grad-veu-superior: linear-gradient(180deg, rgba(27,26,23,0.38) 0%, rgba(27,26,23,0) 100%);
+
+  /* typography → at-tipo-* */
+  --at-tipo-familia-display: "Atrio Display", "Archivo", "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --at-tipo-familia-cartaz: "Atrio Cartaz", "Archivo Narrow", "Oswald", "Arial Narrow", "Helvetica Neue Condensed", sans-serif;
+  --at-tipo-familia-corpo: "Atrio Texto", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --at-tipo-familia-mono: "Atrio Mono", ui-monospace, "SFMono-Regular", "Cascadia Mono", Consolas, monospace;
+  --at-tipo-peso-display: 700;
+  --at-tipo-peso-cartaz: 800;
+  --at-tipo-peso-corpo: 400;
+  --at-tipo-peso-corpo-forte: 600;
+  --at-tipo-display-xl: 8.33em;
+  --at-tipo-display-lg: 4.5em;
+  --at-tipo-display-md: 2.25em;
+  --at-tipo-display-sm: 1.88em;
+  --at-tipo-display-xs: 1.46em;
+  --at-tipo-cartaz-xl: 12em;
+  --at-tipo-cartaz-lg: 7.88em;
+  --at-tipo-cartaz-md: 4.4em;
+  --at-tipo-corpo-lg: 1.5em;
+  --at-tipo-corpo: 1em;
+  --at-tipo-rotulo: 1.19em;
+  --at-tipo-micro: 0.8em;
+  --at-tipo-display-xl-mobile: 4em;
+  --at-tipo-display-lg-mobile: 2.7em;
+  --at-tipo-cartaz-xl-mobile: 6.25em;
+  --at-tipo-cartaz-lg-mobile: 4.4em;
+  --at-tipo-corpo-lg-mobile: 1.25em;
+  --at-tipo-lh-display: 0.7;
+  --at-tipo-lh-display-lg: 1;
+  --at-tipo-lh-display-md: 1.22;
+  --at-tipo-lh-cartaz: 0.85;
+  --at-tipo-lh-corpo: 1.52;
+  --at-tipo-lh-rotulo: 1.2;
+  --at-tipo-tracking-display: -0.01em;
+  --at-tipo-tracking-rotulo: 0.02em;
+  --at-tipo-tracking-micro: 0.06em;
+  --at-tipo-medida-editorial: 30em;
+  --at-tipo-medida-texto: 62ch;
+
+  /* scale → at-escala-* */
+  --at-escala-rampa-mobile: calc(0.7188em + 0.2509vw);
+  --at-escala-rampa-desktop: calc(0.4548em + 0.5769vw);
+  --at-escala-teto-desktop: 1em;
+  --at-escala-viewport-teto: 1512px;
+  --at-escala-viewport-troca: 992px;
+
+  /* spacing → at-esp-* */
+  --at-esp-0: 0;
+  --at-esp-1: 0.25em;
+  --at-esp-2: 0.5em;
+  --at-esp-3: 0.75em;
+  --at-esp-4: 1em;
+  --at-esp-5: 1.25em;
+  --at-esp-6: 1.5em;
+  --at-esp-8: 2em;
+  --at-esp-10: 2.5em;
+  --at-esp-12: 3em;
+  --at-esp-14: 3.75em;
+  --at-esp-16: 4.375em;
+  --at-esp-20: 6em;
+  --at-esp-24: 7.75em;
+  --at-esp-32: 10em;
+  --at-esp-40: 12em;
+  --at-esp-moldura-lateral: 7.81em;
+  --at-esp-moldura-lateral-mobile: 1em;
+  --at-esp-moldura-topo: 4.375em;
+  --at-esp-moldura-base: 3.75em;
+
+  /* sizing → at-tam-* */
+  --at-tam-alvo-minimo: 44px;
+  --at-tam-pilula-menu-largura: 10em;
+  --at-tam-pilula-menu-altura: 4em;
+  --at-tam-logo: 6.13em;
+  --at-tam-barra-servicos: 8vh;
+  --at-tam-hero-desktop: 91vh;
+  --at-tam-hero-mobile: 100vh;
+  --at-tam-palco-scroll: 100vh;
+  --at-tam-icone: 1.5em;
+  --at-tam-icone-circulo: 2.82em;
+  --at-tam-filete: 1px;
+  --at-tam-filete-forte: 3px;
+
+  /* contentWidth → at-larg-* */
+  --at-larg-total: 105.8em;
+  --at-larg-editorial: 30em;
+  --at-larg-cartao: 21em;
+  --at-larg-painel: 40em;
+
+  /* grid → at-grade-* */
+  --at-grade-colunas: 12;
+  --at-grade-gutter: 2em;
+  --at-grade-gutter-mobile: 1em;
+  --at-grade-editorial-assimetrico: 30em 36.19em;
+  --at-grade-editorial-simetrico: 1fr 1fr;
+  --at-grade-cartoes: repeat(auto-fill, minmax(21em, 1fr));
+  --at-grade-menu-assimetrico: 3fr 2fr;
+
+  /* border → at-borda-* */
+  --at-borda-filete: 1px solid #1b1a17;
+  --at-borda-filete-tenue: 1px solid rgba(27, 26, 23, 0.18);
+  --at-borda-regua: 3px solid #1b1a17;
+  --at-borda-nenhuma: 0 none;
+
+  /* radius → at-raio-* */
+  --at-raio-nenhum: 0;
+  --at-raio-sutil: 1em;
+  --at-raio-cartao: 1.88em;
+  --at-raio-laje: 3.75em;
+  --at-raio-painel-menu: 9.24em;
+  --at-raio-arco: 25em;
+  --at-raio-pilula: 999em;
+  --at-raio-circulo: 50%;
+
+  /* opacity → at-opac-* */
+  --at-opac-oculto: 0;
+  --at-opac-fantasma: 0.18;
+  --at-opac-tenue: 0.45;
+  --at-opac-meio: 0.65;
+  --at-opac-quase: 0.9;
+  --at-opac-pleno: 1;
+
+  /* blur → at-desfoque-* */
+  --at-desfoque-nenhum: 0px;
+  --at-desfoque-leve: 6px;
+  --at-desfoque-painel: 18px;
+
+  /* shadow → at-sombra-* */
+  --at-sombra-nenhuma: none;
+  --at-sombra-cartao: 0 2px 14px -8px rgba(27, 26, 23, 0.2);
+  --at-sombra-flutuante: 0 8px 32px -12px rgba(27, 26, 23, 0.28);
+  --at-sombra-painel: 0 24px 70px -24px rgba(27, 26, 23, 0.38);
+
+  /* zIndex → at-z-* */
+  --at-z-base: 0;
+  --at-z-midia: 1;
+  --at-z-conteudo: 2;
+  --at-z-barra-servicos: 3;
+  --at-z-cabecalho: 20;
+  --at-z-painel: 40;
+  --at-z-menu: 50;
+  --at-z-transicao: 90;
+
+  /* breakpoint → at-bp-* */
+  --at-bp-compacto: 480px;
+  --at-bp-medio: 768px;
+  --at-bp-amplo: 992px;
+  --at-bp-teto: 1512px;
+
+  /* duration → at-dur-* */
+  --at-dur-instantanea: 120ms;
+  --at-dur-rapida: 260ms;
+  --at-dur-media: 420ms;
+  --at-dur-revelacao: 800ms;
+  --at-dur-menu: 790ms;
+  --at-dur-transicao-pagina: 620ms;
+
+  /* easing → at-ease-* */
+  --at-ease-padrao: cubic-bezier(0.33, 1, 0.68, 1);
+  --at-ease-saida-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --at-ease-saida-cubica: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --at-ease-entrada: cubic-bezier(0.55, 0, 1, 0.45);
+  --at-ease-suave: cubic-bezier(0.4, 0, 0.2, 1);
+  --at-ease-linear: linear;
+
+  /* stagger → at-stagger-* */
+  --at-stagger-palavra: 36ms;
+  --at-stagger-item: 70ms;
+  --at-stagger-bloco: 120ms;
+  --at-stagger-total-palavras: 200ms;
+
+  /* motionDistance → at-mov-dist-* */
+  --at-mov-dist-palavra: 1em;
+  --at-mov-dist-bloco: 2.5em;
+  --at-mov-dist-midia: 4em;
+  --at-mov-dist-letra: 0.05em;
+
+  /* motionScale → at-mov-escala-* */
+  --at-mov-escala-repouso: 1;
+  --at-mov-escala-midia-entrada: 1.08;
+  --at-mov-escala-pressionado: 0.97;
+
+  /* marquee → at-marquee-* */
+  --at-marquee-velocidade: 11.9em;
+  --at-marquee-velocidade-lenta: 6em;
+  --at-marquee-gap: 2em;
+
+  /* overlay → at-overlay-* */
+  --at-overlay-veu: rgba(27, 26, 23, 0.55);
+  --at-overlay-menu-fundo: #d5c8b4;
+  --at-overlay-transicao-fundo: #1b1a17;
+  --at-overlay-transicao-texto: #faf8f5;
+
+  /* focusRing → at-foco-* */
+  --at-foco-espessura: 3px;
+  --at-foco-deslocamento: 3px;
+  --at-foco-estilo: solid;
+  --at-foco-cor: #1b1a17;
+  --at-foco-cor-inversa: #faf8f5;
+
+  /* formState → at-campo-* */
+  --at-campo-campo-fundo: #fff;
+  --at-campo-campo-borda: rgba(27, 26, 23, 0.18);
+  --at-campo-campo-borda-foco: #1b1a17;
+  --at-campo-campo-texto: #1b1a17;
+  --at-campo-campo-placeholder: #8a8378;
+  --at-campo-campo-desabilitado-fundo: #f0ebe3;
+  --at-campo-campo-desabilitado-texto: #8a8378;
+  --at-campo-campo-invalido-borda: #93331f;
+  --at-campo-altura-minima: 44px;
+  --at-campo-raio: 0.75em;
+  --at-campo-padding: 0.85em 1em;
+
+  /* imageTreatment → at-img-* */
+  --at-img-proporcao-quadrada: 1 / 1;
+  --at-img-proporcao-retrato: 3 / 4;
+  --at-img-proporcao-paisagem: 16 / 9;
+  --at-img-proporcao-editorial: 4 / 5;
+  --at-img-enquadramento: cover;
+  --at-img-ancoragem: 50% 40%;
+  --at-img-arco-topo-esquerdo: 25em 0 3.75em 0;
+  --at-img-arco-topo-esquerdo-mobile: 25em 0 3.75em 3.75em;
+}
+
+/* Substituição de movimento: mesmos nomes semânticos, valores neutros. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --at-dur-rapida: 1ms;
+    --at-dur-media: 1ms;
+    --at-dur-revelacao: 1ms;
+    --at-dur-menu: 1ms;
+    --at-dur-transicao-pagina: 1ms;
+    --at-mov-dist-palavra: 0em;
+    --at-mov-dist-bloco: 0em;
+    --at-mov-dist-midia: 0em;
+    --at-mov-dist-letra: 0em;
+    --at-stagger-palavra: 0ms;
+    --at-stagger-item: 0ms;
+    --at-stagger-bloco: 0ms;
+    --at-stagger-total-palavras: 0ms;
+    --at-mov-escala-midia-entrada: 1;
+    --at-mov-escala-pressionado: 1;
+    --at-marquee-velocidade: 0em;
+    --at-marquee-velocidade-lenta: 0em;
+  }
+}

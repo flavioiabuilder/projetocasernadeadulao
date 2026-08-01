@@ -54,4 +54,58 @@ module.exports = [
       },
     },
   },
+  // Referência DevTools soul-church (reconstrução Átrio). Bloco próprio:
+  // o runtime usa APIs de observação e de foco que os outros escopos não
+  // precisam, e nenhum global daqui deve vazar para os demais.
+  {
+    files: [
+      "referencias-devtools/soul-church/design-system/js/**/*.js",
+      "referencias-devtools/soul-church/ferramentas/**/*.js",
+      "referencias-devtools/soul-church/testes/**/*.js",
+      "referencias-devtools/soul-church/playwright.config.js",
+    ],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: "script",
+      globals: {
+        window: "readonly",
+        document: "readonly",
+        globalThis: "readonly",
+        console: "readonly",
+        module: "readonly",
+        require: "readonly",
+        __dirname: "readonly",
+        process: "readonly",
+        URL: "readonly",
+        Set: "readonly",
+        Map: "readonly",
+        HTMLElement: "readonly",
+        Node: "readonly",
+        IntersectionObserver: "readonly",
+        ResizeObserver: "readonly",
+        requestAnimationFrame: "readonly",
+        cancelAnimationFrame: "readonly",
+        getComputedStyle: "readonly",
+        matchMedia: "readonly",
+        performance: "readonly",
+        setTimeout: "readonly",
+        clearTimeout: "readonly",
+      },
+    },
+    rules: {
+      "no-undef": "error",
+      "no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          // `catch (_erro)` sem uso é intencional: o bloco existe para
+          // engolir a falha, não para inspecioná-la.
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+      "no-var": "error",
+      "prefer-const": "warn",
+      eqeqeq: ["error", "smart"],
+    },
+  },
 ];

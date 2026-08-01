@@ -1,0 +1,911 @@
+/*
+ * Átrio — componentes
+ *
+ * Só entram aqui padrões que a investigação encontrou repetidos em mais de
+ * uma página ou em mais de um contexto. Blocos que apareceram uma única vez
+ * ficaram como composição na demo, não como componente.
+ */
+
+/* =============================================================== casca === */
+
+.at-casca {
+  position: relative;
+  isolation: isolate;
+}
+
+/*
+ * Rodapé revelado: o conteúdo rola POR CIMA do rodapé, que fica preso ao
+ * fundo da viewport. Só o que separa os dois é a ordem de pintura — o
+ * conteúdo precisa de fundo opaco e de índice maior.
+ *
+ * Requisito estrutural: o rodapé é irmão deste contêiner, não filho. Dentro
+ * dele, o sticky se prenderia à viewport e apareceria desde o topo da página.
+ */
+.at-casca__conteudo {
+  position: relative;
+  z-index: var(--at-z-conteudo);
+  background-color: var(--at-cor-papel);
+}
+
+/* ========================================================== cabeçalho === */
+
+.at-cabecalho {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: var(--at-z-cabecalho);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--at-esp-4);
+  padding: var(--at-esp-8) var(--at-esp-8) 0;
+  pointer-events: none;
+}
+
+.at-cabecalho > * {
+  pointer-events: auto;
+}
+
+/*
+ * A marca é um disco claro. Sobre mídia escura o disco aparece; sobre papel
+ * ele some e só a letra permanece. Um ativo, dois comportamentos — o mesmo
+ * truque observado na referência, e o motivo de não existir troca de logo.
+ */
+.at-marca {
+  display: grid;
+  place-items: center;
+  width: var(--at-tam-logo);
+  height: var(--at-tam-logo);
+  border-radius: var(--at-raio-circulo);
+  background-color: var(--at-cor-papel);
+  color: var(--at-cor-tinta);
+  text-decoration: none;
+  font-family: var(--at-tipo-familia-cartaz);
+  font-weight: var(--at-tipo-peso-cartaz);
+  font-size: var(--at-tipo-corpo);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--at-tipo-tracking-micro);
+  text-align: center;
+}
+
+/* ===================================================== gatilho do menu === */
+
+/*
+ * A pílula É o menu. Fechada mede 10em × 4em; aberta, o mesmo plano cobre a
+ * viewport. Ver navigation-and-page-transitions.md.
+ */
+.at-menu-gatilho {
+  position: relative;
+  z-index: calc(var(--at-z-menu) + 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--at-esp-4);
+  width: var(--at-tam-pilula-menu-largura);
+  min-width: var(--at-tam-pilula-menu-largura);
+  height: var(--at-tam-pilula-menu-altura);
+  min-height: var(--at-tam-alvo-minimo);
+  padding-inline: var(--at-esp-5);
+  border: 0;
+  border-radius: var(--at-raio-pilula);
+  background-color: var(--at-cor-papel);
+  color: var(--at-cor-tinta);
+  font-family: var(--at-tipo-familia-display);
+  font-weight: var(--at-tipo-peso-display);
+  font-size: var(--at-tipo-rotulo);
+  letter-spacing: var(--at-tipo-tracking-rotulo);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/*
+ * Sem JavaScript o menu nunca abre. Em vez de deixar um botão morto no
+ * cabeçalho, ele some: a navegação completa continua no rodapé, que é
+ * markup estático. Um controle que não faz nada é pior que um controle
+ * ausente.
+ */
+html:not(.at-js) .at-menu-gatilho {
+  display: none;
+}
+
+.at-menu-gatilho__rotulo {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 1.2em;
+}
+
+/* Os dois rótulos deslizam em vertical: um sobe, o outro entra. */
+.at-menu-gatilho__rotulo span {
+  display: block;
+  transition: transform var(--at-dur-media) var(--at-ease-saida-quart);
+}
+
+.at-menu-gatilho[aria-expanded="true"] .at-menu-gatilho__rotulo span {
+  transform: translateY(-100%);
+}
+
+.at-menu-gatilho__icone {
+  display: grid;
+  gap: 0.3em;
+  width: 1.5em;
+}
+
+.at-menu-gatilho__icone i {
+  display: block;
+  height: 2px;
+  background-color: currentcolor;
+  transition:
+    transform var(--at-dur-media) var(--at-ease-saida-quart),
+    opacity var(--at-dur-rapida) var(--at-ease-padrao);
+}
+
+.at-menu-gatilho[aria-expanded="true"] .at-menu-gatilho__icone i:nth-child(1) {
+  transform: translateY(0.4em) rotate(45deg);
+}
+
+.at-menu-gatilho[aria-expanded="true"] .at-menu-gatilho__icone i:nth-child(2) {
+  opacity: 0;
+}
+
+.at-menu-gatilho[aria-expanded="true"] .at-menu-gatilho__icone i:nth-child(3) {
+  transform: translateY(-0.4em) rotate(-45deg);
+}
+
+/* ============================================================== menu ==== */
+
+.at-menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--at-z-menu);
+  display: grid;
+  grid-template-columns: var(--at-grade-menu-assimetrico);
+  grid-template-rows: 1fr auto;
+  background-color: var(--at-overlay-menu-fundo);
+  color: var(--at-cor-texto);
+
+  /*
+   * O plano cresce a partir da pílula. clip-path reproduz o gesto sem animar
+   * width/height — ver implementation-notes.md, divergência D-01.
+   *
+   * O raio também interpola: na referência o painel é grande demais para os
+   * cantos entrarem na tela, e o efeito líquido é a curva atravessando o
+   * viewport durante a transição e o plano ficando reto no fim. Interpolar
+   * o raio até zero devolve exatamente essa leitura.
+   */
+  clip-path: inset(
+    var(--at-menu-recorte-topo, 0) var(--at-menu-recorte-dir, 0)
+      var(--at-menu-recorte-base, 100%) var(--at-menu-recorte-esq, 100%) round
+      var(--at-menu-raio, 0)
+  );
+  transition: clip-path var(--at-dur-menu) var(--at-ease-saida-quart);
+}
+
+.at-menu[hidden] {
+  display: none;
+}
+
+.at-menu[data-estado="fechado"] {
+  --at-menu-recorte-topo: 1.6em;
+  --at-menu-recorte-dir: 2em;
+  --at-menu-recorte-base: calc(100% - 5.6em);
+  --at-menu-recorte-esq: calc(100% - 12em);
+  --at-menu-raio: var(--at-raio-painel-menu);
+
+  pointer-events: none;
+}
+
+.at-menu[data-estado="aberto"] {
+  --at-menu-recorte-topo: 0;
+  --at-menu-recorte-dir: 0;
+  --at-menu-recorte-base: 0;
+  --at-menu-recorte-esq: 0;
+  --at-menu-raio: 0px;
+}
+
+.at-menu__coluna-principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--at-esp-14) var(--at-esp-8) var(--at-esp-14) var(--at-esp-12);
+  border-right: var(--at-borda-regua);
+}
+
+.at-menu__coluna-apoio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--at-esp-12);
+  padding: var(--at-esp-14) var(--at-esp-12);
+}
+
+.at-menu__rodape {
+  grid-column: 1 / -1;
+  border-top: var(--at-borda-regua);
+}
+
+.at-menu__lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.at-menu__link {
+  display: inline-block;
+  padding-block: var(--at-esp-1);
+  font-family: var(--at-tipo-familia-display);
+  font-weight: var(--at-tipo-peso-display);
+  font-size: var(--at-tipo-display-lg);
+  line-height: 1.14;
+  letter-spacing: var(--at-tipo-tracking-display);
+  text-decoration: none;
+  transition:
+    transform var(--at-dur-rapida) var(--at-ease-padrao),
+    opacity var(--at-dur-rapida) var(--at-ease-padrao);
+}
+
+.at-menu__link:hover {
+  transform: translateX(var(--at-esp-3));
+  opacity: var(--at-opac-meio);
+}
+
+.at-menu__grupo-rotulo {
+  display: block;
+  margin-bottom: var(--at-esp-1);
+  color: var(--at-cor-texto-tenue);
+}
+
+@media (max-width: 991px) {
+  .at-menu {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto;
+  }
+
+  .at-menu__coluna-principal {
+    justify-content: flex-start;
+    padding: var(--at-esp-20) var(--at-esp-8) var(--at-esp-8);
+    border-right: 0;
+  }
+
+  .at-menu__coluna-apoio {
+    padding: 0 var(--at-esp-8) var(--at-esp-10);
+  }
+
+  .at-menu__contato {
+    display: none;
+  }
+
+  .at-menu__link {
+    font-size: var(--at-tipo-display-md);
+  }
+}
+
+/* ================================================== barra de serviços === */
+
+/*
+ * Barra persistente: horários, um atalho de mídia e um marquee de avisos.
+ * É o elemento que mais reduz ansiedade de quem visita pela primeira vez —
+ * o horário nunca sai da tela.
+ */
+.at-barra-servicos {
+  position: sticky;
+  bottom: 0;
+  z-index: var(--at-z-barra-servicos);
+  display: flex;
+  align-items: center;
+  gap: var(--at-esp-5);
+  margin: var(--at-esp-4) var(--at-esp-8);
+  padding: var(--at-esp-3) var(--at-esp-4);
+  border-radius: var(--at-raio-sutil);
+  background-color: var(--at-cor-papel);
+  box-shadow: var(--at-sombra-flutuante);
+}
+
+.at-barra-servicos__horarios {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--at-esp-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.at-barra-servicos__horarios li {
+  padding-right: var(--at-esp-3);
+  border-right: var(--at-borda-filete-tenue);
+}
+
+/*
+ * O filete que separa horários do marquee vive AQUI, e não no marquee: a
+ * máscara de esmaecimento do marquee recortaria qualquer borda própria.
+ */
+.at-barra-servicos__horarios li:last-child {
+  border-right: 0;
+  padding-right: var(--at-esp-5);
+}
+
+.at-barra-servicos__horarios {
+  border-right: var(--at-borda-filete-tenue);
+}
+
+.at-barra-servicos__marquee {
+  flex: 1;
+  min-width: 0;
+}
+
+.at-barra-servicos__acoes {
+  display: flex;
+  gap: var(--at-esp-2);
+  margin-left: auto;
+}
+
+@media (max-width: 767px) {
+  .at-barra-servicos {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--at-esp-3);
+    margin-inline: var(--at-esp-4);
+  }
+
+  /*
+   * Empilhada, a barra não precisa de filetes: com quebra de linha eles
+   * viram traços órfãos no fim das linhas. O espaçamento basta.
+   */
+  .at-barra-servicos__horarios,
+  .at-barra-servicos__horarios li {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  .at-barra-servicos__horarios {
+    column-gap: var(--at-esp-4);
+  }
+
+  .at-barra-servicos__acoes {
+    margin-left: 0;
+  }
+}
+
+/* ============================================================ marquee === */
+
+.at-marquee {
+  display: flex;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 3em,
+    #000 calc(100% - 3em),
+    transparent
+  );
+}
+
+.at-marquee__trilho {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--at-marquee-gap);
+  padding-right: var(--at-marquee-gap);
+  white-space: nowrap;
+  will-change: transform;
+  animation: at-marquee-desliza linear infinite;
+  animation-duration: var(--at-marquee-duracao, 30s);
+}
+
+.at-marquee[data-pausado="true"] .at-marquee__trilho {
+  animation-play-state: paused;
+}
+
+.at-marquee:hover .at-marquee__trilho {
+  animation-play-state: paused;
+}
+
+@keyframes at-marquee-desliza {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .at-marquee__trilho {
+    animation: none;
+  }
+
+  .at-marquee {
+    overflow-x: auto;
+  }
+}
+
+/* Marquee de cartaz: a versão monumental, com régua embaixo. */
+.at-marquee--cartaz {
+  padding-block: var(--at-esp-20);
+  border-bottom: var(--at-borda-regua);
+}
+
+@media (max-width: 991px) {
+  .at-marquee--cartaz {
+    padding-block: var(--at-esp-10);
+  }
+}
+
+/* ============================================================== hero ==== */
+
+.at-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: var(--at-tam-hero-desktop);
+  overflow: hidden;
+}
+
+@media (max-width: 991px) {
+  .at-hero {
+    min-height: var(--at-tam-hero-mobile);
+  }
+}
+
+/*
+ * A mídia do hero preenche o palco inteiro: aqui a proporção é ditada pelo
+ * hero, não pelo enquadramento padrão de `.at-midia` (que é quadrado).
+ */
+.at-hero__midia {
+  position: absolute;
+  inset: 0;
+  z-index: var(--at-z-midia);
+  aspect-ratio: auto;
+  height: 100%;
+}
+
+.at-hero__midia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--at-grad-veu-superior);
+}
+
+.at-hero__cartao {
+  position: relative;
+  z-index: var(--at-z-conteudo);
+  display: flex;
+  flex-direction: column;
+  gap: var(--at-esp-4);
+  width: min(100%, calc(var(--at-larg-total) * 0.62));
+  margin: 0 auto var(--at-esp-8);
+  padding: var(--at-esp-8) var(--at-esp-10);
+  border-radius: var(--at-raio-cartao);
+  background-color: var(--at-cor-areia);
+}
+
+/* O olho cola no título; o corpo respira. */
+.at-hero__cartao > .at-rotulo {
+  margin-bottom: calc(var(--at-esp-3) * -1);
+  color: var(--at-cor-texto-tenue);
+}
+
+@media (max-width: 767px) {
+  .at-hero__cartao {
+    width: 100%;
+    margin-bottom: 0;
+
+    /*
+     * A barra de serviços é fixa no rodapé da viewport: o cartão precisa
+     * reservar espaço para ela, senão a última linha nasce coberta.
+     */
+    padding: var(--at-esp-6) var(--at-esp-6) var(--at-esp-20);
+    border-radius: var(--at-raio-cartao) var(--at-raio-cartao) 0 0;
+  }
+}
+
+/* ========================================================== carrossel === */
+
+.at-carrossel {
+  position: relative;
+}
+
+.at-carrossel__pista {
+  display: flex;
+  gap: var(--at-grade-gutter);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: var(--at-esp-2);
+}
+
+.at-carrossel__pista::-webkit-scrollbar {
+  display: none;
+}
+
+.at-carrossel__item {
+  flex: 0 0 var(--at-larg-cartao);
+  scroll-snap-align: start;
+}
+
+@media (max-width: 767px) {
+  .at-carrossel__item {
+    flex-basis: min(var(--at-larg-cartao), 82vw);
+  }
+}
+
+.at-carrossel__controles {
+  display: flex;
+  gap: var(--at-esp-3);
+  margin-top: var(--at-esp-6);
+}
+
+.at-carrossel__pontos {
+  display: flex;
+  gap: var(--at-esp-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.at-carrossel__ponto {
+  width: 0.55em;
+  height: 0.55em;
+  min-width: 0.55em;
+  padding: 0;
+  border: 0;
+  border-radius: var(--at-raio-circulo);
+  background-color: currentcolor;
+  opacity: var(--at-opac-fantasma);
+  cursor: pointer;
+  transition: opacity var(--at-dur-rapida) var(--at-ease-padrao);
+}
+
+.at-carrossel__ponto[aria-current="true"] {
+  opacity: var(--at-opac-pleno);
+}
+
+/* ============================================================= cartão === */
+
+.at-cartao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--at-esp-4);
+  padding: var(--at-esp-8) var(--at-esp-6);
+  border-radius: var(--at-raio-cartao);
+  background-color: var(--at-cor-luz);
+  color: var(--at-cor-texto);
+  box-shadow: var(--at-sombra-cartao);
+}
+
+.at-cartao__acao {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.at-cartao--acento {
+  background-color: var(--at-cor-acento);
+  color: var(--at-cor-texto-sobre-acento);
+}
+
+/*
+ * O acento existe para marcar exatamente um item por grade. Se dois cartões
+ * ficarem azuis ao mesmo tempo, o sistema perdeu a hierarquia.
+ */
+.at-cartao--acento .at-botao--primario {
+  background-color: var(--at-cor-texto-sobre-acento);
+  border-color: var(--at-cor-texto-sobre-acento);
+}
+
+.at-cartao__olho {
+  color: var(--at-cor-texto-tenue);
+}
+
+.at-cartao--acento .at-cartao__olho {
+  color: inherit;
+  opacity: var(--at-opac-quase);
+}
+
+/* ====================================================== cartão evento === */
+
+.at-evento {
+  display: flex;
+  flex-direction: column;
+  gap: var(--at-esp-3);
+  min-height: 18em;
+  padding: var(--at-esp-6);
+  border-radius: var(--at-raio-cartao);
+  background-color: var(--at-cor-luz);
+  box-shadow: var(--at-sombra-cartao);
+}
+
+.at-evento__quando {
+  color: var(--at-cor-texto-tenue);
+}
+
+.at-evento__acao {
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+/* ================================================= bloco de horários === */
+
+.at-horarios {
+  display: grid;
+  gap: var(--at-esp-1);
+  margin: 0;
+}
+
+.at-horarios__linha {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--at-esp-4);
+  padding-block: var(--at-esp-3);
+  border-bottom: var(--at-borda-filete-tenue);
+}
+
+.at-horarios__linha:last-child {
+  border-bottom: 0;
+}
+
+.at-horarios__quando {
+  font-family: var(--at-tipo-familia-cartaz);
+  font-weight: var(--at-tipo-peso-cartaz);
+  font-size: var(--at-tipo-display-md);
+  line-height: 1;
+}
+
+/* ============================================================= painel === */
+
+.at-painel-veu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--at-z-painel);
+  display: grid;
+  place-items: center;
+  padding: var(--at-esp-6);
+  background-color: var(--at-overlay-veu);
+  opacity: 0;
+  transition: opacity var(--at-dur-media) var(--at-ease-padrao);
+}
+
+.at-painel-veu[data-estado="aberto"] {
+  opacity: 1;
+}
+
+.at-painel-veu[hidden] {
+  display: none;
+}
+
+.at-painel {
+  position: relative;
+  width: min(100%, var(--at-larg-painel));
+  max-height: min(85vh, 46em);
+  overflow-y: auto;
+  padding: var(--at-esp-8);
+  border-radius: var(--at-raio-cartao);
+  background-color: var(--at-cor-luz);
+  box-shadow: var(--at-sombra-painel);
+  transform: translateY(var(--at-mov-dist-bloco));
+  transition: transform var(--at-dur-media) var(--at-ease-saida-quart);
+}
+
+.at-painel-veu[data-estado="aberto"] .at-painel {
+  transform: translateY(0);
+}
+
+.at-painel__cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--at-esp-4);
+  margin-bottom: var(--at-esp-6);
+}
+
+.at-painel__assuntos {
+  display: grid;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.at-painel__assunto {
+  width: 100%;
+  padding: var(--at-esp-4) 0;
+  border: 0;
+  border-bottom: var(--at-borda-filete);
+  background: none;
+  text-align: left;
+  font-family: var(--at-tipo-familia-display);
+  font-weight: var(--at-tipo-peso-display);
+  font-size: var(--at-tipo-display-md);
+  line-height: var(--at-tipo-lh-display-md);
+  cursor: pointer;
+  transition: padding-left var(--at-dur-rapida) var(--at-ease-padrao);
+}
+
+.at-painel__assunto:hover {
+  padding-left: var(--at-esp-3);
+}
+
+.at-painel__assunto[aria-expanded="true"] {
+  padding-left: var(--at-esp-3);
+}
+
+/* ============================================================ rodapé ==== */
+
+.at-rodape {
+  position: sticky;
+  bottom: 0;
+  z-index: var(--at-z-base);
+  padding-block: var(--at-esp-24) var(--at-esp-20);
+  background-color: var(--at-cor-areia);
+  border-top: var(--at-borda-regua);
+}
+
+.at-rodape__grade {
+  display: grid;
+  grid-template-columns: auto repeat(3, minmax(0, 1fr));
+  gap: var(--at-esp-10);
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .at-rodape {
+    position: static;
+    padding-block: var(--at-esp-16) var(--at-esp-12);
+  }
+
+  .at-rodape__grade {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--at-esp-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .at-rodape__grade {
+    grid-template-columns: 1fr;
+  }
+}
+
+.at-rodape__coluna {
+  display: flex;
+  flex-direction: column;
+  gap: var(--at-esp-2);
+}
+
+.at-rodape__coluna ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--at-esp-1);
+}
+
+/*
+ * Links de lista do rodapé são alvos de navegação, não links inline no meio
+ * de uma frase: precisam da área mínima de toque de 44px.
+ */
+.at-rodape__coluna ul a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--at-tam-alvo-minimo);
+}
+
+.at-rodape__coluna a {
+  text-decoration: none;
+  transition: opacity var(--at-dur-rapida) var(--at-ease-padrao);
+}
+
+.at-rodape__coluna a:hover {
+  opacity: var(--at-opac-meio);
+}
+
+.at-rodape__marca {
+  display: grid;
+  place-items: center;
+  width: calc(var(--at-tam-logo) * 1.5);
+  height: calc(var(--at-tam-logo) * 1.5);
+  border-radius: var(--at-raio-circulo);
+  background-color: var(--at-cor-tinta);
+  color: var(--at-cor-texto-inverso);
+  font-family: var(--at-tipo-familia-cartaz);
+  font-weight: var(--at-tipo-peso-cartaz);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+}
+
+.at-rodape__legal {
+  margin-top: var(--at-esp-12);
+  padding-top: var(--at-esp-6);
+  border-top: var(--at-borda-filete-tenue);
+  color: var(--at-cor-texto-tenue);
+}
+
+/* ======================================================== transição ===== */
+
+.at-transicao {
+  position: fixed;
+  inset: 0;
+  z-index: var(--at-z-transicao);
+  display: grid;
+  place-items: center;
+  gap: var(--at-esp-2);
+  background-color: var(--at-overlay-transicao-fundo);
+  color: var(--at-overlay-transicao-texto);
+  transform: scale(0);
+  transform-origin: 50% 100%;
+  pointer-events: none;
+}
+
+/* Os keyframes da transição vivem em motion.css. */
+
+/* ================================================= letras espalhadas ==== */
+
+/*
+ * Palco preso: as letras já estão posicionadas no fluxo; o scroll só
+ * controla opacidade e deslocamento vertical. Um só valor de cor, a
+ * profundidade vem da alfa — como na referência.
+ */
+.at-palco {
+  position: sticky;
+  top: 0;
+  display: grid;
+  place-items: center;
+  min-height: var(--at-tam-palco-scroll);
+  overflow: hidden;
+}
+
+.at-palco__circulo {
+  position: absolute;
+  width: min(78vw, 74em);
+  aspect-ratio: 1;
+  border: 1px solid var(--at-cor-filete-tenue);
+  border-radius: var(--at-raio-circulo);
+  pointer-events: none;
+}
+
+.at-palco__legenda {
+  position: relative;
+  text-align: center;
+}
+
+.at-palco__letras {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/*
+ * Atenção: --at-mov-dist-letra é resolvido AQUI, onde 1em vale o tamanho do
+ * próprio glifo (cartaz-xl). O deslocamento é portanto proporcional à letra,
+ * não ao corpo de texto — que é o comportamento medido na referência
+ * (≈9px de offset para glifos de ≈185px, ou seja ~0.05em do glifo).
+ */
+.at-letra {
+  position: absolute;
+  font-family: var(--at-tipo-familia-cartaz);
+  font-weight: var(--at-tipo-peso-cartaz);
+  font-size: var(--at-tipo-cartaz-xl);
+  line-height: 0.8;
+  text-transform: uppercase;
+  color: var(--at-cor-tinta);
+  opacity: var(--at-letra-opacidade, 0);
+  transform: translateY(var(--at-letra-deslocamento, var(--at-mov-dist-letra)));
+  will-change: opacity, transform;
+}
+
+.at-midia__preenchimento {
+  width: 100%;
+  height: 100%;
+  background-image: var(--at-grad-midia-vazia);
+}
+
+/* As primitivas de revelação (at-revelar / at-subir / at-midia-revela)
+   vivem em motion.css. */
+
+/* ========================================================== no-scroll === */
+
+.at-sem-rolagem {
+  overflow: hidden;
+}

@@ -1,0 +1,750 @@
+/*
+ * Átrio — foundations
+ *
+ * Camada base: reset, motor de escala fluida, superfícies, contêineres,
+ * grades, ritmo vertical, controles, foco e preferências do usuário.
+ *
+ * Nenhum valor literal deve aparecer aqui: tudo vem de tokens.css.
+ * Exceções conscientes estão comentadas caso a caso.
+ */
+
+/* ---------------------------------------------------------------- reset -- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/*
+ * MOTOR DE ESCALA FLUIDA — o achado estrutural da referência.
+ *
+ * Toda a tipografia e boa parte da geometria são declaradas em `em`.
+ * O `font-size` do body é a única entrada fluida: quando ele cresce,
+ * títulos, molduras, raios e cartões crescem juntos, em proporção fixa.
+ *
+ * Três regimes, medidos na referência:
+ *   ≤ 991px   rampa suave (o texto não pode encolher demais no celular)
+ *   992–1511  rampa principal
+ *   ≥ 1512px  teto — a escala trava e o layout passa a crescer só em largura
+ */
+body {
+  font-size: var(--at-escala-rampa-mobile);
+  font-family: var(--at-tipo-familia-corpo);
+  font-weight: var(--at-tipo-peso-corpo);
+  line-height: var(--at-tipo-lh-corpo);
+  color: var(--at-cor-texto);
+  background-color: var(--at-cor-papel);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+@media (min-width: 992px) {
+  body {
+    font-size: var(--at-escala-rampa-desktop);
+  }
+}
+
+@media (min-width: 1512px) {
+  body {
+    font-size: var(--at-escala-teto-desktop);
+  }
+}
+
+/* ----------------------------------------------------------- tipografia -- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--at-tipo-familia-display);
+  font-weight: var(--at-tipo-peso-display);
+  letter-spacing: var(--at-tipo-tracking-display);
+  text-wrap: balance;
+}
+
+/*
+ * A escala tem um salto deliberado entre display e subordinados:
+ * do XL (8.33em) para o LG (4.5em) há quase o dobro; do MD para baixo
+ * a razão cai para ~1.2. Isso concentra o contraste no topo da hierarquia
+ * e mantém o restante calmo.
+ */
+.at-display-xl {
+  font-size: var(--at-tipo-display-xl);
+  line-height: var(--at-tipo-lh-display);
+}
+
+.at-display-lg {
+  font-size: var(--at-tipo-display-lg);
+  line-height: var(--at-tipo-lh-display-lg);
+}
+
+.at-display-md {
+  font-size: var(--at-tipo-display-md);
+  line-height: var(--at-tipo-lh-display-md);
+}
+
+.at-display-sm {
+  font-size: var(--at-tipo-display-sm);
+  line-height: var(--at-tipo-lh-display-md);
+}
+
+.at-display-xs {
+  font-size: var(--at-tipo-display-xs);
+  line-height: var(--at-tipo-lh-display-md);
+}
+
+/* Cartaz: a voz condensada, reservada a poucas palavras por página. */
+.at-cartaz-xl,
+.at-cartaz-lg,
+.at-cartaz-md {
+  font-family: var(--at-tipo-familia-cartaz);
+  font-weight: var(--at-tipo-peso-cartaz);
+  line-height: var(--at-tipo-lh-cartaz);
+  text-transform: uppercase;
+}
+
+.at-cartaz-xl {
+  font-size: var(--at-tipo-cartaz-xl);
+}
+
+.at-cartaz-lg {
+  font-size: var(--at-tipo-cartaz-lg);
+}
+
+.at-cartaz-md {
+  font-size: var(--at-tipo-cartaz-md);
+}
+
+.at-corpo-lg {
+  font-size: var(--at-tipo-corpo-lg);
+  line-height: var(--at-tipo-lh-corpo);
+}
+
+.at-corpo {
+  font-size: var(--at-tipo-corpo);
+  line-height: var(--at-tipo-lh-corpo);
+}
+
+/* Rótulo: caixa-alta curta, usada em olho-de-seção e controles. */
+.at-rotulo {
+  font-family: var(--at-tipo-familia-display);
+  font-weight: var(--at-tipo-peso-display);
+  font-size: var(--at-tipo-rotulo);
+  line-height: var(--at-tipo-lh-rotulo);
+  letter-spacing: var(--at-tipo-tracking-rotulo);
+  text-transform: uppercase;
+}
+
+/* Micro: monoespaçada, exclusiva de aviso legal e metadados. */
+.at-micro {
+  font-family: var(--at-tipo-familia-mono);
+  font-size: var(--at-tipo-micro);
+  line-height: var(--at-tipo-lh-corpo);
+  letter-spacing: var(--at-tipo-tracking-micro);
+  text-transform: uppercase;
+}
+
+.at-medida {
+  max-width: var(--at-tipo-medida-editorial);
+}
+
+.at-medida-texto {
+  max-width: var(--at-tipo-medida-texto);
+}
+
+@media (max-width: 767px) {
+  .at-display-xl {
+    font-size: var(--at-tipo-display-xl-mobile);
+  }
+
+  .at-display-lg {
+    font-size: var(--at-tipo-display-lg-mobile);
+  }
+
+  .at-cartaz-xl {
+    font-size: var(--at-tipo-cartaz-xl-mobile);
+  }
+
+  .at-cartaz-lg {
+    font-size: var(--at-tipo-cartaz-lg-mobile);
+  }
+
+  .at-corpo-lg {
+    font-size: var(--at-tipo-corpo-lg-mobile);
+  }
+}
+
+p + p {
+  margin-top: var(--at-esp-4);
+}
+
+/* -------------------------------------------------------- superfícies --- */
+
+.at-superficie-papel {
+  background-color: var(--at-cor-papel);
+  color: var(--at-cor-texto);
+}
+
+.at-superficie-linho {
+  background-color: var(--at-cor-linho);
+  color: var(--at-cor-texto);
+}
+
+.at-superficie-areia {
+  background-color: var(--at-cor-areia);
+  color: var(--at-cor-texto);
+}
+
+.at-superficie-areia-profunda {
+  background-color: var(--at-cor-areia-profunda);
+  color: var(--at-cor-texto);
+}
+
+/*
+ * A cor do texto é resolvida por HERANÇA, nunca por regra de descendência.
+ * Uma regra como `.at-superficie-tinta h3 { color: … }` atravessaria
+ * qualquer cartão claro aninhado e apagaria seus títulos. Cada superfície
+ * declara sua própria cor e os filhos herdam.
+ */
+.at-superficie-tinta {
+  background-color: var(--at-cor-tinta);
+  color: var(--at-cor-texto-inverso);
+}
+
+/*
+ * Lajes: seções são blocos arredondados empilhados, não faixas coladas.
+ * O raio é o mesmo em toda a família — é ele que dá a leitura de "cartão".
+ */
+.at-laje {
+  border-radius: var(--at-raio-laje);
+}
+
+.at-laje-base {
+  border-radius: 0 0 var(--at-raio-laje) var(--at-raio-laje);
+}
+
+.at-laje-topo {
+  border-radius: var(--at-raio-laje) var(--at-raio-laje) 0 0;
+}
+
+/* ------------------------------------------------------- contêineres ---- */
+
+.at-container {
+  width: 100%;
+  max-width: var(--at-larg-total);
+  margin-inline: auto;
+  padding-inline: var(--at-esp-8);
+}
+
+/*
+ * Moldura assimétrica: no desktop a margem esquerda é muito maior que a
+ * direita, empurrando o texto para dentro e deixando a mídia respirar na
+ * borda. Abaixo de 992px a assimetria é abandonada — ver responsive-system.md.
+ */
+.at-container-editorial {
+  width: 100%;
+  max-width: var(--at-larg-total);
+  margin-inline: auto;
+  padding: var(--at-esp-16) var(--at-esp-12) var(--at-esp-14)
+    var(--at-esp-moldura-lateral);
+}
+
+@media (max-width: 991px) {
+  .at-container-editorial {
+    padding: var(--at-esp-14) var(--at-esp-8) var(--at-esp-8);
+  }
+}
+
+@media (max-width: 767px) {
+  .at-container,
+  .at-container-editorial {
+    padding-inline: var(--at-esp-moldura-lateral-mobile);
+  }
+}
+
+/* ------------------------------------------------------------ grades ---- */
+
+.at-grade-editorial {
+  display: grid;
+  grid-template-columns: var(--at-grade-editorial-assimetrico);
+  gap: var(--at-grade-gutter);
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .at-grade-editorial {
+    grid-template-columns: 1fr;
+    gap: var(--at-esp-10);
+  }
+}
+
+.at-grade-cartoes {
+  display: grid;
+  grid-template-columns: var(--at-grade-cartoes);
+  gap: var(--at-grade-gutter);
+}
+
+@media (max-width: 767px) {
+  .at-grade-cartoes {
+    grid-template-columns: 1fr;
+    gap: var(--at-grade-gutter-mobile);
+  }
+}
+
+.at-pilha {
+  display: flex;
+  flex-direction: column;
+  gap: var(--at-esp-6);
+}
+
+.at-pilha-larga {
+  display: flex;
+  flex-direction: column;
+  gap: var(--at-esp-12);
+}
+
+/* ------------------------------------------------- ritmo vertical ------- */
+
+.at-secao {
+  padding-block: var(--at-esp-24);
+}
+
+.at-secao-densa {
+  padding-block: var(--at-esp-14);
+}
+
+.at-secao-ampla {
+  padding-block: var(--at-esp-32);
+}
+
+@media (max-width: 991px) {
+  .at-secao,
+  .at-secao-ampla {
+    padding-block: var(--at-esp-16);
+  }
+
+  .at-secao-densa {
+    padding-block: var(--at-esp-10);
+  }
+}
+
+/* ------------------------------------------------------------- links ---- */
+
+a {
+  color: inherit;
+  text-decoration-thickness: max(1px, 0.06em);
+  text-underline-offset: 0.18em;
+}
+
+.at-link {
+  display: inline-block;
+  border-bottom: var(--at-borda-filete);
+  padding-bottom: var(--at-esp-1);
+  text-decoration: none;
+  transition: opacity var(--at-dur-rapida) var(--at-ease-padrao);
+}
+
+.at-link:hover {
+  opacity: var(--at-opac-meio);
+}
+
+.at-superficie-tinta .at-link {
+  border-bottom-color: var(--at-cor-texto-inverso);
+}
+
+/* ------------------------------------------------------------ botões ---- */
+
+/*
+ * Um só formato: pílula. A diferença entre ações é a superfície, não a
+ * forma — o que mantém a página calma mesmo com muitos CTAs.
+ */
+.at-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--at-esp-2);
+  min-height: var(--at-tam-alvo-minimo);
+  padding: var(--at-esp-3) var(--at-esp-6);
+  border: var(--at-borda-filete);
+  border-radius: var(--at-raio-pilula);
+  font-family: var(--at-tipo-familia-display);
+  font-weight: var(--at-tipo-peso-display);
+  font-size: var(--at-tipo-rotulo);
+  line-height: var(--at-tipo-lh-rotulo);
+  letter-spacing: var(--at-tipo-tracking-rotulo);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--at-dur-rapida) var(--at-ease-padrao),
+    color var(--at-dur-rapida) var(--at-ease-padrao),
+    transform var(--at-dur-instantanea) var(--at-ease-padrao);
+}
+
+.at-botao--primario {
+  background-color: var(--at-cor-tinta);
+  color: var(--at-cor-texto-inverso);
+}
+
+.at-botao--primario:hover {
+  background-color: var(--at-cor-tinta-suave);
+}
+
+.at-botao--secundario {
+  background-color: var(--at-cor-areia);
+  color: var(--at-cor-texto);
+}
+
+.at-botao--secundario:hover {
+  background-color: var(--at-cor-areia-profunda);
+}
+
+.at-botao--fantasma {
+  background-color: transparent;
+  color: inherit;
+  border-color: currentcolor;
+}
+
+.at-botao--fantasma:hover {
+  background-color: color-mix(in srgb, currentcolor 12%, transparent);
+}
+
+.at-botao:active {
+  transform: scale(var(--at-mov-escala-pressionado));
+}
+
+.at-botao[disabled],
+.at-botao[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: var(--at-opac-tenue);
+}
+
+/* Ação circular: usada para setas e atalhos persistentes. */
+.at-botao-circulo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--at-tam-icone-circulo);
+  height: var(--at-tam-icone-circulo);
+  min-width: var(--at-tam-alvo-minimo);
+  min-height: var(--at-tam-alvo-minimo);
+  padding: 0;
+  border: var(--at-borda-filete);
+  border-radius: var(--at-raio-circulo);
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    background-color var(--at-dur-rapida) var(--at-ease-padrao),
+    color var(--at-dur-rapida) var(--at-ease-padrao);
+}
+
+.at-botao-circulo:hover {
+  background-color: var(--at-cor-tinta);
+  color: var(--at-cor-texto-inverso);
+}
+
+.at-botao-circulo[disabled] {
+  opacity: var(--at-opac-fantasma);
+  cursor: not-allowed;
+}
+
+.at-botao-circulo[disabled]:hover {
+  background-color: transparent;
+  color: inherit;
+}
+
+.at-superficie-tinta .at-botao-circulo:hover {
+  background-color: var(--at-cor-texto-inverso);
+  color: var(--at-cor-tinta);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* --------------------------------------------------------- anel de foco -- */
+
+/*
+ * A referência não declara nenhuma regra :focus-visible em 1685 regras.
+ * Aqui o anel é explícito, espesso e presente em todas as superfícies.
+ */
+:focus-visible {
+  outline: var(--at-foco-espessura) var(--at-foco-estilo) var(--at-foco-cor);
+  outline-offset: var(--at-foco-deslocamento);
+  border-radius: var(--at-raio-sutil);
+}
+
+/* O menu abre sobre areia clara: ali o anel escuro continua correto. */
+.at-superficie-tinta :focus-visible {
+  outline-color: var(--at-foco-cor-inversa);
+}
+
+::selection {
+  background-color: var(--at-cor-tinta);
+  color: var(--at-cor-texto-inverso);
+}
+
+/* Link de salto: primeiro elemento tabulável do documento. */
+.at-pular {
+  position: absolute;
+  left: var(--at-esp-4);
+  top: var(--at-esp-4);
+  z-index: var(--at-z-transicao);
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--at-tam-alvo-minimo);
+  padding: var(--at-esp-3) var(--at-esp-5);
+  background-color: var(--at-cor-tinta);
+  color: var(--at-cor-texto-inverso);
+  border-radius: var(--at-raio-pilula);
+  text-decoration: none;
+  transform: translateY(calc(-100% - var(--at-esp-8)));
+  transition: transform var(--at-dur-rapida) var(--at-ease-padrao);
+}
+
+.at-pular:focus {
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------ mídia ----- */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+/*
+ * Molduras de mídia sempre reservam proporção. A referência sofre CLS 1.64
+ * em campo; reservar caixa é a metade barata da correção (a outra é a fonte).
+ */
+.at-midia {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: var(--at-img-proporcao-quadrada);
+  background-image: var(--at-grad-midia-vazia);
+}
+
+.at-midia > img,
+.at-midia > video {
+  width: 100%;
+  height: 100%;
+  object-fit: var(--at-img-enquadramento);
+  object-position: var(--at-img-ancoragem);
+}
+
+.at-midia--retrato {
+  aspect-ratio: var(--at-img-proporcao-retrato);
+}
+
+.at-midia--paisagem {
+  aspect-ratio: var(--at-img-proporcao-paisagem);
+}
+
+.at-midia--editorial {
+  aspect-ratio: var(--at-img-proporcao-editorial);
+}
+
+/*
+ * Arco: canto superior esquerdo com raio enorme, os demais quase retos.
+ * É a assinatura formal do sistema — uma silhueta de abóbada, não um
+ * retângulo arredondado.
+ */
+.at-midia--arco {
+  border-radius: var(--at-img-arco-topo-esquerdo);
+}
+
+@media (max-width: 767px) {
+  .at-midia--arco {
+    border-radius: var(--at-img-arco-topo-esquerdo-mobile);
+  }
+}
+
+.at-midia--escura {
+  background-image: var(--at-grad-midia-vazia-escura);
+}
+
+/* ---------------------------------------------------------- formulários -- */
+
+label {
+  display: block;
+  font-family: var(--at-tipo-familia-display);
+  font-weight: var(--at-tipo-peso-display);
+  font-size: var(--at-tipo-rotulo);
+  line-height: var(--at-tipo-lh-rotulo);
+  letter-spacing: var(--at-tipo-tracking-rotulo);
+  text-transform: uppercase;
+  margin-bottom: var(--at-esp-2);
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: var(--at-campo-texto);
+  width: 100%;
+  min-height: var(--at-campo-altura-minima);
+  padding: var(--at-campo-padding);
+  background-color: var(--at-campo-fundo);
+  border: 1px solid var(--at-campo-borda);
+  border-radius: var(--at-campo-raio);
+  transition: border-color var(--at-dur-rapida) var(--at-ease-padrao);
+}
+
+textarea {
+  min-height: calc(var(--at-campo-altura-minima) * 3);
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--at-campo-placeholder);
+  opacity: 1;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--at-campo-borda-foco);
+}
+
+input[disabled],
+textarea[disabled],
+select[disabled] {
+  background-color: var(--at-campo-desabilitado-fundo);
+  color: var(--at-campo-desabilitado-texto);
+  cursor: not-allowed;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--at-campo-invalido-borda);
+  border-width: 2px;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  min-height: auto;
+  inline-size: 1.15em;
+  block-size: 1.15em;
+  accent-color: var(--at-cor-tinta);
+}
+
+/* ---------------------------------------------------------- feedback ---- */
+
+.at-feedback {
+  display: flex;
+  gap: var(--at-esp-3);
+  padding: var(--at-esp-4) var(--at-esp-5);
+  border-radius: var(--at-campo-raio);
+  font-size: var(--at-tipo-corpo);
+}
+
+.at-feedback--sucesso {
+  background-color: var(--at-cor-sucesso-fundo);
+  color: var(--at-cor-sucesso);
+}
+
+.at-feedback--erro {
+  background-color: var(--at-cor-erro-fundo);
+  color: var(--at-cor-erro);
+}
+
+.at-erro-campo {
+  display: block;
+  margin-top: var(--at-esp-2);
+  color: var(--at-cor-erro);
+  font-size: var(--at-tipo-corpo);
+}
+
+/* --------------------------------------------------------- utilitários -- */
+
+.at-visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.at-regua {
+  border: 0;
+  border-top: var(--at-borda-regua);
+}
+
+.at-filete {
+  border: 0;
+  border-top: var(--at-borda-filete-tenue);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ------------------------------------------------- preferências ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * Modo de cores forçadas: preservar a estrutura (bordas, foco, silhuetas)
+ * quando o sistema descarta as cores do autor.
+ */
+@media (forced-colors: active) {
+  .at-botao,
+  .at-botao-circulo,
+  .at-cartao,
+  .at-painel {
+    border: 1px solid currentcolor;
+  }
+
+  :focus-visible {
+    outline: 3px solid CanvasText;
+  }
+
+  .at-midia {
+    border: 1px solid CanvasText;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --at-cor-texto-tenue: var(--at-cor-tinta);
+    --at-cor-filete-tenue: var(--at-cor-tinta);
+    --at-campo-borda: var(--at-cor-tinta);
+  }
+}

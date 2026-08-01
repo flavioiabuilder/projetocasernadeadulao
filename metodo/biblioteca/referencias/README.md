@@ -35,4 +35,5 @@ reconstruções, capturas pesadas nem ativos de
 ## Entradas
 
 - [`entradas/aramco-birth-of-oil.md`](entradas/aramco-birth-of-oil.md)
+- [`entradas/soul-church.md`](entradas/soul-church.md)
 - [`entradas/pesquisa-visual-discipulando.md`](entradas/pesquisa-visual-discipulando.md)

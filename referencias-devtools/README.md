@@ -63,6 +63,11 @@ Cada nova referência deve:
 
 ## Referências neste repositório
 
-| Slug                                           | Referência                | Reconstrução |
-| ---------------------------------------------- | ------------------------- | ------------ |
-| [`aramco-birth-of-oil/`](aramco-birth-of-oil/) | Aramco — The Birth of Oil | Estratos     |
+| Slug                                           | Referência                | Reconstrução | Eixo principal                                           |
+| ---------------------------------------------- | ------------------------- | ------------ | -------------------------------------------------------- |
+| [`aramco-birth-of-oil/`](aramco-birth-of-oil/) | Aramco — The Birth of Oil | Estratos     | Narrativa imersiva: progresso discreto, cena WebGL       |
+| [`soul-church/`](soul-church/)                 | Soul Church               | Átrio        | Editorial comunitário: escala fluida, lajes, acolhimento |
+
+Cada reconstrução recebe nome próprio, sem relação com a marca estudada. O
+nome da referência aparece apenas na documentação de auditoria, para indicar
+a fonte.

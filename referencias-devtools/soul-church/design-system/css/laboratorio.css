@@ -1,0 +1,270 @@
+/*
+ * Átrio — moldura do laboratório.
+ *
+ * Nenhum valor aqui pertence ao design system: é só a documentação viva.
+ * Os espécimes usam tokens; a página que os apresenta usa o mínimo.
+ */
+
+body {
+  background-color: var(--at-cor-papel);
+}
+
+.lab {
+  max-width: 74em;
+  margin-inline: auto;
+  padding: var(--at-esp-14) var(--at-esp-8) var(--at-esp-24);
+}
+
+.lab__cabecalho {
+  padding-bottom: var(--at-esp-8);
+  margin-bottom: var(--at-esp-12);
+  border-bottom: var(--at-borda-regua);
+}
+
+.lab__intro {
+  max-width: var(--at-tipo-medida-texto);
+  color: var(--at-cor-texto-tenue);
+}
+
+.lab__sumario ol {
+  columns: 2;
+  gap: var(--at-esp-8);
+  list-style: none;
+  padding: 0;
+  margin-top: var(--at-esp-6);
+}
+
+@media (max-width: 767px) {
+  .lab__sumario ol {
+    columns: 1;
+  }
+}
+
+.lab section {
+  margin-bottom: var(--at-esp-20);
+  scroll-margin-top: var(--at-esp-6);
+}
+
+.lab section > h2 {
+  font-size: var(--at-tipo-display-md);
+  line-height: var(--at-tipo-lh-display-md);
+  padding-bottom: var(--at-esp-2);
+  border-bottom: var(--at-borda-filete-tenue);
+  margin-bottom: var(--at-esp-4);
+}
+
+/*
+ * Filho direto apenas: um seletor `.lab h3` solto vazaria para dentro dos
+ * espécimes e repintaria os títulos dos componentes — foi assim que o
+ * cartão de acento reprovou no contraste.
+ */
+.lab section > h3 {
+  font-family: var(--at-tipo-familia-display);
+  font-size: var(--at-tipo-rotulo);
+  letter-spacing: var(--at-tipo-tracking-rotulo);
+  text-transform: uppercase;
+  color: var(--at-cor-texto-tenue);
+  margin: var(--at-esp-8) 0 var(--at-esp-3);
+}
+
+.lab__nota {
+  max-width: var(--at-tipo-medida-texto);
+  color: var(--at-cor-texto-tenue);
+  margin-bottom: var(--at-esp-5);
+}
+
+/* ----------------------------------------------------------- espécimes -- */
+
+.lab__grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11em, 1fr));
+  gap: var(--at-esp-3);
+}
+
+.lab__amostra {
+  border: 1px solid var(--at-cor-filete-tenue);
+  border-radius: var(--at-raio-sutil);
+  overflow: hidden;
+}
+
+.lab__chapa {
+  height: 4.5em;
+}
+
+.lab__meta {
+  padding: var(--at-esp-3);
+  font-size: var(--at-tipo-micro);
+  line-height: 1.5;
+}
+
+.lab__meta code {
+  display: block;
+  font-family: var(--at-tipo-familia-mono);
+  color: var(--at-cor-texto-tenue);
+  word-break: break-all;
+}
+
+.lab__caixa {
+  padding: var(--at-esp-6);
+  border: 1px solid var(--at-cor-filete-tenue);
+  border-radius: var(--at-raio-sutil);
+  overflow: hidden;
+}
+
+.lab__caixa--escura {
+  background-color: var(--at-cor-tinta);
+  color: var(--at-cor-texto-inverso);
+}
+
+.lab__linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--at-esp-4);
+  padding: var(--at-esp-5);
+  border: 1px solid var(--at-cor-filete-tenue);
+  border-radius: var(--at-raio-sutil);
+}
+
+.lab__pilha {
+  display: flex;
+  flex-direction: column;
+  gap: var(--at-esp-4);
+}
+
+/* Régua de escala: cada degrau ao lado do seu valor. */
+.lab__degrau {
+  display: grid;
+  grid-template-columns: 7em 1fr;
+  align-items: baseline;
+  gap: var(--at-esp-4);
+  padding-block: var(--at-esp-2);
+  border-bottom: 1px solid var(--at-cor-filete-tenue);
+}
+
+.lab__degrau code {
+  font-family: var(--at-tipo-familia-mono);
+  font-size: var(--at-tipo-micro);
+  color: var(--at-cor-texto-tenue);
+}
+
+.lab__degrau > :last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Barras de espaçamento */
+.lab__barra {
+  height: 1.5em;
+  background-color: var(--at-cor-areia-profunda);
+  border-radius: 2px;
+}
+
+/* Grade de demonstração */
+.lab__colunas {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--at-grade-gutter);
+}
+
+.lab__coluna {
+  height: 3.5em;
+  background-color: var(--at-cor-areia);
+  border-radius: 2px;
+}
+
+.lab__estado {
+  display: grid;
+  gap: var(--at-esp-2);
+  justify-items: start;
+}
+
+.lab__legenda {
+  font-family: var(--at-tipo-familia-mono);
+  font-size: var(--at-tipo-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--at-tipo-tracking-micro);
+  color: var(--at-cor-texto-tenue);
+}
+
+.lab__palco-demo {
+  position: relative;
+  height: 18em;
+  border: 1px solid var(--at-cor-filete-tenue);
+  border-radius: var(--at-raio-sutil);
+  overflow: hidden;
+  background-color: var(--at-cor-linho);
+}
+
+.lab__palco-demo .at-letra {
+  font-size: var(--at-tipo-cartaz-md);
+  opacity: 1;
+  transform: none;
+}
+
+.lab__aviso {
+  padding: var(--at-esp-4) var(--at-esp-5);
+  border-left: 3px solid var(--at-cor-tinta);
+  background-color: var(--at-cor-linho);
+  max-width: var(--at-tipo-medida-texto);
+}
+
+.lab__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--at-esp-5);
+  max-width: 28em;
+}
+
+.lab__campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.lab__consentimento {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: var(--at-esp-3);
+}
+
+.lab__consentimento label {
+  margin-bottom: 0;
+  font-family: var(--at-tipo-familia-corpo);
+  font-weight: var(--at-tipo-peso-corpo);
+  font-size: var(--at-tipo-corpo);
+  line-height: var(--at-tipo-lh-corpo);
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.lab__tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--at-tipo-corpo);
+}
+
+.lab__tabela th,
+.lab__tabela td {
+  text-align: left;
+  padding: var(--at-esp-2) var(--at-esp-3);
+  border-bottom: 1px solid var(--at-cor-filete-tenue);
+  vertical-align: top;
+}
+
+.lab__tabela th {
+  font-family: var(--at-tipo-familia-display);
+  font-size: var(--at-tipo-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--at-tipo-tracking-micro);
+}
+
+.lab__tabela code {
+  font-family: var(--at-tipo-familia-mono);
+  font-size: var(--at-tipo-micro);
+}
+
+.lab__rolagem {
+  overflow-x: auto;
+}

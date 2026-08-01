@@ -1,0 +1,217 @@
+/*
+ * Átrio — estilos exclusivos da demonstração.
+ *
+ * Nada aqui pertence ao design system: é a composição de uma página
+ * específica, feita com os tokens e os componentes. Se um padrão daqui
+ * aparecer numa segunda página, ele sobe para components.css.
+ */
+
+body {
+  background-color: var(--at-cor-papel);
+}
+
+/* Compensa o cabeçalho fixo na navegação por âncora. */
+:target {
+  scroll-margin-top: calc(var(--at-tam-logo) + var(--at-esp-12));
+}
+
+.at-demo-acoes {
+  margin-top: var(--at-esp-6);
+}
+
+/* ------------------------------------------------------ boas-vindas ----- */
+
+.at-demo-boas-vindas {
+  /* A laje branca cobre a mídia do hero: por isso o recuo negativo. */
+  position: relative;
+  z-index: var(--at-z-conteudo);
+  margin-top: calc(var(--at-esp-8) * -1);
+}
+
+/*
+ * O canto arredondado só existe se houver outra superfície atrás dele. A
+ * seção seguinte sobe por baixo da laje exatamente a altura do raio, e
+ * recupera esse espaço no próprio padding — é assim que a pilha de lajes
+ * se lê como cartões empilhados, e não como faixas coladas.
+ */
+.at-demo-palco-alcance {
+  margin-top: calc(var(--at-raio-laje) * -1);
+  padding-top: var(--at-raio-laje);
+}
+
+/*
+ * O vão entre título e parágrafo é intencionalmente grande. É ele que cria
+ * o silêncio no meio da coluna, contra a massa da imagem ao lado.
+ */
+.at-demo-coluna-texto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--at-esp-20);
+}
+
+@media (max-width: 991px) {
+  .at-demo-coluna-texto {
+    gap: var(--at-esp-8);
+  }
+}
+
+.at-demo-boas-vindas .at-midia--arco {
+  --at-parallax-amplitude: 1.5em;
+}
+
+/* ------------------------------------------------------ palco scroll ---- */
+
+/*
+ * O alcance é o que dá tempo à revelação: a seção mede três viewports,
+ * o palco fica preso no topo e o progresso é medido sobre essa diferença.
+ */
+.at-demo-palco-alcance {
+  min-height: 300vh;
+}
+
+@media (max-width: 767px) {
+  .at-demo-palco-alcance {
+    min-height: 220vh;
+  }
+}
+
+.at-demo-palco-alcance .at-palco__legenda {
+  max-width: 26em;
+  padding-inline: var(--at-esp-8);
+}
+
+.at-demo-palco-alcance .at-palco__legenda h2 {
+  color: var(--at-cor-texto-tenue);
+  margin-bottom: var(--at-esp-2);
+}
+
+.at-demo-palco-alcance .at-palco__legenda p {
+  font-size: var(--at-tipo-display-md);
+  line-height: var(--at-tipo-lh-display-md);
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* --------------------------------------------------------- laje escura -- */
+
+.at-demo-slab {
+  margin-inline: var(--at-esp-4);
+  overflow: hidden;
+}
+
+/*
+ * Título maior que o contêiner, cortado no topo. O recorte é o efeito:
+ * a palavra não cabe, e é isso que dá escala à página.
+ *
+ * A medida é em `em` do PRÓPRIO título (8.33em do corpo): 0.15em aqui vale
+ * ~15% da altura do glifo, não 15% do corpo de texto. Escrever este recuo
+ * com um token de espaçamento produziria um recuo doze vezes maior.
+ */
+.at-demo-titulo-sangrado {
+  margin-top: -0.15em;
+  margin-bottom: 0.35em;
+}
+
+@media (max-width: 767px) {
+  .at-demo-titulo-sangrado {
+    margin-top: -0.08em;
+    margin-bottom: 0.3em;
+  }
+}
+
+.at-demo-caminhos {
+  align-items: stretch;
+}
+
+/* -------------------------------------------------------- cabeçalhos ---- */
+
+.at-demo-cabecalho-secao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--at-esp-6);
+  margin-bottom: var(--at-esp-12);
+}
+
+/* --------------------------------------------------------- horários ----- */
+
+.at-demo-horarios-grade {
+  display: grid;
+  grid-template-columns: var(--at-grade-editorial-assimetrico);
+  gap: var(--at-esp-12);
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .at-demo-horarios-grade {
+    grid-template-columns: 1fr;
+    gap: var(--at-esp-8);
+  }
+}
+
+/* ---------------------------------------------------------- marquee ----- */
+
+.at-marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--at-marquee-gap);
+}
+
+.at-marquee__separador {
+  opacity: var(--at-opac-tenue);
+}
+
+/* ---------------------------------------------------------- rodapé ------ */
+
+.at-demo-inscrever {
+  align-self: flex-start;
+  margin-top: var(--at-esp-2);
+}
+
+/* ---------------------------------------------------------- painel ------ */
+
+.at-demo-assunto-texto {
+  padding: var(--at-esp-4) 0 var(--at-esp-6);
+}
+
+.at-demo-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--at-esp-5);
+  padding-bottom: var(--at-esp-6);
+}
+
+.at-demo-campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.at-demo-consentimento {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: var(--at-esp-3);
+}
+
+.at-demo-consentimento .at-erro-campo {
+  grid-column: 1 / -1;
+}
+
+/*
+ * O rótulo do consentimento é frase, não etiqueta: precisa ser lido, então
+ * abandona a caixa-alta do resto dos labels.
+ */
+.at-demo-consentimento__rotulo {
+  margin-bottom: 0;
+  font-family: var(--at-tipo-familia-corpo);
+  font-weight: var(--at-tipo-peso-corpo);
+  font-size: var(--at-tipo-corpo);
+  line-height: var(--at-tipo-lh-corpo);
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.at-demo-aviso-local {
+  color: var(--at-cor-texto-tenue);
+}
