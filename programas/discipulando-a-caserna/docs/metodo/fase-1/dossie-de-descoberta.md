@@ -158,107 +158,172 @@ Ver briefing § métricas (compreensão, decisão, fidelidade, completude). Anal
 
 ## 6. Pesquisa externa — análogos (amostra de 7)
 
-Data de acesso deste dossiê: **2026-07-31**, salvo indicação.
+Data de acesso deste dossiê: **2026-07-31**; revalidação parcial **2026-08-01**.
 
-### 6.1 PMs de Cristo (Brasil)
+**Contrato da amostra final:** cada ficha abaixo preenche os campos mínimos
+(organização, país/contexto, classificação, público, promessa, prova,
+estrutura pública, próximo passo, tom, convenções, acertos, inadequações,
+lacuna, fonte, título, data, evidência, inferência) ou fica fora da amostra
+como INCOMPLETO / arquivado.
 
-| Campo                   | Conteúdo                                                                                            |
-| ----------------------- | --------------------------------------------------------------------------------------------------- |
-| Classificação           | Análogo institucional / referência de capelania                                                     |
-| País                    | Brasil (SP)                                                                                         |
-| Público declarado       | Família policial militar                                                                            |
-| Promessa                | Apoio espiritual/emocional; valorização da pessoa do PM                                             |
-| Prova                   | Capelania, Programa Polícia e Igreja, associação                                                    |
-| Próximo passo           | Associação / voluntariado / parceria de igrejas                                                     |
-| Tom                     | Pastoral de cuidado; mobilização                                                                    |
-| O que faz bem           | Clareza de cuidado à família policial; capelania                                                    |
-| O que não serve         | Não é currículo anual 48 lições para custodiados; não é prospecto de validação pastoral de material |
-| Lacuna explorável       | Prospecto que distingue cuidado pontual vs percurso estruturado de discipulado                      |
-| Fonte                   | https://www.pmsdecristo.org.br/quem-somos/ ; capelania; polícia e igreja                            |
-| Evidência vs inferência | Missão/visão = evidência do site; “não é currículo 48” = inferência comparativa                     |
+### 6.1 PMs de Cristo (Brasil) — amostra final
 
-### 6.2 UMCEB (Brasil)
+| Campo             | Conteúdo                                                                                            |
+| ----------------- | --------------------------------------------------------------------------------------------------- |
+| Organização       | PMs de Cristo                                                                                       |
+| País/contexto     | Brasil (SP)                                                                                         |
+| Classificação     | Análogo institucional / referência de capelania                                                     |
+| Público           | Família policial militar                                                                            |
+| Promessa          | Apoio espiritual/emocional; valorização da pessoa do PM                                             |
+| Prova             | Capelania, Programa Polícia e Igreja, associação                                                    |
+| Estrutura pública | Quem somos; capelania; programas de cuidado                                                         |
+| Próximo passo     | Associação / voluntariado / parceria de igrejas                                                     |
+| Tom               | Pastoral de cuidado; mobilização                                                                    |
+| Convenções        | Linguagem de família policial; chamada a parceria eclesial                                          |
+| Acertos           | Clareza de cuidado à família policial; capelania                                                    |
+| Inadequações      | Não é currículo anual 48 lições para custodiados; não é prospecto de validação pastoral de material |
+| Lacuna            | Prospecto que distingue cuidado pontual vs percurso estruturado de discipulado                      |
+| Fonte             | https://www.pmsdecristo.org.br/quem-somos/                                                          |
+| Título            | Quem somos — PMs de Cristo                                                                          |
+| Data              | 2026-07-31                                                                                          |
+| Evidência         | Missão/visão e programas descritos no site                                                          |
+| Inferência        | “Não é currículo 48 / prospecto de Guia” = comparação com o piloto                                  |
 
-| Campo                   | Conteúdo                                                           |
-| ----------------------- | ------------------------------------------------------------------ |
-| Classificação           | Rede brasileira / referência organizacional                        |
-| País                    | Brasil                                                             |
-| Público                 | Militares e segurança pública evangélicos e familiares             |
-| Promessa                | Companheirismo, evangelização no meio militar, maturidade          |
-| Prova                   | Histórico desde AOE/AOC; uniões estaduais; vínculo AMCF            |
-| Próximo passo           | Integração em núcleos/associações; congressos                      |
-| Tom                     | Institucional associativo                                          |
-| O que faz bem           | Escala nacional; linguagem de unidade                              |
-| O que não serve         | Não substitui Guia/módulo de discipulado com estados de produção   |
-| Fonte                   | https://umceb.com.br/site/historico.html                           |
-| Evidência vs inferência | Histórico/missão = evidência; diferença de entregável = inferência |
+### 6.2 UMCEB (Brasil) — amostra final
 
-### 6.3 PMCE — CSASR / organograma (contexto oficial)
+| Campo             | Conteúdo                                                         |
+| ----------------- | ---------------------------------------------------------------- |
+| Organização       | UMCEB                                                            |
+| País/contexto     | Brasil                                                           |
+| Classificação     | Rede brasileira / referência organizacional                      |
+| Público           | Militares e segurança pública evangélicos e familiares           |
+| Promessa          | Companheirismo, evangelização no meio militar, maturidade        |
+| Prova             | Histórico desde AOE/AOC; uniões estaduais; vínculo AMCF          |
+| Estrutura pública | Histórico institucional; rede de uniões                          |
+| Próximo passo     | Integração em núcleos/associações; congressos                    |
+| Tom               | Institucional associativo                                        |
+| Convenções        | Linguagem de unidade e companheirismo militar cristão            |
+| Acertos           | Escala nacional; linguagem de unidade                            |
+| Inadequações      | Não substitui Guia/módulo de discipulado com estados de produção |
+| Lacuna            | Entregável com estados de produção e pedido pastoral explícito   |
+| Fonte             | https://umceb.com.br/site/historico.html                         |
+| Título            | Histórico — UMCEB                                                |
+| Data              | 2026-07-31                                                       |
+| Evidência         | Histórico/missão no site                                         |
+| Inferência        | Diferença de entregável frente ao prospecto do piloto            |
 
-| Campo         | Conteúdo                                                                                                          |
-| ------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Classificação | Contexto institucional oficial (**não parceiro**)                                                                 |
-| País          | Brasil (CE)                                                                                                       |
-| Relevância    | Assistência social/espiritual/saúde; núcleo religioso na estrutura                                                |
-| Restrição     | Não inferir vínculo com Discipulando; menção PMCE = LACUNA p/ circulação ampliada (P0-08/TODO)                    |
-| Fonte         | https://www.pm.ce.gov.br/csasrpmce/ ; organograma 2025 (acesso na execução pode falhar; marcar LACUNA se offline) |
-| Data          | Tentativa 2026-07-31; CSASR fetch timeout neste ambiente — **verificar novamente na validação humana/técnica**    |
+### 6.3 PMCE — CSASR (contexto oficial) — amostra final
 
-### 6.4 Navigators Military (EUA / internacional)
+| Campo             | Conteúdo                                                                                                                                                         |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Organização       | PMCE — Diretoria de Saúde, Assistência Social e Religiosa (CSASR / DSASR)                                                                                        |
+| País/contexto     | Brasil (CE)                                                                                                                                                      |
+| Classificação     | Contexto institucional oficial (**não parceiro**)                                                                                                                |
+| Público           | Policiais militares (ativa/reserva) e, em alguns serviços, dependentes                                                                                           |
+| Promessa          | Acolher, cuidar e monitorar o PM; saúde, assistência social e espiritual                                                                                         |
+| Prova             | Página institucional com missão, visão, valores e programas (psicossocial, plantão, NAP, etc.)                                                                   |
+| Estrutura pública | Apresentação da diretoria; programas e atividades; contatos                                                                                                      |
+| Próximo passo     | Acesso a serviços da diretoria (não é “inscrição em discipulado”)                                                                                                |
+| Tom               | Órgão público de assistência                                                                                                                                     |
+| Convenções        | Vocabulário de saúde/assistência/espiritualidade institucional                                                                                                   |
+| Acertos           | Vocabulário oficial de assistência espiritual no contexto PMCE                                                                                                   |
+| Inadequações      | Não é currículo de discipulado; não autoriza chancela do piloto                                                                                                  |
+| Lacuna            | Vínculo jurídico/circulação ampliada do Discipulando com PMCE = LACUNA (P0-08)                                                                                   |
+| Fonte             | https://www.pm.ce.gov.br/csasrpmce/                                                                                                                              |
+| Título            | Diretoria de Saúde – DS/PMCE (CSASR)                                                                                                                             |
+| Data              | Revalidação 2026-08-01 (OK); tentativa anterior 2026-07-31 com timeout                                                                                           |
+| Evidência         | Missão: “serviço de saúde, assistência social e espiritual”; nome CSASR/DSASR na página                                                                          |
+| Inferência        | Qualquer parceria ou endosso do programa = proibido sem confirmação humana                                                                                       |
+| Aplicabilidade    | COMPLEMENTAR / CONTEXTO OFICIAL — não clínica do programa; não prova de parceria                                                                                 |
 
-| Campo           | Conteúdo                                                                     |
-| --------------- | ---------------------------------------------------------------------------- |
-| Classificação   | Referência internacional de discipulado                                      |
-| Público         | Militares EUA, famílias, veteranos, academias                                |
-| Promessa        | Discipulado life-to-life, estudos, mentoria, multiplicadores                 |
-| Prova           | Longevidade desde 1940s; trabalho com capelães                               |
-| O que faz bem   | Relacional, multiplicação                                                    |
-| O que não serve | Contexto EUA; não é apreciação de Guia pastoral BR; tom de ministry site     |
-| Fonte           | https://www.navigators.org/ministry/navigators-military/ (acesso 2026-07-31) |
+### 6.4 Navigators Military (EUA / internacional) — amostra final
 
-### 6.5 Officers’ Christian Fellowship (OCF)
+| Campo             | Conteúdo                                                                     |
+| ----------------- | ---------------------------------------------------------------------------- |
+| Organização       | The Navigators — Military                                                    |
+| País/contexto     | EUA / internacional                                                          |
+| Classificação     | Referência internacional de discipulado                                      |
+| Público           | Militares EUA, famílias, veteranos, academias                                |
+| Promessa          | Discipulado life-to-life, estudos, mentoria, multiplicadores                 |
+| Prova             | Longevidade desde 1940s; trabalho com capelães (declaração do ministry site) |
+| Estrutura pública | Página de ministry; recursos e relatos                                       |
+| Próximo passo     | Engajar-se no ministry / doação (padrão ministry site)                       |
+| Tom               | Ministry marketing internacional                                             |
+| Convenções        | Multiplicação relacional; linguagem de mission field militar                 |
+| Acertos           | Ênfase relacional e multiplicação                                            |
+| Inadequações      | Contexto EUA; não é apreciação de Guia pastoral BR                           |
+| Lacuna            | Forma BR de prospecto de material em apreciação                              |
+| Fonte             | https://www.navigators.org/ministry/navigators-military/                     |
+| Título            | Navigators Military                                                          |
+| Data              | 2026-07-31                                                                   |
+| Evidência         | Declarações públicas da página de ministry                                   |
+| Inferência        | Adequação limitada ao pedido pastoral do piloto                              |
 
-| Campo         | Conteúdo                                                          |
-| ------------- | ----------------------------------------------------------------- |
-| Classificação | Referência internacional                                          |
-| Público       | Oficiais / membros militares cristãos (EUA)                       |
-| Promessa      | Comunhão bíblica, crescimento, fé–família–profissão               |
-| Fonte         | https://www.ocfusa.org/learnmore/ ; handbook                      |
-| Nota          | Detalhe fino a confirmar online na revisão; classificação mantida |
+### 6.5 Cru Military — amostra final
 
-### 6.6 Cru Military
+| Campo             | Conteúdo                                                                                              |
+| ----------------- | ----------------------------------------------------------------------------------------------------- |
+| Organização       | Cru Military                                                                                          |
+| País/contexto     | EUA / 56 localidades EUA e 35 países (fact sheet)                                                     |
+| Classificação     | Referência internacional                                                                              |
+| Público           | Recrutas, ativa, reserva, separados e famílias                                                        |
+| Promessa          | Cuidado espiritual com capelães/igrejas antes, durante e depois de deployment                         |
+| Prova             | Fact sheet: fundação 1965; ~170 staff; programas SFRS, casamento, trauma                              |
+| Estrutura pública | Fact sheet + programas + loja de recursos                                                             |
+| Próximo passo     | Recursos, parcerias, doação (CTA “Give Bibles”)                                                       |
+| Tom               | Ministry / fact sheet corporativo de ONG                                                              |
+| Convenções        | Ciclos operacionais; parceria com capelania                                                           |
+| Acertos           | Clareza de cuidado em ciclos; nomeação de programas                                                   |
+| Inadequações      | Fact sheet ≠ pedido pastoral de Guia; CTAs de captação; não inferir parceria com o piloto             |
+| Lacuna            | Prospecto de validação de material com estados de produção                                            |
+| Fonte             | https://www.cru.org/us/en/about/news/fact-sheets/cru-military-fact-sheet.html                         |
+| Título            | Fact Sheet: Cru Military                                                                              |
+| Data              | 2026-08-01                                                                                            |
+| Evidência         | Purpose, scope, programs e resources no fact sheet                                                    |
+| Inferência        | Distância do entregável “prospecto de apreciação”                                                     |
 
-| Campo         | Conteúdo                                                                             |
-| ------------- | ------------------------------------------------------------------------------------ |
-| Classificação | Referência internacional                                                             |
-| Promessa      | Parceria com capelães/igrejas; cuidado antes/durante/depois de períodos operacionais |
-| Fonte         | https://www.cru.org/us/en/about/news/fact-sheets/cru-military-fact-sheet.html        |
-| Nota          | Fact sheet institucional; não inferir parceria com o piloto                          |
+### 6.6 Alternativa atual ao site (obrigatória) — amostra final
 
-### 6.7 Alternativa atual ao site (obrigatória)
+| Campo             | Conteúdo                                                                       |
+| ----------------- | ------------------------------------------------------------------------------ |
+| Organização       | Processo atual do Discipulando / Projeto (interno)                             |
+| País/contexto     | Brasil (Fortaleza-CE)                                                          |
+| Classificação     | Alternativa atual                                                              |
+| Público           | Autoridade pastoral em apreciação; implementadores                             |
+| Promessa          | Apresentar o percurso e o material via documentos e conversa                   |
+| Prova             | Guia Mestre; apostilas M1; protótipos; roteiro de homologação                  |
+| Estrutura pública | Não é um único documento digital rastreável de status                          |
+| Próximo passo     | Conversas e revisão de arquivos dispersos                                      |
+| Tom               | Pastoral / documental                                                          |
+| Convenções        | Autoridade do Guia; densidade impressa                                         |
+| Acertos           | Autoridade pastoral do Guia; detalhe curricular                                |
+| Inadequações      | Falta status digital rastreável de pedido com a11y e paridade                  |
+| Lacuna            | Superfície digital que torna legível pronto / condicionado / pedido            |
+| Fonte             | `fontes/guia-mestre/`, `conteudo/`, `docs/roteiro-…`, protótipos               |
+| Título            | Alternativa atual (Guia + apostilas + conversas + protótipos)                  |
+| Data              | 2026-07-31                                                                     |
+| Evidência         | Paths internos existentes no repositório                                       |
+| Inferência        | O prospecto complementariza, não substitui o Guia                              |
 
-| Campo         | Conteúdo                                                                       |
-| ------------- | ------------------------------------------------------------------------------ |
-| Classificação | Alternativa atual                                                              |
-| Componentes   | Guia Mestre PDF/DOCX; apostilas M1; conversas; protótipos; roteiro homologação |
-| O que faz bem | Autoridade pastoral do Guia; detalhe curricular                                |
-| Limite        | Não oferece documento digital rastreável de status/pedido com a11y e paridade  |
-| Fonte         | `fontes/guia-mestre/`, `conteudo/`, `docs/roteiro-…`, protótipos               |
+### Fora da amostra final (INCOMPLETO / arquivado)
 
-### Suplente (se falha)
-
-Armed Services Ministry — https://armedservicesministry.org/about/
+| Item | Status | Razão | Nota |
+| ---- | ------ | ----- | ---- |
+| Officers’ Christian Fellowship (OCF) — https://www.ocfusa.org/learnmore/ | **INCOMPLETO** | Revalidação 2026-08-01: timeout WebFetch; ficha anterior sem campos mínimos | Não inventar conteúdo; reavaliar se a URL estabilizar |
+| Armed Services Ministry — https://armedservicesministry.org/about/ | **Arquivado (suplente)** | Stub sem ficha; não satisfaz contrato da amostra | Mantido só como ponteiro histórico |
 
 ---
 
 ## 7. Contexto jurídico e salvaguardas (sem parecer)
 
-| Norma                  | Tema                                                       | Uso no briefing                | Classe             |
-| ---------------------- | ---------------------------------------------------------- | ------------------------------ | ------------------ |
-| CF art. 5º VI, VII, X  | Liberdade religiosa; assistência em internação; intimidade | Restrição de coerção/exposição | EXTERNO OFICIAL    |
-| Lei 9.982/2000         | Acesso à assistência religiosa com acordo do assistido     | Voluntariedade                 | EXTERNO OFICIAL    |
-| LEP art. 24            | Liberdade de culto; não obrigar participação               | Voluntariedade                 | EXTERNO OFICIAL    |
-| SAMHSA trauma-informed | Segurança, voz/escolha, confiança                          | Só comunicação; não clínica    | EXTERNO SECUNDÁRIO |
+Separar **autoridade da fonte** de **aplicabilidade ao projeto**.
+
+| Título / norma | Organização | URL / path | Data de acesso | Trecho ou tema utilizado | Autoridade | Aplicabilidade | Limitação |
+| -------------- | ----------- | ---------- | -------------- | ------------------------ | ---------- | -------------- | --------- |
+| CF art. 5º VI, VII, X | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm | 2026-07-31 | Liberdade religiosa; assistência em internação; intimidade | EXTERNO OFICIAL | COMPLEMENTAR — restrição de coerção/exposição na comunicação | Sem parecer jurídico; não autoriza conteúdo clínico |
+| Lei 9.982/2000 | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/leis/l9982.htm | 2026-07-31 | Acesso à assistência religiosa com acordo do assistido | EXTERNO OFICIAL | COMPLEMENTAR — voluntariedade | Sem parecer; não define currículo do programa |
+| LEP art. 24 | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/leis/l7210.htm | 2026-07-31 | Liberdade de culto; não obrigar participação | EXTERNO OFICIAL | COMPLEMENTAR — voluntariedade em custódia | Sem parecer; não expor pessoas |
+| Trauma-Informed Approach (SAMHSA) | SAMHSA (EUA) | https://www.samhsa.gov/ | 2026-07-31 | Segurança, voz/escolha, confiança | EXTERNO SECUNDÁRIO | COMPLEMENTAR / **NÃO CLÍNICA** | Só salvaguarda de comunicação; não medicalizar nem importar protocolo clínico |
 
 Qualquer interpretação normativa → **requer revisão jurídica/institucional competente** (LACUNA se aprofundar).
 

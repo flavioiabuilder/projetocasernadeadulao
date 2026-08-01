@@ -181,21 +181,18 @@ function checkTokensTemplate() {
 function checkNoCanonicalSkills() {
   const skillsDir = path.join(METODO, "skills");
   if (!fs.existsSync(skillsDir)) return;
-  const nested = fs.readdirSync(skillsDir, { withFileTypes: true });
-  for (const entry of nested) {
-    if (!entry.isDirectory()) continue;
-    const skillMd = path.join(skillsDir, entry.name, "SKILL.md");
-    if (fs.existsSync(skillMd)) {
-      fail(
-        `proibido SKILL.md canônico em metodo/skills/${entry.name}/ (use .claude/skills/)`
-      );
-    }
+  const skillFiles = walkFiles(skillsDir).filter(
+    (f) => path.basename(f) === "SKILL.md"
+  );
+  for (const skillMd of skillFiles) {
+    const rel = path.relative(skillsDir, skillMd).replace(/\\/g, "/");
+    fail(`proibido SKILL.md canônico em metodo/skills/${rel} (use .claude/skills/)`);
   }
-  ok("sem SKILL.md canônico sob metodo/skills/");
+  ok("sem SKILL.md canônico sob metodo/skills/**");
 }
 
-function checkInternalLinks() {
-  const mdFiles = walkFiles(METODO).filter((f) => f.endsWith(".md"));
+function checkMdInternalLinks(rootDir, label) {
+  const mdFiles = walkFiles(rootDir).filter((f) => f.endsWith(".md"));
   const linkRe = /\]\(([^)]+)\)/g;
   for (const file of mdFiles) {
     const text = fs.readFileSync(file, "utf8");
@@ -210,7 +207,23 @@ function checkInternalLinks() {
       }
     }
   }
-  ok("links internos relativos em metodo/**/*.md");
+  ok(`links internos relativos em ${label}`);
+}
+
+function checkInternalLinks() {
+  checkMdInternalLinks(METODO, "metodo/**/*.md");
+  const instanciaMetodo = path.join(
+    ROOT,
+    "programas/discipulando-a-caserna/docs/metodo"
+  );
+  if (fs.existsSync(instanciaMetodo)) {
+    checkMdInternalLinks(
+      instanciaMetodo,
+      "programas/discipulando-a-caserna/docs/metodo/**/*.md"
+    );
+  } else {
+    fail("programas/discipulando-a-caserna/docs/metodo/ ausente");
+  }
 }
 
 function checkSecrets() {
@@ -228,13 +241,44 @@ function checkSecrets() {
 }
 
 function checkPromptExecutavel() {
-  for (const rel of ["prompts/descoberta.md", "prompts/analise-concorrencia.md"]) {
-    const text = fs.readFileSync(path.join(METODO, rel), "utf8");
+  const promptRels = [
+    "prompts/descoberta.md",
+    "prompts/analise-concorrencia.md",
+    "prompts/curadoria-referencias.md",
+  ];
+  for (const rel of promptRels) {
+    const abs = path.join(METODO, rel);
+    if (!fs.existsSync(abs)) {
+      if (rel === "prompts/curadoria-referencias.md") continue;
+      fail(`${rel} ausente`);
+      continue;
+    }
+    const text = fs.readFileSync(abs, "utf8");
     if (!text.includes("## PROMPT EXECUTÁVEL")) {
       fail(`${rel} sem seção ## PROMPT EXECUTÁVEL`);
-    } else {
-      ok(`PROMPT EXECUTÁVEL em ${rel}`);
+      continue;
     }
+    const afterHeading = text.split("## PROMPT EXECUTÁVEL")[1] || "";
+    const fenceMatch = afterHeading.match(/```[^\n]*\n([\s\S]*?)```/);
+    if (!fenceMatch || !fenceMatch[1].trim()) {
+      fail(`${rel}: PROMPT EXECUTÁVEL sem bloco de código não vazio`);
+      continue;
+    }
+    const block = fenceMatch[1];
+    const hasPlaceholder = /\{\{|TODO/.test(block) || /\{\{|TODO/.test(text);
+    if (!hasPlaceholder) {
+      fail(`${rel}: PROMPT EXECUTÁVEL sem placeholder ({{ ou TODO)`);
+      continue;
+    }
+    if (!/crit[eé]rios?\s+de\s+aceite|autoavalia/i.test(block)) {
+      fail(`${rel}: PROMPT EXECUTÁVEL sem critérios de aceite ou autoavaliação`);
+      continue;
+    }
+    if (!/proibi/i.test(block)) {
+      fail(`${rel}: PROMPT EXECUTÁVEL sem proibições`);
+      continue;
+    }
+    ok(`PROMPT EXECUTÁVEL contrato mínimo em ${rel}`);
   }
 }
 

@@ -15,6 +15,7 @@
     "templates/projeto-web/05-regras-agente.md",
     "prompts/descoberta.md",
     "prompts/analise-concorrencia.md",
+    "prompts/curadoria-referencias.md",
     "prompts/direcao-arte.md",
     "prompts/critica-estruturada.md",
     "prompts/qa-visual.md",
@@ -39,10 +40,14 @@
     "programas/discipulando-a-caserna/docs/metodo/02-painel-referencias.md",
     "programas/discipulando-a-caserna/docs/metodo/03-direcao-tokens.md",
     "programas/discipulando-a-caserna/docs/metodo/04-manual-design-system.md",
-    "programas/discipulando-a-caserna/docs/metodo/05-regras-agente.md"
+    "programas/discipulando-a-caserna/docs/metodo/05-regras-agente.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-1/dossie-de-descoberta.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-1/roteiro-de-validacao-humana.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-2/inventario-e-triagem.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-2/roteiro-de-validacao-visual.md"
   ],
   "proibicoes": [
-    "metodo/skills/*/SKILL.md",
+    "metodo/skills/**/SKILL.md",
     "metodo-web/",
     "publicacao de metodo/ no GitHub Pages"
   ],

@@ -200,10 +200,10 @@ endossos, resultados espirituais, chancela PMCE.
 > Discipulando a Caserna é um percurso anual de discipulado cristocêntrico
 > (4×12) apresentado como prospecto digital de trabalho — não como portal nem
 > produto homologado — que torna legível o que está pronto, o que está
-> condicionado e o que se pede de orientação, diferente de associações de
-> capelania ou redes de comunhão militar que não entregam este Guia/matriz com
-> estados de produção, porque o Módulo 1 já existe nas edições Aluno e Instrutor
-> e os princípios inegociáveis vedam militarizar a fé ou esconder pendências.
+> condicionado e o que se pede de orientação, em contraste com a alternativa
+> atual de Guia Mestre, apostilas, conversas, documentos e protótipos
+> dispersos, porque o Módulo 1 já existe nas edições Aluno e Instrutor e os
+> princípios inegociáveis vedam militarizar a fé ou esconder pendências.
 
 (Status da frase: EM REVISÃO — depende de H1/H2.)
 
@@ -217,11 +217,12 @@ Detalhe e datas: dossiê §6. Classificações: **não** são concorrentes comer
 | --- | ----------------------------------------- | -------------------------- | --------------------------------- | ------------------------------------ |
 | 1   | PMs de Cristo                             | Capelania / cuidado BR     | Tom de cuidado à família policial | Modelo associativo SP ≠ currículo 48 |
 | 2   | UMCEB                                     | Rede militares cristãos BR | Escala/companheirismo             | Não é prospecto de validação de Guia |
-| 3   | PMCE CSASR/organograma                    | Contexto oficial           | Vocabulário de assistência        | Qualquer chancela/parceria           |
+| 3   | PMCE CSASR                                | Contexto oficial           | Vocabulário de assistência        | Qualquer chancela/parceria           |
 | 4   | Navigators Military                       | Discipulado internacional  | Relacional / multiplicação        | Contexto EUA; ministry marketing     |
-| 5   | OCF                                       | Comunhão internacional     | Fé–família–profissão              | Importar estrutura OCF               |
-| 6   | Cru Military                              | Internacional              | Cuidado em ciclos operacionais    | Fact sheet ≠ nosso pedido pastoral   |
-| 7   | Guia + apostilas + conversas + protótipos | Alternativa atual          | Autoridade do Guia                | Falta status digital rastreável      |
+| 5   | Cru Military                              | Internacional              | Cuidado em ciclos operacionais    | Fact sheet ≠ nosso pedido pastoral   |
+| 6   | Guia + apostilas + conversas + protótipos | Alternativa atual          | Autoridade do Guia                | Falta status digital rastreável      |
+
+OCF ficou **fora da amostra final** (INCOMPLETO — timeout na revalidação 2026-08-01); ver dossiê §6.
 
 ---
 
