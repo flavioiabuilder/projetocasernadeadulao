@@ -720,15 +720,22 @@ html:not(.at-js) .at-menu-gatilho {
   font-size: var(--at-tipo-display-md);
   line-height: var(--at-tipo-lh-display-md);
   cursor: pointer;
-  transition: padding-left var(--at-dur-rapida) var(--at-ease-padrao);
 }
 
-.at-painel__assunto:hover {
-  padding-left: var(--at-esp-3);
+/*
+ * O avanço no hover move só o rótulo, por `transform`. Animar `padding-left`
+ * no botão arrastaria junto o filete que atravessa o painel — e violaria o
+ * contrato de motion (nada de propriedade de layout).
+ */
+.at-painel__assunto__rotulo {
+  display: inline-block;
+  transition: transform var(--at-dur-rapida) var(--at-ease-padrao);
 }
 
-.at-painel__assunto[aria-expanded="true"] {
-  padding-left: var(--at-esp-3);
+.at-painel__assunto:hover .at-painel__assunto__rotulo,
+.at-painel__assunto:focus-visible .at-painel__assunto__rotulo,
+.at-painel__assunto[aria-expanded="true"] .at-painel__assunto__rotulo {
+  transform: translateX(var(--at-esp-3));
 }
 
 /* ============================================================ rodapé ==== */
