@@ -67,6 +67,12 @@
       "skillPath": "higgsfield-websites/SKILL.md",
       "computedHash": "98c635c016c70f0eae506fdd4011059184ec97be1eb18f505a0680d89750c7b4"
     },
+    "image-convert": {
+      "source": "agntswrm/agent-media",
+      "sourceType": "github",
+      "skillPath": "skills/image-convert/SKILL.md",
+      "computedHash": "cc885a059fbc87c397911214be18789b6624bb53cb49d8f766fc3637febc7432"
+    },
     "memory-leak-debugging": {
       "source": "ChromeDevTools/chrome-devtools-mcp",
       "sourceType": "github",
