@@ -37,7 +37,11 @@ Legenda de status:
 - Nunca versionar: API tokens, cookies, sessões, caminhos pessoais absolutos desnecessários, IDs privados.
 - Usar `.env` / `.env.*` (já no `.gitignore`) ou config local ignorada.
 - MCP versionado **sem** embutir chaves (estado atual OK).
-- `npm run validate:metodo` procura padrões óbvios de segredo em `metodo/`.
+- `npm run validate:metodo` procura padrões óbvios de segredo em `metodo/`,
+  valida links relativos em `metodo/**/*.md` e em
+  `programas/discipulando-a-caserna/docs/metodo/**/*.md`, proíbe
+  `metodo/skills/**/SKILL.md` e exige contrato mínimo de `PROMPT EXECUTÁVEL`
+  (seção, bloco de código, placeholder, aceite/autoavaliação, proibições).
 
 ## Teste de disponibilidade (humano)
 

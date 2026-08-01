@@ -214,27 +214,27 @@ como INCOMPLETO / arquivado.
 
 ### 6.3 PMCE — CSASR (contexto oficial) — amostra final
 
-| Campo             | Conteúdo                                                                                                                                                         |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Organização       | PMCE — Diretoria de Saúde, Assistência Social e Religiosa (CSASR / DSASR)                                                                                        |
-| País/contexto     | Brasil (CE)                                                                                                                                                      |
-| Classificação     | Contexto institucional oficial (**não parceiro**)                                                                                                                |
-| Público           | Policiais militares (ativa/reserva) e, em alguns serviços, dependentes                                                                                           |
-| Promessa          | Acolher, cuidar e monitorar o PM; saúde, assistência social e espiritual                                                                                         |
-| Prova             | Página institucional com missão, visão, valores e programas (psicossocial, plantão, NAP, etc.)                                                                   |
-| Estrutura pública | Apresentação da diretoria; programas e atividades; contatos                                                                                                      |
-| Próximo passo     | Acesso a serviços da diretoria (não é “inscrição em discipulado”)                                                                                                |
-| Tom               | Órgão público de assistência                                                                                                                                     |
-| Convenções        | Vocabulário de saúde/assistência/espiritualidade institucional                                                                                                   |
-| Acertos           | Vocabulário oficial de assistência espiritual no contexto PMCE                                                                                                   |
-| Inadequações      | Não é currículo de discipulado; não autoriza chancela do piloto                                                                                                  |
-| Lacuna            | Vínculo jurídico/circulação ampliada do Discipulando com PMCE = LACUNA (P0-08)                                                                                   |
-| Fonte             | https://www.pm.ce.gov.br/csasrpmce/                                                                                                                              |
-| Título            | Diretoria de Saúde – DS/PMCE (CSASR)                                                                                                                             |
-| Data              | Revalidação 2026-08-01 (OK); tentativa anterior 2026-07-31 com timeout                                                                                           |
-| Evidência         | Missão: “serviço de saúde, assistência social e espiritual”; nome CSASR/DSASR na página                                                                          |
-| Inferência        | Qualquer parceria ou endosso do programa = proibido sem confirmação humana                                                                                       |
-| Aplicabilidade    | COMPLEMENTAR / CONTEXTO OFICIAL — não clínica do programa; não prova de parceria                                                                                 |
+| Campo             | Conteúdo                                                                                       |
+| ----------------- | ---------------------------------------------------------------------------------------------- |
+| Organização       | PMCE — Diretoria de Saúde, Assistência Social e Religiosa (CSASR / DSASR)                      |
+| País/contexto     | Brasil (CE)                                                                                    |
+| Classificação     | Contexto institucional oficial (**não parceiro**)                                              |
+| Público           | Policiais militares (ativa/reserva) e, em alguns serviços, dependentes                         |
+| Promessa          | Acolher, cuidar e monitorar o PM; saúde, assistência social e espiritual                       |
+| Prova             | Página institucional com missão, visão, valores e programas (psicossocial, plantão, NAP, etc.) |
+| Estrutura pública | Apresentação da diretoria; programas e atividades; contatos                                    |
+| Próximo passo     | Acesso a serviços da diretoria (não é “inscrição em discipulado”)                              |
+| Tom               | Órgão público de assistência                                                                   |
+| Convenções        | Vocabulário de saúde/assistência/espiritualidade institucional                                 |
+| Acertos           | Vocabulário oficial de assistência espiritual no contexto PMCE                                 |
+| Inadequações      | Não é currículo de discipulado; não autoriza chancela do piloto                                |
+| Lacuna            | Vínculo jurídico/circulação ampliada do Discipulando com PMCE = LACUNA (P0-08)                 |
+| Fonte             | https://www.pm.ce.gov.br/csasrpmce/                                                            |
+| Título            | Diretoria de Saúde – DS/PMCE (CSASR)                                                           |
+| Data              | Revalidação 2026-08-01 (OK); tentativa anterior 2026-07-31 com timeout                         |
+| Evidência         | Missão: “serviço de saúde, assistência social e espiritual”; nome CSASR/DSASR na página        |
+| Inferência        | Qualquer parceria ou endosso do programa = proibido sem confirmação humana                     |
+| Aplicabilidade    | COMPLEMENTAR / CONTEXTO OFICIAL — não clínica do programa; não prova de parceria               |
 
 ### 6.4 Navigators Military (EUA / internacional) — amostra final
 
@@ -261,56 +261,56 @@ como INCOMPLETO / arquivado.
 
 ### 6.5 Cru Military — amostra final
 
-| Campo             | Conteúdo                                                                                              |
-| ----------------- | ----------------------------------------------------------------------------------------------------- |
-| Organização       | Cru Military                                                                                          |
-| País/contexto     | EUA / 56 localidades EUA e 35 países (fact sheet)                                                     |
-| Classificação     | Referência internacional                                                                              |
-| Público           | Recrutas, ativa, reserva, separados e famílias                                                        |
-| Promessa          | Cuidado espiritual com capelães/igrejas antes, durante e depois de deployment                         |
-| Prova             | Fact sheet: fundação 1965; ~170 staff; programas SFRS, casamento, trauma                              |
-| Estrutura pública | Fact sheet + programas + loja de recursos                                                             |
-| Próximo passo     | Recursos, parcerias, doação (CTA “Give Bibles”)                                                       |
-| Tom               | Ministry / fact sheet corporativo de ONG                                                              |
-| Convenções        | Ciclos operacionais; parceria com capelania                                                           |
-| Acertos           | Clareza de cuidado em ciclos; nomeação de programas                                                   |
-| Inadequações      | Fact sheet ≠ pedido pastoral de Guia; CTAs de captação; não inferir parceria com o piloto             |
-| Lacuna            | Prospecto de validação de material com estados de produção                                            |
-| Fonte             | https://www.cru.org/us/en/about/news/fact-sheets/cru-military-fact-sheet.html                         |
-| Título            | Fact Sheet: Cru Military                                                                              |
-| Data              | 2026-08-01                                                                                            |
-| Evidência         | Purpose, scope, programs e resources no fact sheet                                                    |
-| Inferência        | Distância do entregável “prospecto de apreciação”                                                     |
+| Campo             | Conteúdo                                                                                  |
+| ----------------- | ----------------------------------------------------------------------------------------- |
+| Organização       | Cru Military                                                                              |
+| País/contexto     | EUA / 56 localidades EUA e 35 países (fact sheet)                                         |
+| Classificação     | Referência internacional                                                                  |
+| Público           | Recrutas, ativa, reserva, separados e famílias                                            |
+| Promessa          | Cuidado espiritual com capelães/igrejas antes, durante e depois de deployment             |
+| Prova             | Fact sheet: fundação 1965; ~170 staff; programas SFRS, casamento, trauma                  |
+| Estrutura pública | Fact sheet + programas + loja de recursos                                                 |
+| Próximo passo     | Recursos, parcerias, doação (CTA “Give Bibles”)                                           |
+| Tom               | Ministry / fact sheet corporativo de ONG                                                  |
+| Convenções        | Ciclos operacionais; parceria com capelania                                               |
+| Acertos           | Clareza de cuidado em ciclos; nomeação de programas                                       |
+| Inadequações      | Fact sheet ≠ pedido pastoral de Guia; CTAs de captação; não inferir parceria com o piloto |
+| Lacuna            | Prospecto de validação de material com estados de produção                                |
+| Fonte             | https://www.cru.org/us/en/about/news/fact-sheets/cru-military-fact-sheet.html             |
+| Título            | Fact Sheet: Cru Military                                                                  |
+| Data              | 2026-08-01                                                                                |
+| Evidência         | Purpose, scope, programs e resources no fact sheet                                        |
+| Inferência        | Distância do entregável “prospecto de apreciação”                                         |
 
 ### 6.6 Alternativa atual ao site (obrigatória) — amostra final
 
-| Campo             | Conteúdo                                                                       |
-| ----------------- | ------------------------------------------------------------------------------ |
-| Organização       | Processo atual do Discipulando / Projeto (interno)                             |
-| País/contexto     | Brasil (Fortaleza-CE)                                                          |
-| Classificação     | Alternativa atual                                                              |
-| Público           | Autoridade pastoral em apreciação; implementadores                             |
-| Promessa          | Apresentar o percurso e o material via documentos e conversa                   |
-| Prova             | Guia Mestre; apostilas M1; protótipos; roteiro de homologação                  |
-| Estrutura pública | Não é um único documento digital rastreável de status                          |
-| Próximo passo     | Conversas e revisão de arquivos dispersos                                      |
-| Tom               | Pastoral / documental                                                          |
-| Convenções        | Autoridade do Guia; densidade impressa                                         |
-| Acertos           | Autoridade pastoral do Guia; detalhe curricular                                |
-| Inadequações      | Falta status digital rastreável de pedido com a11y e paridade                  |
-| Lacuna            | Superfície digital que torna legível pronto / condicionado / pedido            |
-| Fonte             | `fontes/guia-mestre/`, `conteudo/`, `docs/roteiro-…`, protótipos               |
-| Título            | Alternativa atual (Guia + apostilas + conversas + protótipos)                  |
-| Data              | 2026-07-31                                                                     |
-| Evidência         | Paths internos existentes no repositório                                       |
-| Inferência        | O prospecto complementariza, não substitui o Guia                              |
+| Campo             | Conteúdo                                                            |
+| ----------------- | ------------------------------------------------------------------- |
+| Organização       | Processo atual do Discipulando / Projeto (interno)                  |
+| País/contexto     | Brasil (Fortaleza-CE)                                               |
+| Classificação     | Alternativa atual                                                   |
+| Público           | Autoridade pastoral em apreciação; implementadores                  |
+| Promessa          | Apresentar o percurso e o material via documentos e conversa        |
+| Prova             | Guia Mestre; apostilas M1; protótipos; roteiro de homologação       |
+| Estrutura pública | Não é um único documento digital rastreável de status               |
+| Próximo passo     | Conversas e revisão de arquivos dispersos                           |
+| Tom               | Pastoral / documental                                               |
+| Convenções        | Autoridade do Guia; densidade impressa                              |
+| Acertos           | Autoridade pastoral do Guia; detalhe curricular                     |
+| Inadequações      | Falta status digital rastreável de pedido com a11y e paridade       |
+| Lacuna            | Superfície digital que torna legível pronto / condicionado / pedido |
+| Fonte             | `fontes/guia-mestre/`, `conteudo/`, `docs/roteiro-…`, protótipos    |
+| Título            | Alternativa atual (Guia + apostilas + conversas + protótipos)       |
+| Data              | 2026-07-31                                                          |
+| Evidência         | Paths internos existentes no repositório                            |
+| Inferência        | O prospecto complementariza, não substitui o Guia                   |
 
 ### Fora da amostra final (INCOMPLETO / arquivado)
 
-| Item | Status | Razão | Nota |
-| ---- | ------ | ----- | ---- |
-| Officers’ Christian Fellowship (OCF) — https://www.ocfusa.org/learnmore/ | **INCOMPLETO** | Revalidação 2026-08-01: timeout WebFetch; ficha anterior sem campos mínimos | Não inventar conteúdo; reavaliar se a URL estabilizar |
-| Armed Services Ministry — https://armedservicesministry.org/about/ | **Arquivado (suplente)** | Stub sem ficha; não satisfaz contrato da amostra | Mantido só como ponteiro histórico |
+| Item                                                                     | Status                   | Razão                                                                       | Nota                                                  |
+| ------------------------------------------------------------------------ | ------------------------ | --------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Officers’ Christian Fellowship (OCF) — https://www.ocfusa.org/learnmore/ | **INCOMPLETO**           | Revalidação 2026-08-01: timeout WebFetch; ficha anterior sem campos mínimos | Não inventar conteúdo; reavaliar se a URL estabilizar |
+| Armed Services Ministry — https://armedservicesministry.org/about/       | **Arquivado (suplente)** | Stub sem ficha; não satisfaz contrato da amostra                            | Mantido só como ponteiro histórico                    |
 
 ---
 
@@ -318,12 +318,12 @@ como INCOMPLETO / arquivado.
 
 Separar **autoridade da fonte** de **aplicabilidade ao projeto**.
 
-| Título / norma | Organização | URL / path | Data de acesso | Trecho ou tema utilizado | Autoridade | Aplicabilidade | Limitação |
-| -------------- | ----------- | ---------- | -------------- | ------------------------ | ---------- | -------------- | --------- |
-| CF art. 5º VI, VII, X | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm | 2026-07-31 | Liberdade religiosa; assistência em internação; intimidade | EXTERNO OFICIAL | COMPLEMENTAR — restrição de coerção/exposição na comunicação | Sem parecer jurídico; não autoriza conteúdo clínico |
-| Lei 9.982/2000 | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/leis/l9982.htm | 2026-07-31 | Acesso à assistência religiosa com acordo do assistido | EXTERNO OFICIAL | COMPLEMENTAR — voluntariedade | Sem parecer; não define currículo do programa |
-| LEP art. 24 | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/leis/l7210.htm | 2026-07-31 | Liberdade de culto; não obrigar participação | EXTERNO OFICIAL | COMPLEMENTAR — voluntariedade em custódia | Sem parecer; não expor pessoas |
-| Trauma-Informed Approach (SAMHSA) | SAMHSA (EUA) | https://www.samhsa.gov/ | 2026-07-31 | Segurança, voz/escolha, confiança | EXTERNO SECUNDÁRIO | COMPLEMENTAR / **NÃO CLÍNICA** | Só salvaguarda de comunicação; não medicalizar nem importar protocolo clínico |
+| Título / norma                    | Organização                    | URL / path                                                         | Data de acesso | Trecho ou tema utilizado                                   | Autoridade         | Aplicabilidade                                               | Limitação                                                                     |
+| --------------------------------- | ------------------------------ | ------------------------------------------------------------------ | -------------- | ---------------------------------------------------------- | ------------------ | ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| CF art. 5º VI, VII, X             | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm | 2026-07-31     | Liberdade religiosa; assistência em internação; intimidade | EXTERNO OFICIAL    | COMPLEMENTAR — restrição de coerção/exposição na comunicação | Sem parecer jurídico; não autoriza conteúdo clínico                           |
+| Lei 9.982/2000                    | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/leis/l9982.htm                | 2026-07-31     | Acesso à assistência religiosa com acordo do assistido     | EXTERNO OFICIAL    | COMPLEMENTAR — voluntariedade                                | Sem parecer; não define currículo do programa                                 |
+| LEP art. 24                       | República Federativa do Brasil | http://www.planalto.gov.br/ccivil_03/leis/l7210.htm                | 2026-07-31     | Liberdade de culto; não obrigar participação               | EXTERNO OFICIAL    | COMPLEMENTAR — voluntariedade em custódia                    | Sem parecer; não expor pessoas                                                |
+| Trauma-Informed Approach (SAMHSA) | SAMHSA (EUA)                   | https://www.samhsa.gov/                                            | 2026-07-31     | Segurança, voz/escolha, confiança                          | EXTERNO SECUNDÁRIO | COMPLEMENTAR / **NÃO CLÍNICA**                               | Só salvaguarda de comunicação; não medicalizar nem importar protocolo clínico |
 
 Qualquer interpretação normativa → **requer revisão jurídica/institucional competente** (LACUNA se aprofundar).
 

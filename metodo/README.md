@@ -11,16 +11,16 @@ Norma: [`../docs/arquitetura/ADR-007-camada-metodo-o-sistema.md`](../docs/arquit
 
 ## O que há aqui
 
-| Área        | Caminho                                              | Papel                                        |
-| ----------- | ---------------------------------------------------- | -------------------------------------------- |
-| Templates   | [`templates/projeto-web/`](templates/projeto-web/)   | Cinco artefatos permanentes para copiar      |
-| Prompts     | [`prompts/`](prompts/)                               | Prompts reutilizáveis das fases posteriores  |
-| Checklists  | [`checklists/`](checklists/)                         | Preparação, design e pré-lançamento          |
-| Referências | [`biblioteca/referencias/`](biblioteca/referencias/) | Índices e fichas (sem clonar assets)         |
-| Decisões    | [`biblioteca/decisoes/`](biblioteca/decisoes/)       | Ledger de produto/design/método              |
-| Skills      | [`skills/README.md`](skills/README.md)               | Mapa → `.claude/skills/` (não canônico)      |
-| Convenções  | [`CONVENCOES.md`](CONVENCOES.md)                     | Escopos GLOBAL / REPO / PROGRAMA / PROTÓTIPO |
-| Ferramentas | [`FERRAMENTAS.md`](FERRAMENTAS.md)                   | Inventário e pré-requisitos                  |
+| Área        | Caminho                                              | Papel                                                 |
+| ----------- | ---------------------------------------------------- | ----------------------------------------------------- |
+| Templates   | [`templates/projeto-web/`](templates/projeto-web/)   | Cinco artefatos permanentes para copiar               |
+| Prompts     | [`prompts/`](prompts/)                               | Descoberta, análogos, curadoria, direção, crítica, QA |
+| Checklists  | [`checklists/`](checklists/)                         | Preparação, design e pré-lançamento                   |
+| Referências | [`biblioteca/referencias/`](biblioteca/referencias/) | Índices e fichas (sem clonar assets)                  |
+| Decisões    | [`biblioteca/decisoes/`](biblioteca/decisoes/)       | Ledger de produto/design/método                       |
+| Skills      | [`skills/README.md`](skills/README.md)               | Mapa → `.claude/skills/` (não canônico)               |
+| Convenções  | [`CONVENCOES.md`](CONVENCOES.md)                     | Escopos GLOBAL / REPO / PROGRAMA / PROTÓTIPO          |
+| Ferramentas | [`FERRAMENTAS.md`](FERRAMENTAS.md)                   | Inventário e pré-requisitos                           |
 
 ## Como começar um projeto novo
 

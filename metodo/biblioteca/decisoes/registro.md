@@ -75,3 +75,24 @@ Formato por entrada:
 - **Links:**
   [`programas/discipulando-a-caserna/docs/metodo/01-briefing-estrategico.md`](../../../programas/discipulando-a-caserna/docs/metodo/01-briefing-estrategico.md);
   [`fase-1/dossie-de-descoberta.md`](../../../programas/discipulando-a-caserna/docs/metodo/fase-1/dossie-de-descoberta.md).
+
+## 2026-08-01 — Fase 2 curadoria + saneamento F0/F1 residual
+
+- **Hipótese:** Um painel anotado (6–10 refs) + contrato de validador mais
+  estrito transforma a pesquisa visual dispersa em vocabulário para a Fase 3
+  sem redesenhar o site nem reabrir a Direção A.
+- **Decisão:** (1) proteger `fase-1/*` e `fase-2/*` no manifesto; (2) links MD
+  da instância + SKILL.md recursivo + contrato mínimo de `PROMPT EXECUTÁVEL`;
+  (3) prompt `curadoria-referencias.md`; (4) painel EM REVISÃO com 8 refs
+  (5/2/1); (5) inventário e roteiro visual em `fase-2/`; (6) nenhuma promoção
+  nova à biblioteca global (Aramco permanece a única ficha DevTools);
+  (7) frase de posicionamento F1 sem comparação negativa a ministérios
+  externos; (8) matriz de análogos F1 uniformizada / OCF fora da amostra.
+- **Justificativa:** Plano Fase 2; Direção A normativa; repo público sem
+  assets externos.
+- **Resultado observado:** Artefatos criados; painel e inventário EM REVISÃO;
+  decisões V1–V5 abertas no roteiro visual.
+- **Links:**
+  [`02-painel-referencias.md`](../../../programas/discipulando-a-caserna/docs/metodo/02-painel-referencias.md);
+  [`fase-2/inventario-e-triagem.md`](../../../programas/discipulando-a-caserna/docs/metodo/fase-2/inventario-e-triagem.md);
+  [`prompts/curadoria-referencias.md`](../../prompts/curadoria-referencias.md).

@@ -40,6 +40,8 @@ Demais imagens do prospecto também vivem sob `assets/img/` (ex.: `licao1/`).
 
 Todos os PNGs são **RGBA com fundo transparente**.
 
+Cada PNG canônico tem um `.webp` irmão (mesmo nome, quality ~82) para uso na web. **Manter os PNG** como fonte/fallback; preferir WebP no runtime.
+
 ## Paleta oficial (`Fundamentos_Paleta.png`)
 
 | Cor            | Hex       | Uso típico                              |
@@ -52,7 +54,9 @@ Todos os PNGs são **RGBA com fundo transparente**.
 
 Alinhada aos tokens do prospecto (`--navy`, `--bronze`, `--creme` / `--papel`).
 
-## Inventário (33 arquivos)
+## Inventário
+
+PNGs canônicos + WebP irmãos (mesmo basename). Contagem aproximada: ~35 PNG + ~35 WebP em `logo-pdac/`.
 
 ### Referência
 
@@ -69,15 +73,15 @@ Alinhada aos tokens do prospecto (`--navy`, `--bronze`, `--creme` / `--papel`).
 
 ### Emblema e mono (só escudo)
 
-| Arquivo                                 | Fundo                                                                                       |
-| --------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `LOGO_DaC_Emblema_1C_Branca_FFFFFF.png` | Escuro                                                                                      |
-| `LOGO_DaC_Emblema_1C_Preta_000000.png`  | Claro                                                                                       |
+| Arquivo                                 | Fundo                                                                                 |
+| --------------------------------------- | ------------------------------------------------------------------------------------- |
+| `LOGO_DaC_Emblema_1C_Branca_FFFFFF.png` | Escuro                                                                                |
+| `LOGO_DaC_Emblema_1C_Preta_000000.png`  | Claro                                                                                 |
 | `LOGO_DaC_Emblema_Metal_Latao.png`      | Escuro / Sombra — master metalizado (~5,5 MB / 6250px); fonte, não usar direto na web |
-| `LOGO_DaC_Emblema_Metal_Latao_1600.png` | Derivado web ~1600px (~490 KB) — storytelling / retina |
-| `LOGO_DaC_Emblema_Metal_Latao_800.png`  | Derivado web ~800px (~137 KB) — mobile / srcset |
-| `LOGO_DaC_Mono_Positiva_1C.png`         | Claro                                                                                       |
-| `LOGO_DaC_Mono_Negativa_1C.png`         | Escuro                                                                                      |
+| `LOGO_DaC_Emblema_Metal_Latao_1600.png` | Derivado web ~1600px (~490 KB) — storytelling / retina                                |
+| `LOGO_DaC_Emblema_Metal_Latao_800.png`  | Derivado web ~800px (~137 KB) — mobile / srcset                                       |
+| `LOGO_DaC_Mono_Positiva_1C.png`         | Claro                                                                                 |
+| `LOGO_DaC_Mono_Negativa_1C.png`         | Escuro                                                                                |
 
 ### Lockup (escudo + “DISCIPULANDO A CASERNA” + linha do Projeto)
 

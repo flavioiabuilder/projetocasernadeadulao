@@ -181,9 +181,7 @@ function checkTokensTemplate() {
 function checkNoCanonicalSkills() {
   const skillsDir = path.join(METODO, "skills");
   if (!fs.existsSync(skillsDir)) return;
-  const skillFiles = walkFiles(skillsDir).filter(
-    (f) => path.basename(f) === "SKILL.md"
-  );
+  const skillFiles = walkFiles(skillsDir).filter((f) => path.basename(f) === "SKILL.md");
   for (const skillMd of skillFiles) {
     const rel = path.relative(skillsDir, skillMd).replace(/\\/g, "/");
     fail(`proibido SKILL.md canônico em metodo/skills/${rel} (use .claude/skills/)`);
@@ -212,10 +210,7 @@ function checkMdInternalLinks(rootDir, label) {
 
 function checkInternalLinks() {
   checkMdInternalLinks(METODO, "metodo/**/*.md");
-  const instanciaMetodo = path.join(
-    ROOT,
-    "programas/discipulando-a-caserna/docs/metodo"
-  );
+  const instanciaMetodo = path.join(ROOT, "programas/discipulando-a-caserna/docs/metodo");
   if (fs.existsSync(instanciaMetodo)) {
     checkMdInternalLinks(
       instanciaMetodo,
