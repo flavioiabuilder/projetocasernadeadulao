@@ -56,7 +56,8 @@ body.chrome-escuro .nav-l:hover,body.chrome-escuro .nav-r:hover{opacity:1}
 .deck{scroll-snap-type:y mandatory;overflow-y:scroll;height:100vh;scroll-padding-top:0}
 .slide{scroll-snap-align:start;scroll-snap-stop:always;min-height:100vh;display:flex;
   align-items:center;padding:calc(var(--barra) + 4vh) var(--mx) 8vh;position:relative;
-  background:var(--base);transition:background .6s}
+  background:var(--base);transition:background .6s;
+  content-visibility:auto;contain-intrinsic-size:auto 100vh}
 .slide.bg-caserna{background:var(--caserna);color:var(--base)}
 .slide.bg-sombra{background:var(--sombra);color:var(--base)}
 /* Transição Sombra→Base: duas faixas sólidas (full-bleed). Sem gradiente sob o texto. */

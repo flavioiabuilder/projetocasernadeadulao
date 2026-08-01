@@ -11,7 +11,9 @@
 
   var metais=[];
   var raf=0;
+  var running=false;
   var x=innerWidth/2,y=innerHeight/2,tx=x,ty=y,ativa=false;
+  var idleFrames=0;
 
   function limparAlvo(wrap){
     wrap.style.setProperty('--brilho','0');
@@ -23,6 +25,7 @@
     ativa=false;
     luz.classList.remove('ativa');
     for(var i=0;i<metais.length;i++) limparAlvo(metais[i]);
+    stopLoop();
   }
   function addBrilho(alvo){
     if(!alvo||alvo.querySelector('.emblema-brilho')) return;
@@ -67,12 +70,28 @@
     el.addEventListener('animationend',function(){ marcarInterativo(el,true); });
   });
 
+  function stopLoop(){
+    running=false;
+    if(raf){ cancelAnimationFrame(raf); raf=0; }
+  }
+  function startLoop(){
+    if(running||document.hidden) return;
+    running=true;
+    idleFrames=0;
+    raf=requestAnimationFrame(frame);
+  }
+
   function frame(){
-    if(document.hidden){ raf=requestAnimationFrame(frame); return; }
-    x+=(tx-x)*0.22;
-    y+=(ty-y)*0.22;
+    if(!running) return;
+    if(document.hidden){ stopLoop(); return; }
+
+    var dx=tx-x, dy=ty-y;
+    x+=dx*0.22;
+    y+=dy*0.22;
     luz.style.setProperty('--lx',x.toFixed(1)+'px');
     luz.style.setProperty('--ly',y.toFixed(1)+'px');
+
+    var algumBrilho=false;
     for(var i=0;i<metais.length;i++){
       var wrap=metais[i];
       var isTexto=wrap.classList.contains('s01-id');
@@ -91,6 +110,7 @@
       var sobre=ativa&&tx>=left&&tx<=right&&ty>=top&&ty<=bottom;
       if(!sobre){ limparAlvo(wrap); continue; }
 
+      algumBrilho=true;
       var hitW=Math.max(1,right-left), hitH=Math.max(1,bottom-top);
       var ex=((tx-left)/hitW)*100;
       var ey=((ty-top)/hitH)*100;
@@ -103,6 +123,15 @@
         if(img) img.style.filter='brightness(1.28) contrast(1.12) saturate(1.14)';
       }
     }
+
+    var moving=Math.abs(dx)>0.4||Math.abs(dy)>0.4;
+    if(!ativa||(!algumBrilho&&!moving&&!luz.classList.contains('ativa'))){
+      idleFrames++;
+    }else{
+      idleFrames=0;
+    }
+    /* para o rAF quando o cursor está parado e sem brilho */
+    if(idleFrames>45){ stopLoop(); return; }
     raf=requestAnimationFrame(frame);
   }
 
@@ -110,6 +139,7 @@
     if(e.pointerType&&e.pointerType!=='mouse') return;
     tx=e.clientX; ty=e.clientY;
     if(!ativa){ ativa=true; luz.classList.add('ativa'); }
+    startLoop();
   }
   function onLeave(){ limparTudo(); }
 
@@ -119,6 +149,4 @@
   document.addEventListener('visibilitychange',function(){
     if(document.hidden) limparTudo();
   });
-
-  raf=requestAnimationFrame(frame);
 })();
