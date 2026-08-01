@@ -30,6 +30,17 @@
     "skills/README.md",
     "ferramentas/validar-metodo.js"
   ],
+  "integracaoObrigatoria": [
+    "AGENTS.md",
+    "docs/arquitetura/ADR-007-camada-metodo-o-sistema.md",
+    "docs/metodo.md",
+    "programas/discipulando-a-caserna/docs/metodo/README.md",
+    "programas/discipulando-a-caserna/docs/metodo/01-briefing-estrategico.md",
+    "programas/discipulando-a-caserna/docs/metodo/02-painel-referencias.md",
+    "programas/discipulando-a-caserna/docs/metodo/03-direcao-tokens.md",
+    "programas/discipulando-a-caserna/docs/metodo/04-manual-design-system.md",
+    "programas/discipulando-a-caserna/docs/metodo/05-regras-agente.md"
+  ],
   "proibicoes": [
     "metodo/skills/*/SKILL.md",
     "metodo-web/",

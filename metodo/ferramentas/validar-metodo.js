@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 /**
  * Valida o contrato da camada metodológica (Fase 0).
- * Uso: node metodo/ferramentas/validar-metodo.js [--bootstrap]
+ * Uso:
+ *   node metodo/ferramentas/validar-metodo.js
+ *   node metodo/ferramentas/validar-metodo.js --bootstrap   (explícito; já é o padrão)
+ *   node metodo/ferramentas/validar-metodo.js --no-bootstrap (só debug local)
  */
 "use strict";
 
@@ -15,6 +18,7 @@ const MANIFESTO_PATH = path.join(METODO, "MANIFESTO.json");
 const TOKENS_TEMPLATE = path.join(METODO, "templates/projeto-web/03-tokens.json");
 const SCHEMA_PATH = path.join(METODO, "schemas/tokens.template.schema.json");
 const TEMPLATE_DIR = path.join(METODO, "templates/projeto-web");
+const PAGES_YML = path.join(ROOT, ".github/workflows/pages.yml");
 
 const SECRET_PATTERNS = [
   /api[_-]?key\s*[:=]\s*['"][^'"]+['"]/i,
@@ -49,6 +53,15 @@ function assertExists(relFromMetodo) {
   return true;
 }
 
+function assertRootExists(relFromRoot) {
+  const abs = path.join(ROOT, relFromRoot);
+  if (!fs.existsSync(abs)) {
+    fail(`integração ausente: ${relFromRoot}`);
+    return false;
+  }
+  return true;
+}
+
 function walkFiles(dir, acc = []) {
   if (!fs.existsSync(dir)) return acc;
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -77,6 +90,33 @@ function checkManifest() {
     if (assertExists(rel)) ok(`presente: ${rel}`);
   }
   return manifesto;
+}
+
+function checkIntegracao(manifesto) {
+  const list = (manifesto && manifesto.integracaoObrigatoria) || [];
+  for (const rel of list) {
+    if (assertRootExists(rel)) ok(`integração: ${rel}`);
+  }
+
+  const metodoWeb = path.join(ROOT, "metodo-web");
+  if (fs.existsSync(metodoWeb)) {
+    fail("proibido metodo-web/ na raiz do repositório");
+  } else {
+    ok("ausência de metodo-web/");
+  }
+
+  if (!fs.existsSync(PAGES_YML)) {
+    fail(".github/workflows/pages.yml ausente");
+    return;
+  }
+  const pages = fs.readFileSync(PAGES_YML, "utf8");
+  const copyLines = pages.split(/\r?\n/).filter((line) => /\b(cp|copy)\b/i.test(line));
+  const bad = copyLines.filter((line) => /(?:^|[\s"'/])metodo(?:\/|["'\s]|$)/.test(line));
+  if (bad.length) {
+    fail(`pages.yml parece copiar metodo/: ${bad.join(" | ")}`);
+  } else {
+    ok("pages.yml não copia metodo/");
+  }
 }
 
 function checkTokensTemplate() {
@@ -187,6 +227,17 @@ function checkSecrets() {
   ok("sem padrões óbvios de segredo em metodo/");
 }
 
+function checkPromptExecutavel() {
+  for (const rel of ["prompts/descoberta.md", "prompts/analise-concorrencia.md"]) {
+    const text = fs.readFileSync(path.join(METODO, rel), "utf8");
+    if (!text.includes("## PROMPT EXECUTÁVEL")) {
+      fail(`${rel} sem seção ## PROMPT EXECUTÁVEL`);
+    } else {
+      ok(`PROMPT EXECUTÁVEL em ${rel}`);
+    }
+  }
+}
+
 function rmRecursive(dir) {
   fs.rmSync(dir, { recursive: true, force: true });
 }
@@ -216,11 +267,6 @@ function bootstrapTest() {
     }
     let markerHits = 0;
     for (const name of required) {
-      if (name.endsWith(".json")) {
-        const t = fs.readFileSync(path.join(dest, name), "utf8");
-        if (PLACEHOLDER_MARKERS.some((m) => t.includes(m))) markerHits += 1;
-        continue;
-      }
       const t = fs.readFileSync(path.join(dest, name), "utf8");
       if (PLACEHOLDER_MARKERS.some((m) => t.includes(m))) markerHits += 1;
     }
@@ -237,19 +283,23 @@ function bootstrapTest() {
     }
   } finally {
     rmRecursive(tmp);
-    ok(`bootstrap: temp removido`);
+    ok("bootstrap: temp removido");
   }
 }
 
 function main() {
-  const bootstrap = process.argv.includes("--bootstrap");
+  const noBootstrap = process.argv.includes("--no-bootstrap");
+  const bootstrap = !noBootstrap;
   console.log("validate:metodo — O Sistema (Fase 0)");
-  checkManifest();
+  const manifesto = checkManifest();
+  checkIntegracao(manifesto);
   checkTokensTemplate();
   checkNoCanonicalSkills();
+  checkPromptExecutavel();
   checkInternalLinks();
   checkSecrets();
   if (bootstrap) bootstrapTest();
+  else ok("bootstrap omitido (--no-bootstrap)");
   if (failures > 0) {
     console.error(`\nvalidate:metodo FALHOU com ${failures} problema(s).`);
     process.exit(1);

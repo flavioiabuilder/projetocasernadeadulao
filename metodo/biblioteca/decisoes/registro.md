@@ -58,3 +58,20 @@ Formato por entrada:
 - **Justificativa:** Critério de não-regressão do plano.
 - **Resultado observado:** Baseline pré-mudança exit 0 (2026-07-31, ambiente local de implementação).
 - **Links:** `package.json` scripts `validate`.
+
+## 2026-07-31 — Saneamento residual F0 + Fase 1 EM REVISÃO
+
+- **Hipótese:** Prompts executáveis, bootstrap no gate e contrato de integração
+  desbloqueiam um Briefing Estratégico rastreável sem redesenhar o site.
+- **Decisão:** (1) `PROMPT EXECUTÁVEL` em descoberta/análogos; (2) bootstrap
+  sempre em `validate:metodo` + script `test:metodo:bootstrap`; (3) manifesto
+  com `integracaoObrigatoria` e checagem de Pages; (4) briefing do piloto
+  preenchido com status **EM REVISÃO**, dossiê e roteiro humano em
+  `docs/metodo/fase-1/`.
+- **Justificativa:** Critério da Fase 1 do método; Rota B e P0-08 impedem
+  status APROVADO automático.
+- **Resultado observado:** Artefatos criados; ação/objeção principais como
+  HIPÓTESE; lacunas centralizadas no roteiro H1–H17.
+- **Links:**
+  [`programas/discipulando-a-caserna/docs/metodo/01-briefing-estrategico.md`](../../../programas/discipulando-a-caserna/docs/metodo/01-briefing-estrategico.md);
+  [`fase-1/dossie-de-descoberta.md`](../../../programas/discipulando-a-caserna/docs/metodo/fase-1/dossie-de-descoberta.md).

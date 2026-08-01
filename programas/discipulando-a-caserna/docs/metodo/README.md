@@ -1,22 +1,26 @@
 # Instância do método — Discipulando a Caserna
 
-> **Status:** Parcial — aguarda execução das Fases 1–4 do método.
-> Esta pasta **não** é a fonte canônica de conteúdo, tokens ou regras pastorais.
 > Templates genéricos: [`../../../../metodo/`](../../../../metodo/).
 
-O repositório é o **piloto** do método “O Sistema” (ADR-007). Aqui ficam apenas
-**status, fontes existentes e pendências** — sem inventar briefing ou tokens de produto.
+O repositório é o **piloto** do método “O Sistema” (ADR-007).
 
-| Artefato              | Status                 | Fonte / próximo passo                                                           |
-| --------------------- | ---------------------- | ------------------------------------------------------------------------------- |
-| Briefing              | Parcial (índice)       | [`01-briefing-estrategico.md`](01-briefing-estrategico.md)                      |
-| Painel de referências | Parcial (índice)       | [`02-painel-referencias.md`](02-painel-referencias.md)                          |
-| Direção / tokens      | Documentado (CSS vivo) | [`03-direcao-tokens.md`](03-direcao-tokens.md) — **não** substitui `tokens.css` |
-| Manual DS             | Parcial (índice)       | [`04-manual-design-system.md`](04-manual-design-system.md)                      |
-| Regras do agente      | Ponte                  | [`05-regras-agente.md`](05-regras-agente.md) → `.cursor/rules/`                 |
+| Artefato                 | Status                   | Path                                                                             |
+| ------------------------ | ------------------------ | -------------------------------------------------------------------------------- |
+| Briefing Estratégico     | **EM REVISÃO** (Fase 1)  | [`01-briefing-estrategico.md`](01-briefing-estrategico.md)                       |
+| Dossiê de descoberta     | EM REVISÃO               | [`fase-1/dossie-de-descoberta.md`](fase-1/dossie-de-descoberta.md)               |
+| Roteiro validação humana | Aberto                   | [`fase-1/roteiro-de-validacao-humana.md`](fase-1/roteiro-de-validacao-humana.md) |
+| Painel de referências    | Parcial — aguarda Fase 2 | [`02-painel-referencias.md`](02-painel-referencias.md)                           |
+| Direção / tokens         | Documentado (CSS vivo)   | [`03-direcao-tokens.md`](03-direcao-tokens.md)                                   |
+| Manual DS                | Parcial — aguarda Fase 4 | [`04-manual-design-system.md`](04-manual-design-system.md)                       |
+| Regras do agente         | Ponte                    | [`05-regras-agente.md`](05-regras-agente.md)                                     |
 
 ## Hierarquia
 
 - **Projeto Caserna de Adulão** — raiz do repositório
 - **Discipulando a Caserna** — este programa
 - Superfícies HTML atuais = **protótipos**
+
+## Regra
+
+`conteudo/` permanece a fonte da copy literal. O briefing não a substitui.
+Não marcar o briefing como `APROVADO` sem validação humana explícita.
