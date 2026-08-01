@@ -1,0 +1,39 @@
+{
+  "nome": "O Sistema — Fase 0",
+  "versao": "0.1.0",
+  "descricao": "Contrato de arquivos obrigatórios da camada metodológica neste repositório.",
+  "arquivosObrigatorios": [
+    "README.md",
+    "CONVENCOES.md",
+    "FERRAMENTAS.md",
+    "MANIFESTO.json",
+    "templates/projeto-web/README.md",
+    "templates/projeto-web/01-briefing-estrategico.md",
+    "templates/projeto-web/02-painel-referencias.md",
+    "templates/projeto-web/03-tokens.json",
+    "templates/projeto-web/04-manual-sistema.md",
+    "templates/projeto-web/05-regras-agente.md",
+    "prompts/descoberta.md",
+    "prompts/analise-concorrencia.md",
+    "prompts/direcao-arte.md",
+    "prompts/critica-estruturada.md",
+    "prompts/qa-visual.md",
+    "checklists/preparacao-projeto.md",
+    "checklists/revisao-design.md",
+    "checklists/pre-lancamento.md",
+    "biblioteca/referencias/README.md",
+    "biblioteca/referencias/_ficha-modelo.md",
+    "biblioteca/referencias/entradas/aramco-birth-of-oil.md",
+    "biblioteca/decisoes/README.md",
+    "biblioteca/decisoes/registro.md",
+    "schemas/tokens.template.schema.json",
+    "skills/README.md",
+    "ferramentas/validar-metodo.js"
+  ],
+  "proibicoes": [
+    "metodo/skills/*/SKILL.md",
+    "metodo-web/",
+    "publicacao de metodo/ no GitHub Pages"
+  ],
+  "adr": "docs/arquitetura/ADR-007-camada-metodo-o-sistema.md"
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://projetocasernadeadulao.local/metodo/schemas/tokens.template.schema.json",
+  "title": "Template de tokens — O Sistema",
+  "type": "object",
+  "required": ["primitivos", "semanticos"],
+  "properties": {
+    "meta": { "type": "object" },
+    "primitivos": {
+      "type": "object",
+      "required": [
+        "cor",
+        "tipografia",
+        "espacamento",
+        "layout",
+        "raio",
+        "borda",
+        "elevacao",
+        "motion",
+        "foco",
+        "breakpoints"
+      ],
+      "additionalProperties": true
+    },
+    "semanticos": {
+      "type": "object",
+      "required": [
+        "cor",
+        "tipografia",
+        "espacamento",
+        "layout",
+        "raio",
+        "borda",
+        "elevacao",
+        "motion",
+        "foco",
+        "breakpoints"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

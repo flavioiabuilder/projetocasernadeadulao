@@ -26,6 +26,9 @@ video-explainer, game-generation), Chrome DevTools MCP (`chrome-devtools`,
 Os espelhos **não** precisam ser cópias 1:1 do canônico. Lock: `skills-lock.json`.
 CLI: `@higgsfield/cli` (devDependency); autenticar com `higgsfield auth login`.
 
+Mapa do método (equivalências e gaps, **sem** segunda árvore canônica):
+[`../metodo/skills/README.md`](../metodo/skills/README.md).
+
 ## Hooks
 
 Hooks em [`.github/hooks/impeccable.json`](../.github/hooks/impeccable.json)

@@ -8,6 +8,7 @@ desenvolvimento e estudos técnicos independentes.
 | Área                 | Caminho                                                                  | Papel                                                      |
 | -------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------- |
 | Programa             | [`programas/discipulando-a-caserna/`](programas/discipulando-a-caserna/) | Discipulando a Caserna (protótipos, conteúdo, ferramentas) |
+| Método “O Sistema”   | [`metodo/`](metodo/)                                                     | Fase 0 — templates, prompts, checklists (não publicado)    |
 | Referências DevTools | [`referencias-devtools/`](referencias-devtools/)                         | Estudos e reconstruções técnicas independentes             |
 | Docs globais         | [`docs/`](docs/)                                                         | Skills de agentes e política de IA do repositório          |
 
@@ -20,9 +21,10 @@ ministerial.
 ```bash
 npm install
 npx playwright install chromium
-npm run validate                 # programa + referências
+npm run validate                 # programa + referências + método
 npm run validate:discipulando    # só o programa
 npm run validate:referencias     # só referências DevTools
+npm run validate:metodo          # contrato da camada metodo/
 ```
 
 ## Publicação
@@ -36,5 +38,7 @@ npm run validate:referencias     # só referências DevTools
 ## Leitura
 
 - Programa: [`programas/discipulando-a-caserna/README.md`](programas/discipulando-a-caserna/README.md)
+- Método: [`metodo/README.md`](metodo/README.md) · ponte [`docs/metodo.md`](docs/metodo.md)
+- Agentes: [`AGENTS.md`](AGENTS.md)
 - Referências: [`referencias-devtools/README.md`](referencias-devtools/README.md)
 - Skills: [`docs/skills.md`](docs/skills.md)

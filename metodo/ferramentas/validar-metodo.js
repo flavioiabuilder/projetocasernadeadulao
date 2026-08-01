@@ -1,0 +1,260 @@
+#!/usr/bin/env node
+/**
+ * Valida o contrato da camada metodológica (Fase 0).
+ * Uso: node metodo/ferramentas/validar-metodo.js [--bootstrap]
+ */
+"use strict";
+
+const fs = require("fs");
+const os = require("os");
+const path = require("path");
+
+const ROOT = path.resolve(__dirname, "../..");
+const METODO = path.join(ROOT, "metodo");
+const MANIFESTO_PATH = path.join(METODO, "MANIFESTO.json");
+const TOKENS_TEMPLATE = path.join(METODO, "templates/projeto-web/03-tokens.json");
+const SCHEMA_PATH = path.join(METODO, "schemas/tokens.template.schema.json");
+const TEMPLATE_DIR = path.join(METODO, "templates/projeto-web");
+
+const SECRET_PATTERNS = [
+  /api[_-]?key\s*[:=]\s*['"][^'"]+['"]/i,
+  /BEGIN (RSA |OPENSSH )?PRIVATE KEY/,
+  /ghp_[A-Za-z0-9]{20,}/,
+  /xox[baprs]-[A-Za-z0-9-]{10,}/,
+];
+
+const PLACEHOLDER_MARKERS = ["{{", "TODO", "LACUNA", "NÃO CONFIRMADO", "PLACEHOLDER"];
+
+let failures = 0;
+
+function fail(msg) {
+  console.error(`FAIL: ${msg}`);
+  failures += 1;
+}
+
+function ok(msg) {
+  console.log(`OK: ${msg}`);
+}
+
+function readJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
+function assertExists(relFromMetodo) {
+  const abs = path.join(METODO, relFromMetodo);
+  if (!fs.existsSync(abs)) {
+    fail(`arquivo obrigatório ausente: metodo/${relFromMetodo}`);
+    return false;
+  }
+  return true;
+}
+
+function walkFiles(dir, acc = []) {
+  if (!fs.existsSync(dir)) return acc;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) walkFiles(full, acc);
+    else acc.push(full);
+  }
+  return acc;
+}
+
+function checkManifest() {
+  if (!fs.existsSync(MANIFESTO_PATH)) {
+    fail("MANIFESTO.json ausente");
+    return null;
+  }
+  let manifesto;
+  try {
+    manifesto = readJson(MANIFESTO_PATH);
+  } catch (e) {
+    fail(`MANIFESTO.json inválido: ${e.message}`);
+    return null;
+  }
+  ok("MANIFESTO.json parseável");
+  const list = manifesto.arquivosObrigatorios || [];
+  for (const rel of list) {
+    if (assertExists(rel)) ok(`presente: ${rel}`);
+  }
+  return manifesto;
+}
+
+function checkTokensTemplate() {
+  if (!fs.existsSync(TOKENS_TEMPLATE)) return;
+  let tokens;
+  try {
+    tokens = readJson(TOKENS_TEMPLATE);
+  } catch (e) {
+    fail(`03-tokens.json inválido: ${e.message}`);
+    return;
+  }
+  if (!tokens.primitivos || !tokens.semanticos) {
+    fail("03-tokens.json precisa de chaves primitivos e semanticos");
+    return;
+  }
+  const cats = [
+    "cor",
+    "tipografia",
+    "espacamento",
+    "layout",
+    "raio",
+    "borda",
+    "elevacao",
+    "motion",
+    "foco",
+    "breakpoints",
+  ];
+  for (const layer of ["primitivos", "semanticos"]) {
+    for (const cat of cats) {
+      if (!tokens[layer][cat]) {
+        fail(`03-tokens.json.${layer}.${cat} ausente`);
+      }
+    }
+  }
+  ok("03-tokens.json estrutura mínima");
+
+  if (fs.existsSync(SCHEMA_PATH)) {
+    try {
+      const schema = readJson(SCHEMA_PATH);
+      for (const key of schema.required || []) {
+        if (!(key in tokens)) fail(`tokens não satisfaz schema.required: ${key}`);
+      }
+      const primReq = schema.properties?.primitivos?.required || [];
+      for (const key of primReq) {
+        if (!(key in tokens.primitivos)) {
+          fail(`tokens.primitivos falta categoria do schema: ${key}`);
+        }
+      }
+      const semReq = schema.properties?.semanticos?.required || [];
+      for (const key of semReq) {
+        if (!(key in tokens.semanticos)) {
+          fail(`tokens.semanticos falta categoria do schema: ${key}`);
+        }
+      }
+      ok("03-tokens.json vs schema (checagem leve)");
+    } catch (e) {
+      fail(`schema inválido: ${e.message}`);
+    }
+  }
+}
+
+function checkNoCanonicalSkills() {
+  const skillsDir = path.join(METODO, "skills");
+  if (!fs.existsSync(skillsDir)) return;
+  const nested = fs.readdirSync(skillsDir, { withFileTypes: true });
+  for (const entry of nested) {
+    if (!entry.isDirectory()) continue;
+    const skillMd = path.join(skillsDir, entry.name, "SKILL.md");
+    if (fs.existsSync(skillMd)) {
+      fail(
+        `proibido SKILL.md canônico em metodo/skills/${entry.name}/ (use .claude/skills/)`
+      );
+    }
+  }
+  ok("sem SKILL.md canônico sob metodo/skills/");
+}
+
+function checkInternalLinks() {
+  const mdFiles = walkFiles(METODO).filter((f) => f.endsWith(".md"));
+  const linkRe = /\]\(([^)]+)\)/g;
+  for (const file of mdFiles) {
+    const text = fs.readFileSync(file, "utf8");
+    let m;
+    while ((m = linkRe.exec(text))) {
+      const href = m[1].split("#")[0].split(" ")[0];
+      if (!href || href.startsWith("http") || href.startsWith("mailto:")) continue;
+      if (href.startsWith("//")) continue;
+      const target = path.resolve(path.dirname(file), href);
+      if (!fs.existsSync(target)) {
+        fail(`link quebrado em ${path.relative(ROOT, file)} → ${href}`);
+      }
+    }
+  }
+  ok("links internos relativos em metodo/**/*.md");
+}
+
+function checkSecrets() {
+  const files = walkFiles(METODO);
+  for (const file of files) {
+    if (file.endsWith(".png") || file.endsWith(".jpg")) continue;
+    const text = fs.readFileSync(file, "utf8");
+    for (const re of SECRET_PATTERNS) {
+      if (re.test(text)) {
+        fail(`possível segredo em ${path.relative(ROOT, file)} (${re})`);
+      }
+    }
+  }
+  ok("sem padrões óbvios de segredo em metodo/");
+}
+
+function rmRecursive(dir) {
+  fs.rmSync(dir, { recursive: true, force: true });
+}
+
+function bootstrapTest() {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "metodo-bootstrap-"));
+  try {
+    const dest = path.join(tmp, "projeto-web");
+    fs.cpSync(TEMPLATE_DIR, dest, { recursive: true });
+    const required = [
+      "01-briefing-estrategico.md",
+      "02-painel-referencias.md",
+      "03-tokens.json",
+      "04-manual-sistema.md",
+      "05-regras-agente.md",
+    ];
+    for (const name of required) {
+      const p = path.join(dest, name);
+      if (!fs.existsSync(p)) fail(`bootstrap: faltou ${name}`);
+      else ok(`bootstrap: ${name}`);
+    }
+    const tokens = readJson(path.join(dest, "03-tokens.json"));
+    if (!tokens.primitivos || !tokens.semanticos) {
+      fail("bootstrap: tokens sem primitivos/semanticos");
+    } else {
+      ok("bootstrap: JSON tokens válido");
+    }
+    let markerHits = 0;
+    for (const name of required) {
+      if (name.endsWith(".json")) {
+        const t = fs.readFileSync(path.join(dest, name), "utf8");
+        if (PLACEHOLDER_MARKERS.some((m) => t.includes(m))) markerHits += 1;
+        continue;
+      }
+      const t = fs.readFileSync(path.join(dest, name), "utf8");
+      if (PLACEHOLDER_MARKERS.some((m) => t.includes(m))) markerHits += 1;
+    }
+    if (markerHits < 4) {
+      fail("bootstrap: poucos placeholders/TODO nos templates");
+    } else {
+      ok(`bootstrap: placeholders presentes (${markerHits}/5 arquivos)`);
+    }
+    const readme = fs.readFileSync(path.join(dest, "README.md"), "utf8");
+    if (!/copiar|Copy-Item|como copiar/i.test(readme)) {
+      fail("bootstrap: README sem instruções de cópia");
+    } else {
+      ok("bootstrap: instruções de início presentes");
+    }
+  } finally {
+    rmRecursive(tmp);
+    ok(`bootstrap: temp removido`);
+  }
+}
+
+function main() {
+  const bootstrap = process.argv.includes("--bootstrap");
+  console.log("validate:metodo — O Sistema (Fase 0)");
+  checkManifest();
+  checkTokensTemplate();
+  checkNoCanonicalSkills();
+  checkInternalLinks();
+  checkSecrets();
+  if (bootstrap) bootstrapTest();
+  if (failures > 0) {
+    console.error(`\nvalidate:metodo FALHOU com ${failures} problema(s).`);
+    process.exit(1);
+  }
+  console.log("\nvalidate:metodo OK");
+}
+
+main();

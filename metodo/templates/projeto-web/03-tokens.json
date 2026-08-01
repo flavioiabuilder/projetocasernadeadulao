@@ -1,0 +1,132 @@
+{
+  "$comentario": "Template genérico — substituir placeholders. Sem valores de marca de um projeto específico.",
+  "meta": {
+    "projeto": "{{NOME_DO_PROJETO}}",
+    "versao": "0.0.0",
+    "unidadeEspacamentoBase": "{{4px|outro}}",
+    "notacaoCor": "{{hex|oklch|mista}}",
+    "fonteVerdadeRuntime": "{{css|json|figma}}"
+  },
+  "primitivos": {
+    "cor": {
+      "neutro": {
+        "0": "{{PLACEHOLDER}}",
+        "50": "{{PLACEHOLDER}}",
+        "100": "{{PLACEHOLDER}}",
+        "500": "{{PLACEHOLDER}}",
+        "900": "{{PLACEHOLDER}}"
+      },
+      "marca": {
+        "primaria": "{{PLACEHOLDER}}",
+        "secundaria": "{{PLACEHOLDER}}",
+        "destaque": "{{PLACEHOLDER}}"
+      }
+    },
+    "tipografia": {
+      "familiaDisplay": "{{PLACEHOLDER}}",
+      "familiaCorpo": "{{PLACEHOLDER}}",
+      "tamanhoBase": "{{PLACEHOLDER}}",
+      "escala": {
+        "xs": "{{PLACEHOLDER}}",
+        "sm": "{{PLACEHOLDER}}",
+        "md": "{{PLACEHOLDER}}",
+        "lg": "{{PLACEHOLDER}}",
+        "xl": "{{PLACEHOLDER}}"
+      },
+      "alturaLinha": {
+        "aperto": "{{PLACEHOLDER}}",
+        "corpo": "{{PLACEHOLDER}}"
+      }
+    },
+    "espacamento": {
+      "1": "{{PLACEHOLDER}}",
+      "2": "{{PLACEHOLDER}}",
+      "3": "{{PLACEHOLDER}}",
+      "4": "{{PLACEHOLDER}}",
+      "6": "{{PLACEHOLDER}}",
+      "8": "{{PLACEHOLDER}}",
+      "12": "{{PLACEHOLDER}}",
+      "16": "{{PLACEHOLDER}}"
+    },
+    "layout": {
+      "container": "{{PLACEHOLDER}}",
+      "gutter": "{{PLACEHOLDER}}"
+    },
+    "raio": {
+      "nenhum": "0",
+      "sm": "{{PLACEHOLDER}}",
+      "md": "{{PLACEHOLDER}}",
+      "lg": "{{PLACEHOLDER}}"
+    },
+    "borda": {
+      "fina": "{{PLACEHOLDER}}",
+      "media": "{{PLACEHOLDER}}"
+    },
+    "elevacao": {
+      "nenhuma": "none",
+      "suave": "{{PLACEHOLDER}}"
+    },
+    "motion": {
+      "duracaoRapida": "{{PLACEHOLDER}}",
+      "duracaoBase": "{{PLACEHOLDER}}",
+      "easing": "{{PLACEHOLDER}}"
+    },
+    "foco": {
+      "largura": "{{PLACEHOLDER}}",
+      "cor": "{{PLACEHOLDER}}",
+      "offset": "{{PLACEHOLDER}}"
+    },
+    "breakpoints": {
+      "sm": "{{PLACEHOLDER}}",
+      "md": "{{PLACEHOLDER}}",
+      "lg": "{{PLACEHOLDER}}"
+    }
+  },
+  "semanticos": {
+    "cor": {
+      "superficie": "{{ref:primitivos.cor…}}",
+      "texto": "{{ref:primitivos.cor…}}",
+      "textoSuave": "{{PLACEHOLDER}}",
+      "borda": "{{PLACEHOLDER}}",
+      "acao": "{{PLACEHOLDER}}",
+      "acaoTexto": "{{PLACEHOLDER}}",
+      "foco": "{{ref:primitivos.foco.cor}}"
+    },
+    "tipografia": {
+      "tituloPagina": "{{PLACEHOLDER}}",
+      "tituloSecao": "{{PLACEHOLDER}}",
+      "corpo": "{{PLACEHOLDER}}",
+      "rotulo": "{{PLACEHOLDER}}"
+    },
+    "espacamento": {
+      "secao": "{{PLACEHOLDER}}",
+      "bloco": "{{PLACEHOLDER}}",
+      "inline": "{{PLACEHOLDER}}"
+    },
+    "layout": {
+      "larguraConteudo": "{{PLACEHOLDER}}",
+      "gutterPagina": "{{PLACEHOLDER}}"
+    },
+    "raio": {
+      "controle": "{{PLACEHOLDER}}",
+      "midia": "{{PLACEHOLDER}}"
+    },
+    "borda": {
+      "separador": "{{PLACEHOLDER}}"
+    },
+    "elevacao": {
+      "painel": "{{PLACEHOLDER}}"
+    },
+    "motion": {
+      "transicaoUi": "{{PLACEHOLDER}}",
+      "respeitarReducedMotion": true
+    },
+    "foco": {
+      "anel": "{{PLACEHOLDER}}"
+    },
+    "breakpoints": {
+      "navCompacta": "{{PLACEHOLDER}}",
+      "layoutAmplo": "{{PLACEHOLDER}}"
+    }
+  }
+}
