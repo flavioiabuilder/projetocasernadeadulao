@@ -8,6 +8,9 @@ as regras pastorais do Discipulando a Caserna.
 | Área                        | Path                                                                                                                                      |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | Método “O Sistema” (Fase 0) | [`metodo/README.md`](metodo/README.md)                                                                                                    |
+| Pipeline (9 fases + estado) | [`metodo/PIPELINE.md`](metodo/PIPELINE.md)                                                                                                |
+| Anti-padrões                | [`metodo/ANTIPADROES.md`](metodo/ANTIPADROES.md)                                                                                          |
+| Glossário do método         | [`metodo/GLOSSARIO.md`](metodo/GLOSSARIO.md)                                                                                              |
 | Convenções                  | [`metodo/CONVENCOES.md`](metodo/CONVENCOES.md)                                                                                            |
 | Ferramentas                 | [`metodo/FERRAMENTAS.md`](metodo/FERRAMENTAS.md)                                                                                          |
 | Skills (canônico)           | [`.claude/skills/`](.claude/skills/) — norma [`docs/skills.md`](docs/skills.md), [ADR-006](docs/arquitetura/ADR-006-ferramentas-de-ia.md) |

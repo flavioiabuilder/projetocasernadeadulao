@@ -247,6 +247,8 @@ function checkPromptExecutavel() {
     "prompts/curadoria-referencias.md",
     "prompts/direcao-arte.md",
     "prompts/manual-design-system.md",
+    "prompts/implementacao.md",
+    "prompts/auditoria-final.md",
   ];
   for (const rel of promptRels) {
     const abs = path.join(METODO, rel);

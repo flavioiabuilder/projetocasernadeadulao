@@ -112,6 +112,35 @@ Formato por entrada:
   [`04-manual-design-system.md`](../../../programas/discipulando-a-caserna/docs/metodo/04-manual-design-system.md);
   [`prompts/manual-design-system.md`](../../prompts/manual-design-system.md).
 
+## 2026-08-02 — Cobertura integral da doutrina (fases 5–8 + arsenal)
+
+- **Hipótese:** A camada `metodo/` cobria bem as fases 0–4 e quase nada da
+  metade em que o método depende de julgamento humano. Documentar as fases 5–8
+  e o “arsenal” (anti-padrões, glossário, matriz de ferramentas) transforma
+  disciplina implícita em procedimento verificável, sem tocar no produto.
+- **Decisão:** (1) doutrina-fonte verbatim em `metodo/O-SISTEMA.md`, com nota
+  de adaptação declarando onde o repositório prevalece sobre o texto
+  (`metodo/` vs `metodo-web/`, hex-first vs OKLCH, estático vs Astro,
+  `AGENTS.md` vs `CLAUDE.md`, skills canônicas); (2) `PIPELINE.md` com as nove
+  fases, estado real de cada uma e os bloqueios humanos abertos; (3) guias
+  `fases/fase-5..8`; (4) prompts faltantes `implementacao.md` (A.6) e
+  `auditoria-final.md` (A.7), ambos sob o contrato `PROMPT EXECUTÁVEL`;
+  (5) `ANTIPADROES.md` com a **defesa** de cada anti-padrão neste repositório e
+  oito anti-padrões próprios do piloto; (6) `GLOSSARIO.md` do método, separado
+  do vocabulário de domínio em `CONTEXT.md`; (7) vocação + matriz de decisão em
+  `FERRAMENTAS.md`; (8) manifesto `0.2.0` e validador estendidos.
+- **Justificativa:** O documento afirma que o ativo não é o prompt, é a
+  especificação. As fases 5–8 eram justamente as sem especificação escrita.
+  Alvos de Core Web Vitals entram como **referência**, não budget — o repo
+  declara `sem budget numérico formal` e mudar isso é decisão humana.
+- **Resultado observado:** `npm run validate:metodo` verde com os novos
+  arquivos sob contrato. Nenhuma superfície, token ou copy alterada; fases 5–8
+  permanecem **abertas** — foram documentadas, não executadas.
+- **Links:** [`../../O-SISTEMA.md`](../../O-SISTEMA.md);
+  [`../../PIPELINE.md`](../../PIPELINE.md);
+  [`../../ANTIPADROES.md`](../../ANTIPADROES.md);
+  [`../../fases/README.md`](../../fases/README.md).
+
 ## 2026-08-01 — Fase 3 tokens candidatos (ME-T)
 
 - **Hipótese:** JSON canônico + gerador próprio unifica drift sem migrar

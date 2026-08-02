@@ -33,6 +33,38 @@ Legenda de status:
 | Claude Code                   | DEPENDÊNCIA EXTERNA                      | Template `05-regras-agente.md` portável; sem `CLAUDE.md` inchado na raiz |
 | image-convert (agent-media)   | CONFIGURADA PARCIALMENTE                 | Ver exceção abaixo — não bloqueia tokens                                 |
 
+## Vocação — qual ferramenta serve a quê
+
+Inventário diz o que **está** disponível; esta tabela diz para que cada coisa
+**serve**. Usar uma no papel da outra é a causa mais comum de frustração.
+
+| Ferramenta                   | Vocação real                                                    | Melhor momento                   | Limite                                                         |
+| ---------------------------- | --------------------------------------------------------------- | -------------------------------- | -------------------------------------------------------------- |
+| Claude Design                | Canvas conversacional que renderiza ao vivo; comentários inline | Fases 2–5: explorar e apresentar | Não substitui fonte canônica; edição colaborativa limitada     |
+| Claude Code / Cursor         | Agente com acesso ao repositório, skills, subagentes e MCP      | Fases 6–8                        | Não tem julgamento estético; precisa de tokens e referência    |
+| Figma                        | Fonte canônica de sistema visual; Variables, Dev Mode, MCP      | Fases 3–4 e handoff              | Só compensa com arquivo bem estruturado; **não canônico aqui** |
+| Google Stitch                | Geração rápida de muitas telas a partir de texto ou imagem      | Fase 5, exploração de volume     | Qualidade depende do prompt; composição não canônica           |
+| Chrome DevTools / Playwright | O agente vê e mede o que produziu                               | Fases 6–7                        | Não julga se está bonito, só se está correto                   |
+| Awwwards / Behance / etc.    | Bancos de referência                                            | Fase 2                           | **Não são briefing; são vocabulário**                          |
+
+Resumindo: canvas resolve o problema da primeira versão; Figma resolve o
+problema da fonte de verdade; agente de código resolve o problema da produção.
+
+## Matriz de decisão — por onde começar
+
+| Sua situação                             | Comece por                    | Depois                          | Não perca tempo com                  |
+| ---------------------------------------- | ----------------------------- | ------------------------------- | ------------------------------------ |
+| Landing page sozinho, prazo curto        | Canvas (Claude Design/Stitch) | Agente de código                | Montar sistema completo no Figma     |
+| Site institucional para cliente exigente | Sistema no Figma              | Agente de código via MCP        | Gerar em código sem aprovação visual |
+| Produto que vai evoluir por anos         | Design system primeiro        | Figma + Code Connect            | Protótipo descartável                |
+| Explorar muitas direções rápido          | Google Stitch                 | Normalizar a vencedora          | Refinar tudo antes de escolher       |
+| Refatorar site existente                 | Agente lendo o código         | Extrair tokens do que já existe | Redesenhar antes de entender         |
+| Trabalho com designer na equipe          | Figma como fonte única        | MCP bidirecional                | Duas fontes de verdade               |
+
+**Neste repositório** a linha aplicável é a de refatorar site existente: os
+protótipos existem, os tokens foram extraídos na Fase 3 e a migração de runtime
+aguarda decisão humana. Ver [`PIPELINE.md`](PIPELINE.md).
+
 ## Exceção — skill `image-convert`
 
 - Árvore canônica de skills: `.claude/skills/` (ADR-007 / `docs/skills.md`).
@@ -55,7 +87,8 @@ Legenda de status:
   `programas/discipulando-a-caserna/docs/metodo/**/*.md`, proíbe
   `metodo/skills/**/SKILL.md`, exige contrato mínimo de `PROMPT EXECUTÁVEL`
   (descoberta, análise-concorrência, curadoria-referências, direção-arte,
-  manual-design-system) e aplica checagem semântica leve do painel Fase 2 e
+  manual-design-system, implementação, auditoria-final) e aplica checagem
+  semântica leve do painel Fase 2 e
   do Manual Fase 4. Em cada verificação, `OK` só é emitido se não houver
   `FAIL` naquele check.
 
