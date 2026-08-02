@@ -54,9 +54,21 @@ Legenda de status:
   valida links relativos em `metodo/**/*.md` e em
   `programas/discipulando-a-caserna/docs/metodo/**/*.md`, proíbe
   `metodo/skills/**/SKILL.md`, exige contrato mínimo de `PROMPT EXECUTÁVEL`
-  (descoberta, análise-concorrência, curadoria-referências, direção-arte) e
-  aplica checagem semântica leve do painel Fase 2. Em cada verificação, `OK`
-  só é emitido se não houver `FAIL` naquele check.
+  (descoberta, análise-concorrência, curadoria-referências, direção-arte,
+  manual-design-system) e aplica checagem semântica leve do painel Fase 2 e
+  do Manual Fase 4. Em cada verificação, `OK` só é emitido se não houver
+  `FAIL` naquele check.
+
+## Design system (programa piloto)
+
+| Script                                | Status                    | Notas                             |
+| ------------------------------------- | ------------------------- | --------------------------------- |
+| `generate:discipulando:tokens`        | JÁ CONFIGURADA            | Write explícito de `tokens.css`   |
+| `validate:discipulando:tokens`        | JÁ CONFIGURADA            | Check-only (não regenera; F3-R02) |
+| `validate:discipulando:design-system` | JÁ CONFIGURADA            | Fichas, lab, IDs                  |
+| `test:discipulando:design-system`     | JÁ CONFIGURADA            | Unitários Node                    |
+| `test:discipulando:design-system:e2e` | JÁ CONFIGURADA            | Playwright + Axe no lab           |
+| Storybook                             | NÃO NECESSÁRIA NESTA FASE | Lab estático preferido (ADR-001)  |
 
 ## Teste de disponibilidade (humano)
 

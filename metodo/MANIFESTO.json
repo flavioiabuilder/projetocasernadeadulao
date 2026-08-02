@@ -17,6 +17,7 @@
     "prompts/analise-concorrencia.md",
     "prompts/curadoria-referencias.md",
     "prompts/direcao-arte.md",
+    "prompts/manual-design-system.md",
     "prompts/critica-estruturada.md",
     "prompts/qa-visual.md",
     "checklists/preparacao-projeto.md",
@@ -44,7 +45,13 @@
     "programas/discipulando-a-caserna/docs/metodo/fase-1/dossie-de-descoberta.md",
     "programas/discipulando-a-caserna/docs/metodo/fase-1/roteiro-de-validacao-humana.md",
     "programas/discipulando-a-caserna/docs/metodo/fase-2/inventario-e-triagem.md",
-    "programas/discipulando-a-caserna/docs/metodo/fase-2/roteiro-de-validacao-visual.md"
+    "programas/discipulando-a-caserna/docs/metodo/fase-2/roteiro-de-validacao-visual.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-3/inventario-de-tokens.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-4/inventario-de-componentes.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-4/cobertura-de-composicao.md",
+    "programas/discipulando-a-caserna/design-system/tokens/tokens.json",
+    "programas/discipulando-a-caserna/design-system/tokens/tokens.css",
+    "programas/discipulando-a-caserna/design-system/README.md"
   ],
   "proibicoes": [
     "metodo/skills/**/SKILL.md",

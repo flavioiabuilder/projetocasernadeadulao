@@ -118,6 +118,9 @@
   --primitivo-tipografia-escala-sm: clamp(0.875rem, 0.82rem + 0.25vw, 0.9375rem);
   --primitivo-tipografia-escala-xl: clamp(1.85rem, 1.35rem + 1.6vw, 2.75rem);
   --primitivo-tipografia-escala-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.8125rem);
+  /* Source Serif 4 itálico (400i) */
+  --primitivo-tipografia-estilo-italico: italic;
+  --primitivo-tipografia-estilo-normal: normal;
   /* Prosa de leitura — 400/400i/600 locais */
   --primitivo-tipografia-familia-corpo: "Source Serif 4", "Source Serif Pro", Georgia, serif;
   /* Display / rótulos — pesos 700–800 locais */
@@ -126,70 +129,93 @@
   --primitivo-tipografia-familia-fallback-sistema-sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
   /* LEGADO storytelling — fallback, não canônico */
   --primitivo-tipografia-familia-fallback-sistema-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  /* Montserrat display/rótulos */
+  --primitivo-tipografia-peso-bold: 700;
+  /* Montserrat títulos fortes */
+  --primitivo-tipografia-peso-extrabold: 800;
+  /* Source Serif 4 corpo */
+  --primitivo-tipografia-peso-regular: 400;
+  /* Source Serif 4 ênfase */
+  --primitivo-tipografia-peso-semibold: 600;
   --primitivo-tipografia-rotulo: 0.65rem;
   --primitivo-tipografia-tracking-hero: 0.3em;
   --primitivo-tipografia-tracking-rotulo: 0.14em;
   --primitivo-tipografia-tracking-rotulo-largo: 0.18em;
 
   /* ——— Semânticos ——— */
-  --borda-separador: 1px;
-  --breakpoints-curriculo-duas-colunas: 960px;
-  --breakpoints-leitura-ampla: 700px;
-  --breakpoints-nav-compacta: 900px;
+  --borda-separador: var(--primitivo-borda-fina);
+  --breakpoints-curriculo-duas-colunas: var(--primitivo-breakpoints-curriculo-duas-colunas);
+  --breakpoints-leitura-ampla: var(--primitivo-breakpoints-leitura-ampla);
+  --breakpoints-nav-compacta: var(--primitivo-breakpoints-nav-compacta);
   /* Filetes, rótulos, citações, selos — não superfície dominante (~5% composição) */
-  --cor-acento-editorial: #8C6A45;
-  --cor-borda-forte: #7C6038;
-  --cor-borda-sutil: #C9BCA1;
-  --cor-citacao: #7C6038;
-  --cor-estado-aviso: #7A5A28;
-  --cor-estado-erro: #6B2E2E;
-  --cor-estado-informacao: #3D4F66;
-  --cor-estado-sucesso: #2F5D3A;
-  --cor-foco-sobre-papel: #8C6A45;
-  --cor-foco-sobre-profunda: #C9A86A;
-  --cor-superficie-creme: #F5F1E7;
-  --cor-superficie-papel: #FBF8F2;
-  --cor-superficie-profunda: #1A2A44;
-  --cor-superficie-profunda-escura: #101D33;
-  --cor-texto-inverso: #F5F1E7;
-  --cor-texto-primario: #23262B;
-  --cor-texto-sobre-profunda: #F5F1E7;
-  --cor-texto-suave: #4A4A4A;
-  --elevacao-nenhuma: none;
-  --elevacao-painel: 0 12px 40px color-mix(in srgb, #101D33 12%, transparent);
-  --espacamento-bloco: 2rem;
-  --espacamento-grupo: 1rem;
-  --espacamento-inline: 0.5rem;
-  --espacamento-pagina-gutter: 2.5rem;
-  --espacamento-secao: 4rem;
-  --foco-anel-offset: 3px;
-  --foco-anel-sobre-papel: 2px;
-  --layout-container-amplo: 64rem;
-  --layout-container-leitura: 40rem;
-  --layout-medida-prosa: 68ch;
-  --layout-nav-compacta: 900px;
-  --motion-easing-entrada: cubic-bezier(0.22, 1, 0.36, 1);
-  --motion-easing-padrao: cubic-bezier(0.22, 1, 0.36, 1);
-  --motion-easing-saida: cubic-bezier(0.4, 0, 1, 1);
-  --motion-feedback-rapido: 120ms;
-  --motion-reduced-duration: 0.01ms;
+  --cor-acento-editorial: var(--primitivo-cor-bronze-500);
+  --cor-borda-forte: var(--primitivo-cor-bronze-700);
+  --cor-borda-sutil: var(--primitivo-cor-neutro-quente-200);
+  --cor-citacao: var(--primitivo-cor-bronze-700);
+  --cor-estado-aviso: var(--primitivo-cor-estado-aviso);
+  --cor-estado-erro: var(--primitivo-cor-estado-erro);
+  --cor-estado-informacao: var(--primitivo-cor-estado-informacao);
+  --cor-estado-sucesso: var(--primitivo-cor-estado-sucesso);
+  --cor-foco-sobre-papel: var(--primitivo-foco-cor-sobre-papel);
+  --cor-foco-sobre-profunda: var(--primitivo-foco-cor-sobre-profunda);
+  --cor-superficie-creme: var(--primitivo-cor-neutro-quente-50);
+  --cor-superficie-papel: var(--primitivo-cor-neutro-quente-0);
+  --cor-superficie-profunda: var(--primitivo-cor-navy-800);
+  --cor-superficie-profunda-escura: var(--primitivo-cor-navy-900);
+  --cor-texto-inverso: var(--primitivo-cor-neutro-quente-50);
+  --cor-texto-primario: var(--primitivo-cor-neutro-quente-800);
+  --cor-texto-sobre-profunda: var(--primitivo-cor-neutro-quente-50);
+  --cor-texto-suave: var(--primitivo-cor-neutro-quente-500);
+  --elevacao-nenhuma: var(--primitivo-elevacao-nenhuma);
+  --elevacao-painel: var(--primitivo-elevacao-discreta);
+  --espacamento-bloco: var(--primitivo-espacamento-8);
+  --espacamento-grupo: var(--primitivo-espacamento-4);
+  --espacamento-inline: var(--primitivo-espacamento-2);
+  /* Alias desktop (legado). Preferir gutterMobile|Tablet|Desktop + media queries no consumidor. */
+  --espacamento-pagina-gutter: var(--primitivo-layout-gutter-desktop);
+  --espacamento-pagina-gutter-desktop: var(--primitivo-layout-gutter-desktop);
+  /* Consumir em @media max-width; custom properties não são condições de MQ. */
+  --espacamento-pagina-gutter-mobile: var(--primitivo-layout-gutter-mobile);
+  --espacamento-pagina-gutter-tablet: var(--primitivo-layout-gutter-tablet);
+  --espacamento-secao: var(--primitivo-espacamento-16);
+  --foco-anel-estilo: var(--primitivo-foco-estilo);
+  /* Meta interna ≈ SC 2.4.13 AAA-inspired; AA exige foco visível (não este valor) */
+  --foco-anel-largura: var(--primitivo-foco-largura);
+  --foco-anel-offset: var(--primitivo-foco-offset);
+  --layout-container-amplo: var(--primitivo-layout-container-amplo);
+  --layout-container-leitura: var(--primitivo-layout-container-leitura);
+  --layout-medida-prosa: var(--primitivo-layout-medida-prosa);
+  --layout-nav-compacta: var(--primitivo-breakpoints-nav-compacta);
+  --motion-easing-entrada: var(--primitivo-motion-easing-entrada);
+  --motion-easing-padrao: var(--primitivo-motion-easing-padrao);
+  --motion-easing-saida: var(--primitivo-motion-easing-saida);
+  --motion-feedback-rapido: var(--primitivo-motion-duracao-rapida);
+  --motion-reduced-duration: var(--primitivo-motion-duracao-reduced);
   --motion-respeitar-reduced-motion: 1;
-  --motion-revelacao-lenta: 320ms;
-  --motion-transicao-padrao: 200ms;
-  --raio-controle: 4px;
-  --raio-midia: 0;
-  --tipografia-altura-linha-corpo: 1.7;
-  --tipografia-altura-linha-titulo: 1.15;
-  --tipografia-citacao: clamp(1.125rem, 1.05rem + 0.45vw, 1.375rem);
-  --tipografia-familia-corpo: "Source Serif 4", "Source Serif Pro", Georgia, serif;
-  --tipografia-familia-display: "Montserrat", sans-serif;
-  --tipografia-folio: clamp(0.75rem, 0.7rem + 0.2vw, 0.8125rem);
-  --tipografia-nota: clamp(0.875rem, 0.82rem + 0.25vw, 0.9375rem);
-  --tipografia-pagina-titulo: clamp(2.35rem, 1.55rem + 2.4vw, 3.5rem);
-  --tipografia-prosa-corpo: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
-  --tipografia-prosa-introducao: clamp(1.125rem, 1.05rem + 0.45vw, 1.375rem);
-  --tipografia-rotulo: 0.65rem;
-  --tipografia-secao-titulo: clamp(1.85rem, 1.35rem + 1.6vw, 2.75rem);
+  --motion-revelacao-lenta: var(--primitivo-motion-duracao-lenta);
+  --motion-transicao-padrao: var(--primitivo-motion-duracao-padrao);
+  --raio-controle: var(--primitivo-raio-controle);
+  --raio-midia: var(--primitivo-raio-nenhum);
+  --tipografia-altura-linha-corpo: var(--primitivo-tipografia-altura-linha-corpo);
+  --tipografia-altura-linha-titulo: var(--primitivo-tipografia-altura-linha-aperto);
+  --tipografia-citacao: var(--primitivo-tipografia-escala-md);
+  --tipografia-estilo-citacao: var(--primitivo-tipografia-estilo-italico);
+  --tipografia-estilo-corpo: var(--primitivo-tipografia-estilo-normal);
+  --tipografia-familia-corpo: var(--primitivo-tipografia-familia-corpo);
+  --tipografia-familia-display: var(--primitivo-tipografia-familia-display);
+  --tipografia-folio: var(--primitivo-tipografia-escala-xs);
+  --tipografia-nota: var(--primitivo-tipografia-escala-sm);
+  --tipografia-pagina-titulo: var(--primitivo-tipografia-escala-2xl);
+  --tipografia-peso-corpo: var(--primitivo-tipografia-peso-regular);
+  --tipografia-peso-display: var(--primitivo-tipografia-peso-bold);
+  --tipografia-peso-display-forte: var(--primitivo-tipografia-peso-extrabold);
+  --tipografia-peso-enfase: var(--primitivo-tipografia-peso-semibold);
+  --tipografia-prosa-corpo: var(--primitivo-tipografia-escala-base);
+  --tipografia-prosa-introducao: var(--primitivo-tipografia-escala-md);
+  --tipografia-rotulo: var(--primitivo-tipografia-rotulo);
+  --tipografia-secao-titulo: var(--primitivo-tipografia-escala-xl);
+  --tipografia-tracking-rotulo: var(--primitivo-tipografia-tracking-rotulo);
+  --tipografia-tracking-rotulo-largo: var(--primitivo-tipografia-tracking-rotulo-largo);
 }
 
 /* Contextos de superfície (não é dark mode) */

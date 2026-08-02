@@ -79,4 +79,11 @@ describe("design tokens ME-T", () => {
     assert.match(css, /--layout-medida-prosa:/);
     assert.match(css, /--primitivo-cor-navy-800:/);
   });
+
+  it("aliases semânticos preservam var(--primitivo-*) no CSS", () => {
+    const css = gerar(tokens);
+    assert.match(css, /--cor-superficie-papel:\s*var\(--primitivo-cor-neutro-quente-0\)/);
+    assert.match(css, /--cor-superficie-profunda:\s*var\(--primitivo-cor-navy-800\)/);
+    assert.doesNotMatch(css, /--cor-superficie-papel:\s*#[0-9a-fA-F]{6}/);
+  });
 });

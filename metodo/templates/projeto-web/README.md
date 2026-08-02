@@ -13,6 +13,8 @@ projeto novo e preencha os cinco arquivos.
 | `04-manual-sistema.md`       | 4              | Manual do design system                   |
 | `05-regras-agente.md`        | 0–6            | Regras portáveis do agente para o projeto |
 
+Prompt executável da Fase 4: [`../../prompts/manual-design-system.md`](../../prompts/manual-design-system.md).
+
 ## Como copiar
 
 ```bash

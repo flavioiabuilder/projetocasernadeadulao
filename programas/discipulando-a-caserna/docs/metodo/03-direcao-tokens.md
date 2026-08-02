@@ -34,10 +34,13 @@ Template GLOBAL (sem paleta do piloto):
 
 ```text
 tokens.json (ME-T)  →  gerar-tokens.js  →  tokens.css
-Primitivos          →  Semânticos
+Primitivos          →  Semânticos (CSS: var(--primitivo-…))
 ```
 
 - **Formato:** ME-T (folhas `$value` / `$type` / `$description`; aliases `{primitivos…}`).
+- **Fase 4:** Manual CANDIDATO em [`04-manual-design-system.md`](04-manual-design-system.md);
+  componentes consomem semânticos; sem camada de tokens de componente.
+- **Validate:** `validate:discipulando:tokens` é check-only (não regenera CSS).
 - **DTCG 2025.10:** referência de folhas (CG Report, não W3C Rec); sem `component`.
 - **Scripts:** `generate:discipulando:tokens` · `validate:discipulando:tokens` ·
   `test:discipulando:tokens` — **não** colidir com `generate:tokens` (Aramco).

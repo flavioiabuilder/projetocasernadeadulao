@@ -87,6 +87,8 @@ Escopos: `GLOBAL` (futuros projetos do método) · `REPO` (este repositório) ·
 | Escopo   | Decisão                                                                                              |
 | -------- | ---------------------------------------------------------------------------------------------------- |
 | PROGRAMA | Sem biblioteca UI obrigatória no runtime; CSS modular                                                |
+| PROGRAMA | Fase 4: Manual + fichas em `design-system/`; lab estático; sem tokens de componente prematuros       |
+| PROGRAMA | Prefixo público de classes do DS: `dc-*`; protótipos permanecem legado até Fase 6                    |
 | GLOBAL   | Skills `design-system` / `brand` orientam agentes; não criam segunda fonte de componentes no produto |
 
 ## Acessibilidade

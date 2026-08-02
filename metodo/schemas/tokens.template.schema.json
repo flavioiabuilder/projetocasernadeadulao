@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://projetocasernadeadulao.local/metodo/schemas/tokens.template.schema.json",
   "title": "Template de tokens — O Sistema (ME-T)",
-  "description": "Contrato Método Estendido Tipado: camadas primitivos/semanticos; folhas tipadas ($value/$type) ou strings placeholder no template GLOBAL. Sem camada de componentes.",
+  "description": "Contrato Método Estendido Tipado (ME-T): subset alinhado ao DTCG Format 2025.10 Community Group Report (não W3C Recommendation; não declara conformidade DTCG completa). Camadas primitivos/semanticos; folhas tipadas ($value/$type) ou placeholders no template GLOBAL. Sem camada de componentes. Template pode usar fonteVerdadeRuntime; produto piloto usa fonteVerdade=tokens.json.",
   "type": "object",
   "required": ["primitivos", "semanticos"],
   "properties": {
@@ -17,7 +17,14 @@
         "contratoVersao": { "type": "string" },
         "unidadeEspacamentoBase": { "type": "string" },
         "notacaoCor": { "type": "string" },
-        "fonteVerdadeRuntime": { "type": "string" }
+        "fonteVerdade": {
+          "type": "string",
+          "description": "Produto: tipicamente tokens.json"
+        },
+        "fonteVerdadeRuntime": {
+          "type": "string",
+          "description": "Template: json|css; produto pode omitir se fonteVerdade estiver definida"
+        }
       },
       "additionalProperties": true
     },

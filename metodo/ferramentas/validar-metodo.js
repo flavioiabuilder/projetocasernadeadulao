@@ -246,6 +246,7 @@ function checkPromptExecutavel() {
     "prompts/analise-concorrencia.md",
     "prompts/curadoria-referencias.md",
     "prompts/direcao-arte.md",
+    "prompts/manual-design-system.md",
   ];
   for (const rel of promptRels) {
     const abs = path.join(METODO, rel);
@@ -338,6 +339,52 @@ function checkPainelFase2Semantico() {
   if (failures === before) ok("painel F2: campos semânticos mínimos presentes");
 }
 
+/**
+ * Validação semântica leve do Manual do Design System (Fase 4).
+ * Exige estrutura mínima quando o status deixa de ser stub/parcial vazio.
+ */
+function checkManualFase4Semantico() {
+  const manualPath = path.join(
+    ROOT,
+    "programas/discipulando-a-caserna/docs/metodo/04-manual-design-system.md"
+  );
+  if (!fs.existsSync(manualPath)) {
+    fail("manual F4 ausente: docs/metodo/04-manual-design-system.md");
+    return;
+  }
+  const before = failures;
+  const text = fs.readFileSync(manualPath, "utf8");
+  if (!/\*\*Status:\*\*|\bStatus:\s*/i.test(text)) {
+    fail("manual F4: status ausente");
+  }
+  const isStub = /aguarda Fase 4|Parcial — aguarda/i.test(text) && text.length < 1200;
+  if (isStub) {
+    ok("manual F4: ainda stub parcial (Fase 4 em andamento)");
+    return;
+  }
+  const requiredBits = [
+    [/Princ[ií]pios/i, "princípios"],
+    [/camadas|Funda[cç][aã]o|Componente|Padr[aã]o/i, "camadas"],
+    [/CMP-|Componentes/i, "índice de componentes"],
+    [/PAD-|Padr[oõ]es/i, "índice de padrões"],
+    [/WCAG|acessib/i, "acessibilidade"],
+    [/CANDIDATO|maturidade|versionamento|governan/i, "governança"],
+    [/Definition of Ready|Fase 5/i, "DoR Fase 5"],
+    [/tokens\.json|sem[aâ]ntic/i, "relação com tokens"],
+  ];
+  for (const [re, label] of requiredBits) {
+    if (!re.test(text)) fail(`manual F4: seção/campo ausente (${label})`);
+  }
+  if (
+    /\b1\.0\.0\b/.test(text) &&
+    /EST[AÁ]VEL|APROVADO/i.test(text) &&
+    !/n[aã]o promover|sem.*1\.0\.0|aguarda/i.test(text)
+  ) {
+    fail("manual F4: promoção 1.0.0/ESTÁVEL sem ressalva humana");
+  }
+  if (failures === before) ok("manual F4: campos semânticos mínimos presentes");
+}
+
 function rmRecursive(dir) {
   fs.rmSync(dir, { recursive: true, force: true });
 }
@@ -397,6 +444,7 @@ function main() {
   checkNoCanonicalSkills();
   checkPromptExecutavel();
   checkPainelFase2Semantico();
+  checkManualFase4Semantico();
   checkInternalLinks();
   checkSecrets();
   if (bootstrap) bootstrapTest();

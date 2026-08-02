@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Laboratório DS — Discipulando a Caserna (demonstrativo)</title>
+    <meta
+      name="description"
+      content="Laboratório interno do design system. Conteúdo demonstrativo — não é o prospecto pastoral."
+    />
+    <link rel="stylesheet" href="css/lab.css" />
+  </head>
+  <body>
+    <a class="dc-skip" href="#conteudo">Ir para o conteúdo</a>
+    <p class="lab-banner">
+      DEMO · Laboratório do design system · não publicar · não é copy canônica
+    </p>
+    <main id="conteudo" class="lab-main">
+      <h1>Laboratório — componentes e padrões (demo)</h1>
+      <p class="lab-prosa lab-demo__meta">
+        Textos abaixo são placeholder de demonstração. Copy pastoral permanece em
+        <code>conteudo/</code>.
+      </p>
+
+      <section class="lab-demo" aria-labelledby="cmp01" id="CMP-01">
+        <h2 id="cmp01">CMP-01 Link</h2>
+        <p class="lab-demo__meta">Correto: âncora com texto.</p>
+        <p>
+          <a class="dc-link" href="#CMP-02">Ir para ação (demo)</a>
+        </p>
+        <p class="lab-incorreto">Incorreto: div clicável sem href/button.</p>
+      </section>
+
+      <section class="lab-demo" aria-labelledby="cmp02" id="CMP-02">
+        <h2 id="cmp02">CMP-02 Ação</h2>
+        <button type="button" class="dc-acao dc-acao--primaria">Ação primária</button>
+        <button type="button" class="dc-acao">Ação secundária</button>
+        <button
+          type="button"
+          class="dc-acao"
+          aria-disabled="true"
+          data-motivo="Indisponível neste demo"
+        >
+          Indisponível (explicar)
+        </button>
+      </section>
+
+      <section class="lab-demo" aria-labelledby="cmp03" id="CMP-03">
+        <h2 id="cmp03">CMP-03 Selo</h2>
+        <p class="dc-selo">Versão demonstrativa</p>
+      </section>
+
+      <section class="lab-demo" aria-labelledby="cmp04" id="CMP-04">
+        <h2 id="cmp04">CMP-04 Citação bíblica</h2>
+        <blockquote class="dc-citacao-biblica">
+          Texto demonstrativo de citação — substituir por NAA de conteudo/.
+          <cite>Referência demo 1.1</cite>
+        </blockquote>
+      </section>
+
+      <section class="lab-demo" aria-labelledby="cmp05" id="CMP-05">
+        <h2 id="cmp05">CMP-05 Rótulo de estado</h2>
+        <p>
+          <span class="dc-estado dc-estado--produzido">Produzido</span>
+          ·
+          <span class="dc-estado dc-estado--planejado">Planejado</span>
+          ·
+          <span class="dc-estado dc-estado--pendente">Pendente</span>
+        </p>
+      </section>
+
+      <section class="lab-demo" aria-labelledby="cmp06" id="CMP-06">
+        <h2 id="cmp06">CMP-06 / PAD-08 Checklist</h2>
+        <ol class="dc-checklist">
+          <li class="dc-checklist__item">
+            <input id="c1" type="checkbox" />
+            <label for="c1">Item de apreciação demonstrativo um</label>
+          </li>
+          <li class="dc-checklist__item">
+            <input id="c2" type="checkbox" />
+            <label for="c2">Item de apreciação demonstrativo dois</label>
+          </li>
+        </ol>
+      </section>
+
+      <section class="lab-demo" aria-labelledby="cmp07" id="CMP-07">
+        <h2 id="cmp07">CMP-07 Item curricular</h2>
+        <article class="dc-curriculo">
+          <h3>Módulo demonstrativo</h3>
+          <p>
+            Meta formativa de exemplo.
+            <span class="dc-estado dc-estado--planejado">Planejado</span>
+          </p>
+        </article>
+      </section>
+
+      <section class="lab-demo" aria-labelledby="cmp08" id="CMP-08">
+        <h2 id="cmp08">CMP-08 / CMP-09 / CMP-10 Chrome documental</h2>
+        <div class="dc-chrome">
+          <button
+            type="button"
+            class="dc-acao dc-sumario-controle"
+            id="sumario-btn"
+            aria-expanded="false"
+            aria-controls="sumario-painel"
+          >
+            Sumário
+          </button>
+          <div
+            class="dc-progresso"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="40"
+            aria-label="Progresso de leitura demonstrativo"
+          >
+            <div class="dc-progresso__barra" style="--dc-progresso: 40%"></div>
+          </div>
+        </div>
+        <nav class="dc-indice" id="sumario-painel" hidden aria-label="Sumário demonstrativo">
+          <ol>
+            <li><a class="dc-link" href="#CMP-01">Link</a></li>
+            <li><a class="dc-link" href="#CMP-11">Abas</a></li>
+            <li><a class="dc-link" href="#PAD-03">Umbral</a></li>
+          </ol>
+        </nav>
+      </section>
+
+      <section class="lab-demo" aria-labelledby="cmp11" id="CMP-11">
+        <h2 id="cmp11">CMP-11 Abas</h2>
+        <div class="dc-abas" data-dc-abas>
+          <div class="dc-abas__tablist" role="tablist" aria-label="Painéis demonstrativos">
+            <button
+              type="button"
+              class="dc-abas__tab"
+              role="tab"
+              id="tab-a"
+              aria-controls="panel-a"
+              aria-selected="true"
+            >
+              Painel A
+            </button>
+            <button
+              type="button"
+              class="dc-abas__tab"
+              role="tab"
+              id="tab-b"
+              aria-controls="panel-b"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Painel B
+            </button>
+          </div>
+          <div
+            class="dc-abas__panel"
+            role="tabpanel"
+            id="panel-a"
+            aria-labelledby="tab-a"
+          >
+            <p class="lab-prosa">Conteúdo demonstrativo do painel A.</p>
+          </div>
+          <div
+            class="dc-abas__panel"
+            role="tabpanel"
+            id="panel-b"
+            aria-labelledby="tab-b"
+            hidden
+          >
+            <p class="lab-prosa">Conteúdo demonstrativo do painel B.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-demo" aria-labelledby="cmp12" id="CMP-12">
+        <h2 id="cmp12">CMP-12 Disclosure</h2>
+        <details class="dc-disclosure">
+          <summary>Detalhe opcional demonstrativo</summary>
+          <p class="lab-prosa">Conteúdo secundário de exemplo.</p>
+        </details>
+      </section>
+
+      <section class="lab-demo" aria-labelledby="cmp13" id="CMP-13">
+        <h2 id="cmp13">CMP-13 Comparação</h2>
+        <div class="dc-comparacao" role="table" aria-label="Comparação demonstrativa">
+          <div class="dc-comparacao__lado" role="row">
+            <div role="cell">
+              <strong>Lado A</strong>
+              <p>Texto demonstrativo curto.</p>
+            </div>
+          </div>
+          <div class="dc-comparacao__lado" role="row">
+            <div role="cell">
+              <strong>Lado B</strong>
+              <p>Texto demonstrativo curto.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="lab-demo dc-umbral"
+        aria-labelledby="pad03"
+        id="PAD-03"
+        data-superficie="profunda"
+      >
+        <h2 id="pad03">PAD-03 Umbral (demo)</h2>
+        <p>Frase atmosférica demonstrativa — não é texto canônico de Adulão.</p>
+      </section>
+    </main>
+    <script src="js/lab.js"></script>
+  </body>
+</html>

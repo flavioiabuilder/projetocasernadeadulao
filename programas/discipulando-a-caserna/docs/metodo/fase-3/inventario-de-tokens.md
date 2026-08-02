@@ -1,7 +1,7 @@
 # Inventário de tokens — Fase 3
 
 - **Programa:** Discipulando a Caserna
-- **Data:** 2026-08-01
+- **Data:** 2026-08-02
 - **Status:** EM REVISÃO / inventário para `0.1.0-candidate`
 - **Escopo:** protótipos + identidade; **sem** migrar runtime
 
@@ -49,20 +49,25 @@
 | ------------------- | ----------------------------------- | --------------------- |
 | Display             | Montserrat 700–800 (woff2 local)    | CANÔNICO              |
 | Corpo               | Source Serif 4 400/400i/600 (woff2) | CANÔNICO              |
+| Pesos tokenizados   | 400 / 600 / 700 / 800               | CANÔNICO (Fase 4)     |
+| Estilos             | normal / italic                     | CANÔNICO (Fase 4)     |
+| Tracking semântico  | rótulo / rótuloLargo                | CANÔNICO (Fase 4)     |
 | Storytelling stacks | Iowan/Palatino + Helvetica Neue     | LEGADO / fallback     |
 | Medida              | 68ch (prospecto)                    | CANÔNICO              |
 | LH corpo            | 1.7 prospecto; 1.62 storytelling    | CANDIDATO 1.65–1.7    |
 | Escala fluid        | clamps prospecto xs…2xl             | CANDIDATO (evidência) |
+| Tabular nums        | não necessário no programa atual    | NÃO APLICÁVEL         |
 
 ## Espaço e layout
 
-| Item       | Valor             | Classificação  |
-| ---------- | ----------------- | -------------- |
-| Base       | 4px / 0.25rem     | CANÔNICO       |
-| Escala esp | 1…24 (múltiplos)  | CANÔNICO       |
-| Container  | 40rem / 64rem     | CANDIDATO      |
-| Gutters    | 1.25 / 2 / 2.5rem | CANDIDATO      |
-| `--mx` 8vw | storytelling      | LEGADO de deck |
+| Item       | Valor                                                                 | Classificação                                                                           |
+| ---------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Base       | 4px / 0.25rem                                                         | CANÔNICO                                                                                |
+| Escala esp | 1…24 (múltiplos)                                                      | CANÔNICO                                                                                |
+| Container  | 40rem / 64rem                                                         | CANDIDATO                                                                               |
+| Gutters    | 1.25 / 2 / 2.5rem                                                     | CANÔNICO — semânticos `gutterMobile\|Tablet\|Desktop` + alias `pagina.gutter` (desktop) |
+| Consumo MQ | media queries no CSS consumidor; custom props não são condições de MQ | FUNDAÇÃO                                                                                |
+| `--mx` 8vw | storytelling                                                          | LEGADO de deck                                                                          |
 
 ## Breakpoints observados
 
@@ -80,12 +85,28 @@ Semânticos propostos: `navCompacta` (~900), `leituraAmpla` (~700–768),
 
 ## Motion / foco
 
-| Item              | Valor                           | Classificação                |
-| ----------------- | ------------------------------- | ---------------------------- |
-| Duração revelação | 320ms                           | CANÔNICO candidato `lenta`   |
-| Easing            | cubic-bezier(0.22, 1, 0.36, 1)  | CANÔNICO                     |
-| RM                | implementações diversas         | SEMÂNTICO a unificar no JSON |
-| Foco              | 2px solid bronze-cl; offset 3px | CANÔNICO                     |
+| Item              | Valor                           | Classificação                                                            |
+| ----------------- | ------------------------------- | ------------------------------------------------------------------------ |
+| Duração revelação | 320ms                           | CANÔNICO candidato `lenta`                                               |
+| Easing            | cubic-bezier(0.22, 1, 0.36, 1)  | CANÔNICO                                                                 |
+| RM                | implementações diversas         | SEMÂNTICO a unificar no JSON                                             |
+| Foco              | 2px solid bronze-cl; offset 3px | CANÔNICO — semânticos `foco.anel.{largura,offset,estilo}` + `cor.foco.*` |
+
+## F3-R04 — Escalas, aliases e legado
+
+Separação explícita no JSON:
+
+| Papel                        | Exemplos                             | Uso                                       |
+| ---------------------------- | ------------------------------------ | ----------------------------------------- |
+| Escala perceptual incompleta | navy `50,100,300,600,800,900` (gaps) | Não interpolar passos ausentes            |
+| Âncoras                      | navy.800, bronze.500, papel, tinta   | Fonte de semânticos novos                 |
+| Aliases perceptivos          | bronze.600 ≈ bronze.500 (`#8C6A46`)  | Logo kit; não preferir em UI nova         |
+| Legado                       | bronze.legadoProspecto `#9A7B4F`     | Só migração; proibido em semânticos novos |
+
+## F3-R05 — Derivação cromática
+
+Valores com `$origem: "derivado"` sem fórmula (ex.: navy.100/300) marcados com
+`$metodoDerivacao: "PENDENTE HUMANO"`. Não inventar OKLCH/mix até decisão.
 
 ## Mapa de autoridade (resumo)
 
@@ -97,5 +118,5 @@ Semânticos propostos: `navCompacta` (~900), `leituraAmpla` (~700–768),
 
 ## Próximo passo
 
-Codificar candidatos em `design-system/tokens/tokens.json` (`0.1.0-candidate`)
-e gerar `tokens.css`. Runtime dos protótipos permanece intocado.
+Tokens em `0.1.0-candidate` com aliases CSS `var(--primitivo-*)` (F3-R01).
+Runtime dos protótipos permanece intocado até Fase 6 / D3-12.

@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   validar:
-    name: Validar prospecto
+    name: Validar repositório
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:

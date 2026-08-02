@@ -10,6 +10,8 @@
     "unidadeEspacamentoBase": "{{4px|outro}}",
     "notacaoCor": "{{hex|oklch|mista}}",
     "fonteVerdadeRuntime": "json",
+    "fonteVerdade": "{{tokens.json no produto — omitir placeholders}}",
+    "dtcgNota": "ME-T subset; não declarar DTCG completo",
     "arquivosGerados": ["tokens.css"]
   },
   "primitivos": {

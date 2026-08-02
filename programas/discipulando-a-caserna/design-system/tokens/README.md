@@ -21,10 +21,14 @@ tokens.css    ← GERADO — não editar
 ## Comandos
 
 ```bash
-npm run generate:discipulando:tokens
-npm run validate:discipulando:tokens
+npm run generate:discipulando:tokens   # regenera tokens.css (write explícito)
+npm run validate:discipulando:tokens   # compara CSS versionado vs geração em memória (não escreve)
 npm run test:discipulando:tokens
 ```
+
+`validate:discipulando` **não** regenera `tokens.css` antes de validar.
+Se o CSS versionado estiver stale, a validação falha — rode o generate
+explicitamente e commit o resultado.
 
 Idempotência:
 
@@ -32,6 +36,15 @@ Idempotência:
 npm run generate:discipulando:tokens
 git diff --exit-code -- programas/discipulando-a-caserna/design-system/tokens/tokens.css
 ```
+
+Aliases semânticos no CSS preservam a cadeia:
+
+```css
+--primitivo-cor-navy-800: #1a2a44;
+--cor-superficie-profunda: var(--primitivo-cor-navy-800);
+```
+
+Contraste e demais checks resolvem valores em memória a partir do JSON.
 
 **Não** usar `npm run generate:tokens` (pipeline Aramco / DevTools).
 

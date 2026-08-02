@@ -97,6 +97,21 @@ Formato por entrada:
   [`fase-2/inventario-e-triagem.md`](../../../programas/discipulando-a-caserna/docs/metodo/fase-2/inventario-e-triagem.md);
   [`prompts/curadoria-referencias.md`](../../prompts/curadoria-referencias.md).
 
+## 2026-08-02 — Fase 4 design system (candidato)
+
+- **Hipótese:** Contratos de componentes/padrões + lab estático permitem
+  compor páginas sem migrar runtime nem introduzir framework.
+- **Decisão:** (1) Manual síntese em `04-manual-design-system.md` status
+  CANDIDATO; (2) fichas em `design-system/componentes|padroes/`; (3) evidência
+  em `docs/metodo/fase-4/`; (4) lab HTML/CSS/JS consumindo `tokens.css`;
+  (5) F3-R01 aliases `var(--primitivo-*)`; (6) F3-R02 validate sem regenerate;
+  (7) sem camada de tokens de componente; (8) sem Storybook; (9) SemVer do DS
+  independente dos tokens; (10) V*/D*/H* permanecem humanas.
+- **Justificativa:** Plano Fase 4; ADR-001; Direção A + importações B/C.
+- **Links:**
+  [`04-manual-design-system.md`](../../../programas/discipulando-a-caserna/docs/metodo/04-manual-design-system.md);
+  [`prompts/manual-design-system.md`](../../prompts/manual-design-system.md).
+
 ## 2026-08-01 — Fase 3 tokens candidatos (ME-T)
 
 - **Hipótese:** JSON canônico + gerador próprio unifica drift sem migrar

@@ -73,14 +73,17 @@ function resolveValue(tokens, raw, stack = []) {
 
 function pathToCssName(tokenPath, layer) {
   const parts = tokenPath.split(".");
+  const inferred =
+    parts[0] === "primitivos" || parts[0] === "semanticos" ? parts[0] : null;
+  const layerName = layer || inferred;
   // Remove layer prefix (primitivos|semanticos)
-  const rest = parts[0] === layer ? parts.slice(1) : parts;
+  const rest = layerName && parts[0] === layerName ? parts.slice(1) : parts;
   const kebab = rest
     .join("-")
     .replace(/([a-z0-9])([A-Z])/g, "$1-$2")
     .replace(/_/g, "-")
     .toLowerCase();
-  if (layer === "primitivos") return `--primitivo-${kebab}`;
+  if (layerName === "primitivos") return `--primitivo-${kebab}`;
   return `--${kebab}`;
 }
 
@@ -88,6 +91,27 @@ function cssValue(value) {
   if (typeof value === "boolean") return value ? "1" : "0";
   if (typeof value === "number") return String(value);
   return String(value);
+}
+
+/**
+ * Emite o valor CSS da declaração: aliases viram var(--token-alvo);
+ * literais permanecem resolvidos apenas na folha (primitivos).
+ * Contraste e validação continuam usando resolveValue em memória.
+ */
+function emitCssDeclarationValue(tokens, raw) {
+  if (typeof raw === "string") {
+    const m = raw.match(ALIAS_RE);
+    if (m) {
+      const ref = m[1];
+      const target = getByPath(tokens, ref);
+      if (!target) throw new Error(`alias inexistente: {${ref}}`);
+      if (!isTokenLeaf(target)) {
+        throw new Error(`alias não aponta para folha: {${ref}}`);
+      }
+      return `var(${pathToCssName(ref)})`;
+    }
+  }
+  return cssValue(raw);
 }
 
 function gerar(tokens) {
@@ -109,11 +133,12 @@ function gerar(tokens) {
     const { value } = resolveValue(tokens, leaf.$value);
     const layer = p.startsWith("primitivos") ? "primitivos" : "semanticos";
     const cssName = pathToCssName(p, layer);
-    resolved.set(p, { cssName, value, leaf });
+    const emitted = emitCssDeclarationValue(tokens, leaf.$value);
+    resolved.set(p, { cssName, value, leaf, emitted });
     const comment = leaf.$description
       ? `  /* ${String(leaf.$description).replace(/\*\//g, "*∕")} */\n`
       : "";
-    const line = `${comment}  ${cssName}: ${cssValue(value)};`;
+    const line = `${comment}  ${cssName}: ${emitted};`;
     if (layer === "primitivos") primLines.push(line);
     else semLines.push(line);
   }
@@ -203,6 +228,7 @@ module.exports = {
   gerar,
   collectLeaves,
   resolveValue,
+  emitCssDeclarationValue,
   isTokenLeaf,
   pathToCssName,
   ORIGEM,

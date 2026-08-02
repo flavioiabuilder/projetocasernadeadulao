@@ -15,7 +15,8 @@ Não responder automaticamente. Tokens da Fase 3 permanecem
 `0.1.0-candidate` / EM REVISÃO até estas respostas.
 
 **V1 — o que confirmar:** seleção proposta REF-01…REF-08; nota de que REF-04/05
-são sobretudo éticas; REF-06 revalidada (site + galeria); eixo Detalhe =
+são sobretudo éticas; REF-06 site original OK, galeria Lapa 403 (secundária);
+REF-04 telemetria instável; REF-02 overflow-X em viewports estreitos; eixo Detalhe =
 Aramco + acervo interno.
 
 **V2 — formulação recomendada (candidata #1):**

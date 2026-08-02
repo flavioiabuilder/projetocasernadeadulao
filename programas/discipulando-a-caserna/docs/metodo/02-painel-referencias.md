@@ -71,7 +71,7 @@ documental) + REF-07 (progressão sem depender de espetáculo) + REF-05
 | REF-03 | Dogwood Health Trust — Annual Report 2024       | Adjacência            | Estrutura     |
 | REF-04 | BibleProject                                    | Adjacência pedagógica | Atmosfera     |
 | REF-05 | The Marshall Project Inside                     | Adjacência custódia   | Atmosfera     |
-| REF-06 | Primary Paper (Lapa Ninja)                      | Fora do setor         | Atmosfera     |
+| REF-06 | Primary Paper (site original; Lapa secundária)  | Fora do setor         | Atmosfera     |
 | REF-07 | Aramco Birth of Oil (estudo DevTools)           | Fora do setor         | Detalhe       |
 | REF-08 | Guia Mestre + identidade PDAC + capturas Dir A  | Fora da web           | Atmosfera     |
 
@@ -117,7 +117,7 @@ documental) + REF-07 (progressão sem depender de espetáculo) + REF-05
 | Organização                   | UPA International Development                                                                                         |
 | URL ou path                   | https://rapport2023-2024.upadi.ca/en/                                                                                 |
 | Data de acesso/análise        | 2026-08-01                                                                                                            |
-| Estado da URL                 | Acessível                                                                                                             |
+| Estado da URL                 | Acessível (HTTP 200). V6: overflow-X **sim** em 360/768 — qualificar mobile                                           |
 | Setor                         | Relatório digital institucional / desenvolvimento                                                                     |
 | Classificação 60/30/10        | Adjacência institucional                                                                                              |
 | Eixo primário                 | Estrutura                                                                                                             |
@@ -184,7 +184,7 @@ documental) + REF-07 (progressão sem depender de espetáculo) + REF-05
 | Organização                   | BibleProject                                                                                                                                            |
 | URL ou path                   | https://bibleproject.com/ · https://bibleproject.com/brand/ · https://bibleproject.com/about/                                                           |
 | Data de acesso/análise        | 2026-08-01                                                                                                                                              |
-| Estado da URL                 | Acessível                                                                                                                                               |
+| Estado da URL                 | **Qualificado V6:** navegação interrompida / contexto destruído; body vazio na telemetria — não tratar como URL estável na inspeção automatizada        |
 | Setor                         | Pedagogia bíblica visual                                                                                                                                |
 | Classificação 60/30/10        | Adjacência                                                                                                                                              |
 | Eixo primário                 | Atmosfera                                                                                                                                               |
@@ -241,10 +241,10 @@ documental) + REF-07 (progressão sem depender de espetáculo) + REF-05
 | Nome                          | Primary Paper (revista fotográfica impressa + site editorial)                                                                                                       |
 | Organização                   | Primary Paper (fundadores Coquito Cassibba & Jessica McGowan; ISSN 2642-9306)                                                                                       |
 | URL ou path                   | Site original: https://www.primary-paper.com/ · Fonte secundária (galeria case): https://www.lapa.ninja/post/primary-paper/ · Loja: https://shop.primary-paper.com/ |
-| Data de acesso/análise        | 2026-08-01 (revalidação: site + galeria acessíveis)                                                                                                                 |
-| Estado da URL                 | **Acessível** — site oficial e galeria Lapa Ninja confirmados (não mais “assumida”)                                                                                 |
+| Data de acesso/análise        | 2026-08-01; V6 2026-08-01 (site 200; galeria Lapa **403** Cloudflare)                                                                                               |
+| Estado da URL                 | Site original **acessível**; galeria Lapa Ninja **indisponível (403)** — fonte secundária apenas; SoT tipográfica = site original                                   |
 | Natureza da publicação        | Revista/exposição fotográfica impressa (print-first); site como vitrine editorial/arquivo/loja — não produto SaaS                                                   |
-| Disponibilidade               | Site público; issues impressas limitadas via shop; galeria Lapa Ninja como evidência de apresentação web                                                            |
+| Disponibilidade               | Site público; issues impressas limitadas via shop; galeria Lapa **não** afirmar acessível até re-fetch                                                              |
 | Setor                         | Design editorial / fotografia / papel digital                                                                                                                       |
 | Classificação 60/30/10        | Fora do setor                                                                                                                                                       |
 | Eixo primário                 | Atmosfera                                                                                                                                                           |

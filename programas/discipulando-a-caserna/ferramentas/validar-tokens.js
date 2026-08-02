@@ -257,9 +257,11 @@ function checkContrast(tokens) {
 function checkCssGenerated(tokens) {
   const before = failures;
   if (!fs.existsSync(DESTINO)) {
-    fail("tokens.css ausente — rode generate:discipulando:tokens");
+    fail("tokens.css ausente — rode npm run generate:discipulando:tokens");
     return;
   }
+  // Gera em memória e compara com o arquivo versionado.
+  // Não escreve no disco — stale CSS deve falhar (F3-R02).
   let expected;
   try {
     expected = gerar(tokens);
@@ -269,7 +271,10 @@ function checkCssGenerated(tokens) {
   }
   const actual = fs.readFileSync(DESTINO, "utf8");
   if (actual !== expected) {
-    fail("tokens.css desatualizado ou editado à mão (diff vs geração)");
+    fail(
+      "tokens.css desatualizado ou editado à mão (diff vs geração em memória). " +
+        "Corrija com: npm run generate:discipulando:tokens"
+    );
   }
   if (!actual.includes("ARQUIVO GERADO")) {
     fail("tokens.css sem cabeçalho de arquivo gerado");
@@ -277,7 +282,10 @@ function checkCssGenerated(tokens) {
   if (!actual.includes("prefers-reduced-motion")) {
     fail("tokens.css sem bloco reduced motion");
   }
-  if (failures === before) ok("tokens.css sincronizado e determinístico");
+  if (!actual.includes("var(--primitivo-")) {
+    fail("tokens.css sem aliases var(--primitivo-*) — regenerar após F3-R01");
+  }
+  if (failures === before) ok("tokens.css sincronizado (check-only, sem write)");
 }
 
 function checkMotionFoco(tokens) {
@@ -288,7 +296,21 @@ function checkMotionFoco(tokens) {
   }
   const focoW = getByPath(tokens, "primitivos.foco.largura");
   if (!isTokenLeaf(focoW)) fail("primitivos.foco.largura ausente");
-  if (failures === before) ok("motion reduced + foco presentes");
+  for (const p of [
+    "semanticos.foco.anel.largura",
+    "semanticos.foco.anel.offset",
+    "semanticos.foco.anel.estilo",
+    "semanticos.cor.foco.sobrePapel",
+    "semanticos.cor.foco.sobreProfunda",
+    "semanticos.espacamento.pagina.gutterMobile",
+    "semanticos.espacamento.pagina.gutterTablet",
+    "semanticos.espacamento.pagina.gutterDesktop",
+    "semanticos.tipografia.peso.corpo",
+    "semanticos.tipografia.peso.display",
+  ]) {
+    if (!isTokenLeaf(getByPath(tokens, p))) fail(`${p} ausente`);
+  }
+  if (failures === before) ok("motion reduced + foco + gutters + pesos presentes");
 }
 
 function checkNoSecrets(tokens) {

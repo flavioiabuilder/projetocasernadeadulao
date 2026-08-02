@@ -5,11 +5,11 @@ Documento de domínio para agentes (Matt Pocock / grill-with-docs).
 
 ## Hierarquia (não sinônimos)
 
-| Termo | Significado |
-| --- | --- |
-| Projeto Caserna de Adulão | Projeto ministerial/institucional mais amplo; raiz deste repositório |
-| Discipulando a Caserna | Programa específico em `programas/discipulando-a-caserna/` — protagonista das apresentações do programa |
-| Pr. Glaydston | Destinatário pastoral da apresentação (apreciação, orientação, validação) |
+| Termo                     | Significado                                                                                             |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Projeto Caserna de Adulão | Projeto ministerial/institucional mais amplo; raiz deste repositório                                    |
+| Discipulando a Caserna    | Programa específico em `programas/discipulando-a-caserna/` — protagonista das apresentações do programa |
+| Pr. Glaydston             | Destinatário pastoral da apresentação (apreciação, orientação, validação)                               |
 
 ## Natureza do prospecto
 
@@ -21,12 +21,12 @@ Documento de domínio para agentes (Matt Pocock / grill-with-docs).
 
 ## Áreas do repositório
 
-| Área | Path | Papel |
-| --- | --- | --- |
-| Programa | `programas/discipulando-a-caserna/` | Discipulando a Caserna |
-| Método | `metodo/` | Fase 0 — templates/prompts (não publicado) |
-| Referências DevTools | `referencias-devtools/` | Estudos técnicos — **não** produto ministerial |
-| Skills de agente | `.claude/skills/` | Canônico (ADR-006) |
+| Área                 | Path                                | Papel                                          |
+| -------------------- | ----------------------------------- | ---------------------------------------------- |
+| Programa             | `programas/discipulando-a-caserna/` | Discipulando a Caserna                         |
+| Método               | `metodo/`                           | Fase 0 — templates/prompts (não publicado)     |
+| Referências DevTools | `referencias-devtools/`             | Estudos técnicos — **não** produto ministerial |
+| Skills de agente     | `.claude/skills/`                   | Canônico (ADR-006)                             |
 
 ## Restrições duras para agentes
 
