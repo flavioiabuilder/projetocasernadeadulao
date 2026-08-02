@@ -40,8 +40,11 @@ instruções**, porque removem exatamente as saídas de alta probabilidade — q
 são as genéricas. Uma lista de dez proibições específicas muda mais o resultado
 do que dois parágrafos de adjetivos.
 
-Todo prompt em [`../prompts/`](../prompts/) já implementa esse contrato na
-seção `## PROMPT EXECUTÁVEL`, e o gate verifica que ele exista.
+O prompt dedicado a **construir** candidatos é
+[`../prompts/prototipagem.md`](../prompts/prototipagem.md). A crítica usa
+[`../prompts/critica-estruturada.md`](../prompts/critica-estruturada.md). Ambos
+(e os demais prompts do manifesto) implementam `## PROMPT EXECUTÁVEL`; o gate
+`validate:metodo` verifica o contrato mínimo.
 
 ## 5.3 Iteração dirigida
 
@@ -54,13 +57,21 @@ DIREÇÃO:    o que deve acontecer, sem microgerenciar a solução
 RESTRIÇÃO:  o que não pode mudar junto
 ```
 
-**Um eixo por rodada**: primeiro estrutura e hierarquia, depois tipografia,
-depois cor, depois detalhe e movimento. Misturar eixos produz regressão — você
-conserta a cor e a hierarquia se desfaz.
+**Modelo de rodadas (inequívoco):**
 
-> **Armadilha.** Iterar infinitamente sobre uma direção fraca. Se após três
-> rodadas dirigidas o resultado ainda não convence, o problema não é execução:
-> é direção. Volte à Fase 2.
+1. **Avaliação inicial** — crítica em todos os eixos; **sem** alterar código.
+2. **Rodada corretiva 1** — só estrutura e hierarquia.
+3. **Rodada corretiva 2** — só tipografia e ritmo.
+4. **Rodada corretiva 3** — cor + detalhe + movimento, **somente se** as
+   rodadas 1–2 estiverem estáveis.
+
+Misturar eixos corretivos na mesma rodada produz regressão. Fidelidade ao
+conteúdo, clareza pastoral, responsividade e a11y são **gates transversais** em
+toda passagem — não “rodadas de embelezamento”.
+
+> **Armadilha.** Iterar infinitamente sobre uma direção fraca. Se após **três
+> rodadas corretivas** o resultado ainda não convence, o problema não é
+> execução: é direção. Volte à Fase 2.
 
 ## Procedimento
 

@@ -39,10 +39,14 @@
           type="button"
           class="dc-acao"
           aria-disabled="true"
+          aria-describedby="acao-motivo-demo"
           data-motivo="Indisponível neste demo"
         >
           Indisponível (explicar)
         </button>
+        <p id="acao-motivo-demo" class="dc-acao__motivo">
+          Indisponível neste demo — motivo visível para leitores de tela e vista.
+        </p>
       </section>
 
       <section class="lab-demo" aria-labelledby="cmp03" id="CMP-03">
@@ -108,13 +112,15 @@
           </button>
           <div
             class="dc-progresso"
+            id="progresso-demo"
             role="progressbar"
             aria-valuemin="0"
             aria-valuemax="100"
             aria-valuenow="40"
             aria-label="Progresso de leitura demonstrativo"
+            data-dc-progresso
           >
-            <div class="dc-progresso__barra" style="--dc-progresso: 40%"></div>
+            <div class="dc-progresso__barra"></div>
           </div>
         </div>
         <nav class="dc-indice" id="sumario-painel" hidden aria-label="Sumário demonstrativo">
@@ -182,18 +188,14 @@
 
       <section class="lab-demo" aria-labelledby="cmp13" id="CMP-13">
         <h2 id="cmp13">CMP-13 Comparação</h2>
-        <div class="dc-comparacao" role="table" aria-label="Comparação demonstrativa">
-          <div class="dc-comparacao__lado" role="row">
-            <div role="cell">
-              <strong>Lado A</strong>
-              <p>Texto demonstrativo curto.</p>
-            </div>
+        <div class="dc-comparacao">
+          <div class="dc-comparacao__lado">
+            <h3>Lado A</h3>
+            <p>Texto demonstrativo curto — composição editorial, não tabela.</p>
           </div>
-          <div class="dc-comparacao__lado" role="row">
-            <div role="cell">
-              <strong>Lado B</strong>
-              <p>Texto demonstrativo curto.</p>
-            </div>
+          <div class="dc-comparacao__lado">
+            <h3>Lado B</h3>
+            <p>Texto demonstrativo curto — sem role=table artificial.</p>
           </div>
         </div>
       </section>

@@ -141,6 +141,22 @@ Formato por entrada:
   [`../../ANTIPADROES.md`](../../ANTIPADROES.md);
   [`../../fases/README.md`](../../fases/README.md).
 
+## 2026-08-02 — Fase 5 candidata aberta (não canônica)
+
+- **Hipótese:** Um candidato isolado consumindo tokens DS + Manual prova a
+  composição dos cinco movimentos sem migrar o prospecto legado.
+- **Decisão:** (1) Criar `prototipos/prospecto-fase-5-v1/` como candidato;
+  (2) prompt `metodo/prompts/prototipagem.md` + crítica executável;
+  (3) estado operacional em `docs/metodo/fase-5/estado-prototipo-canonico.json`
+  com `fase6: bloqueada`; (4) **não** declarar canônico; (5) **não** alterar
+  `pages.yml`.
+- **Justificativa:** Plano Fase 5; Fluxo A; Direção A normativa.
+- **Resultado observado:** Candidato gerado de `conteudo/`; gates estruturais
+  verdes; e2e/capturas dependem de Chromium Playwright no ambiente.
+- **Links:**
+  [`fase-5/`](../../../programas/discipulando-a-caserna/docs/metodo/fase-5/);
+  [`prospecto-fase-5-v1/`](../../../programas/discipulando-a-caserna/prototipos/prospecto-fase-5-v1/).
+
 ## 2026-08-01 — Fase 3 tokens candidatos (ME-T)
 
 - **Hipótese:** JSON canônico + gerador próprio unifica drift sem migrar

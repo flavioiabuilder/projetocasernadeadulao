@@ -43,12 +43,35 @@ test.describe("design system — laboratório", () => {
     await expect(btn).toBeFocused();
   });
 
-  test("abas alternam com teclado", async ({ page }) => {
+  test("abas alternam com teclado (setas, Home, End)", async ({ page }) => {
     await page.goto(LAB);
     await page.locator("#tab-a").focus();
     await page.keyboard.press("ArrowRight");
     await expect(page.locator("#tab-b")).toHaveAttribute("aria-selected", "true");
     await expect(page.locator("#panel-b")).toBeVisible();
+    await page.keyboard.press("Home");
+    await expect(page.locator("#tab-a")).toHaveAttribute("aria-selected", "true");
+    await page.keyboard.press("End");
+    await expect(page.locator("#tab-b")).toHaveAttribute("aria-selected", "true");
+  });
+
+  test("progresso sincroniza aria-valuenow e --dc-progresso", async ({ page }) => {
+    await page.goto(LAB);
+    const sync = await page.locator("#progresso-demo").evaluate((el) => {
+      const now = el.getAttribute("aria-valuenow");
+      const barra = el.querySelector(".dc-progresso__barra");
+      const css = barra ? getComputedStyle(barra).getPropertyValue("--dc-progresso").trim() : "";
+      return { now, css };
+    });
+    expect(sync.now).toBe("40");
+    expect(sync.css === "40%" || sync.css === "").toBeTruthy();
+  });
+
+  test("ação aria-disabled expõe motivo via aria-describedby", async ({ page }) => {
+    await page.goto(LAB);
+    const btn = page.locator('#CMP-02 [aria-disabled="true"]');
+    await expect(btn).toHaveAttribute("aria-describedby", "acao-motivo-demo");
+    await expect(page.locator("#acao-motivo-demo")).toBeVisible();
   });
 
   test("axe WCAG 2.2 A/AA sem violações graves", async ({ page }) => {

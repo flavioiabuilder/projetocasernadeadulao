@@ -74,7 +74,8 @@ visual). Ver alvos em [`fases/fase-7-qualidade.md`](fases/fase-7-qualidade.md).
 sensivelmente menor que entre blocos não relacionados.
 
 **Iteração dirigida** — crítica em quatro campos (observação, diagnóstico,
-direção, restrição), um eixo por rodada.
+direção, restrição). Sequência: avaliação inicial (sem editar) + até três
+rodadas corretivas (estrutura → tipografia → cor/detalhe/movimento).
 
 ## Agentes
 

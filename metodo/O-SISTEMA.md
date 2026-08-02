@@ -587,9 +587,9 @@ RESTRIÇÃO: o que não pode mudar junto
    "Sem alterar a altura total da seção nem os breakpoints."
 ```
 
-Trabalhe **um eixo por rodada**: primeiro estrutura e hierarquia, depois tipografia, depois cor, depois detalhe e movimento. Misturar eixos na mesma rodada produz regressões — você conserta a cor e a hierarquia se desfaz.
+**Modelo de rodadas:** (1) avaliação inicial sem alterar código; (2) rodada corretiva só de estrutura/hierarquia; (3) tipografia/ritmo; (4) cor + detalhe + movimento se as anteriores estiverem estáveis. Misturar eixos corretivos na mesma rodada produz regressões.
 
-> **ARMADILHA —** Iterar infinitamente sobre a mesma direção fraca. Se após três rodadas dirigidas o resultado ainda não convence, o problema não é execução: é direção. Volte à Fase 2.
+> **ARMADILHA —** Iterar infinitamente sobre a mesma direção fraca. Se após três rodadas **corretivas** o resultado ainda não convence, o problema não é execução: é direção. Volte à Fase 2.
 
 > **CRITÉRIO DE ACEITE —** O protótipo pode ser apresentado ao cliente sem nenhuma frase começando com "imagina que aqui vai ter...".
 

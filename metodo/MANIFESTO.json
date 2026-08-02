@@ -23,6 +23,7 @@
     "prompts/direcao-arte.md",
     "prompts/manual-design-system.md",
     "prompts/critica-estruturada.md",
+    "prompts/prototipagem.md",
     "prompts/implementacao.md",
     "prompts/qa-visual.md",
     "prompts/auditoria-final.md",
@@ -60,6 +61,10 @@
     "programas/discipulando-a-caserna/docs/metodo/fase-3/inventario-de-tokens.md",
     "programas/discipulando-a-caserna/docs/metodo/fase-4/inventario-de-componentes.md",
     "programas/discipulando-a-caserna/docs/metodo/fase-4/cobertura-de-composicao.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-5/dossie-de-prototipagem.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-5/roteiro-de-validacao.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-5/decisao-do-prototipo-canonico.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-5/estado-prototipo-canonico.json",
     "programas/discipulando-a-caserna/design-system/tokens/tokens.json",
     "programas/discipulando-a-caserna/design-system/tokens/tokens.css",
     "programas/discipulando-a-caserna/design-system/README.md"

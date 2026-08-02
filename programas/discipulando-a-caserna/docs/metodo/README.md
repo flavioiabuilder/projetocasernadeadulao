@@ -22,6 +22,8 @@ O repositório é o **piloto** do método “O Sistema” (ADR-007).
 | Inventário componentes   | CANDIDATO               | [`fase-4/inventario-de-componentes.md`](fase-4/inventario-de-componentes.md)       |
 | Cobertura composição     | CANDIDATO               | [`fase-4/cobertura-de-composicao.md`](fase-4/cobertura-de-composicao.md)           |
 | Lab DS                   | CANDIDATO               | [`../../design-system/laboratorio/`](../../design-system/laboratorio/)             |
+| Fase 5 — dossiê          | ABERTA                  | [`fase-5/dossie-de-prototipagem.md`](fase-5/dossie-de-prototipagem.md)             |
+| Fase 5 — decisão         | PENDENTE DE DECISÃO     | [`fase-5/decisao-do-prototipo-canonico.md`](fase-5/decisao-do-prototipo-canonico.md) |
 | Regras do agente         | Ponte                   | [`05-regras-agente.md`](05-regras-agente.md)                                       |
 
 ## Hierarquia

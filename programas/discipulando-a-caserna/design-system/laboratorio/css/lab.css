@@ -146,6 +146,13 @@ body {
   cursor: not-allowed;
 }
 
+.dc-acao__motivo {
+  margin: var(--espacamento-inline) 0 0;
+  max-width: var(--layout-medida-prosa);
+  font-size: var(--tipografia-nota);
+  color: var(--cor-texto-suave);
+}
+
 .dc-selo {
   display: inline-block;
   font-family: var(--tipografia-familia-display);
@@ -330,4 +337,40 @@ body {
   opacity: 0.85;
   font-size: var(--tipografia-nota);
   color: var(--cor-estado-erro);
+}
+
+/* Progressive enhancement / preferências do usuário (padrão bloqueante F4-R09) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .dc-acao,
+  .dc-abas__tab,
+  .dc-selo,
+  .dc-comparacao__lado {
+    border: 1px solid CanvasText;
+  }
+
+  .dc-progresso__barra {
+    background: Highlight;
+  }
+
+  .dc-link {
+    text-decoration: underline;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .dc-acao,
+  .dc-abas__tab {
+    border-width: 2px;
+  }
 }

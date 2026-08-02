@@ -247,6 +247,9 @@ function checkPromptExecutavel() {
     "prompts/curadoria-referencias.md",
     "prompts/direcao-arte.md",
     "prompts/manual-design-system.md",
+    "prompts/prototipagem.md",
+    "prompts/critica-estruturada.md",
+    "prompts/qa-visual.md",
     "prompts/implementacao.md",
     "prompts/auditoria-final.md",
   ];
@@ -387,6 +390,69 @@ function checkManualFase4Semantico() {
   if (failures === before) ok("manual F4: campos semânticos mínimos presentes");
 }
 
+/**
+ * Validação semântica leve do estado do protótipo canônico (Fase 5).
+ * Não julga qualidade visual; impede canônico fantasma / Fase 6 aberta sem decisão.
+ */
+function checkFase5EstadoSemantico() {
+  const estadoPath = path.join(
+    ROOT,
+    "programas/discipulando-a-caserna/docs/metodo/fase-5/estado-prototipo-canonico.json"
+  );
+  const decisaoPath = path.join(
+    ROOT,
+    "programas/discipulando-a-caserna/docs/metodo/fase-5/decisao-do-prototipo-canonico.md"
+  );
+  if (!fs.existsSync(estadoPath)) {
+    fail("F5: estado-prototipo-canonico.json ausente");
+    return;
+  }
+  if (!fs.existsSync(decisaoPath)) {
+    fail("F5: decisao-do-prototipo-canonico.md ausente");
+    return;
+  }
+  const before = failures;
+  let estado;
+  try {
+    estado = readJson(estadoPath);
+  } catch (e) {
+    fail(`F5: estado JSON inválido: ${e.message}`);
+    return;
+  }
+  const status = String(estado.status || "").toLowerCase();
+  const allowed = ["pendente", "candidato", "aprovado", "rejeitado", "retorno-fase-2"];
+  if (!allowed.includes(status)) {
+    fail(`F5: status inválido (${estado.status}); use ${allowed.join("|")}`);
+  }
+  const fase6 = String(estado.fase6 || "").toLowerCase();
+  if (!["bloqueada", "liberada"].includes(fase6)) {
+    fail('F5: fase6 deve ser "bloqueada" ou "liberada"');
+  }
+  if (status !== "aprovado") {
+    if (estado.prototipoCanonico != null) {
+      fail("F5: prototipoCanonico deve ser null enquanto status ≠ aprovado");
+    }
+    if (fase6 !== "bloqueada") {
+      fail("F5: fase6 deve permanecer bloqueada até status aprovado + decisão humana");
+    }
+  } else {
+    if (!estado.prototipoCanonico || !estado.path || !estado.data || !estado.responsavel) {
+      fail("F5: status aprovado exige prototipoCanonico, path, data e responsavel");
+    }
+    if (fase6 === "liberada" && !estado.autorizacaoFase6) {
+      fail("F5: fase6 liberada exige autorizacaoFase6 true (decisão humana)");
+    }
+  }
+  const decisao = fs.readFileSync(decisaoPath, "utf8");
+  if (!/PENDENTE DE DECISÃO|Status:\s*APROVADO|Status:\s*REJEITADO|retorno à Fase 2/i.test(decisao)) {
+    fail("F5: decisão MD sem status reconhecível");
+  }
+  if (status !== "aprovado" && !/NENHUM|BLOQUEADA/i.test(decisao)) {
+    fail("F5: enquanto não aprovado, decisão deve declarar canônico NENHUM e Fase 6 BLOQUEADA");
+  }
+  if (failures === before) ok("F5: estado semântico mínimo presente");
+}
+
 function rmRecursive(dir) {
   fs.rmSync(dir, { recursive: true, force: true });
 }
@@ -447,6 +513,7 @@ function main() {
   checkPromptExecutavel();
   checkPainelFase2Semantico();
   checkManualFase4Semantico();
+  checkFase5EstadoSemantico();
   checkInternalLinks();
   checkSecrets();
   if (bootstrap) bootstrapTest();

@@ -16,7 +16,7 @@ Norma: [`../docs/arquitetura/ADR-007-camada-metodo-o-sistema.md`](../docs/arquit
 | Doutrina     | [`O-SISTEMA.md`](O-SISTEMA.md)                       | Documento-fonte do método (verbatim + nota de adaptação)       |
 | Pipeline     | [`PIPELINE.md`](PIPELINE.md)                         | As nove fases e o estado de cada uma neste repositório         |
 | Templates    | [`templates/projeto-web/`](templates/projeto-web/)   | Cinco artefatos permanentes para copiar                        |
-| Prompts      | [`prompts/`](prompts/)                               | Fases 1–7: descoberta a auditoria final                        |
+| Prompts      | [`prompts/`](prompts/)                               | Fases 1–7: descoberta, prototipagem, crítica, implementação, QA |
 | Fases 5–8    | [`fases/`](fases/)                                   | Guias da metade do pipeline com validação humana               |
 | Checklists   | [`checklists/`](checklists/)                         | Preparação, design e pré-lançamento                            |
 | Anti-padrões | [`ANTIPADROES.md`](ANTIPADROES.md)                   | Os dez mais caros + os deste repositório, com a defesa de cada |

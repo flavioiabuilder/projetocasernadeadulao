@@ -1,0 +1,12 @@
+{
+  "status": "candidato",
+  "prototipoCanonico": null,
+  "path": null,
+  "versao": null,
+  "data": null,
+  "responsavel": null,
+  "fase6": "bloqueada",
+  "autorizacaoFase6": false,
+  "candidatoPrincipal": "programas/discipulando-a-caserna/prototipos/prospecto-fase-5-v1/",
+  "notas": "Candidato integrado construído e validado estruturalmente. Julgamento canônico em decisao-do-prototipo-canonico.md. Agente não altera status para aprovado sem decisão humana F5-08/F5-10/F5-12."
+}

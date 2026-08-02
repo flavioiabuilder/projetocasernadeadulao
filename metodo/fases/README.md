@@ -7,7 +7,7 @@ guias existem para que esse julgamento seja **procedimento**, não improviso.
 
 | Fase | Guia                                                       | Prompt de apoio                                                                                  |
 | ---- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| 5    | [`fase-5-prototipagem.md`](fase-5-prototipagem.md)         | [`critica-estruturada.md`](../prompts/critica-estruturada.md)                                    |
+| 5    | [`fase-5-prototipagem.md`](fase-5-prototipagem.md)         | [`prototipagem.md`](../prompts/prototipagem.md), [`critica-estruturada.md`](../prompts/critica-estruturada.md) |
 | 6    | [`fase-6-implementacao.md`](fase-6-implementacao.md)       | [`implementacao.md`](../prompts/implementacao.md)                                                |
 | 7    | [`fase-7-qualidade.md`](fase-7-qualidade.md)               | [`auditoria-final.md`](../prompts/auditoria-final.md), [`qa-visual.md`](../prompts/qa-visual.md) |
 | 8    | [`fase-8-entrega-evolucao.md`](fase-8-entrega-evolucao.md) | —                                                                                                |
