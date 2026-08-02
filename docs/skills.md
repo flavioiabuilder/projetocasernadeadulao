@@ -2,6 +2,9 @@
 
 Norma detalhada: [`docs/arquitetura/ADR-006-ferramentas-de-ia.md`](arquitetura/ADR-006-ferramentas-de-ia.md).
 
+Catálogo de fontes externas, quando usar e o que não instalar:
+[`docs/agent-skills.md`](agent-skills.md).
+
 ## Decisão D2 (default técnico)
 
 A árvore canônica de skills do projeto é:
@@ -9,11 +12,15 @@ A árvore canônica de skills do projeto é:
 **`.claude/skills/`**
 
 Ali ficam Impeccable, brand, design, design-system, frontend-design, ui-ux-pro-max,
-slides, banner-design, ui-styling, web-design-guidelines, astryx, Higgsfield
+slides, banner-design, ui-styling, web-design-guidelines, astryx, web-a11y-\*,
+writing-guidelines, pdf, scroll-world-storytelling, Matt Pocock (grill-me,
+grill-with-docs, tdd, diagnosing-bugs, code-review, handoff, …),
+doc-coauthoring, webapp-testing, avoid-ai-writing, repomix-explorer, Higgsfield
 (`higgsfield-generate`, soul-id, product-photoshoot, marketplace-cards, websites,
 video-explainer, game-generation), Chrome DevTools MCP (`chrome-devtools`,
 `chrome-devtools-cli`, `debug-optimize-lcp`, `memory-leak-debugging`,
-`a11y-debugging`, `troubleshooting`) etc.
+`a11y-debugging`, `troubleshooting`) etc. Lista operacional:
+[`docs/agent-skills.md`](agent-skills.md).
 
 ## Espelhos
 

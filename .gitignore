@@ -21,6 +21,9 @@ playwright-report/
 test-results/
 blob-report/
 .npm-cache/
+repomix-output.md
+repomix-output.xml
+repomix-output.json
 programas/discipulando-a-caserna/referencia/
 programas/discipulando-a-caserna/fontes/guia-mestre/_guia_tmp.pdf
 programas/discipulando-a-caserna/fontes/guia-mestre/*_tmp.pdf

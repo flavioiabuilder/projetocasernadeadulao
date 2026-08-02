@@ -41,4 +41,4 @@ npm run validate:metodo          # contrato da camada metodo/
 - Método: [`metodo/README.md`](metodo/README.md) · ponte [`docs/metodo.md`](docs/metodo.md)
 - Agentes: [`AGENTS.md`](AGENTS.md)
 - Referências: [`referencias-devtools/README.md`](referencias-devtools/README.md)
-- Skills: [`docs/skills.md`](docs/skills.md)
+- Skills: [`docs/skills.md`](docs/skills.md) · catálogo [`docs/agent-skills.md`](docs/agent-skills.md)

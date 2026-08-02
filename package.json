@@ -44,7 +44,8 @@
     "test": "npm run test:discipulando && npm run test:referencias:aramco && npm run test:referencias:soul-church",
     "test:a11y": "playwright test programas/discipulando-a-caserna/testes/e2e/site.spec.js -g \"a11y\"",
     "test:e2e": "npm run test:discipulando:e2e",
-    "validate": "npm run validate:discipulando && npm run validate:referencias && npm run validate:metodo"
+    "validate": "npm run validate:discipulando && npm run validate:referencias && npm run validate:metodo",
+    "pack:context": "npx --yes repomix@latest --config repomix.config.json"
   },
   "engines": {
     "node": ">=18"

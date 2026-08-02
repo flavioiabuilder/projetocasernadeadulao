@@ -1,0 +1,48 @@
+{
+  "$schema": "https://repomix.com/schemas/latest/schema.json",
+  "input": {
+    "maxFileSize": 1048576
+  },
+  "output": {
+    "filePath": "repomix-output.md",
+    "style": "markdown",
+    "removeComments": false,
+    "removeEmptyLines": false,
+    "topFilesLength": 20,
+    "showLineNumbers": false,
+    "copyToClipboard": false
+  },
+  "include": [
+    "CONTEXT.md",
+    "AGENTS.md",
+    "README.md",
+    "docs/**",
+    "programas/discipulando-a-caserna/conteudo/**",
+    "programas/discipulando-a-caserna/docs/**",
+    "programas/discipulando-a-caserna/README.md",
+    "programas/discipulando-a-caserna/prototipos/prospecto-v1/**/*.html",
+    "programas/discipulando-a-caserna/prototipos/prospecto-v1/css/**",
+    "programas/discipulando-a-caserna/prototipos/prospecto-v1/js/**",
+    "programas/discipulando-a-caserna/ferramentas/**",
+    "programas/discipulando-a-caserna/testes/**",
+    "metodo/**/*.md",
+    ".cursor/rules/**"
+  ],
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      "**/node_modules/**",
+      "**/js/dados/**",
+      "**/*FALLBACK*",
+      "**/_gerado/**",
+      "**/.claude/skills/**/demo/**",
+      "**/.agents/skills/**/demo/**",
+      "**/.cursor/skills/**/demo/**",
+      "**/scroll-world-storytelling/demo/**",
+      "repomix-output.*",
+      "playwright-report/**",
+      "test-results/**"
+    ]
+  }
+}
