@@ -96,10 +96,36 @@ function main() {
     } else if (String(estado.fase6).toLowerCase() !== "bloqueada" && estado.status !== "aprovado") {
       fail("fase6 não bloqueada com status pendente");
     } else ok("estado F5 coerente");
+    if (estado.autorizacaoFase6 === true && !estado.prototipoCanonico) {
+      fail("autorizacaoFase6 true sem prototipoCanonico");
+    }
   }
 
   if (/cdn\.|unpkg\.|jsdelivr\.|fonts\.google/i.test(html)) fail("rede/CDN externa no HTML");
   else ok("sem CDN");
+
+  if (/Lacuna declarada/i.test(html)) fail("lacuna artificial ainda presente no HTML");
+  else ok("sem lacuna artificial");
+
+  if (!/Fundamentos bíblicos e hermenêuticos/i.test(html)) {
+    fail("lista de escopo ausente (parser/listas)");
+  } else ok("listas de escopo");
+
+  if (!/<details class="dc-sumario-pe"/.test(html)) fail("sumário PE (<details>) ausente");
+  else ok("sumário progressive enhancement");
+
+  const matriz = fs.readFileSync(path.join(cand, "parcial/matriz.html"), "utf8");
+  if (/\bhidden\b/.test(matriz)) fail("matriz versionada ainda usa hidden estático");
+  else ok("matriz sem hidden estático");
+
+  const s11 = fs.readFileSync(path.join(cand, "parcial/secao-11.html"), "utf8");
+  if ((s11.match(/dc-tabela-wrap/g) || []).length < 2) {
+    fail("seção 11 não preserva duas tabelas");
+  } else ok("seção 11 com duas tabelas");
+
+  const rel = JSON.parse(fs.readFileSync(path.join(cand, "parcial/relatorio.json"), "utf8"));
+  if (rel.geradoEm != null || rel.ms != null) fail("relatorio.json contém telemetria não determinística");
+  else ok("relatório determinístico");
 
   if (failures > 0) {
     console.error(`\nvalidate:discipulando:prototipagem FALHOU com ${failures} problema(s).`);

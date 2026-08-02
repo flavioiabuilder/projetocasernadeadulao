@@ -1,8 +1,18 @@
 # Arquitetura narrativa e direções visuais v1
 
+**Status:** HISTÓRICO / PARCIALMENTE SUPERADO (2026-08-02).
+
 Documento de concepção. Complementa [`pesquisa-visual-v1.md`](pesquisa-visual-v1.md).  
 **Não** implementa a direção escolhida. **Não** altera produção.  
 A matriz recomenda; a **decisão final é humana**.
+
+A arquitetura narrativa **vigente** do candidato Fase 5 e do conteúdo canônico é:
+
+`I — A necessidade` · `II — A resposta` · `III — O programa` · `IV — A prova` · `V — O pedido`
+
+(ver [`docs/metodo/fase-5/dossie-de-prototipagem.md`](metodo/fase-5/dossie-de-prototipagem.md)).
+A nomenclatura “Parte I — A identidade / Parte II — O programa …” abaixo permanece
+como evidência histórica do prospecto legado — não como contrato da Fase 6.
 
 ---
 

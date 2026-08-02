@@ -3,9 +3,11 @@
 **Objetivo.** Transformar protótipo aprovado em código de produção sustentável
 — código que outra pessoa, ou você em seis meses, consiga manter.
 
-Estado no piloto: **aberta**. Os protótipos rodam em CSS legado; a migração
-para `design-system/tokens/tokens.css` **não** começou e depende de decisão
-humana ([`../CONVENCOES.md`](../CONVENCOES.md), escopo `PROTOTIPO`).
+Estado no piloto: **BLOQUEADA** até autorização humana F5-12
+([`estado-prototipo-canonico.json`](../../programas/discipulando-a-caserna/docs/metodo/fase-5/estado-prototipo-canonico.json)).
+O candidato F5 consome `tokens.css`; a superfície de produção prevista
+(`programas/discipulando-a-caserna/prospecto/`) ainda não existe. Runtime
+Pages permanece em `prospecto-v1` até F6-11.
 
 ## 6.1 Stack
 

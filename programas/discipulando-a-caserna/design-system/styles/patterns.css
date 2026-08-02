@@ -1,0 +1,34 @@
+/**
+ * Padrões de composição (PAD) — camada acima dos componentes.
+ * Expandir na migração para prospecto/ (após F5-12).
+ */
+
+.dc-pad-01,
+.dc-pad-02 {
+  margin-bottom: var(--espacamento-bloco);
+}
+
+.dc-pad-03,
+.dc-umbral {
+  background: var(--cor-superficie-profunda);
+  color: var(--cor-texto-sobre-profunda);
+}
+
+.dc-pad-04,
+.dc-nota {
+  margin: var(--espacamento-bloco) 0;
+  padding: var(--espacamento-grupo);
+  border-left: var(--borda-separador) solid var(--cor-acento-editorial);
+  font-size: var(--tipografia-nota);
+}
+
+.dc-pad-06 {
+  margin-top: var(--espacamento-bloco);
+}
+
+.dc-pad-07 {
+  margin-top: var(--espacamento-bloco);
+  padding: var(--espacamento-bloco) 0;
+  border-top: var(--borda-separador) solid var(--cor-borda-sutil);
+  font-size: var(--tipografia-nota);
+}

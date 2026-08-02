@@ -157,6 +157,24 @@ Formato por entrada:
   [`fase-5/`](../../../programas/discipulando-a-caserna/docs/metodo/fase-5/);
   [`prospecto-fase-5-v1/`](../../../programas/discipulando-a-caserna/prototipos/prospecto-fase-5-v1/).
 
+## 2026-08-02 — Saneamento F5 + blueprint Fase 6 (bloqueada)
+
+- **Hipótese:** Fidelidade editorial e PE honestos são pré-requisito de canonização; produção não pode começar sem F5-12.
+- **Decisão:** (1) parser de blocos `parse-md-blocos.js` com falha em tabela inválida;
+  (2) contrato `index.html` inteiro gerado; (3) config institucional única em
+  `ferramentas/institucional.js`; (4) stale-check F5 sem escrever working tree;
+  (5) path de produção previsto `programas/discipulando-a-caserna/prospecto/`
+  **após** F5-12; (6) stack permanece HTML/CSS/JS + Node (ADR-001); (7) CSS
+  compartilhado do DS em `design-system/styles/` (esqueleto); (8) **não**
+  publicar / **não** remover `noindex` / **não** redirecionar legado;
+  (9) PIPELINE: Fase 5 CANDIDATO EM VALIDAÇÃO, Fase 6 BLOQUEADA.
+- **Justificativa:** Plano Fase 6 bloqueado; gates F6-G01…G03 abertos.
+- **Resultado observado:** Candidato regenerado com multi-tabelas/listas; PE
+  sem JS; Folheador/PDF como pendências humanas F6-05/F6-06.
+- **Links:**
+  [`fase-6/`](../../../programas/discipulando-a-caserna/docs/metodo/fase-6/);
+  [`PIPELINE.md`](../../PIPELINE.md).
+
 ## 2026-08-01 — Fase 3 tokens candidatos (ME-T)
 
 - **Hipótese:** JSON canônico + gerador próprio unifica drift sem migrar

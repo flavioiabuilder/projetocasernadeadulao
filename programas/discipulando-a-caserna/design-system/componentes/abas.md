@@ -12,7 +12,7 @@
 | 8. Conteúdo | Rótulos de tab e painéis de `conteudo/` ou rótulos UI neutros |
 | 9. HTML nativo | Padrão APG Tabs: `tablist` / `tab` / `tabpanel`; cada tab `aria-controls` → painel; painel `aria-labelledby` → tab |
 | 10. Semântica / nome acessível | `aria-label` no tablist; nome da tab pelo texto do botão |
-| 11. API pública | `data-dc-abas` no root; ativação **manual** (setas movem foco e selecionam); tabs não selecionadas `tabindex="-1"`; selecionada `tabindex="0"` e `aria-selected="true"`; painéis inativos `hidden` |
+| 11. API pública | `data-dc-abas` no root; ativação **automática** (APG: setas movem foco **e** selecionam o painel); tabs não selecionadas `tabindex="-1"`; selecionada `tabindex="0"` e `aria-selected="true"`; painéis inativos `hidden` **somente após** progressive enhancement (`html.js`) |
 | 12. Variantes | Orientação horizontal (default). Vertical: só com `aria-orientation="vertical"` e setas Up/Down documentadas — fora do v0.1 do lab |
 | 13. Tamanhos | Tabs com alvo ≥44×44 |
 | 14. Tokens semânticos | `--cor-borda-sutil`, `--cor-acento-editorial`, `--cor-superficie-papel`, `--espacamento-inline`, `--espacamento-grupo`, `--tipografia-familia-display`, `--tipografia-peso-display`, `--foco-anel-largura`, `--foco-anel-estilo`, `--foco-anel-offset`, `--cor-foco-sobre-papel` |

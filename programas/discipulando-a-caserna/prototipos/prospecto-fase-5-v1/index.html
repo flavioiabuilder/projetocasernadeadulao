@@ -12,15 +12,14 @@
 <body>
   <a class="dc-skip" href="#conteudo">Ir para o conteúdo</a>
   <div class="dc-chrome" data-dc-chrome>
-    <button type="button" class="dc-acao dc-sumario-controle" id="sumario-btn" aria-expanded="false" aria-controls="sumario-painel">
-      Sumário
-    </button>
     <div class="dc-progresso" id="progresso-leitura" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progresso de leitura" data-dc-progresso>
       <div class="dc-progresso__barra"></div>
     </div>
   </div>
-  <nav class="dc-indice" id="sumario-painel" hidden aria-label="Sumário do prospecto">
-    <ol>
+  <details class="dc-sumario-pe" id="sumario-pe">
+    <summary class="dc-acao dc-sumario-controle" id="sumario-btn">Sumário</summary>
+    <nav class="dc-indice" id="sumario-painel" aria-label="Sumário do prospecto">
+      <ol>
           <li><a class="dc-link" href="#movimento-1">Movimento I — A necessidade</a></li>
           <li><a class="dc-link" href="#secao-1">Seção 1 — Discipulando a Caserna</a></li>
           <li><a class="dc-link" href="#secao-2">Seção 2 — O homem que chega</a></li>
@@ -43,10 +42,10 @@
           <li><a class="dc-link" href="#secao-15">Seção 15 — A palavra final</a></li>
           <li><a class="dc-link" href="#checklist-apreciacao">Checklist de apreciação</a></li>
           <li><a class="dc-link" href="#rodape">Encerramento</a></li>
-    </ol>
-  </nav>
+      </ol>
+    </nav>
+  </details>
   <main id="conteudo">
-<!-- F5-GERADO:BEGIN -->
 <div class="dc-movimento" id="movimento-1" data-movimento="1">
   <p class="dc-movimento__rotulo">Movimento I — A necessidade</p>
 <!-- GERADO: secao-1 — fonte conteudo/*.md — não editar -->
@@ -59,9 +58,16 @@
       <p class="dc-selo">VERSÃO CANDIDATA — AGUARDANDO APRECIAÇÃO PASTORAL</p>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>Não começo esta apresentação pelo material. Começo pelo homem que o tornou necessário.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>A história é recontada em ordem — porque foi essa ordem que produziu tudo o que veio depois. Primeiro apareceu um homem que a igreja tinha dificuldade de alcançar. Depois ficou claro que o material disponível não o alcançava. Só então nasceu a decisão de escrever outro.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>O que se apresenta aqui é o resultado dessa sequência: uma convicção, um método e doze lições prontas. Nada disto é definitivo. Estas páginas são versão candidata, submetidas à apreciação pastoral.</p>
+    </blockquote>
+    <p class="dc-meta-rotulo"><strong>Indicação de rolagem:</strong> Role para continuar</p>
     </div>
   </div>
 </section>
@@ -74,12 +80,25 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-2">O homem que chega</h2>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>O Discipulando a Caserna nasceu no Presídio Militar da Polícia Militar do Ceará, dentro do Projeto Caserna de Adulão. Não nasceu de um plano editorial. Nasceu de encontros — a Bíblia aberta num lugar onde muitos não entrariam, diante de homens que muitos já teriam descartado.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>São homens formados sob disciplina e hierarquia. Sabem o que é ordem, escala, missão e patente. Conhecem a linguagem do dever melhor do que a maioria dos fiéis conhece a linguagem da igreja. E, ainda assim, chegaram ali em queda, culpa e isolamento.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>É uma combinação incomum, e ela explica quase tudo: <strong>eles carregam a farda e a vergonha ao mesmo tempo.</strong></p>
+    </blockquote>
+    <p class="dc-prosa-p"><strong>Bloco de destaque</strong> (citação da Nota do Autor, atribuída ao autor):</p>
+    <blockquote class="dc-prosa-quote">
       <p>Muitos chegaram carregando simultaneamente a farda e uma vergonha que nenhuma regulação institucional resolve — a vergonha de quem caiu no campo que deveria defender.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>Esse homem não chega curioso. Chega quebrado. Não chega perguntando o que a Bíblia diz sobre um tema; chega perguntando, sem dizer em voz alta, se ainda há lugar para ele. Desconfia de autoridade, porque foi julgado por uma. Desconfia de acolhimento, porque aprendeu que acolhimento costuma vir com cobrança logo atrás.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>A prisão militar é lugar de correção. Sob o agir do Espírito Santo, tornou-se também campo de reconstrução espiritual e vocacional. Foi ali, e não numa mesa de trabalho, que este projeto começou.</p>
+    </blockquote>
     </div>
   </div>
 </section>
@@ -92,14 +111,13 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-3">Por que o material comum não alcança</h2>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>Aqui é preciso ser exato, porque a afirmação se presta a mal-entendido. O problema nunca foi a qualidade do material de discipulado disponível. Há material excelente. O problema é que ele foi escrito para outro homem, em outro lugar, com outra pergunta na cabeça.</p>
-      <p>Nenhum desses descompassos é falha de quem escreveu. É diferença de destinatário. Um material pensado para uma classe de igreja no domingo não tem obrigação de funcionar numa unidade prisional militar na quarta-feira.</p>
-      <p>Mas a consequência é concreta: usar o material comum naquele ambiente exige que o instrutor improvise a cada encontro — traduzindo linguagem, contornando pressupostos, adiando temas para os quais o texto não preparou ninguém. E improviso, com esses homens, custa caro. Uma palavra mal colocada reabre uma ferida que levou meses para fechar.</p>
-      <p>Foi essa constatação, repetida encontro após encontro, que tornou inevitável a decisão seguinte: seria preciso escrever um material próprio — com a linguagem daquele público, no ritmo daquele ambiente, e com a vergonha tratada logo na primeira lição, e não na décima.</p>
-    </div>
+    </blockquote>
+    <p class="dc-prosa-p"><strong>Elemento central — os cinco descompassos.</strong> Apresentar como comparação em duas colunas: o que o material padrão pressupõe × o que se encontra na caserna.</p>
     <div class="dc-comparacao">
       <div class="dc-comparacao__lado">
-        <h3>O material comum pressupõe</h3>
+        <h3 class="dc-comparacao__titulo">O material comum pressupõe</h3>
         <ul class="dc-lista-editorial">
           <li>Alguém que chega curioso, querendo aprender mais</li>
           <li>Liberdade de agenda e continuidade de encontros</li>
@@ -109,7 +127,7 @@
         </ul>
       </div>
       <div class="dc-comparacao__lado">
-        <h3>O que se encontra ali</h3>
+        <h3 class="dc-comparacao__titulo">O que se encontra ali</h3>
         <ul class="dc-lista-editorial">
           <li>Alguém que chega quebrado, querendo saber se ainda há lugar para ele</li>
           <li>Escala, pernoite, revista, transferência, sanção — a turma muda sem aviso</li>
@@ -118,6 +136,16 @@
           <li>Um leitor que aprendeu que se expor tem custo, e às vezes preço</li>
         </ul>
       </div>
+    </div>
+    <blockquote class="dc-prosa-quote">
+      <p>Nenhum desses descompassos é falha de quem escreveu. É diferença de destinatário. Um material pensado para uma classe de igreja no domingo não tem obrigação de funcionar numa unidade prisional militar na quarta-feira.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
+      <p>Mas a consequência é concreta: usar o material comum naquele ambiente exige que o instrutor improvise a cada encontro — traduzindo linguagem, contornando pressupostos, adiando temas para os quais o texto não preparou ninguém. E improviso, com esses homens, custa caro. Uma palavra mal colocada reabre uma ferida que levou meses para fechar.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
+      <p>Foi essa constatação, repetida encontro após encontro, que tornou inevitável a decisão seguinte: seria preciso escrever um material próprio — com a linguagem daquele público, no ritmo daquele ambiente, e com a vergonha tratada logo na primeira lição, e não na décima.</p>
+    </blockquote>
     </div>
   </div>
 </section>
@@ -134,14 +162,18 @@
       <cite>1Sm 22.1-2</cite>
     </blockquote>
     <div class="dc-prosa">
+    <p class="dc-meta-rotulo"><strong>Citação em destaque</strong></p>
+    <blockquote class="dc-prosa-quote">
       <p>O nome do projeto não veio de uma escolha de marca. Veio de um reconhecimento: aquilo que acontecia ali já estava descrito nas Escrituras, e há muito tempo.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>Davi não fundou uma academia de elite. Fundou um refúgio. E o texto é preciso quanto a quem apareceu: os em aperto, os endividados, os amargurados de espírito. Não era o retrato de uma tropa — era o retrato de um problema. E, no entanto, foi daquele ajuntamento que Deus formou os valentes que marchariam com Davi.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>A caverna não os manteve escondidos. Ela os reuniu para refazê-los.</p>
-      <p>Foi esse paralelo que deu nome ao projeto e forma ao material. Se a caverna é o lugar onde o quebrado é acolhido antes de ser útil, então a primeira lição não podia começar cobrando. Tinha que começar acolhendo.</p>
-      <p>E se o acolhimento não é o fim, mas o começo de uma marcha, então o material não podia parar no consolo. Tinha que conduzir — passo a passo, do chamado ao envio.</p>
-      <p>As duas convicções que estruturam tudo o que vem a seguir nascem daqui.</p>
-    </div>
-    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 4">
+    </blockquote>
+    <p class="dc-prosa-p"><strong>Bloco de paralelo</strong> — três pares, apresentados lado a lado:</p>
+    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 4 (tabela 1)">
       <table class="dc-tabela">
         <thead><tr><th scope="col">Em Adulão</th><th scope="col">Na caserna</th></tr></thead>
         <tbody>
@@ -150,6 +182,16 @@
           <tr><td>Soldados feridos foram curados e reempregados</td><td>O restaurado é reenviado para servir e formar outros</td></tr>
         </tbody>
       </table>
+    </div>
+    <blockquote class="dc-prosa-quote">
+      <p>Foi esse paralelo que deu nome ao projeto e forma ao material. Se a caverna é o lugar onde o quebrado é acolhido antes de ser útil, então a primeira lição não podia começar cobrando. Tinha que começar acolhendo.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
+      <p>E se o acolhimento não é o fim, mas o começo de uma marcha, então o material não podia parar no consolo. Tinha que conduzir — passo a passo, do chamado ao envio.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
+      <p>As duas convicções que estruturam tudo o que vem a seguir nascem daqui.</p>
+    </blockquote>
     </div>
   </div>
 </section>
@@ -166,13 +208,17 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-5">Cristo chama, treina, molda e envia</h2>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>Diagnosticado o problema, restava a pergunta mais séria: sobre o que construir. Um material para homens quebrados pode facilmente escorregar para dois erros opostos — virar terapia sem conteúdo, ou virar disciplina sem graça. Os dois falham, e falham exatamente com quem menos pode pagar por isso.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>A decisão foi construir sobre um único eixo: <strong>é Cristo quem age.</strong> O discípulo não escala uma carreira espiritual; responde a um Comandante que já o alcançou. Ele não é chamado porque melhorou — melhora porque foi chamado.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>Isso não é sutileza teológica. É a diferença entre um homem que passa o resto da vida tentando pagar uma dívida impagável e um homem que descobre que a dívida foi paga e agora serve por gratidão. Para quem carrega vergonha, essa distinção é a diferença entre desistir e permanecer.</p>
-      <p>A ordem importa e não é negociável. A graça vem antes da exigência; a contemplação vem antes da prática. Quem inverte isso produz religiosidade ansiosa — homens que obedecem com medo de perder o que nunca souberam que já tinham.</p>
-      <p>Toda a estrutura que o senhor verá a seguir existe para proteger essa ordem.</p>
-    </div>
-    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 5">
+    </blockquote>
+    <p class="dc-prosa-p"><strong>Elemento central — os quatro movimentos.</strong> Apresentar como progressão, não como grade.</p>
+    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 5 (tabela 1)">
       <table class="dc-tabela">
         <thead><tr><th scope="col">Movimento</th><th scope="col">O que Cristo faz</th><th scope="col">O que forma no discípulo</th></tr></thead>
         <tbody>
@@ -182,6 +228,13 @@
           <tr><td>Cristo Enviando</td><td>Comissiona e sustenta na missão</td><td>Serviço e perseverança</td></tr>
         </tbody>
       </table>
+    </div>
+    <blockquote class="dc-prosa-quote">
+      <p>A ordem importa e não é negociável. A graça vem antes da exigência; a contemplação vem antes da prática. Quem inverte isso produz religiosidade ansiosa — homens que obedecem com medo de perder o que nunca souberam que já tinham.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
+      <p>Toda a estrutura que o senhor verá a seguir existe para proteger essa ordem.</p>
+    </blockquote>
     </div>
   </div>
 </section>
@@ -194,11 +247,10 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-6">Quatro recusas deliberadas</h2>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>Definir o que um material faz é relativamente fácil. Mais difícil, e mais revelador, é definir o que ele se recusa a fazer — sobretudo quando a recusa custa apelo. Estas quatro atravessam as 48 lições e foram verificadas linha a linha.</p>
-      <p>Essas recusas explicam escolhas que, de fora, poderiam parecer estranhas. Explicam por que a primeira lição do curso inteiro se chama &quot;Bem-vindo a Adulão: o quartel dos feridos&quot;, e não algo sobre compromisso ou decisão. Explicam por que o pecado só aparece na quinta lição, depois de o homem já ter sido acolhido e ter contemplado Cristo — e por que, quando aparece, vem seguido imediatamente pela lição da graça que reintegra.</p>
-      <p>A ordem das lições é, ela mesma, uma declaração doutrinária.</p>
-    </div>
-    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 6">
+    </blockquote>
+    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 6 (tabela 1)">
       <table class="dc-tabela">
         <thead><tr><th scope="col">Recusa</th><th scope="col">O que significa na prática</th></tr></thead>
         <tbody>
@@ -208,6 +260,13 @@
           <tr><td><strong>Exposição do ferido</strong></td><td>O material acolhe feridas reais — vergonha, estigma, desconfiança de autoridade — sem obrigar ninguém a se expor. Toda pergunta de partilha vem com orientação para respeitar o silêncio.</td></tr>
         </tbody>
       </table>
+    </div>
+    <blockquote class="dc-prosa-quote">
+      <p>Essas recusas explicam escolhas que, de fora, poderiam parecer estranhas. Explicam por que a primeira lição do curso inteiro se chama &quot;Bem-vindo a Adulão: o quartel dos feridos&quot;, e não algo sobre compromisso ou decisão. Explicam por que o pecado só aparece na quinta lição, depois de o homem já ter sido acolhido e ter contemplado Cristo — e por que, quando aparece, vem seguido imediatamente pela lição da graça que reintegra.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
+      <p>A ordem das lições é, ela mesma, uma declaração doutrinária.</p>
+    </blockquote>
     </div>
   </div>
 </section>
@@ -219,8 +278,14 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-7">A marca</h2>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>Conteúdo integral em `conteudo/identidade.md`. Usar aquele arquivo como fonte, na ordem em que está.</p>
+    </blockquote>
+    <p class="dc-meta-rotulo"><strong>Ajuste de posição:</strong> nesta nova ordem, a seção da marca vem <strong>depois</strong> das recusas e <strong>antes</strong> do programa. A razão é retórica: o escudo só faz sentido depois que o leitor entendeu a lógica de &quot;revestido, não condecorado&quot;. Apresentá-lo antes o reduziria a logotipo bonito.</p>
+    <p class="dc-prosa-p"><strong>Parágrafo de transição a acrescentar no início da seção</strong> (novo, não está no `identidade.md`):</p>
+    <blockquote class="dc-prosa-quote">
       <p>Se o discípulo é revestido e não condecorado, a identidade visual precisava dizer isso antes de qualquer texto. Foi assim que o escudo nasceu — não como logotipo, mas como resumo da doutrina.</p>
+    </blockquote>
     </div>
   </div>
 </section>
@@ -237,11 +302,7 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-8">Quatro módulos, quarenta e oito lições</h2>
     </header>
     <div class="dc-prosa">
-      <p>O programa foi organizado em quatro módulos sequenciais de doze lições cada, totalizando quarenta e oito encontros ao longo de aproximadamente um ano. Cada módulo aprofunda o anterior e trabalha uma ênfase espiritual distinta. Alguns temas retornam com maior densidade, mas nenhum módulo repete o outro — o objetivo não é variação temática, e sim amadurecimento real do discípulo na mesma centralidade de Cristo.</p>
-      <p>A progressão respeita o estado espiritual de quem chega ferido, culpado ou fragilizado: dos conteúdos de iniciação (chamado, graça, nova identidade) para os de consolidação (fundamentos, disciplinas, comunhão), destes para os de maturidade (caráter, vida no Espírito, relacionamentos redimidos) e, por fim, para os de missão e perseverança.</p>
-      <p>O público primário é formado por militares e custodiados — vistos não como alunos acadêmicos, mas como irmãos em processo de restauração e futuros multiplicadores sob supervisão pastoral. O público secundário abrange instrutores, capelanias e lideranças corresponsáveis pela missão.</p>
-    </div>
-    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 8">
+    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 8 (tabela 1)">
       <table class="dc-tabela">
         <thead><tr><th scope="col">Valor</th><th scope="col">Rótulo</th></tr></thead>
         <tbody>
@@ -251,6 +312,30 @@
           <tr><td>~1</td><td>ano de percurso</td></tr>
         </tbody>
       </table>
+    </div>
+    <blockquote class="dc-prosa-quote">
+      <p>O programa foi organizado em quatro módulos sequenciais de doze lições cada, totalizando quarenta e oito encontros ao longo de aproximadamente um ano. Cada módulo aprofunda o anterior e trabalha uma ênfase espiritual distinta. Alguns temas retornam com maior densidade, mas nenhum módulo repete o outro — o objetivo não é variação temática, e sim amadurecimento real do discípulo na mesma centralidade de Cristo.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
+      <p>A progressão respeita o estado espiritual de quem chega ferido, culpado ou fragilizado: dos conteúdos de iniciação (chamado, graça, nova identidade) para os de consolidação (fundamentos, disciplinas, comunhão), destes para os de maturidade (caráter, vida no Espírito, relacionamentos redimidos) e, por fim, para os de missão e perseverança.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
+      <p>O público primário é formado por militares e custodiados — vistos não como alunos acadêmicos, mas como irmãos em processo de restauração e futuros multiplicadores sob supervisão pastoral. O público secundário abrange instrutores, capelanias e lideranças corresponsáveis pela missão.</p>
+    </blockquote>
+    <p class="dc-meta-rotulo"><strong>O escopo abrange</strong></p>
+    <ul class="dc-lista-editorial">
+      <li>Fundamentos bíblicos e hermenêuticos do discipulado</li>
+      <li>Currículo anual completo — 48 lições em quatro módulos, em narrativa unificada</li>
+      <li>Módulos de socorro para crises específicas (apêndices pastorais)</li>
+      <li>Diretrizes de vida, método e cuidado para o instrutor</li>
+      <li>Ritos de passagem e transições simbólicas como marcos comunitários de gratidão e envio</li>
+    </ul>
+    <p class="dc-meta-rotulo"><strong>Fora do escopo</strong></p>
+    <ul class="dc-lista-editorial">
+      <li>Debates confessionais secundários</li>
+      <li>Políticas institucionais</li>
+      <li>Tratamentos clínicos — encaminhados à capelania e a profissionais de saúde</li>
+    </ul>
     </div>
   </div>
 </section>
@@ -263,16 +348,21 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-9">Matriz curricular</h2>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>Esta matriz não é apenas um calendário, mas uma ferramenta de contemplação e planejamento pastoral. Cada lição tem título, texto-base e objetivo definidos, e a ordem é parte da formação.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>A ordem das três primeiras lições é intencional: abre com o acolhimento da dor (Adulão), segue para o socorro real do Comandante que desce à caverna, e só então conduz à contemplação como resposta de gratidão.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>O Módulo 1 está integralmente produzido, nas edições do Aluno e do Instrutor. Os Módulos 2 a 4 têm títulos, textos-base e objetivos definidos no Guia Mestre, e sua produção está condicionada à validação pastoral do Módulo 1.</p>
+    </blockquote>
     </div>
-    <!-- MATRIZ: injetada após módulos/lições -->
     <!-- GERADO: matriz — conteudo/modulos.json + matriz-curricular.json -->
 <div class="dc-pad-05" id="matriz-curricular">
   <h2 class="dc-titulo-secao" id="titulo-matriz">Visão curricular (4 × 12)</h2>
-  <p class="dc-nota">Arquitetura formativa — não métrica comercial. Campos nulos omitidos.</p>
-  <div class="dc-abas" data-dc-abas>
+  <p class="dc-nota">Arquitetura formativa — não métrica comercial. Campos nulos omitidos. Sem JavaScript, todos os módulos permanecem legíveis.</p>
+  <div class="dc-abas" data-dc-abas data-ativacao="automatica">
     <div class="dc-abas__tablist" role="tablist" aria-label="Módulos do currículo">
       <button type="button" class="dc-abas__tab" role="tab" id="tab-mod-1" aria-controls="panel-mod-1" aria-selected="true" tabindex="0">Módulo 1</button>
       <button type="button" class="dc-abas__tab" role="tab" id="tab-mod-2" aria-controls="panel-mod-2" aria-selected="false" tabindex="-1">Módulo 2</button>
@@ -281,7 +371,7 @@
     </div>
     <div class="dc-abas__panel" role="tabpanel" id="panel-mod-1" aria-labelledby="tab-mod-1">
       <article class="dc-curriculo">
-        <h4>Cristo Chamando</h4>
+        <h3 class="dc-curriculo__titulo">Cristo Chamando</h3>
         <p>O Alistamento Espiritual</p>
         <p><span class="dc-estado dc-estado--produzido">produzido</span></p>
         <p>Conversão e identidade em Cristo</p>
@@ -351,9 +441,9 @@
         </ol>
       </article>
     </div>
-    <div class="dc-abas__panel" role="tabpanel" id="panel-mod-2" aria-labelledby="tab-mod-2" hidden>
+    <div class="dc-abas__panel" role="tabpanel" id="panel-mod-2" aria-labelledby="tab-mod-2">
       <article class="dc-curriculo">
-        <h4>Cristo Treinando</h4>
+        <h3 class="dc-curriculo__titulo">Cristo Treinando</h3>
         <p>Fundamentos da Fé e da Disciplina Espiritual</p>
         <p><span class="dc-estado dc-estado--planejado">planejado</span></p>
         <p>Fundamentos da fé e disciplina espiritual</p>
@@ -423,9 +513,9 @@
         </ol>
       </article>
     </div>
-    <div class="dc-abas__panel" role="tabpanel" id="panel-mod-3" aria-labelledby="tab-mod-3" hidden>
+    <div class="dc-abas__panel" role="tabpanel" id="panel-mod-3" aria-labelledby="tab-mod-3">
       <article class="dc-curriculo">
-        <h4>Cristo Moldando</h4>
+        <h3 class="dc-curriculo__titulo">Cristo Moldando</h3>
         <p>Caráter e Vida no Espírito</p>
         <p><span class="dc-estado dc-estado--planejado">planejado</span></p>
         <p>Caráter cristão e vida no Espírito</p>
@@ -494,9 +584,9 @@
         </ol>
       </article>
     </div>
-    <div class="dc-abas__panel" role="tabpanel" id="panel-mod-4" aria-labelledby="tab-mod-4" hidden>
+    <div class="dc-abas__panel" role="tabpanel" id="panel-mod-4" aria-labelledby="tab-mod-4">
       <article class="dc-curriculo">
-        <h4>Cristo Enviando</h4>
+        <h3 class="dc-curriculo__titulo">Cristo Enviando</h3>
         <p>Missão, Frutificação e Perseverança</p>
         <p><span class="dc-estado dc-estado--planejado">planejado</span></p>
         <p>Missão, serviço e perseverança</p>
@@ -579,10 +669,10 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-10">Anatomia de uma lição</h2>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>Toda lição segue a mesma arquitetura. Essa constância não é falta de criatividade: é fidelidade pedagógica, para que instrutores diferentes ministrem o mesmo conteúdo sem perda de ênfase espiritual — primeiro ver Cristo; depois responder em fé e obediência.</p>
-      <p>O Guia Mestre exige, em cada lição planejada: título, texto-base, objetivo, síntese teológica, aplicação militar, Ordem do Dia e perguntas de reflexão. O material impresso do Módulo 1 traduz esse padrão na tipografia e no ritmo da página.</p>
-    </div>
-    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 10">
+    </blockquote>
+    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 10 (tabela 1)">
       <table class="dc-tabela">
         <thead><tr><th scope="col">Camada</th><th scope="col">Nome</th><th scope="col">Descrição</th></tr></thead>
         <tbody>
@@ -597,9 +687,10 @@
         </tbody>
       </table>
     </div>
-    <aside class="dc-nota dc-pad-04" role="note">
-      <p><strong>Lacuna declarada.</strong> Anatomia completa da lição, formato detalhado do encontro e diferenças plenas entre edições aluno/instrutor permanecem fora do material canônico disponível — não inventadas neste protótipo.</p>
-    </aside>
+    <blockquote class="dc-prosa-quote">
+      <p>O Guia Mestre exige, em cada lição planejada: título, texto-base, objetivo, síntese teológica, aplicação militar, Ordem do Dia e perguntas de reflexão. O material impresso do Módulo 1 traduz esse padrão na tipografia e no ritmo da página.</p>
+    </blockquote>
+    </div>
   </div>
 </section>
 <!-- GERADO: secao-11 — fonte conteudo/*.md — não editar -->
@@ -611,11 +702,11 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-11">As duas edições e o encontro</h2>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>O Módulo 1 existe em duas edições — Aluno e Instrutor — com o mesmo eixo cristocêntrico. A diferença não é “versão resumida” versus “versão completa”: é o que cada um precisa ter nas mãos durante o encontro.</p>
-      <p>Adota-se, como referência, a realização de um encontro semanal, com duração entre 1h30 e 2h.</p>
-      <p>Essa ordem não é régua de “quem é mais espiritual”, mas treino de prontidão para prolongar, na rotina, aquilo que Cristo começou a trabalhar no encontro.</p>
-    </div>
-    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 11">
+    </blockquote>
+    <p class="dc-meta-rotulo"><strong>Exclusivo do Instrutor</strong></p>
+    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 11 (tabela 1)">
       <table class="dc-tabela">
         <thead><tr><th scope="col">Item</th><th scope="col">Descrição</th></tr></thead>
         <tbody>
@@ -624,8 +715,17 @@
           <tr><td>Subsídio de condução</td><td>Diretriz pastoral sobre o tom da lição: o que enfatizar e o que evitar.</td></tr>
           <tr><td>Orientação sob cada pergunta</td><td>Para onde conduzir a partilha, sem constranger nem expor ninguém.</td></tr>
           <tr><td>Resultado esperado</td><td>O que deve ter mudado quando o encontro terminar.</td></tr>
-          <tr><td>Momento</td><td>Faixa</td><td>Finalidade</td></tr>
-          <tr><td>----------------------------------</td><td>-----------</td><td>-------------------------------------------------------------</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="dc-meta-rotulo"><strong>Ritmo do encontro (Guia 3.3)</strong></p>
+    <blockquote class="dc-prosa-quote">
+      <p>Adota-se, como referência, a realização de um encontro semanal, com duração entre 1h30 e 2h.</p>
+    </blockquote>
+    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 11 (tabela 2)">
+      <table class="dc-tabela">
+        <thead><tr><th scope="col">Momento</th><th scope="col">Faixa</th><th scope="col">Finalidade</th></tr></thead>
+        <tbody>
           <tr><td>Contemplação na Palavra</td><td>15 a 25 min</td><td>Leitura e exposição bíblica; ver a pessoa e a obra de Cristo.</td></tr>
           <tr><td>Discernimento e aplicação em grupo</td><td>25 a 35 min</td><td>Conectar o princípio bíblico à realidade militar/prisional.</td></tr>
           <tr><td>Oração e compromisso</td><td>10 a 15 min</td><td>Resposta espiritual nascida da graça, não de desempenho.</td></tr>
@@ -633,9 +733,10 @@
         </tbody>
       </table>
     </div>
-    <aside class="dc-nota dc-pad-04" role="note">
-      <p><strong>Lacuna declarada.</strong> Anatomia completa da lição, formato detalhado do encontro e diferenças plenas entre edições aluno/instrutor permanecem fora do material canônico disponível — não inventadas neste protótipo.</p>
-    </aside>
+    <blockquote class="dc-prosa-quote">
+      <p>Essa ordem não é régua de “quem é mais espiritual”, mas treino de prontidão para prolongar, na rotina, aquilo que Cristo começou a trabalhar no encontro.</p>
+    </blockquote>
+    </div>
   </div>
 </section>
 </div>
@@ -651,11 +752,10 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-12">O Módulo 1, completo</h2>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>Apresentações de projeto costumam terminar em promessa. Esta não. O Módulo 1 — &quot;Cristo Chamando: o Alistamento Espiritual&quot; — está integralmente produzido: doze lições, duas edições, cinco formatos de entrega. É material pronto para ser impresso e usado.</p>
-      <p>O folheador abaixo mostra a Lição 1 exatamente como ela sai da impressora — capa, comentário, perguntas de partilha, oração e Ordem do Dia. É a lição piloto, e serve de padrão para as outras onze.</p>
-      <p>Os Módulos 2 a 4 têm títulos, textos-base e objetivos definidos no Guia Mestre, mas <strong>não estão escritos</strong>. Sua produção depende do que se pede na última seção.</p>
-    </div>
-    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 12">
+    </blockquote>
+    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 12 (tabela 1)">
       <table class="dc-tabela">
         <thead><tr><th scope="col">Valor</th><th scope="col">Rótulo</th></tr></thead>
         <tbody>
@@ -664,8 +764,13 @@
           <tr><td>5</td><td>formatos por edição</td></tr>
           <tr><td>84</td><td>páginas na Revista do Aluno</td></tr>
           <tr><td>111</td><td>páginas na Edição do Instrutor</td></tr>
-          <tr><td>Formato</td><td>Para quê</td></tr>
-          <tr><td>----------------</td><td>-----------------------------------------------------------</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 12 (tabela 2)">
+      <table class="dc-tabela">
+        <thead><tr><th scope="col">Formato</th><th scope="col">Para quê</th></tr></thead>
+        <tbody>
           <tr><td>Leitura — PDF</td><td>135 × 205 mm, sequencial, para ler em tela e revisar</td></tr>
           <tr><td>Impressão — PDF</td><td>A4 paisagem, duas páginas por folha, imposto em caderno</td></tr>
           <tr><td>Editável — DOCX</td><td>Coluna única, para ajustes finos de texto</td></tr>
@@ -674,6 +779,16 @@
         </tbody>
       </table>
     </div>
+    <blockquote class="dc-prosa-quote">
+      <p>O folheador abaixo mostra a Lição 1 exatamente como ela sai da impressora — capa, comentário, perguntas de partilha, oração e Ordem do Dia. É a lição piloto, e serve de padrão para as outras onze.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
+      <p>Os Módulos 2 a 4 têm títulos, textos-base e objetivos definidos no Guia Mestre, mas <strong>não estão escritos</strong>. Sua produção depende do que se pede na última seção.</p>
+    </blockquote>
+    </div>
+    <aside class="dc-nota dc-pad-04" role="note" data-pendencia="F6-05">
+      <p><strong>Folheador da Lição 1 — pendente de decisão humana (F6-05).</strong> O conteúdo canônico prevê amostra com alternância Aluno/Instrutor. Neste candidato não há asset autorizado nem widget inventado. Opções: amostra acessível, preview estático autorizado ou alteração editorial da copy.</p>
+    </aside>
   </div>
 </section>
 <!-- GERADO: secao-13 — fonte conteudo/*.md — não editar -->
@@ -685,11 +800,10 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-13">Feito para ser impresso onde há pouco recurso</h2>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>Uma decisão orientou toda a produção gráfica: o material precisa funcionar tanto numa gráfica quanto numa impressora doméstica, dobrado e grampeado à mão. Se dependesse de recurso que a unidade não tem, não serviria.</p>
-      <p>Todo o módulo passou por revisão editorial completa após a escrita: hifenização desativada em títulos, blocos protegidos contra quebra entre páginas, colunas reequilibradas, espaços vazios convertidos em área útil de anotação e marca de encerramento ao fim de cada lição. São detalhes invisíveis quando estão certos — e as únicas coisas visíveis quando estão errados.</p>
-      <p>A intenção por trás disso é simples: quem recebe o material não deve perceber esforço de produção. Deve apenas conseguir ler, conduzir e escrever, sem que nada atrapalhe.</p>
-    </div>
-    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 13">
+    </blockquote>
+    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 13 (tabela 1)">
       <table class="dc-tabela">
         <thead><tr><th scope="col">Decisão</th><th scope="col">Motivo</th></tr></thead>
         <tbody>
@@ -700,6 +814,13 @@
           <tr><td>Alta resolução mantida</td><td>As versões de impressão preservam 175 DPI, sem compressão que degrade o texto</td></tr>
         </tbody>
       </table>
+    </div>
+    <blockquote class="dc-prosa-quote">
+      <p>Todo o módulo passou por revisão editorial completa após a escrita: hifenização desativada em títulos, blocos protegidos contra quebra entre páginas, colunas reequilibradas, espaços vazios convertidos em área útil de anotação e marca de encerramento ao fim de cada lição. São detalhes invisíveis quando estão certos — e as únicas coisas visíveis quando estão errados.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
+      <p>A intenção por trás disso é simples: quem recebe o material não deve perceber esforço de produção. Deve apenas conseguir ler, conduzir e escrever, sem que nada atrapalhe.</p>
+    </blockquote>
     </div>
   </div>
 </section>
@@ -716,12 +837,13 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-14">Progressão é cuidado, não promoção</h2>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>Em linguagem conhecida da caserna, não se avança de fase sem concluir a anterior. Mas aqui a progressão não é promoção por mérito — é cuidado de graça. Ao considerar a passagem para a etapa seguinte, o instrutor e a liderança local discernem, em oração, se a Palavra está encontrando resposta concreta. Isso não descreve um aluno aprovado, mas um coração sendo firmado.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>A razão é pastoral: para que ninguém carregue às etapas seguintes lacunas de conversão, de doutrina básica ou de vida devocional que fragilizariam o caráter e comprometeriam a missão.</p>
-      <p>O certificado não é troféu nem comprovação de mérito espiritual. É memória pastoral do rito de transição — o registro simples de que o discípulo atravessou, pela graça, uma etapa da marcha.</p>
-      <p><strong>Um esclarecimento necessário:</strong> o certificado emitido pelo projeto <strong>não concede remição de pena</strong>. A remição depende de convênio institucional firmado com a administração penitenciária e de validação judicial, conforme a legislação aplicável. O material nunca deve ser apresentado, a discípulos ou a instituições, como instrumento de redução de pena.</p>
-    </div>
-    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 14">
+    </blockquote>
+    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 14 (tabela 1)">
       <table class="dc-tabela">
         <thead><tr><th scope="col">Módulo</th><th scope="col">Marcha</th><th scope="col">Símbolo entregue</th></tr></thead>
         <tbody>
@@ -731,6 +853,22 @@
           <tr><td>4</td><td>Formatura do Soldado de Cristo</td><td>Escudo da Fé</td></tr>
         </tbody>
       </table>
+    </div>
+    <aside class="dc-nota dc-pad-04" role="note">
+      <p class="dc-meta-rotulo"><strong>Salvaguardas das cerimônias</strong></p>
+    <ul class="dc-lista-editorial">
+      <li>A entrega é comunitária, sóbria e cristocêntrica</li>
+      <li>Não há ranking, comparação ou condicionamento de bênçãos</li>
+      <li>Nenhum discípulo é constrangido ou exposto</li>
+      <li>Onde o contexto institucional não permitir a entrega física, o registro pastoral simples cumpre a mesma função</li>
+    </ul>
+    </aside>
+    <aside class="dc-nota dc-pad-04 dc-bloco-certificado" role="note">
+      <p>O certificado não é troféu nem comprovação de mérito espiritual. É memória pastoral do rito de transição — o registro simples de que o discípulo atravessou, pela graça, uma etapa da marcha.</p>
+    </aside>
+    <aside class="dc-nota dc-pad-04 dc-bloco-certificado" role="note">
+      <p><strong>Um esclarecimento necessário:</strong> o certificado emitido pelo projeto <strong>não concede remição de pena</strong>. A remição depende de convênio institucional firmado com a administração penitenciária e de validação judicial, conforme a legislação aplicável. O material nunca deve ser apresentado, a discípulos ou a instituições, como instrumento de redução de pena.</p>
+    </aside>
     </div>
   </div>
 </section>
@@ -743,29 +881,65 @@
       <h2 class="dc-titulo-secao" id="titulo-secao-15">A palavra final</h2>
     </header>
     <div class="dc-prosa">
+    <blockquote class="dc-prosa-quote">
       <p>Chego ao fim desta apresentação no ponto em que ela deixa de ser minha.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>Nada do que o senhor viu aqui é definitivo. O Guia Mestre está em versão candidata; as doze lições estão escritas, mas não homologadas; os Módulos 2 a 4 estão planejados, e sua produção não começa antes da sua palavra. Essa dependência não é formalidade de organograma. É a convicção de que material teológico entregue a homens em situação de fragilidade precisa passar por olhos pastorais antes de chegar às mãos deles.</p>
+    </blockquote>
+    <ol class="dc-lista-pedidos">
+      <li value="1">
+        <p class="dc-lista-pedidos__pedido"><strong>Apreciação doutrinária e pastoral</strong> do Módulo 1</p>
+        <p class="dc-lista-pedidos__obs">Doze lições, nas duas edições. O dossiê de apreciação traz um roteiro de leitura com oito itens e espaço para observações</p>
+      </li>
+      <li value="2">
+        <p class="dc-lista-pedidos__pedido"><strong>O prefácio do Guia Mestre</strong></p>
+        <p class="dc-lista-pedidos__obs">Ver bloco abaixo</p>
+      </li>
+      <li value="3">
+        <p class="dc-lista-pedidos__pedido"><strong>Liberação para os Módulos 2 a 4</strong></p>
+        <p class="dc-lista-pedidos__obs">Trinta e seis lições, que só começam a ser escritas após a homologação do primeiro módulo</p>
+      </li>
+    </ol>
+    <blockquote class="dc-prosa-quote">
       <p>Há uma página do Guia Mestre que continua em branco por decisão minha: o prefácio.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>Não é uma formalidade de abertura, e não peço que seja escrito por cortesia. O Guia descreve um método, mas quem pode dizer se esse método é fiel ao Cristo das Escrituras — e se serve de fato aos homens para quem foi escrito — não é o autor. É o pastor que acompanhou a obra desde a origem, que conhece os nomes por trás dos exemplos e que responderá diante de Deus pelo que for ensinado em seu nome.</p>
+    </blockquote>
+    <aside class="dc-convite-prefacio dc-pad-06" role="note">
+      <p class="dc-selo">CONVITE</p>
+      <h3 class="dc-titulo-secao">O prefácio</h3>
       <p>Por isso, aquela página não foi preenchida com texto provisório à espera de aprovação. Está reservada, e permanecerá reservada pelo tempo que for necessário. <strong>Não há prazo.</strong> Se o senhor entender que o material ainda não está em condições de receber esse prefácio, essa também será uma resposta — e uma resposta que eu acolherei.</p>
+    </aside>
+    <blockquote class="dc-prosa-quote">
       <p>Quando quiser escrevê-lo, basta enviar o texto. Ele entra no Guia exatamente como o senhor o redigir, sem edição de conteúdo, acima da minha nota de autor.</p>
-      <p>&quot;Estou plenamente certo de que aquele que começou boa obra em vocês há de completá-la até o Dia de Cristo Jesus.&quot; — Fp 1.6</p>
+    </blockquote>
+    <blockquote class="dc-citacao-final">
+      <p>Estou plenamente certo de que aquele que começou boa obra em vocês há de completá-la até o Dia de Cristo Jesus.</p>
+      <cite>Fp 1.6</cite>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>Esse versículo está no certificado, e está aqui pelo mesmo motivo. O que foi construído até agora não é obra minha, e o que vier também não será. Fui apenas quem organizou, em papel, aquilo que já se via acontecer numa caverna.</p>
+    </blockquote>
+    <blockquote class="dc-prosa-quote">
       <p>Fico à disposição para o que o senhor determinar.</p>
+    </blockquote>
+    <p class="dc-meta-rotulo"><strong>Assinatura</strong></p>
+    <pre class="dc-assinatura-bloco"><code>Obr. Flávio Alves da Costa
+Projeto Caserna de Adulão · Fortaleza-CE</code></pre>
+    <p class="dc-meta-rotulo"><strong>Rodapé institucional</strong></p>
+    <pre class="dc-assinatura-bloco"><code>Projeto Caserna de Adulão · Fortaleza-CE
+CNPJ 63.724.286/0001-78 · casernadeadulao@gmail.com
+Material em versão candidata — não distribuir antes da apreciação pastoral.</code></pre>
     </div>
-    <div class="dc-tabela-wrap" role="region" aria-label="Dados da seção 15">
-      <table class="dc-tabela">
-        <thead><tr><th scope="col"></th><th scope="col">O pedido</th><th scope="col">Observação</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td><strong>Apreciação doutrinária e pastoral</strong> do Módulo 1</td><td>Doze lições, nas duas edições. O dossiê de apreciação traz um roteiro de leitura com oito itens e espaço para observações</td></tr>
-          <tr><td>2</td><td><strong>O prefácio do Guia Mestre</strong></td><td>Ver bloco abaixo</td></tr>
-          <tr><td>3</td><td><strong>Liberação para os Módulos 2 a 4</strong></td><td>Trinta e seis lições, que só começam a ser escritas após a homologação do primeiro módulo</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <aside class="dc-nota dc-pad-04" role="note" data-pendencia="F6-06">
+      <p><strong>Download do dossiê de apreciação — pendente de decisão humana (F6-06).</strong> O conteúdo canônico fixa PDF público de 7 páginas. Nenhum arquivo autorizado está versionado neste repositório; link não é exposto.</p>
+    </aside>
     <div class="dc-pad-06">
       <p class="dc-assinatura">Obr. Flávio Alves da Costa</p>
       <p class="dc-meta">Projeto Caserna de Adulão · Fortaleza-CE</p>
+      <p class="dc-meta">CNPJ 63.724.286/0001-78</p>
       <p class="dc-nota">Pedido pastoral nominal e apreciação: Movimento V — não há CTA comercial, inscrição ou doação.</p>
     </div>
   </div>
@@ -773,7 +947,7 @@
 </div>
 <section class="dc-secao dc-pad-08" id="checklist-apreciacao" aria-labelledby="titulo-checklist" data-movimento="5">
   <div class="dc-medida">
-    <h3 class="dc-titulo-secao" id="titulo-checklist">Pontos para apreciação</h3>
+    <h2 class="dc-titulo-secao" id="titulo-checklist">Pontos para apreciação</h2>
     <ol class="dc-checklist">
       <li class="dc-checklist__item">
         <input id="chk-f5-1" type="checkbox" />
@@ -798,14 +972,13 @@
   </div>
 </section>
 
-<!-- F5-GERADO:END -->
   </main>
   <footer class="dc-pad-07" id="rodape">
     <div class="dc-medida">
       <p class="dc-selo">Candidato Fase 5 — não canônico — Fase 6 bloqueada</p>
       <p>Discipulando a Caserna · Projeto Caserna de Adulão</p>
       <p>casernadeadulao@gmail.com · Fortaleza-CE</p>
-      <p class="dc-nota">Conteúdo gerado de <code>conteudo/</code>. Protótipos históricos não foram alterados.</p>
+      <p class="dc-nota">Conteúdo gerado de <code>conteudo/</code>. Contrato: <code>index.html</code> inteiro é artefato gerado. Protótipos históricos não foram alterados.</p>
     </div>
   </footer>
   <script src="js/config.js"></script>

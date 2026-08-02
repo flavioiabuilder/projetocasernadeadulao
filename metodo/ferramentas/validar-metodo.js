@@ -453,6 +453,48 @@ function checkFase5EstadoSemantico() {
   if (failures === before) ok("F5: estado semântico mínimo presente");
 }
 
+/**
+ * Validação semântica leve da Fase 6 (readiness documental).
+ * Não julga implementação; impede blueprint ausente e publicação implícita.
+ */
+function checkFase6EstadoSemantico() {
+  const before = failures;
+  const plano = path.join(
+    ROOT,
+    "programas/discipulando-a-caserna/docs/metodo/fase-6/plano-de-implementacao.md"
+  );
+  const pipeline = path.join(ROOT, "metodo/PIPELINE.md");
+  if (!fs.existsSync(plano)) {
+    fail("F6: plano-de-implementacao.md ausente");
+  } else {
+    const text = fs.readFileSync(plano, "utf8");
+    if (!/BLOQUEADA POR F5-12|autorizacaoFase6:\s*false/i.test(text)) {
+      fail("F6: plano deve declarar bloqueio por F5-12 enquanto não autorizada");
+    }
+  }
+  if (fs.existsSync(pipeline)) {
+    const pipe = fs.readFileSync(pipeline, "utf8");
+    if (!/\|\s*6\s*\|[^\n]*BLOQUEADA/i.test(pipe)) {
+      fail("F6: PIPELINE deve marcar Fase 6 como BLOQUEADA até F5-12");
+    }
+  }
+  const prodPath = path.join(ROOT, "programas/discipulando-a-caserna/prospecto");
+  if (fs.existsSync(prodPath)) {
+    // Produção só após autorização — avisar se existir sem F5-12
+    const estadoPath = path.join(
+      ROOT,
+      "programas/discipulando-a-caserna/docs/metodo/fase-5/estado-prototipo-canonico.json"
+    );
+    if (fs.existsSync(estadoPath)) {
+      const estado = readJson(estadoPath);
+      if (!estado.autorizacaoFase6) {
+        fail("F6: diretório prospecto/ existe sem autorizacaoFase6");
+      }
+    }
+  }
+  if (failures === before) ok("F6: estado semântico mínimo (blueprint/bloqueio)");
+}
+
 function rmRecursive(dir) {
   fs.rmSync(dir, { recursive: true, force: true });
 }
@@ -514,6 +556,7 @@ function main() {
   checkPainelFase2Semantico();
   checkManualFase4Semantico();
   checkFase5EstadoSemantico();
+  checkFase6EstadoSemantico();
   checkInternalLinks();
   checkSecrets();
   if (bootstrap) bootstrapTest();

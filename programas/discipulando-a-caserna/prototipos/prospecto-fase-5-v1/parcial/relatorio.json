@@ -1,9 +1,9 @@
 {
-  "geradoEm": "2026-08-02T12:34:26.551Z",
   "candidato": "prototipos/prospecto-fase-5-v1/",
   "canonic": false,
   "fase6": "bloqueada",
   "quotes": 60,
   "secoes": 15,
-  "ms": 145
+  "contrato": "index-inteiro-gerado",
+  "parser": "parse-md-blocos"
 }

@@ -1,0 +1,57 @@
+/**
+ * Fundações do Design System — camada compartilhada.
+ * Consome tokens semânticos. Não importar lab.css.
+ */
+@import url("../tokens/tokens.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--tipografia-familia-corpo);
+  font-size: var(--tipografia-prosa-corpo);
+  font-weight: var(--tipografia-peso-corpo);
+  line-height: var(--tipografia-altura-linha-corpo);
+  color: var(--cor-texto-primario);
+  background: var(--cor-superficie-papel);
+}
+
+.dc-medida {
+  max-width: var(--layout-medida-prosa);
+  margin-inline: auto;
+  padding-inline: var(--espacamento-pagina-gutter-mobile);
+}
+
+@media (min-width: 768px) {
+  .dc-medida {
+    padding-inline: var(--espacamento-pagina-gutter-tablet);
+  }
+}
+
+.dc-skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: var(--espacamento-grupo);
+  background: var(--cor-superficie-profunda);
+  color: var(--cor-texto-sobre-profunda);
+}
+
+.dc-skip:focus {
+  left: 0;
+}

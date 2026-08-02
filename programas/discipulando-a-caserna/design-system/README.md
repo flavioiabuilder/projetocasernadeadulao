@@ -7,9 +7,12 @@
 ## Camadas
 
 1. **Fundações** — [`tokens/`](tokens/) (ME-T; JSON canônico → CSS gerado)
-2. **Componentes** — [`componentes/`](componentes/) (fichas de contrato)
-3. **Padrões** — [`padroes/`](padroes/) (combinações de domínio)
-4. **Páginas** — composição documentada no Manual (protótipos = legado)
+2. **CSS compartilhado (produção)** — [`styles/`](styles/) — fundações/componentes/padrões; **não** é `laboratorio/`
+3. **Componentes** — [`componentes/`](componentes/) (fichas de contrato; API pública `dc-*`)
+4. **Padrões** — [`padroes/`](padroes/) (combinações de domínio)
+5. **Páginas** — composição documentada no Manual; produção prevista em `prospecto/` após F5-12
+
+Classes `.lab-*` são scaffolding do laboratório — **não** API pública.
 
 ## Fontes de verdade
 

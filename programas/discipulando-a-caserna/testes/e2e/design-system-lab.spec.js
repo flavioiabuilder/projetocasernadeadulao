@@ -64,7 +64,7 @@ test.describe("design system — laboratório", () => {
       return { now, css };
     });
     expect(sync.now).toBe("40");
-    expect(sync.css === "40%" || sync.css === "").toBeTruthy();
+    expect(sync.css).toBe("40%");
   });
 
   test("ação aria-disabled expõe motivo via aria-describedby", async ({ page }) => {

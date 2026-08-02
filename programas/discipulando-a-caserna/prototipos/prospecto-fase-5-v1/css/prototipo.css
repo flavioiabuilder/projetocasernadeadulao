@@ -237,25 +237,84 @@ body {
   background: var(--cor-acento-editorial);
 }
 
+.dc-sumario-pe {
+  margin: 0;
+  padding: var(--espacamento-inline) var(--espacamento-pagina-gutter-mobile);
+  background: var(--cor-superficie-papel);
+  border-bottom: var(--borda-separador) solid var(--cor-borda-sutil);
+}
+
+.dc-sumario-pe > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.dc-sumario-pe > summary::-webkit-details-marker {
+  display: none;
+}
+
 .dc-indice {
+  padding: var(--espacamento-grupo) 0;
+  max-height: min(70vh, 32rem);
+  overflow: auto;
+}
+
+html.js .dc-sumario-pe[open] .dc-indice {
   position: fixed;
   inset: 0 auto 0 0;
   width: min(22rem, 100%);
   z-index: 30;
+  max-height: none;
+  height: 100%;
   background: var(--cor-superficie-papel);
   border-right: var(--borda-separador) solid var(--cor-borda-sutil);
   padding: var(--espacamento-bloco) var(--espacamento-grupo);
-  overflow: auto;
-  box-shadow: none;
-}
-
-.dc-indice[hidden] {
-  display: none;
 }
 
 .dc-indice ol {
   margin: 0;
   padding-left: 1.25rem;
+}
+
+.dc-lista-pedidos {
+  margin: var(--espacamento-bloco) 0;
+  padding-left: 1.25rem;
+}
+
+.dc-lista-pedidos__pedido {
+  margin: 0 0 var(--espacamento-inline);
+}
+
+.dc-lista-pedidos__obs {
+  margin: 0;
+  font-size: var(--tipografia-nota);
+}
+
+.dc-prosa-quote,
+.dc-citacao-final {
+  margin: var(--espacamento-bloco) 0;
+  padding-left: var(--espacamento-grupo);
+  border-left: var(--borda-separador) solid var(--cor-acento-editorial);
+}
+
+.dc-convite-prefacio {
+  margin: var(--espacamento-bloco) 0;
+  padding: var(--espacamento-bloco);
+  border: var(--borda-separador) solid var(--cor-acento-editorial);
+  background: var(--cor-superficie-creme);
+}
+
+.dc-convite-prefacio .dc-selo {
+  color: var(--cor-texto-primario);
+}
+
+.dc-assinatura-bloco {
+  white-space: pre-wrap;
+  font-family: var(--tipografia-familia-corpo);
+  font-size: var(--tipografia-nota);
 }
 
 .dc-comparacao {
@@ -339,13 +398,16 @@ body {
   color: var(--cor-acento-editorial);
 }
 
-.dc-abas__panel[hidden] {
+/* Painéis só ocultos após progressive enhancement (html.js). */
+html.js .dc-abas__panel[hidden] {
   display: none;
 }
 
-.dc-curriculo h4 {
+.dc-curriculo__titulo,
+.dc-curriculo h3 {
   margin: 0 0 var(--espacamento-inline);
   font-family: var(--tipografia-familia-display);
+  font-size: var(--tipografia-secao-titulo);
 }
 
 .dc-curriculo-item {

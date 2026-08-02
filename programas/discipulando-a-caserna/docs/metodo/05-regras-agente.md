@@ -25,6 +25,16 @@ Template genérico (para novos projetos):
 - Não usar `generate:tokens` (Aramco). Não migrar protótipos sem Fase 6.
 - Ver [`03-direcao-tokens.md`](03-direcao-tokens.md).
 
+## Prototipagem (Fase 5) e implementação (Fase 6)
+
+- Candidato: `prototipos/prospecto-fase-5-v1/` — **não** editar `index.html`/`parcial/` à mão
+- Gerar: `npm run generate:discipulando:prototipo-fase-5`
+- Validar: `validate:discipulando:prototipagem` · `check:discipulando:prototipo-fase-5:stale`
+- Config institucional: `ferramentas/institucional.js` (espelho gerado em `js/config.js`)
+- Fase 6 **bloqueada** até F5-12; blueprint em [`fase-6/`](fase-6/)
+- Produção prevista: `prospecto/` (ainda inexistente). Não alterar `pages.yml` sem F6-11
+- Não importar `lab.css` nem CSS de `referencias-devtools/`
+
 ## Validação
 
 ```bash

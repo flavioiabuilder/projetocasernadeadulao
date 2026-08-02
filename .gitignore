@@ -30,6 +30,7 @@ programas/discipulando-a-caserna/fontes/guia-mestre/*_tmp.pdf
 _site/
 programas/discipulando-a-caserna/_gerado/
 _gerado/
+**/relatorio-telemetry.local.json
 
 # impeccable-ignore-start
 # Ephemeral output, runtime state, and per-dev overrides.

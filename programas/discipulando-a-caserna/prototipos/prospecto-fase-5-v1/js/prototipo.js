@@ -1,9 +1,11 @@
 /**
  * Candidato Fase 5 — progressive enhancement.
- * Experiência legível sem este arquivo.
+ * Sem este arquivo: sumário via <details>, todos os painéis da matriz legíveis.
  */
 (function () {
   "use strict";
+
+  document.documentElement.classList.add("js");
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -32,29 +34,65 @@
     window.addEventListener("resize", atualizarProgresso, { passive: true });
   }
 
+  var sumarioPe = document.getElementById("sumario-pe");
   var sumarioBtn = document.getElementById("sumario-btn");
   var sumarioPainel = document.getElementById("sumario-painel");
-  if (sumarioBtn && sumarioPainel) {
-    sumarioBtn.addEventListener("click", function () {
-      var open = sumarioBtn.getAttribute("aria-expanded") === "true";
-      sumarioBtn.setAttribute("aria-expanded", open ? "false" : "true");
-      sumarioPainel.hidden = open;
-      if (!open) {
+
+  function fecharSumario() {
+    if (sumarioPe) sumarioPe.open = false;
+  }
+
+  function focarDestino(hash) {
+    if (!hash || hash.charAt(0) !== "#") return;
+    var alvo = document.getElementById(hash.slice(1));
+    if (!alvo) return;
+    var labelled = alvo.getAttribute("aria-labelledby");
+    if (labelled) {
+      var heading = document.getElementById(labelled);
+      if (heading) alvo = heading;
+    } else if (alvo.matches("h1, h2, h3, h4, h5, h6") === false) {
+      var nested = alvo.querySelector("h1, h2, h3, h4, h5, h6");
+      if (nested) alvo = nested;
+    }
+    if (!alvo.hasAttribute("tabindex")) {
+      alvo.setAttribute("tabindex", "-1");
+    }
+    alvo.focus({ preventScroll: true });
+  }
+
+  if (sumarioPe && sumarioBtn && sumarioPainel) {
+    sumarioPe.addEventListener("toggle", function () {
+      sumarioBtn.setAttribute("aria-expanded", sumarioPe.open ? "true" : "false");
+      if (sumarioPe.open) {
         var first = sumarioPainel.querySelector("a");
         if (first) first.focus();
       }
     });
+    sumarioBtn.setAttribute("aria-expanded", sumarioPe.open ? "true" : "false");
+
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && sumarioBtn.getAttribute("aria-expanded") === "true") {
-        sumarioBtn.setAttribute("aria-expanded", "false");
-        sumarioPainel.hidden = true;
+      if (e.key === "Escape" && sumarioPe.open) {
+        fecharSumario();
         sumarioBtn.focus();
       }
     });
+
     sumarioPainel.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        sumarioBtn.setAttribute("aria-expanded", "false");
-        sumarioPainel.hidden = true;
+      a.addEventListener("click", function (e) {
+        var href = a.getAttribute("href") || "";
+        if (href.charAt(0) !== "#") return;
+        e.preventDefault();
+        fecharSumario();
+        var el = document.getElementById(href.slice(1));
+        if (el) {
+          el.scrollIntoView({ block: "start" });
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", href);
+          }
+        }
+        window.requestAnimationFrame(function () {
+          focarDestino(href);
+        });
       });
     });
   }
@@ -72,6 +110,8 @@
     var tabs = Array.prototype.slice.call(
       abasRoot.querySelectorAll('[role="tab"]:not([aria-disabled="true"])')
     );
+    var panels = Array.prototype.slice.call(abasRoot.querySelectorAll('[role="tabpanel"]'));
+
     function activateTab(tab) {
       tabs.forEach(function (t) {
         var selected = t === tab;
@@ -82,6 +122,21 @@
       });
       tab.focus();
     }
+
+    // Ativação automática (APG): setas selecionam e mostram o painel.
+    var selected = tabs.find(function (t) {
+      return t.getAttribute("aria-selected") === "true";
+    });
+    if (selected) {
+      activateTab(selected);
+    } else if (tabs[0]) {
+      activateTab(tabs[0]);
+    } else {
+      panels.forEach(function (p, i) {
+        p.hidden = i !== 0;
+      });
+    }
+
     tabs.forEach(function (tab, index) {
       tab.addEventListener("click", function () {
         activateTab(tab);

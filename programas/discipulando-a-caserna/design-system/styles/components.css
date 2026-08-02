@@ -1,0 +1,47 @@
+/**
+ * Componentes públicos dc-* — contratos do Manual CANDIDATO.
+ * Expandir na migração para prospecto/ (após F5-12).
+ * Fonte de verdade das fichas: design-system/componentes/*.md
+ */
+
+.dc-link {
+  color: var(--cor-texto-primario);
+  text-decoration-thickness: var(--borda-separador);
+  text-underline-offset: 0.15em;
+}
+
+.dc-link:focus-visible {
+  outline: var(--foco-anel-largura) var(--foco-anel-estilo) var(--foco-anel-cor-sobre-papel);
+  outline-offset: var(--foco-anel-offset);
+}
+
+.dc-acao {
+  min-height: 44px;
+  min-width: 44px;
+  padding: var(--espacamento-inline) var(--espacamento-grupo);
+  border: var(--borda-separador) solid var(--cor-borda-sutil);
+  background: var(--cor-superficie-papel);
+  color: var(--cor-texto-primario);
+  font-family: var(--tipografia-familia-display);
+  font-weight: var(--tipografia-peso-display);
+  cursor: pointer;
+}
+
+.dc-progresso {
+  flex: 1;
+  min-width: 8rem;
+  height: 4px;
+  background: var(--cor-superficie-creme);
+  border-radius: var(--raio-controle);
+  overflow: hidden;
+}
+
+.dc-progresso__barra {
+  height: 100%;
+  width: var(--dc-progresso, 0%);
+  background: var(--cor-acento-editorial);
+}
+
+html.js .dc-abas__panel[hidden] {
+  display: none;
+}

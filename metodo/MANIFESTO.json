@@ -65,9 +65,16 @@
     "programas/discipulando-a-caserna/docs/metodo/fase-5/roteiro-de-validacao.md",
     "programas/discipulando-a-caserna/docs/metodo/fase-5/decisao-do-prototipo-canonico.md",
     "programas/discipulando-a-caserna/docs/metodo/fase-5/estado-prototipo-canonico.json",
+    "programas/discipulando-a-caserna/docs/metodo/fase-6/plano-de-implementacao.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-6/mapa-prototipo-para-producao.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-6/registro-de-migracao.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-6/roteiro-de-validacao-da-implementacao.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-6/pacote-gate-a-decisao-humana.md",
+    "programas/discipulando-a-caserna/docs/metodo/fase-6/publicacao-bloqueada.md",
     "programas/discipulando-a-caserna/design-system/tokens/tokens.json",
     "programas/discipulando-a-caserna/design-system/tokens/tokens.css",
-    "programas/discipulando-a-caserna/design-system/README.md"
+    "programas/discipulando-a-caserna/design-system/README.md",
+    "programas/discipulando-a-caserna/design-system/styles/README.md"
   ],
   "proibicoes": [
     "metodo/skills/**/SKILL.md",

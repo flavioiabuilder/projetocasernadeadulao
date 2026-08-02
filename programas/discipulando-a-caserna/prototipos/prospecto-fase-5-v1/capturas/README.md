@@ -1,21 +1,13 @@
 # Capturas — prospecto-fase-5-v1
 
-Evidências visuais do candidato Fase 5.
+Geradas por `npm run capture:discipulando:prototipo-fase-5`.
+Evidências do candidato; não substituem inspeção teclado/DOM.
+Não incluem homologação pastoral nem screenshots externos.
 
-## Como gerar
+Arquivos esperados (viewports + reduced motion):
 
-```bash
-npm run capture:discipulando:prototipo-fase-5
-```
+- `topo-360x800.png`, `topo-768x1024.png`, `topo-1440x900.png`
+- `umbral-*`, `pedido-*` nos mesmos viewports
+- `topo-1440x900-reduced-motion.png`
 
-Requer Chromium do Playwright (`npx playwright install chromium`).
-
-Viewports previstos: 360×800, 768×1024, 1440×900 — topo, umbral (secao-4),
-pedido (secao-15), e topo com `prefers-reduced-motion: reduce`.
-
-## Estado
-
-Capturas PNG ainda não versionadas neste ambiente (browser Playwright ausente
-na sandbox). A ausência de PNG **não** canoniza o candidato.
-
-Não versionar screenshots externos, homologação pastoral ou PII.
+Complementar com E2E: `npm run test:discipulando:prototipo-fase-5:e2e` (Axe, teclado, PE sem JS).

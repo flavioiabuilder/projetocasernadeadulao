@@ -39,8 +39,11 @@ CMP/PAD. Conteúdo de `conteudo/` via
 
 - H1–H17 e V1–V5 permanecem abertos; ação principal = hipótese.
 - M3/M4 virtude/tema null: omitidos na UI com nota de lacuna.
-- Anatomia de lição / encontro detalhado: notas PAD-04 nas seções 10–11.
+- Anatomia de lição / encontro (seções 10–11): conteúdo canônico **presente** em `conteudo/`; a nota de “lacuna declarada” foi removida do gerador (F5-R03).
+- Folheador da Lição 1 e PDF do dossiê de apreciação: **pendentes de decisão humana** (F6-05 / F6-06); o candidato declara a pendência sem inventar asset/link.
 - Checklist de apreciação: itens derivados do briefing/estado — não substituem roteiro pastoral PDF.
+- Parser: `ferramentas/parse-md-blocos.js` (múltiplas tabelas, listas, blockquotes); stale-check `check:discipulando:prototipo-fase-5:stale`.
+- Progressive enhancement: sumário via `<details>`; painéis da matriz legíveis sem JS; ativação de abas **automática** (APG).
 
 ## 5. Matriz de avaliação
 
@@ -55,9 +58,9 @@ CMP/PAD. Conteúdo de `conteudo/` via
 | Tokens semânticos exclusivos | 4 | 5 | Gate prototipagem |
 | Legibilidade sustentada | 5 | 4 | Medida prosa |
 | Ausência de aparência comercial | 5 | 5 | Sem CTA captação |
-| Responsividade | 4 | 3 | CSS responsivo; e2e overflow pendente browser |
-| Acessibilidade | 5 | 3 | Estrutura OK; Axe e2e pendente browser |
-| Honestidade sobre lacunas | 5 | 5 | Notas PAD-04 |
+| Responsividade | 4 | 4 | CSS responsivo; e2e overflow no suite F5 |
+| Acessibilidade | 5 | 4 | PE sem JS; Axe no suite F5; foco pós-sumário |
+| Honestidade sobre lacunas | 5 | 5 | Pendências F6-05/06 explícitas; sem lacuna falsa 10–11 |
 | Clareza de estado | 4 | 5 | Selo candidato; JSON bloqueado |
 | Viabilidade para Fase 6 | 4 | 4 | Path isolado + contratos |
 | Motion contido | 3 | 5 | Só progresso/sumário; RM |
@@ -102,6 +105,14 @@ Pontuação auxilia; **não** decide. Vetos em
 - **DIREÇÃO:** preservar um umbral; motion só chrome.
 - **RESTRIÇÃO:** não importar efeitos DevTools.
 - **Feito:** sem alteração visual adicional (confirmação).
+
+### Rodada corretiva 4 — Fidelidade / PE / gates (Onda 0 Fase 6)
+
+- **OBSERVAÇÃO:** parser regex fundia tabelas, omitia listas, injetava lacuna falsa; tabs/sumário dependiam de JS; relatório não determinístico; F5 fora do gate principal.
+- **DIAGNÓSTICO:** F5-R01…R13, R15, R18, R21.
+- **DIREÇÃO:** `parse-md-blocos`; PE com `<details>` + painéis sem `hidden` estático; `institucional.js`; stale-check; integração em `validate:discipulando`.
+- **RESTRIÇÃO:** não canonizar; não alterar `pages.yml`; não inventar folheador/PDF.
+- **Feito:** gerador + testes + PIPELINE alinhado a BLOQUEADA.
 
 ## 7. Exceções técnicas
 
