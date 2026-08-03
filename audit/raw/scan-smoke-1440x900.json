@@ -1,0 +1,79 @@
+{
+  "label": "smoke",
+  "viewport": {
+    "w": 1440,
+    "h": 900
+  },
+  "target": "https://www.korowa.vic.edu.au/",
+  "host": "playwright",
+  "cpuThrottle": 1,
+  "network": "unthrottled",
+  "reducedMotion": false,
+  "loadMs": 15473,
+  "consent": {
+    "found": false,
+    "action": "none",
+    "label": null
+  },
+  "scrollHeight": 14512,
+  "canvasCount": 0,
+  "globalsPresent": [
+    "gsap",
+    "ScrollTrigger"
+  ],
+  "shots": [
+    {
+      "fraction": 0,
+      "scrollY": 0,
+      "file": "captures/smoke-1440x900/f0000.png"
+    },
+    {
+      "fraction": 0.5,
+      "scrollY": 6806,
+      "file": "captures/smoke-1440x900/f0500.png"
+    },
+    {
+      "fraction": 1,
+      "scrollY": 13612,
+      "file": "captures/smoke-1440x900/f1000.png"
+    }
+  ],
+  "probeBytes": {
+    "P3": 6389,
+    "P4": 602
+  },
+  "consoleMessages": [
+    {
+      "type": "log",
+      "text": "Debug mode is %cdisabled color: red; font-weight: bold;"
+    },
+    {
+      "type": "log",
+      "text": "To enable debug mode and show debug logs, run %c`window.setDebugMode(true)`%c in the console color: red; font-weight: bold; color: #000; font-weight: normal;"
+    },
+    {
+      "type": "log",
+      "text": "Current JS scripts environment: %ccdn color: red; font-weight: bold;"
+    },
+    {
+      "type": "log",
+      "text": "To serve JS files from localhost, run %c`window.setScriptMode(\"local\")`%c in the console color: red; font-weight: bold; color: #000; font-weight: normal;"
+    },
+    {
+      "type": "debug",
+      "text": "Checking for Webflow IX3 module... Attempt 1 s"
+    },
+    {
+      "type": "debug",
+      "text": "Webflow IX3 globalised: s"
+    },
+    {
+      "type": "debug",
+      "text": "Polyfill skipped because browser supports Scroll Timeline."
+    },
+    {
+      "type": "warning",
+      "text": "Swiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled or not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerVi"
+    }
+  ]
+}

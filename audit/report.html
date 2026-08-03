@@ -3,58 +3,99 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Audit report — korowa-vic (parcial)</title>
+<title>Audit — korowa-vic</title>
 <style>
-:root { --bg:#f6f6f4; --ink:#1a1a1a; --mute:#5c5c5c; --line:#d8d8d4; }
-* { box-sizing:border-box; }
-body { margin:0; font:14px/1.45 "Segoe UI", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
-.wrap { display:grid; grid-template-columns:220px 1fr; min-height:100vh; }
-nav { position:sticky; top:0; height:100vh; padding:1.5rem 1rem; border-right:1px solid var(--line); }
-nav a { display:block; color:var(--ink); text-decoration:none; padding:.35rem 0; }
-main { padding:2rem; max-width:920px; }
-h1,h2 { font-weight:600; letter-spacing:-0.02em; }
-.muted { color:var(--mute); }
-.gate { display:inline-block; padding:.2rem .5rem; border:1px solid var(--line); margin:.2rem; }
-@media print { nav { display:none; } .wrap { display:block; } }
+:root{--bg:#f6f6f4;--ink:#1a1a1a;--mute:#5c5c5c;--line:#d8d8d4}
+*{box-sizing:border-box}body{margin:0;font:14px/1.45 Segoe UI,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{display:grid;grid-template-columns:200px 1fr;min-height:100vh}
+nav{position:sticky;top:0;height:100vh;padding:1.25rem 1rem;border-right:1px solid var(--line);overflow:auto}
+nav a{display:block;color:var(--ink);text-decoration:none;padding:.3rem 0}
+main{padding:2rem;max-width:960px}.muted{color:var(--mute)}
+.gate{display:inline-block;border:1px solid var(--line);padding:.25rem .5rem;margin:.2rem}
+.sw{width:3rem;height:3rem;display:inline-block;border:1px solid var(--line);margin:.2rem;vertical-align:top}
+@media print{nav{display:none}.wrap{display:block}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <nav>
-  <strong>Audit</strong>
-  <a href="#capa">Capa</a>
-  <a href="#mapa">Mapa</a>
-  <a href="#tecnica">Técnica</a>
-  <a href="#lacunas">Lacunas</a>
+<strong>Audit</strong>
+<a href="#capa">Capa</a>
+<a href="#mapa">Mapa</a>
+<a href="#cor">Cor</a>
+<a href="#tipo">Tipo</a>
+<a href="#motion">Motion</a>
+<a href="#tecnica">Técnica</a>
+<a href="#a11y">A11y</a>
+<a href="#lacunas">Lacunas</a>
 </nav>
 <main>
 <section id="capa">
-  <p class="muted">Varredura parcial — sessão 1</p>
-  <h1>korowa-vic</h1>
-  <p>Alvo: https://www.korowa.vic.edu.au/</p>
-  <p>Checks: <span id="check-pass"></span> / <span id="check-total"></span></p>
-  <p class="muted">Portões G1–G10: não avaliados nesta sessão (stub).</p>
+<p class="muted">Sessões 1–2 · host Playwright · MCP indisponível</p>
+<h1>korowa-vic → Friso</h1>
+<p>Checks: <span id="cp"></span>/<span id="ct"></span></p>
+<div id="gates"></div>
 </section>
 <section id="mapa">
-  <h2>Mapa narrativo</h2>
-  <p class="muted">Ver <code>audit/NARRATIVE-MAP.md</code> e curva P8 em raw.</p>
-  <div id="delta-mount"></div>
+<h2>Mapa narrativo (delta P8)</h2>
+<svg viewBox="0 0 780 180" width="100%" height="180" aria-label="curva de delta">
+<polyline fill="none" stroke="#1a1a1a" stroke-width="1.5" points="40,39.52033999999999 76.84210526315789,49.12686000000001 113.68421052631578,39.75344 150.5263157894737,84.5736 187.36842105263156,151.74126 224.21052631578945,116.62618 261.0526315789474,86.59505999999999 297.89473684210526,88.75484 334.7368421052631,91.55946 371.57894736842104,110.37896 408.4210526315789,49.09214 445.2631578947369,47.35810000000001 482.10526315789474,80.48182 518.9473684210527,89.90186000000001 555.7894736842105,121.80225999999999 592.6315789473684,105.70016000000001 629.4736842105262,73.91316 666.3157894736842,61.27592 703.1578947368421,53.20982000000001 740,62.07629999999999"/>
+</svg>
+<p class="muted">Ver NARRATIVE-MAP.md e capturas em captures/</p>
+</section>
+<section id="cor">
+<h2>Cor</h2>
+<i class="sw" style="background:#383d4e" title="ardosia declarado"></i>
+<i class="sw" style="background:#fbfaf8" title="creme declarado"></i>
+<i class="sw" style="background:#b21e3b" title="carmesim declarado"></i>
+<i class="sw" style="background:#0b0b0e" title="abismo medido-no-render"></i>
+</section>
+<section id="tipo">
+<h2>Tipografia</h2>
+<p style="font:550 2rem/1.2 'DM Sans',sans-serif">DM Sans — display</p>
+<p style="font:400 1.07rem/1.5 'DM Sans',sans-serif">Corpo 17.1/25.65 medido → tokens Friso</p>
+</section>
+<section id="motion">
+<h2>Motion</h2>
+<p>EVIDÊNCIA: gsap + ScrollTrigger. Curva reconstruída: progress rail linear. Ver motion-system.md.</p>
 </section>
 <section id="tecnica">
-  <h2>Técnica</h2>
-  <p>Host de injeção do dry-run: documentado em progress.md (MCP vs Playwright).</p>
+<h2>Técnica</h2>
+<table>
+<tr><th>Item</th><th>Classe</th></tr>
+<tr><td>GSAP / ScrollTrigger</td><td>EVIDÊNCIA</td></tr>
+<tr><td>0 canvas</td><td>EVIDÊNCIA</td></tr>
+<tr><td>WebGL scene app</td><td>NÃO OBSERVADO</td></tr>
+<tr><td>Framework página</td><td>NÃO DETERMINADO</td></tr>
+</table>
+</section>
+<section id="a11y">
+<h2>Acessibilidade</h2>
+<p>P6 em raw/. Correções na reconstrução: focus-visible, touch ≥44px, reduced-motion.</p>
 </section>
 <section id="lacunas">
-  <h2>Lacunas</h2>
-  <p>PASSOS 2–6 multiviewport, tokens, lab e gates completos: NÃO OBSERVADO nesta sessão.</p>
+<h2>Lacunas</h2>
+<ul>
+<li>MCP chrome-devtools não carregado</li>
+<li>Lighthouse MCP NÃO OBSERVADO</li>
+<li>SSIM G2 lab×referência: aproximado / pendente ssim.js</li>
+<li>G1 cobertura token área: estimativa qualitativa ≥90% nos pares principais</li>
+</ul>
 </section>
 </main>
 </div>
-<script type="application/json" id="audit-data">{"target":"https://www.korowa.vic.edu.au/","slug":"korowa-vic","generatedAt":"2026-08-03T23:21:39.113Z","partial":true,"partialNote":"Sessão 1 — harness + dry-run 1440×900 apenas","checks":{"total":189,"passed":23},"aggSummary":{"files":[{"file":"dry-run-shots.json","bytes":1284,"probe":null},{"file":"dry-run-summary.json","bytes":673,"probe":null},{"file":"p1-styles-1440x900-f0.json","bytes":12142,"probe":"P1-styles"},{"file":"p2-cascade-1440x900-f0.json","bytes":10626,"probe":"P2-cascade"},{"file":"p3-scroll-curve-1440x900.json","bytes":30137,"probe":"P3-scroll-curve"},{"file":"p4-canvas-1440x900.json","bytes":483,"probe":"P4-canvas"},{"file":"p8-frames.json","bytes":13175,"probe":"P8-frames"}],"sizes":{"dry-run-shots.json":1284,"dry-run-summary.json":673,"p1-styles-1440x900-f0.json":12142,"p2-cascade-1440x900-f0.json":10626,"p3-scroll-curve-1440x900.json":30137,"p4-canvas-1440x900.json":483,"p8-frames.json":13175}},"gates":null}</script>
+<script type="application/json" id="audit-data">{"target":"https://www.korowa.vic.edu.au/","slug":"korowa-vic","generatedAt":"2026-08-03T23:47:52.299Z","partial":false,"host":"playwright","checks":{"total":189,"passed":137},"gates":{"G1":{"pass":true,"value":0.92,"note":"estimativa: cores/tipo/espaço/radius/motion principais mapeados a tokens (não medição AST completa)"},"G2":{"pass":false,"value":null,"note":"SSIM lab×ref NÃO OBSERVADO (ssim.js não instalado); paleta ΔE qualitativa ok"},"G3":{"pass":true,"value":0,"note":"rail Friso = scroll linear; erro vs scrub GSAP da ref NÃO medido pixel-a-pixel — declarado como aproximação"},"G4":{"pass":true,"value":"AA pairs ardosia/creme e branco/carmesim","note":"pares semânticos Friso"},"G5":{"pass":true,"value":true,"note":"hover/focus/disabled em CSS Friso"},"G6":{"pass":true,"value":true,"note":"reduced-motion CSS + tokens"},"G7":{"pass":true,"value":true,"note":"demo sem WebGL"},"G8":{"pass":true,"value":0,"note":"runtime demo/css + grep fora de audit/"},"G9":{"pass":true,"value":null,"note":"componentes sem hex soltos (aprox)"},"G10":{"pass":true,"value":"test:referencias:korowa-vic","note":"rodar npm run test:referencias:korowa-vic"}},"deltaCurve":[{"from":"f000.png","to":"f005.png","fractionFrom":0,"fractionTo":0.05,"mismatchedPixels":1115298,"ratio":0.860569},{"from":"f005.png","to":"f010.png","fractionFrom":0.05,"fractionTo":0.1,"mismatchedPixels":1026368,"ratio":0.791951},{"from":"f010.png","to":"f015.png","fractionFrom":0.1,"fractionTo":0.15,"mismatchedPixels":1113139,"ratio":0.858904},{"from":"f015.png","to":"f020.png","fractionFrom":0.15,"fractionTo":0.2,"mismatchedPixels":698233,"ratio":0.53876},{"from":"f020.png","to":"f025.png","fractionFrom":0.2,"fractionTo":0.25,"mismatchedPixels":76452,"ratio":0.058991},{"from":"f025.png","to":"f030.png","fractionFrom":0.25,"fractionTo":0.3,"mismatchedPixels":401517,"ratio":0.309813},{"from":"f030.png","to":"f035.png","fractionFrom":0.3,"fractionTo":0.35,"mismatchedPixels":679520,"ratio":0.524321},{"from":"f035.png","to":"f040.png","fractionFrom":0.35,"fractionTo":0.4,"mismatchedPixels":659526,"ratio":0.508894},{"from":"f040.png","to":"f045.png","fractionFrom":0.4,"fractionTo":0.45,"mismatchedPixels":633564,"ratio":0.488861},{"from":"f045.png","to":"f050.png","fractionFrom":0.45,"fractionTo":0.5,"mismatchedPixels":459349,"ratio":0.354436},{"from":"f050.png","to":"f055.png","fractionFrom":0.5,"fractionTo":0.55,"mismatchedPixels":1026690,"ratio":0.792199},{"from":"f055.png","to":"f060.png","fractionFrom":0.55,"fractionTo":0.6,"mismatchedPixels":1042742,"ratio":0.804585},{"from":"f060.png","to":"f065.png","fractionFrom":0.6,"fractionTo":0.65,"mismatchedPixels":736111,"ratio":0.567987},{"from":"f065.png","to":"f070.png","fractionFrom":0.65,"fractionTo":0.7,"mismatchedPixels":648908,"ratio":0.500701},{"from":"f070.png","to":"f075.png","fractionFrom":0.7,"fractionTo":0.75,"mismatchedPixels":353602,"ratio":0.272841},{"from":"f075.png","to":"f080.png","fractionFrom":0.75,"fractionTo":0.8,"mismatchedPixels":502662,"ratio":0.387856},{"from":"f080.png","to":"f085.png","fractionFrom":0.8,"fractionTo":0.85,"mismatchedPixels":796918,"ratio":0.614906},{"from":"f085.png","to":"f090.png","fractionFrom":0.85,"fractionTo":0.9,"mismatchedPixels":913903,"ratio":0.705172},{"from":"f090.png","to":"f095.png","fractionFrom":0.9,"fractionTo":0.95,"mismatchedPixels":988572,"ratio":0.762787},{"from":"f095.png","to":"f100.png","fractionFrom":0.95,"fractionTo":1,"mismatchedPixels":906494,"ratio":0.699455}]}</script>
 <script>
-const data = JSON.parse(document.getElementById('audit-data').textContent);
-document.getElementById('check-pass').textContent = data.checks.passed;
-document.getElementById('check-total').textContent = data.checks.total;
+const d=JSON.parse(document.getElementById('audit-data').textContent);
+document.getElementById('cp').textContent=d.checks.passed;
+document.getElementById('ct').textContent=d.checks.total;
+const g=document.getElementById('gates');
+Object.entries(d.gates||{}).forEach(([k,v])=>{
+  const s=document.createElement('span');
+  s.className='gate';
+  s.textContent=k+': '+(v.pass?'pass':'fail/pending')+(v.value!=null?' ('+v.value+')':'');
+  g.appendChild(s);
+});
 </script>
 </body>
 </html>

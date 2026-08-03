@@ -1,0 +1,58 @@
+{
+  "probe": "P4-canvas",
+  "url": "https://www.korowa.vic.edu.au/",
+  "canvasCount": 1,
+  "canvases": [
+    {
+      "index": 0,
+      "id": null,
+      "className": "",
+      "css": {
+        "w": 1440,
+        "h": 900
+      },
+      "drawingBuffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "devicePixelRatio": 1,
+      "effectiveDpr": 1,
+      "context": {
+        "webglLikely": false,
+        "canvas2dLikely": false,
+        "bitmapLikely": false,
+        "evidence": [
+          "buffer/css ratio≈dpr (1.00)",
+          "NÃO OBSERVADO: tipo exato sem getContext"
+        ],
+        "method": "no-getContext",
+        "undetermined": true
+      },
+      "webglExtensions": [],
+      "webglExtensionsNote": "NÃO OBSERVADO sem getContext — listar só se MCP/trace fornecer",
+      "layer": "canvas"
+    }
+  ],
+  "globalsPresent": [
+    "gsap",
+    "ScrollTrigger"
+  ],
+  "globalsAbsent": [
+    "THREE",
+    "Lenis",
+    "PIXI",
+    "OGL",
+    "__THREE_DEVTOOLS__",
+    "ReactCurrentDispatcher",
+    "__REACT_DEVTOOLS_GLOBAL_HOOK__",
+    "anime",
+    "ScrollMagic",
+    "barba",
+    "locomotiveScroll",
+    "Lottie",
+    "createjs",
+    "BABYLON"
+  ],
+  "evidenceNote": "Presença de global é EVIDÊNCIA; ausência NÃO prova ausência da biblioteca (bundler/scope).",
+  "provenance": "medido-no-render"
+}

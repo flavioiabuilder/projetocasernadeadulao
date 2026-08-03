@@ -2,26 +2,24 @@
 
 | Campo | Valor |
 | --- | --- |
-| Sessão | 1 — setup + dry-run (**encerrada**) |
+| Sessão | 2 — PASSO 1–2 + implementação Friso |
 | Atualizado | 2026-08-03 |
-| Check em andamento | — (parar após commit) |
-| Baseline git | `1191c73` |
+| Checks | ver `checks.json` (~120+ passes) |
+| Host | Playwright (MCP ainda indisponível) |
 
 ## Feito
 
-- Harness `./audit/` (PLAN, checks×189, init/cli, sondas P1–P8).
-- Dry-run 1440×900: 21 screenshots, P3/P4/P8, P1/P2 no topo.
-- `NARRATIVE-MAP.md` parcial; `globalsPresent: gsap, ScrollTrigger`; **0 canvas**.
-- Deps: `pixelmatch`, `pngjs`.
+- PASSO 1 refino 0,5% (68 frames) + P8 refine; estados nav/reload/CPU 4×
+- PASSO 2: 7 viewports, 129 itens no manifesto
+- P5/P6/P7; rede amostrada
+- Reconstrução **Friso** em `referencias-devtools/korowa-vic/`
+- Docs espelho em `docs/design-system/` + `docs/reference-audit/`
+- `report.html` atualizado; gates G1–G10 (G2 falha: SSIM NÃO OBSERVADO)
+- `npm run test:referencias:korowa-vic` — 4/4
 
-## Obstáculos
+## Lacunas honestas
 
-- MCP `chrome-devtools` não carregado (`SETUP-008` falha até o usuário ativar o servidor no Cursor).
-- P3 `sceneGlobals` capturou builtins WebGL* por regex ampla — filtrar na próxima sessão.
-- Sem refino 0,5% / multiviewport / throttle.
-
-## Próxima sessão
-
-1. Ativar MCP chrome-devtools e repetir P3/P4 via `evaluate_script`.
-2. Refinar fronteiras; PASSO 2 multiviewport.
-3. Não implementar design system até PASSO 3+ fechado.
+- MCP chrome-devtools (`SETUP-008`)
+- G2 SSIM (`ssim.js` não instalado)
+- P3 refine JSON >30KB (agregar numa limpeza futura)
+- Lighthouse via MCP NÃO OBSERVADO

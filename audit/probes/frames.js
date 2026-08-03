@@ -160,6 +160,8 @@ function main() {
     const total = w * h;
     const ratio = mistmatches / total;
     const parseFrac = (name) => {
+      const m4 = name.match(/f(\d{4})\b/i);
+      if (m4) return Number(m4[1]) / 1000;
       const m3 = name.match(/f(\d{3})\b/i);
       if (m3) return Number(m3[1]) / 100;
       const m = name.match(/f([\d.]+)/i);

@@ -1,0 +1,2822 @@
+{
+  "probe": "P3-scroll-curve",
+  "url": "https://www.korowa.vic.edu.au/",
+  "viewport": {
+    "w": 1440,
+    "h": 900
+  },
+  "rows": [
+    {
+      "fraction": 0,
+      "scrollY": 0,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        }
+      ],
+      "text": {
+        "headings": [
+          "We don't make\nladies",
+          "We're too busy making leaders."
+        ],
+        "labels": [
+          "Skip to main content",
+          "",
+          "",
+          "",
+          "MENU"
+        ]
+      },
+      "classOrDataChanges": [
+        "HTML:w-mod-js w-mod-ix w-mod-ix3:{\"wfDomain\":\"www.korowa.vic.edu.au\",\"wfPage\":\"689b9231663a4f08a91a5edb\",\"wfSite\":\"689b9231663a4f08a91a5f03\"}",
+        "BODY::{}",
+        "DIV:page-wrapper:{}",
+        "DIV:globals:{}",
+        "DIV:w-embed:{}",
+        "DIV:w-embed:{}",
+        "DIV:w-embed:{}",
+        "DIV:w-embed:{}",
+        "DIV:w-embed:{}",
+        "DIV:w-embed:{}",
+        "DIV:w-embed:{}",
+        "DIV:w-embed:{}",
+        "DIV:w-embed:{}",
+        "DIV:hide w-embed:{}",
+        "DIV:hide w-embed:{}"
+      ],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.005,
+      "scrollY": 0,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        }
+      ],
+      "text": {
+        "headings": [
+          "We don't make\nladies",
+          "We're too busy making leaders."
+        ],
+        "labels": [
+          "Skip to main content",
+          "",
+          "",
+          "",
+          "MENU"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.01,
+      "scrollY": 91,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        }
+      ],
+      "text": {
+        "headings": [
+          "We don't make\nladies",
+          "We're too busy making leaders."
+        ],
+        "labels": [
+          "Skip to main content",
+          "",
+          "",
+          "",
+          "MENU"
+        ]
+      },
+      "classOrDataChanges": [
+        "DIV:section_navbar is-hidden is-fill:{\"wf-SectionNavbar-Variant\":\"transparent\"}"
+      ],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.015,
+      "scrollY": 91,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        }
+      ],
+      "text": {
+        "headings": [
+          "We don't make\nladies",
+          "We're too busy making leaders."
+        ],
+        "labels": [
+          "Skip to main content",
+          "",
+          "",
+          "",
+          "MENU"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.02,
+      "scrollY": 272,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "We don't make\nladies",
+          "We're too busy making leaders.",
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.025,
+      "scrollY": 340,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "We don't make\nladies",
+          "We're too busy making leaders.",
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.03,
+      "scrollY": 408,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "We don't make\nladies",
+          "We're too busy making leaders.",
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.035,
+      "scrollY": 475,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "We don't make\nladies",
+          "We're too busy making leaders.",
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.04,
+      "scrollY": 544,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "We're too busy making leaders.",
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.045,
+      "scrollY": 547,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "We're too busy making leaders.",
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.05,
+      "scrollY": 671,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "We're too busy making leaders.",
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.055,
+      "scrollY": 742,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "We're too busy making leaders.",
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.06,
+      "scrollY": 804,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.065,
+      "scrollY": 857,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.07,
+      "scrollY": 914,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.075,
+      "scrollY": 917,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.08,
+      "scrollY": 917,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.085,
+      "scrollY": 920,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.09,
+      "scrollY": 922,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.095,
+      "scrollY": 924,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.1,
+      "scrollY": 924,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.105,
+      "scrollY": 926,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.11,
+      "scrollY": 926,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.115,
+      "scrollY": 928,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.12,
+      "scrollY": 930,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.125,
+      "scrollY": 932,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.13,
+      "scrollY": 934,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.135,
+      "scrollY": 936,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.14,
+      "scrollY": 938,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.145,
+      "scrollY": 938,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.15,
+      "scrollY": 948,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.155,
+      "scrollY": 948,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    },
+    {
+      "fraction": 0.16,
+      "scrollY": 948,
+      "scrollHeight": 14512,
+      "innerHeight": 900,
+      "fixedSticky": [
+        {
+          "position": "fixed",
+          "tag": "div",
+          "id": null,
+          "className": "section_navbar is-hidden is-fill",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "nav",
+          "id": null,
+          "className": "navbar-wrapper",
+          "w": 1440,
+          "h": 66
+        },
+        {
+          "position": "sticky",
+          "tag": "div",
+          "id": null,
+          "className": "statement_content-wrapper",
+          "w": 1205,
+          "h": 503
+        }
+      ],
+      "text": {
+        "headings": [
+          "Korowa Anglican Girls’ School, located in Glen Iris, Melbourne, is a leading ind",
+          "From first steps to\n‍future leaders"
+        ],
+        "labels": [
+          "Skip to main content"
+        ]
+      },
+      "classOrDataChanges": [],
+      "canvases": [],
+      "sceneGlobals": {
+        "TimelineTrigger": "function",
+        "TimelineTriggerRange": "function",
+        "TimelineTriggerRangeList": "function",
+        "gsapVersions": {
+          "type": "Array",
+          "keys": [
+            "0"
+          ]
+        },
+        "TimelineMax": "function",
+        "TimelineLite": "function",
+        "gsap": {
+          "type": "Object",
+          "keys": [
+            "registerPlugin",
+            "timeline",
+            "getTweensOf",
+            "getProperty",
+            "quickSetter",
+            "quickTo",
+            "isTweening",
+            "defaults",
+            "config",
+            "registerEffect",
+            "registerEase",
+            "parseEase"
+          ]
+        },
+        "ScrollTrigger": "function",
+        "_gsap": {
+          "type": "GSCache",
+          "keys": [
+            "id",
+            "target",
+            "harness",
+            "get",
+            "set",
+            "tweenScroll"
+          ]
+        }
+      }
+    }
+  ],
+  "layer": "dom+canvas",
+  "provenance": "medido-no-render"
+}

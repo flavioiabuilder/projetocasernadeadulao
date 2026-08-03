@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--fr-tipo-familia-corpo);
+  font-size: var(--fr-tipo-corpo);
+  line-height: var(--fr-tipo-corpo-lh);
+  font-weight: var(--fr-tipo-peso-corpo);
+  color: var(--fr-color-texto);
+  background: var(--fr-color-creme);
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.15em;
+  transition: color var(--fr-dur-rapida) var(--fr-ease-padrao),
+    background-color var(--fr-dur-rapida) var(--fr-ease-padrao);
+}
+
+a:hover {
+  color: var(--fr-color-carmesim);
+}
+
+:focus-visible {
+  outline: 3px solid var(--fr-color-foco);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--fr-color-carmesim) 28%, transparent);
+  color: var(--fr-color-ardosia);
+}
+
+.fr-container {
+  width: min(100% - 2 * var(--fr-tam-gutter), var(--fr-grade-max));
+  margin-inline: auto;
+}
+
+.fr-measure {
+  max-width: var(--fr-tipo-medida);
+}
+
+.fr-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

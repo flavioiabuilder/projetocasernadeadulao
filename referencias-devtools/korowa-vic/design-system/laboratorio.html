@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Friso — laboratório</title>
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/foundations.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/motion.css" />
+    <style>
+      .lab {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        min-height: 100vh;
+      }
+      .lab nav {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        padding: var(--fr-esp-5);
+        border-right: 1px solid color-mix(in srgb, var(--fr-color-filete) 70%, transparent);
+        overflow: auto;
+      }
+      .lab nav a {
+        display: block;
+        padding: 0.35rem 0;
+        text-decoration: none;
+      }
+      .lab main {
+        padding: var(--fr-esp-7) var(--fr-esp-6);
+      }
+      .lab section {
+        margin-bottom: var(--fr-esp-9);
+        max-width: 52rem;
+      }
+      .swatch {
+        display: inline-block;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: var(--fr-raio-md);
+        margin: 0.25rem;
+        border: 1px solid color-mix(in srgb, var(--fr-color-ardosia) 15%, transparent);
+        vertical-align: top;
+      }
+      .swatch span {
+        display: block;
+        margin-top: 4.7rem;
+        font-size: 0.75rem;
+      }
+      .type-row {
+        margin: 0.75rem 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--fr-color-filete) 50%, transparent);
+        padding-bottom: 0.75rem;
+      }
+      @media (max-width: 768px) {
+        .lab {
+          grid-template-columns: 1fr;
+        }
+        .lab nav {
+          position: relative;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="fr-sr-only" href="#lab-main">Ir ao laboratório</a>
+    <div class="lab">
+      <nav aria-label="Seções do laboratório">
+        <p class="fr-meta">Friso</p>
+        <a href="#principios">Princípios</a>
+        <a href="#cor">Cor</a>
+        <a href="#tipo">Tipografia</a>
+        <a href="#espaco">Espaço</a>
+        <a href="#componentes">Componentes</a>
+        <a href="#estados">Estados</a>
+        <a href="#motion">Motion</a>
+        <a href="#reduced">Reduced motion</a>
+        <a href="demo.html">Demo</a>
+      </nav>
+      <main id="lab-main">
+        <section id="principios">
+          <h1>Laboratório Friso</h1>
+          <p class="fr-scene-body fr-measure">
+            Inventário vivo dos tokens e padrões reconstruídos a partir de medições em
+            <code>audit/</code>. Sem marca da referência.
+          </p>
+        </section>
+
+        <section id="cor">
+          <h2>Cor</h2>
+          <div>
+            <i class="swatch" style="background: var(--fr-color-ardosia)" title="ardosia"></i>
+            <i class="swatch" style="background: var(--fr-color-creme)" title="creme"></i>
+            <i class="swatch" style="background: var(--fr-color-linho)" title="linho"></i>
+            <i class="swatch" style="background: var(--fr-color-carmesim)" title="carmesim"></i>
+            <i class="swatch" style="background: var(--fr-color-nevoa-azul)" title="nevoa"></i>
+            <i class="swatch" style="background: var(--fr-color-abismo)" title="abismo"></i>
+          </div>
+        </section>
+
+        <section id="tipo">
+          <h2>Tipografia</h2>
+          <div class="type-row" style="font-size: var(--fr-tipo-display); font-weight: 550; line-height: 1.2">
+            Display
+          </div>
+          <div class="type-row" style="font-size: var(--fr-tipo-titulo); font-weight: 550">Título</div>
+          <div class="type-row" style="font-size: var(--fr-tipo-corpo)">Corpo — medida de leitura controlada.</div>
+          <div class="type-row fr-meta">Rótulo / micro</div>
+        </section>
+
+        <section id="espaco">
+          <h2>Espaço</h2>
+          <div style="display: flex; gap: var(--fr-esp-2); align-items: end">
+            <div style="width: var(--fr-esp-2); height: var(--fr-esp-2); background: var(--fr-color-carmesim)"></div>
+            <div style="width: var(--fr-esp-4); height: var(--fr-esp-4); background: var(--fr-color-carmesim)"></div>
+            <div style="width: var(--fr-esp-6); height: var(--fr-esp-6); background: var(--fr-color-carmesim)"></div>
+            <div style="width: var(--fr-esp-8); height: var(--fr-esp-8); background: var(--fr-color-carmesim)"></div>
+          </div>
+        </section>
+
+        <section id="componentes">
+          <h2>Componentes</h2>
+          <p class="fr-eyebrow">Eyebrow</p>
+          <h3 class="fr-scene-heading" style="font-size: var(--fr-tipo-titulo)">Scene heading</h3>
+          <p class="fr-scene-body">Scene body com medida editorial.</p>
+          <p style="margin-top: var(--fr-esp-4)">
+            <button type="button" class="fr-action">Primary action</button>
+            <button type="button" class="fr-action fr-action--ghost" style="margin-left: 0.5rem">
+              Ghost
+            </button>
+          </p>
+          <div class="fr-canvas-fallback" style="margin-top: var(--fr-esp-5)">Canvas fallback / mídia procedural</div>
+        </section>
+
+        <section id="estados">
+          <h2>Estados</h2>
+          <p>
+            <button type="button" class="fr-nav-toggle">Hover / focus</button>
+            <button type="button" class="fr-nav-toggle" disabled style="margin-left: 0.5rem">
+              Disabled
+            </button>
+          </p>
+          <p class="fr-scene-body">Tabule até o botão para ver o anel <code>:focus-visible</code>.</p>
+        </section>
+
+        <section id="motion">
+          <h2>Motion</h2>
+          <p class="fr-reveal fr-scene-body" data-fr-reveal>Reveal ao entrar no viewport.</p>
+          <div
+            class="fr-immersive"
+            style="min-height: 40vh; margin-top: var(--fr-esp-5); border-radius: var(--fr-raio-md)"
+          >
+            <div class="fr-immersive__atmosphere fr-ambient" data-fr-parallax="0.3" aria-hidden="true"></div>
+            <div class="fr-immersive__content">
+              <p class="fr-eyebrow">Atmosfera</p>
+              <p class="fr-scene-heading" style="font-size: var(--fr-tipo-titulo)">Parallax leve</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="reduced">
+          <h2>Reduced motion</h2>
+          <p class="fr-scene-body">
+            Com <code>prefers-reduced-motion: reduce</code>, durações caem via tokens e reveals
+            ficam estáticos. A narrativa da demo permanece completável por scroll nativo.
+          </p>
+        </section>
+      </main>
+    </div>
+    <script src="js/motion.js"></script>
+  </body>
+</html>

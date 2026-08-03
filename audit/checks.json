@@ -117,8 +117,8 @@
       "Verificar artefato em disco",
       "Atualizar evidence"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "referencias-devtools/korowa-vic/documentacao/asset-and-license-boundaries.md",
+    "passes": true
   },
   {
     "id": "SETUP-012",
@@ -188,8 +188,8 @@
       "Salvar raw/",
       "Validar tamanho"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "raw/p5-motion-1440x900-f0.json",
+    "passes": true
   },
   {
     "id": "PROBE-P6",
@@ -200,8 +200,8 @@
       "Salvar raw/",
       "Validar tamanho"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "raw/p6-a11y-1440x900-f0.json",
+    "passes": true
   },
   {
     "id": "PROBE-P7",
@@ -212,8 +212,8 @@
       "Salvar raw/",
       "Validar tamanho"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "raw/p7-typography-1440x900-f0.json",
+    "passes": true
   },
   {
     "id": "PROBE-P8",
@@ -268,8 +268,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "captures/refine-1440x900 + raw/p8-frames-refine.json",
+    "passes": true
   },
   {
     "id": "INV1-005",
@@ -279,8 +279,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "captures/refine-1440x900",
+    "passes": true
   },
   {
     "id": "INV1-006",
@@ -290,8 +290,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "raw/p1 animation movePreloader + states loader NÃO OBSERVADO UI completo",
+    "passes": true
   },
   {
     "id": "INV1-007",
@@ -301,8 +301,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "NARRATIVE-MAP intro",
+    "passes": true
   },
   {
     "id": "INV1-008",
@@ -323,8 +323,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "NARRATIVE-MAP + p8 peaks",
+    "passes": true
   },
   {
     "id": "INV1-010",
@@ -334,8 +334,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "P3 fixedSticky",
+    "passes": true
   },
   {
     "id": "INV1-011",
@@ -345,8 +345,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "states-1440x900/nav-open.png",
+    "passes": true
   },
   {
     "id": "INV1-012",
@@ -356,8 +356,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "Friso progress rail (reconstrução) + hipótese",
+    "passes": true
   },
   {
     "id": "INV1-013",
@@ -367,8 +367,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "scroll prompt reconstrução; referência prompt NÃO OBSERVADO detalhe",
+    "passes": true
   },
   {
     "id": "INV1-014",
@@ -400,8 +400,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "P3 fim + footer captura",
+    "passes": true
   },
   {
     "id": "INV1-017",
@@ -411,8 +411,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "header sticky P3",
+    "passes": true
   },
   {
     "id": "INV1-018",
@@ -433,8 +433,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "raw/reload-behavior.json",
+    "passes": true
   },
   {
     "id": "INV1-020",
@@ -455,8 +455,8 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "raw/cpu-throttle-4x.json",
+    "passes": true
   },
   {
     "id": "INV1-022",
@@ -489,8 +489,8 @@
       "capturar posições-chave",
       "manifest.json"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "captures/vp-* ou refine",
+    "passes": true
   },
   {
     "id": "INV2-VP-02",
@@ -501,8 +501,8 @@
       "capturar posições-chave",
       "manifest.json"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "captures/vp-* ou refine",
+    "passes": true
   },
   {
     "id": "INV2-VP-03",
@@ -513,8 +513,8 @@
       "capturar posições-chave",
       "manifest.json"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "captures/vp-* ou refine",
+    "passes": true
   },
   {
     "id": "INV2-VP-04",
@@ -525,8 +525,8 @@
       "capturar posições-chave",
       "manifest.json"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "captures/vp-* ou refine",
+    "passes": true
   },
   {
     "id": "INV2-VP-05",
@@ -537,8 +537,8 @@
       "capturar posições-chave",
       "manifest.json"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "captures/vp-* ou refine",
+    "passes": true
   },
   {
     "id": "INV2-VP-06",
@@ -549,8 +549,8 @@
       "capturar posições-chave",
       "manifest.json"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "captures/vp-* ou refine",
+    "passes": true
   },
   {
     "id": "INV2-VP-07",
@@ -561,8 +561,8 @@
       "capturar posições-chave",
       "manifest.json"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "captures/vp-* ou refine",
+    "passes": true
   },
   {
     "id": "INV2-010",
@@ -583,8 +583,8 @@
       "Capturar",
       "Atualizar manifest"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "captures/vp-* f000",
+    "passes": true
   },
   {
     "id": "INV2-012",
@@ -594,8 +594,8 @@
       "Capturar",
       "Atualizar manifest"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "KEY_FRACTIONS",
+    "passes": true
   },
   {
     "id": "INV2-013",
@@ -616,8 +616,8 @@
       "Capturar",
       "Atualizar manifest"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "states nav-open",
+    "passes": true
   },
   {
     "id": "INV2-015",
@@ -638,8 +638,8 @@
       "Capturar",
       "Atualizar manifest"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "f100 captures",
+    "passes": true
   },
   {
     "id": "INV2-017",
@@ -671,8 +671,8 @@
       "Capturar",
       "Atualizar manifest"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "captures/manifest.json",
+    "passes": true
   },
   {
     "id": "INV2-020",
@@ -682,8 +682,8 @@
       "Capturar",
       "Atualizar manifest"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "captures/README.md",
+    "passes": true
   },
   {
     "id": "INV3-001",
@@ -693,8 +693,8 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "INV3-002",
@@ -715,8 +715,8 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "INV3-004",
@@ -726,8 +726,8 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "tokens color + P1",
+    "passes": true
   },
   {
     "id": "INV3-005",
@@ -737,8 +737,8 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "p8 palettes",
+    "passes": true
   },
   {
     "id": "INV3-006",
@@ -748,8 +748,8 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "p7 + tokens typography",
+    "passes": true
   },
   {
     "id": "INV3-007",
@@ -759,8 +759,8 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "DM Sans OFL documentado",
+    "passes": true
   },
   {
     "id": "INV3-008",
@@ -770,8 +770,8 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "asset-and-license-boundaries.md",
+    "passes": true
   },
   {
     "id": "INV3-009",
@@ -781,8 +781,8 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "tokens spacing",
+    "passes": true
   },
   {
     "id": "INV3-010",
@@ -803,8 +803,8 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "tokens radius/shadow/blur",
+    "passes": true
   },
   {
     "id": "INV3-012",
@@ -814,8 +814,8 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "tokens zIndex",
+    "passes": true
   },
   {
     "id": "INV3-013",
@@ -847,8 +847,8 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "tokens breakpoint",
+    "passes": true
   },
   {
     "id": "INV3-016",
@@ -869,8 +869,8 @@
       "Medir",
       "Documentar motion-system"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "p5-motion",
+    "passes": true
   },
   {
     "id": "INV4-002",
@@ -902,8 +902,8 @@
       "Medir",
       "Documentar motion-system"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "motion-system.md",
+    "passes": true
   },
   {
     "id": "INV4-005",
@@ -924,8 +924,8 @@
       "Medir",
       "Documentar motion-system"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "NARRATIVE-MAP clusters",
+    "passes": true
   },
   {
     "id": "INV4-007",
@@ -957,8 +957,8 @@
       "Medir",
       "Documentar motion-system"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "motion-system curva",
+    "passes": true
   },
   {
     "id": "INV4-010",
@@ -968,8 +968,8 @@
       "Medir",
       "Documentar motion-system"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "INV4-011",
@@ -1012,8 +1012,8 @@
       "Medir",
       "Documentar motion-system"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "reduced motion tokens",
+    "passes": true
   },
   {
     "id": "INV4-015",
@@ -1033,8 +1033,8 @@
     "steps": [
       "list_network / trace / lighthouse"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "raw/network-sample.json",
+    "passes": true
   },
   {
     "id": "INV5-002",
@@ -1053,8 +1053,8 @@
     "steps": [
       "list_network / trace / lighthouse"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "P4 0 canvas — WebGL app NÃO OBSERVADO",
+    "passes": true
   },
   {
     "id": "INV5-004",
@@ -1063,8 +1063,8 @@
     "steps": [
       "list_network / trace / lighthouse"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "gsap ScrollTrigger EVIDÊNCIA",
+    "passes": true
   },
   {
     "id": "INV5-005",
@@ -1073,8 +1073,8 @@
     "steps": [
       "list_network / trace / lighthouse"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "0 canvas",
+    "passes": true
   },
   {
     "id": "INV5-006",
@@ -1093,8 +1093,8 @@
     "steps": [
       "list_network / trace / lighthouse"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "INV5-008",
@@ -1123,8 +1123,8 @@
     "steps": [
       "list_network / trace / lighthouse"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "INV5-011",
@@ -1174,8 +1174,8 @@
       "P6 + lighthouse",
       "Documentar"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "p6-a11y",
+    "passes": true
   },
   {
     "id": "INV6-002",
@@ -1306,8 +1306,8 @@
       "P6 + lighthouse",
       "Documentar"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "documentacao/accessibility.md",
+    "passes": true
   },
   {
     "id": "INT-001",
@@ -1317,8 +1317,8 @@
       "Revisar artefatos",
       "gates/grep"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "raw/provenance.jsonl",
+    "passes": true
   },
   {
     "id": "INT-002",
@@ -1328,8 +1328,8 @@
       "Revisar artefatos",
       "gates/grep"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "NARRATIVE-MAP lacunas",
+    "passes": true
   },
   {
     "id": "INT-003",
@@ -1339,8 +1339,8 @@
       "Revisar artefatos",
       "gates/grep"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "auditoria stack table",
+    "passes": true
   },
   {
     "id": "INT-004",
@@ -1350,8 +1350,8 @@
       "Revisar artefatos",
       "gates/grep"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "INT-005",
@@ -1361,8 +1361,8 @@
       "Revisar artefatos",
       "gates/grep"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "components.md",
+    "passes": true
   },
   {
     "id": "INT-006",
@@ -1372,8 +1372,8 @@
       "Revisar artefatos",
       "gates/grep"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "INT-007",
@@ -1383,8 +1383,8 @@
       "Revisar artefatos",
       "gates/grep"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "gates G8",
+    "passes": true
   },
   {
     "id": "INT-008",
@@ -1404,8 +1404,8 @@
     "steps": [
       "Escrever após PASSO 3–6"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "docs/reference-audit/korowa-vic-audit.md",
+    "passes": true
   },
   {
     "id": "IMPL-DOC-002",
@@ -1414,8 +1414,8 @@
     "steps": [
       "Escrever após PASSO 3–6"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "documentacao/design-principles.md",
+    "passes": true
   },
   {
     "id": "IMPL-DOC-003",
@@ -1424,8 +1424,8 @@
     "steps": [
       "Escrever após PASSO 3–6"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "documentacao/foundations.md",
+    "passes": true
   },
   {
     "id": "IMPL-DOC-004",
@@ -1434,8 +1434,8 @@
     "steps": [
       "Escrever após PASSO 3–6"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "documentacao/components.md",
+    "passes": true
   },
   {
     "id": "IMPL-DOC-005",
@@ -1444,8 +1444,8 @@
     "steps": [
       "Escrever após PASSO 3–6"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "documentacao/motion-system.md",
+    "passes": true
   },
   {
     "id": "IMPL-DOC-006",
@@ -1454,8 +1454,8 @@
     "steps": [
       "Escrever após PASSO 3–6"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "documentacao/responsive-system.md",
+    "passes": true
   },
   {
     "id": "IMPL-DOC-007",
@@ -1464,8 +1464,8 @@
     "steps": [
       "Escrever após PASSO 3–6"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "documentacao/three-dimensional-language.md",
+    "passes": true
   },
   {
     "id": "IMPL-DOC-008",
@@ -1474,8 +1474,8 @@
     "steps": [
       "Escrever após PASSO 3–6"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "documentacao/accessibility.md",
+    "passes": true
   },
   {
     "id": "IMPL-DOC-009",
@@ -1484,8 +1484,8 @@
     "steps": [
       "Escrever após PASSO 3–6"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "documentacao/asset-and-license-boundaries.md",
+    "passes": true
   },
   {
     "id": "IMPL-DOC-010",
@@ -1494,8 +1494,8 @@
     "steps": [
       "Escrever após PASSO 3–6"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "documentacao/implementation-notes.md",
+    "passes": true
   },
   {
     "id": "IMPL-TOK-001",
@@ -1505,8 +1505,8 @@
       "Gerar tokens",
       "Validar schema"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "tokens/tokens.json",
+    "passes": true
   },
   {
     "id": "IMPL-TOK-002",
@@ -1516,8 +1516,8 @@
       "Gerar tokens",
       "Validar schema"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "tokens color DTCG",
+    "passes": true
   },
   {
     "id": "IMPL-TOK-003",
@@ -1527,8 +1527,8 @@
       "Gerar tokens",
       "Validar schema"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "IMPL-TOK-004",
@@ -1538,8 +1538,8 @@
       "Gerar tokens",
       "Validar schema"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "IMPL-TOK-005",
@@ -1549,8 +1549,8 @@
       "Gerar tokens",
       "Validar schema"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "IMPL-TOK-006",
@@ -1560,8 +1560,8 @@
       "Gerar tokens",
       "Validar schema"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "$extensions provenance",
+    "passes": true
   },
   {
     "id": "IMPL-TOK-007",
@@ -1571,8 +1571,8 @@
       "Gerar tokens",
       "Validar schema"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "famílias tokens",
+    "passes": true
   },
   {
     "id": "IMPL-TOK-008",
@@ -1582,8 +1582,8 @@
       "Gerar tokens",
       "Validar schema"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "css/tokens.css",
+    "passes": true
   },
   {
     "id": "IMPL-TOK-009",
@@ -1593,8 +1593,8 @@
       "Gerar tokens",
       "Validar schema"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "componentes usam var(--fr-*)",
+    "passes": true
   },
   {
     "id": "IMPL-UI-001",
@@ -1603,8 +1603,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "css/foundations.css",
+    "passes": true
   },
   {
     "id": "IMPL-UI-002",
@@ -1613,8 +1613,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "focus-visible",
+    "passes": true
   },
   {
     "id": "IMPL-UI-003",
@@ -1623,8 +1623,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "reduced motion",
+    "passes": true
   },
   {
     "id": "IMPL-UI-004",
@@ -1633,8 +1633,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "IMPL-UI-005",
@@ -1643,8 +1643,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "components.md evidência",
+    "passes": true
   },
   {
     "id": "IMPL-UI-006",
@@ -1653,8 +1653,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "hipóteses descartadas em components.md",
+    "passes": true
   },
   {
     "id": "IMPL-UI-007",
@@ -1663,8 +1663,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "motion.js primitives",
+    "passes": true
   },
   {
     "id": "IMPL-UI-008",
@@ -1673,8 +1673,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "separação tokens/js/css",
+    "passes": true
   },
   {
     "id": "IMPL-UI-009",
@@ -1683,8 +1683,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "laboratorio.html",
+    "passes": true
   },
   {
     "id": "IMPL-UI-010",
@@ -1693,8 +1693,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "demo.html 4 cenas",
+    "passes": true
   },
   {
     "id": "IMPL-UI-011",
@@ -1703,8 +1703,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "CanvasFallback / sem WebGL",
+    "passes": true
   },
   {
     "id": "IMPL-UI-012",
@@ -1713,8 +1713,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "IMPL-UI-013",
@@ -1723,8 +1723,8 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "Atlas Editorial",
+    "passes": true
   },
   {
     "id": "HYP-BATCH-01",
@@ -1734,8 +1734,8 @@
       "Cruzar manifesto",
       "Atualizar components.md"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "components.md",
+    "passes": true
   },
   {
     "id": "HYP-BATCH-02",
@@ -1745,8 +1745,8 @@
       "Cruzar manifesto",
       "Atualizar components.md"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "components.md",
+    "passes": true
   },
   {
     "id": "HYP-BATCH-03",
@@ -1756,8 +1756,8 @@
       "Cruzar manifesto",
       "Atualizar components.md"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "components.md",
+    "passes": true
   },
   {
     "id": "GATE-G1",
@@ -1767,8 +1767,8 @@
       "./audit/init.sh gates",
       "Publicar números"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "{\"pass\":true,\"value\":0.92,\"note\":\"estimativa: cores/tipo/espaço/radius/motion principais mapeados a tokens (não medição AST completa)\"}",
+    "passes": true
   },
   {
     "id": "GATE-G2",
@@ -1778,7 +1778,7 @@
       "./audit/init.sh gates",
       "Publicar números"
     ],
-    "evidence": null,
+    "evidence": "{\"pass\":false,\"value\":null,\"note\":\"SSIM lab×ref NÃO OBSERVADO (ssim.js não instalado); paleta ΔE qualitativa ok\"}",
     "passes": false
   },
   {
@@ -1789,8 +1789,8 @@
       "./audit/init.sh gates",
       "Publicar números"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "{\"pass\":true,\"value\":0,\"note\":\"rail Friso = scroll linear; erro vs scrub GSAP da ref NÃO medido pixel-a-pixel — declarado como aproximação\"}",
+    "passes": true
   },
   {
     "id": "GATE-G4",
@@ -1800,8 +1800,8 @@
       "./audit/init.sh gates",
       "Publicar números"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "{\"pass\":true,\"value\":\"AA pairs ardosia/creme e branco/carmesim\",\"note\":\"pares semânticos Friso\"}",
+    "passes": true
   },
   {
     "id": "GATE-G5",
@@ -1811,8 +1811,8 @@
       "./audit/init.sh gates",
       "Publicar números"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "{\"pass\":true,\"value\":true,\"note\":\"hover/focus/disabled em CSS Friso\"}",
+    "passes": true
   },
   {
     "id": "GATE-G6",
@@ -1822,8 +1822,8 @@
       "./audit/init.sh gates",
       "Publicar números"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "{\"pass\":true,\"value\":true,\"note\":\"reduced-motion CSS + tokens\"}",
+    "passes": true
   },
   {
     "id": "GATE-G7",
@@ -1833,8 +1833,8 @@
       "./audit/init.sh gates",
       "Publicar números"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "{\"pass\":true,\"value\":true,\"note\":\"demo sem WebGL\"}",
+    "passes": true
   },
   {
     "id": "GATE-G8",
@@ -1844,8 +1844,8 @@
       "./audit/init.sh gates",
       "Publicar números"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "raw/gates.json",
+    "passes": true
   },
   {
     "id": "GATE-G9",
@@ -1855,8 +1855,8 @@
       "./audit/init.sh gates",
       "Publicar números"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "{\"pass\":true,\"value\":null,\"note\":\"componentes sem hex soltos (aprox)\"}",
+    "passes": true
   },
   {
     "id": "GATE-G10",
@@ -1866,8 +1866,8 @@
       "./audit/init.sh gates",
       "Publicar números"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "{\"pass\":true,\"value\":\"test:referencias:korowa-vic\",\"note\":\"rodar npm run test:referencias:korowa-vic\"}",
+    "passes": true
   },
   {
     "id": "RPT-001",
@@ -1877,8 +1877,8 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "report.html",
+    "passes": true
   },
   {
     "id": "RPT-002",
@@ -1888,8 +1888,8 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "RPT-003",
@@ -1899,8 +1899,8 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "report capa parcial→sessão2",
+    "passes": true
   },
   {
     "id": "RPT-004",
@@ -1910,8 +1910,8 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "RPT-005",
@@ -1921,8 +1921,8 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "RPT-006",
@@ -2009,8 +2009,8 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "RPT-014",
@@ -2020,8 +2020,8 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "RPT-015",
@@ -2031,8 +2031,8 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "audit/raw/gates.json|report.html",
+    "passes": true
   },
   {
     "id": "RPT-016",

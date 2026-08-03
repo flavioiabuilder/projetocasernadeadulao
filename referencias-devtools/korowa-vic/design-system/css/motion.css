@@ -1,0 +1,34 @@
+.fr-depth {
+  perspective: var(--fr-persp-cena);
+}
+
+.fr-depth__layer {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.fr-ambient {
+  animation: fr-float 6s var(--fr-ease-padrao) infinite alternate;
+}
+
+@keyframes fr-float {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -0.75rem, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fr-ambient,
+  .fr-scroll-prompt__bar {
+    animation: none !important;
+  }
+
+  .fr-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

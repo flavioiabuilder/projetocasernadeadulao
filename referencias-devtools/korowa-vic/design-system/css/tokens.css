@@ -1,0 +1,122 @@
+/* Gerado — não editar. Fonte: tokens/tokens.json */
+:root {
+  /* color */
+  --fr-color-ardosia: #383d4e;
+  --fr-color-creme: #fbfaf8;
+  --fr-color-linho: #f0ede8;
+  --fr-color-carmesim: #b21e3b;
+  --fr-color-carmesim-vivo: #e6123b;
+  --fr-color-nevoa-azul: #dee3f7;
+  --fr-color-abismo: #0b0b0e;
+  --fr-color-texto: #383d4e;
+  --fr-color-texto-inverso: #fbfaf8;
+  --fr-color-texto-sobre-carmesim: #ffffff;
+  --fr-color-filete: rgba(200, 195, 187, 0.55);
+  --fr-color-veu: rgba(56, 61, 78, 0.3);
+  --fr-color-foco: #b21e3b;
+  /* gradient */
+  --fr-grad-atmosfera-lilas: radial-gradient(circle farthest-side, rgb(180, 135, 206), transparent);
+  --fr-grad-atmosfera-teal: radial-gradient(circle farthest-side, rgb(90, 197, 201), transparent);
+  --fr-grad-queda-ardosia: linear-gradient(180deg, #383d4e 0%, transparent 100%);
+  --fr-grad-vinheta: linear-gradient(90deg, rgba(0,0,0,0.65), transparent);
+  /* typography */
+  --fr-tipo-familia-display: "DM Sans", "Segoe UI", system-ui, sans-serif;
+  --fr-tipo-familia-corpo: "DM Sans", "Segoe UI", system-ui, sans-serif;
+  --fr-tipo-peso-corpo: 400;
+  --fr-tipo-peso-titulo: 550;
+  --fr-tipo-peso-forte: 600;
+  --fr-tipo-corpo: 1.06875rem;
+  --fr-tipo-corpo-lh: 1.5;
+  --fr-tipo-rotulo: 0.864rem;
+  --fr-tipo-rotulo-lh: 1.5;
+  --fr-tipo-titulo: 2.024rem;
+  --fr-tipo-titulo-lh: 1.2;
+  --fr-tipo-display: 3.844rem;
+  --fr-tipo-display-lh: 1.2;
+  --fr-tipo-display-sm: 2.506rem;
+  --fr-tipo-tracking-micro: 0.02em;
+  --fr-tipo-medida: 62ch;
+  /* spacing */
+  --fr-esp-1: 0.25rem;
+  --fr-esp-2: 0.5rem;
+  --fr-esp-3: 0.75rem;
+  --fr-esp-4: 1rem;
+  --fr-esp-5: 1.5rem;
+  --fr-esp-6: 1.94rem;
+  --fr-esp-7: 2.5rem;
+  --fr-esp-8: 3.69rem;
+  --fr-esp-9: 4.525rem;
+  --fr-esp-10: 6.125rem;
+  /* sizing */
+  --fr-tam-controle-min: 2.75rem;
+  --fr-tam-rail: 0.25rem;
+  --fr-tam-max-editorial: 52rem;
+  --fr-tam-gutter: 1.5rem;
+  /* border */
+  --fr-borda-fina: 1px;
+  --fr-borda-filete: 1px solid color-mix(in srgb, var(--fr-color-filete) 80%, transparent);
+  /* radius */
+  --fr-raio-sm: 0.25rem;
+  --fr-raio-md: 0.497rem;
+  --fr-raio-pill: 5.336rem;
+  --fr-raio-full: 50%;
+  /* opacity */
+  --fr-opac-veil: 0.3;
+  --fr-opac-muted: 0.5;
+  --fr-opac-soft: 0.25;
+  /* blur */
+  --fr-blur-glass: 10px;
+  /* shadow */
+  --fr-sombra-elevacao: 0 20px 24px -4px rgba(200,195,187,0.08), 0 8px 8px -4px rgba(200,195,187,0.03);
+  /* zIndex */
+  --fr-z-base: 1;
+  --fr-z-midia: 2;
+  --fr-z-editorial: 3;
+  --fr-z-header: 10;
+  --fr-z-overlay: 11;
+  --fr-z-nav: 12;
+  /* grid */
+  --fr-grade-colunas: 12;
+  --fr-grade-gutter: 1.5rem;
+  --fr-grade-max: 83.7rem;
+  /* breakpoint */
+  --fr-bp-sm: 360px;
+  --fr-bp-md: 768px;
+  --fr-bp-lg: 1024px;
+  --fr-bp-xl: 1280px;
+  --fr-bp-xxl: 1440px;
+  /* duration */
+  --fr-dur-rapida: 0.2s;
+  --fr-dur-media: 0.35s;
+  --fr-dur-lenta: 0.4s;
+  --fr-dur-loader: 1.5s;
+  /* easing */
+  --fr-ease-padrao: ease;
+  --fr-ease-saida: cubic-bezier(0.33, 1, 0.68, 1);
+  --fr-ease-entrada: cubic-bezier(0.32, 0.72, 0, 1);
+  /* stagger */
+  --fr-stagger-item: 0.06s;
+  --fr-stagger-bloco: 0.12s;
+  /* motionDistance */
+  --fr-mov-dist-reveal: 1.5rem;
+  --fr-mov-dist-parallax: 4rem;
+  /* motionScale */
+  --fr-mov-escala-hover: 1.02;
+  --fr-mov-escala-destaque: 1.1;
+  /* perspective */
+  --fr-persp-cena: 720px;
+  /* environment */
+  --fr-env-grain-opacity: 0.04;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --fr-dur-rapida: 0.01ms;
+    --fr-dur-media: 0.01ms;
+    --fr-dur-lenta: 0.01ms;
+    --fr-mov-dist-reveal: 0px;
+    --fr-mov-dist-parallax: 0px;
+    --fr-mov-escala-hover: 1;
+    --fr-mov-escala-destaque: 1;
+  }
+}

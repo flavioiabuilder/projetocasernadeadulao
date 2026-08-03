@@ -1,0 +1,149 @@
+{
+  "label": "refine-c",
+  "viewport": {
+    "w": 1440,
+    "h": 900
+  },
+  "target": "https://www.korowa.vic.edu.au/",
+  "host": "playwright",
+  "cpuThrottle": 1,
+  "network": "unthrottled",
+  "reducedMotion": false,
+  "loadMs": 3891,
+  "consent": {
+    "found": false,
+    "action": "none",
+    "label": null
+  },
+  "scrollHeight": 14512,
+  "canvasCount": 0,
+  "globalsPresent": [
+    "gsap",
+    "ScrollTrigger"
+  ],
+  "shots": [
+    {
+      "fraction": 0.84,
+      "scrollY": 11434,
+      "file": "captures/refine-c-1440x900/f0840.png"
+    },
+    {
+      "fraction": 0.85,
+      "scrollY": 11570,
+      "file": "captures/refine-c-1440x900/f0850.png"
+    },
+    {
+      "fraction": 0.86,
+      "scrollY": 11706,
+      "file": "captures/refine-c-1440x900/f0860.png"
+    },
+    {
+      "fraction": 0.87,
+      "scrollY": 11842,
+      "file": "captures/refine-c-1440x900/f0870.png"
+    },
+    {
+      "fraction": 0.88,
+      "scrollY": 11979,
+      "file": "captures/refine-c-1440x900/f0880.png"
+    },
+    {
+      "fraction": 0.89,
+      "scrollY": 12115,
+      "file": "captures/refine-c-1440x900/f0890.png"
+    },
+    {
+      "fraction": 0.9,
+      "scrollY": 12251,
+      "file": "captures/refine-c-1440x900/f0900.png"
+    },
+    {
+      "fraction": 0.91,
+      "scrollY": 12387,
+      "file": "captures/refine-c-1440x900/f0910.png"
+    },
+    {
+      "fraction": 0.92,
+      "scrollY": 12523,
+      "file": "captures/refine-c-1440x900/f0920.png"
+    },
+    {
+      "fraction": 0.93,
+      "scrollY": 12659,
+      "file": "captures/refine-c-1440x900/f0930.png"
+    },
+    {
+      "fraction": 0.94,
+      "scrollY": 12795,
+      "file": "captures/refine-c-1440x900/f0940.png"
+    },
+    {
+      "fraction": 0.95,
+      "scrollY": 12931,
+      "file": "captures/refine-c-1440x900/f0950.png"
+    },
+    {
+      "fraction": 0.96,
+      "scrollY": 13068,
+      "file": "captures/refine-c-1440x900/f0960.png"
+    },
+    {
+      "fraction": 0.97,
+      "scrollY": 13204,
+      "file": "captures/refine-c-1440x900/f0970.png"
+    },
+    {
+      "fraction": 0.98,
+      "scrollY": 13340,
+      "file": "captures/refine-c-1440x900/f0980.png"
+    },
+    {
+      "fraction": 0.99,
+      "scrollY": 13476,
+      "file": "captures/refine-c-1440x900/f0990.png"
+    },
+    {
+      "fraction": 1,
+      "scrollY": 13612,
+      "file": "captures/refine-c-1440x900/f1000.png"
+    }
+  ],
+  "probeBytes": {
+    "P3": 31158,
+    "P4": 602
+  },
+  "consoleMessages": [
+    {
+      "type": "log",
+      "text": "Debug mode is %cdisabled color: red; font-weight: bold;"
+    },
+    {
+      "type": "log",
+      "text": "To enable debug mode and show debug logs, run %c`window.setDebugMode(true)`%c in the console color: red; font-weight: bold; color: #000; font-weight: normal;"
+    },
+    {
+      "type": "log",
+      "text": "Current JS scripts environment: %ccdn color: red; font-weight: bold;"
+    },
+    {
+      "type": "log",
+      "text": "To serve JS files from localhost, run %c`window.setScriptMode(\"local\")`%c in the console color: red; font-weight: bold; color: #000; font-weight: normal;"
+    },
+    {
+      "type": "warning",
+      "text": "Swiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled or not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerVi"
+    },
+    {
+      "type": "debug",
+      "text": "Checking for Webflow IX3 module... Attempt 1 s"
+    },
+    {
+      "type": "debug",
+      "text": "Webflow IX3 globalised: s"
+    },
+    {
+      "type": "debug",
+      "text": "Polyfill skipped because browser supports Scroll Timeline."
+    }
+  ]
+}

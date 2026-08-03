@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Friso — demonstração narrativa</title>
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/foundations.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/motion.css" />
+  </head>
+  <body class="fr-shell">
+    <a class="fr-sr-only" href="#conteudo">Ir para o conteúdo</a>
+
+    <div class="fr-loader" data-fr-loader role="status" aria-live="polite">
+      <p class="fr-meta">Atlas Editorial</p>
+    </div>
+
+    <div class="fr-progress" aria-hidden="true">
+      <div class="fr-progress__fill" data-fr-progress></div>
+    </div>
+
+    <header class="fr-header">
+      <a class="fr-brand" href="demo.html">Atlas Editorial</a>
+      <button
+        type="button"
+        class="fr-nav-toggle"
+        data-fr-nav-toggle
+        aria-expanded="false"
+        aria-controls="fr-nav"
+      >
+        Menu
+      </button>
+    </header>
+
+    <nav id="fr-nav" class="fr-nav" data-fr-nav data-open="false" aria-label="Principal">
+      <ul class="fr-nav__list">
+        <li><a href="#abertura">Abertura</a></li>
+        <li><a href="#percurso">Percurso</a></li>
+        <li><a href="#profundidade">Profundidade</a></li>
+        <li><a href="#fecho">Fecho</a></li>
+        <li><a href="laboratorio.html">Laboratório</a></li>
+      </ul>
+    </nav>
+
+    <main id="conteudo">
+      <section class="fr-pin-chapter" id="abertura" data-fr-pin>
+        <div class="fr-pin-chapter__sticky fr-immersive" data-fr-pin-sticky>
+          <div
+            class="fr-immersive__atmosphere fr-ambient"
+            data-fr-atmosphere
+            data-fr-parallax="0.2"
+            aria-hidden="true"
+          ></div>
+          <div class="fr-immersive__veil" aria-hidden="true"></div>
+          <div class="fr-immersive__content">
+            <p class="fr-eyebrow">Cena 01</p>
+            <h1 class="fr-scene-heading">Não vendemos slogans. Construímos percurso.</h1>
+            <p class="fr-scene-body">
+              Uma sequência curta e original: atmosfera, pin por scroll, painel editorial e
+              fecho — sem ativos da referência auditada.
+            </p>
+          </div>
+          <div class="fr-scroll-prompt" aria-hidden="true">
+            <span>Desça</span>
+            <span class="fr-scroll-prompt__bar"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="fr-panel" id="percurso">
+        <div class="fr-container">
+          <p class="fr-meta fr-reveal" data-fr-reveal>Cena 02</p>
+          <h2 class="fr-scene-heading fr-reveal" data-fr-reveal style="font-size: var(--fr-tipo-titulo)">
+            Ritmo de lajes claras
+          </h2>
+          <p class="fr-scene-body fr-reveal fr-measure" data-fr-reveal>
+            Tipografia DM Sans, superfícies creme e ardósia, acento carmesim — tokens com
+            procedência declarada na auditoria. Conteúdo neutro para demonstrar estrutura, não
+            identidade comercial.
+          </p>
+          <p style="margin-top: var(--fr-esp-6)">
+            <a class="fr-action" href="#profundidade">Continuar</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="fr-panel fr-panel--nevoa" id="profundidade">
+        <div class="fr-container fr-depth">
+          <p class="fr-meta fr-reveal" data-fr-reveal>Cena 03</p>
+          <h2 class="fr-scene-heading fr-reveal" data-fr-reveal style="font-size: var(--fr-tipo-display-sm)">
+            Profundidade sem WebGL
+          </h2>
+          <p class="fr-scene-body fr-reveal fr-measure" data-fr-reveal>
+            A referência não expôs <code>&lt;canvas&gt;</code> no inventário. Friso usa CSS,
+            perspectiva e parallax leve. Se WebGL falhar em outros projetos, este padrão
+            permanece legível.
+          </p>
+          <div class="fr-canvas-fallback fr-reveal" data-fr-reveal style="margin-top: var(--fr-esp-6)">
+            <strong>Fallback explícito</strong>
+            <p class="fr-scene-body" style="margin-top: var(--fr-esp-2)">
+              Geometria procedural: blocos e gradientes. Sem hotlink, sem modelos 3D de
+              terceiros.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="fr-panel fr-panel--carmesim" id="fecho">
+        <div class="fr-container">
+          <p class="fr-meta fr-reveal" data-fr-reveal>Cena 04</p>
+          <h2 class="fr-scene-heading fr-reveal" data-fr-reveal style="font-size: var(--fr-tipo-titulo)">
+            Fecho com CTA
+          </h2>
+          <p class="fr-scene-body fr-reveal" data-fr-reveal>
+            Navegação contextual, trilho de progresso e estados de foco estão no laboratório.
+          </p>
+          <p style="margin-top: var(--fr-esp-6)">
+            <a class="fr-action fr-action--ghost" href="laboratorio.html">Abrir laboratório</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="fr-footer">
+      <div class="fr-container fr-footer__grid">
+        <div>
+          <strong>Atlas Editorial</strong>
+          <p class="fr-scene-body">Demonstração Friso — reconstrução independente.</p>
+        </div>
+        <div>
+          <p class="fr-meta">Estudo</p>
+          <p><a href="../../README.md">README da referência</a></p>
+        </div>
+        <div>
+          <p class="fr-meta">Auditoria</p>
+          <p><a href="../../../audit/report.html">Report</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/motion.js"></script>
+  </body>
+</html>

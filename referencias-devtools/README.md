@@ -67,6 +67,7 @@ Cada nova referência deve:
 | ---------------------------------------------- | ------------------------- | ------------ | -------------------------------------------------------- |
 | [`aramco-birth-of-oil/`](aramco-birth-of-oil/) | Aramco — The Birth of Oil | Estratos     | Narrativa imersiva: progresso discreto, cena WebGL       |
 | [`soul-church/`](soul-church/)                 | Soul Church               | Átrio        | Editorial comunitário: escala fluida, lajes, acolhimento |
+| [`korowa-vic/`](korowa-vic/)                   | Korowa Anglican Girls’ School | Friso    | Pin de hero, editorial creme/carmesim, scroll GSAP (DOM) |
 
 Cada reconstrução recebe nome próprio, sem relação com a marca estudada. O
 nome da referência aparece apenas na documentação de auditoria, para indicar

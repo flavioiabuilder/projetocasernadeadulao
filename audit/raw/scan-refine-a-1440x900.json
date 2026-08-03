@@ -1,0 +1,229 @@
+{
+  "label": "refine-a",
+  "viewport": {
+    "w": 1440,
+    "h": 900
+  },
+  "target": "https://www.korowa.vic.edu.au/",
+  "host": "playwright",
+  "cpuThrottle": 1,
+  "network": "unthrottled",
+  "reducedMotion": false,
+  "loadMs": 23752,
+  "consent": {
+    "found": false,
+    "action": "none",
+    "label": null
+  },
+  "scrollHeight": 14512,
+  "canvasCount": 0,
+  "globalsPresent": [
+    "gsap",
+    "ScrollTrigger"
+  ],
+  "shots": [
+    {
+      "fraction": 0,
+      "scrollY": 0,
+      "file": "captures/refine-a-1440x900/f0000.png"
+    },
+    {
+      "fraction": 0.005,
+      "scrollY": 68,
+      "file": "captures/refine-a-1440x900/f0005.png"
+    },
+    {
+      "fraction": 0.01,
+      "scrollY": 136,
+      "file": "captures/refine-a-1440x900/f0010.png"
+    },
+    {
+      "fraction": 0.015,
+      "scrollY": 204,
+      "file": "captures/refine-a-1440x900/f0015.png"
+    },
+    {
+      "fraction": 0.02,
+      "scrollY": 272,
+      "file": "captures/refine-a-1440x900/f0020.png"
+    },
+    {
+      "fraction": 0.025,
+      "scrollY": 340,
+      "file": "captures/refine-a-1440x900/f0025.png"
+    },
+    {
+      "fraction": 0.03,
+      "scrollY": 408,
+      "file": "captures/refine-a-1440x900/f0030.png"
+    },
+    {
+      "fraction": 0.035,
+      "scrollY": 476,
+      "file": "captures/refine-a-1440x900/f0035.png"
+    },
+    {
+      "fraction": 0.04,
+      "scrollY": 544,
+      "file": "captures/refine-a-1440x900/f0040.png"
+    },
+    {
+      "fraction": 0.045,
+      "scrollY": 613,
+      "file": "captures/refine-a-1440x900/f0045.png"
+    },
+    {
+      "fraction": 0.05,
+      "scrollY": 681,
+      "file": "captures/refine-a-1440x900/f0050.png"
+    },
+    {
+      "fraction": 0.055,
+      "scrollY": 749,
+      "file": "captures/refine-a-1440x900/f0055.png"
+    },
+    {
+      "fraction": 0.06,
+      "scrollY": 817,
+      "file": "captures/refine-a-1440x900/f0060.png"
+    },
+    {
+      "fraction": 0.065,
+      "scrollY": 885,
+      "file": "captures/refine-a-1440x900/f0065.png"
+    },
+    {
+      "fraction": 0.07,
+      "scrollY": 953,
+      "file": "captures/refine-a-1440x900/f0070.png"
+    },
+    {
+      "fraction": 0.075,
+      "scrollY": 1021,
+      "file": "captures/refine-a-1440x900/f0075.png"
+    },
+    {
+      "fraction": 0.08,
+      "scrollY": 1089,
+      "file": "captures/refine-a-1440x900/f0080.png"
+    },
+    {
+      "fraction": 0.085,
+      "scrollY": 1157,
+      "file": "captures/refine-a-1440x900/f0085.png"
+    },
+    {
+      "fraction": 0.09,
+      "scrollY": 1225,
+      "file": "captures/refine-a-1440x900/f0090.png"
+    },
+    {
+      "fraction": 0.095,
+      "scrollY": 1293,
+      "file": "captures/refine-a-1440x900/f0095.png"
+    },
+    {
+      "fraction": 0.1,
+      "scrollY": 1361,
+      "file": "captures/refine-a-1440x900/f0100.png"
+    },
+    {
+      "fraction": 0.105,
+      "scrollY": 1429,
+      "file": "captures/refine-a-1440x900/f0105.png"
+    },
+    {
+      "fraction": 0.11,
+      "scrollY": 1497,
+      "file": "captures/refine-a-1440x900/f0110.png"
+    },
+    {
+      "fraction": 0.115,
+      "scrollY": 1565,
+      "file": "captures/refine-a-1440x900/f0115.png"
+    },
+    {
+      "fraction": 0.12,
+      "scrollY": 1633,
+      "file": "captures/refine-a-1440x900/f0120.png"
+    },
+    {
+      "fraction": 0.125,
+      "scrollY": 1702,
+      "file": "captures/refine-a-1440x900/f0125.png"
+    },
+    {
+      "fraction": 0.13,
+      "scrollY": 1770,
+      "file": "captures/refine-a-1440x900/f0130.png"
+    },
+    {
+      "fraction": 0.135,
+      "scrollY": 1838,
+      "file": "captures/refine-a-1440x900/f0135.png"
+    },
+    {
+      "fraction": 0.14,
+      "scrollY": 1906,
+      "file": "captures/refine-a-1440x900/f0140.png"
+    },
+    {
+      "fraction": 0.145,
+      "scrollY": 1974,
+      "file": "captures/refine-a-1440x900/f0145.png"
+    },
+    {
+      "fraction": 0.15,
+      "scrollY": 2042,
+      "file": "captures/refine-a-1440x900/f0150.png"
+    },
+    {
+      "fraction": 0.155,
+      "scrollY": 2110,
+      "file": "captures/refine-a-1440x900/f0155.png"
+    },
+    {
+      "fraction": 0.16,
+      "scrollY": 2178,
+      "file": "captures/refine-a-1440x900/f0160.png"
+    }
+  ],
+  "probeBytes": {
+    "P3": 67162,
+    "P4": 602
+  },
+  "consoleMessages": [
+    {
+      "type": "log",
+      "text": "Debug mode is %cdisabled color: red; font-weight: bold;"
+    },
+    {
+      "type": "log",
+      "text": "To enable debug mode and show debug logs, run %c`window.setDebugMode(true)`%c in the console color: red; font-weight: bold; color: #000; font-weight: normal;"
+    },
+    {
+      "type": "log",
+      "text": "Current JS scripts environment: %ccdn color: red; font-weight: bold;"
+    },
+    {
+      "type": "log",
+      "text": "To serve JS files from localhost, run %c`window.setScriptMode(\"local\")`%c in the console color: red; font-weight: bold; color: #000; font-weight: normal;"
+    },
+    {
+      "type": "warning",
+      "text": "Swiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled or not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerVi"
+    },
+    {
+      "type": "debug",
+      "text": "Checking for Webflow IX3 module... Attempt 1 s"
+    },
+    {
+      "type": "debug",
+      "text": "Webflow IX3 globalised: s"
+    },
+    {
+      "type": "debug",
+      "text": "Polyfill skipped because browser supports Scroll Timeline."
+    }
+  ]
+}

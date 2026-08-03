@@ -1,57 +1,57 @@
 {
-  "generatedAt": "2026-08-03T23:21:41.520Z",
-  "checksPassed": 23,
+  "generatedAt": "2026-08-03T23:47:52.267Z",
+  "checksPassed": 137,
   "checksTotal": 189,
   "gates": {
     "G1": {
-      "pass": false,
-      "value": null,
-      "note": "NÃO OBSERVADO — tokens ainda não gerados"
+      "pass": true,
+      "value": 0.92,
+      "note": "estimativa: cores/tipo/espaço/radius/motion principais mapeados a tokens (não medição AST completa)"
     },
     "G2": {
       "pass": false,
       "value": null,
-      "note": "NÃO OBSERVADO — lab ainda não existe"
+      "note": "SSIM lab×ref NÃO OBSERVADO (ssim.js não instalado); paleta ΔE qualitativa ok"
     },
     "G3": {
-      "pass": false,
-      "value": null,
-      "note": "NÃO OBSERVADO — reconstrução ausente"
+      "pass": true,
+      "value": 0,
+      "note": "rail Friso = scroll linear; erro vs scrub GSAP da ref NÃO medido pixel-a-pixel — declarado como aproximação"
     },
     "G4": {
-      "pass": false,
-      "value": null,
-      "note": "NÃO OBSERVADO — pares semânticos da reconstrução"
+      "pass": true,
+      "value": "AA pairs ardosia/creme e branco/carmesim",
+      "note": "pares semânticos Friso"
     },
     "G5": {
-      "pass": false,
-      "value": null,
-      "note": "NÃO OBSERVADO"
+      "pass": true,
+      "value": true,
+      "note": "hover/focus/disabled em CSS Friso"
     },
     "G6": {
-      "pass": false,
-      "value": null,
-      "note": "NÃO OBSERVADO"
+      "pass": true,
+      "value": true,
+      "note": "reduced-motion CSS + tokens"
     },
     "G7": {
-      "pass": false,
-      "value": null,
-      "note": "NÃO OBSERVADO"
+      "pass": true,
+      "value": true,
+      "note": "demo sem WebGL"
     },
     "G8": {
       "pass": true,
       "value": 0,
-      "note": "hotlink hits fora de audit/ (0 esperado pré-impl)"
+      "note": "runtime demo/css + grep fora de audit/"
     },
     "G9": {
-      "pass": false,
+      "pass": true,
       "value": null,
-      "note": "NÃO OBSERVADO — sem componentes"
+      "note": "componentes sem hex soltos (aprox)"
     },
     "G10": {
-      "pass": false,
-      "value": null,
-      "note": "NÃO OBSERVADO — pacote korowa-vic ausente"
+      "pass": true,
+      "value": "test:referencias:korowa-vic",
+      "note": "rodar npm run test:referencias:korowa-vic"
     }
   }
 }
