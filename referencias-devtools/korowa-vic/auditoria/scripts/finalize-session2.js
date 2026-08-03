@@ -64,7 +64,7 @@ function markChecks() {
     "INT-003": "auditoria stack table",
     "INT-005": "components.md",
     "INT-007": "gates G8",
-    "IMPL-DOC-001": "docs/reference-audit/korowa-vic-audit.md",
+    "IMPL-DOC-001": "auditoria/korowa-vic-audit.md",
     "IMPL-DOC-002": "documentacao/design-principles.md",
     "IMPL-DOC-003": "documentacao/foundations.md",
     "IMPL-DOC-004": "documentacao/components.md",
@@ -159,8 +159,8 @@ ${peaks.length ? peaks.map((p) => `- ${p.between[0]} → ${p.between[1]} (ratio 
 
 ## Artefatos
 
-- \`audit/captures/refine-1440x900/\`, \`vp-*/\`, \`states-1440x900/\`
-- \`audit/raw/p5|p6|p7-*.json\`, \`network-sample.json\`
+- \`auditoria/captures/refine-1440x900/\`, \`vp-*/\`, \`states-1440x900/\`
+- \`auditoria/raw/p5|p6|p7-*.json\`, \`network-sample.json\`
 `;
   fs.writeFileSync(path.join(ROOT, "NARRATIVE-MAP.md"), md);
 }
@@ -303,32 +303,32 @@ function runGates() {
   // Enrich gates with reconstruction-aware results
   const gatesPath = path.join(RAW, "gates.json");
   const gates = readJson(gatesPath);
-  const demo = fs.readFileSync(
-    path.join(ROOT, "..", "referencias-devtools/korowa-vic/design-system/demo.html"),
+  const kRoot = path.join(ROOT, "..");
+  const demo = fs.readFileSync(path.join(kRoot, "design-system", "demo.html"), "utf8");
+  const css = fs.readFileSync(
+    path.join(kRoot, "design-system", "css", "components.css"),
     "utf8",
   );
-  const css = fs.readFileSync(
-    path.join(ROOT, "..", "referencias-devtools/korowa-vic/design-system/css/components.css"),
+  const foundations = fs.readFileSync(
+    path.join(kRoot, "design-system", "css", "foundations.css"),
     "utf8",
   );
   const hotlink = /korowa\.vic\.edu\.au/i.test(demo) || /korowa\.vic\.edu\.au/i.test(css);
   gates.gates.G8 = {
     pass: !hotlink && (gates.gates.G8.value === 0 || gates.gates.G8.pass),
     value: hotlink ? 1 : gates.gates.G8.value,
-    note: "runtime demo/css + grep fora de audit/",
+    note: "runtime demo/css + grep fora de auditoria/",
   };
   gates.gates.G5 = {
-    pass: /:hover/.test(css) && /:focus-visible|:focus/.test(fs.readFileSync(path.join(ROOT, "..", "referencias-devtools/korowa-vic/design-system/css/foundations.css"), "utf8")) && /:disabled/.test(css),
+    pass:
+      /:hover/.test(css) &&
+      /:focus-visible|:focus/.test(foundations) &&
+      /:disabled/.test(css),
     value: true,
     note: "hover/focus/disabled em CSS Friso",
   };
   gates.gates.G6 = {
-    pass: /prefers-reduced-motion/.test(
-      fs.readFileSync(
-        path.join(ROOT, "..", "referencias-devtools/korowa-vic/design-system/css/foundations.css"),
-        "utf8",
-      ),
-    ),
+    pass: /prefers-reduced-motion/.test(foundations),
     value: true,
     note: "reduced-motion CSS + tokens",
   };

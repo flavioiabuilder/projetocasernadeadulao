@@ -13,6 +13,7 @@
     "generate:tokens": "node referencias-devtools/aramco-birth-of-oil/ferramentas/gerar-tokens.js",
     "generate:tokens:soul-church": "node referencias-devtools/soul-church/ferramentas/gerar-tokens.js",
     "generate:tokens:korowa-vic": "node referencias-devtools/korowa-vic/ferramentas/gerar-tokens.js",
+    "audit:korowa-vic": "node referencias-devtools/korowa-vic/auditoria/cli.js",
     "generate:discipulando:tokens": "node programas/discipulando-a-caserna/ferramentas/gerar-tokens.js",
     "generate:discipulando:prototipo-fase-5": "node programas/discipulando-a-caserna/ferramentas/gerar-prototipo-fase-5.js",
     "build:pages": "node programas/discipulando-a-caserna/ferramentas/montar-artefato-pages.js",

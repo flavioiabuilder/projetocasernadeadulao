@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T23:47:52.267Z",
+  "generatedAt": "2026-08-03T23:58:07.739Z",
   "checksPassed": 137,
   "checksTotal": 189,
   "gates": {
@@ -41,7 +41,7 @@
     "G8": {
       "pass": true,
       "value": 0,
-      "note": "runtime demo/css + grep fora de audit/"
+      "note": "runtime demo/css + grep fora de auditoria/"
     },
     "G9": {
       "pass": true,

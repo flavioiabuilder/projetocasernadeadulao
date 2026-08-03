@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T23:47:52.619Z",
+  "generatedAt": "2026-08-03T23:58:08.042Z",
   "files": [
     {
       "file": "cpu-throttle-4x.json",
@@ -18,7 +18,7 @@
     },
     {
       "file": "gates.json",
-      "bytes": 1443,
+      "bytes": 1447,
       "probe": null
     },
     {
@@ -406,7 +406,7 @@
       "shots": 21
     },
     "gates.json": {
-      "generatedAt": "2026-08-03T23:47:52.267Z",
+      "generatedAt": "2026-08-03T23:58:07.739Z",
       "checksPassed": 137,
       "checksTotal": 189,
       "gates": {
@@ -448,7 +448,7 @@
         "G8": {
           "pass": true,
           "value": 0,
-          "note": "runtime demo/css + grep fora de audit/"
+          "note": "runtime demo/css + grep fora de auditoria/"
         },
         "G9": {
           "pass": true,
@@ -13381,7 +13381,7 @@
     "cpu-throttle-4x.json": 43,
     "dry-run-shots.json": 1284,
     "dry-run-summary.json": 673,
-    "gates.json": 1443,
+    "gates.json": 1447,
     "network-sample.json": 13909,
     "p1-styles-1024x768-f0.json": 12120,
     "p1-styles-1280x800-f0.json": 12180,

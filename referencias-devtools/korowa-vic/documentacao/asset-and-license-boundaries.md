@@ -9,6 +9,4 @@
 | Fontes | **DM Sans** observada — SIL OFL, permitida; carregada via Google Fonts |
 | Bundles / código | Não redistribuídos |
 
-Hotlink ao domínio da referência proibido no runtime. Evidências e URL ficam só em `audit/` (material de auditoria).
-
-Espelho: [`docs/design-system/asset-and-license-boundaries.md`](../../../docs/design-system/asset-and-license-boundaries.md).
+Hotlink ao domínio da referência proibido no runtime. Evidências e URL ficam só em `auditoria/` (material de auditoria desta referência).

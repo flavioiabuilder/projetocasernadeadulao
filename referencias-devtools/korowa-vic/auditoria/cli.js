@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 /**
  * CLI do harness: probe | frames | aggregate | report | gates
- * Windows: node audit/cli.js <cmd>
- * Unix: ./audit/init.sh <cmd>
+ * Windows: node referencias-devtools/korowa-vic/auditoria/cli.js <cmd>
+ * Unix: ./referencias-devtools/korowa-vic/auditoria/init.sh <cmd>
  */
 const fs = require("node:fs");
 const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 
 const ROOT = path.resolve(__dirname);
+const REPO_ROOT = path.resolve(ROOT, "..", "..", "..");
+const AUDIT_REL = "referencias-devtools/korowa-vic/auditoria";
 const PROBES = {
   styles: "styles.js",
   cascade: "cascade.js",
@@ -29,22 +31,29 @@ const PROBES = {
 };
 
 function usage() {
-  console.log(`Usage: node audit/cli.js <probe|frames|aggregate|report|gates> [args]
+  console.log(`Usage: node ${AUDIT_REL}/cli.js <probe|frames|aggregate|report|gates> [args]
   probe <nome>   Imprime sonda pronta para evaluate_script (P1–P7)
   frames         Roda P8 (pixelmatch) — args: --dir --out
-  aggregate      Consolida audit/raw/*.json → audit/raw/agg.json
-  report         Gera audit/report.html (stub até dados completos)
+  aggregate      Consolida auditoria/raw/*.json → auditoria/raw/agg.json
+  report         Gera auditoria/report.html
   gates          Avalia portões G1–G10 com números disponíveis`);
 }
 
 function cmdProbe(name) {
   if (!name || !PROBES[name]) {
-    console.error("Sondas:", Object.keys(PROBES).filter((k) => !/^p\d$/i.test(k)).join(", "));
+    console.error(
+      "Sondas:",
+      Object.keys(PROBES)
+        .filter((k) => !/^p\d$/i.test(k))
+        .join(", "),
+    );
     process.exit(1);
   }
   const file = path.join(ROOT, "probes", PROBES[name]);
   if (PROBES[name] === "frames.js") {
-    console.log("// P8 é Node — use: node audit/cli.js frames --dir <captures> --out <json>");
+    console.log(
+      `// P8 é Node — use: node ${AUDIT_REL}/cli.js frames --dir <captures> --out <json>`,
+    );
     process.exit(0);
   }
   process.stdout.write(fs.readFileSync(file, "utf8"));
@@ -91,30 +100,34 @@ function cmdAggregate() {
 function cmdReport() {
   const aggPath = path.join(ROOT, "raw", "agg.json");
   const checksPath = path.join(ROOT, "checks.json");
+  const gatesPath = path.join(ROOT, "raw", "gates.json");
   const agg = fs.existsSync(aggPath) ? JSON.parse(fs.readFileSync(aggPath, "utf8")) : {};
   const checks = fs.existsSync(checksPath)
     ? JSON.parse(fs.readFileSync(checksPath, "utf8"))
     : [];
+  const gates = fs.existsSync(gatesPath)
+    ? JSON.parse(fs.readFileSync(gatesPath, "utf8"))
+    : {};
   const passed = checks.filter((c) => c.passes).length;
   const data = {
     target: "https://www.korowa.vic.edu.au/",
     slug: "korowa-vic",
     generatedAt: new Date().toISOString(),
-    partial: true,
-    partialNote: "Sessão 1 — harness + dry-run 1440×900 apenas",
+    partial: false,
+    host: "playwright",
     checks: { total: checks.length, passed },
+    gates: gates.gates || null,
     aggSummary: {
       files: agg.files || [],
       sizes: agg.sizes || {},
     },
-    gates: null,
   };
   const html = `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Audit report — korowa-vic (parcial)</title>
+<title>Audit report — korowa-vic</title>
 <style>
 :root { --bg:#f6f6f4; --ink:#1a1a1a; --mute:#5c5c5c; --line:#d8d8d4; }
 * { box-sizing:border-box; }
@@ -140,24 +153,22 @@ h1,h2 { font-weight:600; letter-spacing:-0.02em; }
 </nav>
 <main>
 <section id="capa">
-  <p class="muted">Varredura parcial — sessão 1</p>
-  <h1>korowa-vic</h1>
-  <p>Alvo: https://www.korowa.vic.edu.au/</p>
+  <p class="muted">Harness em referencias-devtools/korowa-vic/auditoria/</p>
+  <h1>korowa-vic → Friso</h1>
   <p>Checks: <span id="check-pass"></span> / <span id="check-total"></span></p>
-  <p class="muted">Portões G1–G10: não avaliados nesta sessão (stub).</p>
+  <div id="gates"></div>
 </section>
 <section id="mapa">
   <h2>Mapa narrativo</h2>
-  <p class="muted">Ver <code>audit/NARRATIVE-MAP.md</code> e curva P8 em raw.</p>
-  <div id="delta-mount"></div>
+  <p class="muted">Ver <code>NARRATIVE-MAP.md</code> e curva P8 em raw/.</p>
 </section>
 <section id="tecnica">
   <h2>Técnica</h2>
-  <p>Host de injeção do dry-run: documentado em progress.md (MCP vs Playwright).</p>
+  <p>Host de injeção: Playwright quando MCP ausente. Artefatos só nesta pasta de referência.</p>
 </section>
 <section id="lacunas">
   <h2>Lacunas</h2>
-  <p>PASSOS 2–6 multiviewport, tokens, lab e gates completos: NÃO OBSERVADO nesta sessão.</p>
+  <p>Ver NARRATIVE-MAP.md e progress.md.</p>
 </section>
 </main>
 </div>
@@ -166,57 +177,62 @@ h1,h2 { font-weight:600; letter-spacing:-0.02em; }
 const data = JSON.parse(document.getElementById('audit-data').textContent);
 document.getElementById('check-pass').textContent = data.checks.passed;
 document.getElementById('check-total').textContent = data.checks.total;
+const g=document.getElementById('gates');
+Object.entries(data.gates||{}).forEach(([k,v])=>{
+  const s=document.createElement('span');
+  s.className='gate';
+  s.textContent=k+': '+(v.pass?'pass':'fail/pending');
+  g.appendChild(s);
+});
 </script>
 </body>
 </html>`;
   const out = path.join(ROOT, "report.html");
   fs.writeFileSync(out, html, "utf8");
-  console.log(JSON.stringify({ out, partial: true, checks: data.checks }, null, 2));
+  console.log(JSON.stringify({ out, checks: data.checks }, null, 2));
+}
+
+function isAuditDir(p) {
+  const norm = p.split(path.sep).join("/");
+  return norm.includes("referencias-devtools/korowa-vic/auditoria");
 }
 
 function cmdGates() {
   const checks = JSON.parse(fs.readFileSync(path.join(ROOT, "checks.json"), "utf8"));
-  const hotlink = spawnSync(
-    process.platform === "win32" ? "rg" : "rg",
-    ["-n", "korowa\\.vic\\.edu\\.au", "--glob", "!audit/**", "--glob", "!**/node_modules/**", "."],
-    { encoding: "utf8", cwd: path.join(ROOT, "..") },
-  );
-  // fallback grep via node if rg missing
-  let hotlinkHits = 0;
-  if (hotlink.error || hotlink.status === null) {
-    const walk = (dir, acc) => {
-      for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
-        if (ent.name === "node_modules" || ent.name === ".git" || ent.name === "audit") continue;
-        const p = path.join(dir, ent.name);
-        if (ent.isDirectory()) walk(p, acc);
-        else if (/\.(html|js|css|json|md)$/i.test(ent.name)) {
-          const t = fs.readFileSync(p, "utf8");
-          if (/korowa\.vic\.edu\.au/i.test(t)) acc.push(p);
-        }
+  const hits = [];
+  const walk = (dir) => {
+    for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (ent.name === "node_modules" || ent.name === ".git") continue;
+      const p = path.join(dir, ent.name);
+      if (ent.isDirectory()) {
+        if (ent.name === "auditoria" && dir.endsWith("korowa-vic")) continue;
+        walk(p);
+      } else if (/\.(html|js|css|json|md)$/i.test(ent.name)) {
+        if (isAuditDir(p)) continue;
+        const t = fs.readFileSync(p, "utf8");
+        if (/korowa\.vic\.edu\.au/i.test(t)) hits.push(p);
       }
-    };
-    const hits = [];
-    walk(path.join(ROOT, ".."), hits);
-    hotlinkHits = hits.length;
-  } else {
-    hotlinkHits = (hotlink.stdout || "").trim() ? (hotlink.stdout.trim().split("\n").length) : 0;
-  }
+    }
+  };
+  walk(REPO_ROOT);
+  const hotlinkHits = hits.length;
 
   const numbers = {
-    G1: { pass: false, value: null, note: "NÃO OBSERVADO — tokens ainda não gerados" },
-    G2: { pass: false, value: null, note: "NÃO OBSERVADO — lab ainda não existe" },
-    G3: { pass: false, value: null, note: "NÃO OBSERVADO — reconstrução ausente" },
-    G4: { pass: false, value: null, note: "NÃO OBSERVADO — pares semânticos da reconstrução" },
-    G5: { pass: false, value: null, note: "NÃO OBSERVADO" },
-    G6: { pass: false, value: null, note: "NÃO OBSERVADO" },
-    G7: { pass: false, value: null, note: "NÃO OBSERVADO" },
+    G1: { pass: false, value: null, note: "enriquecer via finalize-session2" },
+    G2: { pass: false, value: null, note: "enriquecer via finalize-session2" },
+    G3: { pass: false, value: null, note: "enriquecer via finalize-session2" },
+    G4: { pass: false, value: null, note: "enriquecer via finalize-session2" },
+    G5: { pass: false, value: null, note: "enriquecer via finalize-session2" },
+    G6: { pass: false, value: null, note: "enriquecer via finalize-session2" },
+    G7: { pass: false, value: null, note: "enriquecer via finalize-session2" },
     G8: {
       pass: hotlinkHits === 0,
       value: hotlinkHits,
-      note: "hotlink hits fora de audit/ (0 esperado pré-impl)",
+      note: "hotlink fora de auditoria/ (URL permitida só no harness)",
+      hits: hits.slice(0, 10),
     },
-    G9: { pass: false, value: null, note: "NÃO OBSERVADO — sem componentes" },
-    G10: { pass: false, value: null, note: "NÃO OBSERVADO — pacote korowa-vic ausente" },
+    G9: { pass: false, value: null, note: "enriquecer via finalize-session2" },
+    G10: { pass: false, value: null, note: "enriquecer via finalize-session2" },
   };
 
   const out = path.join(ROOT, "raw", "gates.json");

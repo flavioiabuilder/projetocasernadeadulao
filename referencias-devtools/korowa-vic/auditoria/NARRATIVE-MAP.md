@@ -35,5 +35,5 @@
 
 ## Artefatos
 
-- `audit/captures/refine-1440x900/`, `vp-*/`, `states-1440x900/`
-- `audit/raw/p5|p6|p7-*.json`, `network-sample.json`
+- `auditoria/captures/refine-1440x900/`, `vp-*/`, `states-1440x900/`
+- `auditoria/raw/p5|p6|p7-*.json`, `network-sample.json`

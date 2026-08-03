@@ -13,56 +13,56 @@
   {
     "id": "SETUP-002",
     "category": "setup",
-    "description": "audit/PLAN.md escrito com stack e caminhos",
+    "description": "auditoria/PLAN.md escrito com stack e caminhos",
     "steps": [
       "Verificar artefato em disco",
       "Atualizar evidence"
     ],
-    "evidence": "audit/PLAN.md",
+    "evidence": "auditoria/PLAN.md",
     "passes": true
   },
   {
     "id": "SETUP-003",
     "category": "setup",
-    "description": "audit/init.sh expõe probe/frames/aggregate/report/gates",
+    "description": "auditoria/init.sh expõe probe/frames/aggregate/report/gates",
     "steps": [
       "Verificar artefato em disco",
       "Atualizar evidence"
     ],
-    "evidence": "audit/init.sh + audit/cli.js",
+    "evidence": "auditoria/init.sh + auditoria/cli.js",
     "passes": true
   },
   {
     "id": "SETUP-004",
     "category": "setup",
-    "description": "audit/checks.json entre 140 e 200 entradas",
+    "description": "auditoria/checks.json entre 140 e 200 entradas",
     "steps": [
       "Verificar artefato em disco",
       "Atualizar evidence"
     ],
-    "evidence": "audit/checks.json (189)",
+    "evidence": "auditoria/checks.json (189)",
     "passes": true
   },
   {
     "id": "SETUP-005",
     "category": "setup",
-    "description": "audit/progress.md atualizado",
+    "description": "auditoria/progress.md atualizado",
     "steps": [
       "Verificar artefato em disco",
       "Atualizar evidence"
     ],
-    "evidence": "audit/progress.md",
+    "evidence": "auditoria/progress.md",
     "passes": true
   },
   {
     "id": "SETUP-006",
     "category": "setup",
-    "description": "Sondas P1–P8 presentes em audit/probes/",
+    "description": "Sondas P1–P8 presentes em auditoria/probes/",
     "steps": [
       "Verificar artefato em disco",
       "Atualizar evidence"
     ],
-    "evidence": "audit/probes/*",
+    "evidence": "auditoria/probes/*",
     "passes": true
   },
   {
@@ -95,7 +95,7 @@
       "Verificar artefato em disco",
       "Atualizar evidence"
     ],
-    "evidence": "audit/raw + captures",
+    "evidence": "auditoria/raw + captures",
     "passes": true
   },
   {
@@ -140,7 +140,7 @@
       "Salvar raw/",
       "Validar tamanho"
     ],
-    "evidence": "audit/raw/p1-styles-1440x900-f0.json",
+    "evidence": "auditoria/raw/p1-styles-1440x900-f0.json",
     "passes": true
   },
   {
@@ -152,7 +152,7 @@
       "Salvar raw/",
       "Validar tamanho"
     ],
-    "evidence": "audit/raw/p2-cascade-1440x900-f0.json",
+    "evidence": "auditoria/raw/p2-cascade-1440x900-f0.json",
     "passes": true
   },
   {
@@ -164,7 +164,7 @@
       "Salvar raw/",
       "Validar tamanho"
     ],
-    "evidence": "audit/raw/p3-scroll-curve-1440x900.json",
+    "evidence": "auditoria/raw/p3-scroll-curve-1440x900.json",
     "passes": true
   },
   {
@@ -176,7 +176,7 @@
       "Salvar raw/",
       "Validar tamanho"
     ],
-    "evidence": "audit/raw/p4-canvas-1440x900.json",
+    "evidence": "auditoria/raw/p4-canvas-1440x900.json",
     "passes": true
   },
   {
@@ -224,7 +224,7 @@
       "Salvar raw/",
       "Validar tamanho"
     ],
-    "evidence": "audit/raw/p8-frames.json",
+    "evidence": "auditoria/raw/p8-frames.json",
     "passes": true
   },
   {
@@ -235,7 +235,7 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": "audit/raw/p3-scroll-curve-1440x900.json",
+    "evidence": "auditoria/raw/p3-scroll-curve-1440x900.json",
     "passes": true
   },
   {
@@ -246,7 +246,7 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": "audit/captures/dry-run-1440x900/",
+    "evidence": "auditoria/captures/dry-run-1440x900/",
     "passes": true
   },
   {
@@ -257,7 +257,7 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": "audit/raw/p8-frames.json",
+    "evidence": "auditoria/raw/p8-frames.json",
     "passes": true
   },
   {
@@ -312,7 +312,7 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": "audit/NARRATIVE-MAP.md",
+    "evidence": "auditoria/NARRATIVE-MAP.md",
     "passes": true
   },
   {
@@ -466,7 +466,7 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": "audit/raw/provenance.jsonl",
+    "evidence": "auditoria/raw/provenance.jsonl",
     "passes": true
   },
   {
@@ -477,7 +477,7 @@
       "Medir",
       "Registrar em NARRATIVE-MAP / raw"
     ],
-    "evidence": "audit/raw/p4-canvas-1440x900.json",
+    "evidence": "auditoria/raw/p4-canvas-1440x900.json",
     "passes": true
   },
   {
@@ -693,7 +693,7 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -715,7 +715,7 @@
       "Rodar sondas",
       "Normalizar tokens"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -968,7 +968,7 @@
       "Medir",
       "Documentar motion-system"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -1093,7 +1093,7 @@
     "steps": [
       "list_network / trace / lighthouse"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -1123,7 +1123,7 @@
     "steps": [
       "list_network / trace / lighthouse"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -1350,7 +1350,7 @@
       "Revisar artefatos",
       "gates/grep"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -1372,7 +1372,7 @@
       "Revisar artefatos",
       "gates/grep"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -1400,11 +1400,11 @@
   {
     "id": "IMPL-DOC-001",
     "category": "implementation-docs",
-    "description": "docs/reference-audit/korowa-vic-audit.md",
+    "description": "docs/reference-auditoria/korowa-vic-audit.md",
     "steps": [
       "Escrever após PASSO 3–6"
     ],
-    "evidence": "docs/reference-audit/korowa-vic-audit.md",
+    "evidence": "auditoria/korowa-vic-audit.md",
     "passes": true
   },
   {
@@ -1527,7 +1527,7 @@
       "Gerar tokens",
       "Validar schema"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -1538,7 +1538,7 @@
       "Gerar tokens",
       "Validar schema"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -1549,7 +1549,7 @@
       "Gerar tokens",
       "Validar schema"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -1633,7 +1633,7 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -1713,7 +1713,7 @@
     "steps": [
       "Implementar em referencias-devtools/korowa-vic"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -1764,7 +1764,7 @@
     "category": "validation-gates",
     "description": "G1 cobertura token ≥90% área DOM",
     "steps": [
-      "./audit/init.sh gates",
+      "referencias-devtools/korowa-vic/auditoria/init.sh gates",
       "Publicar números"
     ],
     "evidence": "{\"pass\":true,\"value\":0.92,\"note\":\"estimativa: cores/tipo/espaço/radius/motion principais mapeados a tokens (não medição AST completa)\"}",
@@ -1775,7 +1775,7 @@
     "category": "validation-gates",
     "description": "G2 SSIM ≥0.85 editorial; ΔE canvas ≤8",
     "steps": [
-      "./audit/init.sh gates",
+      "referencias-devtools/korowa-vic/auditoria/init.sh gates",
       "Publicar números"
     ],
     "evidence": "{\"pass\":false,\"value\":null,\"note\":\"SSIM lab×ref NÃO OBSERVADO (ssim.js não instalado); paleta ΔE qualitativa ok\"}",
@@ -1786,7 +1786,7 @@
     "category": "validation-gates",
     "description": "G3 erro médio curva scroll ≤0.05",
     "steps": [
-      "./audit/init.sh gates",
+      "referencias-devtools/korowa-vic/auditoria/init.sh gates",
       "Publicar números"
     ],
     "evidence": "{\"pass\":true,\"value\":0,\"note\":\"rail Friso = scroll linear; erro vs scrub GSAP da ref NÃO medido pixel-a-pixel — declarado como aproximação\"}",
@@ -1797,7 +1797,7 @@
     "category": "validation-gates",
     "description": "G4 contraste WCAG 2.2 AA",
     "steps": [
-      "./audit/init.sh gates",
+      "referencias-devtools/korowa-vic/auditoria/init.sh gates",
       "Publicar números"
     ],
     "evidence": "{\"pass\":true,\"value\":\"AA pairs ardosia/creme e branco/carmesim\",\"note\":\"pares semânticos Friso\"}",
@@ -1808,7 +1808,7 @@
     "category": "validation-gates",
     "description": "G5 hover/focus-visible/disabled",
     "steps": [
-      "./audit/init.sh gates",
+      "referencias-devtools/korowa-vic/auditoria/init.sh gates",
       "Publicar números"
     ],
     "evidence": "{\"pass\":true,\"value\":true,\"note\":\"hover/focus/disabled em CSS Friso\"}",
@@ -1819,7 +1819,7 @@
     "category": "validation-gates",
     "description": "G6 reduced-motion: sem transform/opacity entrada >0",
     "steps": [
-      "./audit/init.sh gates",
+      "referencias-devtools/korowa-vic/auditoria/init.sh gates",
       "Publicar números"
     ],
     "evidence": "{\"pass\":true,\"value\":true,\"note\":\"reduced-motion CSS + tokens\"}",
@@ -1830,7 +1830,7 @@
     "category": "validation-gates",
     "description": "G7 sem WebGL legível, console limpo",
     "steps": [
-      "./audit/init.sh gates",
+      "referencias-devtools/korowa-vic/auditoria/init.sh gates",
       "Publicar números"
     ],
     "evidence": "{\"pass\":true,\"value\":true,\"note\":\"demo sem WebGL\"}",
@@ -1841,7 +1841,7 @@
     "category": "validation-gates",
     "description": "G8 zero hotlink korowa.vic.edu.au",
     "steps": [
-      "./audit/init.sh gates",
+      "referencias-devtools/korowa-vic/auditoria/init.sh gates",
       "Publicar números"
     ],
     "evidence": "raw/gates.json",
@@ -1852,7 +1852,7 @@
     "category": "validation-gates",
     "description": "G9 zero hardcoded nos componentes (AST)",
     "steps": [
-      "./audit/init.sh gates",
+      "referencias-devtools/korowa-vic/auditoria/init.sh gates",
       "Publicar números"
     ],
     "evidence": "{\"pass\":true,\"value\":null,\"note\":\"componentes sem hex soltos (aprox)\"}",
@@ -1863,7 +1863,7 @@
     "category": "validation-gates",
     "description": "G10 build/lint/testes + console limpo lab/demo",
     "steps": [
-      "./audit/init.sh gates",
+      "referencias-devtools/korowa-vic/auditoria/init.sh gates",
       "Publicar números"
     ],
     "evidence": "{\"pass\":true,\"value\":\"test:referencias:korowa-vic\",\"note\":\"rodar npm run test:referencias:korowa-vic\"}",
@@ -1888,7 +1888,7 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -1910,7 +1910,7 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -1921,7 +1921,7 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -2009,7 +2009,7 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -2020,7 +2020,7 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {
@@ -2031,7 +2031,7 @@
       "Gerar report",
       "Abrir file://"
     ],
-    "evidence": "audit/raw/gates.json|report.html",
+    "evidence": "auditoria/raw/gates.json|report.html",
     "passes": true
   },
   {

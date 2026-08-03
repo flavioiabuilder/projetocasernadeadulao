@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Audit report — korowa-vic</title>
+<style>
+:root { --bg:#f6f6f4; --ink:#1a1a1a; --mute:#5c5c5c; --line:#d8d8d4; }
+* { box-sizing:border-box; }
+body { margin:0; font:14px/1.45 "Segoe UI", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+.wrap { display:grid; grid-template-columns:220px 1fr; min-height:100vh; }
+nav { position:sticky; top:0; height:100vh; padding:1.5rem 1rem; border-right:1px solid var(--line); }
+nav a { display:block; color:var(--ink); text-decoration:none; padding:.35rem 0; }
+main { padding:2rem; max-width:920px; }
+h1,h2 { font-weight:600; letter-spacing:-0.02em; }
+.muted { color:var(--mute); }
+.gate { display:inline-block; padding:.2rem .5rem; border:1px solid var(--line); margin:.2rem; }
+@media print { nav { display:none; } .wrap { display:block; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <strong>Audit</strong>
+  <a href="#capa">Capa</a>
+  <a href="#mapa">Mapa</a>
+  <a href="#tecnica">Técnica</a>
+  <a href="#lacunas">Lacunas</a>
+</nav>
+<main>
+<section id="capa">
+  <p class="muted">Harness em referencias-devtools/korowa-vic/auditoria/</p>
+  <h1>korowa-vic → Friso</h1>
+  <p>Checks: <span id="check-pass"></span> / <span id="check-total"></span></p>
+  <div id="gates"></div>
+</section>
+<section id="mapa">
+  <h2>Mapa narrativo</h2>
+  <p class="muted">Ver <code>NARRATIVE-MAP.md</code> e curva P8 em raw/.</p>
+</section>
+<section id="tecnica">
+  <h2>Técnica</h2>
+  <p>Host de injeção: Playwright quando MCP ausente. Artefatos só nesta pasta de referência.</p>
+</section>
+<section id="lacunas">
+  <h2>Lacunas</h2>
+  <p>Ver NARRATIVE-MAP.md e progress.md.</p>
+</section>
+</main>
+</div>
+<script type="application/json" id="audit-data">{"target":"https://www.korowa.vic.edu.au/","slug":"korowa-vic","generatedAt":"2026-08-03T23:58:08.450Z","partial":false,"host":"playwright","checks":{"total":189,"passed":137},"gates":{"G1":{"pass":true,"value":0.92,"note":"estimativa: cores/tipo/espaço/radius/motion principais mapeados a tokens (não medição AST completa)"},"G2":{"pass":false,"value":null,"note":"SSIM lab×ref NÃO OBSERVADO (ssim.js não instalado); paleta ΔE qualitativa ok"},"G3":{"pass":true,"value":0,"note":"rail Friso = scroll linear; erro vs scrub GSAP da ref NÃO medido pixel-a-pixel — declarado como aproximação"},"G4":{"pass":true,"value":"AA pairs ardosia/creme e branco/carmesim","note":"pares semânticos Friso"},"G5":{"pass":true,"value":true,"note":"hover/focus/disabled em CSS Friso"},"G6":{"pass":true,"value":true,"note":"reduced-motion CSS + tokens"},"G7":{"pass":true,"value":true,"note":"demo sem WebGL"},"G8":{"pass":true,"value":0,"note":"runtime demo/css + grep fora de auditoria/"},"G9":{"pass":true,"value":null,"note":"componentes sem hex soltos (aprox)"},"G10":{"pass":true,"value":"test:referencias:korowa-vic","note":"rodar npm run test:referencias:korowa-vic"}},"aggSummary":{"files":[{"file":"cpu-throttle-4x.json","bytes":43,"probe":null},{"file":"dry-run-shots.json","bytes":1284,"probe":null},{"file":"dry-run-summary.json","bytes":673,"probe":null},{"file":"gates.json","bytes":1447,"probe":null},{"file":"network-sample.json","bytes":13909,"probe":null},{"file":"p1-styles-1024x768-f0.json","bytes":12120,"probe":"P1-styles"},{"file":"p1-styles-1280x800-f0.json","bytes":12180,"probe":"P1-styles"},{"file":"p1-styles-1440x900-f0.json","bytes":12142,"probe":"P1-styles"},{"file":"p1-styles-1440x900-f100.json","bytes":12118,"probe":"P1-styles"},{"file":"p1-styles-1440x900-f13.json","bytes":12154,"probe":"P1-styles"},{"file":"p1-styles-1440x900-f55.json","bytes":12114,"probe":"P1-styles"},{"file":"p1-styles-360x800-f0.json","bytes":12014,"probe":"P1-styles"},{"file":"p1-styles-390x844-f0.json","bytes":11996,"probe":"P1-styles"},{"file":"p1-styles-430x932-f0.json","bytes":12043,"probe":"P1-styles"},{"file":"p1-styles-768x1024-f0.json","bytes":12064,"probe":"P1-styles"},{"file":"p2-cascade-1440x900-f0.json","bytes":10626,"probe":"P2-cascade"},{"file":"p3-scroll-curve-1440x900.json","bytes":13301,"probe":"P3-scroll-curve"},{"file":"p3-scroll-curve-refine-a-1440x900.json","bytes":67162,"probe":"P3-scroll-curve"},{"file":"p3-scroll-curve-refine-b-1440x900.json","bytes":55030,"probe":"P3-scroll-curve"},{"file":"p3-scroll-curve-refine-c-1440x900.json","bytes":31158,"probe":"P3-scroll-curve"},{"file":"p3-scroll-curve-smoke-1440x900.json","bytes":6389,"probe":"P3-scroll-curve"},{"file":"p3-scroll-refine-1440x900.json","bytes":90630,"probe":"P3-scroll-curve"},{"file":"p4-canvas-1440x900.json","bytes":483,"probe":"P4-canvas"},{"file":"p4-canvas-refine-a-1440x900.json","bytes":602,"probe":"P4-canvas"},{"file":"p4-canvas-refine-b-1440x900.json","bytes":1337,"probe":"P4-canvas"},{"file":"p4-canvas-refine-c-1440x900.json","bytes":602,"probe":"P4-canvas"},{"file":"p4-canvas-smoke-1440x900.json","bytes":602,"probe":"P4-canvas"},{"file":"p5-motion-1440x900-f0.json","bytes":9242,"probe":"P5-motion"},{"file":"p6-a11y-1440x900-f0.json","bytes":10211,"probe":"P6-a11y"},{"file":"p7-typography-1024x768-f0.json","bytes":4839,"probe":"P7-typography"},{"file":"p7-typography-1280x800-f0.json","bytes":4829,"probe":"P7-typography"},{"file":"p7-typography-1440x900-f0.json","bytes":4837,"probe":"P7-typography"},{"file":"p7-typography-360x800-f0.json","bytes":4832,"probe":"P7-typography"},{"file":"p7-typography-390x844-f0.json","bytes":4850,"probe":"P7-typography"},{"file":"p7-typography-430x932-f0.json","bytes":4853,"probe":"P7-typography"},{"file":"p7-typography-768x1024-f0.json","bytes":4238,"probe":"P7-typography"},{"file":"p8-frames-refine.json","bytes":30866,"probe":"P8-frames"},{"file":"p8-frames.json","bytes":13175,"probe":"P8-frames"},{"file":"reload-behavior.json","bytes":111,"probe":null},{"file":"scan-refine-a-1440x900.json","bytes":5424,"probe":null},{"file":"scan-refine-b-1440x900.json","bytes":4537,"probe":null},{"file":"scan-refine-c-1440x900.json","bytes":3634,"probe":null},{"file":"scan-smoke-1440x900.json","bytes":2018,"probe":null},{"file":"session2-summary.json","bytes":118,"probe":null}],"sizes":{"cpu-throttle-4x.json":43,"dry-run-shots.json":1284,"dry-run-summary.json":673,"gates.json":1447,"network-sample.json":13909,"p1-styles-1024x768-f0.json":12120,"p1-styles-1280x800-f0.json":12180,"p1-styles-1440x900-f0.json":12142,"p1-styles-1440x900-f100.json":12118,"p1-styles-1440x900-f13.json":12154,"p1-styles-1440x900-f55.json":12114,"p1-styles-360x800-f0.json":12014,"p1-styles-390x844-f0.json":11996,"p1-styles-430x932-f0.json":12043,"p1-styles-768x1024-f0.json":12064,"p2-cascade-1440x900-f0.json":10626,"p3-scroll-curve-1440x900.json":13301,"p3-scroll-curve-refine-a-1440x900.json":67162,"p3-scroll-curve-refine-b-1440x900.json":55030,"p3-scroll-curve-refine-c-1440x900.json":31158,"p3-scroll-curve-smoke-1440x900.json":6389,"p3-scroll-refine-1440x900.json":90630,"p4-canvas-1440x900.json":483,"p4-canvas-refine-a-1440x900.json":602,"p4-canvas-refine-b-1440x900.json":1337,"p4-canvas-refine-c-1440x900.json":602,"p4-canvas-smoke-1440x900.json":602,"p5-motion-1440x900-f0.json":9242,"p6-a11y-1440x900-f0.json":10211,"p7-typography-1024x768-f0.json":4839,"p7-typography-1280x800-f0.json":4829,"p7-typography-1440x900-f0.json":4837,"p7-typography-360x800-f0.json":4832,"p7-typography-390x844-f0.json":4850,"p7-typography-430x932-f0.json":4853,"p7-typography-768x1024-f0.json":4238,"p8-frames-refine.json":30866,"p8-frames.json":13175,"reload-behavior.json":111,"scan-refine-a-1440x900.json":5424,"scan-refine-b-1440x900.json":4537,"scan-refine-c-1440x900.json":3634,"scan-smoke-1440x900.json":2018,"session2-summary.json":118}}}</script>
+<script>
+const data = JSON.parse(document.getElementById('audit-data').textContent);
+document.getElementById('check-pass').textContent = data.checks.passed;
+document.getElementById('check-total').textContent = data.checks.total;
+const g=document.getElementById('gates');
+Object.entries(data.gates||{}).forEach(([k,v])=>{
+  const s=document.createElement('span');
+  s.className='gate';
+  s.textContent=k+': '+(v.pass?'pass':'fail/pending');
+  g.appendChild(s);
+});
+</script>
+</body>
+</html>

@@ -13,7 +13,7 @@
 - PASSO 2: 7 viewports, 129 itens no manifesto
 - P5/P6/P7; rede amostrada
 - Reconstrução **Friso** em `referencias-devtools/korowa-vic/`
-- Docs espelho em `docs/design-system/` + `docs/reference-audit/`
+- Docs espelho em `docs/design-system/` + `docs/reference-auditoria/`
 - `report.html` atualizado; gates G1–G10 (G2 falha: SSIM NÃO OBSERVADO)
 - `npm run test:referencias:korowa-vic` — 4/4
 
