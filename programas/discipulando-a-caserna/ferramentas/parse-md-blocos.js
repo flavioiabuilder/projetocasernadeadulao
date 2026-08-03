@@ -178,13 +178,17 @@ function parseBlocos(corpo, opts = {}) {
     }
     if (para.length) {
       const text = para.join(" ").replace(/\s+/g, " ").trim();
-      // Ignorar rótulos de seção editorial sem conteúdo próprio
-      if (!/^(Texto|Parágrafo|Elemento|Bloco|Nota|Números|Público|Interação|Camadas)/i.test(text) || text.includes(":")) {
-        if (/^\*\*.+:\*\*$/.test(text)) {
-          // rótulo sozinho já coberto; skip
-        } else if (!/^\*\*[^:]+:\*\*$/.test(text)) {
-          blocos.push({ type: "paragraph", text });
-        }
+      // Ignorar somente rótulos editoriais isolados (ex.: "Texto", "Nota").
+      // Prefixo parcial mascarava prosa real ("Nota importante…", "Texto bíblico…").
+      if (/^(Texto|Parágrafo|Elemento|Bloco|Nota|Números|Público|Interação|Camadas)\s*$/i.test(text)) {
+        continue;
+      }
+      if (/^\*\*.+:\*\*$/.test(text)) {
+        // rótulo markdown isolado já coberto como meta/heading
+        continue;
+      }
+      if (!/^\*\*[^:]+:\*\*$/.test(text)) {
+        blocos.push({ type: "paragraph", text });
       }
       continue;
     }
