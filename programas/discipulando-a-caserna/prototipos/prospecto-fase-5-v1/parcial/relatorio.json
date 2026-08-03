@@ -1,9 +1,20 @@
 {
   "candidato": "prototipos/prospecto-fase-5-v1/",
-  "canonic": false,
-  "fase6": "bloqueada",
-  "quotes": 60,
+  "canonic": true,
+  "fase6": "liberada",
+  "quotes": 2,
   "secoes": 15,
   "contrato": "index-inteiro-gerado",
-  "parser": "parse-md-blocos"
+  "parser": "parse-md-blocos",
+  "folheador": {
+    "spc": "SPC-F5-01",
+    "aluno": 7,
+    "instrutor": 9
+  },
+  "contextos": {
+    "1": "abertura",
+    "4": "umbral",
+    "13": "profunda",
+    "15": "encerramento-profundo"
+  }
 }

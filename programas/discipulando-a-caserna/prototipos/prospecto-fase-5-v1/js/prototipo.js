@@ -110,7 +110,9 @@
     var tabs = Array.prototype.slice.call(
       abasRoot.querySelectorAll('[role="tab"]:not([aria-disabled="true"])')
     );
-    var panels = Array.prototype.slice.call(abasRoot.querySelectorAll('[role="tabpanel"]'));
+    var panels = Array.prototype.slice.call(
+      abasRoot.querySelectorAll('[role="tabpanel"]')
+    );
 
     function activateTab(tab) {
       tabs.forEach(function (t) {

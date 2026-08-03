@@ -1,32 +1,32 @@
 # CMP-11 — Abas
 
-| Campo | Conteúdo |
-| --- | --- |
-| 1. ID e nome | CMP-11 — Abas |
-| 2. Camada | Componente |
-| 3. Status | CANDIDATO (`0.1.0-candidate`) |
-| 4. Problema | Alternar painéis mutuamente exclusivos |
-| 5. Quando usar | Escudo/anatomia no prospecto quando o contrato APG couber |
-| 6. Quando não usar | Navegação de seções (usar índice); se o teclado APG não puder ser cumprido, preferir headings + CMP-12 |
-| 7. Anatomia / slots | `.dc-abas` > `.dc-abas__tablist[role=tablist]` > `button.dc-abas__tab[role=tab]` + `.dc-abas__panel[role=tabpanel]` |
-| 8. Conteúdo | Rótulos de tab e painéis de `conteudo/` ou rótulos UI neutros |
-| 9. HTML nativo | Padrão APG Tabs: `tablist` / `tab` / `tabpanel`; cada tab `aria-controls` → painel; painel `aria-labelledby` → tab |
-| 10. Semântica / nome acessível | `aria-label` no tablist; nome da tab pelo texto do botão |
-| 11. API pública | `data-dc-abas` no root; ativação **automática** (APG: setas movem foco **e** selecionam o painel); tabs não selecionadas `tabindex="-1"`; selecionada `tabindex="0"` e `aria-selected="true"`; painéis inativos `hidden` **somente após** progressive enhancement (`html.js`) |
-| 12. Variantes | Orientação horizontal (default). Vertical: só com `aria-orientation="vertical"` e setas Up/Down documentadas — fora do v0.1 do lab |
-| 13. Tamanhos | Tabs com alvo ≥44×44 |
-| 14. Tokens semânticos | `--cor-borda-sutil`, `--cor-acento-editorial`, `--cor-superficie-papel`, `--espacamento-inline`, `--espacamento-grupo`, `--tipografia-familia-display`, `--tipografia-peso-display`, `--foco-anel-largura`, `--foco-anel-estilo`, `--foco-anel-offset`, `--cor-foco-sobre-papel` |
-| 15. Estados | selected, focus-visible; disabled: `aria-disabled="true"` + omitir da rotação de setas (ou pular); não usar só opacidade |
-| 16. Teclado | **Tab** entra/sai do tablist (uma tab no tab order); **ArrowLeft/ArrowRight** ciclam e ativam; **Home** primeira; **End** última; **Enter/Space** ativam a focada (redundante se setas já ativam). Painel recebe Tab em seguida |
-| 17. Foco | `:focus-visible` com tokens de foco listados acima |
-| 18. Responsividade | Em viewports estreitos, tablist pode quebrar linha; painéis empilham (um visível) |
-| 19. Overflow / extremo | Rótulo longo quebra; não truncar sem acesso |
-| 20. Reduced motion | Sem animação obrigatória de troca de painel |
-| 21. Microcopy | Só `conteudo/` ou rótulos UI neutros |
-| 22. Exemplo correto | `design-system/laboratorio/` seção CMP-11 + `lab.js` |
-| 23. Exemplo incorreto | Tabs que só mudam com mouse; roles sem associação; setas sem Home/End |
-| 24. Dependências | Fundações tokens; sem DevTools |
-| 25. Cobertura de testes | E2E lab: setas, Home/End, associação painel |
-| 26. Evidências | prospecto marca-escudo / anatomia |
-| 27. Migração futura | Classes legado → `dc-*` na Fase 6 |
-| 28. Limitações | Runtime legado ainda não consome este contrato |
+| Campo                          | Conteúdo                                                                                                                                                                                                                                                                         |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. ID e nome                   | CMP-11 — Abas                                                                                                                                                                                                                                                                    |
+| 2. Camada                      | Componente                                                                                                                                                                                                                                                                       |
+| 3. Status                      | CANDIDATO (`0.1.0-candidate`)                                                                                                                                                                                                                                                    |
+| 4. Problema                    | Alternar painéis mutuamente exclusivos                                                                                                                                                                                                                                           |
+| 5. Quando usar                 | Escudo/anatomia no prospecto quando o contrato APG couber                                                                                                                                                                                                                        |
+| 6. Quando não usar             | Navegação de seções (usar índice); se o teclado APG não puder ser cumprido, preferir headings + CMP-12                                                                                                                                                                           |
+| 7. Anatomia / slots            | `.dc-abas` > `.dc-abas__tablist[role=tablist]` > `button.dc-abas__tab[role=tab]` + `.dc-abas__panel[role=tabpanel]`                                                                                                                                                              |
+| 8. Conteúdo                    | Rótulos de tab e painéis de `conteudo/` ou rótulos UI neutros                                                                                                                                                                                                                    |
+| 9. HTML nativo                 | Padrão APG Tabs: `tablist` / `tab` / `tabpanel`; cada tab `aria-controls` → painel; painel `aria-labelledby` → tab                                                                                                                                                               |
+| 10. Semântica / nome acessível | `aria-label` no tablist; nome da tab pelo texto do botão                                                                                                                                                                                                                         |
+| 11. API pública                | `data-dc-abas` no root; ativação **automática** (APG: setas movem foco **e** selecionam o painel); tabs não selecionadas `tabindex="-1"`; selecionada `tabindex="0"` e `aria-selected="true"`; painéis inativos `hidden` **somente após** progressive enhancement (`html.js`)    |
+| 12. Variantes                  | Orientação horizontal (default). Vertical: só com `aria-orientation="vertical"` e setas Up/Down documentadas — fora do v0.1 do lab                                                                                                                                               |
+| 13. Tamanhos                   | Tabs com alvo ≥44×44                                                                                                                                                                                                                                                             |
+| 14. Tokens semânticos          | `--cor-borda-sutil`, `--cor-acento-editorial`, `--cor-superficie-papel`, `--espacamento-inline`, `--espacamento-grupo`, `--tipografia-familia-display`, `--tipografia-peso-display`, `--foco-anel-largura`, `--foco-anel-estilo`, `--foco-anel-offset`, `--cor-foco-sobre-papel` |
+| 15. Estados                    | selected, focus-visible; disabled: `aria-disabled="true"` + omitir da rotação de setas (ou pular); não usar só opacidade                                                                                                                                                         |
+| 16. Teclado                    | **Tab** entra/sai do tablist (uma tab no tab order); **ArrowLeft/ArrowRight** ciclam e ativam; **Home** primeira; **End** última; **Enter/Space** ativam a focada (redundante se setas já ativam). Painel recebe Tab em seguida                                                  |
+| 17. Foco                       | `:focus-visible` com tokens de foco listados acima                                                                                                                                                                                                                               |
+| 18. Responsividade             | Em viewports estreitos, tablist pode quebrar linha; painéis empilham (um visível)                                                                                                                                                                                                |
+| 19. Overflow / extremo         | Rótulo longo quebra; não truncar sem acesso                                                                                                                                                                                                                                      |
+| 20. Reduced motion             | Sem animação obrigatória de troca de painel                                                                                                                                                                                                                                      |
+| 21. Microcopy                  | Só `conteudo/` ou rótulos UI neutros                                                                                                                                                                                                                                             |
+| 22. Exemplo correto            | `design-system/laboratorio/` seção CMP-11 + `lab.js`                                                                                                                                                                                                                             |
+| 23. Exemplo incorreto          | Tabs que só mudam com mouse; roles sem associação; setas sem Home/End                                                                                                                                                                                                            |
+| 24. Dependências               | Fundações tokens; sem DevTools                                                                                                                                                                                                                                                   |
+| 25. Cobertura de testes        | E2E lab: setas, Home/End, associação painel                                                                                                                                                                                                                                      |
+| 26. Evidências                 | prospecto marca-escudo / anatomia                                                                                                                                                                                                                                                |
+| 27. Migração futura            | Classes legado → `dc-*` na Fase 6                                                                                                                                                                                                                                                |
+| 28. Limitações                 | Runtime legado ainda não consome este contrato                                                                                                                                                                                                                                   |

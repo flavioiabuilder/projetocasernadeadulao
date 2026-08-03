@@ -2,11 +2,11 @@
 
 Camada de runtime CSS para superfícies do programa — **não** é o laboratório.
 
-| Arquivo | Responsabilidade |
-| --- | --- |
+| Arquivo           | Responsabilidade                                  |
+| ----------------- | ------------------------------------------------- |
 | `foundations.css` | Importa `tokens.css`; reset mínimo; layout/medida |
-| `components.css` | Contratos públicos `dc-*` |
-| `patterns.css` | PAD (abertura, umbral, pedido, rodapé, …) |
+| `components.css`  | Contratos públicos `dc-*`                         |
+| `patterns.css`    | PAD (abertura, umbral, pedido, rodapé, …)         |
 
 ## Regras
 

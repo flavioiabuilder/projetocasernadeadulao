@@ -11,21 +11,21 @@ Norma: [`../docs/arquitetura/ADR-007-camada-metodo-o-sistema.md`](../docs/arquit
 
 ## O que há aqui
 
-| Área         | Caminho                                              | Papel                                                          |
-| ------------ | ---------------------------------------------------- | -------------------------------------------------------------- |
-| Doutrina     | [`O-SISTEMA.md`](O-SISTEMA.md)                       | Documento-fonte do método (verbatim + nota de adaptação)       |
-| Pipeline     | [`PIPELINE.md`](PIPELINE.md)                         | As nove fases e o estado de cada uma neste repositório         |
-| Templates    | [`templates/projeto-web/`](templates/projeto-web/)   | Cinco artefatos permanentes para copiar                        |
+| Área         | Caminho                                              | Papel                                                           |
+| ------------ | ---------------------------------------------------- | --------------------------------------------------------------- |
+| Doutrina     | [`O-SISTEMA.md`](O-SISTEMA.md)                       | Documento-fonte do método (verbatim + nota de adaptação)        |
+| Pipeline     | [`PIPELINE.md`](PIPELINE.md)                         | As nove fases e o estado de cada uma neste repositório          |
+| Templates    | [`templates/projeto-web/`](templates/projeto-web/)   | Cinco artefatos permanentes para copiar                         |
 | Prompts      | [`prompts/`](prompts/)                               | Fases 1–7: descoberta, prototipagem, crítica, implementação, QA |
-| Fases 5–8    | [`fases/`](fases/)                                   | Guias da metade do pipeline com validação humana               |
-| Checklists   | [`checklists/`](checklists/)                         | Preparação, design e pré-lançamento                            |
-| Anti-padrões | [`ANTIPADROES.md`](ANTIPADROES.md)                   | Os dez mais caros + os deste repositório, com a defesa de cada |
-| Glossário    | [`GLOSSARIO.md`](GLOSSARIO.md)                       | Vocabulário do método (domínio fica em `CONTEXT.md`)           |
-| Referências  | [`biblioteca/referencias/`](biblioteca/referencias/) | Índices e fichas (sem clonar assets)                           |
-| Decisões     | [`biblioteca/decisoes/`](biblioteca/decisoes/)       | Ledger de produto/design/método                                |
-| Skills       | [`skills/README.md`](skills/README.md)               | Mapa → `.claude/skills/` (não canônico)                        |
-| Convenções   | [`CONVENCOES.md`](CONVENCOES.md)                     | Escopos GLOBAL / REPO / PROGRAMA / PROTÓTIPO                   |
-| Ferramentas  | [`FERRAMENTAS.md`](FERRAMENTAS.md)                   | Inventário, vocação e matriz de decisão                        |
+| Fases 5–8    | [`fases/`](fases/)                                   | Guias da metade do pipeline com validação humana                |
+| Checklists   | [`checklists/`](checklists/)                         | Preparação, design e pré-lançamento                             |
+| Anti-padrões | [`ANTIPADROES.md`](ANTIPADROES.md)                   | Os dez mais caros + os deste repositório, com a defesa de cada  |
+| Glossário    | [`GLOSSARIO.md`](GLOSSARIO.md)                       | Vocabulário do método (domínio fica em `CONTEXT.md`)            |
+| Referências  | [`biblioteca/referencias/`](biblioteca/referencias/) | Índices e fichas (sem clonar assets)                            |
+| Decisões     | [`biblioteca/decisoes/`](biblioteca/decisoes/)       | Ledger de produto/design/método                                 |
+| Skills       | [`skills/README.md`](skills/README.md)               | Mapa → `.claude/skills/` (não canônico)                         |
+| Convenções   | [`CONVENCOES.md`](CONVENCOES.md)                     | Escopos GLOBAL / REPO / PROGRAMA / PROTÓTIPO                    |
+| Ferramentas  | [`FERRAMENTAS.md`](FERRAMENTAS.md)                   | Inventário, vocação e matriz de decisão                         |
 
 ## Como começar um projeto novo
 

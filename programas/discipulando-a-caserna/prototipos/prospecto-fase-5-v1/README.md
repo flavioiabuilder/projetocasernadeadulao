@@ -1,23 +1,26 @@
-# Prospecto Fase 5 — candidato v1
+# Prospecto Fase 5 — protótipo canônico v1
 
-Candidato **isolado** da Fase 5 (Fluxo A). **Não** é protótipo canônico.
-**Não** substitui `prospecto-v1/`. **Não** está no GitHub Pages por padrão.
+Protótipo **canônico técnico** da Fase 5 (Fluxo A). **Não** substitui
+`prospecto-v1/` em produção/Pages. **Não** remove `noindex`. **Não** implica
+homologação pastoral.
 
-| Campo | Valor |
-| --- | --- |
-| Status | CANDIDATO |
-| Canônico | NÃO |
-| Fase 6 | BLOQUEADA |
-| Tokens | `../../design-system/tokens/tokens.css` |
-| Conteúdo | `conteudo/` via `npm run generate:discipulando:prototipo-fase-5` |
-| Decisão | [`../../docs/metodo/fase-5/decisao-do-prototipo-canonico.md`](../../docs/metodo/fase-5/decisao-do-prototipo-canonico.md) |
+| Campo    | Valor                                                                                                                    |
+| -------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Status   | APROVADO (canônico técnico)                                                                                              |
+| Canônico | SIM — referência de implementação                                                                                        |
+| Fase 6   | LIBERADA (não iniciada)                                                                                                  |
+| Tokens   | `../../design-system/tokens/tokens.css`                                                                                  |
+| Conteúdo | `conteudo/` via `npm run generate:discipulando:prototipo-fase-5`                                                         |
+| Decisão  | [`../../docs/metodo/fase-5/decisao-do-prototipo-canonico.md`](../../docs/metodo/fase-5/decisao-do-prototipo-canonico.md) |
 
 ## Estrutura
 
 - `index.html` — **artefato gerado por completo** (contrato: não editar à mão)
 - `css/prototipo.css` — estilos do candidato (não importa `lab.css`)
 - `js/config.js` — gerado de `ferramentas/institucional.js`
-- `js/prototipo.js` — progressive enhancement (`html.js`; sumário `<details>`)
+- `js/dados/licao1.js` — gerado do manifesto Lição 1
+- `js/folheador.js` — SPC-F5-01 (progressive enhancement)
+- `js/prototipo.js` — chrome PE (`html.js`; sumário `<details>`)
 - `parcial/` — **gerado**; não editar à mão
 - `capturas/` — evidências próprias da Fase 5
 
@@ -34,5 +37,6 @@ npm run capture:discipulando:prototipo-fase-5
 
 ## Proibições
 
-Não promover por nome de pasta. Não migrar runtime legado. Não inventar copy.
-Não expor PDF/folheador sem decisão humana (F6-05 / F6-06).
+Não criar `prospecto/` nesta superfície. Não migrar runtime legado automaticamente.
+Não inventar copy. Não expor download do PDF do dossiê enquanto o arquivo público
+não existir. Folheador usa somente o manifesto local da Lição 1.

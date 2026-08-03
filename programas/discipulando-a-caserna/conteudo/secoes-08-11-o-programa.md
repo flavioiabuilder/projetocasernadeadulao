@@ -22,13 +22,13 @@
 
 **Texto:**
 
-> O programa foi organizado em quatro módulos sequenciais de doze lições cada, totalizando quarenta e oito encontros ao longo de aproximadamente um ano. Cada módulo aprofunda o anterior e trabalha uma ênfase espiritual distinta. Alguns temas retornam com maior densidade, mas nenhum módulo repete o outro — o objetivo não é variação temática, e sim amadurecimento real do discípulo na mesma centralidade de Cristo.
+O programa foi organizado em quatro módulos sequenciais de doze lições cada, totalizando quarenta e oito encontros ao longo de aproximadamente um ano. Cada módulo aprofunda o anterior e trabalha uma ênfase espiritual distinta. Alguns temas retornam com maior densidade, mas nenhum módulo repete o outro — o objetivo não é variação temática, e sim amadurecimento real do discípulo na mesma centralidade de Cristo.
 
-> A progressão respeita o estado espiritual de quem chega ferido, culpado ou fragilizado: dos conteúdos de iniciação (chamado, graça, nova identidade) para os de consolidação (fundamentos, disciplinas, comunhão), destes para os de maturidade (caráter, vida no Espírito, relacionamentos redimidos) e, por fim, para os de missão e perseverança.
+A progressão respeita o estado espiritual de quem chega ferido, culpado ou fragilizado: dos conteúdos de iniciação (chamado, graça, nova identidade) para os de consolidação (fundamentos, disciplinas, comunhão), destes para os de maturidade (caráter, vida no Espírito, relacionamentos redimidos) e, por fim, para os de missão e perseverança.
 
 **Público (bloco subordinado):**
 
-> O público primário é formado por militares e custodiados — vistos não como alunos acadêmicos, mas como irmãos em processo de restauração e futuros multiplicadores sob supervisão pastoral. O público secundário abrange instrutores, capelanias e lideranças corresponsáveis pela missão.
+O público primário é formado por militares e custodiados — vistos não como alunos acadêmicos, mas como irmãos em processo de restauração e futuros multiplicadores sob supervisão pastoral. O público secundário abrange instrutores, capelanias e lideranças corresponsáveis pela missão.
 
 **O escopo abrange:**
 
@@ -53,15 +53,15 @@
 
 **Texto de abertura:**
 
-> Esta matriz não é apenas um calendário, mas uma ferramenta de contemplação e planejamento pastoral. Cada lição tem título, texto-base e objetivo definidos, e a ordem é parte da formação.
+Esta matriz não é apenas um calendário, mas uma ferramenta de contemplação e planejamento pastoral. Cada lição tem título, texto-base e objetivo definidos, e a ordem é parte da formação.
 
 **Nota sobre o Módulo 1:**
 
-> A ordem das três primeiras lições é intencional: abre com o acolhimento da dor (Adulão), segue para o socorro real do Comandante que desce à caverna, e só então conduz à contemplação como resposta de gratidão.
+A ordem das três primeiras lições é intencional: abre com o acolhimento da dor (Adulão), segue para o socorro real do Comandante que desce à caverna, e só então conduz à contemplação como resposta de gratidão.
 
 **Nota de estado:**
 
-> O Módulo 1 está integralmente produzido, nas edições do Aluno e do Instrutor. Os Módulos 2 a 4 têm títulos, textos-base e objetivos definidos no Guia Mestre, e sua produção está condicionada à validação pastoral do Módulo 1.
+O Módulo 1 está integralmente produzido, nas edições do Aluno e do Instrutor. Os Módulos 2 a 4 têm títulos, textos-base e objetivos definidos no Guia Mestre, e sua produção está condicionada à validação pastoral do Módulo 1.
 
 ---
 
@@ -72,7 +72,7 @@
 
 **Texto de abertura:**
 
-> Toda lição segue a mesma arquitetura. Essa constância não é falta de criatividade: é fidelidade pedagógica, para que instrutores diferentes ministrem o mesmo conteúdo sem perda de ênfase espiritual — primeiro ver Cristo; depois responder em fé e obediência.
+Toda lição segue a mesma arquitetura. Essa constância não é falta de criatividade: é fidelidade pedagógica, para que instrutores diferentes ministrem o mesmo conteúdo sem perda de ênfase espiritual — primeiro ver Cristo; depois responder em fé e obediência.
 
 **Camadas do material impresso (Módulo 1 produzido):**
 
@@ -89,7 +89,7 @@
 
 **Nota do Guia (elementos mínimos de planejamento):**
 
-> O Guia Mestre exige, em cada lição planejada: título, texto-base, objetivo, síntese teológica, aplicação militar, Ordem do Dia e perguntas de reflexão. O material impresso do Módulo 1 traduz esse padrão na tipografia e no ritmo da página.
+O Guia Mestre exige, em cada lição planejada: título, texto-base, objetivo, síntese teológica, aplicação militar, Ordem do Dia e perguntas de reflexão. O material impresso do Módulo 1 traduz esse padrão na tipografia e no ritmo da página.
 
 ---
 
@@ -100,7 +100,7 @@
 
 **Texto de abertura:**
 
-> O Módulo 1 existe em duas edições — Aluno e Instrutor — com o mesmo eixo cristocêntrico. A diferença não é “versão resumida” versus “versão completa”: é o que cada um precisa ter nas mãos durante o encontro.
+O Módulo 1 existe em duas edições — Aluno e Instrutor — com o mesmo eixo cristocêntrico. A diferença não é “versão resumida” versus “versão completa”: é o que cada um precisa ter nas mãos durante o encontro.
 
 **Exclusivo do Instrutor:**
 
@@ -114,7 +114,7 @@
 
 **Ritmo do encontro (Guia 3.3):**
 
-> Adota-se, como referência, a realização de um encontro semanal, com duração entre 1h30 e 2h.
+Adota-se, como referência, a realização de um encontro semanal, com duração entre 1h30 e 2h.
 
 | Momento                            | Faixa       | Finalidade                                                    |
 | ---------------------------------- | ----------- | ------------------------------------------------------------- |
@@ -123,4 +123,4 @@
 | Oração e compromisso               | 10 a 15 min | Resposta espiritual nascida da graça, não de desempenho.      |
 | Ordem do Dia                       | —           | Ação prática simples e verificável para a semana.             |
 
-> Essa ordem não é régua de “quem é mais espiritual”, mas treino de prontidão para prolongar, na rotina, aquilo que Cristo começou a trabalhar no encontro.
+Essa ordem não é régua de “quem é mais espiritual”, mas treino de prontidão para prolongar, na rotina, aquilo que Cristo começou a trabalhar no encontro.

@@ -14,5 +14,5 @@ module.exports = {
   cnpj: "63.724.286/0001-78",
   email: "casernadeadulao@gmail.com",
   versaoCandidato: "fase-5-v1",
-  canonico: false,
+  canonico: true,
 };

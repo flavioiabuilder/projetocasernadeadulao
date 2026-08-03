@@ -11,7 +11,7 @@
 }
 
 .dc-link:focus-visible {
-  outline: var(--foco-anel-largura) var(--foco-anel-estilo) var(--foco-anel-cor-sobre-papel);
+  outline: var(--foco-anel-largura) var(--foco-anel-estilo) var(--cor-foco-sobre-papel);
   outline-offset: var(--foco-anel-offset);
 }
 

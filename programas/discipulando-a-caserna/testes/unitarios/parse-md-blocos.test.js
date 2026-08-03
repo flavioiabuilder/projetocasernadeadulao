@@ -40,7 +40,15 @@ describe("parse-md-blocos", () => {
       "utf8"
     );
     const s14 = dividirSecoes(md).get(14);
-    const ul = s14.blocos.filter((b) => b.type === "ul");
+    const ul = [];
+    for (const bloco of s14.blocos) {
+      if (bloco.type === "ul") ul.push(bloco);
+      if (bloco.type === "directive" && Array.isArray(bloco.children)) {
+        for (const child of bloco.children) {
+          if (child.type === "ul") ul.push(child);
+        }
+      }
+    }
     assert.ok(ul.length >= 1);
     assert.ok(ul.some((l) => l.items.some((i) => /ranking/i.test(i))));
   });

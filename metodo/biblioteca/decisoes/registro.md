@@ -157,6 +157,22 @@ Formato por entrada:
   [`fase-5/`](../../../programas/discipulando-a-caserna/docs/metodo/fase-5/);
   [`prospecto-fase-5-v1/`](../../../programas/discipulando-a-caserna/prototipos/prospecto-fase-5-v1/).
 
+## 2026-08-03 — Saneamento final F5 + Gate A + liberação Fase 6
+
+- **Hipótese:** Com P0 técnicos zerados, o candidato único pode ser canônico
+  técnico e a Fase 6 pode ser liberada sem iniciar produção/publicação.
+- **Decisão:** (1) F5-08/F5-10/F5-12 APROVADAS; (2) canônico =
+  `prototipos/prospecto-fase-5-v1/`; (3) responsável Flávio Alves da Costa;
+  (4) dialeto MD com diretivas; (5) folheador SPC-F5-01 via manifesto local;
+  (6) PDF ausente honestizado; (7) `buildPrototype` + stale sem rewrite;
+  (8) **não** criar `prospecto/`; (9) **não** alterar Pages/`noindex`.
+- **Justificativa:** Plano de saneamento final; DEC-F5-01…12.
+- **Resultado observado:** Estado `aprovado` / `fase6: liberada`; produção
+  não iniciada.
+- **Links:**
+  [`fase-5/`](../../../programas/discipulando-a-caserna/docs/metodo/fase-5/);
+  [`fase-6/pacote-gate-a-decisao-humana.md`](../../../programas/discipulando-a-caserna/docs/metodo/fase-6/pacote-gate-a-decisao-humana.md).
+
 ## 2026-08-02 — Saneamento F5 + blueprint Fase 6 (bloqueada)
 
 - **Hipótese:** Fidelidade editorial e PE honestos são pré-requisito de canonização; produção não pode começar sem F5-12.

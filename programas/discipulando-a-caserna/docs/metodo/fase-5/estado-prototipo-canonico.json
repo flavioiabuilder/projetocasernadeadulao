@@ -1,12 +1,12 @@
 {
-  "status": "candidato",
-  "prototipoCanonico": null,
-  "path": null,
-  "versao": null,
-  "data": null,
-  "responsavel": null,
-  "fase6": "bloqueada",
-  "autorizacaoFase6": false,
+  "status": "aprovado",
+  "prototipoCanonico": "prospecto-fase-5-v1",
+  "path": "programas/discipulando-a-caserna/prototipos/prospecto-fase-5-v1/",
+  "versao": "fase-5-v1",
+  "data": "2026-08-03",
+  "responsavel": "Flávio Alves da Costa",
+  "fase6": "liberada",
+  "autorizacaoFase6": true,
   "candidatoPrincipal": "programas/discipulando-a-caserna/prototipos/prospecto-fase-5-v1/",
-  "notas": "Candidato integrado construído e validado estruturalmente. Julgamento canônico em decisao-do-prototipo-canonico.md. Agente não altera status para aprovado sem decisão humana F5-08/F5-10/F5-12."
+  "notas": "Canonização técnica após saneamento final e Gate A objetivo (P0=0). Representa referência de implementação — não homologação pastoral, não publicação, não criação de prospecto/, não remoção de noindex, não distribuição do PDF ausente."
 }

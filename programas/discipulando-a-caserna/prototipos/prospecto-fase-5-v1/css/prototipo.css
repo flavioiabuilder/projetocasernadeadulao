@@ -12,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -30,6 +31,8 @@ html {
 
 body {
   margin: 0;
+  max-width: 100%;
+  overflow-x: clip;
   font-family: var(--tipografia-familia-corpo);
   font-size: var(--tipografia-prosa-corpo);
   font-weight: var(--tipografia-peso-corpo);
@@ -168,26 +171,152 @@ body {
   font-size: var(--tipografia-nota);
 }
 
-/* PAD-03 — umbral único */
+/* Superfícies profundas — abertura, §13, §15; umbral §4 */
+.dc-superficie-profunda,
 .dc-umbral {
   background: var(--cor-superficie-profunda);
   color: var(--cor-texto-sobre-profunda);
   padding-block: var(--espacamento-secao);
 }
 
+.dc-superficie-profunda .dc-sobrelinha,
+.dc-superficie-profunda .dc-folio,
+.dc-superficie-profunda .dc-titulo-secao,
+.dc-superficie-profunda .dc-titulo-pagina,
+.dc-superficie-profunda .dc-subtitulo,
+.dc-superficie-profunda .dc-prosa-p,
+.dc-superficie-profunda .dc-meta,
 .dc-umbral .dc-sobrelinha,
 .dc-umbral .dc-folio,
 .dc-umbral .dc-titulo-secao {
   color: var(--cor-texto-sobre-profunda);
 }
 
-.dc-umbral .dc-citacao-biblica {
+.dc-superficie-profunda .dc-selo,
+.dc-umbral .dc-selo {
+  color: var(--cor-foco-sobre-profunda);
+}
+
+.dc-umbral .dc-citacao-biblica,
+.dc-superficie-profunda .dc-citacao-final {
   color: var(--cor-texto-sobre-profunda);
   border-left-color: var(--cor-acento-editorial);
 }
 
-.dc-umbral :focus-visible {
+.dc-superficie-profunda .dc-tabela th,
+.dc-superficie-profunda .dc-tabela td {
+  border-color: var(--cor-borda-sutil);
+  color: var(--cor-texto-sobre-profunda);
+}
+
+.dc-secao-densa .dc-medida {
+  max-width: var(--layout-medida-prosa);
+}
+
+.dc-secao-densa {
+  padding-block: var(--espacamento-bloco);
+}
+
+.dc-umbral :focus-visible,
+.dc-superficie-profunda :focus-visible {
   outline-color: var(--cor-foco-sobre-profunda);
+}
+
+.dc-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* SPC-F5-01 — preview Lição 1 */
+.dc-folheador {
+  margin: var(--espacamento-bloco) 0;
+}
+
+.dc-folheador__galeria {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--espacamento-grupo);
+}
+
+.dc-folheador__figure {
+  margin: 0;
+}
+
+.dc-folheador__figure img {
+  display: block;
+  width: 100%;
+  max-width: min(28rem, 100%);
+  height: auto;
+  border: var(--borda-separador) solid var(--cor-borda-sutil);
+}
+
+.dc-folheador__figure figcaption {
+  margin-top: var(--espacamento-inline);
+  font-size: var(--tipografia-nota);
+  color: var(--cor-texto-suave);
+}
+
+.dc-folheador__controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacamento-grupo);
+  align-items: center;
+  margin-top: var(--espacamento-grupo);
+}
+
+.dc-folheador__controles[hidden] {
+  display: none;
+}
+
+.dc-folheador--enhanced .dc-folheador__galeria {
+  display: block;
+}
+
+.dc-folheador--enhanced .dc-folheador__pagina[hidden] {
+  display: none;
+}
+
+.dc-folheador--enhanced .dc-folheador__pagina:not([hidden]) {
+  opacity: 1;
+}
+
+.dc-folheador__rotulo {
+  margin: 0;
+  font-size: var(--tipografia-nota);
+}
+
+/* Convite permanece claro sobre encerramento navy */
+.dc-superficie-profunda .dc-convite-prefacio {
+  background: var(--cor-superficie-creme);
+  color: var(--cor-texto-primario);
+  border-color: var(--cor-acento-editorial);
+}
+
+.dc-superficie-profunda .dc-convite-prefacio .dc-selo,
+.dc-superficie-profunda .dc-convite-prefacio .dc-titulo-secao,
+.dc-superficie-profunda .dc-convite-prefacio .dc-prosa-p {
+  color: var(--cor-texto-primario);
+}
+
+.dc-superficie-profunda .dc-nota {
+  background: color-mix(in srgb, var(--cor-superficie-creme) 12%, transparent);
+  color: var(--cor-texto-sobre-profunda);
+  border-left-color: var(--cor-acento-editorial);
+}
+
+.dc-superficie-profunda .dc-assinatura,
+.dc-superficie-profunda .dc-rodape-institucional .dc-meta,
+.dc-superficie-profunda .dc-rodape-institucional .dc-nota {
+  color: var(--cor-texto-sobre-profunda);
 }
 
 .dc-nota {
@@ -342,7 +471,16 @@ html.js .dc-sumario-pe[open] .dc-indice {
 
 .dc-tabela-wrap {
   overflow-x: auto;
+  max-width: 100%;
   margin: var(--espacamento-bloco) 0;
+}
+
+.dc-medida,
+.dc-movimento,
+.dc-secao,
+.dc-folheador {
+  max-width: 100%;
+  min-width: 0;
 }
 
 .dc-tabela {

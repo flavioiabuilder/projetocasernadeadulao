@@ -31,7 +31,7 @@
 - [ ] Apreciação pastoral do Módulo 1 e deste prospecto
 - [ ] Licença do código e do conteúdo pastoral
 - [ ] Domínio próprio e política de indexação (`noindex`)
-- [ ] Incluir PDF do dossiê de apreciação (7 páginas) quando disponível — link na seção 15
+- [ ] Disponibilizar PDF do dossiê de apreciação (7 páginas) para circulação pública quando a versão pública estiver concluída e autorizada — então acrescentar link discreto na seção 15 (não inventar arquivo nem link falso)
 
 ## Explícitamente fora (produto)
 

@@ -1,32 +1,32 @@
 # CMP-13 — Comparação lado a lado
 
-| Campo | Conteúdo |
-| --- | --- |
-| 1. ID e nome | CMP-13 — Comparação lado a lado |
-| 2. Camada | Componente |
-| 3. Status | CANDIDATO (`0.1.0-candidate`) |
-| 4. Problema | Contrastar duas colunas com semântica adequada |
-| 5. Quando usar | Comparações editoriais do prospecto (dois blocos de prosa) |
-| 6. Quando não usar | Grid de cards; dados tabulares reais (usar `<table>`); glossário termo/descrição (usar `<dl>`) |
-| 7. Anatomia / slots | `.dc-comparacao` > dois (ou mais) `.dc-comparacao__lado` com heading + prosa |
-| 8. Conteúdo | Texto de `conteudo/`; sem ícones genéricos de feature |
-| 9. HTML nativo | **Composição editorial** com `<div>`/`<section>` — **sem** `role="table"` / `row` / `cell` quando não há grade de dados. Se houver dados tabulares: `<table>`. Se termo/descrição: `<dl>` |
-| 10. Semântica / nome acessível | Cada lado com heading (`h3`/`h4` no nível correto) ou `<strong>` + prosa; não fingir tabela com ARIA |
-| 11. API pública | Classes `dc-comparacao`, `dc-comparacao__lado` |
-| 12. Variantes | Editorial (default). Tabular e DL são padrões HTML nativos, não variantes ARIA desta classe |
-| 13. Tamanhos | N/A além de medida de prosa |
-| 14. Tokens semânticos | `--espacamento-bloco`, `--espacamento-grupo`, `--cor-borda-sutil`, `--borda-separador`, `--layout-medida-prosa` |
-| 15. Estados | default; overflow mobile: empilhar colunas |
-| 16. Teclado | N/A salvo links internos |
-| 17. Foco | Links usam `--foco-anel-largura`, `--foco-anel-estilo`, `--foco-anel-offset`, `--cor-foco-sobre-papel` |
-| 18. Responsividade | Empilhar abaixo de breakpoint de layout (MQ documentada no CSS do consumidor; lab usa 700px como constante de demo) |
-| 19. Overflow / extremo | Texto longo quebra; não truncar |
-| 20. Reduced motion | Sem animação obrigatória |
-| 21. Microcopy | Só `conteudo/` |
-| 22. Exemplo correto | `design-system/laboratorio/` seção CMP-13 (composição editorial) |
-| 23. Exemplo incorreto | `role="table"` com uma célula por “linha”; cards de feature |
-| 24. Dependências | Fundações tokens; sem DevTools |
-| 25. Cobertura de testes | Contrato + axe no grid editorial |
-| 26. Evidências | prospecto `.comparacao` |
-| 27. Migração futura | Classes legado → `dc-*` na Fase 6 |
-| 28. Limitações | Runtime legado ainda não consome este contrato |
+| Campo                          | Conteúdo                                                                                                                                                                                  |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. ID e nome                   | CMP-13 — Comparação lado a lado                                                                                                                                                           |
+| 2. Camada                      | Componente                                                                                                                                                                                |
+| 3. Status                      | CANDIDATO (`0.1.0-candidate`)                                                                                                                                                             |
+| 4. Problema                    | Contrastar duas colunas com semântica adequada                                                                                                                                            |
+| 5. Quando usar                 | Comparações editoriais do prospecto (dois blocos de prosa)                                                                                                                                |
+| 6. Quando não usar             | Grid de cards; dados tabulares reais (usar `<table>`); glossário termo/descrição (usar `<dl>`)                                                                                            |
+| 7. Anatomia / slots            | `.dc-comparacao` > dois (ou mais) `.dc-comparacao__lado` com heading + prosa                                                                                                              |
+| 8. Conteúdo                    | Texto de `conteudo/`; sem ícones genéricos de feature                                                                                                                                     |
+| 9. HTML nativo                 | **Composição editorial** com `<div>`/`<section>` — **sem** `role="table"` / `row` / `cell` quando não há grade de dados. Se houver dados tabulares: `<table>`. Se termo/descrição: `<dl>` |
+| 10. Semântica / nome acessível | Cada lado com heading (`h3`/`h4` no nível correto) ou `<strong>` + prosa; não fingir tabela com ARIA                                                                                      |
+| 11. API pública                | Classes `dc-comparacao`, `dc-comparacao__lado`                                                                                                                                            |
+| 12. Variantes                  | Editorial (default). Tabular e DL são padrões HTML nativos, não variantes ARIA desta classe                                                                                               |
+| 13. Tamanhos                   | N/A além de medida de prosa                                                                                                                                                               |
+| 14. Tokens semânticos          | `--espacamento-bloco`, `--espacamento-grupo`, `--cor-borda-sutil`, `--borda-separador`, `--layout-medida-prosa`                                                                           |
+| 15. Estados                    | default; overflow mobile: empilhar colunas                                                                                                                                                |
+| 16. Teclado                    | N/A salvo links internos                                                                                                                                                                  |
+| 17. Foco                       | Links usam `--foco-anel-largura`, `--foco-anel-estilo`, `--foco-anel-offset`, `--cor-foco-sobre-papel`                                                                                    |
+| 18. Responsividade             | Empilhar abaixo de breakpoint de layout (MQ documentada no CSS do consumidor; lab usa 700px como constante de demo)                                                                       |
+| 19. Overflow / extremo         | Texto longo quebra; não truncar                                                                                                                                                           |
+| 20. Reduced motion             | Sem animação obrigatória                                                                                                                                                                  |
+| 21. Microcopy                  | Só `conteudo/`                                                                                                                                                                            |
+| 22. Exemplo correto            | `design-system/laboratorio/` seção CMP-13 (composição editorial)                                                                                                                          |
+| 23. Exemplo incorreto          | `role="table"` com uma célula por “linha”; cards de feature                                                                                                                               |
+| 24. Dependências               | Fundações tokens; sem DevTools                                                                                                                                                            |
+| 25. Cobertura de testes        | Contrato + axe no grid editorial                                                                                                                                                          |
+| 26. Evidências                 | prospecto `.comparacao`                                                                                                                                                                   |
+| 27. Migração futura            | Classes legado → `dc-*` na Fase 6                                                                                                                                                         |
+| 28. Limitações                 | Runtime legado ainda não consome este contrato                                                                                                                                            |

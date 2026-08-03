@@ -1,32 +1,32 @@
 # CMP-09 — Marcador de progresso
 
-| Campo | Conteúdo |
-| --- | --- |
-| 1. ID e nome | CMP-09 — Marcador de progresso |
-| 2. Camada | Componente |
-| 3. Status | CANDIDATO (`0.1.0-candidate`) |
-| 4. Problema | Indicar avanço de leitura/documento |
-| 5. Quando usar | Chrome de leitura pastoral |
-| 6. Quando não usar | Gamificação; progress de upload |
-| 7. Anatomia / slots | Container `.dc-progresso[role=progressbar]` + filho `.dc-progresso__barra` |
-| 8. Conteúdo | `aria-label` (ou texto associado) descrevendo o progresso; valor em `aria-valuenow` |
-| 9. HTML nativo | `role="progressbar"` com `aria-valuemin`, `aria-valuemax`, `aria-valuenow` |
-| 10. Semântica / nome acessível | `aria-label` obrigatório se não houver texto visível equivalente |
-| 11. API pública | **Uma origem de estado:** JS (ou HTML estático) define `aria-valuenow` (0–100) e a mesma função escreve `--dc-progresso` na barra como `${now}%`. Proibido manter `aria-valuenow` e `--dc-progresso` editados independentemente |
-| 12. Variantes | Uma variante; largura visual deriva só de `--dc-progresso` sincronizado |
-| 13. Tamanhos | Altura da trilha é medida física fina (ex. 4px) — constante de chrome, não token de tipografia |
-| 14. Tokens semânticos | `--cor-acento-editorial`, `--cor-superficie-creme`, `--raio-controle` |
-| 15. Estados | valor 0…100; empty se 0; loading N/A |
-| 16. Teclado | N/A se não focável |
-| 17. Foco | N/A no marcador; chrome adjacente usa `--foco-anel-largura`, `--foco-anel-estilo`, `--foco-anel-offset`, `--cor-foco-sobre-papel` |
-| 18. Responsividade | Trilha fluida na largura disponível; reflow ≥320px |
-| 19. Overflow / extremo | Não aplica texto longo no marcador |
-| 20. Reduced motion | Sem animação obrigatória da barra; respeitar `prefers-reduced-motion` |
-| 21. Microcopy | Rótulo UI neutro (“Progresso de leitura”); sem inventar pastoral |
-| 22. Exemplo correto | `design-system/laboratorio/` seção CMP-09 + `lab.js` `setProgresso` |
-| 23. Exemplo incorreto | Duas fontes de verdade divergentes; gamificação |
-| 24. Dependências | Fundações tokens; sem DevTools |
-| 25. Cobertura de testes | Contrato unitário + e2e lab |
-| 26. Evidências | prospecto progresso-topo |
-| 27. Migração futura | Classes legado → `dc-*` na Fase 6 |
-| 28. Limitações | Runtime legado ainda não consome este contrato |
+| Campo                          | Conteúdo                                                                                                                                                                                                                        |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1. ID e nome                   | CMP-09 — Marcador de progresso                                                                                                                                                                                                  |
+| 2. Camada                      | Componente                                                                                                                                                                                                                      |
+| 3. Status                      | CANDIDATO (`0.1.0-candidate`)                                                                                                                                                                                                   |
+| 4. Problema                    | Indicar avanço de leitura/documento                                                                                                                                                                                             |
+| 5. Quando usar                 | Chrome de leitura pastoral                                                                                                                                                                                                      |
+| 6. Quando não usar             | Gamificação; progress de upload                                                                                                                                                                                                 |
+| 7. Anatomia / slots            | Container `.dc-progresso[role=progressbar]` + filho `.dc-progresso__barra`                                                                                                                                                      |
+| 8. Conteúdo                    | `aria-label` (ou texto associado) descrevendo o progresso; valor em `aria-valuenow`                                                                                                                                             |
+| 9. HTML nativo                 | `role="progressbar"` com `aria-valuemin`, `aria-valuemax`, `aria-valuenow`                                                                                                                                                      |
+| 10. Semântica / nome acessível | `aria-label` obrigatório se não houver texto visível equivalente                                                                                                                                                                |
+| 11. API pública                | **Uma origem de estado:** JS (ou HTML estático) define `aria-valuenow` (0–100) e a mesma função escreve `--dc-progresso` na barra como `${now}%`. Proibido manter `aria-valuenow` e `--dc-progresso` editados independentemente |
+| 12. Variantes                  | Uma variante; largura visual deriva só de `--dc-progresso` sincronizado                                                                                                                                                         |
+| 13. Tamanhos                   | Altura da trilha é medida física fina (ex. 4px) — constante de chrome, não token de tipografia                                                                                                                                  |
+| 14. Tokens semânticos          | `--cor-acento-editorial`, `--cor-superficie-creme`, `--raio-controle`                                                                                                                                                           |
+| 15. Estados                    | valor 0…100; empty se 0; loading N/A                                                                                                                                                                                            |
+| 16. Teclado                    | N/A se não focável                                                                                                                                                                                                              |
+| 17. Foco                       | N/A no marcador; chrome adjacente usa `--foco-anel-largura`, `--foco-anel-estilo`, `--foco-anel-offset`, `--cor-foco-sobre-papel`                                                                                               |
+| 18. Responsividade             | Trilha fluida na largura disponível; reflow ≥320px                                                                                                                                                                              |
+| 19. Overflow / extremo         | Não aplica texto longo no marcador                                                                                                                                                                                              |
+| 20. Reduced motion             | Sem animação obrigatória da barra; respeitar `prefers-reduced-motion`                                                                                                                                                           |
+| 21. Microcopy                  | Rótulo UI neutro (“Progresso de leitura”); sem inventar pastoral                                                                                                                                                                |
+| 22. Exemplo correto            | `design-system/laboratorio/` seção CMP-09 + `lab.js` `setProgresso`                                                                                                                                                             |
+| 23. Exemplo incorreto          | Duas fontes de verdade divergentes; gamificação                                                                                                                                                                                 |
+| 24. Dependências               | Fundações tokens; sem DevTools                                                                                                                                                                                                  |
+| 25. Cobertura de testes        | Contrato unitário + e2e lab                                                                                                                                                                                                     |
+| 26. Evidências                 | prospecto progresso-topo                                                                                                                                                                                                        |
+| 27. Migração futura            | Classes legado → `dc-*` na Fase 6                                                                                                                                                                                               |
+| 28. Limitações                 | Runtime legado ainda não consome este contrato                                                                                                                                                                                  |

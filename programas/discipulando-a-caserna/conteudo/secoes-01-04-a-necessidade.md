@@ -15,11 +15,11 @@
 
 **Parágrafos:**
 
-> Não começo esta apresentação pelo material. Começo pelo homem que o tornou necessário.
+Não começo esta apresentação pelo material. Começo pelo homem que o tornou necessário.
 
-> A história é recontada em ordem — porque foi essa ordem que produziu tudo o que veio depois. Primeiro apareceu um homem que a igreja tinha dificuldade de alcançar. Depois ficou claro que o material disponível não o alcançava. Só então nasceu a decisão de escrever outro.
+A história é recontada em ordem — porque foi essa ordem que produziu tudo o que veio depois. Primeiro apareceu um homem que a igreja tinha dificuldade de alcançar. Depois ficou claro que o material disponível não o alcançava. Só então nasceu a decisão de escrever outro.
 
-> O que se apresenta aqui é o resultado dessa sequência: uma convicção, um método e doze lições prontas. Nada disto é definitivo. Estas páginas são versão candidata, submetidas à apreciação pastoral.
+O que se apresenta aqui é o resultado dessa sequência: uma convicção, um método e doze lições prontas. Nada disto é definitivo. Estas páginas são versão candidata, submetidas à apreciação pastoral.
 
 **Selo:** `VERSÃO CANDIDATA — AGUARDANDO APRECIAÇÃO PASTORAL`
 
@@ -36,21 +36,23 @@
 
 **Parágrafos:**
 
-> O Discipulando a Caserna nasceu no Presídio Militar da Polícia Militar do Ceará, dentro do Projeto Caserna de Adulão. Não nasceu de um plano editorial. Nasceu de encontros — a Bíblia aberta num lugar onde muitos não entrariam, diante de homens que muitos já teriam descartado.
+O Discipulando a Caserna nasceu no Presídio Militar da Polícia Militar do Ceará, dentro do Projeto Caserna de Adulão. Não nasceu de um plano editorial. Nasceu de encontros — a Bíblia aberta num lugar onde muitos não entrariam, diante de homens que muitos já teriam descartado.
 
-> São homens formados sob disciplina e hierarquia. Sabem o que é ordem, escala, missão e patente. Conhecem a linguagem do dever melhor do que a maioria dos fiéis conhece a linguagem da igreja. E, ainda assim, chegaram ali em queda, culpa e isolamento.
+São homens formados sob disciplina e hierarquia. Sabem o que é ordem, escala, missão e patente. Conhecem a linguagem do dever melhor do que a maioria dos fiéis conhece a linguagem da igreja. E, ainda assim, chegaram ali em queda, culpa e isolamento.
 
-> É uma combinação incomum, e ela explica quase tudo: **eles carregam a farda e a vergonha ao mesmo tempo.**
+É uma combinação incomum, e ela explica quase tudo: **eles carregam a farda e a vergonha ao mesmo tempo.**
 
 **Bloco de destaque** (citação da Nota do Autor, atribuída ao autor):
 
-> Muitos chegaram carregando simultaneamente a farda e uma vergonha que nenhuma regulação institucional resolve — a vergonha de quem caiu no campo que deveria defender.
+:::nota
+Muitos chegaram carregando simultaneamente a farda e uma vergonha que nenhuma regulação institucional resolve — a vergonha de quem caiu no campo que deveria defender.
+:::
 
 **Parágrafos de fechamento:**
 
-> Esse homem não chega curioso. Chega quebrado. Não chega perguntando o que a Bíblia diz sobre um tema; chega perguntando, sem dizer em voz alta, se ainda há lugar para ele. Desconfia de autoridade, porque foi julgado por uma. Desconfia de acolhimento, porque aprendeu que acolhimento costuma vir com cobrança logo atrás.
+Esse homem não chega curioso. Chega quebrado. Não chega perguntando o que a Bíblia diz sobre um tema; chega perguntando, sem dizer em voz alta, se ainda há lugar para ele. Desconfia de autoridade, porque foi julgado por uma. Desconfia de acolhimento, porque aprendeu que acolhimento costuma vir com cobrança logo atrás.
 
-> A prisão militar é lugar de correção. Sob o agir do Espírito Santo, tornou-se também campo de reconstrução espiritual e vocacional. Foi ali, e não numa mesa de trabalho, que este projeto começou.
+A prisão militar é lugar de correção. Sob o agir do Espírito Santo, tornou-se também campo de reconstrução espiritual e vocacional. Foi ali, e não numa mesa de trabalho, que este projeto começou.
 
 **Nota de layout:** fundo claro (papel). Texto em coluna estreita, ritmo de leitura lento. O bloco de destaque em creme com filete bronze à esquerda. Sem fotografia — nenhuma imagem de pessoas, em nenhuma hipótese.
 
@@ -63,7 +65,7 @@
 
 **Parágrafo de abertura:**
 
-> Aqui é preciso ser exato, porque a afirmação se presta a mal-entendido. O problema nunca foi a qualidade do material de discipulado disponível. Há material excelente. O problema é que ele foi escrito para outro homem, em outro lugar, com outra pergunta na cabeça.
+Aqui é preciso ser exato, porque a afirmação se presta a mal-entendido. O problema nunca foi a qualidade do material de discipulado disponível. Há material excelente. O problema é que ele foi escrito para outro homem, em outro lugar, com outra pergunta na cabeça.
 
 **Elemento central — os cinco descompassos.** Apresentar como comparação em duas colunas: o que o material padrão pressupõe × o que se encontra na caserna.
 
@@ -77,11 +79,11 @@
 
 **Parágrafos de fechamento:**
 
-> Nenhum desses descompassos é falha de quem escreveu. É diferença de destinatário. Um material pensado para uma classe de igreja no domingo não tem obrigação de funcionar numa unidade prisional militar na quarta-feira.
+Nenhum desses descompassos é falha de quem escreveu. É diferença de destinatário. Um material pensado para uma classe de igreja no domingo não tem obrigação de funcionar numa unidade prisional militar na quarta-feira.
 
-> Mas a consequência é concreta: usar o material comum naquele ambiente exige que o instrutor improvise a cada encontro — traduzindo linguagem, contornando pressupostos, adiando temas para os quais o texto não preparou ninguém. E improviso, com esses homens, custa caro. Uma palavra mal colocada reabre uma ferida que levou meses para fechar.
+Mas a consequência é concreta: usar o material comum naquele ambiente exige que o instrutor improvise a cada encontro — traduzindo linguagem, contornando pressupostos, adiando temas para os quais o texto não preparou ninguém. E improviso, com esses homens, custa caro. Uma palavra mal colocada reabre uma ferida que levou meses para fechar.
 
-> Foi essa constatação, repetida encontro após encontro, que tornou inevitável a decisão seguinte: seria preciso escrever um material próprio — com a linguagem daquele público, no ritmo daquele ambiente, e com a vergonha tratada logo na primeira lição, e não na décima.
+Foi essa constatação, repetida encontro após encontro, que tornou inevitável a decisão seguinte: seria preciso escrever um material próprio — com a linguagem daquele público, no ritmo daquele ambiente, e com a vergonha tratada logo na primeira lição, e não na décima.
 
 **Nota de layout:** fundo navy. A tabela comparativa é o elemento visual central da seção — no desktop, duas colunas com o filete bronze ao centro; no mobile, pares empilhados. Deve ser lida em dez segundos e entendida sem esforço.
 
@@ -99,11 +101,11 @@
 
 **Parágrafos:**
 
-> O nome do projeto não veio de uma escolha de marca. Veio de um reconhecimento: aquilo que acontecia ali já estava descrito nas Escrituras, e há muito tempo.
+O nome do projeto não veio de uma escolha de marca. Veio de um reconhecimento: aquilo que acontecia ali já estava descrito nas Escrituras, e há muito tempo.
 
-> Davi não fundou uma academia de elite. Fundou um refúgio. E o texto é preciso quanto a quem apareceu: os em aperto, os endividados, os amargurados de espírito. Não era o retrato de uma tropa — era o retrato de um problema. E, no entanto, foi daquele ajuntamento que Deus formou os valentes que marchariam com Davi.
+Davi não fundou uma academia de elite. Fundou um refúgio. E o texto é preciso quanto a quem apareceu: os em aperto, os endividados, os amargurados de espírito. Não era o retrato de uma tropa — era o retrato de um problema. E, no entanto, foi daquele ajuntamento que Deus formou os valentes que marchariam com Davi.
 
-> A caverna não os manteve escondidos. Ela os reuniu para refazê-los.
+A caverna não os manteve escondidos. Ela os reuniu para refazê-los.
 
 **Bloco de paralelo** — três pares, apresentados lado a lado:
 
@@ -115,11 +117,11 @@
 
 **Parágrafos de fechamento:**
 
-> Foi esse paralelo que deu nome ao projeto e forma ao material. Se a caverna é o lugar onde o quebrado é acolhido antes de ser útil, então a primeira lição não podia começar cobrando. Tinha que começar acolhendo.
+Foi esse paralelo que deu nome ao projeto e forma ao material. Se a caverna é o lugar onde o quebrado é acolhido antes de ser útil, então a primeira lição não podia começar cobrando. Tinha que começar acolhendo.
 
-> E se o acolhimento não é o fim, mas o começo de uma marcha, então o material não podia parar no consolo. Tinha que conduzir — passo a passo, do chamado ao envio.
+E se o acolhimento não é o fim, mas o começo de uma marcha, então o material não podia parar no consolo. Tinha que conduzir — passo a passo, do chamado ao envio.
 
-> As duas convicções que estruturam tudo o que vem a seguir nascem daqui.
+As duas convicções que estruturam tudo o que vem a seguir nascem daqui.
 
 **Nota de layout:** fundo claro. A citação bíblica é o elemento tipográfico dominante da seção — corpo maior, serifada, com respiro generoso. O bloco de paralelo em duas colunas no desktop, empilhado no mobile.
 

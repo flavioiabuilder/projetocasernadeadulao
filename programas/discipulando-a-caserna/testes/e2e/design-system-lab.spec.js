@@ -60,7 +60,9 @@ test.describe("design system — laboratório", () => {
     const sync = await page.locator("#progresso-demo").evaluate((el) => {
       const now = el.getAttribute("aria-valuenow");
       const barra = el.querySelector(".dc-progresso__barra");
-      const css = barra ? getComputedStyle(barra).getPropertyValue("--dc-progresso").trim() : "";
+      const css = barra
+        ? getComputedStyle(barra).getPropertyValue("--dc-progresso").trim()
+        : "";
       return { now, css };
     });
     expect(sync.now).toBe("40");

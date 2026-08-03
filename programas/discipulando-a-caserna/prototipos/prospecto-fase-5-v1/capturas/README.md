@@ -11,3 +11,5 @@ Arquivos esperados (viewports + reduced motion):
 - `topo-1440x900-reduced-motion.png`
 
 Complementar com E2E: `npm run test:discipulando:prototipo-fase-5:e2e` (Axe, teclado, PE sem JS).
+
+Metadados técnicos da última corrida: `meta.json`.

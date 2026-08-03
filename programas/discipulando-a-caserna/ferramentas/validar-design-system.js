@@ -172,6 +172,55 @@ function checkPlaceholders() {
   if (failures === before) ok("sem placeholders proibidos nas fichas");
 }
 
+function collectDefinedCustomProps(cssText) {
+  const defined = new Set();
+  const re = /--([a-zA-Z0-9-]+)\s*:/g;
+  let m;
+  while ((m = re.exec(cssText))) {
+    defined.add(`--${m[1]}`);
+  }
+  return defined;
+}
+
+function checkSharedStylesCustomProps() {
+  const before = failures;
+  const stylesDir = path.join(DS, "styles");
+  const tokensCss = read(path.join(DS, "tokens/tokens.css"));
+  const defined = collectDefinedCustomProps(tokensCss);
+  const files = ["foundations.css", "components.css", "patterns.css"]
+    .map((f) => path.join(stylesDir, f))
+    .filter((p) => fs.existsSync(p));
+  if (files.length < 3) {
+    fail("design-system/styles: foundations/components/patterns ausentes");
+  }
+  for (const file of files) {
+    const css = read(file).replace(/\/\*[\s\S]*?\*\//g, "");
+    collectDefinedCustomProps(css).forEach((p) => defined.add(p));
+    if (/--primitivo-/.test(css)) {
+      fail(`${path.basename(file)}: referência a primitivo proibida`);
+    }
+    if (/devtools|aramco|soul-church/i.test(css)) {
+      fail(`${path.basename(file)}: referência DevTools proibida`);
+    }
+    const refs = css.matchAll(/var\(\s*(--[a-zA-Z0-9-]+)/g);
+    for (const ref of refs) {
+      const name = ref[1];
+      // Variáveis de runtime (progresso JS etc.) usam prefixo --dc-
+      if (name.startsWith("--dc-")) continue;
+      if (!defined.has(name)) {
+        fail(`${path.basename(file)}: custom property indefinida ${name}`);
+      }
+    }
+  }
+  if (!defined.has("--cor-foco-sobre-papel")) {
+    fail("token --cor-foco-sobre-papel ausente");
+  }
+  if (defined.has("--foco-anel-cor-sobre-papel")) {
+    fail("token legado --foco-anel-cor-sobre-papel não deve existir");
+  }
+  if (failures === before) ok("custom properties do CSS compartilhado");
+}
+
 function main() {
   console.log("validate:discipulando:design-system — Fase 4");
   checkFiles();
@@ -180,6 +229,7 @@ function main() {
   checkLabCss();
   checkTokenRefs();
   checkPlaceholders();
+  checkSharedStylesCustomProps();
   if (failures > 0) {
     console.error(
       `\nvalidate:discipulando:design-system FALHOU com ${failures} problema(s).`

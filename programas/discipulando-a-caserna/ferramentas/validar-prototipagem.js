@@ -93,7 +93,10 @@ function main() {
     const estado = JSON.parse(fs.readFileSync(estadoPath, "utf8"));
     if (String(estado.status).toLowerCase() === "aprovado" && !estado.prototipoCanonico) {
       fail("estado aprovado sem prototipoCanonico");
-    } else if (String(estado.fase6).toLowerCase() !== "bloqueada" && estado.status !== "aprovado") {
+    } else if (
+      String(estado.fase6).toLowerCase() !== "bloqueada" &&
+      estado.status !== "aprovado"
+    ) {
       fail("fase6 não bloqueada com status pendente");
     } else ok("estado F5 coerente");
     if (estado.autorizacaoFase6 === true && !estado.prototipoCanonico) {
@@ -101,7 +104,8 @@ function main() {
     }
   }
 
-  if (/cdn\.|unpkg\.|jsdelivr\.|fonts\.google/i.test(html)) fail("rede/CDN externa no HTML");
+  if (/cdn\.|unpkg\.|jsdelivr\.|fonts\.google/i.test(html))
+    fail("rede/CDN externa no HTML");
   else ok("sem CDN");
 
   if (/Lacuna declarada/i.test(html)) fail("lacuna artificial ainda presente no HTML");
@@ -111,7 +115,8 @@ function main() {
     fail("lista de escopo ausente (parser/listas)");
   } else ok("listas de escopo");
 
-  if (!/<details class="dc-sumario-pe"/.test(html)) fail("sumário PE (<details>) ausente");
+  if (!/<details class="dc-sumario-pe"/.test(html))
+    fail("sumário PE (<details>) ausente");
   else ok("sumário progressive enhancement");
 
   const matriz = fs.readFileSync(path.join(cand, "parcial/matriz.html"), "utf8");
@@ -123,12 +128,17 @@ function main() {
     fail("seção 11 não preserva duas tabelas");
   } else ok("seção 11 com duas tabelas");
 
-  const rel = JSON.parse(fs.readFileSync(path.join(cand, "parcial/relatorio.json"), "utf8"));
-  if (rel.geradoEm != null || rel.ms != null) fail("relatorio.json contém telemetria não determinística");
+  const rel = JSON.parse(
+    fs.readFileSync(path.join(cand, "parcial/relatorio.json"), "utf8")
+  );
+  if (rel.geradoEm != null || rel.ms != null)
+    fail("relatorio.json contém telemetria não determinística");
   else ok("relatório determinístico");
 
   if (failures > 0) {
-    console.error(`\nvalidate:discipulando:prototipagem FALHOU com ${failures} problema(s).`);
+    console.error(
+      `\nvalidate:discipulando:prototipagem FALHOU com ${failures} problema(s).`
+    );
     process.exit(1);
   }
   console.log("\nvalidate:discipulando:prototipagem OK");

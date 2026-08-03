@@ -78,7 +78,9 @@ test.describe("prototipo fase 5 — candidato", () => {
       const barra = root && root.querySelector(".dc-progresso__barra");
       return {
         now: root ? root.getAttribute("aria-valuenow") : null,
-        css: barra ? getComputedStyle(barra).getPropertyValue("--dc-progresso").trim() : "",
+        css: barra
+          ? getComputedStyle(barra).getPropertyValue("--dc-progresso").trim()
+          : "",
       };
     });
     expect(Number(sync.now)).toBeGreaterThan(0);
@@ -104,5 +106,39 @@ test.describe("prototipo fase 5 — candidato", () => {
       });
       expect(overflow, `overflow em ${width}`).toBeFalsy();
     }
+  });
+
+  test("folheador enhancement: edições, limites e região viva", async ({ page }) => {
+    await page.goto(CAND);
+    const root = page.locator("[data-folheador]");
+    await root.scrollIntoViewIfNeeded();
+    await expect(root).toHaveClass(/dc-folheador--enhanced/);
+    await expect(page.locator("[data-folheador-controles]")).toBeVisible();
+    await page.locator('[data-folheador-edicao="instrutor"]').click();
+    await expect(page.locator("[data-folheador-live]")).toContainText(/Instrutor/i);
+    await page.locator("[data-folheador-next]").click();
+    await expect(page.locator("[data-folheador-prev]")).toBeEnabled();
+    await page.locator('[data-folheador-edicao="aluno"]').click();
+    await expect(page.locator("[data-folheador-prev]")).toBeDisabled();
+  });
+
+  test("folheador acessível sem JavaScript (galeria completa)", async ({ browser }) => {
+    const context = await browser.newContext({ javaScriptEnabled: false });
+    const page = await context.newPage();
+    await page.goto(CAND);
+    await expect(page.locator("[data-folheador]")).toBeVisible();
+    await expect(page.locator(".dc-folheador__pagina")).toHaveCount(16);
+    await expect(page.locator("[data-folheador-controles]")).toBeHidden();
+    await context.close();
+  });
+
+  test("PDF não promete download disponível", async ({ page }) => {
+    await page.goto(CAND);
+    await expect(page.locator("#secao-15")).toContainText(
+      /versão pública em preparação/i
+    );
+    await expect(
+      page.locator('#secao-15 a[download], #secao-15 a[href$=".pdf"]')
+    ).toHaveCount(0);
   });
 });

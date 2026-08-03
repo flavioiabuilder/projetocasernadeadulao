@@ -436,7 +436,12 @@ function checkFase5EstadoSemantico() {
       fail("F5: fase6 deve permanecer bloqueada até status aprovado + decisão humana");
     }
   } else {
-    if (!estado.prototipoCanonico || !estado.path || !estado.data || !estado.responsavel) {
+    if (
+      !estado.prototipoCanonico ||
+      !estado.path ||
+      !estado.data ||
+      !estado.responsavel
+    ) {
       fail("F5: status aprovado exige prototipoCanonico, path, data e responsavel");
     }
     if (fase6 === "liberada" && !estado.autorizacaoFase6) {
@@ -444,11 +449,17 @@ function checkFase5EstadoSemantico() {
     }
   }
   const decisao = fs.readFileSync(decisaoPath, "utf8");
-  if (!/PENDENTE DE DECISÃO|Status:\s*APROVADO|Status:\s*REJEITADO|retorno à Fase 2/i.test(decisao)) {
+  if (
+    !/PENDENTE DE DECISÃO|Status:\s*APROVADO|Status:\s*REJEITADO|retorno à Fase 2/i.test(
+      decisao
+    )
+  ) {
     fail("F5: decisão MD sem status reconhecível");
   }
   if (status !== "aprovado" && !/NENHUM|BLOQUEADA/i.test(decisao)) {
-    fail("F5: enquanto não aprovado, decisão deve declarar canônico NENHUM e Fase 6 BLOQUEADA");
+    fail(
+      "F5: enquanto não aprovado, decisão deve declarar canônico NENHUM e Fase 6 BLOQUEADA"
+    );
   }
   if (failures === before) ok("F5: estado semântico mínimo presente");
 }
@@ -464,32 +475,51 @@ function checkFase6EstadoSemantico() {
     "programas/discipulando-a-caserna/docs/metodo/fase-6/plano-de-implementacao.md"
   );
   const pipeline = path.join(ROOT, "metodo/PIPELINE.md");
+  const estadoPath = path.join(
+    ROOT,
+    "programas/discipulando-a-caserna/docs/metodo/fase-5/estado-prototipo-canonico.json"
+  );
+  const estado = fs.existsSync(estadoPath) ? readJson(estadoPath) : null;
+  const liberada = Boolean(
+    estado &&
+    String(estado.status || "").toLowerCase() === "aprovado" &&
+    estado.autorizacaoFase6 === true &&
+    String(estado.fase6 || "").toLowerCase() === "liberada"
+  );
+
   if (!fs.existsSync(plano)) {
     fail("F6: plano-de-implementacao.md ausente");
   } else {
     const text = fs.readFileSync(plano, "utf8");
-    if (!/BLOQUEADA POR F5-12|autorizacaoFase6:\s*false/i.test(text)) {
+    if (liberada) {
+      if (!/LIBERADA|autorizacaoFase6:\s*true|após F5-12/i.test(text)) {
+        fail(
+          "F6: com autorização, plano deve refletir liberação técnica (sem iniciar produção)"
+        );
+      }
+    } else if (!/BLOQUEADA POR F5-12|autorizacaoFase6:\s*false/i.test(text)) {
       fail("F6: plano deve declarar bloqueio por F5-12 enquanto não autorizada");
     }
   }
   if (fs.existsSync(pipeline)) {
     const pipe = fs.readFileSync(pipeline, "utf8");
-    if (!/\|\s*6\s*\|[^\n]*BLOQUEADA/i.test(pipe)) {
+    if (liberada) {
+      if (!/\|\s*6\s*\|[^\n]*(LIBERADA|autorizada)/i.test(pipe)) {
+        fail("F6: PIPELINE deve marcar Fase 6 como LIBERADA após F5-12");
+      }
+      if (!/não iniciada|sem criar prospecto\/|não publicar/i.test(pipe)) {
+        fail(
+          "F6: PIPELINE liberada deve deixar explícito que produção/Pages permanecem bloqueados"
+        );
+      }
+    } else if (!/\|\s*6\s*\|[^\n]*BLOQUEADA/i.test(pipe)) {
       fail("F6: PIPELINE deve marcar Fase 6 como BLOQUEADA até F5-12");
     }
   }
   const prodPath = path.join(ROOT, "programas/discipulando-a-caserna/prospecto");
   if (fs.existsSync(prodPath)) {
-    // Produção só após autorização — avisar se existir sem F5-12
-    const estadoPath = path.join(
-      ROOT,
-      "programas/discipulando-a-caserna/docs/metodo/fase-5/estado-prototipo-canonico.json"
-    );
-    if (fs.existsSync(estadoPath)) {
-      const estado = readJson(estadoPath);
-      if (!estado.autorizacaoFase6) {
-        fail("F6: diretório prospecto/ existe sem autorizacaoFase6");
-      }
+    if (!estado || !estado.autorizacaoFase6) {
+      fail("F6: diretório prospecto/ existe sem autorizacaoFase6");
     }
   }
   if (failures === before) ok("F6: estado semântico mínimo (blueprint/bloqueio)");

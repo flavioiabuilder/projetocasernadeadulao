@@ -1,9 +1,10 @@
 # Plano de implementação — Fase 6
 
-- **Status:** BLUEPRINT — **BLOQUEADA POR F5-12**
-- **Data:** 2026-08-02
-- **Autorização:** `autorizacaoFase6: false` em
+- **Status:** BLUEPRINT — **LIBERADA após F5-12** (produção **não iniciada**)
+- **Data:** 2026-08-03
+- **Autorização:** `autorizacaoFase6: true` em
   [`../fase-5/estado-prototipo-canonico.json`](../fase-5/estado-prototipo-canonico.json)
+- **Restrição:** não criar `prospecto/`, não publicar, não remover `noindex` nesta liberação
 
 ## Stack (F6-03)
 
