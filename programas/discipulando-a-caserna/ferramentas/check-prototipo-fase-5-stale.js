@@ -39,18 +39,36 @@ function main() {
 
   const parseAbs = path.join(__dirname, "parse-md-blocos.js").replace(/\\/g, "/");
   const instAbs = path.join(__dirname, "institucional.js").replace(/\\/g, "/");
+  const raizLit = `const raiz = ${JSON.stringify(raiz)};`;
+  const destLit = `const destRoot = ${JSON.stringify(tmpCand)};`;
   const src = fs
     .readFileSync(genFile, "utf8")
-    .replace(
-      /const raiz = path\.join\(__dirname, "\.\."\);/,
-      `const raiz = ${JSON.stringify(raiz)};`
-    )
+    .replace(/const raiz = path\.join\(__dirname, "\.\."\);/, raizLit)
     .replace(
       /const destRoot = path\.join\(raiz, "prototipos", "prospecto-fase-5-v1"\);/,
-      `const destRoot = ${JSON.stringify(tmpCand)};`
+      destLit
     )
     .replace(`require("./parse-md-blocos")`, `require(${JSON.stringify(parseAbs)})`)
     .replace(`require("./institucional")`, `require(${JSON.stringify(instAbs)})`);
+  // Contrato: nunca escrever no candidato versionado. Se o patch de destRoot
+  // falhar (ex.: aspas/refactor no gerador), abortar antes do spawn.
+  if (!src.includes(raizLit) || !src.includes(destLit)) {
+    console.error(
+      "FAIL: não foi possível redirecionar raiz/destRoot para o diretório temporário"
+    );
+    console.error(
+      "O stale-check recusou rodar para não sobrescrever prototipos/prospecto-fase-5-v1"
+    );
+    fs.rmSync(tmpRoot, { recursive: true, force: true });
+    process.exit(1);
+  }
+  if (src.includes('path.join(raiz, "prototipos", "prospecto-fase-5-v1")')) {
+    console.error(
+      "FAIL: destRoot ainda aponta para o candidato versionado após o patch"
+    );
+    fs.rmSync(tmpRoot, { recursive: true, force: true });
+    process.exit(1);
+  }
   const tmpScript = path.join(tmpRoot, "gerar-tmp.js");
   fs.writeFileSync(tmpScript, src, "utf8");
 

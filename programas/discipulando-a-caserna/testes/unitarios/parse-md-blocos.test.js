@@ -60,6 +60,32 @@ describe("parse-md-blocos", () => {
       parseBlocos("| A | B |\n| 1 | 2 |\n", { strict: true });
     }, /separadora/);
   });
+
+  it("preserva prosa que começa com vocabulário editorial", () => {
+    const amostras = [
+      "Nota importante sobre a remição de pena neste contexto.",
+      "Texto bíblico governa a aplicação pastoral.",
+      "Parágrafo de abertura do módulo.",
+      "Elemento visual no topo da seção.",
+      "Bloco de transição entre atos.",
+      "Números da turma no semestre.",
+      "Público-alvo militar e familiar.",
+      "Interação com o pastor local.",
+      "Camadas de leitura do escudo.",
+    ];
+    for (const texto of amostras) {
+      const blocos = parseBlocos(texto);
+      assert.equal(blocos.length, 1, `deveria preservar: ${texto}`);
+      assert.equal(blocos[0].type, "paragraph");
+      assert.equal(blocos[0].text, texto);
+    }
+  });
+
+  it("ainda ignora rótulos editoriais isolados", () => {
+    for (const rotulo of ["Texto", "Nota", "Parágrafo", "Bloco"]) {
+      assert.deepEqual(parseBlocos(rotulo), []);
+    }
+  });
 });
 
 function mapaListas(secao) {
