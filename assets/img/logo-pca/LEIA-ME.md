@@ -42,7 +42,7 @@ Cada PNG canônico tem um `.webp` irmão (mesmo basename, quality ~82). **Manter
 | ---------- | ------------------------------------ |
 | Favicon    | `LOGO_PCA_Master_Mono_1C_128.webp` (+ PNG fallback) |
 | Header     | `LOGO_PCA_Master_Mono_1C_128.*`      |
-| Hero       | `LOGO_PCA_Master_Mono_1C_400.*` / `_800.*` (srcset) |
+| Hero       | `LOGO_PCA_Master_Mono_1C_128.*` (~5rem)  |
 | Footer     | `LOGO_PCA_Master_Mono_1C_128.*`      |
 | OG/Twitter | `LOGO_PCA_Master_Mono_1C_800.png`    |
 

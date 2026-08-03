@@ -821,13 +821,17 @@
       }
 
       .hero__brand-mark {
-        width: clamp(7.5rem, 22vw, 11.5rem);
+        display: block;
+        width: 5rem;
+        max-width: 5rem;
         height: auto;
-        margin-bottom: var(--space-xl);
+        margin: 0 0 var(--space-lg);
       }
 
       .hero__brand-mark img {
-        width: 100%;
+        display: block;
+        width: 5rem;
+        max-width: 100%;
         height: auto;
         aspect-ratio: 1;
         object-fit: contain;
@@ -1505,21 +1509,12 @@
           <picture class="hero__brand-mark">
             <source
               type="image/webp"
-              srcset="
-                assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_400.webp 400w,
-                assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_800.webp 800w
-              "
-              sizes="(min-width: 64rem) 11.5rem, clamp(7.5rem, 22vw, 11.5rem)"
+              srcset="assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.webp"
             />
             <img
-              src="assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_400.png"
-              srcset="
-                assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_400.png 400w,
-                assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_800.png 800w
-              "
-              sizes="(min-width: 64rem) 11.5rem, clamp(7.5rem, 22vw, 11.5rem)"
-              width="400"
-              height="400"
+              src="assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.png"
+              width="128"
+              height="128"
               alt="Projeto Caserna de Adulão"
               decoding="async"
               fetchpriority="high"
