@@ -1,0 +1,24 @@
+{
+  "target": "https://www.korowa.vic.edu.au/",
+  "viewport": { "width": 1440, "height": 900 },
+  "host": "playwright",
+  "hostNote": "MCP chrome-devtools não carregado na sessão 1",
+  "finishedAt": "2026-08-03",
+  "probeBytes": {
+    "P1": 12142,
+    "P2": 10626,
+    "P3": 13301,
+    "P4": 483,
+    "P8": 13175
+  },
+  "canvasCount": 0,
+  "globalsPresent": ["gsap", "ScrollTrigger"],
+  "peaks": [
+    { "between": [0, 0.05], "ratio": 0.860569 },
+    { "between": [0.1, 0.15], "ratio": 0.858904 },
+    { "between": [0.55, 0.6], "ratio": 0.804585 },
+    { "between": [0.5, 0.55], "ratio": 0.792199 },
+    { "between": [0.05, 0.1], "ratio": 0.791951 }
+  ],
+  "shots": 21
+}

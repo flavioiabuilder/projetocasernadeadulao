@@ -1,0 +1,43 @@
+{
+  "note": "Material de auditoria — não ativo de produção. Dry-run sessão 1: só 1440×900 varredura grossa.",
+  "target": "https://www.korowa.vic.edu.au/",
+  "partial": true,
+  "items": [
+    {
+      "name": "dry-run-f000",
+      "viewport": "1440x900",
+      "narrativePosition": "0%",
+      "interaction": "none",
+      "componentObserved": "hero-entry",
+      "observations": "Frame inicial; host Playwright",
+      "path": "dry-run-1440x900/f000.png"
+    },
+    {
+      "name": "dry-run-f005-f015",
+      "viewport": "1440x900",
+      "narrativePosition": "5–15%",
+      "interaction": "scroll",
+      "componentObserved": "hero-transition-cluster",
+      "observations": "Picos P8 de maior delta",
+      "path": "dry-run-1440x900/f005.png"
+    },
+    {
+      "name": "dry-run-f055-f060",
+      "viewport": "1440x900",
+      "narrativePosition": "55–60%",
+      "interaction": "scroll",
+      "componentObserved": "mid-document-transition",
+      "observations": "Segundo cluster de picos P8",
+      "path": "dry-run-1440x900/f055.png"
+    },
+    {
+      "name": "dry-run-f100",
+      "viewport": "1440x900",
+      "narrativePosition": "100%",
+      "interaction": "scroll",
+      "componentObserved": "end-state",
+      "observations": "Último frame da varredura grossa",
+      "path": "dry-run-1440x900/f100.png"
+    }
+  ]
+}

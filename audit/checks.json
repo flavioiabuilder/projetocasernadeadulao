@@ -1,0 +1,2059 @@
+[
+  {
+    "id": "SETUP-001",
+    "category": "setup",
+    "description": "Baseline git limpo ou commitado antes do harness",
+    "steps": [
+      "Verificar artefato em disco",
+      "Atualizar evidence"
+    ],
+    "evidence": "git HEAD 1191c73 baseline limpo",
+    "passes": true
+  },
+  {
+    "id": "SETUP-002",
+    "category": "setup",
+    "description": "audit/PLAN.md escrito com stack e caminhos",
+    "steps": [
+      "Verificar artefato em disco",
+      "Atualizar evidence"
+    ],
+    "evidence": "audit/PLAN.md",
+    "passes": true
+  },
+  {
+    "id": "SETUP-003",
+    "category": "setup",
+    "description": "audit/init.sh expõe probe/frames/aggregate/report/gates",
+    "steps": [
+      "Verificar artefato em disco",
+      "Atualizar evidence"
+    ],
+    "evidence": "audit/init.sh + audit/cli.js",
+    "passes": true
+  },
+  {
+    "id": "SETUP-004",
+    "category": "setup",
+    "description": "audit/checks.json entre 140 e 200 entradas",
+    "steps": [
+      "Verificar artefato em disco",
+      "Atualizar evidence"
+    ],
+    "evidence": "audit/checks.json (189)",
+    "passes": true
+  },
+  {
+    "id": "SETUP-005",
+    "category": "setup",
+    "description": "audit/progress.md atualizado",
+    "steps": [
+      "Verificar artefato em disco",
+      "Atualizar evidence"
+    ],
+    "evidence": "audit/progress.md",
+    "passes": true
+  },
+  {
+    "id": "SETUP-006",
+    "category": "setup",
+    "description": "Sondas P1–P8 presentes em audit/probes/",
+    "steps": [
+      "Verificar artefato em disco",
+      "Atualizar evidence"
+    ],
+    "evidence": "audit/probes/*",
+    "passes": true
+  },
+  {
+    "id": "SETUP-007",
+    "category": "setup",
+    "description": "Chrome DevTools MCP configurado em .mcp.json",
+    "steps": [
+      "Verificar artefato em disco",
+      "Atualizar evidence"
+    ],
+    "evidence": ".mcp.json chrome-devtools",
+    "passes": true
+  },
+  {
+    "id": "SETUP-008",
+    "category": "setup",
+    "description": "MCP chrome-devtools carregado na sessão de auditoria",
+    "steps": [
+      "Verificar artefato em disco",
+      "Atualizar evidence"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "SETUP-009",
+    "category": "setup",
+    "description": "Diretórios raw/captures/frames criados",
+    "steps": [
+      "Verificar artefato em disco",
+      "Atualizar evidence"
+    ],
+    "evidence": "audit/raw + captures",
+    "passes": true
+  },
+  {
+    "id": "SETUP-010",
+    "category": "setup",
+    "description": "Slug korowa-vic derivado da URL",
+    "steps": [
+      "Verificar artefato em disco",
+      "Atualizar evidence"
+    ],
+    "evidence": "slug korowa-vic em PLAN",
+    "passes": true
+  },
+  {
+    "id": "SETUP-011",
+    "category": "setup",
+    "description": "Fronteira de ativos documentada (placeholder)",
+    "steps": [
+      "Verificar artefato em disco",
+      "Atualizar evidence"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "SETUP-012",
+    "category": "setup",
+    "description": "Nenhuma alteração em programas/discipulando-a-caserna/",
+    "steps": [
+      "Verificar artefato em disco",
+      "Atualizar evidence"
+    ],
+    "evidence": "git status sem diffs em programas/",
+    "passes": true
+  },
+  {
+    "id": "PROBE-P1",
+    "category": "probes",
+    "description": "P1 styles.js agrega por valor; top 40; peso log×área; ≤30KB",
+    "steps": [
+      "Injetar/rodar sonda",
+      "Salvar raw/",
+      "Validar tamanho"
+    ],
+    "evidence": "audit/raw/p1-styles-1440x900-f0.json",
+    "passes": true
+  },
+  {
+    "id": "PROBE-P2",
+    "category": "probes",
+    "description": "P2 cascade.js extrai custom props, media, font-face, keyframes, layers",
+    "steps": [
+      "Injetar/rodar sonda",
+      "Salvar raw/",
+      "Validar tamanho"
+    ],
+    "evidence": "audit/raw/p2-cascade-1440x900-f0.json",
+    "passes": true
+  },
+  {
+    "id": "PROBE-P3",
+    "category": "probes",
+    "description": "P3 scroll-curve.js amostra frações com 2 rAF e canvas/fixed",
+    "steps": [
+      "Injetar/rodar sonda",
+      "Salvar raw/",
+      "Validar tamanho"
+    ],
+    "evidence": "audit/raw/p3-scroll-curve-1440x900.json",
+    "passes": true
+  },
+  {
+    "id": "PROBE-P4",
+    "category": "probes",
+    "description": "P4 canvas.js inventaria canvas + globais presentes/ausentes separados",
+    "steps": [
+      "Injetar/rodar sonda",
+      "Salvar raw/",
+      "Validar tamanho"
+    ],
+    "evidence": "audit/raw/p4-canvas-1440x900.json",
+    "passes": true
+  },
+  {
+    "id": "PROBE-P5",
+    "category": "probes",
+    "description": "P5 motion.js getAnimations + transitions + GSAP/ScrollTrigger inventory quando presente",
+    "steps": [
+      "Injetar/rodar sonda",
+      "Salvar raw/",
+      "Validar tamanho"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "PROBE-P6",
+    "category": "probes",
+    "description": "P6 a11y.js headings, foco, contraste, touch, reduced-motion",
+    "steps": [
+      "Injetar/rodar sonda",
+      "Salvar raw/",
+      "Validar tamanho"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "PROBE-P7",
+    "category": "probes",
+    "description": "P7 typography.js trios size/lh/tracking + fonts.check",
+    "steps": [
+      "Injetar/rodar sonda",
+      "Salvar raw/",
+      "Validar tamanho"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "PROBE-P8",
+    "category": "probes",
+    "description": "P8 frames.js pixelmatch + paleta ΔE2000 grade 32×32",
+    "steps": [
+      "Injetar/rodar sonda",
+      "Salvar raw/",
+      "Validar tamanho"
+    ],
+    "evidence": "audit/raw/p8-frames.json",
+    "passes": true
+  },
+  {
+    "id": "INV1-001",
+    "category": "investigation-passo1",
+    "description": "Varredura grossa 1440×900 P3 em 21 posições (0–100% passo 5%)",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": "audit/raw/p3-scroll-curve-1440x900.json",
+    "passes": true
+  },
+  {
+    "id": "INV1-002",
+    "category": "investigation-passo1",
+    "description": "Screenshot em cada posição da varredura grossa",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": "audit/captures/dry-run-1440x900/",
+    "passes": true
+  },
+  {
+    "id": "INV1-003",
+    "category": "investigation-passo1",
+    "description": "P8 emite curva de delta e picos",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": "audit/raw/p8-frames.json",
+    "passes": true
+  },
+  {
+    "id": "INV1-004",
+    "category": "investigation-passo1",
+    "description": "Refino 0,5% em ±3% de cada pico",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-005",
+    "category": "investigation-passo1",
+    "description": "Meio de transição capturado por fronteira",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-006",
+    "category": "investigation-passo1",
+    "description": "Loader e entrada registrados",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-007",
+    "category": "investigation-passo1",
+    "description": "Introdução registrada",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-008",
+    "category": "investigation-passo1",
+    "description": "Capítulos/cenas ordenados em NARRATIVE-MAP.md",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": "audit/NARRATIVE-MAP.md",
+    "passes": true
+  },
+  {
+    "id": "INV1-009",
+    "category": "investigation-passo1",
+    "description": "Transições entre estados descritas",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-010",
+    "category": "investigation-passo1",
+    "description": "Elementos persistentes inventariados",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-011",
+    "category": "investigation-passo1",
+    "description": "Navegação global e contextual",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-012",
+    "category": "investigation-passo1",
+    "description": "Indicadores de progresso",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-013",
+    "category": "investigation-passo1",
+    "description": "Prompts de interação / scroll",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-014",
+    "category": "investigation-passo1",
+    "description": "Controles de áudio e descoberta",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-015",
+    "category": "investigation-passo1",
+    "description": "CTAs identificados",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-016",
+    "category": "investigation-passo1",
+    "description": "Saída / footer institucional",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-017",
+    "category": "investigation-passo1",
+    "description": "Header institucional",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-018",
+    "category": "investigation-passo1",
+    "description": "Overlays / modais / tooltips",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-019",
+    "category": "investigation-passo1",
+    "description": "Comportamento ao recarregar",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-020",
+    "category": "investigation-passo1",
+    "description": "Comportamento do botão voltar",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-021",
+    "category": "investigation-passo1",
+    "description": "CPU 4× + Slow 4G: loader/atraso observado",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV1-022",
+    "category": "investigation-passo1",
+    "description": "provenance.jsonl com entradas C1 para varredura",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": "audit/raw/provenance.jsonl",
+    "passes": true
+  },
+  {
+    "id": "INV1-023",
+    "category": "investigation-passo1",
+    "description": "Canvases inventariados (P4) no dry-run",
+    "steps": [
+      "Medir",
+      "Registrar em NARRATIVE-MAP / raw"
+    ],
+    "evidence": "audit/raw/p4-canvas-1440x900.json",
+    "passes": true
+  },
+  {
+    "id": "INV2-VP-01",
+    "category": "investigation-passo2",
+    "description": "Capturas chave no viewport 1440x900",
+    "steps": [
+      "resize",
+      "capturar posições-chave",
+      "manifest.json"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-VP-02",
+    "category": "investigation-passo2",
+    "description": "Capturas chave no viewport 1280x800",
+    "steps": [
+      "resize",
+      "capturar posições-chave",
+      "manifest.json"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-VP-03",
+    "category": "investigation-passo2",
+    "description": "Capturas chave no viewport 1024x768",
+    "steps": [
+      "resize",
+      "capturar posições-chave",
+      "manifest.json"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-VP-04",
+    "category": "investigation-passo2",
+    "description": "Capturas chave no viewport 768x1024",
+    "steps": [
+      "resize",
+      "capturar posições-chave",
+      "manifest.json"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-VP-05",
+    "category": "investigation-passo2",
+    "description": "Capturas chave no viewport 430x932",
+    "steps": [
+      "resize",
+      "capturar posições-chave",
+      "manifest.json"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-VP-06",
+    "category": "investigation-passo2",
+    "description": "Capturas chave no viewport 390x844",
+    "steps": [
+      "resize",
+      "capturar posições-chave",
+      "manifest.json"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-VP-07",
+    "category": "investigation-passo2",
+    "description": "Capturas chave no viewport 360x800",
+    "steps": [
+      "resize",
+      "capturar posições-chave",
+      "manifest.json"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-010",
+    "category": "investigation-passo2",
+    "description": "1440×900 cobre varredura refinada completa",
+    "steps": [
+      "Capturar",
+      "Atualizar manifest"
+    ],
+    "evidence": "parcial: varredura grossa 1440×900 (refino NÃO OBSERVADO)",
+    "passes": true
+  },
+  {
+    "id": "INV2-011",
+    "category": "investigation-passo2",
+    "description": "Estado inicial capturado em todos os viewports",
+    "steps": [
+      "Capturar",
+      "Atualizar manifest"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-012",
+    "category": "investigation-passo2",
+    "description": "Primeiro conteúdo capturado",
+    "steps": [
+      "Capturar",
+      "Atualizar manifest"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-013",
+    "category": "investigation-passo2",
+    "description": "Hover / ativo quando aplicável",
+    "steps": [
+      "Capturar",
+      "Atualizar manifest"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-014",
+    "category": "investigation-passo2",
+    "description": "Navegação aberta (desktop e mobile)",
+    "steps": [
+      "Capturar",
+      "Atualizar manifest"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-015",
+    "category": "investigation-passo2",
+    "description": "Meio das transições principais",
+    "steps": [
+      "Capturar",
+      "Atualizar manifest"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-016",
+    "category": "investigation-passo2",
+    "description": "Último estado / rodapé",
+    "steps": [
+      "Capturar",
+      "Atualizar manifest"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-017",
+    "category": "investigation-passo2",
+    "description": "Fallback responsivo documentado",
+    "steps": [
+      "Capturar",
+      "Atualizar manifest"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-018",
+    "category": "investigation-passo2",
+    "description": "Portrait/landscape quando relevante",
+    "steps": [
+      "Capturar",
+      "Atualizar manifest"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-019",
+    "category": "investigation-passo2",
+    "description": "manifest.json com campos exigidos",
+    "steps": [
+      "Capturar",
+      "Atualizar manifest"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV2-020",
+    "category": "investigation-passo2",
+    "description": "captures/ marcado como material de auditoria",
+    "steps": [
+      "Capturar",
+      "Atualizar manifest"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-001",
+    "category": "investigation-passo3",
+    "description": "P1 em cada viewport×posição-chave",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-002",
+    "category": "investigation-passo3",
+    "description": "P2 em cada viewport×posição-chave",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-003",
+    "category": "investigation-passo3",
+    "description": "P7 tipografia por viewport",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-004",
+    "category": "investigation-passo3",
+    "description": "Cores DOM com procedência declarado",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-005",
+    "category": "investigation-passo3",
+    "description": "Cores canvas via P8 medido-no-render",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-006",
+    "category": "investigation-passo3",
+    "description": "Tipografia: famílias, stacks, pesos, fluidos",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-007",
+    "category": "investigation-passo3",
+    "description": "Fontes proprietárias identificadas (não transferidas)",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-008",
+    "category": "investigation-passo3",
+    "description": "Substitutas open source mapeadas",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-009",
+    "category": "investigation-passo3",
+    "description": "Espaçamento: unidade-base MDC e escala",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-010",
+    "category": "investigation-passo3",
+    "description": "Grid, gutters, max-widths medidos",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-011",
+    "category": "investigation-passo3",
+    "description": "Raios, bordas, sombras, blur",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-012",
+    "category": "investigation-passo3",
+    "description": "Z-index como pilha nomeada por função",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-013",
+    "category": "investigation-passo3",
+    "description": "Profundidade DOM↔canvas documentada",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-014",
+    "category": "investigation-passo3",
+    "description": "Iconografia e estados de controle",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-015",
+    "category": "investigation-passo3",
+    "description": "Breakpoints só os medidos",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV3-016",
+    "category": "investigation-passo3",
+    "description": "clamp/vw/cq detectados ou NÃO OBSERVADO",
+    "steps": [
+      "Rodar sondas",
+      "Normalizar tokens"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-001",
+    "category": "investigation-passo4",
+    "description": "P5 motion inventory",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-002",
+    "category": "investigation-passo4",
+    "description": "performance_start_trace com reload",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-003",
+    "category": "investigation-passo4",
+    "description": "performance_stop_trace + analyze_insight",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-004",
+    "category": "investigation-passo4",
+    "description": "Microinterações catalogadas",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-005",
+    "category": "investigation-passo4",
+    "description": "Transições de componente",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-006",
+    "category": "investigation-passo4",
+    "description": "Transições de capítulo",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-007",
+    "category": "investigation-passo4",
+    "description": "Animações ambientais",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-008",
+    "category": "investigation-passo4",
+    "description": "Câmera / objetos 3D se presentes",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-009",
+    "category": "investigation-passo4",
+    "description": "Curva scroll→estado canvas",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-010",
+    "category": "investigation-passo4",
+    "description": "Scrub/pin/snap ou NÃO OBSERVADO",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-011",
+    "category": "investigation-passo4",
+    "description": "Resposta a cursor/gesto",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-012",
+    "category": "investigation-passo4",
+    "description": "Teclado e navegação sem pointer",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-013",
+    "category": "investigation-passo4",
+    "description": "Comportamento reverso / skip rápido",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-014",
+    "category": "investigation-passo4",
+    "description": "Fallback prefers-reduced-motion na referência",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV4-015",
+    "category": "investigation-passo4",
+    "description": "Fallback mobile de movimento",
+    "steps": [
+      "Medir",
+      "Documentar motion-system"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-001",
+    "category": "investigation-passo5",
+    "description": "Network filtrado por resourceTypes com paginação",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-002",
+    "category": "investigation-passo5",
+    "description": "Framework com evidência ou não determinado",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-003",
+    "category": "investigation-passo5",
+    "description": "Biblioteca 3D com evidência ou não determinado",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-004",
+    "category": "investigation-passo5",
+    "description": "Biblioteca animação com evidência ou não determinado",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-005",
+    "category": "investigation-passo5",
+    "description": "Tipos de canvas (2d/webgl/webgl2)",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-006",
+    "category": "investigation-passo5",
+    "description": "Formatos de modelo/textura se houver",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-007",
+    "category": "investigation-passo5",
+    "description": "Fontes: rede + @font-face",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-008",
+    "category": "investigation-passo5",
+    "description": "Lazy/preload/code-splitting observados",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-009",
+    "category": "investigation-passo5",
+    "description": "Service worker presença/ausência",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-010",
+    "category": "investigation-passo5",
+    "description": "Scroll smoothing/hijack com evidência",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-011",
+    "category": "investigation-passo5",
+    "description": "Console messages inventariadas",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-012",
+    "category": "investigation-passo5",
+    "description": "LCP/CLS/long tasks do trace",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-013",
+    "category": "investigation-passo5",
+    "description": "Lighthouse a11y/SEO/best-practices",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV5-014",
+    "category": "investigation-passo5",
+    "description": "Workers/shaders com evidência ou NÃO OBSERVADO",
+    "steps": [
+      "list_network / trace / lighthouse"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-001",
+    "category": "investigation-passo6",
+    "description": "P6 executada",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-002",
+    "category": "investigation-passo6",
+    "description": "Lighthouse accessibility",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-003",
+    "category": "investigation-passo6",
+    "description": "Landmarks e headings",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-004",
+    "category": "investigation-passo6",
+    "description": "Ordem de foco",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-005",
+    "category": "investigation-passo6",
+    "description": "Focus-visible medido",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-006",
+    "category": "investigation-passo6",
+    "description": "Contraste pares texto/fundo",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-007",
+    "category": "investigation-passo6",
+    "description": "Touch targets <44px listados",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-008",
+    "category": "investigation-passo6",
+    "description": "Alternativa canvas/áudio",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-009",
+    "category": "investigation-passo6",
+    "description": "prefers-reduced-motion tratamento",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-010",
+    "category": "investigation-passo6",
+    "description": "prefers-contrast tratamento",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-011",
+    "category": "investigation-passo6",
+    "description": "Zoom / sem hover",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-012",
+    "category": "investigation-passo6",
+    "description": "Fallback sem WebGL na referência",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INV6-013",
+    "category": "investigation-passo6",
+    "description": "Falhas → itens corrigidos em accessibility.md",
+    "steps": [
+      "P6 + lighthouse",
+      "Documentar"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INT-001",
+    "category": "integrity",
+    "description": "C1: todo valor em provenance.jsonl",
+    "steps": [
+      "Revisar artefatos",
+      "gates/grep"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INT-002",
+    "category": "integrity",
+    "description": "C2: NÃO OBSERVADO sem analogia",
+    "steps": [
+      "Revisar artefatos",
+      "gates/grep"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INT-003",
+    "category": "integrity",
+    "description": "C3: bibliotecas só com evidência",
+    "steps": [
+      "Revisar artefatos",
+      "gates/grep"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INT-004",
+    "category": "integrity",
+    "description": "C4: relatório parcial declara lacunas",
+    "steps": [
+      "Revisar artefatos",
+      "gates/grep"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INT-005",
+    "category": "integrity",
+    "description": "C5: capítulo ≠ componente",
+    "steps": [
+      "Revisar artefatos",
+      "gates/grep"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INT-006",
+    "category": "integrity",
+    "description": "C6: bundles não reconstruídos linha a linha",
+    "steps": [
+      "Revisar artefatos",
+      "gates/grep"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INT-007",
+    "category": "integrity",
+    "description": "Zero hotlink domínio referência (pré-impl)",
+    "steps": [
+      "Revisar artefatos",
+      "gates/grep"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "INT-008",
+    "category": "integrity",
+    "description": "Sondas ≤ ~30KB cada retorno",
+    "steps": [
+      "Revisar artefatos",
+      "gates/grep"
+    ],
+    "evidence": "raw sizes P1–P4/P8 ≤30KB pós-ajuste",
+    "passes": true
+  },
+  {
+    "id": "IMPL-DOC-001",
+    "category": "implementation-docs",
+    "description": "docs/reference-audit/korowa-vic-audit.md",
+    "steps": [
+      "Escrever após PASSO 3–6"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-DOC-002",
+    "category": "implementation-docs",
+    "description": "design-principles.md",
+    "steps": [
+      "Escrever após PASSO 3–6"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-DOC-003",
+    "category": "implementation-docs",
+    "description": "foundations.md",
+    "steps": [
+      "Escrever após PASSO 3–6"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-DOC-004",
+    "category": "implementation-docs",
+    "description": "components.md com evidência por componente",
+    "steps": [
+      "Escrever após PASSO 3–6"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-DOC-005",
+    "category": "implementation-docs",
+    "description": "motion-system.md",
+    "steps": [
+      "Escrever após PASSO 3–6"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-DOC-006",
+    "category": "implementation-docs",
+    "description": "responsive-system.md",
+    "steps": [
+      "Escrever após PASSO 3–6"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-DOC-007",
+    "category": "implementation-docs",
+    "description": "three-dimensional-language.md",
+    "steps": [
+      "Escrever após PASSO 3–6"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-DOC-008",
+    "category": "implementation-docs",
+    "description": "accessibility.md",
+    "steps": [
+      "Escrever após PASSO 3–6"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-DOC-009",
+    "category": "implementation-docs",
+    "description": "asset-and-license-boundaries.md",
+    "steps": [
+      "Escrever após PASSO 3–6"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-DOC-010",
+    "category": "implementation-docs",
+    "description": "implementation-notes.md",
+    "steps": [
+      "Escrever após PASSO 3–6"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-TOK-001",
+    "category": "implementation-tokens",
+    "description": "tokens.json DTCG 2025.10 canônico",
+    "steps": [
+      "Gerar tokens",
+      "Validar schema"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-TOK-002",
+    "category": "implementation-tokens",
+    "description": "Cor como colorSpace/components/alpha/hex",
+    "steps": [
+      "Gerar tokens",
+      "Validar schema"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-TOK-003",
+    "category": "implementation-tokens",
+    "description": "Dimension {value,unit}",
+    "steps": [
+      "Gerar tokens",
+      "Validar schema"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-TOK-004",
+    "category": "implementation-tokens",
+    "description": "Tipos shadow/typography/border/transition/gradient",
+    "steps": [
+      "Gerar tokens",
+      "Validar schema"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-TOK-005",
+    "category": "implementation-tokens",
+    "description": "Semânticos via alias",
+    "steps": [
+      "Gerar tokens",
+      "Validar schema"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-TOK-006",
+    "category": "implementation-tokens",
+    "description": "$extensions procedência + camada",
+    "steps": [
+      "Gerar tokens",
+      "Validar schema"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-TOK-007",
+    "category": "implementation-tokens",
+    "description": "Famílias color…reduced-motion-substitution",
+    "steps": [
+      "Gerar tokens",
+      "Validar schema"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-TOK-008",
+    "category": "implementation-tokens",
+    "description": "CSS custom properties semânticas geradas",
+    "steps": [
+      "Gerar tokens",
+      "Validar schema"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-TOK-009",
+    "category": "implementation-tokens",
+    "description": "Nenhum valor mágico nos componentes",
+    "steps": [
+      "Gerar tokens",
+      "Validar schema"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-001",
+    "category": "implementation-ui",
+    "description": "Reset e foundations",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-002",
+    "category": "implementation-ui",
+    "description": "Focus ring e seleção",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-003",
+    "category": "implementation-ui",
+    "description": "Preferências de movimento",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-004",
+    "category": "implementation-ui",
+    "description": "Fallback contraste",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-005",
+    "category": "implementation-ui",
+    "description": "Componentes só com evidência no manifesto",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-006",
+    "category": "implementation-ui",
+    "description": "Hipóteses descartadas documentadas",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-007",
+    "category": "implementation-ui",
+    "description": "Motion primitives listadas no brief",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-008",
+    "category": "implementation-ui",
+    "description": "Separação tokens/cálculo/estado/render/efeito/conteúdo",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-009",
+    "category": "implementation-ui",
+    "description": "Lab route/página interna",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-010",
+    "category": "implementation-ui",
+    "description": "Demo narrativa 3–4 cenas originais",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-011",
+    "category": "implementation-ui",
+    "description": "Fallback sem WebGL na reconstrução",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-012",
+    "category": "implementation-ui",
+    "description": "Sem vazamento de listeners/observers",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "IMPL-UI-013",
+    "category": "implementation-ui",
+    "description": "Conteúdo neutro sem marca Korowa",
+    "steps": [
+      "Implementar em referencias-devtools/korowa-vic"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "HYP-BATCH-01",
+    "category": "component-hypotheses",
+    "description": "Confirmar/descartar com evidência: AppShell, ImmersiveViewport, ExperienceLoader, GlobalHeader, ContextMenu, ChapterNavigation, ChapterIndicator, ProgressRail, ScrollPrompt",
+    "steps": [
+      "Cruzar manifesto",
+      "Atualizar components.md"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "HYP-BATCH-02",
+    "category": "component-hypotheses",
+    "description": "Confirmar/descartar com evidência: DiscoverPrompt, AudioControl, EditorialPanel, SceneHeading, SceneBody, Eyebrow, MetadataLabel, PrimaryAction, IconAction",
+    "steps": [
+      "Cruzar manifesto",
+      "Atualizar components.md"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "HYP-BATCH-03",
+    "category": "component-hypotheses",
+    "description": "Confirmar/descartar com evidência: FloatingControl, SceneOverlay, MediaBackdrop, AtmosphericLayer, GradientSurface, NoiseLayer, CanvasFallback, ReducedMotionScene, ExperienceFooter",
+    "steps": [
+      "Cruzar manifesto",
+      "Atualizar components.md"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "GATE-G1",
+    "category": "validation-gates",
+    "description": "G1 cobertura token ≥90% área DOM",
+    "steps": [
+      "./audit/init.sh gates",
+      "Publicar números"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "GATE-G2",
+    "category": "validation-gates",
+    "description": "G2 SSIM ≥0.85 editorial; ΔE canvas ≤8",
+    "steps": [
+      "./audit/init.sh gates",
+      "Publicar números"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "GATE-G3",
+    "category": "validation-gates",
+    "description": "G3 erro médio curva scroll ≤0.05",
+    "steps": [
+      "./audit/init.sh gates",
+      "Publicar números"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "GATE-G4",
+    "category": "validation-gates",
+    "description": "G4 contraste WCAG 2.2 AA",
+    "steps": [
+      "./audit/init.sh gates",
+      "Publicar números"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "GATE-G5",
+    "category": "validation-gates",
+    "description": "G5 hover/focus-visible/disabled",
+    "steps": [
+      "./audit/init.sh gates",
+      "Publicar números"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "GATE-G6",
+    "category": "validation-gates",
+    "description": "G6 reduced-motion: sem transform/opacity entrada >0",
+    "steps": [
+      "./audit/init.sh gates",
+      "Publicar números"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "GATE-G7",
+    "category": "validation-gates",
+    "description": "G7 sem WebGL legível, console limpo",
+    "steps": [
+      "./audit/init.sh gates",
+      "Publicar números"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "GATE-G8",
+    "category": "validation-gates",
+    "description": "G8 zero hotlink korowa.vic.edu.au",
+    "steps": [
+      "./audit/init.sh gates",
+      "Publicar números"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "GATE-G9",
+    "category": "validation-gates",
+    "description": "G9 zero hardcoded nos componentes (AST)",
+    "steps": [
+      "./audit/init.sh gates",
+      "Publicar números"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "GATE-G10",
+    "category": "validation-gates",
+    "description": "G10 build/lint/testes + console limpo lab/demo",
+    "steps": [
+      "./audit/init.sh gates",
+      "Publicar números"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-001",
+    "category": "report",
+    "description": "report.html autocontido file://",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-002",
+    "category": "report",
+    "description": "Dados em script#audit-data",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-003",
+    "category": "report",
+    "description": "Seção capa com portões e escopo parcial",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-004",
+    "category": "report",
+    "description": "Mapa narrativo SVG + picos clicáveis",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-005",
+    "category": "report",
+    "description": "Cor com procedência visível",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-006",
+    "category": "report",
+    "description": "Matriz de contraste",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-007",
+    "category": "report",
+    "description": "Tipografia ao vivo + mapeamento fontes",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-008",
+    "category": "report",
+    "description": "Espaçamento / raio / sombra / blur",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-009",
+    "category": "report",
+    "description": "Movimento com play + curvas",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-010",
+    "category": "report",
+    "description": "Grid/breakpoints/z-index",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-011",
+    "category": "report",
+    "description": "Componentes iframe sandbox + evidência",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-012",
+    "category": "report",
+    "description": "Slider referência×reconstrução + SSIM",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-013",
+    "category": "report",
+    "description": "Técnica EVIDÊNCIA|INFERÊNCIA",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-014",
+    "category": "report",
+    "description": "A11y achados/correções/abertos",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-015",
+    "category": "report",
+    "description": "Lacunas NÃO OBSERVADO",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-016",
+    "category": "report",
+    "description": "Nav lateral scroll-spy + busca tecla",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  },
+  {
+    "id": "RPT-017",
+    "category": "report",
+    "description": "Tema relatório neutro / impressão A4",
+    "steps": [
+      "Gerar report",
+      "Abrir file://"
+    ],
+    "evidence": null,
+    "passes": false
+  }
+]

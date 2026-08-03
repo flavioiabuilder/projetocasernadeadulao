@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Audit report — korowa-vic (parcial)</title>
+<style>
+:root { --bg:#f6f6f4; --ink:#1a1a1a; --mute:#5c5c5c; --line:#d8d8d4; }
+* { box-sizing:border-box; }
+body { margin:0; font:14px/1.45 "Segoe UI", system-ui, sans-serif; color:var(--ink); background:var(--bg); }
+.wrap { display:grid; grid-template-columns:220px 1fr; min-height:100vh; }
+nav { position:sticky; top:0; height:100vh; padding:1.5rem 1rem; border-right:1px solid var(--line); }
+nav a { display:block; color:var(--ink); text-decoration:none; padding:.35rem 0; }
+main { padding:2rem; max-width:920px; }
+h1,h2 { font-weight:600; letter-spacing:-0.02em; }
+.muted { color:var(--mute); }
+.gate { display:inline-block; padding:.2rem .5rem; border:1px solid var(--line); margin:.2rem; }
+@media print { nav { display:none; } .wrap { display:block; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <strong>Audit</strong>
+  <a href="#capa">Capa</a>
+  <a href="#mapa">Mapa</a>
+  <a href="#tecnica">Técnica</a>
+  <a href="#lacunas">Lacunas</a>
+</nav>
+<main>
+<section id="capa">
+  <p class="muted">Varredura parcial — sessão 1</p>
+  <h1>korowa-vic</h1>
+  <p>Alvo: https://www.korowa.vic.edu.au/</p>
+  <p>Checks: <span id="check-pass"></span> / <span id="check-total"></span></p>
+  <p class="muted">Portões G1–G10: não avaliados nesta sessão (stub).</p>
+</section>
+<section id="mapa">
+  <h2>Mapa narrativo</h2>
+  <p class="muted">Ver <code>audit/NARRATIVE-MAP.md</code> e curva P8 em raw.</p>
+  <div id="delta-mount"></div>
+</section>
+<section id="tecnica">
+  <h2>Técnica</h2>
+  <p>Host de injeção do dry-run: documentado em progress.md (MCP vs Playwright).</p>
+</section>
+<section id="lacunas">
+  <h2>Lacunas</h2>
+  <p>PASSOS 2–6 multiviewport, tokens, lab e gates completos: NÃO OBSERVADO nesta sessão.</p>
+</section>
+</main>
+</div>
+<script type="application/json" id="audit-data">{"target":"https://www.korowa.vic.edu.au/","slug":"korowa-vic","generatedAt":"2026-08-03T23:21:39.113Z","partial":true,"partialNote":"Sessão 1 — harness + dry-run 1440×900 apenas","checks":{"total":189,"passed":23},"aggSummary":{"files":[{"file":"dry-run-shots.json","bytes":1284,"probe":null},{"file":"dry-run-summary.json","bytes":673,"probe":null},{"file":"p1-styles-1440x900-f0.json","bytes":12142,"probe":"P1-styles"},{"file":"p2-cascade-1440x900-f0.json","bytes":10626,"probe":"P2-cascade"},{"file":"p3-scroll-curve-1440x900.json","bytes":30137,"probe":"P3-scroll-curve"},{"file":"p4-canvas-1440x900.json","bytes":483,"probe":"P4-canvas"},{"file":"p8-frames.json","bytes":13175,"probe":"P8-frames"}],"sizes":{"dry-run-shots.json":1284,"dry-run-summary.json":673,"p1-styles-1440x900-f0.json":12142,"p2-cascade-1440x900-f0.json":10626,"p3-scroll-curve-1440x900.json":30137,"p4-canvas-1440x900.json":483,"p8-frames.json":13175}},"gates":null}</script>
+<script>
+const data = JSON.parse(document.getElementById('audit-data').textContent);
+document.getElementById('check-pass').textContent = data.checks.passed;
+document.getElementById('check-total').textContent = data.checks.total;
+</script>
+</body>
+</html>

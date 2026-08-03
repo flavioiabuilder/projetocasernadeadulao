@@ -1,0 +1,57 @@
+{
+  "generatedAt": "2026-08-03T23:21:41.520Z",
+  "checksPassed": 23,
+  "checksTotal": 189,
+  "gates": {
+    "G1": {
+      "pass": false,
+      "value": null,
+      "note": "NÃO OBSERVADO — tokens ainda não gerados"
+    },
+    "G2": {
+      "pass": false,
+      "value": null,
+      "note": "NÃO OBSERVADO — lab ainda não existe"
+    },
+    "G3": {
+      "pass": false,
+      "value": null,
+      "note": "NÃO OBSERVADO — reconstrução ausente"
+    },
+    "G4": {
+      "pass": false,
+      "value": null,
+      "note": "NÃO OBSERVADO — pares semânticos da reconstrução"
+    },
+    "G5": {
+      "pass": false,
+      "value": null,
+      "note": "NÃO OBSERVADO"
+    },
+    "G6": {
+      "pass": false,
+      "value": null,
+      "note": "NÃO OBSERVADO"
+    },
+    "G7": {
+      "pass": false,
+      "value": null,
+      "note": "NÃO OBSERVADO"
+    },
+    "G8": {
+      "pass": true,
+      "value": 0,
+      "note": "hotlink hits fora de audit/ (0 esperado pré-impl)"
+    },
+    "G9": {
+      "pass": false,
+      "value": null,
+      "note": "NÃO OBSERVADO — sem componentes"
+    },
+    "G10": {
+      "pass": false,
+      "value": null,
+      "note": "NÃO OBSERVADO — pacote korowa-vic ausente"
+    }
+  }
+}
