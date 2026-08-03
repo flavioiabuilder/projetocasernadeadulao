@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "statusGeral": "restrito",
+  "pubF5": {
+    "id": "PUB-F5-01",
+    "status": "suspensa",
+    "titulo": "Prévia pública do protótipo canônico F5",
+    "data": "2026-08-03",
+    "responsavel": "Flávio Alves da Costa",
+    "notas": "Canonização técnica permanece; circulação pública do canônico F5 e do Design System suspensas até autorização específica."
+  },
+  "designSystem": {
+    "status": "interno",
+    "path": "programas/discipulando-a-caserna/design-system/"
+  },
+  "producao": {
+    "path": "programas/discipulando-a-caserna/prospecto/",
+    "status": "bloqueada"
+  },
+  "indexacao": {
+    "robotsDisallowAll": true,
+    "noindexObrigatorio": true
+  },
+  "rootFiles": ["index.html", "robots.txt", "404.html"],
+  "rootAssets": [
+    "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.png",
+    "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.webp",
+    "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_800.png"
+  ],
+  "programIndex": "programas/discipulando-a-caserna/index.html",
+  "surfaces": [
+    "programas/discipulando-a-caserna/prototipos/prospecto-v1/",
+    "programas/discipulando-a-caserna/prototipos/storytelling-v1/",
+    "programas/discipulando-a-caserna/prototipos/direcoes-visuais-v1/"
+  ],
+  "programAssets": [
+    "fonts/montserrat-latin-700.woff2",
+    "fonts/montserrat-latin-800.woff2",
+    "fonts/source-serif-4-latin-400.woff2",
+    "fonts/source-serif-4-latin-400-italic.woff2",
+    "fonts/source-serif-4-latin-600.woff2",
+    "img/favicon.svg",
+    "img/logo-pdac/LOGO_DaC_Master_Flat_2D_Color.png",
+    "img/logo-pdac/ICON_DaC_Micro_XS_Color_Institucional_40px.png",
+    "img/logo-pdac/ICON_DaC_Micro_XS_Color_Institucional_Reverso_40px.png",
+    "img/logo-pdac/LOGO_DaC_Emblema_Metal_Latao_800.png",
+    "img/logo-pdac/LOGO_DaC_Emblema_Metal_Latao_1600.png",
+    "img/licao1/manifest.json",
+    "img/licao1/aluno-l1-01.webp",
+    "img/licao1/aluno-l1-01-sm.webp",
+    "img/licao1/aluno-l1-02.webp",
+    "img/licao1/aluno-l1-02-sm.webp",
+    "img/licao1/aluno-l1-03.webp",
+    "img/licao1/aluno-l1-03-sm.webp",
+    "img/licao1/aluno-l1-04.webp",
+    "img/licao1/aluno-l1-04-sm.webp",
+    "img/licao1/aluno-l1-05.webp",
+    "img/licao1/aluno-l1-05-sm.webp",
+    "img/licao1/aluno-l1-06.webp",
+    "img/licao1/aluno-l1-06-sm.webp",
+    "img/licao1/aluno-l1-07.webp",
+    "img/licao1/aluno-l1-07-sm.webp",
+    "img/licao1/instrutor-l1-01.webp",
+    "img/licao1/instrutor-l1-01-sm.webp",
+    "img/licao1/instrutor-l1-02.webp",
+    "img/licao1/instrutor-l1-02-sm.webp",
+    "img/licao1/instrutor-l1-03.webp",
+    "img/licao1/instrutor-l1-03-sm.webp",
+    "img/licao1/instrutor-l1-04.webp",
+    "img/licao1/instrutor-l1-04-sm.webp",
+    "img/licao1/instrutor-l1-05.webp",
+    "img/licao1/instrutor-l1-05-sm.webp",
+    "img/licao1/instrutor-l1-06.webp",
+    "img/licao1/instrutor-l1-06-sm.webp",
+    "img/licao1/instrutor-l1-07.webp",
+    "img/licao1/instrutor-l1-07-sm.webp",
+    "img/licao1/instrutor-l1-08.webp",
+    "img/licao1/instrutor-l1-08-sm.webp",
+    "img/licao1/instrutor-l1-09.webp",
+    "img/licao1/instrutor-l1-09-sm.webp"
+  ],
+  "shims": [
+    "prototipos/storytelling-v1/index.html",
+    "prototipos/direcao-a/index.html",
+    "prototipos/direcao-b/index.html",
+    "prototipos/direcao-c/index.html"
+  ],
+  "forbidden": [
+    "programas/discipulando-a-caserna/prototipos/prospecto-fase-5-v1/",
+    "programas/discipulando-a-caserna/design-system/",
+    "programas/discipulando-a-caserna/prospecto/",
+    "programas/discipulando-a-caserna/prototipos/homologacao-pastoral-v1/",
+    "programas/discipulando-a-caserna/docs/",
+    "programas/discipulando-a-caserna/conteudo/",
+    "programas/discipulando-a-caserna/ferramentas/",
+    "programas/discipulando-a-caserna/testes/",
+    "metodo/",
+    "referencias-devtools/"
+  ],
+  "publicIndexForbiddenHrefs": [
+    "prototipos/prospecto-fase-5-v1",
+    "design-system/"
+  ],
+  "workflowForbiddenPatterns": [
+    "design-system",
+    "prospecto-fase-5-v1",
+    "generate:discipulando:prototipo-fase-5"
+  ],
+  "surfaceExcludeNames": ["capturas"],
+  "surfaceExcludeSuffixes": [".md", ".local.json"]
+}

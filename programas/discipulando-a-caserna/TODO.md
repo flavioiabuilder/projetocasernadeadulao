@@ -32,6 +32,15 @@
 - [ ] Licença do código e do conteúdo pastoral
 - [ ] Domínio próprio e política de indexação (`noindex`)
 - [ ] Disponibilizar PDF do dossiê de apreciação (7 páginas) para circulação pública quando a versão pública estiver concluída e autorizada — então acrescentar link discreto na seção 15 (não inventar arquivo nem link falso)
+- [ ] **TASK-PUB-LEGACY-01** — auditar suspensão/redação de `prospecto-v1` e
+      `storytelling-v1` no Pages (P0: PMCE, Lição 1, dados institucionais);
+      ver [`docs/publicacao/PUB-F5-01.md`](docs/publicacao/PUB-F5-01.md)
+
+## Publicação (governança)
+
+- [x] PUB-F5-01 — prévia pública F5 + Design System **SUSPENSA**
+- [ ] F6-11 — inclusão do path de produção no Pages (após Fase 7 + decisão)
+- [ ] F6-12 — remoção de `noindex` (decisão separada)
 
 ## Explícitamente fora (produto)
 

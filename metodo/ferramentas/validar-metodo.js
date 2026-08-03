@@ -110,12 +110,24 @@ function checkIntegracao(manifesto) {
     return;
   }
   const pages = fs.readFileSync(PAGES_YML, "utf8");
-  const copyLines = pages.split(/\r?\n/).filter((line) => /\b(cp|copy)\b/i.test(line));
+  const copyLines = pages
+    .split(/\r?\n/)
+    .filter((line) => /\b(cp|copy|rsync)\b/i.test(line));
   const bad = copyLines.filter((line) => /(?:^|[\s"'/])metodo(?:\/|["'\s]|$)/.test(line));
   if (bad.length) {
     fail(`pages.yml parece copiar metodo/: ${bad.join(" | ")}`);
   } else {
     ok("pages.yml não copia metodo/");
+  }
+  if (!/workflow_run:/.test(pages)) {
+    fail("pages.yml deve usar workflow_run (gate Qualidade)");
+  } else {
+    ok("pages.yml usa workflow_run");
+  }
+  if (/design-system|prospecto-fase-5-v1/.test(pages)) {
+    fail("pages.yml não deve referenciar design-system nem prospecto-fase-5-v1 (PUB-F5-01)");
+  } else {
+    ok("pages.yml sem F5/DS (PUB-F5-01)");
   }
 }
 

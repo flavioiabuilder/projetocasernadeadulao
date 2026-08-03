@@ -31,8 +31,11 @@ Template genérico (para novos projetos):
 - Gerar: `npm run generate:discipulando:prototipo-fase-5`
 - Validar: `validate:discipulando:prototipagem` · `check:discipulando:prototipo-fase-5:stale`
 - Config institucional: `ferramentas/institucional.js` (espelho gerado em `js/config.js`)
-- Fase 6 **bloqueada** até F5-12; blueprint em [`fase-6/`](fase-6/)
-- Produção prevista: `prospecto/` (ainda inexistente). Não alterar `pages.yml` sem F6-11
+- Fase 6 **liberada, não iniciada** após F5-12; blueprint em [`fase-6/`](fase-6/)
+- Produção prevista: `prospecto/` (ainda inexistente). Não criar `prospecto/` nem
+  ampliar Pages sem decisão (F6-11/F6-12; allowlist em
+  [`../publicacao/estado-publicacao.json`](../publicacao/estado-publicacao.json);
+  PUB-F5-01 suspensa)
 - Não importar `lab.css` nem CSS de `referencias-devtools/`
 
 ## Validação

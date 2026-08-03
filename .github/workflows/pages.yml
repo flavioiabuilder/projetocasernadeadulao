@@ -1,14 +1,13 @@
 name: Publicar Pages
 
-# Publica índices, assets, Design System e protótipos públicos do Discipulando.
-# Homologação pastoral, Guia, docs internos, ferramentas, testes e referências
-# DevTools ficam fora do artefato.
+# Publica apenas a allowlist de estado-publicacao.json (PUB-F5-01 suspensa).
+# Dispara somente após Qualidade bem-sucedida no mesmo SHA de main.
 # Ver programas/discipulando-a-caserna/docs/publicacao.md
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Qualidade"]
+    types: [completed]
 
 permissions:
   contents: read
@@ -22,10 +21,16 @@ concurrency:
 jobs:
   build:
     name: Montar artefato público
+    if: >
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.event == 'push'
     runs-on: ubuntu-latest
     steps:
-      - name: Obter código-fonte
+      - name: Obter código-fonte validado
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
       - name: Node.js
         uses: actions/setup-node@v4
         with:
@@ -33,35 +38,14 @@ jobs:
           cache: npm
       - name: Instalar dependências
         run: npm ci
-      - name: Regenerar dados do prospecto
-        run: |
-          npm run generate:discipulando
-          npm run generate:discipulando:prototipo-fase-5
+      - name: Regenerar dados do prospecto público
+        run: npm run generate:discipulando
+      - name: Validar política de publicação
+        run: npm run validate:pages:policy
       - name: Montar pasta pública
-        run: |
-          set -euo pipefail
-          P=programas/discipulando-a-caserna
-          mkdir -p _site/$P/prototipos
-          cp index.html robots.txt 404.html _site/
-          cp -r assets _site/
-          cp $P/index.html _site/$P/
-          cp -r $P/assets _site/$P/
-          cp -r $P/design-system _site/$P/
-          cp -r $P/prototipos/prospecto-v1 _site/$P/prototipos/
-          mkdir -p _site/$P/prototipos/prospecto-fase-5-v1
-          rsync -a --exclude capturas --exclude parcial/relatorio-telemetry.local.json \
-            $P/prototipos/prospecto-fase-5-v1/ _site/$P/prototipos/prospecto-fase-5-v1/
-          cp -r $P/prototipos/storytelling-v1 _site/$P/prototipos/
-          cp -r $P/prototipos/direcoes-visuais-v1 _site/$P/prototipos/
-          mkdir -p _site/prototipos/storytelling-v1
-          mkdir -p _site/prototipos/direcao-a
-          mkdir -p _site/prototipos/direcao-b
-          mkdir -p _site/prototipos/direcao-c
-          cp prototipos/storytelling-v1/index.html _site/prototipos/storytelling-v1/
-          cp prototipos/direcao-a/index.html _site/prototipos/direcao-a/
-          cp prototipos/direcao-b/index.html _site/prototipos/direcao-b/
-          cp prototipos/direcao-c/index.html _site/prototipos/direcao-c/
-          touch _site/.nojekyll
+        run: npm run build:pages
+      - name: Validar artefato
+        run: npm run validate:pages:artifact
       - name: Enviar artefato
         uses: actions/upload-pages-artifact@v3
         with:
@@ -70,6 +54,10 @@ jobs:
   deploy:
     name: Deploy GitHub Pages
     needs: build
+    if: >
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.event == 'push'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

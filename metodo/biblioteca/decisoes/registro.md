@@ -173,6 +173,26 @@ Formato por entrada:
   [`fase-5/`](../../../programas/discipulando-a-caserna/docs/metodo/fase-5/);
   [`fase-6/pacote-gate-a-decisao-humana.md`](../../../programas/discipulando-a-caserna/docs/metodo/fase-6/pacote-gate-a-decisao-humana.md).
 
+## 2026-08-03 — PUB-F5-01: suspensão da prévia pública F5 + Design System
+
+- **Hipótese:** Canonização técnica não autoriza circulação pública; a
+  ampliação de Pages em `ecfd6ab` (F5 + Design System) conflita com Gate A.
+- **Decisão:** (1) Registrar **PUB-F5-01 — SUSPENSA**; (2) remover
+  `prospecto-fase-5-v1/` e `design-system/` do artefato Pages; (3) manter
+  canônico F5 e Fase 6 liberada não iniciada; (4) produção/indexação
+  bloqueadas; (5) fonte única em
+  `docs/publicacao/estado-publicacao.json`; (6) deploy Pages apenas após
+  Qualidade verde no mesmo SHA (`workflow_run`); (7) marcar emenda ADR-002
+  de ampliação como SUPERADA/SUSPENSA sem apagar o histórico; (8) abrir
+  TASK-PUB-LEGACY-01 para risco P0 dos protótipos legados ainda públicos.
+- **Justificativa:** Gate A; PUB-DEC-01…09; privacidade por padrão.
+- **Resultado observado:** Allowlist restrita; builder e validadores de
+  política/artefato; índices sem hrefs suspensos.
+- **Links:**
+  [`PUB-F5-01.md`](../../../programas/discipulando-a-caserna/docs/publicacao/PUB-F5-01.md);
+  [`estado-publicacao.json`](../../../programas/discipulando-a-caserna/docs/publicacao/estado-publicacao.json);
+  [`ADR-002`](../../../programas/discipulando-a-caserna/docs/arquitetura/ADR-002-publicacao-e-github-pages.md).
+
 ## 2026-08-02 — Saneamento F5 + blueprint Fase 6 (bloqueada)
 
 - **Hipótese:** Fidelidade editorial e PE honestos são pré-requisito de canonização; produção não pode começar sem F5-12.

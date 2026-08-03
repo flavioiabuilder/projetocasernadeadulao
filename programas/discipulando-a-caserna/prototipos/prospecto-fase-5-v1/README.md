@@ -1,8 +1,8 @@
 # Prospecto Fase 5 — protótipo canônico v1
 
-Protótipo **canônico técnico** da Fase 5 (Fluxo A). Publicado na prévia Pages
-(com `noindex`). **Não** é `prospecto/` de produção. **Não** implica
-homologação pastoral.
+Protótipo **canônico técnico** da Fase 5 (Fluxo A). Prévia pública no Pages:
+**SUSPENSA** (PUB-F5-01). Permanece no repositório como referência local.
+**Não** é `prospecto/` de produção. **Não** implica homologação pastoral.
 
 | Campo    | Valor                                                                                                                    |
 | -------- | ------------------------------------------------------------------------------------------------------------------------ |
