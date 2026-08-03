@@ -2,7 +2,7 @@
 
 Pasta canônica dos arquivos oficiais da marca do **Discipulando a Caserna**.
 
-Não confundir com o brasão do **Projeto Caserna de Adulão** (contexto institucional). O protagonista visual desta apresentação é o Discipulando.
+Não confundir com a marca institucional do **Projeto Caserna de Adulão** (pack canônico na raiz: `assets/img/logo-pca/`). O protagonista visual desta apresentação é o Discipulando.
 
 ## Localização
 

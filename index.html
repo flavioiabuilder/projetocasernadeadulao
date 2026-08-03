@@ -36,6 +36,34 @@
       content="Iniciativa cristã em construção: acolher, restaurar e preparar homens para um recomeço responsável."
     />
     <meta name="theme-color" content="#0E1216" />
+    <meta
+      property="og:image"
+      content="https://flavioiabuilder.github.io/projetocasernadeadulao/assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_800.png"
+    />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:image:alt" content="Projeto Caserna de Adulão" />
+    <meta
+      name="twitter:image"
+      content="https://flavioiabuilder.github.io/projetocasernadeadulao/assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_800.png"
+    />
+    <link
+      rel="icon"
+      href="assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.webp"
+      type="image/webp"
+      sizes="128x128"
+    />
+    <link
+      rel="icon"
+      href="assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.png"
+      type="image/png"
+      sizes="128x128"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.png"
+      sizes="128x128"
+    />
     <title>Projeto Caserna de Adulão — Um lugar para chegar</title>
     <script type="application/ld+json">
       {
@@ -43,6 +71,7 @@
         "@type": "Organization",
         "name": "Projeto Caserna de Adulão",
         "url": "https://flavioiabuilder.github.io/projetocasernadeadulao/",
+        "logo": "https://flavioiabuilder.github.io/projetocasernadeadulao/assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_800.png",
         "description": "Iniciativa cristã em construção dedicada a formar um ambiente de acolhimento, verdade, comunhão e direção para homens em processo de recomeço."
       }
     </script>
@@ -572,14 +601,37 @@
         gap: var(--space-md);
       }
 
+      .site-header__brand {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-sm);
+        text-decoration: none;
+        color: inherit;
+        min-width: 0;
+        max-width: min(18rem, 70vw);
+      }
+
+      .site-header__mark {
+        flex-shrink: 0;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+      }
+
+      .site-header__mark img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
       .wordmark {
         font-family: var(--font-display);
         font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
         font-weight: 600;
         letter-spacing: -0.01em;
-        text-decoration: none;
         line-height: 1.2;
-        max-width: 14rem;
+        min-width: 0;
       }
 
       .wordmark small {
@@ -766,6 +818,19 @@
         z-index: 1;
         width: min(40rem, 100%);
         padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      .hero__brand-mark {
+        width: clamp(7.5rem, 22vw, 11.5rem);
+        height: auto;
+        margin-bottom: var(--space-xl);
+      }
+
+      .hero__brand-mark img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: contain;
       }
 
       .hero__eyebrow {
@@ -979,9 +1044,26 @@
       }
 
       .site-footer__brand {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-sm);
         font-family: var(--font-display);
         font-size: var(--text-md);
         color: var(--text-on-ink);
+      }
+
+      .site-footer__mark {
+        flex-shrink: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+      }
+
+      .site-footer__mark img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
 
       .site-footer p {
@@ -1093,7 +1175,7 @@
           font-size: 0.78rem;
         }
 
-        .wordmark {
+        .site-header__brand {
           max-width: none;
         }
 
@@ -1300,10 +1382,25 @@
     <!-- APP: Header -->
     <header class="site-header" data-site-header>
       <div class="site-header__inner">
-        <a class="wordmark" href="#topo">
-          Projeto Caserna de Adulão
-          <!-- TODO(INSTITUCIONAL): validar texto antes da indexação pública. -->
-          <small>Página institucional em construção</small>
+        <a class="site-header__brand" href="#topo">
+          <picture class="site-header__mark">
+            <source
+              type="image/webp"
+              srcset="assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.webp"
+            />
+            <img
+              src="assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.png"
+              width="128"
+              height="128"
+              alt=""
+              decoding="async"
+            />
+          </picture>
+          <span class="wordmark">
+            Projeto Caserna de Adulão
+            <!-- TODO(INSTITUCIONAL): validar texto antes da indexação pública. -->
+            <small>Página institucional em construção</small>
+          </span>
         </a>
         <button
           class="nav-toggle"
@@ -1405,6 +1502,29 @@
         </div>
         <div class="hero__grain" aria-hidden="true"></div>
         <div class="hero__content">
+          <picture class="hero__brand-mark">
+            <source
+              type="image/webp"
+              srcset="
+                assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_400.webp 400w,
+                assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_800.webp 800w
+              "
+              sizes="(min-width: 64rem) 11.5rem, clamp(7.5rem, 22vw, 11.5rem)"
+            />
+            <img
+              src="assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_400.png"
+              srcset="
+                assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_400.png 400w,
+                assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_800.png 800w
+              "
+              sizes="(min-width: 64rem) 11.5rem, clamp(7.5rem, 22vw, 11.5rem)"
+              width="400"
+              height="400"
+              alt="Projeto Caserna de Adulão"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </picture>
           <p class="eyebrow hero__eyebrow">Projeto Caserna de Adulão</p>
           <h1 id="hero-title">
             <span>Um lugar para chegar.</span>
@@ -1749,7 +1869,23 @@
     <!-- TODO(INSTITUCIONAL): validar texto antes da indexação pública. -->
     <footer class="site-footer">
       <div class="site-footer__inner">
-        <p class="site-footer__brand">Projeto Caserna de Adulão</p>
+        <p class="site-footer__brand">
+          <picture class="site-footer__mark">
+            <source
+              type="image/webp"
+              srcset="assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.webp"
+            />
+            <img
+              src="assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.png"
+              width="128"
+              height="128"
+              alt=""
+              decoding="async"
+              loading="lazy"
+            />
+          </picture>
+          <span>Projeto Caserna de Adulão</span>
+        </p>
         <p>Página institucional em desenvolvimento.</p>
         <p>Conteúdo sujeito à validação institucional antes da indexação pública.</p>
         <p class="site-footer__copy">© 2026 Projeto Caserna de Adulão.</p>
