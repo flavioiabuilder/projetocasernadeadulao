@@ -41,6 +41,7 @@ jobs:
           P=programas/discipulando-a-caserna
           mkdir -p _site/$P/prototipos
           cp index.html robots.txt 404.html _site/
+          cp -r assets _site/
           cp $P/index.html _site/$P/
           cp -r $P/assets _site/$P/
           cp -r $P/prototipos/prospecto-v1 _site/$P/prototipos/

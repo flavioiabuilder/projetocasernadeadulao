@@ -12,6 +12,7 @@ a publicação pública no GitHub Pages deve expor:
 Na raiz do artefato:
 
 - `index.html` (índice do Projeto Caserna de Adulão)
+- `assets/` (marca institucional do Projeto, ex.: `assets/img/logo-pca/`)
 - `404.html`
 - `robots.txt`
 - shims em `prototipos/` (redirecionamentos das URLs antigas)
