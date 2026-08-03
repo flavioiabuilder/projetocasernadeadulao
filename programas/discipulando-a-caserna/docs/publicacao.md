@@ -21,6 +21,8 @@ Sob `programas/discipulando-a-caserna/`:
 
 - `index.html` (índice técnico de protótipos)
 - `assets/`
+- `design-system/` (tokens, styles, laboratório)
+- `prototipos/prospecto-fase-5-v1/` (canônico técnico Fase 5)
 - `prototipos/prospecto-v1/`
 - `prototipos/storytelling-v1/`
 - `prototipos/direcoes-visuais-v1/`
@@ -32,12 +34,13 @@ Fora do artefato público:
 - `ferramentas/`, `testes/`, `legado/`
 - `referencias-devtools/`
 - skills e configurações de agentes
+- futuro `prospecto/` de produção (Fase 6)
 
 ## Mecanismo
 
 O workflow [`.github/workflows/pages.yml`](../../../.github/workflows/pages.yml)
-instala dependências, roda `npm run generate:discipulando` e monta `_site`
-seletivamente.
+instala dependências, roda `npm run generate:discipulando` e
+`generate:discipulando:prototipo-fase-5`, e monta `_site` seletivamente.
 
 Configure Pages com fonte **GitHub Actions** (Settings → Pages).
 

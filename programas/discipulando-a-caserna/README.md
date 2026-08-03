@@ -14,14 +14,16 @@ programa.
 Nenhuma superfície HTML abaixo é “produto oficial” estruturalmente. São
 experimentos e versões candidatas para apreciação pastoral.
 
-| Protótipo               | Caminho                                                                                  | Público Pages  |
-| ----------------------- | ---------------------------------------------------------------------------------------- | -------------- |
-| Prospecto v1            | [`prototipos/prospecto-v1/`](prototipos/prospecto-v1/)                                   | Sim            |
-| Storytelling v1         | [`prototipos/storytelling-v1/`](prototipos/storytelling-v1/)                             | Sim            |
-| Direção A               | [`prototipos/direcoes-visuais-v1/direcao-a/`](prototipos/direcoes-visuais-v1/direcao-a/) | Sim            |
-| Direção B               | [`prototipos/direcoes-visuais-v1/direcao-b/`](prototipos/direcoes-visuais-v1/direcao-b/) | Sim            |
-| Direção C               | [`prototipos/direcoes-visuais-v1/direcao-c/`](prototipos/direcoes-visuais-v1/direcao-c/) | Sim            |
-| Homologação pastoral v1 | [`prototipos/homologacao-pastoral-v1/`](prototipos/homologacao-pastoral-v1/)             | Não (restrita) |
+| Protótipo               | Caminho                                                                                  | Público Pages   |
+| ----------------------- | ---------------------------------------------------------------------------------------- | --------------- |
+| Prospecto Fase 5        | [`prototipos/prospecto-fase-5-v1/`](prototipos/prospecto-fase-5-v1/)                     | Sim (`noindex`) |
+| Prospecto v1            | [`prototipos/prospecto-v1/`](prototipos/prospecto-v1/)                                   | Sim             |
+| Design System (lab)     | [`design-system/laboratorio/`](design-system/laboratorio/)                               | Sim             |
+| Storytelling v1         | [`prototipos/storytelling-v1/`](prototipos/storytelling-v1/)                             | Sim             |
+| Direção A               | [`prototipos/direcoes-visuais-v1/direcao-a/`](prototipos/direcoes-visuais-v1/direcao-a/) | Sim             |
+| Direção B               | [`prototipos/direcoes-visuais-v1/direcao-b/`](prototipos/direcoes-visuais-v1/direcao-b/) | Sim             |
+| Direção C               | [`prototipos/direcoes-visuais-v1/direcao-c/`](prototipos/direcoes-visuais-v1/direcao-c/) | Sim             |
+| Homologação pastoral v1 | [`prototipos/homologacao-pastoral-v1/`](prototipos/homologacao-pastoral-v1/)             | Não (restrita)  |
 
 Índice técnico de navegação: [`index.html`](index.html).
 

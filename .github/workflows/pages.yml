@@ -1,7 +1,7 @@
 name: Publicar Pages
 
-# Publica índices, assets e protótipos públicos do Discipulando.
-# Homologação, Guia, docs internos, ferramentas, testes e referências
+# Publica índices, assets, Design System e protótipos públicos do Discipulando.
+# Homologação pastoral, Guia, docs internos, ferramentas, testes e referências
 # DevTools ficam fora do artefato.
 # Ver programas/discipulando-a-caserna/docs/publicacao.md
 
@@ -34,7 +34,9 @@ jobs:
       - name: Instalar dependências
         run: npm ci
       - name: Regenerar dados do prospecto
-        run: npm run generate:discipulando
+        run: |
+          npm run generate:discipulando
+          npm run generate:discipulando:prototipo-fase-5
       - name: Montar pasta pública
         run: |
           set -euo pipefail
@@ -44,7 +46,11 @@ jobs:
           cp -r assets _site/
           cp $P/index.html _site/$P/
           cp -r $P/assets _site/$P/
+          cp -r $P/design-system _site/$P/
           cp -r $P/prototipos/prospecto-v1 _site/$P/prototipos/
+          mkdir -p _site/$P/prototipos/prospecto-fase-5-v1
+          rsync -a --exclude capturas --exclude parcial/relatorio-telemetry.local.json \
+            $P/prototipos/prospecto-fase-5-v1/ _site/$P/prototipos/prospecto-fase-5-v1/
           cp -r $P/prototipos/storytelling-v1 _site/$P/prototipos/
           cp -r $P/prototipos/direcoes-visuais-v1 _site/$P/prototipos/
           mkdir -p _site/prototipos/storytelling-v1

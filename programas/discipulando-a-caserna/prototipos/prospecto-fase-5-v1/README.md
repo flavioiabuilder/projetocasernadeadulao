@@ -1,7 +1,7 @@
 # Prospecto Fase 5 — protótipo canônico v1
 
-Protótipo **canônico técnico** da Fase 5 (Fluxo A). **Não** substitui
-`prospecto-v1/` em produção/Pages. **Não** remove `noindex`. **Não** implica
+Protótipo **canônico técnico** da Fase 5 (Fluxo A). Publicado na prévia Pages
+(com `noindex`). **Não** é `prospecto/` de produção. **Não** implica
 homologação pastoral.
 
 | Campo    | Valor                                                                                                                    |
