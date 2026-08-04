@@ -12,6 +12,8 @@
 | Família de easings de UI: `cubic-bezier(0.19,1,0.22,1)` (entrada), `cubic-bezier(0.165,0.84,0.44,1)` (saída/navbar 0.35s), `cubic-bezier(0.215,0.61,0.355,1)` (ênfase, 0.75s), `cubic-bezier(0.696,0.257,0,1.012)` (impulso com leve overshoot, 0.3s), `cubic-bezier(0.785,0.135,0.15,0.86)` (revelação lenta, 0.5s) | **P9 — CSSOM ao vivo, `raw/p9-gsap-live-1440x900.json`** |
 | `@keyframes` reais: `parallaxMove`, `movePreloader`, `scaleLogo`, `cloud-scroll_center-image-scale-in`, `cloud-scroll_side-image-parallax`, `cloud-scroll_show-overlay`, `text-gradient-color-fill`, `spin`, `show-hide` | P1 (nomes, sessão 1) confirmado e capturado por inteiro na P9 |
 | 0 canvas da aplicação (canvas transitório rastreado até fingerprinting de terceiro, `dsp-cdn.gammaplatform.com`) | P4 + `canvas-origin` (ver `three-dimensional-language.md`) |
+| `.hero-special_bg-visual-wrapper`: 2 `<img>` empilhados (`.is-back` z-index auto, `.is-front` z-index 3), wrapper `scale(1.02)` + `overflow:clip`, camadas `scale(1.1)`, `object-fit:cover`. Sem `mask-image`, sem `mix-blend-mode`. Amostrado em 9 posições de scroll (0–1000px): `transform`/`opacity` idênticos em todas — **o efeito é estático**, resolvido no arquivo de imagem (front tem canal alfa próprio, confirmado no header VP8X do asset), não em CSS/JS de scroll. | **P9 (continuação) — inspeção direta dos elementos + CSSOM** |
+| `.image-cloud_scroll .image_scroll-overlay`: `animation-timeline: --image-cloud-timeline; animation-range: contain 5% contain 85%` — confirma que a família `cloud-scroll_*` usa scroll-timeline nativo do CSS, não GSAP (ver seção "Física do scroll" abaixo) | P9 (continuação) |
 
 Tokens correspondentes em `tokens.json` → `easing.*`, `duration.*`, `scrollPhysics.*` (gerados em `tokens.css` como `--fr-ease-*`, `--fr-dur-*`, `--fr-scroll-*`).
 
@@ -29,10 +31,12 @@ A rail de progresso (`data-fr-progress`) e o parallax (`data-fr-parallax`) perma
 
 | Fração | Estado Friso |
 | --- | --- |
-| 0–0.25 | Pin hero; atmosfera escala 1.1→~1.02 (via `createScrollLag`, não instantâneo); progress rail sobe (instantâneo) |
+| 0–0.25 | Pin hero; `.fr-hero-visual` (2 fotos) estático — fiel à referência; véu escurece 0.3→0.6 via `createScrollLag` (correção de sessão 3: a referência não anima a imagem no scroll, então Friso move o véu, não a foto); progress rail sobe (instantâneo) |
 | 0.25–0.55 | Painéis editoriais; reveals por IntersectionObserver |
 | 0.55–0.85 | Bloco névoa / profundidade CSS |
 | 0.85–1 | Fecho carmesim + footer |
+
+**Correção de sessão 3**: a sessão 2 tinha implementado `atmosfera escala 1.1→~1.02` no scroll como hipótese (sem medição direta). A P9 mediu `.hero-special_bg-visual` em 9 posições de scroll e não achou nenhuma variação — o efeito é estático. `bindPinProgress` foi ajustado: `data-fr-atmosphere` agora fica no véu (`.fr-immersive__veil`), não na foto, e anima opacidade em vez de escala. A foto composta (`.fr-hero-visual`) ficou fiel ao estático real.
 
 ## Primitivas
 

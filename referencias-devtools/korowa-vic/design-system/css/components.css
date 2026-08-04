@@ -123,6 +123,42 @@
   transform-origin: center;
 }
 
+/*
+ * HeroVisualComposite — réplica estrutural de `.hero-special_bg-visual-wrapper`
+ * da referência (P9, MCP ao vivo): duas fotos empilhadas, mesma caixa, mesma
+ * escala; a de cima (front) tem transparência própria no arquivo e deixa a de
+ * baixo (back) aparecer ao redor do sujeito. Sem CSS mask, sem mix-blend-mode
+ * — a composição é resolvida no próprio arquivo de imagem, não em runtime.
+ * Estático: medido em 9 posições de scroll (0–1000px) sem nenhuma mudança de
+ * transform/opacity — não é um efeito de scroll, é tratamento de imagem.
+ * Fotos são do próprio projeto (Discipulando a Caserna / PMCE), não da
+ * referência — ver documentacao/asset-and-license-boundaries.md.
+ */
+.fr-hero-visual {
+  position: absolute;
+  inset: 0;
+  z-index: var(--fr-z-base);
+  overflow: clip;
+  transform: scale(1.02);
+}
+
+.fr-hero-visual__layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+}
+
+.fr-hero-visual__layer--back {
+  z-index: var(--fr-z-base);
+}
+
+.fr-hero-visual__layer--front {
+  z-index: calc(var(--fr-z-base) + 1);
+}
+
 .fr-immersive__veil {
   position: absolute;
   inset: 0;

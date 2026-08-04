@@ -127,8 +127,12 @@
     function apply(rig, local) {
       rig.sticky.style.setProperty("--fr-pin-p", local.toFixed(4));
       if (rig.atm) {
-        const scale = 1.1 - local * 0.08;
-        rig.atm.style.transform = `scale(${scale.toFixed(4)})`;
+        // Véu escurece progressivamente no pin (P8: frame mede transição
+        // escura→carmesim). A foto de fundo em si (.fr-hero-visual) é
+        // estática — P9 mediu 0 variação de transform/opacity em 9 posições
+        // de scroll; o "atmosfera muda" da referência é o véu, não a imagem.
+        const opacity = 0.45 + local * 0.3;
+        rig.atm.style.opacity = opacity.toFixed(3);
       }
     }
 

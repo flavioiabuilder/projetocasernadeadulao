@@ -1,0 +1,45 @@
+{
+  "probe": "hero-visual-composite",
+  "url": "https://www.korowa.vic.edu.au/",
+  "viewport": { "w": 1440, "h": 900 },
+  "host": "chrome-devtools-mcp",
+  "layer": "dom+render",
+  "provenance": "medido-no-render",
+  "note": "URLs das imagens registradas para procedência; arquivos NUNCA baixados (ver asset-and-license-boundaries.md).",
+  "structure": {
+    "wrapper": {
+      "class": "hero-special_bg-visual-wrapper",
+      "css": "width:100%;height:100%;position:absolute;inset:0%;overflow:clip;transform:scale(1.02)"
+    },
+    "layers": [
+      {
+        "class": "hero-special_bg-visual is-back",
+        "zIndex": "auto",
+        "srcObserved": "https://cdn.prod.website-files.com/689b9231663a4f08a91a5f03/68dc5c417e6d88d716a4fce7_hero-back.webp",
+        "css": "width:100%;height:100%;position:absolute;inset:0%;transform:scale(1.1);object-fit:cover"
+      },
+      {
+        "class": "hero-special_bg-visual is-front",
+        "zIndex": 3,
+        "srcObserved": "https://cdn.prod.website-files.com/689b9231663a4f08a91a5f03/68dc5c414fcac11cebebab11_hero-front-p-1600.webp",
+        "css": "width:100%;height:100%;position:absolute;inset:0%;transform:scale(1.1);object-fit:cover",
+        "hasAlphaHeaderNote": "Nome de arquivo indica variantes responsivas (-p-500/-p-800/-p-1600) no padrão Webflow; canal alfa não verificado (arquivo não baixado) — inferido do comportamento visual (o 'back' só faria sentido existir se o 'front' tiver transparência parcial)."
+      }
+    ],
+    "noMaskOrBlend": "mask-image: none, -webkit-mask-image: none, mix-blend-mode: normal, filter: none — em ambas as camadas",
+    "scrollSampling": {
+      "positions": [0, 50, 100, 200, 300, 400, 500, 700, 1000],
+      "result": "transform e opacity idênticos em todas as posições — SEM animação de scroll neste componente. O efeito é 100% resolvido por composição estática de duas imagens."
+    }
+  },
+  "relatedFinding": {
+    "selector": ".image-cloud_scroll .image_scroll-overlay",
+    "css": "animation-timeline: --image-cloud-timeline; animation-range: contain 5% contain 85%",
+    "note": "Confirma que a família cloud-scroll_* (componente DIFERENTE do hero) usa CSS scroll-timeline nativo, não GSAP ScrollTrigger — consistente com o que já estava documentado em motion-system.md a partir de inferência; agora com evidência direta de uma regra real."
+  },
+  "friso": {
+    "component": ".fr-hero-visual",
+    "images": "img/hero-back.webp, img/hero-front.webp — fotos do projeto Discipulando a Caserna / PMCE, não da referência",
+    "decision": "Réplica estática (sem JS/CSS de scroll no composite), igual à referência medida. bindPinProgress foi corrigido: data-fr-atmosphere migrou da camada de imagem (hipótese de sessão 2, contradita por esta medição) para o véu (.fr-immersive__veil), animando opacidade em vez de escala."
+  }
+}

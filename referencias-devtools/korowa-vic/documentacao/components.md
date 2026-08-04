@@ -17,6 +17,7 @@ Só entram padrões com evidência no manifesto / sondas. Capítulo ≠ componen
 | PrimaryAction | botões pill ~85px radius | `.fr-action` |
 | EditorialPanel | superfícies creme/ardosia/carmesim/névoa | `.fr-panel` |
 | AtmosphericLayer | gradientes radiais P1 | `.fr-immersive__atmosphere` |
+| HeroVisualComposite | `.hero-special_bg-visual-wrapper` real (P9): 2 fotos empiladas, wrapper scale 1.02, camadas scale 1.1, front com transparência própria sobre back — estático (0 variação em 9 posições de scroll) | `.fr-hero-visual`, `.fr-hero-visual__layer--back/--front`; fotos próprias (PMCE), não da referência |
 | CanvasFallback | 0 canvas → fallback explícito | `.fr-canvas-fallback` |
 | ExperienceFooter | rodapé institucional P3 fim | `.fr-footer` |
 | ReducedMotionScene | prefers-reduced-motion | tokens + CSS |
