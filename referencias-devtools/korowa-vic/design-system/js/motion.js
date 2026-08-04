@@ -148,11 +148,23 @@
     requestAnimationFrame(frame);
   }
 
+  function bindHeaderShrink() {
+    const header = document.querySelector("[data-fr-header]");
+    if (!header) return;
+    const THRESHOLD = 24;
+    const update = () => {
+      header.dataset.frScrolled = scrollY > THRESHOLD ? "true" : "false";
+    };
+    update();
+    addEventListener("scroll", update, { passive: true });
+  }
+
   function init() {
     bindProgressRail();
     bindReveals();
     bindParallax();
     bindPinProgress();
+    bindHeaderShrink();
   }
 
   if (document.readyState === "loading") {

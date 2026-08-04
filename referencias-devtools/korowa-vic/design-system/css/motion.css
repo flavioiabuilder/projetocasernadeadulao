@@ -41,19 +41,27 @@
 }
 
 .fr-brand-mark {
+  display: inline-block;
   transform: scale(1);
+  transform-origin: left center;
   transition: transform var(--fr-dur-revelacao) var(--fr-ease-assinatura);
 }
 
-@keyframes fr-brand-mark-settle {
-  to {
-    transform: scale(0.8);
-  }
+.fr-header[data-fr-scrolled="true"] .fr-brand-mark {
+  transform: scale(0.8);
 }
 
 .fr-loader__curtain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   height: 100%;
   background: var(--fr-color-abismo);
+}
+
+.fr-loader > .fr-meta {
+  position: relative;
+  z-index: 1;
 }
 
 .fr-loader[data-done="true"] .fr-loader__curtain {
@@ -87,6 +95,10 @@
 .fr-media-stage__side {
   translate: 0 0;
   transition: translate var(--fr-dur-enfase) var(--fr-ease-saida);
+}
+
+.fr-media-stage.is-in .fr-media-stage__side {
+  translate: 0 var(--fr-media-side-shift, -6%);
 }
 
 .fr-media-stage__overlay {

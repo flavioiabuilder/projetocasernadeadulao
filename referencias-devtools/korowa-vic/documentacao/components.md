@@ -7,7 +7,9 @@ Só entram padrões com evidência no manifesto / sondas. Capítulo ≠ componen
 | AppShell | estrutura página + sticky chrome | `.fr-shell` |
 | GlobalHeader | fixed/sticky P3; MENU label | `.fr-header` |
 | ContextMenu / nav overlay | estado `nav-open` captura | `.fr-nav` |
-| ExperienceLoader | anim `movePreloader` 1.5s (P1) | `.fr-loader` |
+| ExperienceLoader | anim `movePreloader` 1.5s (P1); corpo do keyframe + easing confirmados na P9 | `.fr-loader` + `.fr-loader__curtain` |
+| BrandMark | `scaleLogo` (P1); disparo por scroll-threshold é interpretação própria (sem evidência do gatilho exato) | `.fr-brand-mark`, `data-fr-header` |
+| MediaStage | família `cloud-scroll_*` completa (P9): scale-in central, parallax lateral, overlay | `.fr-media-stage` |
 | ImmersiveViewport / pin | P3 headings persistentes | `.fr-pin-chapter` |
 | ProgressRail | hipótese + utilidade DS | `.fr-progress` |
 | ScrollPrompt | padrão imersivo + UI referência | `.fr-scroll-prompt` |

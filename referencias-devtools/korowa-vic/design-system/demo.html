@@ -14,6 +14,7 @@
     <a class="fr-sr-only" href="#conteudo">Ir para o conteúdo</a>
 
     <div class="fr-loader" data-fr-loader role="status" aria-live="polite">
+      <div class="fr-loader__curtain" aria-hidden="true"></div>
       <p class="fr-meta">Atlas Editorial</p>
     </div>
 
@@ -21,8 +22,11 @@
       <div class="fr-progress__fill" data-fr-progress></div>
     </div>
 
-    <header class="fr-header">
-      <a class="fr-brand" href="demo.html">Atlas Editorial</a>
+    <header class="fr-header" data-fr-header>
+      <a class="fr-brand" href="demo.html"
+        ><span class="fr-brand-mark" data-fr-brand-mark aria-hidden="true">◆</span> Atlas
+        Editorial</a
+      >
       <button
         type="button"
         class="fr-nav-toggle"
@@ -103,6 +107,27 @@
               Geometria procedural: blocos e gradientes. Sem hotlink, sem modelos 3D de
               terceiros.
             </p>
+          </div>
+          <div
+            class="fr-media-stage fr-reveal"
+            data-fr-reveal
+            style="margin-top: var(--fr-esp-7); height: 16rem"
+          >
+            <div
+              class="fr-media-stage__center"
+              style="position: absolute; inset: 0; background: var(--fr-grad-atmosfera-teal), var(--fr-color-ardosia)"
+              aria-hidden="true"
+            ></div>
+            <div
+              class="fr-media-stage__side"
+              style="position: absolute; inset: 0; background: var(--fr-grad-vinheta)"
+              aria-hidden="true"
+            ></div>
+            <div
+              class="fr-media-stage__overlay"
+              style="position: absolute; inset: 0; background: color-mix(in srgb, var(--fr-color-abismo) 45%, transparent)"
+              aria-hidden="true"
+            ></div>
           </div>
         </div>
       </section>

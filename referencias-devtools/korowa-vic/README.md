@@ -21,6 +21,9 @@ Nada da marca, copy, fotos ou fontes proprietárias da referência entra no runt
 | [`ferramentas/`](ferramentas/) | Gerador de tokens |
 | [`testes/`](testes/) | Testes unitários essenciais |
 
+Handover da física de animação (curvas, durações, scrub de scroll — como
+ajustar): [`DESIGN_AND_EFFECTS.md`](DESIGN_AND_EFFECTS.md).
+
 ## Executar
 
 ```bash

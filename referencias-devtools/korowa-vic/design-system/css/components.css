@@ -284,10 +284,9 @@
   z-index: calc(var(--fr-z-nav) + 1);
   display: grid;
   place-items: center;
-  background: var(--fr-color-abismo);
   color: var(--fr-color-texto-inverso);
-  transition: opacity var(--fr-dur-loader) var(--fr-ease-entrada),
-    visibility var(--fr-dur-loader);
+  transition: opacity var(--fr-dur-lenta) var(--fr-ease-entrada) var(--fr-dur-loader),
+    visibility var(--fr-dur-lenta) var(--fr-dur-loader);
 }
 
 .fr-loader[data-done="true"] {
