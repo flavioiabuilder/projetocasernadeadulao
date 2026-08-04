@@ -14,7 +14,7 @@
   "scrollTriggers": [
     {
       "triggerClass": null,
-      "note": "trigger de página inteira (provável progress/scroll-driver global)",
+      "note": "RESOLVIDO em captura de continuação: vars = {start:'top+=50', end:'max', onUpdate, onToggle, invalidateOnRefresh:true, toggleActions:'play', anticipatePin:0}. Sem 'animation'/'pin' — é um ScrollTrigger só-callback, não uma timeline GSAP. Consistente com driver de barra de progresso custom-coded cobrindo quase a página inteira. docHeight variou entre cargas (12339 vs 14679px em capturas diferentes) — conteúdo dinâmico, não erro de medição.",
       "start": 50,
       "end": 12339,
       "pin": false

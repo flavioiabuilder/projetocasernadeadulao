@@ -117,10 +117,12 @@ npx serve -l 4173 .
 
 ## Limites conhecidos (honestidade sobre o que não foi medido)
 
-- O trigger global (`start: 50, end: 12339`, sem `scrub` capturado) não foi
-  identificado — provavelmente o driver de progresso da página inteira;
-  ficou fora do escopo da P9.
 - `text-gradient-color-fill`, `spin` e `show-hide` têm corpo capturado mas
   nenhum componente Friso os usa ainda.
-- Gate G2 (SSIM) e Lighthouse via MCP continuam pendentes — ver
-  `auditoria/progress.md`.
+- G2 (SSIM macro) foi medido e **falha** por decisão de design (0.23 <
+  limiar 0.85) — Friso não reproduz fotos/copy reais, então a composição de
+  luminância diverge de propósito. Ver `auditoria/raw/p10-ssim-g2-1440x900.json`.
+- Lighthouse ao vivo medido (P11): Accessibility 83, Best Practices 58, SEO
+  100, Agentic Browsing 50 — ver `documentacao/accessibility.md`.
+- P3 refine JSON >30KB — agregação/limpeza ainda pendente (não afeta a
+  reconstrução, só o tamanho dos artefatos de auditoria).
