@@ -165,6 +165,27 @@ describe("montagem do artefato Pages", () => {
       false
     );
 
+    // Fontes das direções visuais devem resolver a partir do CSS publicado.
+    for (const dir of ["direcao-a", "direcao-b", "direcao-c"]) {
+      const cssPath = path.join(
+        out,
+        `programas/discipulando-a-caserna/prototipos/direcoes-visuais-v1/${dir}/styles.css`
+      );
+      const css = fs.readFileSync(cssPath, "utf8");
+      const fontUrls = [...css.matchAll(/url\(\s*["']?([^"')]+)["']?\s*\)/gi)].map(
+        (m) => m[1]
+      );
+      assert.ok(fontUrls.length > 0, `${dir}: sem url() de fonte`);
+      for (const href of fontUrls) {
+        const target = path.resolve(path.dirname(cssPath), href);
+        assert.equal(
+          fs.existsSync(target),
+          true,
+          `${dir}: fonte ausente ${href} → ${path.relative(out, target)}`
+        );
+      }
+    }
+
     const validate = spawnSync(process.execPath, [ARTIFACT, `--out=${out}`], {
       encoding: "utf8",
       cwd: ROOT,
@@ -174,5 +195,20 @@ describe("montagem do artefato Pages", () => {
     const inv = JSON.parse(fs.readFileSync(manifest, "utf8"));
     assert.ok(inv.fileCount > 20);
     assert.equal(inv.pubF5.status, "suspensa");
+  });
+
+  it("recusa --out dentro do repositório que não seja _site", () => {
+    // Aponta --out para um diretório existente do programa e confirma que o
+    // builder aborta sem apagar fontes.
+    const dangerous = path.join(PROG, "docs");
+    const before = fs.readdirSync(dangerous);
+    const build = spawnSync(
+      process.execPath,
+      [BUILDER, `--out=${dangerous}`],
+      { encoding: "utf8", cwd: ROOT }
+    );
+    assert.notEqual(build.status, 0, build.stdout + build.stderr);
+    assert.match(build.stderr + build.stdout, /recusa limpar/);
+    assert.deepEqual(fs.readdirSync(dangerous), before);
   });
 });
