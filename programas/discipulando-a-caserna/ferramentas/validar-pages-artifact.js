@@ -72,8 +72,74 @@ function requiredPaths(politica) {
   return req;
 }
 
+function collectLocalRefs(text, { fromCss = false } = {}) {
+  const refs = [];
+  if (fromCss) {
+    for (const match of text.matchAll(/url\(\s*(['"]?)([^'")]+)\1\s*\)/gi)) {
+      refs.push(match[2]);
+    }
+    return refs;
+  }
+  for (const match of text.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)) {
+    refs.push(match[1]);
+  }
+  for (const match of text.matchAll(/\bsrcset=["']([^"']+)["']/gi)) {
+    for (const part of match[1].split(",")) {
+      const candidate = part.trim().split(/\s+/)[0];
+      if (candidate) refs.push(candidate);
+    }
+  }
+  return refs;
+}
+
+function checkLocalRef(siteRoot, filesSet, rel, href) {
+  if (
+    !href ||
+    href.startsWith("#") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("data:") ||
+    href.startsWith("blob:")
+  ) {
+    return;
+  }
+  if (/^https?:\/\//i.test(href)) return;
+  if (href.includes("prospecto-fase-5-v1") || href.includes("design-system/")) {
+    fail(`link público para path suspenso em ${rel}: ${href}`);
+    return;
+  }
+  if (href.toLowerCase().endsWith(".pdf")) {
+    fail(`link para PDF em ${rel}: ${href}`);
+    return;
+  }
+  const cleaned = href.split("#")[0].split("?")[0];
+  if (!cleaned) return;
+
+  const abs = path.join(siteRoot, rel);
+  let targetAbs;
+  if (cleaned.startsWith("/")) {
+    // caminho absoluto do host (shims legados) → relativo à raiz do artefato
+    targetAbs = path.join(siteRoot, cleaned.replace(/^\/+/, ""));
+  } else {
+    targetAbs = path.resolve(path.dirname(abs), cleaned);
+  }
+  const target = normalizePosix(path.relative(siteRoot, targetAbs));
+  if (target.startsWith("..")) return;
+  const asFile = target;
+  const asIndex = normalizePosix(path.join(target, "index.html"));
+  if (
+    !filesSet.has(asFile) &&
+    !filesSet.has(asIndex) &&
+    !fs.existsSync(path.join(siteRoot, asFile))
+  ) {
+    if (!fs.existsSync(path.join(siteRoot, asIndex))) {
+      fail(`link quebrado em ${rel}: ${href} → ${target}`);
+    }
+  }
+}
+
 function checkLinks(siteRoot, files) {
   const htmlFiles = files.filter((f) => f.endsWith(".html"));
+  const cssFiles = files.filter((f) => f.endsWith(".css"));
   const set = new Set(files);
   const cdnRe =
     /https?:\/\/(?:cdn\.|unpkg\.com|cdnjs\.|jsdelivr\.net|fonts\.googleapis|fonts\.gstatic)/i;
@@ -84,50 +150,19 @@ function checkLinks(siteRoot, files) {
     if (cdnRe.test(html)) {
       fail(`CDN de runtime em ${rel}`);
     }
-    const hrefs = [...html.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)].map(
-      (m) => m[1]
-    );
-    for (const href of hrefs) {
-      if (
-        !href ||
-        href.startsWith("#") ||
-        href.startsWith("mailto:") ||
-        href.startsWith("data:")
-      ) {
-        continue;
-      }
-      if (/^https?:\/\//i.test(href)) continue;
-      if (href.includes("prospecto-fase-5-v1") || href.includes("design-system/")) {
-        fail(`link público para path suspenso em ${rel}: ${href}`);
-        continue;
-      }
-      if (href.toLowerCase().endsWith(".pdf")) {
-        fail(`link para PDF em ${rel}: ${href}`);
-        continue;
-      }
-      const cleaned = href.split("#")[0].split("?")[0];
-      if (!cleaned) continue;
+    for (const href of collectLocalRefs(html)) {
+      checkLocalRef(siteRoot, set, rel, href);
+    }
+  }
 
-      let targetAbs;
-      if (cleaned.startsWith("/")) {
-        // caminho absoluto do host (shims legados) → relativo à raiz do artefato
-        targetAbs = path.join(siteRoot, cleaned.replace(/^\/+/, ""));
-      } else {
-        targetAbs = path.resolve(path.dirname(abs), cleaned);
-      }
-      const target = normalizePosix(path.relative(siteRoot, targetAbs));
-      if (target.startsWith("..")) continue;
-      const asFile = target;
-      const asIndex = normalizePosix(path.join(target, "index.html"));
-      if (
-        !set.has(asFile) &&
-        !set.has(asIndex) &&
-        !fs.existsSync(path.join(siteRoot, asFile))
-      ) {
-        if (!fs.existsSync(path.join(siteRoot, asIndex))) {
-          fail(`link quebrado em ${rel}: ${href} → ${target}`);
-        }
-      }
+  for (const rel of cssFiles) {
+    const abs = path.join(siteRoot, rel);
+    const css = fs.readFileSync(abs, "utf8");
+    if (cdnRe.test(css)) {
+      fail(`CDN de runtime em ${rel}`);
+    }
+    for (const href of collectLocalRefs(css, { fromCss: true })) {
+      checkLocalRef(siteRoot, set, rel, href);
     }
   }
 }

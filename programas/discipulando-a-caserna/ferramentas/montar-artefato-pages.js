@@ -126,13 +126,16 @@ function main() {
   if (fs.existsSync(out)) {
     const outReal = fs.realpathSync(out);
     const rootReal = fs.realpathSync(ROOT);
-    const rel = path.relative(rootReal, outReal);
-    if (rel.startsWith("..") && path.isAbsolute(outReal) === false) {
-      // out pode ser tmp fora do repo em testes — permitido se --out explícito
-    }
-    // nunca apagar ROOT
     if (outReal === rootReal) {
       throw new Error("recusa limpar a raiz do repositório");
+    }
+    const rel = normalizePosix(path.relative(rootReal, outReal));
+    const outsideRepo = rel.startsWith("..") || path.isAbsolute(rel);
+    // Dentro do repo, só `_site` (ou subpath) pode ser apagado — evita wipe de fontes.
+    if (!outsideRepo && rel !== "_site" && !rel.startsWith("_site/")) {
+      throw new Error(
+        `recusa limpar caminho dentro do repositório que não é _site: ${rel || "."}`
+      );
     }
     rmrf(out);
   }
