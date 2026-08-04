@@ -90,10 +90,17 @@
   --fr-dur-media: 0.35s;
   --fr-dur-lenta: 0.4s;
   --fr-dur-loader: 1.5s;
+  --fr-dur-enfase: 0.75s;
+  --fr-dur-revelacao: 0.5s;
+  --fr-dur-impulso: 0.3s;
   /* easing */
   --fr-ease-padrao: ease;
-  --fr-ease-saida: cubic-bezier(0.33, 1, 0.68, 1);
-  --fr-ease-entrada: cubic-bezier(0.32, 0.72, 0, 1);
+  --fr-ease-saida: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --fr-ease-entrada: cubic-bezier(0.19, 1, 0.22, 1);
+  --fr-ease-assinatura: cubic-bezier(0.491, 0.153, 0.094, 0.884);
+  --fr-ease-enfase: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --fr-ease-impulso: cubic-bezier(0.696, 0.257, 0, 1.012);
+  --fr-ease-revelacao-lenta: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   /* stagger */
   --fr-stagger-item: 0.06s;
   --fr-stagger-bloco: 0.12s;
@@ -107,6 +114,10 @@
   --fr-persp-cena: 720px;
   /* environment */
   --fr-env-grain-opacity: 0.04;
+  /* scrollPhysics */
+  --fr-scroll-lag-segundos: 0.8;
+  --fr-scroll-duracao-hero-pin: 0.5s;
+  --fr-scroll-duracao-steps-stagger: 1.6s;
 }
 
 @media (prefers-reduced-motion: reduce) {

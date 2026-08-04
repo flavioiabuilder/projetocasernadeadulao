@@ -20,15 +20,100 @@
   }
 }
 
+/*
+ * Primitivas abaixo espelham a física de 4 @keyframes reais da referência
+ * (P9 — MCP chrome-devtools, CSSOM ao vivo): parallaxMove, scaleLogo,
+ * movePreloader, cloud-scroll_*. Implementação e nomes são próprios da
+ * Friso; os keyframes originais não são copiados, só a curva/timing.
+ */
+
+.fr-parallax-track {
+  translate: 0 0;
+}
+
+@keyframes fr-parallax-move {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 calc(var(--fr-parallax-amount, 10%) * -1);
+  }
+}
+
+.fr-brand-mark {
+  transform: scale(1);
+  transition: transform var(--fr-dur-revelacao) var(--fr-ease-assinatura);
+}
+
+@keyframes fr-brand-mark-settle {
+  to {
+    transform: scale(0.8);
+  }
+}
+
+.fr-loader__curtain {
+  height: 100%;
+  background: var(--fr-color-abismo);
+}
+
+.fr-loader[data-done="true"] .fr-loader__curtain {
+  animation: fr-loader-wipe var(--fr-dur-loader) var(--fr-ease-assinatura) forwards;
+}
+
+@keyframes fr-loader-wipe {
+  to {
+    height: 0%;
+  }
+}
+
+.fr-media-stage {
+  position: relative;
+  overflow: clip;
+}
+
+.fr-media-stage__center {
+  transform: scale(0.3);
+  height: 80%;
+  transition:
+    transform var(--fr-dur-enfase) var(--fr-ease-assinatura),
+    height var(--fr-dur-enfase) var(--fr-ease-assinatura);
+}
+
+.fr-media-stage.is-in .fr-media-stage__center {
+  transform: scale(1, 1);
+  height: 100%;
+}
+
+.fr-media-stage__side {
+  translate: 0 0;
+  transition: translate var(--fr-dur-enfase) var(--fr-ease-saida);
+}
+
+.fr-media-stage__overlay {
+  opacity: 0;
+  transition: opacity var(--fr-dur-lenta) var(--fr-ease-entrada);
+}
+
+.fr-media-stage.is-in .fr-media-stage__overlay {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fr-ambient,
-  .fr-scroll-prompt__bar {
+  .fr-scroll-prompt__bar,
+  .fr-loader[data-done="true"] .fr-loader__curtain {
     animation: none !important;
   }
 
   .fr-reveal {
     opacity: 1;
     transform: none;
+    transition: none;
+  }
+
+  .fr-media-stage__center,
+  .fr-media-stage__overlay,
+  .fr-media-stage__side {
     transition: none;
   }
 }

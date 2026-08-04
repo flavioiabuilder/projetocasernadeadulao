@@ -1,0 +1,116 @@
+{
+  "probe": "gsap-live",
+  "url": "https://www.korowa.vic.edu.au/",
+  "viewport": { "w": 1440, "h": 900 },
+  "host": "chrome-devtools-mcp",
+  "layer": "dom+render",
+  "provenance": "medido-no-render",
+  "note": "Primeira sessão com MCP chrome-devtools disponível (sessões 1-2 usaram Playwright por indisponibilidade do MCP, ver progress.md).",
+  "runtime": {
+    "gsapVersion": "3.15.0",
+    "hasScrollTrigger": true,
+    "platform": "Webflow (cdn.prod.website-files.com, d3e54v103j8qbb.cloudfront.net)"
+  },
+  "scrollTriggers": [
+    {
+      "triggerClass": null,
+      "note": "trigger de página inteira (provável progress/scroll-driver global)",
+      "start": 50,
+      "end": 12339,
+      "pin": false
+    },
+    {
+      "triggerClass": "steps-stagger_component",
+      "start": 2616,
+      "end": 3253,
+      "scrub": 0.8,
+      "pin": false,
+      "durationSeconds": 1.6
+    },
+    {
+      "triggerClass": "section_hero-special",
+      "start": 3,
+      "end": 513,
+      "scrub": 0.8,
+      "pin": false,
+      "durationSeconds": 0.5
+    },
+    {
+      "triggerClass": "card-stack_cards-list",
+      "start": 7518,
+      "end": 8514,
+      "scrub": false,
+      "pin": false
+    }
+  ],
+  "keyframes": [
+    {
+      "name": "parallaxMove",
+      "cssText": "@keyframes parallaxMove { 0% { translate: 0px 0%; } 100% { translate: 0 calc(var(--parallax, 10%) * -1); } }"
+    },
+    {
+      "name": "movePreloader",
+      "cssText": "@keyframes movePreloader { 100% { height: 0%; } }"
+    },
+    {
+      "name": "scaleLogo",
+      "cssText": "@keyframes scaleLogo { 100% { transform: scale(0.8); } }"
+    },
+    {
+      "name": "text-gradient-color-fill",
+      "cssText": "@keyframes text-gradient-color-fill { 0% { background-size: 0% 100%; } 100% { background-size: 110% 100%; } }"
+    },
+    {
+      "name": "cloud-scroll_center-image-scale-in",
+      "cssText": "@keyframes cloud-scroll_center-image-scale-in { 0% { transform: scale(0.3); height: 80%; } 15% { height: 100%; transform: scale(0.3); } 100% { transform: scale(1, 1); } }"
+    },
+    {
+      "name": "cloud-scroll_side-image-parallax",
+      "cssText": "@keyframes cloud-scroll_side-image-parallax { 0% { translate: 0px; } 100% { translate: 0 var(--speed); } }"
+    },
+    {
+      "name": "cloud-scroll_show-overlay",
+      "cssText": "@keyframes cloud-scroll_show-overlay { 0% { opacity: 0; } 100% { opacity: 1; } }"
+    },
+    {
+      "name": "spin",
+      "cssText": "@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }"
+    },
+    {
+      "name": "show-hide",
+      "cssText": "@keyframes show-hide { 0% { opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; } }"
+    }
+  ],
+  "customEaseTokens": {
+    "--animation--ease": "cubic-bezier(.491,.153,.094,.884)"
+  },
+  "cubicBeziersObserved": [
+    "cubic-bezier(0.215, 0.61, 0.355, 1)",
+    "cubic-bezier(0.165, 0.84, 0.44, 1)",
+    "cubic-bezier(0.19, 1, 0.22, 1)",
+    "cubic-bezier(0.696, 0.257, 0, 1.012)",
+    "cubic-bezier(0.491, 0.153, 0.094, 0.884)",
+    "cubic-bezier(0.22, 1, 0.36, 1)",
+    "cubic-bezier(0.785, 0.135, 0.15, 0.86)"
+  ],
+  "transitionRulesSample": [
+    { "selector": ".button_content-wrapper", "transition": "transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1)" },
+    { "selector": ".section_navbar", "transition": "transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.4s, background-color 0.4s" },
+    { "selector": ".button_icon-wrapper", "transition": "transform 0.4s cubic-bezier(0.19, 1, 0.22, 1)" },
+    { "selector": ".navbar_cta-content-wrapper", "transition": "transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1)" },
+    { "selector": ".mini-video-card_thumb", "transition": "transform 0.3s cubic-bezier(0.696, 0.257, 0, 1.012)" },
+    { "selector": ".next-pages_card_image", "transition": "transform 0.35s cubic-bezier(0.491, 0.153, 0.094, 0.884)" },
+    { "selector": ".statement_highlight-image-wrap", "transition": "0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86)" },
+    { "selector": ".statement_text-highlight-wrap:has(.statement_highlight-image)", "transition": "background-size 0.5s var(--animation--ease)" },
+    { "selector": ".years-card_info-layer", "transition": "grid-template-rows 0.5s var(--animation--ease)" },
+    { "selector": ".button_component:not([data-link-fill-parent=\"1\"]) .button_link:is(:hover, :focus-visible) + .button_bg-hover", "transition": "transform 0.35s var(--animation--ease)" },
+    { "selector": "[data-hover-underline]::after", "transition": "translate 250ms ease-out" },
+    { "selector": ".w-slider-dot", "transition": "background-color 0.1s, color 0.1s" }
+  ],
+  "readingNotes": [
+    "scrub 0.8 em ScrollTrigger significa que a timeline persegue a posição de scroll com 0.8s de suavização (lag), não é 1:1 instantâneo — a rail linear do Friso (motion.js progress()) é uma simplificação documentada.",
+    "'--animation--ease' é reutilizada em múltiplos componentes (hover de botão, grid-template-rows de card, highlight de texto) — é a curva de assinatura do sistema, não um valor pontual.",
+    "Duas famílias de easing coexistem: entradas/saídas rápidas de UI usam cubic-bezier(0.19,1,0.22,1) e (0.165,0.84,0.44,1) (estilo 'easeOutExpo/Quart'); movimentos de maior escala (cards, highlight) usam a assinatura (.491,.153,.094,.884), mais lenta na entrada e acelerando.",
+    "card-stack_cards-list tem scrub:false — é uma timeline disparada uma vez (play/reverse por toggleActions), não acompanha o scroll continuamente."
+  ]
+}

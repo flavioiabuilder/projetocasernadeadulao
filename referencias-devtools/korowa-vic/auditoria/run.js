@@ -300,15 +300,31 @@ async function cmdBracket(browser, args) {
   const to = Number(args.to ?? 1);
   const step = Number(args.step ?? 0.01);
   const { context, page, vw, vh } = await openPage(browser, args);
+  const wait_ = Number(args.dwell ?? 0);
   const rows = [];
   for (let f = from; f <= to + 1e-9; f += step) {
     const frac = Number(f.toFixed(4));
-    const row = await page.evaluate((fr) => {
+    const row = await page.evaluate(
+      ([fr, wait]) => {
       const max = Math.max(0, document.documentElement.scrollHeight - innerHeight);
       scrollTo(0, Math.round(max * fr));
       return new Promise((resolve) =>
         requestAnimationFrame(() =>
           requestAnimationFrame(() => {
+            const go = () => {
+            // getContext devolve o contexto JÁ EXISTENTE quando o tipo casa e
+            // null quando não casa. Num canvas já renderizado isso identifica o
+            // tipo sem recriar nem destruir nada.
+            const ctxType = (c) => {
+              for (const t of ["webgl2", "webgl", "experimental-webgl", "2d", "bitmaprenderer"]) {
+                try {
+                  if (c.getContext(t)) return t;
+                } catch {
+                  /* contexto incompatível */
+                }
+              }
+              return "undetermined";
+            };
             const cs = [...document.querySelectorAll("canvas")].map((c) => ({
               w: c.clientWidth,
               h: c.clientHeight,
@@ -320,14 +336,33 @@ async function cmdBracket(browser, args) {
               parentCls: c.parentElement
                 ? String(c.parentElement.className || "").slice(0, 80)
                 : null,
+              parentId: c.parentElement ? c.parentElement.id || null : null,
+              ancestorSection: (() => {
+                let el = c.parentElement;
+                for (let i = 0; i < 6 && el; i++, el = el.parentElement) {
+                  if (/section|article|main/i.test(el.tagName) || el.id) {
+                    return `${el.tagName.toLowerCase()}#${el.id || ""}.${String(el.className || "").slice(0, 60)}`;
+                  }
+                }
+                return null;
+              })(),
               vis: getComputedStyle(c).visibility,
               op: getComputedStyle(c).opacity,
+              zIndex: getComputedStyle(c).zIndex,
+              position: getComputedStyle(c).position,
+              rectTop: Math.round(c.getBoundingClientRect().top),
+              ctx: ctxType(c),
             }));
-            resolve({ n: cs.length, cs });
+              resolve({ n: cs.length, cs });
+            };
+            if (wait > 0) setTimeout(go, wait);
+            else go();
           }),
         ),
       );
-    }, frac);
+      },
+      [frac, wait_],
+    );
     rows.push({ fraction: frac, ...row });
   }
   const transitions = [];
@@ -355,6 +390,96 @@ async function cmdBracket(browser, args) {
   await context.close();
 }
 
+/**
+ * Instrumenta a criação de <canvas> antes de qualquer script da página rodar e
+ * grava o stack de quem criou. Resolve a pergunta "de onde veio aquele canvas"
+ * sem inferência: o stack aponta o arquivo de origem.
+ * Repete N carregamentos porque a ocorrência observada não foi reprodutível.
+ */
+async function cmdCanvasOrigin(browser, args) {
+  const runs = Number(args.runs ?? 5);
+  const vw = Number(args.vw || 1440);
+  const vh = Number(args.vh || 900);
+  const results = [];
+
+  for (let i = 0; i < runs; i++) {
+    const context = await browser.newContext({
+      viewport: { width: vw, height: vh },
+      deviceScaleFactor: 1,
+    });
+    await context.addInitScript(() => {
+      window.__canvasCreations = [];
+      const origCreate = Document.prototype.createElement;
+      Document.prototype.createElement = function (tag, ...rest) {
+        const el = origCreate.call(this, tag, ...rest);
+        if (String(tag).toLowerCase() === "canvas") {
+          window.__canvasCreations.push({
+            via: "createElement",
+            stack: String(new Error().stack || "").split("\n").slice(1, 6).join(" | "),
+            t: Math.round(performance.now()),
+          });
+        }
+        return el;
+      };
+      const origGetCtx = HTMLCanvasElement.prototype.getContext;
+      HTMLCanvasElement.prototype.getContext = function (type, ...rest) {
+        window.__canvasCreations.push({
+          via: "getContext:" + type,
+          stack: String(new Error().stack || "").split("\n").slice(1, 6).join(" | "),
+          t: Math.round(performance.now()),
+        });
+        return origGetCtx.call(this, type, ...rest);
+      };
+    });
+
+    const page = await context.newPage();
+    const hosts = new Set();
+    page.on("request", (r) => {
+      try {
+        hosts.add(new URL(r.url()).host);
+      } catch {
+        /* url inválida */
+      }
+    });
+    await page.goto(TARGET, { waitUntil: "domcontentloaded", timeout: 90000 });
+    await page.waitForLoadState("networkidle", { timeout: 60000 }).catch(() => {});
+    await settle(page);
+    const found = await page.evaluate(() => ({
+      creations: (window.__canvasCreations || []).slice(0, 20),
+      inDom: document.querySelectorAll("canvas").length,
+    }));
+    results.push({ run: i + 1, ...found, hostCount: hosts.size, hosts: [...hosts].sort() });
+    await context.close();
+  }
+
+  const out = {
+    probe: "canvas-origin",
+    url: TARGET,
+    viewport: { w: vw, h: vh },
+    runs,
+    runsWithCanvasInDom: results.filter((r) => r.inDom > 0).length,
+    runsWithCreation: results.filter((r) => r.creations.length > 0).length,
+    results,
+    layer: "canvas",
+    provenance: "medido-no-render",
+  };
+  writeJson(path.join(RAW, `canvas-origin-${vw}x${vh}.json`), out);
+  provenance({ probe: "canvas-origin", url: TARGET, viewport: `${vw}x${vh}`, layer: "canvas", provenancia: "medido-no-render", host: "playwright", runs });
+  console.log(
+    JSON.stringify(
+      {
+        runs,
+        runsWithCanvasInDom: out.runsWithCanvasInDom,
+        runsWithCreation: out.runsWithCreation,
+        creations: results.flatMap((r) => r.creations.map((c) => ({ run: r.run, ...c }))).slice(0, 12),
+        hostsUnion: [...new Set(results.flatMap((r) => r.hosts))].sort(),
+      },
+      null,
+      2,
+    ),
+  );
+}
+
 (async () => {
   const args = parseArgs(process.argv);
   const cmd = args._[0];
@@ -367,6 +492,8 @@ async function cmdBracket(browser, args) {
     if (cmd === "scan") await cmdScan(browser, args);
     else if (cmd === "degraded") await cmdScan(browser, { ...args, label: args.label || "degraded" });
     else if (cmd === "probes") await cmdProbes(browser, args);
+    else if (cmd === "bracket") await cmdBracket(browser, args);
+    else if (cmd === "canvas-origin") await cmdCanvasOrigin(browser, args);
     else {
       console.error("Subcomando desconhecido:", cmd);
       process.exit(1);

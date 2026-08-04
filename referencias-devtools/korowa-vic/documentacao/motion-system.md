@@ -4,24 +4,37 @@
 
 | Achado | Procedência |
 | --- | --- |
-| `gsap`, `ScrollTrigger` no `window` | P4 — EVIDÊNCIA |
-| Transitions `background/color` 0.2s | P1 |
-| Transform 0.35–0.4s | P1 |
-| `parallaxMove`, `cloud-scroll_*`, `scaleLogo`, `movePreloader` | P1 animation-name |
-| 0 canvas | P4 |
+| `gsap` 3.15.0, `ScrollTrigger` no `window` | P4 (globais), **P9 — MCP chrome-devtools ao vivo** (versão + instâncias) |
+| Plataforma: Webflow (`cdn.prod.website-files.com`, `d3e54v103j8qbb.cloudfront.net`) | P9 |
+| `ScrollTrigger` real: `section_hero-special` scrub 0.8, duração 0.5s · `steps-stagger_component` scrub 0.8, duração 1.6s · `card-stack_cards-list` scrub false (timeline discreta) | **P9 — `ScrollTrigger.getAll()` medido ao vivo** |
+| `--animation--ease: cubic-bezier(.491,.153,.094,.884)` — curva de assinatura, reutilizada em hover de botão, `grid-template-rows` de card e highlight de texto | **P9 — custom property computada** |
+| Família de easings de UI: `cubic-bezier(0.19,1,0.22,1)` (entrada), `cubic-bezier(0.165,0.84,0.44,1)` (saída/navbar 0.35s), `cubic-bezier(0.215,0.61,0.355,1)` (ênfase, 0.75s), `cubic-bezier(0.696,0.257,0,1.012)` (impulso com leve overshoot, 0.3s), `cubic-bezier(0.785,0.135,0.15,0.86)` (revelação lenta, 0.5s) | **P9 — CSSOM ao vivo, `raw/p9-gsap-live-1440x900.json`** |
+| `@keyframes` reais: `parallaxMove`, `movePreloader`, `scaleLogo`, `cloud-scroll_center-image-scale-in`, `cloud-scroll_side-image-parallax`, `cloud-scroll_show-overlay`, `text-gradient-color-fill`, `spin`, `show-hide` | P1 (nomes, sessão 1) confirmado e capturado por inteiro na P9 |
+| 0 canvas da aplicação (canvas transitório rastreado até fingerprinting de terceiro, `dsp-cdn.gammaplatform.com`) | P4 + `canvas-origin` (ver `three-dimensional-language.md`) |
+
+Tokens correspondentes em `tokens.json` → `easing.*`, `duration.*`, `scrollPhysics.*` (gerados em `tokens.css` como `--fr-ease-*`, `--fr-dur-*`, `--fr-scroll-*`).
+
+## Física do scroll (scrub) — antes e depois da P9
+
+A sessão 2 documentava a rail de progresso como "identidade linear" por não ter acesso a `ScrollTrigger.getAll()` (MCP indisponível). A P9 mediu o valor real: `scrub: 0.8` nas duas seções com scroll contínuo observadas. Isso não é um multiplicador — é uma **constante de tempo de suavização exponencial**: a cada frame, a timeline persegue a posição-alvo do scroll, sem nunca ser 1:1 instantânea.
+
+`motion.js` implementa isso em `createScrollLag(lagSeconds)`: a cada `requestAnimationFrame`, `valor += (alvo − valor) × (1 − e^(−dt/lag))`, com `lag = 0.8` lido de `--fr-scroll-lag-segundos`. Independente de framerate (usa `dt` real, não incremento fixo). Aplicado em `bindPinProgress` (o pin de hero da Friso é o análogo direto de `section_hero-special`).
+
+A rail de progresso (`data-fr-progress`) e o parallax (`data-fr-parallax`) permanecem 1:1 com o scroll — são invenções próprias da Friso (rail) ou o análogo de `cloud-scroll_side-image-parallax`, que no site real roda via CSS `animation-timeline` nativa (sem lag de JS), não scrub do GSAP.
+
+`prefers-reduced-motion: reduce` desliga o lag por completo (`REDUCE` em `motion.js`): o valor salta direto ao alvo, sem suavização, e as durações no CSS caem para `0.01ms`.
 
 ## Curva scroll → estado (reconstrução)
 
 | Fração | Estado Friso |
 | --- | --- |
-| 0–0.25 | Pin hero; atmosfera escala 1.1→~1.02; progress rail sobe |
+| 0–0.25 | Pin hero; atmosfera escala 1.1→~1.02 (via `createScrollLag`, não instantâneo); progress rail sobe (instantâneo) |
 | 0.25–0.55 | Painéis editoriais; reveals por IntersectionObserver |
 | 0.55–0.85 | Bloco névoa / profundidade CSS |
 | 0.85–1 | Fecho carmesim + footer |
 
-Erro-alvo G3: progresso normalizado da rail ≈ scrollY/maxScroll (identidade linear; a referência usa scrub GSAP — aproximação documentada).
-
 ## Primitivas
 
-`data-fr-reveal`, `data-fr-parallax`, `data-fr-pin`, `data-fr-progress` em `motion.js`.
-Reduced motion: duração→0.01ms, sem translate de entrada.
+`data-fr-reveal`, `data-fr-parallax`, `data-fr-pin`, `data-fr-pin-sticky`, `data-fr-atmosphere`, `data-fr-progress` em `motion.js`. Classes utilitárias novas (P9): `.fr-media-stage` (análogo de `cloud-scroll_*`, scale-in + parallax lateral + overlay), `.fr-loader__curtain` (análogo de `movePreloader`, wipe de altura), `.fr-brand-mark` (análogo de `scaleLogo`) — em `motion.css`.
+
+Reduced motion: duração→0.01ms, sem translate de entrada, sem lag de scroll.

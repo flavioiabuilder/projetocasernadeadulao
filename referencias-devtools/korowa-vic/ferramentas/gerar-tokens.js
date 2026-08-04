@@ -28,6 +28,7 @@ const GRUPOS = [
   ["motionScale", "mov-escala"],
   ["perspective", "persp"],
   ["environment", "env"],
+  ["scrollPhysics", "scroll"],
 ];
 
 function kebab(nome) {
@@ -62,7 +63,7 @@ function main() {
     if (!obj || typeof obj !== "object") continue;
     lines.push(`  /* ${grupo} */`);
     for (const [chave, bruto] of Object.entries(obj)) {
-      if (chave.endsWith("Note") || chave === "fontNote" || chave === "baseNote") continue;
+      if (/note$/i.test(chave)) continue;
       const val = valorToken(bruto);
       if (val == null) continue;
       lines.push(`  --${prefix}-${cssGrupo}-${kebab(chave)}: ${val};`);

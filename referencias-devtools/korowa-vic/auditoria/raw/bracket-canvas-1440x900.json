@@ -1,0 +1,19 @@
+{
+  "probe": "bracket-canvas",
+  "url": "https://www.korowa.vic.edu.au/",
+  "viewport": {
+    "w": 1440,
+    "h": 900
+  },
+  "range": [
+    0.45,
+    0.65
+  ],
+  "step": 0.01,
+  "positionsWithCanvas": 0,
+  "positions": 21,
+  "transitions": [],
+  "sample": null,
+  "layer": "canvas",
+  "provenance": "medido-no-render"
+}

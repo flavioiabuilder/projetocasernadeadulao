@@ -29,8 +29,20 @@
 
 ## Canvas / libs
 
-- canvas: 0
-- EVIDÊNCIA: gsap, ScrollTrigger
+- **canvas da aplicação: 0** — confirmado por três instrumentos independentes.
+  - `bracket` 0,10–0,90 passo 1% (81 posições, com e sem dwell de 500 ms): zero.
+  - `canvas-origin` (hook em `createElement`/`getContext` antes dos scripts da
+    página, 5 cargas): 5 com criação, **0 com canvas remanescente no DOM**.
+  - A ocorrência isolada em `p4-canvas-refine-b` (0,49–0,61) é de terceiro:
+    `dsp-cdn.gammaplatform.com/.../conv.js` → `webGlBasics()` cria canvas 2d e
+    WebGL e descarta. Fingerprinting, não cena. Ver
+    `documentacao/three-dimensional-language.md`.
+- EVIDÊNCIA de motion: `gsap`, `ScrollTrigger` (globais presentes).
+- EVIDÊNCIA de plataforma: `cdn.prod.website-files.com` e
+  `d3e54v103j8qbb.cloudfront.net` no grafo de rede → **Webflow**.
+- 23 hosts distintos numa carga; maioria ad-tech (adsrvr, doubleclick, adnxs,
+  rubicon, linkedin, facebook, gamma). Relevante para o PASSO 5 (custo) e para
+  a fronteira de ativos: nada disso é reproduzido em Friso.
 - Session2 items: 129
 
 ## Artefatos
