@@ -102,3 +102,5 @@
 {"at":"2026-08-04T18:11:29.906Z","probe":"bracket-canvas","url":"https://www.korowa.vic.edu.au/","viewport":"1440x900","layer":"canvas","provenancia":"medido-no-render","host":"playwright","range":[0.45,0.65],"step":0.01}
 {"at":"2026-08-04T18:18:37.628Z","probe":"canvas-origin","url":"https://www.korowa.vic.edu.au/","viewport":"1440x900","layer":"canvas","provenancia":"medido-no-render","host":"playwright","runs":5}
 {"at":"2026-08-04T18:49:03.565Z","probe":"gsap-live","url":"https://www.korowa.vic.edu.au/","viewport":"1440x900","layer":"dom+render","provenancia":"medido-no-render","host":"chrome-devtools-mcp","gsapVersion":"3.15.0","triggerCount":4,"keyframeCount":9}
+{"at":"2026-08-04T21:19:09.984Z","probe":"ssim-macro-g2","url":"https://www.korowa.vic.edu.au/","viewport":"1440x900","layer":"dom+render","provenancia":"medido-no-render","host":"chrome-devtools-mcp+pngjs","ssimMacroMean":0.2335,"threshold":0.85}
+{"at":"2026-08-04T21:22:38.313Z","probe":"lighthouse-live","url":"https://www.korowa.vic.edu.au/","layer":"dom+render","provenancia":"medido-no-render","host":"chrome-devtools-mcp","accessibility":83,"bestPractices":58,"seo":100,"agenticBrowsing":50}

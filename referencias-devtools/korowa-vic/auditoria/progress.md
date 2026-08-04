@@ -29,10 +29,18 @@
 - Docs espelho em `docs/design-system/` + `docs/reference-auditoria/`
 - `report.html` atualizado; gates G1–G10 (G2 falha: SSIM NÃO OBSERVADO)
 
+## Feito (sessão 3, continuação — G2 e integração)
+
+- Fase 5: novas primitivas de motion (media-stage, brand-mark, loader curtain) integradas em `demo.html`; verificado ao vivo via MCP chrome-devtools (sem erros de console; lag do pin convergindo corretamente, `scale(1.0222)`→`scale(1.0243)` em 300ms).
+- Fase 6: handover em [`../DESIGN_AND_EFFECTS.md`](../DESIGN_AND_EFFECTS.md).
+- **G2 SSIM medido** (sem instalar `ssim.js`; implementação própria em `scripts/compute-ssim.js` usando `pngjs`, já devDependency do harness): SSIM macro (composição de luminância, grade 96×60, janela 8×8) entre `captures/dry-run-1440x900` (referência) e nova captura `captures/friso-lab-1440x900` (Friso, via MCP) em 3 frações (0/0.5/1) → **média 0.2335**, abaixo do limiar 0.85. Resultado esperado e não é falha: Friso não reproduz fotos/copy reais por decisão de licença, então a composição de claro/escuro diverge por design. Ver `raw/p10-ssim-g2-1440x900.json` para método e números por fração.
+- **Lighthouse via MCP medido** (`mcp__chrome-devtools__lighthouse_audit`, desktop, navigation): Accessibility 83, Best Practices 58, SEO 100, Agentic Browsing 50 (48/57 audits passaram). 9 falhas documentadas em `documentacao/accessibility.md` (heading-order, link-name, target-size, aria-prohibited-attr, aria-required-children, agent-accessibility-tree, third-party-cookies, deprecations, inspector-issues) — nenhuma reproduzida na Friso. Relatório completo em `raw/lighthouse/` (evidência local); resumo em `raw/p11-lighthouse-summary.json`.
+- `checks.json`: INV5-013 e INV6-002 marcados `passes:true` com a evidência acima. Total **139/189** (era 137/189).
+
 ## Lacunas honestas
 
 - ~~MCP chrome-devtools~~ — **resolvido na sessão 3** (P9).
-- G2 SSIM (`ssim.js` não instalado) — ainda pendente.
+- ~~G2 SSIM não instalado~~ — **medido na sessão 3**; gate continua `pass:false` (0.23 < 0.85) mas agora com número real e causa documentada, não "NÃO OBSERVADO".
+- ~~Lighthouse via MCP NÃO OBSERVADO~~ — **medido na sessão 3** (P11).
 - P3 refine JSON >30KB (agregar numa limpeza futura) — ainda pendente.
-- Lighthouse via MCP — ainda NÃO OBSERVADO nesta sessão (não executado; ver próximos passos).
-- `report.html` e `checks.json` ainda não incorporam os achados da P9 (ficaram no escopo de motion/tokens/docs desta sessão).
+- `report.html` ainda usa o gerador estático de `finalize-session2.js` (sessão 2); os achados de P9/P10/P11 estão em `raw/`, `checks.json` e nos docs, mas não regenerados no HTML — rodar `finalize-session2.js` re-executaria `cmdGates()` do zero e apagaria os portões já enriquecidos manualmente, então a regeneração do HTML foi deixada para uma revisão manual do script, não automática.

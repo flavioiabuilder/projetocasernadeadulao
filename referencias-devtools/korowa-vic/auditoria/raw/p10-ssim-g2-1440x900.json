@@ -1,0 +1,71 @@
+{
+  "probe": "ssim-macro-g2",
+  "method": "Reamostragem área-média para grade 96x60 (luminância), SSIM janelado 8x8 (Wang et al. 2004, sem filtro gaussiano). Mede composição espacial claro/escuro, não conteúdo pixel-a-pixel.",
+  "threshold": 0.85,
+  "results": [
+    {
+      "fraction": 0,
+      "refPath": "captures\\dry-run-1440x900\\f000.png",
+      "labPath": "captures\\friso-lab-1440x900\\f000.png",
+      "refSize": {
+        "w": 1440,
+        "h": 900
+      },
+      "labSize": {
+        "w": 1370,
+        "h": 637
+      },
+      "thumbnail": {
+        "w": 96,
+        "h": 60,
+        "window": 8,
+        "windows": 96
+      },
+      "ssimMacro": 0.1153
+    },
+    {
+      "fraction": 0.5,
+      "refPath": "captures\\dry-run-1440x900\\f050.png",
+      "labPath": "captures\\friso-lab-1440x900\\f050.png",
+      "refSize": {
+        "w": 1440,
+        "h": 900
+      },
+      "labSize": {
+        "w": 1370,
+        "h": 637
+      },
+      "thumbnail": {
+        "w": 96,
+        "h": 60,
+        "window": 8,
+        "windows": 96
+      },
+      "ssimMacro": 0.2771
+    },
+    {
+      "fraction": 1,
+      "refPath": "captures\\dry-run-1440x900\\f100.png",
+      "labPath": "captures\\friso-lab-1440x900\\f100.png",
+      "refSize": {
+        "w": 1440,
+        "h": 900
+      },
+      "labSize": {
+        "w": 1370,
+        "h": 637
+      },
+      "thumbnail": {
+        "w": 96,
+        "h": 60,
+        "window": 8,
+        "windows": 96
+      },
+      "ssimMacro": 0.3081
+    }
+  ],
+  "ssimMacroMean": 0.2335,
+  "layer": "dom+render",
+  "provenance": "medido-no-render",
+  "note": "Comparação macro entre captures/dry-run-1440x900 (referência, sessão 1, Playwright) e captures/friso-lab-1440x900 (Friso, sessão 3, MCP chrome-devtools). Conteúdo (copy/fotos) difere por decisão de licença — ver documentacao/asset-and-license-boundaries.md; SSIM baixo pode refletir isso, não necessariamente composição divergente."
+}

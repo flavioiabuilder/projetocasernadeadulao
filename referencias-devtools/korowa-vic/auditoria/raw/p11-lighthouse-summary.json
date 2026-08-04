@@ -1,0 +1,30 @@
+{
+  "probe": "lighthouse-live",
+  "url": "https://www.korowa.vic.edu.au/",
+  "host": "chrome-devtools-mcp",
+  "device": "desktop",
+  "mode": "navigation",
+  "layer": "dom+render",
+  "provenance": "medido-no-render",
+  "scores": {
+    "accessibility": 83,
+    "bestPractices": 57.99999999999999,
+    "seo": 100,
+    "agenticBrowsing": 50
+  },
+  "auditsPassed": 48,
+  "auditsFailed": 9,
+  "failedAudits": [
+    { "id": "deprecations", "title": "Uses deprecated APIs", "score": 0 },
+    { "id": "third-party-cookies", "title": "Uses third-party cookies", "score": 0 },
+    { "id": "aria-prohibited-attr", "title": "Elements use prohibited ARIA attributes", "score": 0 },
+    { "id": "aria-required-children", "title": "Elements with an ARIA [role] that require children to contain a specific [role] are missing some or all of those required children.", "score": 0 },
+    { "id": "heading-order", "title": "Heading elements are not in a sequentially-descending order", "score": 0 },
+    { "id": "link-name", "title": "Links do not have a discernible name", "score": 0 },
+    { "id": "target-size", "title": "Touch targets do not have sufficient size or spacing.", "score": 0 },
+    { "id": "inspector-issues", "title": "Issues were logged in the Issues panel in Chrome Devtools", "score": 0 },
+    { "id": "agent-accessibility-tree", "title": "Accessibility tree is not well-formed", "score": 0 }
+  ],
+  "fullReport": "raw/lighthouse/report.json (274KB) e raw/lighthouse/report.html (376KB) — evidência local, não publicada, não hotlinkada.",
+  "note": "Fecha a lacuna 'Lighthouse via MCP NÃO OBSERVADO' das sessões 1-2 (SETUP-008). Falhas de best-practices/agentic-browsing majoritariamente ligadas a scripts de terceiro (ads/fingerprinting) já documentados em three-dimensional-language.md — não são um alvo de reconstrução."
+}

@@ -1,6 +1,16 @@
 {
-  "generatedAt": "2026-08-03T23:58:08.042Z",
+  "generatedAt": "2026-08-04T21:25:50.686Z",
   "files": [
+    {
+      "file": "bracket-canvas-1440x900.json",
+      "bytes": 319,
+      "probe": "bracket-canvas"
+    },
+    {
+      "file": "canvas-origin-1440x900.json",
+      "bytes": 13805,
+      "probe": "canvas-origin"
+    },
     {
       "file": "cpu-throttle-4x.json",
       "bytes": 43,
@@ -18,7 +28,7 @@
     },
     {
       "file": "gates.json",
-      "bytes": 1447,
+      "bytes": 1637,
       "probe": null
     },
     {
@@ -75,6 +85,16 @@
       "file": "p1-styles-768x1024-f0.json",
       "bytes": 12064,
       "probe": "P1-styles"
+    },
+    {
+      "file": "p10-ssim-g2-1440x900.json",
+      "bytes": 1955,
+      "probe": "ssim-macro-g2"
+    },
+    {
+      "file": "p11-lighthouse-summary.json",
+      "bytes": 1840,
+      "probe": "lighthouse-live"
     },
     {
       "file": "p2-cascade-1440x900-f0.json",
@@ -192,6 +212,11 @@
       "probe": "P8-frames"
     },
     {
+      "file": "p9-gsap-live-1440x900.json",
+      "bytes": 5527,
+      "probe": "gsap-live"
+    },
+    {
       "file": "reload-behavior.json",
       "bytes": 111,
       "probe": null
@@ -223,6 +248,305 @@
     }
   ],
   "probes": {
+    "bracket-canvas": {
+      "probe": "bracket-canvas",
+      "url": "https://www.korowa.vic.edu.au/",
+      "viewport": {
+        "w": 1440,
+        "h": 900
+      },
+      "range": [
+        0.45,
+        0.65
+      ],
+      "step": 0.01,
+      "positionsWithCanvas": 0,
+      "positions": 21,
+      "transitions": [],
+      "sample": null,
+      "layer": "canvas",
+      "provenance": "medido-no-render"
+    },
+    "canvas-origin": {
+      "probe": "canvas-origin",
+      "url": "https://www.korowa.vic.edu.au/",
+      "viewport": {
+        "w": 1440,
+        "h": 900
+      },
+      "runs": 5,
+      "runsWithCanvasInDom": 0,
+      "runsWithCreation": 5,
+      "results": [
+        {
+          "run": 1,
+          "creations": [
+            {
+              "via": "createElement",
+              "stack": "    at Document.createElement (<anonymous>:10:27) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13887 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13962 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1517 |     at Object.next (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1622)",
+              "t": 33923
+            },
+            {
+              "via": "getContext:2d",
+              "stack": "    at HTMLCanvasElement.getContext (<anonymous>:20:25) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13944 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13962 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1517 |     at Object.next (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1622)",
+              "t": 33925
+            },
+            {
+              "via": "createElement",
+              "stack": "    at Document.createElement (<anonymous>:10:27) |     at Se (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:18695) |     at webGlBasics (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:34969) |     at u (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:2003) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:5641",
+              "t": 34292
+            },
+            {
+              "via": "getContext:webgl",
+              "stack": "    at HTMLCanvasElement.getContext (<anonymous>:20:25) |     at Se (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:18875) |     at webGlBasics (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:34969) |     at u (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:2003) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:5641",
+              "t": 34292
+            }
+          ],
+          "inDom": 0,
+          "hostCount": 24,
+          "hosts": [
+            "",
+            "analytics.google.com",
+            "cdn.jsdelivr.net",
+            "cdn.prod.website-files.com",
+            "cm.g.doubleclick.net",
+            "connect.facebook.net",
+            "d3e54v103j8qbb.cloudfront.net",
+            "dsp-cdn.gammaplatform.com",
+            "flackr.github.io",
+            "ib.adnxs.com",
+            "insight.adsrvr.org",
+            "js.adsrvr.org",
+            "match.adsrvr.org",
+            "pixel.rubiconproject.com",
+            "px.ads.linkedin.com",
+            "px4.ads.linkedin.com",
+            "snap.licdn.com",
+            "sq-trk.gammaplatform.com",
+            "stats.g.doubleclick.net",
+            "www.google-analytics.com",
+            "www.google.com.br",
+            "www.googletagmanager.com",
+            "www.korowa.vic.edu.au",
+            "www.linkedin.com"
+          ]
+        },
+        {
+          "run": 2,
+          "creations": [
+            {
+              "via": "createElement",
+              "stack": "    at Document.createElement (<anonymous>:10:27) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13887 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13962 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1517 |     at Object.next (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1622)",
+              "t": 22724
+            },
+            {
+              "via": "getContext:2d",
+              "stack": "    at HTMLCanvasElement.getContext (<anonymous>:20:25) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13944 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13962 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1517 |     at Object.next (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1622)",
+              "t": 22724
+            },
+            {
+              "via": "createElement",
+              "stack": "    at Document.createElement (<anonymous>:10:27) |     at Se (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:18695) |     at webGlBasics (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:34969) |     at u (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:2003) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:5641",
+              "t": 23390
+            },
+            {
+              "via": "getContext:webgl",
+              "stack": "    at HTMLCanvasElement.getContext (<anonymous>:20:25) |     at Se (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:18875) |     at webGlBasics (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:34969) |     at u (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:2003) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:5641",
+              "t": 23390
+            }
+          ],
+          "inDom": 0,
+          "hostCount": 24,
+          "hosts": [
+            "",
+            "analytics.google.com",
+            "cdn.jsdelivr.net",
+            "cdn.prod.website-files.com",
+            "cm.g.doubleclick.net",
+            "connect.facebook.net",
+            "d3e54v103j8qbb.cloudfront.net",
+            "dsp-cdn.gammaplatform.com",
+            "flackr.github.io",
+            "ib.adnxs.com",
+            "insight.adsrvr.org",
+            "js.adsrvr.org",
+            "match.adsrvr.org",
+            "pixel.rubiconproject.com",
+            "px.ads.linkedin.com",
+            "px4.ads.linkedin.com",
+            "snap.licdn.com",
+            "sq-trk.gammaplatform.com",
+            "stats.g.doubleclick.net",
+            "www.google-analytics.com",
+            "www.google.com.br",
+            "www.googletagmanager.com",
+            "www.korowa.vic.edu.au",
+            "www.linkedin.com"
+          ]
+        },
+        {
+          "run": 3,
+          "creations": [
+            {
+              "via": "createElement",
+              "stack": "    at Document.createElement (<anonymous>:10:27) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13887 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13962 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1517 |     at Object.next (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1622)",
+              "t": 20803
+            },
+            {
+              "via": "getContext:2d",
+              "stack": "    at HTMLCanvasElement.getContext (<anonymous>:20:25) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13944 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13962 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1517 |     at Object.next (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1622)",
+              "t": 20804
+            },
+            {
+              "via": "createElement",
+              "stack": "    at Document.createElement (<anonymous>:10:27) |     at Se (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:18695) |     at webGlBasics (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:34969) |     at u (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:2003) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:5641",
+              "t": 21086
+            },
+            {
+              "via": "getContext:webgl",
+              "stack": "    at HTMLCanvasElement.getContext (<anonymous>:20:25) |     at Se (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:18875) |     at webGlBasics (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:34969) |     at u (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:2003) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:5641",
+              "t": 21087
+            }
+          ],
+          "inDom": 0,
+          "hostCount": 24,
+          "hosts": [
+            "",
+            "analytics.google.com",
+            "cdn.jsdelivr.net",
+            "cdn.prod.website-files.com",
+            "cm.g.doubleclick.net",
+            "connect.facebook.net",
+            "d3e54v103j8qbb.cloudfront.net",
+            "dsp-cdn.gammaplatform.com",
+            "flackr.github.io",
+            "ib.adnxs.com",
+            "insight.adsrvr.org",
+            "js.adsrvr.org",
+            "match.adsrvr.org",
+            "pixel.rubiconproject.com",
+            "px.ads.linkedin.com",
+            "px4.ads.linkedin.com",
+            "snap.licdn.com",
+            "sq-trk.gammaplatform.com",
+            "stats.g.doubleclick.net",
+            "www.google-analytics.com",
+            "www.google.com.br",
+            "www.googletagmanager.com",
+            "www.korowa.vic.edu.au",
+            "www.linkedin.com"
+          ]
+        },
+        {
+          "run": 4,
+          "creations": [
+            {
+              "via": "createElement",
+              "stack": "    at Document.createElement (<anonymous>:10:27) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13887 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13962 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1517 |     at Object.next (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1622)",
+              "t": 14816
+            },
+            {
+              "via": "getContext:2d",
+              "stack": "    at HTMLCanvasElement.getContext (<anonymous>:20:25) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13944 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13962 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1517 |     at Object.next (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1622)",
+              "t": 14816
+            },
+            {
+              "via": "createElement",
+              "stack": "    at Document.createElement (<anonymous>:10:27) |     at Se (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:18695) |     at webGlBasics (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:34969) |     at u (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:2003) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:5641",
+              "t": 14987
+            },
+            {
+              "via": "getContext:webgl",
+              "stack": "    at HTMLCanvasElement.getContext (<anonymous>:20:25) |     at Se (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:18875) |     at webGlBasics (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:34969) |     at u (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:2003) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:5641",
+              "t": 14987
+            }
+          ],
+          "inDom": 0,
+          "hostCount": 24,
+          "hosts": [
+            "",
+            "analytics.google.com",
+            "cdn.jsdelivr.net",
+            "cdn.prod.website-files.com",
+            "cm.g.doubleclick.net",
+            "connect.facebook.net",
+            "d3e54v103j8qbb.cloudfront.net",
+            "dsp-cdn.gammaplatform.com",
+            "flackr.github.io",
+            "ib.adnxs.com",
+            "insight.adsrvr.org",
+            "js.adsrvr.org",
+            "match.adsrvr.org",
+            "pixel.rubiconproject.com",
+            "px.ads.linkedin.com",
+            "px4.ads.linkedin.com",
+            "snap.licdn.com",
+            "sq-trk.gammaplatform.com",
+            "stats.g.doubleclick.net",
+            "www.google-analytics.com",
+            "www.google.com.br",
+            "www.googletagmanager.com",
+            "www.korowa.vic.edu.au",
+            "www.linkedin.com"
+          ]
+        },
+        {
+          "run": 5,
+          "creations": [
+            {
+              "via": "createElement",
+              "stack": "    at Document.createElement (<anonymous>:10:27) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13887 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13962 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1517 |     at Object.next (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1622)",
+              "t": 8143
+            },
+            {
+              "via": "getContext:2d",
+              "stack": "    at HTMLCanvasElement.getContext (<anonymous>:20:25) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13944 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:13962 |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1517 |     at Object.next (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:1622)",
+              "t": 8143
+            },
+            {
+              "via": "createElement",
+              "stack": "    at Document.createElement (<anonymous>:10:27) |     at Se (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:18695) |     at webGlBasics (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:34969) |     at u (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:2003) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:5641",
+              "t": 9819
+            },
+            {
+              "via": "getContext:webgl",
+              "stack": "    at HTMLCanvasElement.getContext (<anonymous>:20:25) |     at Se (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:18875) |     at webGlBasics (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:34969) |     at u (https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:2003) |     at https://dsp-cdn.gammaplatform.com/static/js/cv/conv.js:12:5641",
+              "t": 9819
+            }
+          ],
+          "inDom": 0,
+          "hostCount": 24,
+          "hosts": [
+            "",
+            "analytics.google.com",
+            "cdn.jsdelivr.net",
+            "cdn.prod.website-files.com",
+            "cm.g.doubleclick.net",
+            "connect.facebook.net",
+            "d3e54v103j8qbb.cloudfront.net",
+            "dsp-cdn.gammaplatform.com",
+            "flackr.github.io",
+            "ib.adnxs.com",
+            "insight.adsrvr.org",
+            "js.adsrvr.org",
+            "match.adsrvr.org",
+            "pixel.rubiconproject.com",
+            "px.ads.linkedin.com",
+            "px4.ads.linkedin.com",
+            "snap.licdn.com",
+            "sq-trk.gammaplatform.com",
+            "stats.g.doubleclick.net",
+            "www.google-analytics.com",
+            "www.google.com.br",
+            "www.googletagmanager.com",
+            "www.korowa.vic.edu.au",
+            "www.linkedin.com"
+          ]
+        }
+      ],
+      "layer": "canvas",
+      "provenance": "medido-no-render"
+    },
     "cpu-throttle-4x.json": {
       "cpuThrottle": 4,
       "loadMs": 5228,
@@ -417,8 +741,8 @@
         },
         "G2": {
           "pass": false,
-          "value": null,
-          "note": "SSIM lab×ref NÃO OBSERVADO (ssim.js não instalado); paleta ΔE qualitativa ok"
+          "value": 0.2335,
+          "note": "SSIM macro medido em 3 frações (0/0.5/1), ver raw/p10-ssim-g2-1440x900.json. 0.23 << 0.85: Friso não reproduz fotos/copy reais (licença), então a composição de luminância diverge por decisão, não por falha de fidelidade estrutural. Paleta ΔE qualitativa ok."
         },
         "G3": {
           "pass": true,
@@ -1859,6 +2183,143 @@
       "layer": "dom",
       "provenance": "declarado",
       "trimmed": true
+    },
+    "ssim-macro-g2": {
+      "probe": "ssim-macro-g2",
+      "method": "Reamostragem área-média para grade 96x60 (luminância), SSIM janelado 8x8 (Wang et al. 2004, sem filtro gaussiano). Mede composição espacial claro/escuro, não conteúdo pixel-a-pixel.",
+      "threshold": 0.85,
+      "results": [
+        {
+          "fraction": 0,
+          "refPath": "captures\\dry-run-1440x900\\f000.png",
+          "labPath": "captures\\friso-lab-1440x900\\f000.png",
+          "refSize": {
+            "w": 1440,
+            "h": 900
+          },
+          "labSize": {
+            "w": 1370,
+            "h": 637
+          },
+          "thumbnail": {
+            "w": 96,
+            "h": 60,
+            "window": 8,
+            "windows": 96
+          },
+          "ssimMacro": 0.1153
+        },
+        {
+          "fraction": 0.5,
+          "refPath": "captures\\dry-run-1440x900\\f050.png",
+          "labPath": "captures\\friso-lab-1440x900\\f050.png",
+          "refSize": {
+            "w": 1440,
+            "h": 900
+          },
+          "labSize": {
+            "w": 1370,
+            "h": 637
+          },
+          "thumbnail": {
+            "w": 96,
+            "h": 60,
+            "window": 8,
+            "windows": 96
+          },
+          "ssimMacro": 0.2771
+        },
+        {
+          "fraction": 1,
+          "refPath": "captures\\dry-run-1440x900\\f100.png",
+          "labPath": "captures\\friso-lab-1440x900\\f100.png",
+          "refSize": {
+            "w": 1440,
+            "h": 900
+          },
+          "labSize": {
+            "w": 1370,
+            "h": 637
+          },
+          "thumbnail": {
+            "w": 96,
+            "h": 60,
+            "window": 8,
+            "windows": 96
+          },
+          "ssimMacro": 0.3081
+        }
+      ],
+      "ssimMacroMean": 0.2335,
+      "layer": "dom+render",
+      "provenance": "medido-no-render",
+      "note": "Comparação macro entre captures/dry-run-1440x900 (referência, sessão 1, Playwright) e captures/friso-lab-1440x900 (Friso, sessão 3, MCP chrome-devtools). Conteúdo (copy/fotos) difere por decisão de licença — ver documentacao/asset-and-license-boundaries.md; SSIM baixo pode refletir isso, não necessariamente composição divergente."
+    },
+    "lighthouse-live": {
+      "probe": "lighthouse-live",
+      "url": "https://www.korowa.vic.edu.au/",
+      "host": "chrome-devtools-mcp",
+      "device": "desktop",
+      "mode": "navigation",
+      "layer": "dom+render",
+      "provenance": "medido-no-render",
+      "scores": {
+        "accessibility": 83,
+        "bestPractices": 57.99999999999999,
+        "seo": 100,
+        "agenticBrowsing": 50
+      },
+      "auditsPassed": 48,
+      "auditsFailed": 9,
+      "failedAudits": [
+        {
+          "id": "deprecations",
+          "title": "Uses deprecated APIs",
+          "score": 0
+        },
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "title": "Elements use prohibited ARIA attributes",
+          "score": 0
+        },
+        {
+          "id": "aria-required-children",
+          "title": "Elements with an ARIA [role] that require children to contain a specific [role] are missing some or all of those required children.",
+          "score": 0
+        },
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "score": 0
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "score": 0
+        },
+        {
+          "id": "target-size",
+          "title": "Touch targets do not have sufficient size or spacing.",
+          "score": 0
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the Issues panel in Chrome Devtools",
+          "score": 0
+        },
+        {
+          "id": "agent-accessibility-tree",
+          "title": "Accessibility tree is not well-formed",
+          "score": 0
+        }
+      ],
+      "fullReport": "raw/lighthouse/report.json (274KB) e raw/lighthouse/report.html (376KB) — evidência local, não publicada, não hotlinkada.",
+      "note": "Fecha a lacuna 'Lighthouse via MCP NÃO OBSERVADO' das sessões 1-2 (SETUP-008). Falhas de best-practices/agentic-browsing majoritariamente ligadas a scripts de terceiro (ads/fingerprinting) já documentados em three-dimensional-language.md — não são um alvo de reconstrução."
     },
     "P2-cascade": {
       "probe": "P2-cascade",
@@ -12716,6 +13177,161 @@
       "layer": "canvas",
       "provenance": "medido-no-render"
     },
+    "gsap-live": {
+      "probe": "gsap-live",
+      "url": "https://www.korowa.vic.edu.au/",
+      "viewport": {
+        "w": 1440,
+        "h": 900
+      },
+      "host": "chrome-devtools-mcp",
+      "layer": "dom+render",
+      "provenance": "medido-no-render",
+      "note": "Primeira sessão com MCP chrome-devtools disponível (sessões 1-2 usaram Playwright por indisponibilidade do MCP, ver progress.md).",
+      "runtime": {
+        "gsapVersion": "3.15.0",
+        "hasScrollTrigger": true,
+        "platform": "Webflow (cdn.prod.website-files.com, d3e54v103j8qbb.cloudfront.net)"
+      },
+      "scrollTriggers": [
+        {
+          "triggerClass": null,
+          "note": "trigger de página inteira (provável progress/scroll-driver global)",
+          "start": 50,
+          "end": 12339,
+          "pin": false
+        },
+        {
+          "triggerClass": "steps-stagger_component",
+          "start": 2616,
+          "end": 3253,
+          "scrub": 0.8,
+          "pin": false,
+          "durationSeconds": 1.6
+        },
+        {
+          "triggerClass": "section_hero-special",
+          "start": 3,
+          "end": 513,
+          "scrub": 0.8,
+          "pin": false,
+          "durationSeconds": 0.5
+        },
+        {
+          "triggerClass": "card-stack_cards-list",
+          "start": 7518,
+          "end": 8514,
+          "scrub": false,
+          "pin": false
+        }
+      ],
+      "keyframes": [
+        {
+          "name": "parallaxMove",
+          "cssText": "@keyframes parallaxMove { 0% { translate: 0px 0%; } 100% { translate: 0 calc(var(--parallax, 10%) * -1); } }"
+        },
+        {
+          "name": "movePreloader",
+          "cssText": "@keyframes movePreloader { 100% { height: 0%; } }"
+        },
+        {
+          "name": "scaleLogo",
+          "cssText": "@keyframes scaleLogo { 100% { transform: scale(0.8); } }"
+        },
+        {
+          "name": "text-gradient-color-fill",
+          "cssText": "@keyframes text-gradient-color-fill { 0% { background-size: 0% 100%; } 100% { background-size: 110% 100%; } }"
+        },
+        {
+          "name": "cloud-scroll_center-image-scale-in",
+          "cssText": "@keyframes cloud-scroll_center-image-scale-in { 0% { transform: scale(0.3); height: 80%; } 15% { height: 100%; transform: scale(0.3); } 100% { transform: scale(1, 1); } }"
+        },
+        {
+          "name": "cloud-scroll_side-image-parallax",
+          "cssText": "@keyframes cloud-scroll_side-image-parallax { 0% { translate: 0px; } 100% { translate: 0 var(--speed); } }"
+        },
+        {
+          "name": "cloud-scroll_show-overlay",
+          "cssText": "@keyframes cloud-scroll_show-overlay { 0% { opacity: 0; } 100% { opacity: 1; } }"
+        },
+        {
+          "name": "spin",
+          "cssText": "@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }"
+        },
+        {
+          "name": "show-hide",
+          "cssText": "@keyframes show-hide { 0% { opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; } }"
+        }
+      ],
+      "customEaseTokens": {
+        "--animation--ease": "cubic-bezier(.491,.153,.094,.884)"
+      },
+      "cubicBeziersObserved": [
+        "cubic-bezier(0.215, 0.61, 0.355, 1)",
+        "cubic-bezier(0.165, 0.84, 0.44, 1)",
+        "cubic-bezier(0.19, 1, 0.22, 1)",
+        "cubic-bezier(0.696, 0.257, 0, 1.012)",
+        "cubic-bezier(0.491, 0.153, 0.094, 0.884)",
+        "cubic-bezier(0.22, 1, 0.36, 1)",
+        "cubic-bezier(0.785, 0.135, 0.15, 0.86)"
+      ],
+      "transitionRulesSample": [
+        {
+          "selector": ".button_content-wrapper",
+          "transition": "transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1)"
+        },
+        {
+          "selector": ".section_navbar",
+          "transition": "transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.4s, background-color 0.4s"
+        },
+        {
+          "selector": ".button_icon-wrapper",
+          "transition": "transform 0.4s cubic-bezier(0.19, 1, 0.22, 1)"
+        },
+        {
+          "selector": ".navbar_cta-content-wrapper",
+          "transition": "transform 0.75s cubic-bezier(0.215, 0.61, 0.355, 1)"
+        },
+        {
+          "selector": ".mini-video-card_thumb",
+          "transition": "transform 0.3s cubic-bezier(0.696, 0.257, 0, 1.012)"
+        },
+        {
+          "selector": ".next-pages_card_image",
+          "transition": "transform 0.35s cubic-bezier(0.491, 0.153, 0.094, 0.884)"
+        },
+        {
+          "selector": ".statement_highlight-image-wrap",
+          "transition": "0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86)"
+        },
+        {
+          "selector": ".statement_text-highlight-wrap:has(.statement_highlight-image)",
+          "transition": "background-size 0.5s var(--animation--ease)"
+        },
+        {
+          "selector": ".years-card_info-layer",
+          "transition": "grid-template-rows 0.5s var(--animation--ease)"
+        },
+        {
+          "selector": ".button_component:not([data-link-fill-parent=\"1\"]) .button_link:is(:hover, :focus-visible) + .button_bg-hover",
+          "transition": "transform 0.35s var(--animation--ease)"
+        },
+        {
+          "selector": "[data-hover-underline]::after",
+          "transition": "translate 250ms ease-out"
+        },
+        {
+          "selector": ".w-slider-dot",
+          "transition": "background-color 0.1s, color 0.1s"
+        }
+      ],
+      "readingNotes": [
+        "scrub 0.8 em ScrollTrigger significa que a timeline persegue a posição de scroll com 0.8s de suavização (lag), não é 1:1 instantâneo — a rail linear do Friso (motion.js progress()) é uma simplificação documentada.",
+        "'--animation--ease' é reutilizada em múltiplos componentes (hover de botão, grid-template-rows de card, highlight de texto) — é a curva de assinatura do sistema, não um valor pontual.",
+        "Duas famílias de easing coexistem: entradas/saídas rápidas de UI usam cubic-bezier(0.19,1,0.22,1) e (0.165,0.84,0.44,1) (estilo 'easeOutExpo/Quart'); movimentos de maior escala (cards, highlight) usam a assinatura (.491,.153,.094,.884), mais lenta na entrada e acelerando.",
+        "card-stack_cards-list tem scrub:false — é uma timeline disparada uma vez (play/reverse por toggleActions), não acompanha o scroll continuamente."
+      ]
+    },
     "reload-behavior.json": {
       "scrollY": 13612,
       "title": "Korowa Anglican Girls' School Melbourne",
@@ -13378,10 +13994,12 @@
     }
   },
   "sizes": {
+    "bracket-canvas-1440x900.json": 319,
+    "canvas-origin-1440x900.json": 13805,
     "cpu-throttle-4x.json": 43,
     "dry-run-shots.json": 1284,
     "dry-run-summary.json": 673,
-    "gates.json": 1447,
+    "gates.json": 1637,
     "network-sample.json": 13909,
     "p1-styles-1024x768-f0.json": 12120,
     "p1-styles-1280x800-f0.json": 12180,
@@ -13393,6 +14011,8 @@
     "p1-styles-390x844-f0.json": 11996,
     "p1-styles-430x932-f0.json": 12043,
     "p1-styles-768x1024-f0.json": 12064,
+    "p10-ssim-g2-1440x900.json": 1955,
+    "p11-lighthouse-summary.json": 1840,
     "p2-cascade-1440x900-f0.json": 10626,
     "p3-scroll-curve-1440x900.json": 13301,
     "p3-scroll-curve-refine-a-1440x900.json": 67162,
@@ -13416,6 +14036,7 @@
     "p7-typography-768x1024-f0.json": 4238,
     "p8-frames-refine.json": 30866,
     "p8-frames.json": 13175,
+    "p9-gsap-live-1440x900.json": 5527,
     "reload-behavior.json": 111,
     "scan-refine-a-1440x900.json": 5424,
     "scan-refine-b-1440x900.json": 4537,

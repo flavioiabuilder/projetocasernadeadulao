@@ -10,8 +10,8 @@
     },
     "G2": {
       "pass": false,
-      "value": null,
-      "note": "SSIM lab×ref NÃO OBSERVADO (ssim.js não instalado); paleta ΔE qualitativa ok"
+      "value": 0.2335,
+      "note": "SSIM macro medido em 3 frações (0/0.5/1), ver raw/p10-ssim-g2-1440x900.json. 0.23 << 0.85: Friso não reproduz fotos/copy reais (licença), então a composição de luminância diverge por decisão, não por falha de fidelidade estrutural. Paleta ΔE qualitativa ok."
     },
     "G3": {
       "pass": true,

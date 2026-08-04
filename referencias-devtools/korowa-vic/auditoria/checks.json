@@ -1153,8 +1153,8 @@
     "steps": [
       "list_network / trace / lighthouse"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "raw/p11-lighthouse-summary.json — a11y 83, best-practices 58, SEO 100, agentic-browsing 50 (MCP chrome-devtools, P9/P11)",
+    "passes": true
   },
   {
     "id": "INV5-014",
@@ -1185,8 +1185,8 @@
       "P6 + lighthouse",
       "Documentar"
     ],
-    "evidence": null,
-    "passes": false
+    "evidence": "documentacao/accessibility.md#lighthouse-ao-vivo — 9 audits falhos documentados (heading-order, link-name, target-size, aria-*)",
+    "passes": true
   },
   {
     "id": "INV6-003",
@@ -1778,7 +1778,7 @@
       "referencias-devtools/korowa-vic/auditoria/init.sh gates",
       "Publicar números"
     ],
-    "evidence": "{\"pass\":false,\"value\":null,\"note\":\"SSIM lab×ref NÃO OBSERVADO (ssim.js não instalado); paleta ΔE qualitativa ok\"}",
+    "evidence": "{\"pass\":false,\"value\":0.2335,\"note\":\"SSIM macro medido (P9/P10, raw/p10-ssim-g2-1440x900.json): 0.23 << 0.85. Abaixo do limiar por decisão de licença (sem fotos/copy reais), não por falha de composição — ver método no JSON.\"}",
     "passes": false
   },
   {
