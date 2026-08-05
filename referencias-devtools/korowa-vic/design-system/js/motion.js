@@ -113,6 +113,7 @@
           pin,
           sticky,
           atm: sticky.querySelector("[data-fr-atmosphere]"),
+          tint: sticky.querySelector("[data-fr-hero-tint]"),
           lag: createScrollLag(lagSeconds),
         };
       })
@@ -124,15 +125,28 @@
       return Math.min(1, Math.max(0, -rect.top / range));
     }
 
+    /**
+     * P14 — medido ao vivo na referência (dispatch de scroll real +
+     * `anim.getChildren()` da timeline do GSAP em section_hero-special):
+     * a timeline por trás do "scrub 0.8, duração 0.5" tem 2 tweens, não 1:
+     *   1. `.hero-special_bg-visual-wrapper` → scale 1.02→1.2, ease "none"
+     *      (linear) — é isso que dá o "leve zoom".
+     *   2. `.image_scroll-overlay` (entre back e front no z-index) →
+     *      opacity 0→1, ease "power3.out" — cobre a camada de trás com um
+     *      tingimento (carmesim/tema, ΔE~70%), a de frente fica por cima e
+     *      ilesa. Efeito visual: "back some, front dá zoom" — são 2 tweens
+     *      diferentes, não 1.
+     * `power3.out` = 1 - (1-t)^3.
+     */
     function apply(rig, local) {
       rig.sticky.style.setProperty("--fr-pin-p", local.toFixed(4));
       if (rig.atm) {
-        // Véu escurece progressivamente no pin (P8: frame mede transição
-        // escura→carmesim). A foto de fundo em si (.fr-hero-visual) é
-        // estática — P9 mediu 0 variação de transform/opacity em 9 posições
-        // de scroll; o "atmosfera muda" da referência é o véu, não a imagem.
-        const opacity = 0.45 + local * 0.3;
-        rig.atm.style.opacity = opacity.toFixed(3);
+        const scale = 1.02 + local * 0.18;
+        rig.atm.style.transform = `scale(${scale.toFixed(4)})`;
+      }
+      if (rig.tint) {
+        const eased = 1 - (1 - local) ** 3;
+        rig.tint.style.opacity = eased.toFixed(3);
       }
     }
 

@@ -129,8 +129,10 @@
  * escala; a de cima (front) tem transparência própria no arquivo e deixa a de
  * baixo (back) aparecer ao redor do sujeito. Sem CSS mask, sem mix-blend-mode
  * — a composição é resolvida no próprio arquivo de imagem, não em runtime.
- * Estático: medido em 9 posições de scroll (0–1000px) sem nenhuma mudança de
- * transform/opacity — não é um efeito de scroll, é tratamento de imagem.
+ * As camadas em si são estáticas no scroll (P9: 0 variação em 9 posições) —
+ * mas o WRAPPER não é: P14 (leitura direta da timeline GSAP da referência)
+ * achou um scale 1.02→1.2 nele, mais um tingimento entre as camadas (ver
+ * .fr-hero-visual__tint). É isso que dá a leitura de "zoom" no scroll.
  * Fotos são do próprio projeto (Discipulando a Caserna / PMCE), não da
  * referência — ver documentacao/asset-and-license-boundaries.md.
  */
@@ -155,8 +157,23 @@
   z-index: var(--fr-z-base);
 }
 
-.fr-hero-visual__layer--front {
+/*
+ * Análogo de `.image_scroll-overlay` (P14): fica ENTRE back e front no
+ * z-index, não por cima de tudo. Ao ganhar opacidade no scroll (bindPinProgress),
+ * cobre só a camada de trás — a de frente (z-index acima) fica ilesa por
+ * cima do tingimento, o que lê como "a de trás some, a de frente fica".
+ */
+.fr-hero-visual__tint {
+  position: absolute;
+  inset: 0;
   z-index: calc(var(--fr-z-base) + 1);
+  opacity: 0;
+  background: color-mix(in srgb, var(--fr-color-carmesim) 70%, transparent);
+  pointer-events: none;
+}
+
+.fr-hero-visual__layer--front {
+  z-index: calc(var(--fr-z-base) + 2);
 }
 
 .fr-immersive__veil {

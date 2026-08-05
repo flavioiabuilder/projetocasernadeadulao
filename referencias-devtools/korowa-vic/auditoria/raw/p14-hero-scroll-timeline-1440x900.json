@@ -1,0 +1,42 @@
+{
+  "probe": "hero-scroll-timeline",
+  "url": "https://www.korowa.vic.edu.au/",
+  "viewport": { "w": 1440, "h": 900 },
+  "host": "chrome-devtools-mcp",
+  "layer": "dom+render",
+  "provenance": "medido-no-render",
+  "method": "ScrollTrigger.getAll() localizando o trigger de .section_hero-special; anim.getChildren(true,true,true) na timeline associada para extrair os tweens reais (targets + vars), não só start/end/scrub (que já tinham sido capturados na P9).",
+  "note": "Gap da P9: eu tinha as metatades do trigger (scrub 0.8, duration 0.5) mas nunca abri a timeline para ver O QUE ela anima. Usuário reportou visualmente o efeito (screenshots com o cursor em posições diferentes mostrando a imagem de trás sumindo) e pediu para verificar.",
+  "trigger": { "start": 3, "end": 513, "scrub": 0.8, "animationDuration": 0.5 },
+  "tweens": [
+    {
+      "target": "DIV.hero-special_bg-visual-wrapper",
+      "vars": { "scale": 1.2, "ease": "none", "duration": 0.5, "force3D": true }
+    },
+    {
+      "target": "DIV.image_scroll-overlay",
+      "vars": { "opacity": 1, "ease": "power3.out", "duration": 0.5, "force3D": true }
+    }
+  ],
+  "domStackingOfOverlay": {
+    "parent": "hero-special_bg-visual-wrapper",
+    "domOrder": ["is-front (z-index:3, explícito)", "is-back (z-index:auto)", "image_scroll-overlay (z-index:auto, depois do back no DOM)"],
+    "consequence": "overlay pinta ACIMA do back (mesmo z:auto, DOM depois) mas ABAIXO do front (z:3 explícito sempre vence). Por isso o tingimento cobre só o back — o front fica ileso por cima."
+  },
+  "measuredCurve": {
+    "note": "Amostrado com scrollTo + espera de 1.8s por posição (>2x a constante de lag 0.8s) para deixar o scrub assentar antes de medir. Valores brutos, sem correção — a leve não-linearidade nos pontos intermediários é resíduo do lag ainda não 100% assentado, não uma curva real diferente de linear/power3.out.",
+    "samples": [
+      { "p": 0, "wrapScale": 1.02, "overlayOpacity": 0 },
+      { "p": 0.25, "wrapScale": 1.0294, "overlayOpacity": 0.471 },
+      { "p": 0.5, "wrapScale": 1.0844, "overlayOpacity": 0.8884 },
+      { "p": 0.75, "wrapScale": 1.1398, "overlayOpacity": 0.9918 },
+      { "p": 1, "wrapScale": 1.1948, "overlayOpacity": 1 }
+    ]
+  },
+  "friso": {
+    "component": ".fr-hero-visual (wrapper) + .fr-hero-visual__tint (novo)",
+    "implementation": "bindPinProgress() em motion.js: [data-fr-atmosphere] agora é o wrapper .fr-hero-visual (scale 1.02+local*0.18, linear); novo [data-fr-hero-tint] anima opacity via power3.out (1-(1-local)**3). Ambos usam a mesma suavização exponencial (createScrollLag, 0.8s) já usada para outros triggers de scrub real.",
+    "colorChoice": "tint usa color-mix(carmesim 70%, transparent) — a cor de acento própria da Friso, análoga ao color-mix(carmesim-tema, 70%) medido no overlay real",
+    "verifiedInBrowser": "scroll real no demo.html reproduziu o efeito: fundo desaparece sob o tingimento, frente permanece nítida e visualmente 'zoomada' pelo scale do wrapper"
+  }
+}

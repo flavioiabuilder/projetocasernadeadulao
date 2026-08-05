@@ -18,12 +18,12 @@ Três sessões de auditoria, duas fontes de medição:
 | Sessão | Host | O que mediu |
 | --- | --- | --- |
 | 1–2 | Playwright (MCP indisponível) | Cascata CSS, tipografia, cores, contagem de canvas, nomes de `@keyframes` (sem corpo) |
-| 3 (P9–P13) | **MCP chrome-devtools ao vivo** | `gsap`/`ScrollTrigger` em runtime, corpo completo dos `@keyframes`, curvas `cubic-bezier` reais, `scrub` real, composição do hero (P12), parallax por cursor (P13) |
+| 3 (P9–P14) | **MCP chrome-devtools ao vivo** | `gsap`/`ScrollTrigger` em runtime, corpo completo dos `@keyframes`, curvas `cubic-bezier` reais, `scrub` real, composição do hero (P12), parallax por cursor (P13), timeline real do zoom+tingimento no scroll (P14) |
 
 Evidência bruta em `auditoria/raw/p9-gsap-live-*.json` (motion),
-`p12-hero-visual-*.json` (composição de imagem) e
-`p13-cursor-parallax-*.json` (parallax por cursor). Qualquer número citado
-abaixo pode ser conferido lá.
+`p12-hero-visual-*.json` (composição de imagem), `p13-cursor-parallax-*.json`
+(parallax por cursor) e `p14-hero-scroll-timeline-*.json` (zoom + tingimento
+no scroll). Qualquer número citado abaixo pode ser conferido lá.
 
 ## As curvas de easing (tokens)
 
@@ -136,6 +136,38 @@ HTML — para uma 3ª camada mais distante ainda, use `"3"` ou mais.
 O efeito só ativa com `(hover: hover) and (pointer: fine)` (não em touch) e
 respeita `prefers-reduced-motion` — nenhuma das duas coisas é medida na
 referência, são decisões próprias da Friso.
+
+## O zoom + desaparecimento no scroll (P14 — a timeline por trás do trigger)
+
+A P9 já tinha capturado os metadados do trigger `section_hero-special`
+(`scrub: 0.8`, `duration: 0.5`) — mas nunca tinha aberto a timeline para ver
+**o que** ela anima. Fiz isso com `anim.getChildren(true, true, true)` direto
+na referência e achei 2 tweens, não 1:
+
+1. `.hero-special_bg-visual-wrapper` → `scale: 1.2` (de 1.02), `ease: "none"`
+   (linear). É o zoom.
+2. `.image_scroll-overlay` → `opacity: 1` (de 0), `ease: "power3.out"`. É o
+   tingimento — mas esse elemento fica no z-index **entre** back e front (o
+   front tem `z-index: 3` explícito, sempre por cima), então o tingimento só
+   cobre a foto de trás. A de frente fica visível por cima, ilesa.
+
+Por isso o efeito lê como "a de trás some, a de frente dá zoom": são duas
+coisas acontecendo — um zoom no wrapper inteiro (afeta as duas fotos
+igualmente) e um tingimento que só é visível sobre uma delas.
+
+Reconstruído em `motion.js` (`bindPinProgress`, mesma função `apply()` do
+lag de scroll): `[data-fr-atmosphere]` agora é o `.fr-hero-visual` (o
+wrapper) e anima `scale(1.02 + local*0.18)` linear; um elemento novo,
+`.fr-hero-visual__tint` (`[data-fr-hero-tint]`), fica entre as duas fotos no
+z-index e anima `opacity` com `1 - (1-local)**3` — a fórmula de
+`power3.out`. Cor do tingimento: `color-mix(carmesim 70%, transparent)`,
+análoga à cor medida na referência.
+
+**Para ajustar**: o zoom final é `1.02 + 0.18 = 1.2` — mude o `0.18` em
+`motion.js` para um zoom mais forte/fraco. A cor e intensidade do
+tingimento ficam em `.fr-hero-visual__tint` (`components.css`). Os dois
+efeitos usam o `local` já suavizado pelo `createScrollLag(0.8)` do pin — não
+precisam de lag próprio, herdam o mesmo "peso" do scroll.
 
 ## As 9 `@keyframes` da referência → análogos na Friso
 
