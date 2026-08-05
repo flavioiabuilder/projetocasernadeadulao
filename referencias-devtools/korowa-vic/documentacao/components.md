@@ -7,7 +7,7 @@ Só entram padrões com evidência no manifesto / sondas. Capítulo ≠ componen
 | AppShell | estrutura página + sticky chrome | `.fr-shell` |
 | GlobalHeader | fixed/sticky P3; MENU label | `.fr-header` |
 | ContextMenu / nav overlay | estado `nav-open` captura | `.fr-nav` |
-| ExperienceLoader | anim `movePreloader` 1.5s (P1); corpo do keyframe + easing confirmados na P9 | `.fr-loader` + `.fr-loader__curtain` |
+| ExperienceLoader | anim `movePreloader` 1.5s (P1); corpo do keyframe + easing confirmados na P9; marca = lockup vertical PDAC 1C branco (não Korowa) | `.fr-loader` + `.fr-loader__mark` |
 | BrandMark | `scaleLogo` (P1); disparo por scroll-threshold é interpretação própria (sem evidência do gatilho exato) | `.fr-brand-mark`, `data-fr-header` |
 | MediaStage | família `cloud-scroll_*` completa (P9): scale-in central, parallax lateral, overlay | `.fr-media-stage` |
 | ImmersiveViewport | P3 headings persistentes; **não é pin** — `section_hero-special` tem `pin:false` real (P9/P15), a rolagem nunca trava | `.fr-immersive` (100vh, seção normal) |

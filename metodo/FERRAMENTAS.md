@@ -32,6 +32,7 @@ Legenda de status:
 | Claude Design                 | NÃO NECESSÁRIA NESTA FASE                | Processo humano opcional                                                 |
 | Claude Code                   | DEPENDÊNCIA EXTERNA                      | Template `05-regras-agente.md` portável; sem `CLAUDE.md` inchado na raiz |
 | image-convert (agent-media)   | CONFIGURADA PARCIALMENTE                 | Ver exceção abaixo — não bloqueia tokens                                 |
+| vectorize (svgsmith)          | CONFIGURADA PARCIALMENTE                 | Raster→SVG; CLI + Cairo/Potrace no host — ver exceção abaixo             |
 
 ## Vocação — qual ferramenta serve a quê
 
@@ -65,15 +66,16 @@ problema da fonte de verdade; agente de código resolve o problema da produção
 protótipos existem, os tokens foram extraídos na Fase 3 e a migração de runtime
 aguarda decisão humana. Ver [`PIPELINE.md`](PIPELINE.md).
 
-## Exceção — skill `image-convert`
+## Exceção — skills de mídia (`image-convert`, `vectorize`)
 
 - Árvore canônica de skills: `.claude/skills/` (ADR-007 / `docs/skills.md`).
-- `image-convert` existe hoje em `.agents/skills/image-convert/` (espelho agents),
-  com lock em `skills-lock.json` (`agntswrm/agent-media`, hash pinado).
+- `image-convert` e `vectorize` existem em `.agents/skills/` (espelho agents),
+  com lock em `skills-lock.json` (`agntswrm/agent-media` e `realproject7/svgsmith`).
 - **Exceção documentada:** não é obrigatório regularizar na árvore canônica nesta
-  fase; conversão de imagem não faz parte do pipeline de design tokens.
-- Automações futuras devem evitar `npx agent-media@latest` sem pin; preferir a
-  versão/hash do `skills-lock.json` ou instalar versão fixa.
+  fase; conversão/vetorização de imagem não faz parte do pipeline de design tokens.
+- `image-convert`: evitar `npx agent-media@latest` sem pin; preferir hash do lock.
+- `vectorize`: requer CLI `svgsmith` (`pip install svgsmith`); Potrace no PATH
+  para mode `binary` (line art); Cairo para o loop de self-verify.
 - Regularizar cópia/symlink sob `.claude/skills/` é tarefa separada (não misturar
   com direção visual / Fase 3).
 

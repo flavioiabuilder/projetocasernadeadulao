@@ -34,14 +34,35 @@
   function initLoader() {
     const loader = document.querySelector("[data-fr-loader]");
     if (!loader) return;
-    const finish = () => loader.setAttribute("data-done", "true");
-    if (document.readyState === "complete") {
-      setTimeout(finish, 400);
+
+    let started = false;
+    const start = () => {
+      if (started) return;
+      started = true;
+      loader.setAttribute("data-done", "true");
+    };
+
+    const onWipeEnd = (e) => {
+      if (e.animationName !== "fr-loader-wipe") return;
+      loader.setAttribute("data-gone", "true");
+      loader.setAttribute("aria-hidden", "true");
+      loader.removeAttribute("aria-live");
+    };
+    loader.addEventListener("animationend", onWipeEnd);
+
+    // Referência: animações CSS com delay 0.8s a partir do mount; disparamos
+    // assim que o documento está pronto (não espera networkidle).
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", start, { once: true });
     } else {
-      addEventListener("load", () => setTimeout(finish, 400));
+      start();
     }
-    // fallback
-    setTimeout(finish, 2200);
+    // Fallback se animationend não disparar (reduced-motion / falha).
+    setTimeout(() => {
+      start();
+      loader.setAttribute("data-gone", "true");
+      loader.setAttribute("aria-hidden", "true");
+    }, 3200);
   }
 
   function init() {

@@ -331,19 +331,62 @@
   border: 1px solid color-mix(in srgb, currentColor 35%, transparent);
 }
 
+/* Splash / preloader — física movePreloader + scaleLogo (P9/P16); lockup PDAC. */
 .fr-loader {
   position: fixed;
   inset: 0;
-  z-index: calc(var(--fr-z-nav) + 1);
-  display: grid;
-  place-items: center;
-  color: var(--fr-color-texto-inverso);
-  transition: opacity var(--fr-dur-lenta) var(--fr-ease-entrada) var(--fr-dur-loader),
-    visibility var(--fr-dur-lenta) var(--fr-dur-loader);
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  overflow: clip;
+  background: var(--fr-color-carmesim);
+  color: var(--fr-color-texto-sobre-carmesim);
+  pointer-events: auto;
+}
+
+.fr-loader__stage {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.fr-loader__mark {
+  z-index: 2;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  /* Lockup vertical PDAC (~2:3): mais estreito que o crest+wordmark da ref. */
+  width: clamp(7.5rem, 14vw, 11.5rem);
+  max-height: min(58vh, 26rem);
+  transform: scale(1);
+  transform-origin: center center;
+}
+
+.fr-loader__logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(58vh, 26rem);
+  object-fit: contain;
 }
 
 .fr-loader[data-done="true"] {
-  opacity: 0;
+  animation: fr-loader-wipe var(--fr-dur-loader) var(--fr-ease-preloader) var(--fr-dur-loader-atraso)
+    forwards;
+}
+
+.fr-loader[data-done="true"] .fr-loader__mark {
+  animation: fr-loader-logo-scale var(--fr-dur-loader-logo) var(--fr-ease-preloader)
+    var(--fr-dur-loader-atraso) forwards;
+}
+
+.fr-loader[data-gone="true"] {
   visibility: hidden;
   pointer-events: none;
 }

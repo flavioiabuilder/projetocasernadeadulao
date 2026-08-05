@@ -13,9 +13,26 @@
   <body class="fr-shell">
     <a class="fr-sr-only" href="#conteudo">Ir para o conteúdo</a>
 
-    <div class="fr-loader" data-fr-loader role="status" aria-live="polite">
-      <div class="fr-loader__curtain" aria-hidden="true"></div>
-      <p class="fr-meta">Atlas Editorial</p>
+    <div class="fr-loader" data-fr-loader role="status" aria-live="polite" aria-label="Carregando">
+      <div class="fr-loader__stage" aria-hidden="true">
+        <div class="fr-loader__mark" data-fr-loader-mark>
+          <picture>
+            <source
+              type="image/webp"
+              srcset="../img/LOGO_DaC_Lockup_Vertical_1C_Branca_FFFFFF.webp"
+            />
+            <img
+              class="fr-loader__logo"
+              src="../img/LOGO_DaC_Lockup_Vertical_1C_Branca_FFFFFF.png"
+              width="1563"
+              height="2344"
+              alt=""
+              decoding="async"
+              fetchpriority="high"
+            />
+          </picture>
+        </div>
+      </div>
     </div>
 
     <div class="fr-progress" aria-hidden="true">

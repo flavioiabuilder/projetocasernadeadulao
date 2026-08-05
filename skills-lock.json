@@ -163,6 +163,12 @@
       "skillPath": "skills/troubleshooting/SKILL.md",
       "computedHash": "f7deca2af0ea0f6519b350a0fcb1e05d948228eac86f23d71ff3985508cf331f"
     },
+    "vectorize": {
+      "source": "realproject7/svgsmith",
+      "sourceType": "github",
+      "skillPath": "skills/vectorize/SKILL.md",
+      "computedHash": "828a6092e228c25ba57804d1a8b1e8e11ee86671d34474f743153f498c6ff37b"
+    },
     "web-a11y-authoring": {
       "source": "klovaaxel/web-a11y-agent-skills",
       "sourceType": "github",

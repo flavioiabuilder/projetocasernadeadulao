@@ -51,26 +51,17 @@
   transform: scale(0.8);
 }
 
-.fr-loader__curtain {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  height: 100%;
-  background: var(--fr-color-abismo);
-}
-
-.fr-loader > .fr-meta {
-  position: relative;
-  z-index: 1;
-}
-
-.fr-loader[data-done="true"] .fr-loader__curtain {
-  animation: fr-loader-wipe var(--fr-dur-loader) var(--fr-ease-assinatura) forwards;
-}
-
+/* movePreloader: height 100% → 0% (overflow clip = wipe para cima). */
 @keyframes fr-loader-wipe {
   to {
     height: 0%;
+  }
+}
+
+/* scaleLogo: marca central 1 → 0.8 no mesmo atraso do wipe. */
+@keyframes fr-loader-logo-scale {
+  to {
+    transform: scale(0.8);
   }
 }
 
@@ -113,8 +104,15 @@
 @media (prefers-reduced-motion: reduce) {
   .fr-ambient,
   .fr-scroll-prompt__bar,
-  .fr-loader[data-done="true"] .fr-loader__curtain {
+  .fr-loader[data-done="true"],
+  .fr-loader[data-done="true"] .fr-loader__mark {
     animation: none !important;
+  }
+
+  .fr-loader[data-done="true"] {
+    height: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .fr-reveal {

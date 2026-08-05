@@ -20,6 +20,7 @@ awesome-claude-code, Chrome DevTools MCP, Repomix).
 | Design           | `frontend-design`, `impeccable`, `ui-ux-pro-max`, `brand`, `design`, `design-system`, `ui-styling`, `slides`, `banner-design`, `web-design-guidelines`, `astryx`, `scroll-world-storytelling` |
 | A11y             | `web-a11y-*` (10 skills), `a11y-debugging`                                                                                                                                                    |
 | Editorial / docs | `writing-guidelines`, `pdf`                                                                                                                                                                   |
+| Mídia            | `image-convert` (PNG/JPG/WebP), `vectorize` (raster→SVG via svgsmith) — espelho `.agents/skills/`                                                                                            |
 | Higgsfield       | `higgsfield-*` (CLI autenticado)                                                                                                                                                              |
 | Chrome DevTools  | `chrome-devtools`, `chrome-devtools-cli`, `debug-optimize-lcp`, `memory-leak-debugging`, `troubleshooting`                                                                                    |
 

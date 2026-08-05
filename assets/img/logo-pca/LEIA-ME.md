@@ -26,12 +26,16 @@ LOGO_PCA_{VARIANTE}_{ACABAMENTO}_{COR}[_TAMANHO].png
 
 Cada PNG canônico tem um `.webp` irmão (mesmo basename, quality ~82). **Manter os PNG** como fonte/fallback; preferir WebP no runtime.
 
+Há também um `.svg` vetorizado a partir do master (mesmo basename). Os PNG/WebP
+originais permanecem; o SVG é variação adicional (escala livre, edição de paths).
+
 ## Inventário
 
 | Arquivo                            | Uso recomendado                          |
 | ---------------------------------- | ---------------------------------------- |
 | `LOGO_PCA_Master_Mono_1C.png`      | Fonte / arquivo master (~1563×1563)      |
 | `LOGO_PCA_Master_Mono_1C.webp`     | Idem, WebP                               |
+| `LOGO_PCA_Master_Mono_1C.svg`      | Vetor (P+B + filete fino; fundo α)       |
 | `LOGO_PCA_Master_Mono_1C_800.*`    | Hero retina / OG                         |
 | `LOGO_PCA_Master_Mono_1C_400.*`    | Hero / destaque médio                    |
 | `LOGO_PCA_Master_Mono_1C_128.*`    | Header, favicon, footer                  |
