@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>03 Cores — PCA</title>
+    <link rel="stylesheet" href="../../tokens/tokens.css" />
+    <link rel="stylesheet" href="../css/lab.css" />
+    <link rel="stylesheet" href="../css/motion.css" />
+  </head>
+  <body>
+    <a class="lab-skip" href="#conteudo">Ir para o conteúdo</a>
+    <p class="lab-banner">Candidato · Tokens de marca/tokens/tokens.json</p>
+    <div class="lab-shell">
+      <div class="lab-layout">
+        <nav class="lab-nav" aria-label="Capítulos do brand book">
+          <p class="lab-nav__title">Capítulos</p>
+          <ol>
+            <li><a href="../index.html">Hub</a></li>
+            <li><a href="01-marca.html">01 Marca</a></li>
+            <li><a href="02-logo.html">02 Logo</a></li>
+            <li><a href="03-cores.html">03 Cores</a></li>
+            <li><a href="04-tipografia.html">04 Tipografia</a></li>
+            <li><a href="05-espacamento.html">05 Espaçamento</a></li>
+            <li><a href="06-componentes.html">06 Componentes</a></li>
+            <li><a href="07-motion.html">07 Motion</a></li>
+            <li><a href="08-voz.html">08 Voz</a></li>
+          </ol>
+        </nav>
+        <main id="conteudo">
+          <header class="lab-hero">
+            <p class="lab-hero__eyebrow">Capítulo 03</p>
+            <h1>Cores</h1>
+            <p class="lab-hero__lede">
+              Primitivos e semânticos extraídos da página institucional. Usar aliases
+              semânticos nos componentes.
+            </p>
+          </header>
+          <div class="lab-prose">
+            <h2>Primitivos</h2>
+            <div class="swatch-grid">
+              <article class="swatch" data-reveal data-i="0">
+                <div class="swatch__chip" style="background: var(--color-carvao)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Carvão</span>
+                  <span class="swatch__hex">#0E1216</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="1">
+                <div class="swatch__chip" style="background: var(--color-azul-pedra)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Azul pedra</span>
+                  <span class="swatch__hex">#151C24</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="2">
+                <div class="swatch__chip" style="background: var(--color-papel)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Papel</span>
+                  <span class="swatch__hex">#F3EEE6</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="3">
+                <div class="swatch__chip" style="background: var(--color-papel-quente)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Papel quente</span>
+                  <span class="swatch__hex">#EBE4D8</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="4">
+                <div class="swatch__chip" style="background: var(--color-bronze)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Bronze</span>
+                  <span class="swatch__hex">#8B6F47</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="5">
+                <div class="swatch__chip" style="background: var(--color-bronze-deep)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Bronze deep</span>
+                  <span class="swatch__hex">#6E5634</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="0">
+                <div class="swatch__chip" style="background: var(--color-bronze-claro)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Bronze claro</span>
+                  <span class="swatch__hex">#A8875A</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="1">
+                <div class="swatch__chip" style="background: var(--color-ambar)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Âmbar</span>
+                  <span class="swatch__hex">#E8C98A</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="2">
+                <div class="swatch__chip" style="background: var(--color-areia)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Areia</span>
+                  <span class="swatch__hex">#C4B8A5</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="3">
+                <div class="swatch__chip" style="background: var(--color-pedra)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Pedra</span>
+                  <span class="swatch__hex">#5C6570</span>
+                </div>
+              </article>
+            </div>
+            <h2>Semânticos</h2>
+            <div class="surface-demo">
+              <div class="surface-demo__panel surface-demo__panel--ink" data-reveal>
+                <strong>ink</strong>
+                <p class="muted" style="opacity: 0.84; margin: 0.5rem 0 0">
+                  text-on-ink
+                </p>
+              </div>
+              <div class="surface-demo__panel surface-demo__panel--deep" data-reveal>
+                <strong>deep</strong>
+              </div>
+              <div class="surface-demo__panel surface-demo__panel--paper" data-reveal>
+                <strong>paper</strong>
+                <p style="margin: 0.5rem 0 0; color: var(--text-on-paper-muted)">
+                  text muted
+                </p>
+              </div>
+              <div class="surface-demo__panel surface-demo__panel--paper-alt" data-reveal>
+                <strong>paper-alt</strong>
+              </div>
+            </div>
+            <p class="lab-note">
+              Foco: <code>--focus-ring</code> (âmbar). Acento de ação:
+              <code>--accent</code> (bronze).
+            </p>
+          </div>
+          <footer class="lab-footer">
+            <p>
+              <a href="02-logo.html">← Logo</a> ·
+              <a href="04-tipografia.html">Tipografia →</a>
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script src="../js/lab.js"></script>
+  </body>
+</html>

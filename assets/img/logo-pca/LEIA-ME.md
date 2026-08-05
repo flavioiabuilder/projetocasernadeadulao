@@ -9,6 +9,9 @@ Não confundir com a marca do **Discipulando a Caserna** (`programas/discipuland
 | Caminho                 | Status                                              |
 | ----------------------- | --------------------------------------------------- |
 | `assets/img/logo-pca/`  | **Canônico** — usar na página institucional da raiz |
+| `marca/`                | Brand book + tokens PCA (guidelines, lab HTML)      |
+
+Ver também: [`marca/README.md`](../../marca/README.md), [`marca/docs/brand-guidelines.md`](../../marca/docs/brand-guidelines.md).
 
 ## Convenção de nomes
 

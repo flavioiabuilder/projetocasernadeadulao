@@ -14,6 +14,8 @@
     "generate:tokens:soul-church": "node referencias-devtools/soul-church/ferramentas/gerar-tokens.js",
     "generate:tokens:korowa-vic": "node referencias-devtools/korowa-vic/ferramentas/gerar-tokens.js",
     "audit:korowa-vic": "node referencias-devtools/korowa-vic/auditoria/cli.js",
+    "generate:marca:tokens": "node marca/ferramentas/gerar-tokens.js",
+    "validate:marca:tokens": "node marca/ferramentas/validar-tokens.js",
     "generate:discipulando:tokens": "node programas/discipulando-a-caserna/ferramentas/gerar-tokens.js",
     "generate:discipulando:prototipo-fase-5": "node programas/discipulando-a-caserna/ferramentas/gerar-prototipo-fase-5.js",
     "build:pages": "node programas/discipulando-a-caserna/ferramentas/montar-artefato-pages.js",

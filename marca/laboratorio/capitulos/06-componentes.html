@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>06 Componentes — PCA</title>
+    <link rel="stylesheet" href="../../tokens/tokens.css" />
+    <link rel="stylesheet" href="../css/lab.css" />
+    <link rel="stylesheet" href="../css/motion.css" />
+  </head>
+  <body>
+    <a class="lab-skip" href="#conteudo">Ir para o conteúdo</a>
+    <p class="lab-banner">HTML/CSS estático · espelho da home</p>
+    <div class="lab-shell">
+      <div class="lab-layout">
+        <nav class="lab-nav" aria-label="Capítulos do brand book">
+          <p class="lab-nav__title">Capítulos</p>
+          <ol>
+            <li><a href="../index.html">Hub</a></li>
+            <li><a href="01-marca.html">01 Marca</a></li>
+            <li><a href="02-logo.html">02 Logo</a></li>
+            <li><a href="03-cores.html">03 Cores</a></li>
+            <li><a href="04-tipografia.html">04 Tipografia</a></li>
+            <li><a href="05-espacamento.html">05 Espaçamento</a></li>
+            <li><a href="06-componentes.html">06 Componentes</a></li>
+            <li><a href="07-motion.html">07 Motion</a></li>
+            <li><a href="08-voz.html">08 Voz</a></li>
+          </ol>
+        </nav>
+        <main id="conteudo">
+          <header class="lab-hero">
+            <p class="lab-hero__eyebrow">Capítulo 06</p>
+            <h1>Componentes</h1>
+            <p class="lab-hero__lede">
+              Botões, superfícies e foco — tokens de componente
+              <code>--button-*</code>. Sem React / shadcn / Astryx.
+            </p>
+          </header>
+          <div class="lab-prose">
+            <h2>Botões</h2>
+            <div
+              class="cmp-row"
+              style="padding: var(--space-lg); background: var(--surface-ink); border-radius: var(--radius-sm)"
+            >
+              <a class="btn btn--primary" href="#conteudo">Primário</a>
+              <a class="btn btn--ghost" href="#conteudo">Ghost</a>
+              <button type="button" class="btn btn--ink">Ink</button>
+            </div>
+            <div class="cmp-row">
+              <a class="btn btn--primary" href="#conteudo">Primário em papel</a>
+              <a class="btn btn--ink" href="#conteudo">Ink em papel</a>
+            </div>
+            <h2>Foco</h2>
+            <p>
+              Tabule até os botões: anel
+              <code>--focus-ring</code> (âmbar) com offset 3px.
+            </p>
+            <h2>Superfícies de seção</h2>
+            <div class="surface-demo">
+              <div class="surface-demo__panel surface-demo__panel--ink">
+                section--ink
+              </div>
+              <div class="surface-demo__panel surface-demo__panel--deep">
+                section--deep
+              </div>
+              <div class="surface-demo__panel surface-demo__panel--paper">
+                section--paper
+              </div>
+              <div class="surface-demo__panel surface-demo__panel--paper-alt">
+                section--paper-alt
+              </div>
+            </div>
+            <p class="lab-note">
+              Alvo mínimo de controle: <code>--button-min-height</code> (2.75rem ≈ 44px).
+            </p>
+          </div>
+          <footer class="lab-footer">
+            <p>
+              <a href="05-espacamento.html">← Espaçamento</a> ·
+              <a href="07-motion.html">Motion →</a>
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script src="../js/lab.js"></script>
+  </body>
+</html>

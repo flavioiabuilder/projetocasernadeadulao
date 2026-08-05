@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marca PCA — Brand book & design system</title>
+    <meta
+      name="description"
+      content="Laboratório local do brand book e design system do Projeto Caserna de Adulão. Candidato — não publicar."
+    />
+    <link rel="stylesheet" href="../tokens/tokens.css" />
+    <link rel="stylesheet" href="css/lab.css" />
+    <link rel="stylesheet" href="css/motion.css" />
+  </head>
+  <body>
+    <a class="lab-skip" href="#conteudo">Ir para o conteúdo</a>
+    <p class="lab-banner">
+      Candidato · Laboratório local · Projeto Caserna de Adulão · não é o Discipulando
+    </p>
+    <div class="lab-shell">
+      <div class="lab-layout">
+        <nav class="lab-nav" aria-label="Capítulos do brand book">
+          <p class="lab-nav__title">Capítulos</p>
+          <ol>
+            <li><a href="index.html">Hub</a></li>
+            <li><a href="capitulos/01-marca.html">01 Marca</a></li>
+            <li><a href="capitulos/02-logo.html">02 Logo</a></li>
+            <li><a href="capitulos/03-cores.html">03 Cores</a></li>
+            <li><a href="capitulos/04-tipografia.html">04 Tipografia</a></li>
+            <li><a href="capitulos/05-espacamento.html">05 Espaçamento</a></li>
+            <li><a href="capitulos/06-componentes.html">06 Componentes</a></li>
+            <li><a href="capitulos/07-motion.html">07 Motion</a></li>
+            <li><a href="capitulos/08-voz.html">08 Voz</a></li>
+          </ol>
+        </nav>
+        <main id="conteudo">
+          <header class="lab-hero lab-reveal" data-reveal data-i="0">
+            <picture>
+              <source
+                type="image/webp"
+                srcset="../../assets/img/logo-pca/LOGO_PCA_Master_Color_Institucional_180.webp"
+              />
+              <img
+                class="lab-hero__mark"
+                src="../../assets/img/logo-pca/LOGO_PCA_Master_Color_Institucional_180.png"
+                width="180"
+                height="180"
+                alt="Escudo do Projeto Caserna de Adulão"
+              />
+            </picture>
+            <p class="lab-hero__eyebrow">Identidade institucional</p>
+            <h1>Projeto Caserna de Adulão</h1>
+            <p class="lab-hero__lede">
+              Brand book e design system em HTML — tokens, logo Master, tipografia,
+              componentes e motion sóbrio. Status candidato até gates humanos (H1–H6).
+            </p>
+            <p>
+              <span class="lab-status lab-status--candidato">Status: candidato</span>
+            </p>
+          </header>
+
+          <div class="lab-prose">
+            <p data-reveal data-i="1">
+              Este laboratório é <strong>local</strong> (H6 adiado). Não confundir com o
+              design system do Discipulando a Caserna.
+            </p>
+            <h2 data-reveal>Mapa rápido</h2>
+            <table class="lab-table" data-reveal>
+              <thead>
+                <tr>
+                  <th>Âncora</th>
+                  <th>Valor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Bronze</td>
+                  <td><code>#8B6F47</code> · <code>--accent</code></td>
+                </tr>
+                <tr>
+                  <td>Carvão</td>
+                  <td><code>#0E1216</code> · <code>--surface-ink</code></td>
+                </tr>
+                <tr>
+                  <td>Papel</td>
+                  <td><code>#F3EEE6</code> · <code>--surface-paper</code></td>
+                </tr>
+                <tr>
+                  <td>SoT humano</td>
+                  <td><code>marca/docs/brand-guidelines.md</code></td>
+                </tr>
+                <tr>
+                  <td>SoT machine</td>
+                  <td><code>marca/tokens/tokens.json</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="lab-note" data-reveal>
+              Decisões pendentes: homologação da colorização do logo (H1), kit além do
+              Master (H2), web fonts (H3), voz (H4). Ver
+              <code>marca/docs/decisoes.md</code>.
+            </p>
+          </div>
+
+          <footer class="lab-footer">
+            <p>
+              Servir a raiz do repo:
+              <code>npx --yes serve .</code>
+              · abrir
+              <code>/marca/laboratorio/</code>
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script src="js/lab.js"></script>
+  </body>
+</html>

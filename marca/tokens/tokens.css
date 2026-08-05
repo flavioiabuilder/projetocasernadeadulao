@@ -1,0 +1,92 @@
+/* Gerado por marca/ferramentas/gerar-tokens.js — não editar à mão */
+/* Fonte: marca/tokens/tokens.json · 0.1.0-candidate · CANDIDATO */
+
+:root {
+  /* primitive */
+  --color-ambar: #e8c98a; /* Acento suave / foco */
+  --color-areia: #c4b8a5; /* Neutro quente claro */
+  --color-azul-pedra: #151c24; /* Profundidade secundária */
+  --color-branco-suave: #f7f3ec; /* Texto sobre ink */
+  --color-bronze: #8b6f47; /* Acento / filete da marca */
+  --color-bronze-claro: #a8875a; /* Bronze hover / claro */
+  --color-bronze-deep: #6e5634; /* Bronze escuro */
+  --color-button-primary-fg: #fffdf8; /* Texto em botão primário */
+  --color-carvao: #0e1216; /* Campo escuro / traços da marca */
+  --color-papel: #f3eee6; /* Superfície clara institucional */
+  --color-papel-quente: #ebe4d8; /* Alternativa de papel */
+  --color-pedra: #5c6570; /* Neutro médio */
+  --color-texto-escuro: #1a1f24; /* Texto sobre papel */
+  --color-texto-medio: #3d4650; /* Texto secundário sobre papel */
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif; /* Display / títulos (H3 — stacks atuais) */
+  --font-sans: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* UI / corpo (H3 — stacks atuais) */
+  --gutter: max(1.25rem, env(safe-area-inset-left, 0px), 4vw);
+  --gutter-end: max(1.25rem, env(safe-area-inset-right, 0px), 4vw);
+  --measure: 38rem;
+  --measure-narrow: 28rem;
+  --measure-wide: 48rem;
+  --shell: min(72rem, calc(100% - 2 * var(--gutter)));
+  --line-hair: 1px;
+  --dur-base: 420ms;
+  --dur-fast: 180ms;
+  --dur-slow: 780ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --reveal-distance: 1.25rem;
+  --nav-height: 4.25rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+  --shadow-soft: 0 1.25rem 3rem rgba(14, 18, 22, 0.18);
+  --space-2xl: 3rem;
+  --space-2xs: 0.25rem;
+  --space-3xl: 4.5rem;
+  --space-4xl: 7rem;
+  --space-5xl: 10rem;
+  --space-lg: 1.5rem;
+  --space-md: 1rem;
+  --space-sm: 0.75rem;
+  --space-xl: 2rem;
+  --space-xs: 0.5rem;
+  --text-2xl: clamp(2.25rem, 1.6rem + 2.8vw, 4rem);
+  --text-3xl: clamp(2.6rem, 1.85rem + 3.4vw, 4.75rem);
+  --text-base: clamp(1rem, 0.96rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.35rem, 1.15rem + 0.9vw, 1.85rem);
+  --text-md: clamp(1.125rem, 1.05rem + 0.4vw, 1.35rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.2vw, 0.9375rem);
+  --text-xl: clamp(1.75rem, 1.35rem + 1.6vw, 2.75rem);
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+  --z-header: 50;
+  --z-progress: 40;
+  --z-skip: 60;
+
+  /* semantic */
+  --accent: var(--color-bronze);
+  --accent-soft: var(--color-ambar);
+  --border-ink: rgba(196, 184, 165, 0.28);
+  --border-paper: rgba(26, 31, 36, 0.14);
+  --focus-ring: var(--color-ambar);
+  --focus-ring-ink: var(--color-carvao);
+  --surface-deep: var(--color-azul-pedra);
+  --surface-elevated: rgba(243, 238, 230, 0.06);
+  --surface-ink: var(--color-carvao);
+  --surface-paper: var(--color-papel);
+  --surface-paper-alt: var(--color-papel-quente);
+  --text-on-ink: var(--color-branco-suave);
+  --text-on-ink-muted: rgba(247, 243, 236, 0.84);
+  --text-on-paper: var(--color-texto-escuro);
+  --text-on-paper-muted: var(--color-texto-medio);
+
+  /* component */
+  --button-ghost-border: var(--border-ink);
+  --button-ink-bg: var(--surface-ink);
+  --button-ink-hover-bg: var(--surface-deep);
+  --button-min-height: 2.75rem; /* Alvo mínimo ~44px */
+  --button-padding-block: 0.75rem;
+  --button-padding-inline: 1.25rem;
+  --button-primary-bg: var(--accent);
+  --button-primary-fg: var(--color-button-primary-fg);
+  --button-primary-hover-bg: var(--color-bronze-claro);
+  --button-radius: var(--radius-sm);
+  --header-height: var(--nav-height);
+  --hero-mark-size: 5rem; /* Tamanho do escudo no hero institucional */
+  --link-underline-offset: 0.18em;
+}

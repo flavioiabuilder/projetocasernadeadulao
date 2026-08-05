@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exemplo — cartão (mock CSS) PCA</title>
+    <link rel="stylesheet" href="../tokens/tokens.css" />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: var(--font-sans);
+        background: var(--surface-paper-alt);
+        color: var(--text-on-paper);
+        padding: 2rem;
+      }
+      .card {
+        width: min(22rem, 100%);
+        aspect-ratio: 1.75 / 1;
+        background: var(--surface-ink);
+        color: var(--text-on-ink);
+        border-radius: var(--radius-sm);
+        padding: 1.25rem 1.5rem;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        box-shadow: var(--shadow-soft);
+      }
+      .card img {
+        width: 3rem;
+        height: 3rem;
+      }
+      .card h1 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 600;
+      }
+      .card p {
+        margin: 0.35rem 0 0;
+        font-size: 0.8rem;
+        color: var(--text-on-ink-muted);
+      }
+      .meta {
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent-soft);
+      }
+      .note {
+        margin-top: 1.5rem;
+        max-width: 22rem;
+        font-size: 0.8rem;
+        color: var(--text-on-paper-muted);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <article class="card" aria-label="Mock de cartão institucional">
+        <img
+          src="../../assets/img/logo-pca/LOGO_PCA_Master_Color_Institucional_Reverso_64.webp"
+          width="64"
+          height="64"
+          alt=""
+        />
+        <div>
+          <h1>Projeto Caserna de Adulão</h1>
+          <p>Identidade institucional · mock CSS (não CIP gerado)</p>
+        </div>
+        <p class="meta">Candidato · H2 adiado</p>
+      </article>
+      <p class="note">
+        Exemplo estático opcional. CIP completo só após H2.
+        <a href="../laboratorio/index.html">Voltar ao lab</a>
+      </p>
+    </div>
+  </body>
+</html>
