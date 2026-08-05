@@ -100,46 +100,52 @@
     addEventListener("scroll", update, { passive: true });
   }
 
-  function bindPinProgress() {
-    const pins = document.querySelectorAll("[data-fr-pin]");
-    if (!pins.length) return;
+  function readHeroFxRange() {
+    const raw = getComputedStyle(document.documentElement).getPropertyValue("--fr-scroll-hero-fx-range-px");
+    const n = parseFloat(raw);
+    return Number.isFinite(n) && n > 0 ? n : 510;
+  }
+
+  /**
+   * P15 — CORREÇÃO IMPORTANTE: a P9 já tinha `pin: false` no ScrollTrigger de
+   * `section_hero-special`, mas a implementação anterior (sessão 2, hipótese
+   * não verificada) usava um pin de 180vh mesmo assim, travando a rolagem
+   * visualmente enquanto o efeito rodava — o oposto do que a referência faz.
+   * Confirmado direto na referência: a `section_hero-special` NÃO fixa em
+   * tela nenhuma — ela rola normalmente, e o zoom/tingimento acontece em
+   * paralelo, num range curto de scroll (~510px, medido) logo no topo.
+   *
+   * P14 — medido ao vivo na referência (`anim.getChildren()` da timeline do
+   * GSAP em section_hero-special): a timeline por trás do "scrub 0.8,
+   * duração 0.5" tem 2 tweens:
+   *   1. `.hero-special_bg-visual-wrapper` → scale 1.02→1.2, ease "none"
+   *      (linear) — é isso que dá o "leve zoom".
+   *   2. `.image_scroll-overlay` (entre back e front no z-index) →
+   *      opacity 0→1, ease "power3.out" — cobre a camada de trás com um
+   *      tingimento (carmesim/tema, ΔE~70%), a de frente fica por cima e
+   *      ilesa. Efeito visual: "back some, front dá zoom" — são 2 tweens
+   *      diferentes, não 1. `power3.out` = 1 - (1-t)^3.
+   */
+  function bindHeroScrollFx() {
+    const heroes = document.querySelectorAll("[data-fr-hero-fx]");
+    if (!heroes.length) return;
     const lagSeconds = readScrollLag();
+    const rangePx = readHeroFxRange();
 
-    const rigs = [...pins]
-      .map((pin) => {
-        const sticky = pin.querySelector("[data-fr-pin-sticky]");
-        if (!sticky) return null;
-        return {
-          pin,
-          sticky,
-          atm: sticky.querySelector("[data-fr-atmosphere]"),
-          tint: sticky.querySelector("[data-fr-hero-tint]"),
-          lag: createScrollLag(lagSeconds),
-        };
-      })
-      .filter(Boolean);
+    const rigs = [...heroes].map((hero) => ({
+      hero,
+      atm: hero.querySelector("[data-fr-atmosphere]"),
+      tint: hero.querySelector("[data-fr-hero-tint]"),
+      lag: createScrollLag(lagSeconds),
+    }));
 
-    function localTarget(pin) {
-      const rect = pin.getBoundingClientRect();
-      const range = Math.max(1, pin.offsetHeight - innerHeight);
-      return Math.min(1, Math.max(0, -rect.top / range));
+    function target() {
+      // Range de página inteira, não do elemento: a referência mede a partir
+      // do topo do documento (start:3, end:513), não de onde o hero está.
+      return Math.min(1, Math.max(0, scrollY / rangePx));
     }
 
-    /**
-     * P14 — medido ao vivo na referência (dispatch de scroll real +
-     * `anim.getChildren()` da timeline do GSAP em section_hero-special):
-     * a timeline por trás do "scrub 0.8, duração 0.5" tem 2 tweens, não 1:
-     *   1. `.hero-special_bg-visual-wrapper` → scale 1.02→1.2, ease "none"
-     *      (linear) — é isso que dá o "leve zoom".
-     *   2. `.image_scroll-overlay` (entre back e front no z-index) →
-     *      opacity 0→1, ease "power3.out" — cobre a camada de trás com um
-     *      tingimento (carmesim/tema, ΔE~70%), a de frente fica por cima e
-     *      ilesa. Efeito visual: "back some, front dá zoom" — são 2 tweens
-     *      diferentes, não 1.
-     * `power3.out` = 1 - (1-t)^3.
-     */
     function apply(rig, local) {
-      rig.sticky.style.setProperty("--fr-pin-p", local.toFixed(4));
       if (rig.atm) {
         const scale = 1.02 + local * 0.18;
         rig.atm.style.transform = `scale(${scale.toFixed(4)})`;
@@ -151,7 +157,8 @@
     }
 
     function onScroll() {
-      rigs.forEach((rig) => rig.lag.set(localTarget(rig.pin)));
+      const t = target();
+      rigs.forEach((rig) => rig.lag.set(t));
     }
 
     function frame(now) {
@@ -242,7 +249,7 @@
     bindProgressRail();
     bindReveals();
     bindParallax();
-    bindPinProgress();
+    bindHeroScrollFx();
     bindHeaderShrink();
     bindCursorParallax();
   }

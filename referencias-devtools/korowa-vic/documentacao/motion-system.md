@@ -16,6 +16,7 @@
 | `.image-cloud_scroll .image_scroll-overlay`: `animation-timeline: --image-cloud-timeline; animation-range: contain 5% contain 85%` — confirma que a família `cloud-scroll_*` usa scroll-timeline nativo do CSS, não GSAP (ver seção "Física do scroll" abaixo) | P9 (continuação) |
 | **Parallax por cursor** no `.fr-hero-visual`: as duas camadas se deslocam na direção OPOSTA ao cursor, proporcional à distância ao centro do viewport. Camada de trás = exatamente 2× a de frente, sempre (`13.55/6.775=2.0`, `6.4/3.2=2.0`). Amplitude na borda: ~6.8px (x) / ~3.2px (y). Suavização rápida (~20-25ms) — bem mais ágil que o lag de scroll (0.8s). Nenhuma outra propriedade muda (só `translate`; `scale` fica fixo em 1.1). | **P13 — dispatch real de `mousemove` na referência, `raw/p13-cursor-parallax-1440x900.json`** |
 | **Timeline real do trigger `section_hero-special`** (scrub 0.8, duration 0.5 — já sabia disso da P9, mas nunca tinha aberto a timeline): 2 tweens. (1) `.hero-special_bg-visual-wrapper` → `scale: 1.2, ease:"none"` (de 1.02 declarado em CSS). (2) `.image_scroll-overlay` → `opacity: 1, ease:"power3.out"` (de 0 declarado em CSS). O overlay fica no DOM DEPOIS do back mas ANTES do front no z-index efetivo — cobre só o back. Resultado visual: fundo "some" sob o tingimento (`color-mix(carmesim/tema, 70%)`), frente continua visível e o wrapper todo dá um zoom de 1.02→1.2 (17,6%). | **P14 — `anim.getChildren()` da timeline GSAP real, `raw/p14-hero-scroll-timeline-1440x900.json`** |
+| **`section_hero-special` tem `pin: false`** — a referência NUNCA trava a rolagem durante esse efeito. A P9 original já tinha capturado esse campo, mas a implementação (sessão 2) usava um pin de 180vh mesmo assim. Confirmado por medição direta: `getBoundingClientRect().top` do hero varia 1:1 com `scrollY` durante todo o range do efeito — sem pin, sem sticky, página rola normal enquanto o zoom/tingimento acontece em paralelo. | **P15 — usuário reportou visualmente ("a tela trava"), verificado com medição de posição durante scroll real** |
 
 Tokens correspondentes em `tokens.json` → `easing.*`, `duration.*`, `scrollPhysics.*` (gerados em `tokens.css` como `--fr-ease-*`, `--fr-dur-*`, `--fr-scroll-*`).
 
@@ -23,7 +24,7 @@ Tokens correspondentes em `tokens.json` → `easing.*`, `duration.*`, `scrollPhy
 
 A sessão 2 documentava a rail de progresso como "identidade linear" por não ter acesso a `ScrollTrigger.getAll()` (MCP indisponível). A P9 mediu o valor real: `scrub: 0.8` nas duas seções com scroll contínuo observadas. Isso não é um multiplicador — é uma **constante de tempo de suavização exponencial**: a cada frame, a timeline persegue a posição-alvo do scroll, sem nunca ser 1:1 instantânea.
 
-`motion.js` implementa isso em `createScrollLag(lagSeconds)`: a cada `requestAnimationFrame`, `valor += (alvo − valor) × (1 − e^(−dt/lag))`, com `lag = 0.8` lido de `--fr-scroll-lag-segundos`. Independente de framerate (usa `dt` real, não incremento fixo). Aplicado em `bindPinProgress` (o pin de hero da Friso é o análogo direto de `section_hero-special`).
+`motion.js` implementa isso em `createScrollLag(lagSeconds)`: a cada `requestAnimationFrame`, `valor += (alvo − valor) × (1 − e^(−dt/lag))`, com `lag = 0.8` lido de `--fr-scroll-lag-segundos`. Independente de framerate (usa `dt` real, não incremento fixo). Aplicado em `bindHeroScrollFx` (P15) — **não há pin**: o progresso vem de `scrollY / --fr-scroll-hero-fx-range-px` (510px, medido), a página rola normalmente e o zoom/tingimento do hero tocam em paralelo, exatamente como a referência.
 
 A rail de progresso (`data-fr-progress`) e o parallax (`data-fr-parallax`) permanecem 1:1 com o scroll. A rail agora tem evidência direta — deixou de ser só hipótese Friso: o trigger global só-callback (`start: top+=50`, `end: max`, sem animação GSAP associada) é consistente com um driver de progresso custom-coded cobrindo quase a página inteira. O parallax é o análogo de `cloud-scroll_side-image-parallax`, que no site real roda via CSS `animation-timeline` nativa (sem lag de JS), não scrub do GSAP.
 
@@ -31,17 +32,23 @@ A rail de progresso (`data-fr-progress`) e o parallax (`data-fr-parallax`) perma
 
 ## Curva scroll → estado (reconstrução)
 
-| Fração | Estado Friso |
+| Range (px, a partir do topo) | Estado Friso |
 | --- | --- |
-| 0–0.25 | Pin hero; `.fr-hero-visual` (2 fotos) estático — fiel à referência; véu escurece 0.3→0.6 via `createScrollLag` (correção de sessão 3: a referência não anima a imagem no scroll, então Friso move o véu, não a foto); progress rail sobe (instantâneo) |
-| 0.25–0.55 | Painéis editoriais; reveals por IntersectionObserver |
-| 0.55–0.85 | Bloco névoa / profundidade CSS |
-| 0.85–1 | Fecho carmesim + footer |
+| 0–510px | `.fr-immersive` (hero, 100vh, **não pinado**) rola normal; em paralelo, `.fr-hero-visual` dá zoom 1.02→1.2 (linear) e `.fr-hero-visual__tint` cobre a foto de trás (opacity 0→1, power3.out); progress rail sobe (instantâneo) |
+| depois de 510px | Painéis editoriais (`Cena 02`+); reveals por IntersectionObserver; bloco névoa / profundidade CSS; fecho carmesim + footer |
 
-**Correção de sessão 3**: a sessão 2 tinha implementado `atmosfera escala 1.1→~1.02` no scroll como hipótese (sem medição direta). A P9 mediu `.hero-special_bg-visual` em 9 posições de scroll e não achou nenhuma variação — o efeito é estático. `bindPinProgress` foi ajustado: `data-fr-atmosphere` agora fica no véu (`.fr-immersive__veil`), não na foto, e anima opacidade em vez de escala. A foto composta (`.fr-hero-visual`) ficou fiel ao estático real.
+## Histórico de correções nesta seção (honestidade sobre hipóteses erradas)
+
+Três hipóteses erradas, três correções, nessa ordem:
+
+1. **Sessão 2** (sem MCP): hipótese não verificada — `atmosfera escala 1.1→~1.02` no scroll, implementada com um pin de 180vh.
+2. **Sessão 3 / P9**: medi `.hero-special_bg-visual` (as duas `<img>`) em 9 posições de scroll — 0 variação. Concluí "estático" e passei a animar o véu (opacidade) em vez da foto. **Errado pela metade**: as `<img>` são estáticas, mas eu nunca tinha aberto a *timeline* do trigger pra ver o que ela realmente anima.
+3. **Sessão 3 / P14–P15** (usuário reportou visualmente o efeito real e depois a "tela travando"): abri a timeline (`anim.getChildren()`) e achei os 2 tweens reais — scale no **wrapper**, opacity num **overlay entre as camadas**. E o trigger tem `pin: false`, então removi o pin de 180vh (que nunca deveria ter existido) e troquei por `bindHeroScrollFx`, progresso = `scrollY / 510px`, sem travar a rolagem.
 
 ## Primitivas
 
-`data-fr-reveal`, `data-fr-parallax`, `data-fr-pin`, `data-fr-pin-sticky`, `data-fr-atmosphere`, `data-fr-progress`, `data-fr-cursor-parallax` em `motion.js`. Classes utilitárias novas (P9): `.fr-media-stage` (análogo de `cloud-scroll_*`, scale-in + parallax lateral + overlay), `.fr-loader__curtain` (análogo de `movePreloader`, wipe de altura), `.fr-brand-mark` (análogo de `scaleLogo`), `.fr-hero-visual` (análogo de `.hero-special_bg-visual-wrapper`, com parallax por cursor real via `bindCursorParallax`) — em `motion.css`.
+`data-fr-reveal`, `data-fr-parallax`, `data-fr-hero-fx`, `data-fr-atmosphere`, `data-fr-hero-tint`, `data-fr-progress`, `data-fr-cursor-parallax` em `motion.js`. Classes utilitárias novas (P9+): `.fr-media-stage` (análogo de `cloud-scroll_*`, scale-in + parallax lateral + overlay), `.fr-loader__curtain` (análogo de `movePreloader`, wipe de altura), `.fr-brand-mark` (análogo de `scaleLogo`), `.fr-hero-visual` + `.fr-hero-visual__tint` (análogo de `.hero-special_bg-visual-wrapper` + `.image_scroll-overlay`, com zoom/tingimento por scroll e parallax por cursor) — em `motion.css`.
+
+`data-fr-pin`/`data-fr-pin-sticky`/`.fr-pin-chapter` **foram removidos** (sessão 3, P15) — implementavam um pin que a referência não tem. Se um capítulo futuro realmente precisar pinar (com evidência, não hipótese), reintroduza o padrão sticky ali, não aqui.
 
 Reduced motion: duração→0.01ms, sem translate de entrada, sem lag de scroll.

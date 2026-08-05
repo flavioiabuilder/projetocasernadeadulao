@@ -18,7 +18,7 @@ Três sessões de auditoria, duas fontes de medição:
 | Sessão | Host | O que mediu |
 | --- | --- | --- |
 | 1–2 | Playwright (MCP indisponível) | Cascata CSS, tipografia, cores, contagem de canvas, nomes de `@keyframes` (sem corpo) |
-| 3 (P9–P14) | **MCP chrome-devtools ao vivo** | `gsap`/`ScrollTrigger` em runtime, corpo completo dos `@keyframes`, curvas `cubic-bezier` reais, `scrub` real, composição do hero (P12), parallax por cursor (P13), timeline real do zoom+tingimento no scroll (P14) |
+| 3 (P9–P15) | **MCP chrome-devtools ao vivo** | `gsap`/`ScrollTrigger` em runtime, corpo completo dos `@keyframes`, curvas `cubic-bezier` reais, `scrub` real, composição do hero (P12), parallax por cursor (P13), timeline real do zoom+tingimento no scroll (P14), confirmação de que não há pin (P15) |
 
 Evidência bruta em `auditoria/raw/p9-gsap-live-*.json` (motion),
 `p12-hero-visual-*.json` (composição de imagem), `p13-cursor-parallax-*.json`
@@ -76,8 +76,14 @@ value += (target - value) * (1 - Math.exp(-dt / lagSeconds));
 - `lagSeconds` vem do token `--fr-scroll-lag-segundos` (0.8, medido). Para
   deixar o pin "mais grudado" no scroll, **diminua** esse número (ex.: 0.3 =
   quase instantâneo). Para um efeito mais "flutuante", **aumente** (ex.: 1.5).
-- Está aplicado em `bindPinProgress()` — o pin de hero da Friso é o análogo
-  direto de `section_hero-special`.
+- Está aplicado em `bindHeroScrollFx()`. **Correção importante (P15)**: a
+  primeira versão desta reconstrução usava um "pin" (scroll travado por
+  180vh, `position: sticky`) para tocar esse efeito — hipótese da sessão 2,
+  nunca verificada. Um usuário reportou visualmente que a referência rola
+  normalmente enquanto o efeito acontece; medi e confirmei: `section_hero-special`
+  tem `pin: false` no GSAP. O pin foi removido — `.fr-immersive` agora é uma
+  seção normal de 100vh, e o progresso vem de `scrollY / 510px` (o range
+  medido do trigger real), não de geometria de pin.
 - A rail de progresso (`data-fr-progress`) e o parallax (`data-fr-parallax`)
   ficam **fora** desse lag de propósito: são 1:1 com o scroll. A rail é
   invenção própria da Friso; o parallax é o análogo de
@@ -165,9 +171,12 @@ análoga à cor medida na referência.
 
 **Para ajustar**: o zoom final é `1.02 + 0.18 = 1.2` — mude o `0.18` em
 `motion.js` para um zoom mais forte/fraco. A cor e intensidade do
-tingimento ficam em `.fr-hero-visual__tint` (`components.css`). Os dois
-efeitos usam o `local` já suavizado pelo `createScrollLag(0.8)` do pin — não
-precisam de lag próprio, herdam o mesmo "peso" do scroll.
+tingimento ficam em `.fr-hero-visual__tint` (`components.css`). O range de
+scroll em que o efeito acontece é `--fr-scroll-hero-fx-range-px` (510px,
+medido) — aumente para um efeito mais "esticado", diminua para mais rápido.
+Os dois efeitos usam o `local` já suavizado pelo `createScrollLag(0.8)` —
+não precisam de lag próprio, herdam o mesmo "peso" do scroll. **Não há pin**:
+a página rola normalmente o tempo todo (ver correção acima).
 
 ## As 9 `@keyframes` da referência → análogos na Friso
 

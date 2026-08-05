@@ -116,8 +116,9 @@
   --fr-env-grain-opacity: 0.04;
   /* scrollPhysics */
   --fr-scroll-lag-segundos: 0.8;
-  --fr-scroll-duracao-hero-pin: 0.5s;
+  --fr-scroll-duracao-hero-fx: 0.5s;
   --fr-scroll-duracao-steps-stagger: 1.6s;
+  --fr-scroll-hero-fx-range-px: 510;
   /* pointerPhysics */
   --fr-cursor-lag-segundos: 0.08;
   --fr-cursor-amp-frente-x: 6.8px;

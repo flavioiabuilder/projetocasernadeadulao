@@ -1,0 +1,20 @@
+{
+  "probe": "hero-not-pinned",
+  "url": "https://www.korowa.vic.edu.au/",
+  "viewport": { "w": 1440, "h": 900 },
+  "host": "chrome-devtools-mcp",
+  "layer": "dom+render",
+  "provenance": "medido-no-render",
+  "note": "Usuário reportou que a implementação Friso 'trava' a tela durante o efeito de zoom/tingimento, enquanto a referência rola normalmente. A P9 já tinha 'pin: false' no ScrollTrigger de section_hero-special, mas a Friso usava um pin de 180vh mesmo assim (hipótese não verificada da sessão 2, nunca cruzada com a P9). Esta sonda confirma por medição de posição, não só pelo campo 'pin' do GSAP.",
+  "method": "getBoundingClientRect().top de .section_hero-special amostrado em vários scrollY, com espera suficiente para scroll-behavior:smooth completar (verificado: html tem scroll-behavior:smooth, scrollTo() sucessivos rápidos não davam tempo de assentar — corrigido usando 1 scrollTo por vez com >=1000ms de espera).",
+  "measurements": [
+    { "scrollY": 0, "heroTop": 0 },
+    { "scrollY": 500, "note": "delta de heroTop == delta de scrollY dentro da margem de medição; sem platô/travamento" }
+  ],
+  "conclusion": "Nenhum dos 4 ScrollTrigger da página tem pin:true (confirmado 3x: P9, P13, P14). Não há ScrollSmoother nem Lenis (checado em P9). section_hero-special rola em fluxo normal; o efeito de zoom/tingimento roda via scrub em paralelo à rolagem real, não via pin.",
+  "friso": {
+    "before": "fr-pin-chapter (position:relative, min-height:180vh) + fr-pin-chapter__sticky (position:sticky, top:0) — travava visualmente a tela por 180vh de scroll enquanto bindPinProgress calculava um progresso 0-1 interno",
+    "after": "removido .fr-pin-chapter/.fr-pin-chapter__sticky inteiramente; .fr-immersive virou uma section normal de 100vh; bindHeroScrollFx() calcula progresso via scrollY / --fr-scroll-hero-fx-range-px (510px) — a página rola livremente o tempo todo, igual à referência",
+    "verifiedInBrowser": "getBoundingClientRect().top do hero Friso mudou exatamente -300px para +300px de scroll (1:1), confirmando ausência de pin"
+  }
+}

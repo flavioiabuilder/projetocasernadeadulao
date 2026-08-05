@@ -19,8 +19,8 @@
 ## Ordem narrativa
 
 1. **Loader** — animação `movePreloader` 1.5s declarada (P1); UI completa do loader: parcial.
-2. **Hero pin** (0–~20%) — headings persistem; atmosfera escura→carmesim (P8).
-3. **Editorial sob pin / transição clara** (~15–50%) — creme/linho; MENU no chrome.
+2. **Hero com zoom/tingimento por scroll, ~0–510px** — atmosfera escura→carmesim (P8, pixel); **correção P15**: não é pin — `section_hero-special` tem `pin:false` real (GSAP), a rolagem nunca trava (headings da hipótese original de "pin" eram na verdade só o topo do scroll, ainda perto do hero).
+3. **Editorial / transição clara** (~15–50%) — creme/linho; MENU no chrome.
 4. **Bloco mediano** (~50–60%) — pico de delta; superfícies névoa/azul.
 5. **Percurso inferior → fecho** (~60–100%) — carmesim dominante no frame final (P8 f100).
 6. **Nav overlay** — captura `states-1440x900/nav-open.png`.

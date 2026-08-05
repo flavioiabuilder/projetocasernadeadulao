@@ -384,17 +384,3 @@
   transform: none;
 }
 
-.fr-pin-chapter {
-  position: relative;
-  min-height: 180vh;
-}
-
-.fr-pin-chapter__sticky {
-  position: sticky;
-  top: 0;
-  min-height: 100vh;
-  display: grid;
-  align-content: center;
-  padding: var(--fr-esp-8) var(--fr-tam-gutter);
-  overflow: clip;
-}
