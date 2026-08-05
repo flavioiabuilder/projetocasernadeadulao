@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>04 Tipografia — Discipulando a Caserna</title>
+    <link rel="stylesheet" href="../css/lab.css" />
+    <link rel="stylesheet" href="../css/motion.css" />
+  </head>
+  <body class="lab-book">
+    <a class="lab-skip" href="#conteudo">Ir para o conteúdo</a>
+    <p class="lab-banner">H3 adiado · Montserrat + Source Serif 4 (Guia)</p>
+    <div class="lab-shell">
+      <div class="lab-layout">
+        <nav class="lab-nav" aria-label="Capítulos do brand book">
+          <p class="lab-nav__title">Capítulos</p>
+          <ol>
+            <li><a href="../index.html">Hub</a></li>
+            <li><a href="01-marca.html">01 Marca</a></li>
+            <li><a href="02-logo.html">02 Logo</a></li>
+            <li><a href="03-cores.html">03 Cores</a></li>
+            <li><a href="04-tipografia.html">04 Tipografia</a></li>
+            <li><a href="05-espacamento.html">05 Espaçamento</a></li>
+            <li><a href="06-componentes.html">06 Componentes</a></li>
+            <li><a href="07-motion.html">07 Motion</a></li>
+            <li><a href="08-voz.html">08 Voz</a></li>
+          </ol>
+        </nav>
+        <main id="conteudo">
+          <header class="lab-hero">
+            <p class="lab-hero__eyebrow">Capítulo 04</p>
+            <h1>Tipografia</h1>
+            <p class="lab-hero__lede">
+              Display Montserrat (700–800); corpo Source Serif 4. Loading/CDN/self-host
+              aguarda H3 — lab sem fontes externas (e2e offline).
+            </p>
+          </header>
+          <div class="lab-prose">
+            <div class="type-sample">
+              <div
+                class="type-row type-row--display"
+                style="font-size: var(--tipografia-pagina-titulo)"
+              >
+                <div class="type-row__label">Display · página-titulo · Montserrat</div>
+                Discipulando a Caserna
+              </div>
+              <div
+                class="type-row type-row--display"
+                style="font-size: var(--tipografia-secao-titulo)"
+              >
+                <div class="type-row__label">Display · seção-titulo</div>
+                Um escudo que ensina
+              </div>
+              <div class="type-row type-row--corpo">
+                <div class="type-row__label">Corpo · prosa · Source Serif 4</div>
+                Texto corrido para leitura contínua. A fonte serifada reforça o caráter
+                editorial e favorece leitura em condições de luz e atenção desfavoráveis.
+              </div>
+              <div
+                class="type-row type-row--display"
+                style="font-size: var(--tipografia-rotulo); letter-spacing: var(--tipografia-tracking-rotulo); text-transform: uppercase"
+              >
+                <div class="type-row__label">Rótulo · tracking</div>
+                A marca e o que ela confessa
+              </div>
+            </div>
+            <h2>Stacks (tokens)</h2>
+            <pre
+              style="
+                white-space: pre-wrap;
+                font-size: var(--tipografia-nota);
+                background: var(--cor-superficie-creme);
+                padding: var(--espacamento-grupo);
+                border-radius: var(--raio-controle);
+              "
+            ><code>--tipografia-familia-display: "Montserrat", sans-serif;
+--tipografia-familia-corpo: "Source Serif 4", "Source Serif Pro", Georgia, serif;</code></pre>
+            <p class="lab-note">
+              Sem inventar copy pastoral neste capítulo. Exemplos tipográficos são
+              demonstrativos ou títulos já canônicos em <code>identidade.md</code>.
+            </p>
+          </div>
+          <footer class="lab-footer">
+            <p>
+              <a href="03-cores.html">← Cores</a> ·
+              <a href="05-espacamento.html">Espaçamento →</a>
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script src="../js/lab.js"></script>
+  </body>
+</html>

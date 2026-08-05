@@ -1,0 +1,96 @@
+/* Motion lab DaC — mínimo e progressivo (ver design-system/docs/motion-spec.md) */
+
+.lab-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+html.js.enhance-reveal .lab-reveal {
+  opacity: 0;
+  transform: translate3d(0, var(--lab-reveal-distance), 0);
+  transition:
+    opacity var(--motion-revelacao-lenta) var(--motion-easing-entrada),
+    transform var(--motion-revelacao-lenta) var(--motion-easing-entrada);
+  transition-delay: calc(var(--reveal-i, 0) * 70ms);
+}
+
+html.js.enhance-reveal .lab-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.motion-demo {
+  display: grid;
+  gap: var(--espacamento-grupo);
+}
+
+.motion-demo__stage {
+  min-height: 8rem;
+  border: var(--borda-separador) solid var(--cor-borda-sutil);
+  border-radius: var(--raio-controle);
+  padding: var(--espacamento-bloco);
+  display: grid;
+  place-items: center;
+  background: var(--cor-superficie-creme);
+  overflow: hidden;
+}
+
+.motion-demo__box {
+  width: min(14rem, 70%);
+  padding: var(--espacamento-grupo) var(--espacamento-bloco);
+  background: var(--cor-superficie-profunda);
+  color: var(--cor-texto-sobre-profunda);
+  border-radius: var(--raio-controle);
+  text-align: center;
+  font-family: var(--tipografia-familia-display);
+  font-size: var(--tipografia-nota);
+  font-weight: var(--tipografia-peso-display);
+}
+
+.motion-demo__box.is-enter {
+  animation: lab-enter var(--motion-revelacao-lenta) var(--motion-easing-entrada) both;
+}
+
+@keyframes lab-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--lab-reveal-distance));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.motion-demo__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacamento-inline);
+  align-items: center;
+}
+
+.dc-link,
+.dc-acao {
+  transition:
+    color var(--motion-feedback-rapido) var(--motion-easing-padrao),
+    background-color var(--motion-feedback-rapido) var(--motion-easing-padrao),
+    border-color var(--motion-feedback-rapido) var(--motion-easing-padrao);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js.enhance-reveal .lab-reveal,
+  html.js.enhance-reveal .lab-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .motion-demo__box.is-enter {
+    animation: none;
+  }
+
+  .dc-link,
+  .dc-acao {
+    transition: none;
+  }
+}

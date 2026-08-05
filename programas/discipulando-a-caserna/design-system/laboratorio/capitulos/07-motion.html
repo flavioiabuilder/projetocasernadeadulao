@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>07 Motion — Discipulando a Caserna</title>
+    <link rel="stylesheet" href="../css/lab.css" />
+    <link rel="stylesheet" href="../css/motion.css" />
+  </head>
+  <body class="lab-book">
+    <a class="lab-skip" href="#conteudo">Ir para o conteúdo</a>
+    <p class="lab-banner">H5 candidato · mínimo e progressivo</p>
+    <div class="lab-shell">
+      <div class="lab-layout">
+        <nav class="lab-nav" aria-label="Capítulos do brand book">
+          <p class="lab-nav__title">Capítulos</p>
+          <ol>
+            <li><a href="../index.html">Hub</a></li>
+            <li><a href="01-marca.html">01 Marca</a></li>
+            <li><a href="02-logo.html">02 Logo</a></li>
+            <li><a href="03-cores.html">03 Cores</a></li>
+            <li><a href="04-tipografia.html">04 Tipografia</a></li>
+            <li><a href="05-espacamento.html">05 Espaçamento</a></li>
+            <li><a href="06-componentes.html">06 Componentes</a></li>
+            <li><a href="07-motion.html">07 Motion</a></li>
+            <li><a href="08-voz.html">08 Voz</a></li>
+          </ol>
+        </nav>
+        <main id="conteudo">
+          <header class="lab-hero">
+            <p class="lab-hero__eyebrow">Capítulo 07</p>
+            <h1>Motion</h1>
+            <p class="lab-hero__lede">
+              Spec em <code>design-system/docs/motion-spec.md</code>. Identidade não
+              depende de animação. Respeita <code>prefers-reduced-motion</code>.
+            </p>
+          </header>
+          <div class="lab-prose">
+            <div class="motion-demo">
+              <div class="motion-demo__stage">
+                <div id="enter-box" class="motion-demo__box is-enter">
+                  Entrada fade + translateY
+                </div>
+              </div>
+              <div class="motion-demo__cta-row">
+                <button
+                  type="button"
+                  class="dc-acao dc-acao--primaria"
+                  data-replay-enter="#enter-box"
+                >
+                  Repetir entrada
+                </button>
+                <a class="dc-link" href="#conteudo">Hover de link</a>
+              </div>
+            </div>
+            <h2>Tokens</h2>
+            <table class="lab-table">
+              <tbody>
+                <tr>
+                  <td><code>--motion-feedback-rapido</code></td>
+                  <td>120ms</td>
+                </tr>
+                <tr>
+                  <td><code>--motion-transicao-padrao</code></td>
+                  <td>200ms</td>
+                </tr>
+                <tr>
+                  <td><code>--motion-revelacao-lenta</code></td>
+                  <td>320ms</td>
+                </tr>
+                <tr>
+                  <td><code>--motion-easing-entrada</code></td>
+                  <td>cubic-bezier(0.22, 1, 0.36, 1)</td>
+                </tr>
+                <tr>
+                  <td><code>--lab-reveal-distance</code></td>
+                  <td>1.25rem</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="lab-note">
+              Proibido: glow, bounce, partículas, parallax agressivo. Scroll-reveal nos
+              swatches usa IntersectionObserver e desliga sob reduced-motion.
+            </p>
+          </div>
+          <footer class="lab-footer">
+            <p>
+              <a href="06-componentes.html">← Componentes</a> ·
+              <a href="08-voz.html">Voz →</a>
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script src="../js/lab.js"></script>
+  </body>
+</html>

@@ -46,4 +46,7 @@ não `docs/brand-guidelines.md` nem `assets/design-tokens.*` na raiz.
 |--|-----|--------------|
 | Logo | `assets/img/logo-pca/` | `…/logo-pdac/` |
 | Tokens | `marca/tokens/` | `programas/…/design-system/tokens/` |
+| Guidelines | `marca/docs/` | `programas/…/design-system/docs/` |
 | Lab | `marca/laboratorio/` | `programas/…/design-system/laboratorio/` |
+
+Brand book do programa: [`programas/discipulando-a-caserna/design-system/`](../programas/discipulando-a-caserna/design-system/) (docs + lab capítulos). Não misturar kits ou tokens.

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>05 Espaçamento — Discipulando a Caserna</title>
+    <link rel="stylesheet" href="../css/lab.css" />
+    <link rel="stylesheet" href="../css/motion.css" />
+  </head>
+  <body class="lab-book">
+    <a class="lab-skip" href="#conteudo">Ir para o conteúdo</a>
+    <p class="lab-banner">Direção A · medida de leitura · tokens space</p>
+    <div class="lab-shell">
+      <div class="lab-layout">
+        <nav class="lab-nav" aria-label="Capítulos do brand book">
+          <p class="lab-nav__title">Capítulos</p>
+          <ol>
+            <li><a href="../index.html">Hub</a></li>
+            <li><a href="01-marca.html">01 Marca</a></li>
+            <li><a href="02-logo.html">02 Logo</a></li>
+            <li><a href="03-cores.html">03 Cores</a></li>
+            <li><a href="04-tipografia.html">04 Tipografia</a></li>
+            <li><a href="05-espacamento.html">05 Espaçamento</a></li>
+            <li><a href="06-componentes.html">06 Componentes</a></li>
+            <li><a href="07-motion.html">07 Motion</a></li>
+            <li><a href="08-voz.html">08 Voz</a></li>
+          </ol>
+        </nav>
+        <main id="conteudo">
+          <header class="lab-hero">
+            <p class="lab-hero__eyebrow">Capítulo 05</p>
+            <h1>Espaçamento</h1>
+            <p class="lab-hero__lede">
+              Ritmo editorial da Direção A: coluna estreita, margens generosas, hierarquia
+              por espaço e filetes.
+            </p>
+          </header>
+          <div class="lab-prose">
+            <h2>Ritmo semântico</h2>
+            <div class="space-ladder">
+              <div class="space-row">
+                <span>inline</span>
+                <div
+                  class="space-row__bar"
+                  style="width: var(--espacamento-inline)"
+                ></div>
+                <code>--espacamento-inline</code>
+              </div>
+              <div class="space-row">
+                <span>grupo</span>
+                <div
+                  class="space-row__bar"
+                  style="width: var(--espacamento-grupo)"
+                ></div>
+                <code>--espacamento-grupo</code>
+              </div>
+              <div class="space-row">
+                <span>bloco</span>
+                <div
+                  class="space-row__bar"
+                  style="width: var(--espacamento-bloco)"
+                ></div>
+                <code>--espacamento-bloco</code>
+              </div>
+              <div class="space-row">
+                <span>seção</span>
+                <div
+                  class="space-row__bar"
+                  style="width: min(100%, var(--espacamento-secao))"
+                ></div>
+                <code>--espacamento-secao</code>
+              </div>
+            </div>
+            <h2>Layout</h2>
+            <table class="lab-table">
+              <tbody>
+                <tr>
+                  <td><code>--layout-medida-prosa</code></td>
+                  <td>~68ch — prosa padrão</td>
+                </tr>
+                <tr>
+                  <td><code>--layout-container-leitura</code></td>
+                  <td>~40rem — coluna editorial</td>
+                </tr>
+                <tr>
+                  <td><code>--layout-container-amplo</code></td>
+                  <td>~64rem — ferramentas curriculares</td>
+                </tr>
+                <tr>
+                  <td>Gutters</td>
+                  <td>
+                    <code>--espacamento-pagina-gutter-mobile</code> /
+                    <code>tablet</code> /
+                    <code>desktop</code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="lab-note">
+              Sem cards de feature, stat strips ou dashboard. Espaço negativo e filetes
+              (<code>--cor-borda-sutil</code> fazem a hierarquia.
+            </p>
+          </div>
+          <footer class="lab-footer">
+            <p>
+              <a href="04-tipografia.html">← Tipografia</a> ·
+              <a href="06-componentes.html">Componentes →</a>
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script src="../js/lab.js"></script>
+  </body>
+</html>

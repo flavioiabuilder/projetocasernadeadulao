@@ -136,6 +136,20 @@ A linha “Uma iniciativa do Projeto Caserna de Adulão” nas versões colorida
 
 Arquivos legados de estudo: `assets/img/brasao.svg`, `assets/img/marca-escudo.svg`, `assets/img/favicon.svg` — mantidos no repositório, mas **não** são a fonte visual ativa do prospecto.
 
+## Brand book
+
+Guidelines, gates e galeria HTML do kit:
+
+| Artefato | Caminho |
+|----------|---------|
+| Guidelines | [`design-system/docs/brand-guidelines.md`](../../design-system/docs/brand-guidelines.md) |
+| Decisões (H1–H6) | [`design-system/docs/decisoes.md`](../../design-system/docs/decisoes.md) |
+| Lab — cap. Logo | [`design-system/laboratorio/capitulos/02-logo.html`](../../design-system/laboratorio/capitulos/02-logo.html) |
+
+Hub do lab: [`design-system/laboratorio/`](../../design-system/laboratorio/). Local apenas — não Pages.
+
+Não confundir com a marca PCA: `assets/img/logo-pca/` + `marca/` na raiz.
+
 ## Governança
 
 - Não inventar versões nem recolorir fora desta pasta.

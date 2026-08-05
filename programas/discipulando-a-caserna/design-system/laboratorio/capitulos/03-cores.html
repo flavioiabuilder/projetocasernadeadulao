@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>03 Cores — Discipulando a Caserna</title>
+    <link rel="stylesheet" href="../css/lab.css" />
+    <link rel="stylesheet" href="../css/motion.css" />
+  </head>
+  <body class="lab-book">
+    <a class="lab-skip" href="#conteudo">Ir para o conteúdo</a>
+    <p class="lab-banner">Candidato · Tokens design-system/tokens · H1 paleta</p>
+    <div class="lab-shell">
+      <div class="lab-layout">
+        <nav class="lab-nav" aria-label="Capítulos do brand book">
+          <p class="lab-nav__title">Capítulos</p>
+          <ol>
+            <li><a href="../index.html">Hub</a></li>
+            <li><a href="01-marca.html">01 Marca</a></li>
+            <li><a href="02-logo.html">02 Logo</a></li>
+            <li><a href="03-cores.html">03 Cores</a></li>
+            <li><a href="04-tipografia.html">04 Tipografia</a></li>
+            <li><a href="05-espacamento.html">05 Espaçamento</a></li>
+            <li><a href="06-componentes.html">06 Componentes</a></li>
+            <li><a href="07-motion.html">07 Motion</a></li>
+            <li><a href="08-voz.html">08 Voz</a></li>
+          </ol>
+        </nav>
+        <main id="conteudo">
+          <header class="lab-hero">
+            <p class="lab-hero__eyebrow">Capítulo 03</p>
+            <h1>Cores</h1>
+            <p class="lab-hero__lede">
+              Âncoras do Guia §1.6 e semânticos do design system. Nos componentes,
+              usar aliases semânticos — nunca hex soltos.
+            </p>
+          </header>
+          <div class="lab-prose">
+            <h2>Âncoras</h2>
+            <div class="swatch-grid">
+              <article class="swatch" data-reveal data-i="0">
+                <div class="swatch__chip" style="background: var(--cor-superficie-profunda)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Navy</span>
+                  <span class="swatch__hex">#1A2A44</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="1">
+                <div
+                  class="swatch__chip"
+                  style="background: var(--cor-superficie-profunda-escura)"
+                ></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Navy escuro</span>
+                  <span class="swatch__hex">#101D33</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="2">
+                <div class="swatch__chip" style="background: var(--cor-acento-editorial)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Bronze Guia</span>
+                  <span class="swatch__hex">#8C6A45</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="3">
+                <div class="swatch__chip" style="background: var(--cor-superficie-papel)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Papel</span>
+                  <span class="swatch__hex">#FBF8F2</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="4">
+                <div class="swatch__chip" style="background: var(--cor-superficie-creme)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Creme</span>
+                  <span class="swatch__hex">#F5F1E7</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="5">
+                <div class="swatch__chip" style="background: var(--cor-borda-sutil)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Régua</span>
+                  <span class="swatch__hex">#C9BCA1</span>
+                </div>
+              </article>
+              <article class="swatch" data-reveal data-i="6">
+                <div class="swatch__chip" style="background: var(--cor-texto-primario)"></div>
+                <div class="swatch__meta">
+                  <span class="swatch__name">Tinta</span>
+                  <span class="swatch__hex">#23262B</span>
+                </div>
+              </article>
+            </div>
+            <h2>Superfícies</h2>
+            <div class="surface-demo">
+              <div class="surface-demo__panel surface-demo__panel--papel">
+                Papel · texto primário
+              </div>
+              <div class="surface-demo__panel surface-demo__panel--creme">
+                Creme · caixas
+              </div>
+              <div class="surface-demo__panel surface-demo__panel--profunda">
+                Profunda · texto inverso
+              </div>
+            </div>
+            <h2>Semânticos</h2>
+            <table class="lab-table">
+              <tbody>
+                <tr>
+                  <td><code>--cor-superficie-profunda</code></td>
+                  <td>Navy âncora</td>
+                </tr>
+                <tr>
+                  <td><code>--cor-acento-editorial</code></td>
+                  <td>Bronze Guia (não CTA comercial)</td>
+                </tr>
+                <tr>
+                  <td><code>--cor-foco-sobre-papel</code></td>
+                  <td>Anel de foco sobre claro</td>
+                </tr>
+                <tr>
+                  <td><code>--cor-foco-sobre-profunda</code></td>
+                  <td>Anel de foco sobre navy</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="lab-note">
+              H1: drift bronze Guia <code>#8C6A45</code> vs logo
+              <code>#8C6A46</code> (primitivos 500 vs 600) — semântica usa 500 até
+              homologação.
+            </p>
+          </div>
+          <footer class="lab-footer">
+            <p>
+              <a href="02-logo.html">← Logo</a> ·
+              <a href="04-tipografia.html">Tipografia →</a>
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script src="../js/lab.js"></script>
+  </body>
+</html>
