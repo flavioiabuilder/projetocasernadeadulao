@@ -22,23 +22,30 @@ LOGO_PCA_{VARIANTE}_{ACABAMENTO}_{COR}[_TAMANHO].png
 | `PCA`        | Projeto Caserna de Adulão                        |
 | `Master`     | Master oficial entregue                          |
 | `Mono_1C`    | Monocromático (preto / branco)                   |
-| `_800` / `_400` / `_128` | Derivados web por lado máximo (px) |
+| `_800` … `_32` | Derivados web por lado máximo (px)             |
 
 Cada PNG canônico tem um `.webp` irmão (mesmo basename, quality ~82). **Manter os PNG** como fonte/fallback; preferir WebP no runtime.
 
 Há também um `.svg` vetorizado a partir do master (mesmo basename). Os PNG/WebP
 originais permanecem; o SVG é variação adicional (escala livre, edição de paths).
+O SVG canônico preserva preenchimentos pretos e brancos com fundo transparente —
+não usar traço binary-only (elimina o branco do escudo).
 
 ## Inventário
 
 | Arquivo                            | Uso recomendado                          |
 | ---------------------------------- | ---------------------------------------- |
-| `LOGO_PCA_Master_Mono_1C.png`      | Fonte / arquivo master (~1563×1563)      |
+| `LOGO_PCA_Master_Mono_1C.png`      | Fonte / arquivo master (1563×1563)       |
 | `LOGO_PCA_Master_Mono_1C.webp`     | Idem, WebP                               |
 | `LOGO_PCA_Master_Mono_1C.svg`      | Vetor (P+B + filete fino; fundo α)       |
 | `LOGO_PCA_Master_Mono_1C_800.*`    | Hero retina / OG                         |
 | `LOGO_PCA_Master_Mono_1C_400.*`    | Hero / destaque médio                    |
-| `LOGO_PCA_Master_Mono_1C_128.*`    | Header, favicon, footer                  |
+| `LOGO_PCA_Master_Mono_1C_180.*`    | Apple Touch Icon                         |
+| `LOGO_PCA_Master_Mono_1C_128.*`    | Header, footer, favicon (uso atual)      |
+| `LOGO_PCA_Master_Mono_1C_64.*`     | UI compacta                              |
+| `LOGO_PCA_Master_Mono_1C_32.*`     | Favicon 32px                             |
+
+Rasters derivados: downscale Lanczos a partir do master PNG (sem upscale).
 
 ## Uso na página institucional (`index.html`)
 
