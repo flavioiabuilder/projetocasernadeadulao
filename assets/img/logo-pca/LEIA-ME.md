@@ -24,6 +24,7 @@ LOGO_PCA_{VARIANTE}_{ACABAMENTO}_{COR}[_TAMANHO].png
 | `Mono_1C`    | Monocromático (preto / branco) — positiva        |
 | `Mono_1C_Branca_FFFFFF` | Mesma arte invertida (reversed)         |
 | `Color_Institucional` | Full color com tokens da página institucional |
+| `Color_Institucional_Reverso` | Color com campo/detalhe invertidos (bronze mantido) |
 | `_800` … `_32` | Derivados web por lado máximo (px)             |
 
 Cada PNG canônico tem um `.webp` irmão (mesmo basename, quality ~82). **Manter os PNG** como fonte/fallback; preferir WebP no runtime.
@@ -52,6 +53,7 @@ Homologação pastoral/institucional desta colorização permanece decisão huma
 | `Mono_1C` | Campo escuro, elementos claros | Claro / papel |
 | `Mono_1C_Branca_FFFFFF` | Campo claro, elementos escuros (invertida) | Escuro / foto escura |
 | `Color_Institucional` | Carvão + papel + filete bronze | Claro ou escuro com contraste |
+| `Color_Institucional_Reverso` | Papel↔carvão invertidos; bronze mantido | Escuro / foto escura (com cor) |
 
 ## Inventário
 
@@ -76,6 +78,13 @@ Homologação pastoral/institucional desta colorização permanece decisão huma
 | `LOGO_PCA_Master_Color_Institucional.png` / `.webp` / `.svg` | Master colorido |
 | `LOGO_PCA_Master_Color_Institucional_{800…32}.*` | Escada web |
 
+### Full color reverso (`Color_Institucional_Reverso`)
+
+| Arquivo | Uso |
+| ------- | --- |
+| `LOGO_PCA_Master_Color_Institucional_Reverso.png` / `.webp` / `.svg` | Master color invertido |
+| `LOGO_PCA_Master_Color_Institucional_Reverso_{800…32}.*` | Escada web (fundos escuros com cor) |
+
 Rasters derivados: downscale Lanczos a partir do master da mesma variante (sem upscale).
 
 ## Uso na página institucional (`index.html`)
@@ -88,7 +97,7 @@ Rasters derivados: downscale Lanczos a partir do master da mesma variante (sem u
 | Footer | `LOGO_PCA_Master_Mono_1C_128.*` |
 | OG/Twitter | `LOGO_PCA_Master_Mono_1C_800.png` |
 
-Em superfícies escuras, preferir `…_Branca_FFFFFF_*`. Color_Institucional para destaque de marca quando houver contraste adequado.
+Em superfícies escuras, preferir `…_Branca_FFFFFF_*` (mono) ou `…_Color_Institucional_Reverso_*` (com cor). `Color_Institucional` para destaque de marca quando houver contraste adequado.
 
 ## Mapa do kit — status e skills
 
@@ -97,9 +106,9 @@ Estrutura atual: só o **escudo Master** (tipografia na arte).
 | Versão | Status | Como gerar | Skills |
 | ------ | ------ | ---------- | ------ |
 | Master Mono positiva | Feito | — | — |
-| Master Mono Branca | Feito | Invert RGB + swap fills SVG | brand + Pillow |
-| Master Color_Institucional | Feito | Recolor fills SVG com tokens `index.html` → raster Cairo → escada | brand + Pillow (+ CairoSVG) |
-| Color reverso | Falta | Swap/invert da Color_Institucional | brand + Pillow |
+| Master Mono Branca | Feito | Invert RGB do Mono PNG; SVG com swap de fills | brand + Pillow |
+| Master Color_Institucional | Feito | Recolor fills SVG com tokens `index.html` → raster | brand + Pillow |
+| Master Color_Institucional_Reverso | Feito | Swap papel↔carvão (SVG + remap PNG); bronze mantido; escada Lanczos | brand + Pillow |
 | Só símbolo | Falta | Redesign sem tipografia da borda | higgsfield-generate (`recraft_v4_1`) ou design/logo → homologação → vectorize → Pillow |
 | Só wordmark | Falta | Redesign tipográfico | higgsfield-generate / design/logo → homologação → vectorize → Pillow |
 | Lockup horizontal | Falta | Compor símbolo + wordmark | Após símbolo/wordmark: composição → brand → vectorize → Pillow |
@@ -115,7 +124,7 @@ Pipeline padrão após existir arte-fonte:
 
 Limite: o master é arte fundida. Lockups / só-símbolo / wordmark exigem nova arte + homologação humana.
 
-Ordem sugerida do que ainda falta: Color reverso → só símbolo → wordmark → lockups H/V → hero.
+Ordem sugerida do que ainda falta: só símbolo → wordmark → lockups H/V → hero.
 
 ## Governança
 
