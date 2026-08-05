@@ -118,6 +118,11 @@
   --fr-scroll-lag-segundos: 0.8;
   --fr-scroll-duracao-hero-pin: 0.5s;
   --fr-scroll-duracao-steps-stagger: 1.6s;
+  /* pointerPhysics */
+  --fr-cursor-lag-segundos: 0.08;
+  --fr-cursor-amp-frente-x: 6.8px;
+  --fr-cursor-amp-frente-y: 3.2px;
+  --fr-cursor-multiplicador-fundo: 2;
 }
 
 @media (prefers-reduced-motion: reduce) {

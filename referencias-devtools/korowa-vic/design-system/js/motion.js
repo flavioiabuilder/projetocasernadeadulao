@@ -152,6 +152,67 @@
     requestAnimationFrame(frame);
   }
 
+  function readPointerAmp() {
+    const cs = getComputedStyle(document.documentElement);
+    const px = (name, fallback) => {
+      const n = parseFloat(cs.getPropertyValue(name));
+      return Number.isFinite(n) ? n : fallback;
+    };
+    return {
+      lagSeconds: (() => {
+        const n = parseFloat(cs.getPropertyValue("--fr-cursor-lag-segundos"));
+        return Number.isFinite(n) && n > 0 ? n : 0.08;
+      })(),
+      ampX: px("--fr-cursor-amp-frente-x", 6.8),
+      ampY: px("--fr-cursor-amp-frente-y", 3.2),
+      backMultiplier: px("--fr-cursor-multiplicador-fundo", 2),
+    };
+  }
+
+  /**
+   * Parallax por cursor (P13 — medido ao vivo com dispatch real de mousemove
+   * no hero-special_bg-visual da referência): as camadas se deslocam na
+   * direção OPOSTA ao cursor, proporcional à distância ao centro do
+   * viewport. Camada de trás = 2x a de frente, sempre. Suave e rápido
+   * (~20-25ms medidos) — muito mais ágil que o lag de scroll (0.8s), porque
+   * resposta ao cursor precisa parecer imediata.
+   */
+  function bindCursorParallax() {
+    const layers = document.querySelectorAll("[data-fr-cursor-parallax]");
+    if (!layers.length) return;
+    if (REDUCE) return;
+    if (!matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    const { lagSeconds, ampX, ampY } = readPointerAmp();
+    const rigs = [...layers].map((el) => ({
+      el,
+      multiplier: Number(el.getAttribute("data-fr-cursor-parallax")) || 1,
+      lagX: createScrollLag(lagSeconds),
+      lagY: createScrollLag(lagSeconds),
+    }));
+
+    function onMove(e) {
+      const nx = (e.clientX - innerWidth / 2) / (innerWidth / 2);
+      const ny = (e.clientY - innerHeight / 2) / (innerHeight / 2);
+      rigs.forEach((rig) => {
+        rig.lagX.set(-nx * ampX * rig.multiplier);
+        rig.lagY.set(-ny * ampY * rig.multiplier);
+      });
+    }
+
+    function frame(now) {
+      rigs.forEach((rig) => {
+        const x = rig.lagX.tick(now);
+        const y = rig.lagY.tick(now);
+        rig.el.style.transform = `translate3d(${x.toFixed(3)}px, ${y.toFixed(3)}px, 0) scale(1.1)`;
+      });
+      requestAnimationFrame(frame);
+    }
+
+    addEventListener("mousemove", onMove, { passive: true });
+    requestAnimationFrame(frame);
+  }
+
   function bindHeaderShrink() {
     const header = document.querySelector("[data-fr-header]");
     if (!header) return;
@@ -169,6 +230,7 @@
     bindParallax();
     bindPinProgress();
     bindHeaderShrink();
+    bindCursorParallax();
   }
 
   if (document.readyState === "loading") {

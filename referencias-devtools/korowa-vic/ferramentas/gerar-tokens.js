@@ -29,6 +29,7 @@ const GRUPOS = [
   ["perspective", "persp"],
   ["environment", "env"],
   ["scrollPhysics", "scroll"],
+  ["pointerPhysics", "cursor"],
 ];
 
 function kebab(nome) {

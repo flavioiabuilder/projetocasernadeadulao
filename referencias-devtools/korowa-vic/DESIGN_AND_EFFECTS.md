@@ -18,11 +18,12 @@ Três sessões de auditoria, duas fontes de medição:
 | Sessão | Host | O que mediu |
 | --- | --- | --- |
 | 1–2 | Playwright (MCP indisponível) | Cascata CSS, tipografia, cores, contagem de canvas, nomes de `@keyframes` (sem corpo) |
-| 3 (P9) | **MCP chrome-devtools ao vivo** | `gsap`/`ScrollTrigger` em runtime, corpo completo dos `@keyframes`, curvas `cubic-bezier` reais, `scrub` real |
+| 3 (P9–P13) | **MCP chrome-devtools ao vivo** | `gsap`/`ScrollTrigger` em runtime, corpo completo dos `@keyframes`, curvas `cubic-bezier` reais, `scrub` real, composição do hero (P12), parallax por cursor (P13) |
 
-A evidência bruta da P9 está em
-[`auditoria/raw/p9-gsap-live-1440x900.json`](auditoria/raw/p9-gsap-live-1440x900.json).
-Qualquer número citado abaixo pode ser conferido lá.
+Evidência bruta em `auditoria/raw/p9-gsap-live-*.json` (motion),
+`p12-hero-visual-*.json` (composição de imagem) e
+`p13-cursor-parallax-*.json` (parallax por cursor). Qualquer número citado
+abaixo pode ser conferido lá.
 
 ## As curvas de easing (tokens)
 
@@ -85,6 +86,57 @@ value += (target - value) * (1 - Math.exp(-dt / lagSeconds));
 - `prefers-reduced-motion: reduce` desliga o lag por completo — o valor salta
   direto ao alvo (ver `REDUCE` em `motion.js`).
 
+## HeroVisualComposite — a sobreposição de duas fotos
+
+O hero da referência empilha duas fotos no mesmo espaço (`.hero-special_bg-visual-wrapper`):
+uma de trás (`is-back`, opaca, preenche tudo) e uma de frente (`is-front`,
+com canal alfa próprio — confirmado no header `VP8X` do arquivo, sem
+`mask-image`/`mix-blend-mode` em CSS). O sujeito da foto de cima aparece
+recortado sobre a de baixo porque a transparência já vem **pronta no
+arquivo de imagem**, não é calculada em runtime.
+
+Reconstruído em `.fr-hero-visual` (`components.css`) com a mesma estrutura —
+wrapper `scale(1.02)` + `overflow:clip`, camadas `scale(1.1)` +
+`object-fit:cover` — usando fotos do próprio projeto
+(`img/hero-back.webp`, `img/hero-front.webp`; ver
+`documentacao/asset-and-license-boundaries.md`). Qualquer par de fotos
+funciona, desde que a de cima tenha fundo transparente (não branco) ao
+redor do sujeito — do contrário ela cobre a de baixo por completo.
+
+## A física do cursor (o efeito que faltava)
+
+As duas camadas do `.fr-hero-visual` também se deslocam sutilmente na
+direção **oposta** ao cursor, proporcional à distância até o centro da tela —
+um "olhar através da janela" clássico. Medido com `dispatchEvent` de
+`mousemove` real na referência (`auditoria/raw/p13-cursor-parallax-1440x900.json`):
+
+- **Câmera única, duas profundidades**: a camada de trás sempre se move
+  **exatamente 2×** mais que a de frente. Isso é o que cria a sensação de
+  profundidade — quanto "mais longe" a camada, mais ela se move em relação ao
+  ponto de vista.
+- **Amplitude pequena**: ~6.8px na horizontal, ~3.2px na vertical, na borda
+  extrema do viewport. É um efeito sutil, não um tilt agressivo.
+- **Resposta rápida**: suaviza em ~20-25ms (contra 0.8s do scrub de scroll).
+  Faz sentido — resposta ao cursor precisa parecer imediata, resposta ao
+  scroll pode ter um "peso" cinematográfico.
+
+Implementado em `bindCursorParallax()` (`motion.js`), reaproveitando a
+**mesma função** `createScrollLag()` do scrub de scroll, só que instanciada
+com `lagSeconds = 0.08` (token `--fr-cursor-lag-segundos`) em vez de `0.8`.
+Essa é a ideia central deste documento: a física de "perseguir um alvo com
+suavização exponencial" é uma primitiva única, reusada com constantes de
+tempo diferentes para efeitos com "peso" diferente.
+
+**Para ajustar**: `--fr-cursor-amp-frente-x` / `--fr-cursor-amp-frente-y`
+controlam a distância percorrida; `--fr-cursor-lag-segundos` controla o
+quão "grudado" o movimento fica no cursor (menor = mais imediato). O
+multiplicador da camada de trás é fixo em `data-fr-cursor-parallax="2"` no
+HTML — para uma 3ª camada mais distante ainda, use `"3"` ou mais.
+
+O efeito só ativa com `(hover: hover) and (pointer: fine)` (não em touch) e
+respeita `prefers-reduced-motion` — nenhuma das duas coisas é medida na
+referência, são decisões próprias da Friso.
+
 ## As 9 `@keyframes` da referência → análogos na Friso
 
 Nenhum nome ou seletor da referência foi copiado; os *timings e formas de
@@ -110,9 +162,9 @@ curva* foram. Tabela de correspondência:
 npx serve -l 4173 .
 ```
 
-- `design-system/demo.html` — pin hero (lag de scroll), header com marca que
-  encolhe ao rolar, loader com cortina, `fr-media-stage` na seção
-  "Profundidade".
+- `design-system/demo.html` — pin hero com `.fr-hero-visual` (2 fotos + parallax
+  por cursor + lag de scroll no véu), header com marca que encolhe ao rolar,
+  loader com cortina, `fr-media-stage` na seção "Profundidade".
 - `design-system/laboratorio.html` — estados isolados de componente.
 
 ## Limites conhecidos (honestidade sobre o que não foi medido)

@@ -1,0 +1,36 @@
+{
+  "probe": "cursor-parallax",
+  "url": "https://www.korowa.vic.edu.au/",
+  "viewport": { "w": 1440, "h": 900 },
+  "host": "chrome-devtools-mcp",
+  "layer": "dom+render",
+  "provenance": "medido-no-render",
+  "method": "dispatchEvent(new MouseEvent('mousemove', {clientX, clientY, bubbles:true})) na .section_hero-special, computed transform amostrado ao longo do tempo até estabilizar.",
+  "note": "Achado perdido na P9 original: só testei scroll, não cursor. Usuário identificou visualmente (screenshots com o cursor em posições diferentes) que a imagem se move.",
+  "findings": {
+    "mechanism": "translate oposto ao deslocamento do cursor em relação ao centro do viewport, proporcional e linear",
+    "formula": "layer.tx = -((clientX - innerWidth/2) / (innerWidth/2)) * ampX * multiplicador; layer.ty = -((clientY - innerHeight/2) / (innerHeight/2)) * ampY * multiplicador",
+    "measurements": [
+      { "cursor": [0, 0], "frontTx": 6.775, "frontTy": 3.2, "backTx": 13.55, "backTy": 6.4 },
+      { "cursor": [1440, 900], "frontTx": -6.775, "frontTy": -3.2, "backTx": -13.55, "backTy": -6.4 }
+    ],
+    "backToFrontRatio": "exatamente 2.0 em todas as amostras (tx e ty)",
+    "ampXAtEdge": 6.775,
+    "ampYAtEdge": 3.2,
+    "settleTimeline": [
+      { "afterMs": 16, "frontTx": 3.175, "fractionOfFinal": 0.469 },
+      { "afterMs": 50, "frontTx": 6.325, "fractionOfFinal": 0.933 },
+      { "afterMs": 100, "frontTx": 6.768, "fractionOfFinal": 0.999 },
+      { "afterMs": 200, "frontTx": 6.775, "fractionOfFinal": 1.0 }
+    ],
+    "estimatedLagConstant": "~0.02-0.025s (muito mais rápido que o scrub de scroll, 0.8s) — resposta ao cursor precisa parecer imediata",
+    "noOtherProperties": "sem mudança em scale, opacity, filter — só translate. Layers mantêm scale(1.1) constante."
+  },
+  "friso": {
+    "implementation": "bindCursorParallax() em motion.js — reaproveita createScrollLag() (mesma engine de suavização exponencial usada no scrub de scroll) com constante de tempo diferente (0.08s, token --fr-cursor-lag-segundos)",
+    "tokensAdded": ["--fr-cursor-lag-segundos", "--fr-cursor-amp-frente-x", "--fr-cursor-amp-frente-y", "--fr-cursor-multiplicador-fundo"],
+    "amplitudeUsed": "6.8px / 3.2px (arredondado do medido 6.775/3.2)",
+    "gate": "só ativa com matchMedia('(hover: hover) and (pointer: fine)') e fora de prefers-reduced-motion — dispositivos touch não recebem o efeito (decisão própria, não medida na referência)",
+    "verifiedInBrowser": "dispatchEvent sintético no demo.html reproduziu exatamente a razão 2x e a direção oposta medidas na referência"
+  }
+}
