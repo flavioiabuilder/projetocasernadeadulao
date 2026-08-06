@@ -23,6 +23,7 @@
   },
   "rootFiles": ["index.html", "robots.txt", "404.html"],
   "rootAssets": [
+    "marca/tokens/tokens.css",
     "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.png",
     "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.webp",
     "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_800.png"
