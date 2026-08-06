@@ -126,6 +126,13 @@ describe("montagem do artefato Pages", () => {
       true
     );
     assert.equal(
+      fs.existsSync(path.join(out, "marca/tokens/tokens.css")),
+      true,
+      "índice institucional exige marca/tokens/tokens.css no artefato"
+    );
+    const indexHtml = fs.readFileSync(path.join(out, "index.html"), "utf8");
+    assert.match(indexHtml, /href=["']marca\/tokens\/tokens\.css["']/);
+    assert.equal(
       fs.existsSync(
         path.join(out, "programas/discipulando-a-caserna/prototipos/prospecto-fase-5-v1")
       ),
