@@ -1,15 +1,15 @@
 {
-  "primary_webp": "LOGO_PCA_Master_Mono_1C.webp",
-  "primary_blob_local_note": "confirm with git hash-object separately",
-  "allowed_variants": [
-    "Mono_1C",
-    "Mono_1C_Branca_FFFFFF",
-    "Color_Institucional"
+  "authorized_variants": [
+    "Mono_1C"
   ],
   "generated_variants": [
-    "Mono_1C",
+    "Mono_1C"
+  ],
+  "primary_webp": "LOGO_PCA_Master_Mono_1C.webp",
+  "rejected_variants_note": [
     "Mono_1C_Branca_FFFFFF",
-    "Color_Institucional"
+    "Color_Institucional",
+    "Color_Institucional_Reverso"
   ],
   "geometry_masters": {
     "primary": "LOGO_PCA_Master_Mono_1C.webp",
@@ -22,37 +22,7 @@
       45,
       1381,
       1513
-    ],
-    "Mono_1C_Branca_FFFFFF": {
-      "size": [
-        1563,
-        1563
-      ],
-      "bbox": [
-        182,
-        45,
-        1381,
-        1513
-      ],
-      "alpha_disagree_pct": 0.0,
-      "same_size": true,
-      "note": "official White WebP (alpha/bbox identical to PRIMARY)"
-    },
-    "Color_Institucional": {
-      "size": [
-        1563,
-        1563
-      ],
-      "bbox": [
-        190,
-        53,
-        1374,
-        1504
-      ],
-      "alpha_disagree_pct": 1.3095,
-      "same_size": true,
-      "note": "official Color WebP in same frame (source bbox ~8px drift vs PRIMARY)"
-    }
+    ]
   },
   "layout_ratios": {
     "side": 0.07,
@@ -110,7 +80,7 @@
     "tolerance": {
       "mae_rgba_max": 0.5,
       "max_abs_delta_max": 2.0,
-      "reason": "PNG roundtrip from composition that pastes PRIMARY WebP decoded pixels; expect near-zero vs LANCZOS self-resize when crest_side == primary.size"
+      "reason": "PNG paste of PRIMARY WebP decoded pixels without mask blending"
     },
     "pass": true
   },
@@ -121,5 +91,5 @@
     180,
     128
   ],
-  "note": "Color_Institucional_Reverso removed by human decision; no new colors without gate"
+  "note": "Kit reduzido a Mono_1C. Fundos escuros adaptam superficie (papel), nao a logomarca."
 }

@@ -78,7 +78,7 @@ Não misturar kits, tokens ou messaging sem decisão humana explícita.
 - Foco visível: `--focus-ring` (âmbar) com offset.
 - Homologação formal de contrastes do lab: contínua na QA.
 
-**H1 (homologado):** colorização `Color_Institucional` = carvão + papel + filete bronze dos tokens.
+**H1 (homologado):** paleta de interface = carvão + papel + filete bronze dos tokens. Isso **não** autoriza uma logomarca colorida (H2c: kit = `Mono_1C`).
 
 ---
 
@@ -106,26 +106,27 @@ Não misturar kits, tokens ou messaging sem decisão humana explícita.
 
 Fonte canônica: [`assets/img/logo-pca/LEIA-ME.md`](../../assets/img/logo-pca/LEIA-ME.md).
 
-### Variantes Master (kit autorizado — 3 apenas)
+### Variante Master (kit autorizado — 1 apenas)
 
-| Variante | Papel | Fundo recomendado |
-|----------|-------|-------------------|
-| `Mono_1C` | Positiva monocromática | Claro / papel |
-| `Mono_1C_Branca_FFFFFF` | Monocromática branca (não é nova cor institucional) | Escuro |
-| `Color_Institucional` | **Única** versão colorida autorizada (carvão / papel / bronze) | Claro (escuro só com prova de contraste) |
+| Variante | Papel |
+|----------|-------|
+| `Mono_1C` | Única logomarca oficial |
 
-`Color_Institucional_Reverso` foi **removida** do kit por decisão humana. Não criar novas cores, duotones, reversos ou combinações experimentais até novo gate explícito. Em fundos escuros, usar `Mono_1C_Branca_FFFFFF`.
+**Histórico (não disponível):** Branca, Color_Institucional e Color_Institucional_Reverso foram removidas. Não regenerar. Em fundos escuros, adaptar a **superfície** com `--color-papel` — nunca a logomarca.
 
 ### Clear space e não-usos
 
 - Manter área livre ≈ ¼ da altura do escudo em volta.
-- Não distorcer, não recolorir fora da paleta documentada, não inventar variantes cromáticas.
+- Não distorcer, não recolorir a logomarca, não inventar variantes cromáticas.
+- Não usar `filter`, blend modes ou SVG com fills sobrescritos para simular outra variante.
 - Não substituir por logo do Discipulando.
 - Preferir WebP no runtime; PNG como fonte/fallback; SVG para escala.
 
 **H2 (decidido):** o escudo Master **é** a logomarca. Texto fora do escudo não compete com a tipografia da borda.
 
-**Lockup Vertical** (composição de layout, opcional): Master completo no topo + `PROJETO` / `CASERNA DE ADULÃO` em **Palatino Linotype** (Regular + Bold; família da stack `--font-display`). Hierarquia: apoio com tracking aberto + nome Bold. Arte superior a partir de `LOGO_PCA_Master_Mono_1C.webp` (e Masters de cor oficiais no mesmo frame). SVG **híbrido** (Master WebP embutido + contornos do wordmark) — não descrever como 100% vetorial. Geometria canônica **1781×2080**. Arquivos `LOGO_PCA_Lockup_Vertical_*` — ver `assets/img/logo-pca/LEIA-ME.md`.
+**H2c (decidido):** kit = somente `Mono_1C`.
+
+**Lockup Vertical** (composição de layout, opcional): Master `Mono_1C` completo no topo + `PROJETO` / `CASERNA DE ADULÃO` em **Palatino Linotype** (Regular + Bold). Arte superior a partir de `LOGO_PCA_Master_Mono_1C.webp`. SVG **híbrido** — não descrever como 100% vetorial. Geometria **1781×2080**. Ver `assets/img/logo-pca/LEIA-ME.md`.
 
 ---
 
@@ -206,7 +207,8 @@ npm run validate:marca:tokens
 
 | Item | Status |
 |------|--------|
-| Paleta / Color_Institucional | Homologado (H1) |
+| Paleta UI (carvão/papel/bronze) | Homologado (H1) — não gera logo colorida |
+| Kit logomarca Mono_1C | Decidido (H2c) |
 | Logo Master + Lockup Vertical | Feito (H2) |
 | Tipografia stacks | Homologado (H3) |
 | Voz | Homologado (H4) |
