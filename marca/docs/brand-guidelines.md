@@ -1,7 +1,7 @@
 # Brand Guidelines — Projeto Caserna de Adulão (PCA)
 
 > Last updated: 2026-08-05  
-> Status: **Candidato** (gates H1–H4 pendentes — ver `decisoes.md`)
+> Status: **Homologado** (gates H1–H5; H6 lab só local — ver `decisoes.md`)
 
 Manual de identidade visual e tokens da marca **institucional** do Projeto Caserna de Adulão.
 
@@ -17,6 +17,7 @@ Manual de identidade visual e tokens da marca **institucional** do Projeto Caser
 | Display | Iowan Old Style / Palatino / Georgia (stack) |
 | Sans / UI | system-ui / Segoe UI / Roboto… |
 | Logo canônico | `assets/img/logo-pca/` (Master) |
+| Voz | Sóbrio · acolhedor com firmeza · honesto · direcional · pastoral-institucional |
 | Tokens machine | `marca/tokens/tokens.json` |
 
 ---
@@ -77,13 +78,13 @@ Não misturar kits, tokens ou messaging sem decisão humana explícita.
 - Foco visível: `--focus-ring` (âmbar) com offset.
 - Homologação formal de contrastes do lab: contínua na QA.
 
-**H1:** colorização `Color_Institucional` do logo permanece **candidata** até homologação pastoral/institucional.
+**H1 (homologado):** colorização `Color_Institucional` = carvão + papel + filete bronze dos tokens.
 
 ---
 
 ## 2. Typography
 
-### Font stacks (H3 — manter até decisão)
+### Font stacks (H3 homologado — stacks atuais)
 
 ```css
 --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
@@ -121,7 +122,9 @@ Fonte canônica: [`assets/img/logo-pca/LEIA-ME.md`](../../assets/img/logo-pca/LE
 - Não substituir por logo do Discipulando.
 - Preferir WebP no runtime; PNG como fonte/fallback; SVG para escala.
 
-**H2:** símbolo avulso, wordmark e lockups — **adiados** (Master-only neste book).
+**H2 (decidido):** o escudo Master **é** a logomarca. Texto fora do escudo não compete com a tipografia da borda.
+
+**Lockup Vertical** (composição de layout, opcional): Master no topo + `PROJETO` / `CASERNA DE ADULÃO` em **Palatino Linotype** (Regular + Bold; família da stack `--font-display`). Hierarquia: apoio com tracking aberto + nome Bold. SVG self-contained (contornos). Arquivos `LOGO_PCA_Lockup_Vertical_*` — ver métricas em `assets/img/logo-pca/LEIA-ME.md`.
 
 ---
 
@@ -148,7 +151,7 @@ Espelhados da home — HTML/CSS estático, sem React/shadcn.
 
 ## 6. Motion
 
-Ver [`motion-spec.md`](motion-spec.md). Default **H5: presença sóbria**.
+Ver [`motion-spec.md`](motion-spec.md). **H5 homologado: presença sóbria.**
 
 - Entradas: 180–320ms, fade + translateY curto  
 - Hover CTA: ~150–180ms  
@@ -159,9 +162,26 @@ Ver [`motion-spec.md`](motion-spec.md). Default **H5: presença sóbria**.
 
 ## 7. Voice
 
-**H4 pendente.** Não inventar doutrina, endossos ou claims institucionais.
+**H4 homologado.** Traços extraídos da prosa já publicada em `index.html` — não inventar doutrina, endossos, cargos ou resultados.
 
-Enquanto isso: tom sóbrio, claro, ministerial sem jargão de marketing; UI chrome em português brasileiro natural. Cap. lab “Voz” permanece placeholder.
+### Traços (5)
+
+| Traço | Significa | Evitar |
+|-------|-----------|--------|
+| Sóbrio | Sem palco, sem espetáculo; homens feridos precisam de lugar, não de vitrine | Marketing de impacto, slogans vazios |
+| Acolhedor com firmeza | Chegada + direção; acolher não é condescendência | Tom terapêutico genérico ou “coach” |
+| Honesto | Em construção; sem métricas, vínculos ou promessas inventadas | Claims institucionais não validados |
+| Direcional | Caminho, travessia, recomeço com responsabilidade | Só empatia sem convite ao passo seguinte |
+| Pastoral-institucional | Português brasileiro natural; linguagem de fé sem jargão de campanha | Tom corporativo startup ou “disruptivo” |
+
+### Exemplos já na home (âncoras)
+
+- “Um lugar para chegar. Um caminho para recomeçar.”
+- “homens feridos não precisam de um palco”
+- “Sem métricas inventadas. Sem vínculos presumidos.”
+- “Acolher para restaurar. Restaurar para preparar. Preparar para servir.”
+
+UI chrome: claro, curto, em PT-BR.
 
 ---
 
@@ -185,9 +205,9 @@ npm run validate:marca:tokens
 
 | Item | Status |
 |------|--------|
-| Paleta extraída da home | Candidato (H1) |
-| Logo Master documentado | Feito; colorização H1 |
-| Tipografia stacks | Adiado (H3) |
-| Voz | Adiado (H4) |
-| Lab HTML | Entrega Onda 3 |
-| Publicação Pages | Adiado (H6) |
+| Paleta / Color_Institucional | Homologado (H1) |
+| Logo Master + Lockup Vertical | Feito (H2) |
+| Tipografia stacks | Homologado (H3) |
+| Voz | Homologado (H4) |
+| Motion presença sóbria | Homologado (H5) |
+| Lab HTML | Entregue; só local (H6) |

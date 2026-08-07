@@ -1,6 +1,6 @@
 # Motion spec — PCA (presença sóbria)
 
-Status: **candidato** (H5). Alinhado aos tokens `--dur-*` / `--ease-*` da página institucional.
+Status: **homologado** (H5). Alinhado aos tokens `--dur-*` / `--ease-*` da página institucional.
 
 ## Princípios
 

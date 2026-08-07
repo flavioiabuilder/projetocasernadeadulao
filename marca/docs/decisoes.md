@@ -1,38 +1,36 @@
 # Decisões humanas — marca PCA
 
-Log de gates e fatos inventariados. Status: `fato` | `candidato` | `adiado` | `homologado`.
+Log de gates e fatos inventariados. Status: `fato` | `candidato` | `adiado` | `homologado` | `decidido`.
 
-Atualizado: 2026-08-05.
+Atualizado: 2026-08-05 (ondas A–E do roadmap pós–brand book).
 
-## Inventário (Onda 0) — fatos
+## Inventário — fatos
 
 | ID | Assunto | Status | Nota |
 |----|---------|--------|------|
 | F1 | Marca institucional ≠ Discipulando a Caserna | fato | Ver `assets/img/logo-pca/LEIA-ME.md` |
-| F2 | Paleta viva em `index.html` `:root` | fato | Extraída para `marca/tokens/tokens.json` |
-| F3 | Logo kit atual = Master apenas (4 acabamentos de cor) | fato | Símbolo/wordmark/lockups faltam |
-| F4 | Skills `brand`, `design`, `design-system`, `frontend-design`, `impeccable` instaladas | fato | SoT em `marca/`, não defaults ClaudeKit na raiz |
-| F5 | Tipografia atual: Iowan/Palatino stack + system-ui | fato | Sem web fonts licenciadas ainda |
-| F6 | Motion na home: reveal + durações/easings em tokens | fato | Nível “presença sóbria” |
+| F2 | Paleta viva via `marca/tokens/` | fato | Consumida por `index.html` |
+| F3 | Logomarca = escudo Master (4 acabamentos de cor) | fato | Tipografia fundida na arte |
+| F7 | Lockup Vertical = Master + wordmark editorial (2 linhas) | fato | Palatino Linotype Regular/Bold; SVG com contornos; não substitui o Master |
+| F4 | Skills brand/design/design-system instaladas | fato | SoT em `marca/` |
+| F5 | Tipografia: stacks Iowan/Palatino + system-ui | fato | H3 homologado — sem web fonts por ora |
+| F6 | Motion: presença sóbria | fato | H5 homologado |
 
-## Gates humanos (Onda 2)
+## Gates humanos
 
-| ID | Decisão | Status | Default enquanto pendente |
-|----|---------|--------|---------------------------|
-| H1 | Homologar colorização `Color_Institucional` | candidato | Lab e guidelines marcam candidato; cores já documentadas no LEIA-ME |
-| H2 | Completar kit (símbolo, wordmark, lockups H/V, hero) | adiado | Brand book usa Master-only |
-| H3 | Faces tipográficas finais (web fonts vs stacks atuais) | adiado | Manter stacks de `index.html` |
-| H4 | Tom de voz institucional PCA (3–5 traços) | adiado | Cap. Voz = pendente de homologação; sem inventar doutrina |
-| H5 | Nível de motion | candidato | **Presença sóbria** (fade/translate curtos; ver `motion-spec.md`) |
-| H6 | Publicar lab no GitHub Pages | adiado | Lab **só local** (`npx serve` / abrir arquivo) |
+| ID | Decisão | Status | Registro |
+|----|---------|--------|----------|
+| H1 | Homologar colorização `Color_Institucional` | **homologado** | 2026-08-05 — paleta carvão/papel/bronze do kit e tokens; Master + Lockup Color/Reverso canônicos. Revisão pastoral pontual permanece possível sem reabrir o gate. |
+| H2 | Arquitetura do logo | **decidido** | Master = logo. Lockup Vertical = composição opcional. Sem símbolo avulso nem lockup H obrigatórios. |
+| H3 | Faces tipográficas finais | **homologado** | Manter stacks atuais (`--font-display` / `--font-sans`). Web fonts licenciadas só com novo gate. |
+| H4 | Tom de voz institucional (3–5 traços) | **homologado** | Traços derivados da prosa já publicada em `index.html` — ver guidelines §7. Sem doutrina inventada. |
+| H5 | Nível de motion | **homologado** | Presença sóbria (`motion-spec.md`); já implementada na home e no lab. |
+| H6 | Publicar lab no GitHub Pages | **decidido** | Lab **só local**. Não entra no artefato Pages nesta fase. |
 
-## Skills — adaptação de caminhos
+## Skills — caminhos
 
 | Expectativa ClaudeKit | Caminho PCA |
 |-----------------------|-------------|
 | `docs/brand-guidelines.md` | `marca/docs/brand-guidelines.md` |
-| `assets/design-tokens.json` | `marca/tokens/tokens.json` |
-| `assets/design-tokens.css` | `marca/tokens/tokens.css` |
-| sync skill genérico | `npm run generate:marca:tokens` |
-
-Não rodar `sync-brand-to-tokens.cjs` da skill apontando para a raiz — poluiria paths que este repo não usa.
+| `assets/design-tokens.*` | `marca/tokens/tokens.*` |
+| sync | `npm run generate:marca:tokens` |

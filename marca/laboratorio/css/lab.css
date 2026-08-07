@@ -191,6 +191,12 @@ a:hover {
   color: var(--color-bronze-deep);
 }
 
+.lab-status--homologado {
+  border-color: var(--color-bronze);
+  color: var(--color-bronze-deep);
+  background: rgba(139, 111, 71, 0.08);
+}
+
 .lab-prose {
   max-width: var(--measure-wide);
 }
@@ -290,6 +296,50 @@ a:hover {
   width: 7rem;
   height: 7rem;
   object-fit: contain;
+}
+
+.logo-card--lockup img {
+  width: min(100%, 11rem);
+  height: auto;
+  max-height: 14rem;
+  aspect-ratio: auto;
+}
+
+.lockup-scale {
+  display: grid;
+  gap: var(--space-lg);
+  margin-block: var(--space-md);
+}
+
+.lockup-scale__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-xl);
+  padding: var(--space-lg);
+  border: 1px solid var(--border-paper);
+  border-radius: var(--radius-sm);
+}
+
+.lockup-scale__row--ink {
+  background: var(--surface-ink);
+  color: var(--text-on-ink);
+  border-color: var(--border-ink);
+}
+
+.lockup-scale__item {
+  display: grid;
+  gap: var(--space-xs);
+  justify-items: center;
+  font-size: var(--text-xs);
+  opacity: 0.9;
+}
+
+.lockup-scale__item img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .logo-card figcaption {

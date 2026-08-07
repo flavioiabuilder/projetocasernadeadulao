@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exemplo — assinatura (mock) PCA</title>
+    <link rel="stylesheet" href="../tokens/tokens.css" />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: var(--font-sans);
+        background: var(--surface-paper);
+        color: var(--text-on-paper);
+        padding: 2rem;
+      }
+      .sig {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+        align-items: center;
+        max-width: 22rem;
+        padding: 1.25rem 1.5rem;
+        border-top: 1px solid var(--border-paper);
+      }
+      .sig img {
+        width: 4.5rem;
+        height: auto;
+      }
+      .sig h1 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      .sig p {
+        margin: 0.35rem 0 0;
+        font-size: 0.8rem;
+        color: var(--text-on-paper-muted);
+      }
+      .note {
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
+        color: var(--text-on-paper-muted);
+        text-align: center;
+        max-width: 22rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="sig" aria-label="Mock de assinatura com lockup vertical">
+        <img
+          src="../../assets/img/logo-pca/LOGO_PCA_Lockup_Vertical_Color_Institucional_180.webp"
+          width="180"
+          height="237"
+          alt=""
+        />
+        <div>
+          <h1>Projeto Caserna de Adulão</h1>
+          <p>Lockup Vertical · Color em papel (composição, não substitui o Master)</p>
+        </div>
+      </div>
+      <p class="note">
+        <a href="../laboratorio/index.html">Lab</a> ·
+        <a href="header-mock.html">Header</a> ·
+        <a href="cartao-mock.html">Cartão</a>
+      </p>
+    </div>
+  </body>
+</html>

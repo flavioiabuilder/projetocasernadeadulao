@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exemplo — header (mock) PCA</title>
+    <link rel="stylesheet" href="../tokens/tokens.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        background: var(--surface-paper);
+        color: var(--text-on-paper);
+        min-height: 100vh;
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        min-height: 4.25rem;
+        padding: 0 1.25rem;
+        background: var(--surface-ink);
+        color: var(--text-on-ink);
+      }
+      .bar img {
+        width: 2.75rem;
+        height: 2.75rem;
+        object-fit: contain;
+      }
+      .bar strong {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      .bar small {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-on-ink-muted);
+        margin-top: 0.15rem;
+      }
+      .note {
+        max-width: 28rem;
+        margin: 2rem auto;
+        padding: 0 1.25rem;
+        font-size: 0.85rem;
+        color: var(--text-on-paper-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bar" aria-label="Mock de header institucional">
+      <img
+        src="../../assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_Branca_FFFFFF_128.webp"
+        width="128"
+        height="128"
+        alt=""
+      />
+      <div>
+        <strong>Projeto Caserna de Adulão</strong>
+        <small>Chrome denso · Mono Branca em ink</small>
+      </div>
+    </header>
+    <p class="note">
+      Espelha o header da home: Master Mono Branca sobre superfície ink. Favicon
+      permanece Mono 128.
+      <a href="../laboratorio/index.html">Lab</a> ·
+      <a href="cartao-mock.html">Cartão</a> ·
+      <a href="assinatura-mock.html">Assinatura</a>
+    </p>
+  </body>
+</html>

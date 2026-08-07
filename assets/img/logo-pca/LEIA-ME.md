@@ -21,14 +21,15 @@ LOGO_PCA_{VARIANTE}_{ACABAMENTO}_{COR}[_TAMANHO].png
 
 | Segmento     | Significado                                      |
 | ------------ | ------------------------------------------------ |
-| `LOGO_`      | Escudo completo (lockup com tipografia na arte)  |
+| `LOGO_`      | Escudo completo (tipografia fundida na arte)     |
 | `PCA`        | Projeto Caserna de Adulão                        |
-| `Master`     | Master / escudo completo                         |
+| `Master`     | Logomarca canônica (escudo único)                |
+| `Lockup_Vertical` | Composição: Master + wordmark editorial abaixo |
 | `Mono_1C`    | Monocromático (preto / branco) — positiva        |
 | `Mono_1C_Branca_FFFFFF` | Mesma arte invertida (reversed)         |
 | `Color_Institucional` | Full color com tokens da página institucional |
 | `Color_Institucional_Reverso` | Color com campo/detalhe invertidos (bronze mantido) |
-| `_800` … `_32` | Derivados web por lado máximo (px)             |
+| `_800` … `_32` | Derivados web (Master: lado máx.; Lockup: largura) |
 
 Cada PNG canônico tem um `.webp` irmão (mesmo basename, quality ~82). **Manter os PNG** como fonte/fallback; preferir WebP no runtime.
 
@@ -90,44 +91,69 @@ Homologação pastoral/institucional desta colorização permanece decisão huma
 
 Rasters derivados: downscale Lanczos a partir do master da mesma variante (sem upscale).
 
+### Lockup vertical (`Lockup_Vertical`)
+
+Composição de **aplicação** (não substitui o Master): escudo no topo + tipografia editorial abaixo.
+
+```text
+        [ Escudo Master ]
+           PROJETO
+      CASERNA DE ADULÃO
+```
+
+O texto externo **não** altera a tipografia fundida na borda do escudo.
+
+#### Tipografia (revisão)
+
+| Item | Valor |
+| ---- | ----- |
+| Família | **Palatino Linotype** (membro de `--font-display`; não Montserrat/Source Serif do DaC) |
+| `PROJETO` | Regular · ~48% do corpo da linha 2 · tracking **0.18em** |
+| `CASERNA DE ADULÃO` | Bold · tracking **0.04em** · largura máx. **88%** do escudo |
+| Entrelinha | **0.38em** da linha principal |
+| Gap escudo→texto | **8%** da largura do escudo (elevação óptica leve) |
+| Área de proteção | ≥ ¼ da altura do escudo ao redor do lockup completo |
+| Tamanho mínimo | Largura **180px** para leitura confortável; **128px** só em contexto próximo |
+
+**Por que Palatino (e não Georgia):** Georgia é otimizada para corpo de tela e ficou “digitada” sob o escudo. Palatino traz solenidade clássica alinhada à stack institucional (Iowan → Palatino → Georgia), contraste com o sans da borda do escudo, e suporte nativo a `Ã`/`Ú`. Raster usa `pala.ttf` / `palab.ttf`; SVG embute **contornos** (fontTools) + Master inline — sem dependência frágil de `<image href>` nem de fonte no cliente.
+
+| Arquivo | Fundo recomendado |
+| ------- | ----------------- |
+| `LOGO_PCA_Lockup_Vertical_Mono_1C.png` / `.webp` / `.svg` (+ `_400`, `_180`, `_128`) | Claro |
+| `LOGO_PCA_Lockup_Vertical_Mono_1C_Branca_FFFFFF.*` | Escuro |
+| `LOGO_PCA_Lockup_Vertical_Color_Institucional.*` | Claro |
+| `LOGO_PCA_Lockup_Vertical_Color_Institucional_Reverso.*` | Escuro |
+
+Master do lockup ≈ **800×1008** px (mesma geometria nas 4 cores). Escada por **largura** 400 / 180 / 128 (sem 64/32).
+
 ## Uso na página institucional (`index.html`)
 
 | Superfície | Arquivo |
 | ---------- | ------- |
 | Favicon | `LOGO_PCA_Master_Mono_1C_128.webp` (+ PNG fallback) |
-| Header | `LOGO_PCA_Master_Mono_1C_128.*` |
-| Hero | `LOGO_PCA_Master_Mono_1C_128.*` (~5rem) |
-| Footer | `LOGO_PCA_Master_Mono_1C_128.*` |
+| Header | `LOGO_PCA_Master_Mono_1C_Branca_FFFFFF_128.*` (chrome ink) |
+| Hero | `LOGO_PCA_Master_Color_Institucional_Reverso_180.*` (~5rem) |
+| Encerramento | `LOGO_PCA_Lockup_Vertical_Color_Institucional_Reverso_180.*` |
+| Footer | `LOGO_PCA_Master_Mono_1C_Branca_FFFFFF_128.*` |
 | OG/Twitter | `LOGO_PCA_Master_Mono_1C_800.png` |
 
 Em superfícies escuras, preferir `…_Branca_FFFFFF_*` (mono) ou `…_Color_Institucional_Reverso_*` (com cor). `Color_Institucional` para destaque de marca quando houver contraste adequado.
 
 ## Mapa do kit — status e skills
 
-Estrutura atual: só o **escudo Master** (tipografia na arte).
+**Logomarca canônica:** escudo Master (tipografia fundida). Texto fora do escudo = editorial / composição de layout.
 
 | Versão | Status | Como gerar | Skills |
 | ------ | ------ | ---------- | ------ |
 | Master Mono positiva | Feito | — | — |
 | Master Mono Branca | Feito | Invert RGB do Mono PNG; SVG com swap de fills | brand + Pillow |
 | Master Color_Institucional | Feito | Recolor fills SVG com tokens `index.html` → raster | brand + Pillow |
-| Master Color_Institucional_Reverso | Feito | Swap papel↔carvão (SVG + remap PNG); bronze mantido; escada Lanczos | brand + Pillow |
-| Só símbolo | Falta | Redesign sem tipografia da borda | higgsfield-generate (`recraft_v4_1`) ou design/logo → homologação → vectorize → Pillow |
-| Só wordmark | Falta | Redesign tipográfico | higgsfield-generate / design/logo → homologação → vectorize → Pillow |
-| Lockup horizontal | Falta | Compor símbolo + wordmark | Após símbolo/wordmark: composição → brand → vectorize → Pillow |
-| Lockup vertical | Falta | Compor empilhado | Idem lockup H |
-| Hero editorial | Falta | Tratamento de impacto | higgsfield-generate → brand → Pillow |
+| Master Color_Institucional_Reverso | Feito | Swap papel↔carvão (SVG + remap PNG); bronze mantido | brand + Pillow |
+| Lockup vertical | Feito | Master 800 + Palatino Regular/Bold; SVG self-contained (paths) | brand + Pillow + fontTools |
+| Lockup horizontal | Fora de escopo | — | — |
+| Só símbolo / wordmark tipográfico sozinho | Fora de escopo | Master = logo completa | — |
 
-Pipeline padrão após existir arte-fonte:
-
-1. **brand** — nomear, clear space, usos, LEIA-ME  
-2. **vectorize** (`svgsmith`) — SVG a partir de raster novo (neste escudo, preferir `color` + α; binary elimina campos)  
-3. **Pillow** — escada PNG + WebP q82  
-4. **image-convert** — conversão pontual PNG↔WebP  
-
-Limite: o master é arte fundida. Lockups / só-símbolo / wordmark exigem nova arte + homologação humana.
-
-Ordem sugerida do que ainda falta: só símbolo → wordmark → lockups H/V → hero.
+Pipeline do lockup vertical: Pillow (raster) + fontTools (contornos SVG) → PNG/WebP q82 → LEIA-ME / lab.
 
 ## Governança
 
