@@ -1,6 +1,16 @@
 {
   "primary_webp": "LOGO_PCA_Master_Mono_1C.webp",
   "primary_blob_local_note": "confirm with git hash-object separately",
+  "allowed_variants": [
+    "Mono_1C",
+    "Mono_1C_Branca_FFFFFF",
+    "Color_Institucional"
+  ],
+  "generated_variants": [
+    "Mono_1C",
+    "Mono_1C_Branca_FFFFFF",
+    "Color_Institucional"
+  ],
   "geometry_masters": {
     "primary": "LOGO_PCA_Master_Mono_1C.webp",
     "size": [
@@ -42,21 +52,6 @@
       "alpha_disagree_pct": 1.3095,
       "same_size": true,
       "note": "official Color WebP in same frame (source bbox ~8px drift vs PRIMARY)"
-    },
-    "Color_Institucional_Reverso": {
-      "size": [
-        1563,
-        1563
-      ],
-      "bbox": [
-        190,
-        53,
-        1374,
-        1504
-      ],
-      "alpha_disagree_pct": 1.3095,
-      "same_size": true,
-      "note": "official Color Reverso WebP in same frame"
     }
   },
   "layout_ratios": {
@@ -125,5 +120,6 @@
     400,
     180,
     128
-  ]
+  ],
+  "note": "Color_Institucional_Reverso removed by human decision; no new colors without gate"
 }

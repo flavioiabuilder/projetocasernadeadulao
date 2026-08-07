@@ -46,9 +46,14 @@ LINE_GAP_EM = 0.38
 BOTTOM_RATIO = 0.07
 
 CARVAO = (0x0E, 0x12, 0x16, 255)
-PAPEL = (0xF3, 0xEE, 0xE6, 255)
-BRONZE = (0x8B, 0x6F, 0x47, 255)
 WHITE = (255, 255, 255, 255)
+
+# Closed allowlist — do not add chromatic variants without an explicit human gate.
+ALLOWED_VARIANT_KEYS = (
+    "Mono_1C",
+    "Mono_1C_Branca_FFFFFF",
+    "Color_Institucional",
+)
 
 VARIANTS = [
     {
@@ -72,14 +77,9 @@ VARIANTS = [
         "text_hex": "#0E1216",
         "source_note": "official Color WebP in same frame (source bbox ~8px drift vs PRIMARY)",
     },
-    {
-        "key": "Color_Institucional_Reverso",
-        "crest": "LOGO_PCA_Master_Color_Institucional_Reverso.webp",
-        "text": PAPEL,
-        "text_hex": "#F3EEE6",
-        "source_note": "official Color Reverso WebP in same frame",
-    },
 ]
+
+assert tuple(v["key"] for v in VARIANTS) == ALLOWED_VARIANT_KEYS
 
 
 def load_primary() -> Image.Image:
@@ -402,7 +402,7 @@ def build_qa_board(masters: dict[str, Image.Image], old_lockup: Image.Image | No
     paper = (0xF3, 0xEE, 0xE6, 255)
     ink = (0x0E, 0x12, 0x16, 255)
     cell_w, cell_h = 280, 360
-    cols, rows = 5, 3
+    cols, rows = 4, 3
     board = Image.new("RGBA", (cols * cell_w, rows * cell_h), paper)
     draw = ImageDraw.Draw(board)
     label_font = ImageFont.truetype(str(FONT_REG), 14)
@@ -420,33 +420,52 @@ def build_qa_board(masters: dict[str, Image.Image], old_lockup: Image.Image | No
 
     primary = Image.open(PRIMARY_WEBP).convert("RGBA")
     place(primary, 0, 0, "PRIMARY Master WebP", paper)
-    if old_lockup:
-        place(old_lockup, 1, 0, "Lockup anterior", paper)
-    place(masters["Mono_1C"], 2, 0, "Mono_1C corrigido", paper)
-    place(masters["Mono_1C_Branca_FFFFFF"], 3, 0, "Mono Branca", ink)
-    place(masters["Color_Institucional"], 4, 0, "Color", paper)
+    place(masters["Mono_1C"], 1, 0, "Mono_1C", paper)
+    place(masters["Mono_1C_Branca_FFFFFF"], 2, 0, "Mono Branca", ink)
+    place(masters["Color_Institucional"], 3, 0, "Color Institucional", paper)
 
-    place(masters["Color_Institucional_Reverso"], 0, 1, "Color Reverso", ink)
-    place(masters["Mono_1C"], 1, 1, "Mono fundo papel", paper)
-    place(masters["Mono_1C"], 2, 1, "Mono fundo carvão", ink)
-    place(resize_width(masters["Mono_1C"], 400), 3, 1, "400", paper)
-    place(resize_width(masters["Mono_1C"], 180), 4, 1, "180", paper)
+    place(masters["Mono_1C"], 0, 1, "Mono fundo papel", paper)
+    place(masters["Mono_1C_Branca_FFFFFF"], 1, 1, "Branca fundo carvao", ink)
+    place(resize_width(masters["Mono_1C"], 400), 2, 1, "Mono 400", paper)
+    place(resize_width(masters["Color_Institucional"], 400), 3, 1, "Color 400", paper)
 
-    place(resize_width(masters["Mono_1C"], 128), 0, 2, "128", paper)
-    place(resize_width(masters["Mono_1C_Branca_FFFFFF"], 180), 1, 2, "Branca 180", ink)
-    place(resize_width(masters["Color_Institucional_Reverso"], 180), 2, 2, "Reverso 180", ink)
+    place(resize_width(masters["Mono_1C"], 180), 0, 2, "Mono 180", paper)
+    place(resize_width(masters["Mono_1C"], 128), 1, 2, "Mono 128", paper)
+    place(resize_width(masters["Mono_1C_Branca_FFFFFF"], 180), 2, 2, "Branca 180", ink)
     place(resize_width(masters["Color_Institucional"], 180), 3, 2, "Color 180", paper)
-    # crest extract vs primary
-    cx, cy, cs, _ = typo["crest_box"]
-    crest_extract = masters["Mono_1C"].crop((cx, cy, cx + cs, cy + cs))
-    place(crest_extract, 4, 2, "Crest extract", paper)
 
     out = QA_DIR / "LOCKUP_VERTICAL_QA_BOARD.png"
     board.save(out, format="PNG", optimize=True)
     print("QA board:", out)
 
 
-def main() -> None:
+def resolve_variants(requested: list[str] | None) -> list[dict]:
+    if not requested:
+        return list(VARIANTS)
+    unknown = [k for k in requested if k not in ALLOWED_VARIANT_KEYS]
+    if unknown:
+        allowed = ", ".join(ALLOWED_VARIANT_KEYS)
+        raise SystemExit(
+            f"Variante(s) nao autorizada(s): {', '.join(unknown)}. "
+            f"Allowlist fechada: {allowed}. Nao gerar novas cores sem decisao humana."
+        )
+    by_key = {v["key"]: v for v in VARIANTS}
+    return [by_key[k] for k in requested]
+
+
+def main(argv: list[str] | None = None) -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Generate PCA Lockup Vertical (3 authorized variants only).")
+    parser.add_argument(
+        "--only",
+        nargs="+",
+        metavar="KEY",
+        help=f"Subset of allowlist: {', '.join(ALLOWED_VARIANT_KEYS)}",
+    )
+    args = parser.parse_args(argv)
+    selected = resolve_variants(args.only)
+
     if not FONT_REG.is_file() or not FONT_BOLD.is_file():
         raise SystemExit("Palatino Linotype (pala.ttf / palab.ttf) required on the build machine")
 
@@ -469,7 +488,7 @@ def main() -> None:
     typo_ref: dict | None = None
     fidelity: dict = {}
 
-    for v in VARIANTS:
+    for v in selected:
         crest_path = LOGO_DIR / v["crest"]
         crest_bytes = crest_path.read_bytes()
         crest = Image.open(io.BytesIO(crest_bytes)).convert("RGBA")
@@ -511,6 +530,8 @@ def main() -> None:
     meta = {
         "primary_webp": PRIMARY_WEBP.name,
         "primary_blob_local_note": "confirm with git hash-object separately",
+        "allowed_variants": list(ALLOWED_VARIANT_KEYS),
+        "generated_variants": [v["key"] for v in selected],
         "geometry_masters": report,
         "layout_ratios": {
             "side": SIDE_RATIO,
@@ -526,15 +547,20 @@ def main() -> None:
         "fidelity_mono": fidelity,
         "svg": "hybrid WebP data-URI crest + Palatino outlines",
         "export_widths": ["master=full"] + list(OUT_SIZES),
+        "note": "Color_Institucional_Reverso removed by human decision; no new colors without gate",
     }
     QA_DIR.mkdir(parents=True, exist_ok=True)
     (QA_DIR / "lockup_vertical_build_report.json").write_text(
         json.dumps(meta, indent=2), encoding="utf-8"
     )
-    build_qa_board(masters, old_lockup, typo_ref)
+    if set(masters) == set(ALLOWED_VARIANT_KEYS):
+        build_qa_board(masters, old_lockup, typo_ref)
+    else:
+        print("QA board skipped (partial --only run)")
 
     w, h = typo_ref["canvas"]
     print(f"CANONICAL_GEOMETRY {w}x{h} aspect={w}/{h} = {w/h:.6f}")
+    print(f"VARIANTS {list(ALLOWED_VARIANT_KEYS)}")
     for tw in (180, 400, 128):
         th = int(round(h * (tw / w)))
         print(f"  @{tw} -> {tw}x{th}")

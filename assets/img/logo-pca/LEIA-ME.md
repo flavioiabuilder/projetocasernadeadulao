@@ -25,11 +25,12 @@ LOGO_PCA_{VARIANTE}_{ACABAMENTO}_{COR}[_TAMANHO].png
 | `PCA`        | Projeto Caserna de Adulão                        |
 | `Master`     | Logomarca canônica (escudo único)                |
 | `Lockup_Vertical` | Composição: Master + wordmark editorial abaixo |
-| `Mono_1C`    | Monocromático (preto / branco) — positiva        |
-| `Mono_1C_Branca_FFFFFF` | Mesma arte invertida (reversed)         |
-| `Color_Institucional` | Full color com tokens da página institucional |
-| `Color_Institucional_Reverso` | Color com campo/detalhe invertidos (bronze mantido) |
+| `Mono_1C`    | Monocromático positivo                         |
+| `Mono_1C_Branca_FFFFFF` | Monocromático branco (fundos escuros)   |
+| `Color_Institucional` | **Única** versão colorida autorizada     |
 | `_800` … `_32` | Derivados web do **Master** (lado máx.). Lockup: master integral + `_400`/`_180`/`_128` |
+
+Kit autorizado = **somente** essas três variantes. `Color_Institucional_Reverso` foi removida (decisão humana 2026-08-07). Não criar novas cores até novo gate.
 
 Cada PNG canônico tem um `.webp` irmão (mesmo basename, quality ~82). **Manter os PNG** como fonte/fallback; preferir WebP no runtime.
 
@@ -50,14 +51,13 @@ Tokens da página institucional (`index.html`), não inventados:
 
 Homologação pastoral/institucional desta colorização permanece decisão humana.
 
-## Variantes de cor (Master)
+## Variantes autorizadas (Master)
 
 | Variante | Arte | Fundo recomendado |
 | -------- | ---- | ----------------- |
-| `Mono_1C` | Campo escuro, elementos claros | Claro / papel |
-| `Mono_1C_Branca_FFFFFF` | Campo claro, elementos escuros (invertida) | Escuro / foto escura |
-| `Color_Institucional` | Carvão + papel + filete bronze | Claro ou escuro com contraste |
-| `Color_Institucional_Reverso` | Papel↔carvão invertidos; bronze mantido | Escuro / foto escura (com cor) |
+| `Mono_1C` | Positiva monocromática | Claro / papel |
+| `Mono_1C_Branca_FFFFFF` | Monocromática branca (não é nova cor institucional) | Escuro / foto escura |
+| `Color_Institucional` | Carvão `#0E1216` + papel `#F3EEE6` + bronze `#8B6F47` | Claro (escuro só com prova de contraste) |
 
 ## Inventário
 
@@ -75,19 +75,12 @@ Homologação pastoral/institucional desta colorização permanece decisão huma
 | `LOGO_PCA_Master_Mono_1C_Branca_FFFFFF.png` / `.webp` / `.svg` | Master reversed |
 | `LOGO_PCA_Master_Mono_1C_Branca_FFFFFF_{800…32}.*` | Escada web (fundos escuros) |
 
-### Full color (`Color_Institucional`)
+### Full color (`Color_Institucional`) — única colorida
 
 | Arquivo | Uso |
 | ------- | --- |
 | `LOGO_PCA_Master_Color_Institucional.png` / `.webp` / `.svg` | Master colorido |
 | `LOGO_PCA_Master_Color_Institucional_{800…32}.*` | Escada web |
-
-### Full color reverso (`Color_Institucional_Reverso`)
-
-| Arquivo | Uso |
-| ------- | --- |
-| `LOGO_PCA_Master_Color_Institucional_Reverso.png` / `.webp` / `.svg` | Master color invertido |
-| `LOGO_PCA_Master_Color_Institucional_Reverso_{800…32}.*` | Escada web (fundos escuros com cor) |
 
 Rasters derivados: downscale Lanczos a partir do master da mesma variante (sem upscale).
 
@@ -120,7 +113,7 @@ O texto externo **não** altera a tipografia fundida na borda do escudo.
 
 Pipeline: `marca/scripts/generate_lockup_vertical.py` (Pillow + fontTools). Não usa `_800`, escada Master nem SVG Master como arte superior. Evidência de build/QA: `marca/laboratorio/_qa/` (não faz parte do kit canônico).
 
-**Color / Reverso:** os Masters coloridos oficiais têm deriva de bbox/alpha (~8 px / ~1,3 %) face ao Mono WebP (própria dos Masters, não do lockup). O lockup mantém o mesmo frame e escala nas 4 cores; a arte superior Color/Reverso continua sendo o WebP Master oficial correspondente.
+**Color_Institucional:** o Master colorido oficial pode ter deriva leve de bbox/alpha face ao Mono WebP (própria do Master, não do lockup). O lockup mantém o mesmo frame e escala nas **3** variantes autorizadas.
 
 #### Tipografia (revisão H2)
 
@@ -144,11 +137,10 @@ No master canônico atual (Master 1563 px): `PROJETO` ≈ 54 px · linha princip
 | `LOGO_PCA_Lockup_Vertical_Mono_1C.png` / `.webp` / `.svg` (+ `_400`, `_180`, `_128`) | Claro |
 | `LOGO_PCA_Lockup_Vertical_Mono_1C_Branca_FFFFFF.*` | Escuro |
 | `LOGO_PCA_Lockup_Vertical_Color_Institucional.*` | Claro |
-| `LOGO_PCA_Lockup_Vertical_Color_Institucional_Reverso.*` | Escuro |
 
-Geometria canônica do lockup: **1781×2080** (proporção **1781/2080 ≈ 0,856**). Mesma geometria nas 4 cores. Escada por **largura** a partir da composição canônica: 400 / 180 / 128 (sem `_800`, sem 64/32). Em HTML: `aspect-ratio: 1781 / 2080`; em 180 px de largura → altura **210**.
+Geometria canônica do lockup: **1781×2080** (proporção **1781/2080 ≈ 0,856**). Mesma geometria nas 3 variantes. Escada por **largura** a partir da composição canônica: 400 / 180 / 128 (sem `_800`, sem 64/32). Em HTML: `aspect-ratio: 1781 / 2080`; em 180 px de largura → altura **210**.
 
-Correção 2026-08-07: removida inconsistência documental 800×1008 vs 800×1056 / alturas 227–237 (eram da geração anterior com arte superior incorreta).
+Correção 2026-08-07: arte superior a partir do Master WebP; geometria 1781×2080. No mesmo dia, `Color_Institucional_Reverso` saiu do kit.
 
 ## Uso na página institucional (`index.html`)
 
@@ -156,12 +148,12 @@ Correção 2026-08-07: removida inconsistência documental 800×1008 vs 800×105
 | ---------- | ------- |
 | Favicon | `LOGO_PCA_Master_Mono_1C_128.webp` (+ PNG fallback) |
 | Header | `LOGO_PCA_Master_Mono_1C_Branca_FFFFFF_128.*` (chrome ink) |
-| Hero | `LOGO_PCA_Master_Color_Institucional_Reverso_180.*` (~5rem) |
-| Encerramento | `LOGO_PCA_Lockup_Vertical_Color_Institucional_Reverso_180.*` |
+| Hero | `LOGO_PCA_Master_Mono_1C_Branca_FFFFFF_180.*` (~5rem) |
+| Encerramento | `LOGO_PCA_Lockup_Vertical_Mono_1C_Branca_FFFFFF_180.*` |
 | Footer | `LOGO_PCA_Master_Mono_1C_Branca_FFFFFF_128.*` |
 | OG/Twitter | `LOGO_PCA_Master_Mono_1C_800.png` |
 
-Em superfícies escuras, preferir `…_Branca_FFFFFF_*` (mono) ou `…_Color_Institucional_Reverso_*` (com cor). `Color_Institucional` para destaque de marca quando houver contraste adequado.
+Em superfícies escuras, usar `…_Branca_FFFFFF_*`. `Color_Institucional` para destaque em fundo claro (ou escuro só com prova de contraste).
 
 ## Mapa do kit — status e skills
 
@@ -172,8 +164,8 @@ Em superfícies escuras, preferir `…_Branca_FFFFFF_*` (mono) ou `…_Color_Ins
 | Master Mono positiva | Feito | — | — |
 | Master Mono Branca | Feito | Invert RGB do Mono PNG; SVG com swap de fills | brand + Pillow |
 | Master Color_Institucional | Feito | Recolor fills SVG com tokens `index.html` → raster | brand + Pillow |
-| Master Color_Institucional_Reverso | Feito | Swap papel↔carvão (SVG + remap PNG); bronze mantido | brand + Pillow |
-| Lockup vertical | Feito | Master WebP integral + Palatino Regular/Bold; SVG híbrido (WebP `data:` + contornos) | brand + Pillow + fontTools |
+| Master Color_Institucional_Reverso | **Removido** | Decisão humana 2026-08-07 — não regenerar | — |
+| Lockup vertical (3 variantes) | Feito | Master WebP integral + Palatino Regular/Bold; SVG híbrido; allowlist no script | brand + Pillow + fontTools |
 | Lockup horizontal | Fora de escopo | — | — |
 | Só símbolo / wordmark tipográfico sozinho | Fora de escopo | Master = logo completa | — |
 
@@ -181,6 +173,7 @@ Pipeline do lockup vertical: Pillow (raster) + fontTools (contornos SVG) → PNG
 
 ## Governança
 
-- Não inventar versões nem recolorir fora desta pasta / desta paleta documentada.
+- Kit fechado em 3 variantes. Não inventar cores, reversos, duotones ou campanhas sem gate humano.
+- Não recolorir fora desta pasta / desta paleta documentada.
 - Homologação pastoral/institucional da marca permanece decisão humana.
 - Após incluir ou renomear arquivos, atualizar este LEIA-ME.

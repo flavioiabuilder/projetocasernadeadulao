@@ -106,19 +106,20 @@ Não misturar kits, tokens ou messaging sem decisão humana explícita.
 
 Fonte canônica: [`assets/img/logo-pca/LEIA-ME.md`](../../assets/img/logo-pca/LEIA-ME.md).
 
-### Variantes Master (disponíveis)
+### Variantes Master (kit autorizado — 3 apenas)
 
-| Variante | Fundo recomendado |
-|----------|-------------------|
-| `Mono_1C` | Claro / papel |
-| `Mono_1C_Branca_FFFFFF` | Escuro |
-| `Color_Institucional` | Claro ou escuro com contraste |
-| `Color_Institucional_Reverso` | Escuro (com cor) |
+| Variante | Papel | Fundo recomendado |
+|----------|-------|-------------------|
+| `Mono_1C` | Positiva monocromática | Claro / papel |
+| `Mono_1C_Branca_FFFFFF` | Monocromática branca (não é nova cor institucional) | Escuro |
+| `Color_Institucional` | **Única** versão colorida autorizada (carvão / papel / bronze) | Claro (escuro só com prova de contraste) |
+
+`Color_Institucional_Reverso` foi **removida** do kit por decisão humana. Não criar novas cores, duotones, reversos ou combinações experimentais até novo gate explícito. Em fundos escuros, usar `Mono_1C_Branca_FFFFFF`.
 
 ### Clear space e não-usos
 
 - Manter área livre ≈ ¼ da altura do escudo em volta.
-- Não distorcer, não recolorir fora da paleta documentada.
+- Não distorcer, não recolorir fora da paleta documentada, não inventar variantes cromáticas.
 - Não substituir por logo do Discipulando.
 - Preferir WebP no runtime; PNG como fonte/fallback; SVG para escala.
 
