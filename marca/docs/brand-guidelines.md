@@ -124,7 +124,7 @@ Fonte canônica: [`assets/img/logo-pca/LEIA-ME.md`](../../assets/img/logo-pca/LE
 
 **H2 (decidido):** o escudo Master **é** a logomarca. Texto fora do escudo não compete com a tipografia da borda.
 
-**Lockup Vertical** (composição de layout, opcional): Master no topo + `PROJETO` / `CASERNA DE ADULÃO` em **Palatino Linotype** (Regular + Bold; família da stack `--font-display`). Hierarquia: apoio com tracking aberto + nome Bold. SVG self-contained (contornos). Arquivos `LOGO_PCA_Lockup_Vertical_*` — ver métricas em `assets/img/logo-pca/LEIA-ME.md`.
+**Lockup Vertical** (composição de layout, opcional): Master completo no topo + `PROJETO` / `CASERNA DE ADULÃO` em **Palatino Linotype** (Regular + Bold; família da stack `--font-display`). Hierarquia: apoio com tracking aberto + nome Bold. Arte superior a partir de `LOGO_PCA_Master_Mono_1C.webp` (e Masters de cor oficiais no mesmo frame). SVG **híbrido** (Master WebP embutido + contornos do wordmark) — não descrever como 100% vetorial. Geometria canônica **1781×2080**. Arquivos `LOGO_PCA_Lockup_Vertical_*` — ver `assets/img/logo-pca/LEIA-ME.md`.
 
 ---
 

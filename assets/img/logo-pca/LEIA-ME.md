@@ -29,7 +29,7 @@ LOGO_PCA_{VARIANTE}_{ACABAMENTO}_{COR}[_TAMANHO].png
 | `Mono_1C_Branca_FFFFFF` | Mesma arte invertida (reversed)         |
 | `Color_Institucional` | Full color com tokens da página institucional |
 | `Color_Institucional_Reverso` | Color com campo/detalhe invertidos (bronze mantido) |
-| `_800` … `_32` | Derivados web (Master: lado máx.; Lockup: largura) |
+| `_800` … `_32` | Derivados web do **Master** (lado máx.). Lockup: master integral + `_400`/`_180`/`_128` |
 
 Cada PNG canônico tem um `.webp` irmão (mesmo basename, quality ~82). **Manter os PNG** como fonte/fallback; preferir WebP no runtime.
 
@@ -93,17 +93,36 @@ Rasters derivados: downscale Lanczos a partir do master da mesma variante (sem u
 
 ### Lockup vertical (`Lockup_Vertical`)
 
-Composição de **aplicação** (não substitui o Master): escudo no topo + tipografia editorial abaixo.
+Composição de **aplicação** (não substitui o Master): logomarca Master completa no topo + tipografia editorial abaixo.
 
 ```text
-        [ Escudo Master ]
+        [ Master completo ]
            PROJETO
       CASERNA DE ADULÃO
 ```
 
 O texto externo **não** altera a tipografia fundida na borda do escudo.
 
-#### Tipografia (revisão)
+| Peça | Papel |
+| ---- | ----- |
+| **Master** (`LOGO_PCA_Master_*`) | Logomarca canônica |
+| **Lockup Vertical** | Assinatura de layout (Master + wordmark) |
+
+#### Fonte visual do escudo (obrigatória)
+
+| Prioridade | Arquivo | Uso no lockup |
+| ---------- | ------- | ------------- |
+| 1 | `LOGO_PCA_Master_Mono_1C.webp` | Fonte visual/geométrica **primária** (conteúdo integral; só escala uniforme + posição) |
+| 2 | Masters WebP oficiais das outras cores | Cor da variante, no **mesmo** retângulo do Master primário |
+| 3 | PNG Master | Fallback / comparação |
+| 4 | SVG Master | Auxiliar — **não** substitui o WebP primário |
+| 5 | Lockups anteriores | Só tipografia/composição — **não** reutilizar a arte superior |
+
+Pipeline: `marca/scripts/generate_lockup_vertical.py` (Pillow + fontTools). Não usa `_800`, escada Master nem SVG Master como arte superior. Evidência de build/QA: `marca/laboratorio/_qa/` (não faz parte do kit canônico).
+
+**Color / Reverso:** os Masters coloridos oficiais têm deriva de bbox/alpha (~8 px / ~1,3 %) face ao Mono WebP (própria dos Masters, não do lockup). O lockup mantém o mesmo frame e escala nas 4 cores; a arte superior Color/Reverso continua sendo o WebP Master oficial correspondente.
+
+#### Tipografia (revisão H2)
 
 | Item | Valor |
 | ---- | ----- |
@@ -111,11 +130,14 @@ O texto externo **não** altera a tipografia fundida na borda do escudo.
 | `PROJETO` | Regular · ~48% do corpo da linha 2 · tracking **0.18em** |
 | `CASERNA DE ADULÃO` | Bold · tracking **0.04em** · largura máx. **88%** do escudo |
 | Entrelinha | **0.38em** da linha principal |
-| Gap escudo→texto | **8%** da largura do escudo (elevação óptica leve) |
-| Área de proteção | ≥ ¼ da altura do escudo ao redor do lockup completo |
+| Gap escudo→texto | **8%** da largura do escudo |
+| Margens internas do asset | ~7% laterais / ~4,5% topo / ~7% base (sobre o lado do Master) |
+| Área de proteção (uso) | ≥ ¼ da altura do escudo ao redor do lockup completo |
 | Tamanho mínimo | Largura **180px** para leitura confortável; **128px** só em contexto próximo |
 
-**Por que Palatino (e não Georgia):** Georgia é otimizada para corpo de tela e ficou “digitada” sob o escudo. Palatino traz solenidade clássica alinhada à stack institucional (Iowan → Palatino → Georgia), contraste com o sans da borda do escudo, e suporte nativo a `Ã`/`Ú`. Raster usa `pala.ttf` / `palab.ttf`; SVG embute **contornos** (fontTools) + Master inline — sem dependência frágil de `<image href>` nem de fonte no cliente.
+No master canônico atual (Master 1563 px): `PROJETO` ≈ 54 px · linha principal ≈ 112 px.
+
+**Por que Palatino (e não Georgia):** Georgia ficou “digitada” sob o escudo. Palatino alinha à stack institucional (Iowan → Palatino → Georgia), contraste com o sans da borda do escudo, e suporte nativo a `Ã`/`Ú`. Raster usa `pala.ttf` / `palab.ttf` **só na máquina de build** (não versionados). SVG do lockup é **híbrido**: Master WebP embutido em `data:` URI + wordmark em contornos (fontTools) — **não** é “100% vetorial”. Vetorização homologada do escudo = tarefa futura.
 
 | Arquivo | Fundo recomendado |
 | ------- | ----------------- |
@@ -124,7 +146,9 @@ O texto externo **não** altera a tipografia fundida na borda do escudo.
 | `LOGO_PCA_Lockup_Vertical_Color_Institucional.*` | Claro |
 | `LOGO_PCA_Lockup_Vertical_Color_Institucional_Reverso.*` | Escuro |
 
-Master do lockup ≈ **800×1008** px (mesma geometria nas 4 cores). Escada por **largura** 400 / 180 / 128 (sem 64/32).
+Geometria canônica do lockup: **1781×2080** (proporção **1781/2080 ≈ 0,856**). Mesma geometria nas 4 cores. Escada por **largura** a partir da composição canônica: 400 / 180 / 128 (sem `_800`, sem 64/32). Em HTML: `aspect-ratio: 1781 / 2080`; em 180 px de largura → altura **210**.
+
+Correção 2026-08-07: removida inconsistência documental 800×1008 vs 800×1056 / alturas 227–237 (eram da geração anterior com arte superior incorreta).
 
 ## Uso na página institucional (`index.html`)
 
@@ -149,7 +173,7 @@ Em superfícies escuras, preferir `…_Branca_FFFFFF_*` (mono) ou `…_Color_Ins
 | Master Mono Branca | Feito | Invert RGB do Mono PNG; SVG com swap de fills | brand + Pillow |
 | Master Color_Institucional | Feito | Recolor fills SVG com tokens `index.html` → raster | brand + Pillow |
 | Master Color_Institucional_Reverso | Feito | Swap papel↔carvão (SVG + remap PNG); bronze mantido | brand + Pillow |
-| Lockup vertical | Feito | Master 800 + Palatino Regular/Bold; SVG self-contained (paths) | brand + Pillow + fontTools |
+| Lockup vertical | Feito | Master WebP integral + Palatino Regular/Bold; SVG híbrido (WebP `data:` + contornos) | brand + Pillow + fontTools |
 | Lockup horizontal | Fora de escopo | — | — |
 | Só símbolo / wordmark tipográfico sozinho | Fora de escopo | Master = logo completa | — |
 

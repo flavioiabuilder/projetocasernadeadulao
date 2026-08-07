@@ -2,7 +2,7 @@
 
 Log de gates e fatos inventariados. Status: `fato` | `candidato` | `adiado` | `homologado` | `decidido`.
 
-Atualizado: 2026-08-05 (ondas A–E do roadmap pós–brand book).
+Atualizado: 2026-08-07 (correção técnica Lockup Vertical — fonte Master WebP).
 
 ## Inventário — fatos
 
@@ -11,7 +11,7 @@ Atualizado: 2026-08-05 (ondas A–E do roadmap pós–brand book).
 | F1 | Marca institucional ≠ Discipulando a Caserna | fato | Ver `assets/img/logo-pca/LEIA-ME.md` |
 | F2 | Paleta viva via `marca/tokens/` | fato | Consumida por `index.html` |
 | F3 | Logomarca = escudo Master (4 acabamentos de cor) | fato | Tipografia fundida na arte |
-| F7 | Lockup Vertical = Master + wordmark editorial (2 linhas) | fato | Palatino Linotype Regular/Bold; SVG com contornos; não substitui o Master |
+| F7 | Lockup Vertical = Master + wordmark editorial (2 linhas) | fato | Fonte superior: `LOGO_PCA_Master_Mono_1C.webp` (integral). Palatino Regular/Bold. SVG **híbrido** (WebP `data:` + contornos). Geometria 1781×2080. Não substitui o Master |
 | F4 | Skills brand/design/design-system instaladas | fato | SoT em `marca/` |
 | F5 | Tipografia: stacks Iowan/Palatino + system-ui | fato | H3 homologado — sem web fonts por ora |
 | F6 | Motion: presença sóbria | fato | H5 homologado |
