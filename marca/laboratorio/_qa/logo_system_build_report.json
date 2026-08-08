@@ -1,0 +1,275 @@
+{
+  "authorized_colorways": [
+    "Mono_1C"
+  ],
+  "authorized_configurations": [
+    "Lockup_Vertical",
+    "Lockup_Horizontal",
+    "Wordmark_Stacked",
+    "Wordmark_Horizontal"
+  ],
+  "generated": [
+    "Lockup_Vertical",
+    "Lockup_Horizontal",
+    "Wordmark_Stacked",
+    "Wordmark_Horizontal"
+  ],
+  "master_source": "LOGO_PCA_Master_Mono_1C.webp",
+  "master_untouched": true,
+  "ink": "#000000",
+  "exports": {
+    "Lockup_Vertical": {
+      "master": [
+        1781,
+        2080
+      ],
+      "400": [
+        400,
+        467
+      ],
+      "180": [
+        180,
+        210
+      ],
+      "128": [
+        128,
+        149
+      ]
+    },
+    "Lockup_Horizontal": {
+      "master": [
+        2313,
+        1008
+      ],
+      "800": [
+        800,
+        349
+      ],
+      "400": [
+        400,
+        174
+      ],
+      "240": [
+        240,
+        105
+      ],
+      "180": [
+        180,
+        78
+      ]
+    },
+    "Wordmark_Stacked": {
+      "master": [
+        2052,
+        400
+      ],
+      "800": [
+        800,
+        156
+      ],
+      "400": [
+        400,
+        78
+      ],
+      "240": [
+        240,
+        47
+      ],
+      "180": [
+        180,
+        35
+      ]
+    },
+    "Wordmark_Horizontal": {
+      "master": [
+        2379,
+        239
+      ],
+      "800": [
+        800,
+        80
+      ],
+      "400": [
+        400,
+        40
+      ],
+      "240": [
+        240,
+        24
+      ],
+      "180": [
+        180,
+        18
+      ]
+    }
+  },
+  "fidelity": {
+    "Lockup_Vertical": {
+      "region_box": [
+        109,
+        70,
+        1563,
+        1563
+      ],
+      "exact_match": true,
+      "mae_rgba": 0.0,
+      "pass": true
+    },
+    "Lockup_Horizontal": {
+      "region_box": [
+        54,
+        54,
+        900,
+        900
+      ],
+      "exact_match": true,
+      "mae_rgba": 0.0,
+      "pass": true
+    }
+  },
+  "decisions": {
+    "Master": {
+      "status": "canonical",
+      "note": "N\u00e3o regenerado pelo script"
+    },
+    "Lockup_Vertical": {
+      "status": "approved",
+      "geometry": [
+        1781,
+        2080
+      ],
+      "ink": "#000000"
+    },
+    "Lockup_Horizontal": {
+      "status": "approved",
+      "geometry": [
+        2313,
+        1008
+      ],
+      "ink": "#000000"
+    },
+    "Wordmark_Stacked": {
+      "status": "approved_auxiliary",
+      "geometry": [
+        2052,
+        400
+      ],
+      "note": "N\u00e3o substitui o Master"
+    },
+    "Wordmark_Horizontal": {
+      "aspect": 9.954,
+      "canvas": [
+        2379,
+        239
+      ],
+      "decision": "approved",
+      "reason": "\u00datil em rodap\u00e9s/cr\u00e9ditos de largura extrema; hierarquia Regular/Bold preservada."
+    },
+    "Lockup_Vertical_Compact": {
+      "status": "rejected",
+      "reason": "Redimensionamento do Vertical j\u00e1 cobre; sem breakpoint estrutural distinto"
+    },
+    "Lockup_Horizontal_Compact": {
+      "status": "rejected",
+      "reason": "Escada _240/_180 cobre headers estreitos sem segunda composi\u00e7\u00e3o"
+    },
+    "Wordmark_Three_Lines": {
+      "status": "rejected",
+      "reason": "Duplicaria Stacked sem ganho de legibilidade"
+    }
+  },
+  "candidate_board": "marca/laboratorio/_qa/LOGO_SYSTEM_CANDIDATES_BOARD.png",
+  "typo_vertical": {
+    "canvas": [
+      1781,
+      2080
+    ],
+    "crest_box": [
+      109,
+      70,
+      1563,
+      1563
+    ],
+    "font1_px": 54,
+    "font2_px": 112,
+    "track1_px": 9.719999999999999,
+    "track2_px": 4.48,
+    "line_gap_px": 43,
+    "line1_xy": [
+      742.511875,
+      1758
+    ],
+    "line2_xy": [
+      206.02718749999997,
+      1857
+    ],
+    "ink": "#000000"
+  },
+  "typo_horizontal": {
+    "canvas": [
+      2313,
+      1008
+    ],
+    "crest_box": [
+      54,
+      54,
+      900,
+      900
+    ],
+    "font1_px": 48,
+    "font2_px": 100,
+    "track1_px": 7.68,
+    "track2_px": 3.5000000000000004,
+    "line_gap_px": 32,
+    "line1_xy": [
+      1522.4209375,
+      411
+    ],
+    "line2_xy": [
+      1044.0,
+      493
+    ],
+    "ink": "#000000"
+  },
+  "typo_wordmark_stacked": {
+    "canvas": [
+      2052,
+      400
+    ],
+    "font1_px": 77,
+    "font2_px": 160,
+    "track1_px": 13.86,
+    "track2_px": 6.4,
+    "line_gap_px": 61,
+    "line1_xy": [
+      814.9825000000001,
+      48
+    ],
+    "line2_xy": [
+      48.237499999999955,
+      188
+    ],
+    "ink": "#000000"
+  },
+  "typo_wordmark_horizontal": {
+    "canvas": [
+      2379,
+      239
+    ],
+    "font_project_px": 101,
+    "font_main_px": 140,
+    "track_project_px": 12.12,
+    "track_main_px": 4.2,
+    "gap_px": 77.0,
+    "project_xy": [
+      48.0,
+      77.0
+    ],
+    "rest_xy": [
+      642.22,
+      48.0
+    ],
+    "ink": "#000000",
+    "line": "PROJETO CASERNA DE ADUL\u00c3O"
+  }
+}

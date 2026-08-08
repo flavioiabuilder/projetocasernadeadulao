@@ -106,27 +106,29 @@ Não misturar kits, tokens ou messaging sem decisão humana explícita.
 
 Fonte canônica: [`assets/img/logo-pca/LEIA-ME.md`](../../assets/img/logo-pca/LEIA-ME.md).
 
-### Variante Master (kit autorizado — 1 apenas)
+### Colorway e configurações
 
-| Variante | Papel |
-|----------|-------|
-| `Mono_1C` | Única logomarca oficial |
+| Tipo | Valor |
+|------|-------|
+| Colorway | Somente `Mono_1C` |
+| Canônica | Master `LOGO_PCA_Master_Mono_1C` |
+| Oficiais | Lockup Vertical · Lockup Horizontal |
+| Auxiliares | Wordmark Stacked · Wordmark Horizontal |
+| Tinta wordmark | `#000000` |
 
-**Histórico (não disponível):** Branca, Color_Institucional e Color_Institucional_Reverso foram removidas. Não regenerar. Em fundos escuros, adaptar a **superfície** com `--color-papel` — nunca a logomarca.
+**Histórico:** Branca / Color / Reverso removidas. Em fundos escuros: placa `--color-papel`, nunca filter nem colorway invertida.
 
 ### Clear space e não-usos
 
-- Manter área livre ≈ ¼ da altura do escudo em volta.
-- Não distorcer, não recolorir a logomarca, não inventar variantes cromáticas.
-- Não usar `filter`, blend modes ou SVG com fills sobrescritos para simular outra variante.
-- Não substituir por logo do Discipulando.
-- Preferir WebP no runtime; PNG como fonte/fallback; SVG para escala.
+- Área livre ≈ ¼ da altura do escudo (ou do bloco tipográfico, nos wordmarks).
+- Não distorcer, não recolorir, não inventar colorways.
+- Não extrair shield-only / monograma sem gate.
+- Wordmarks não substituem o Master.
+- Preferir WebP; PNG fallback; SVG híbrido nos lockups com Master.
 
-**H2 (decidido):** o escudo Master **é** a logomarca. Texto fora do escudo não compete com a tipografia da borda.
+**H2 / H2c:** Master = logo; colorway única; configurações estruturais documentadas no LEIA-ME.
 
-**H2c (decidido):** kit = somente `Mono_1C`.
-
-**Lockup Vertical** (composição de layout, opcional): Master `Mono_1C` completo no topo + `PROJETO` / `CASERNA DE ADULÃO` em **Palatino Linotype** (Regular + Bold). Arte superior a partir de `LOGO_PCA_Master_Mono_1C.webp`. SVG **híbrido** — não descrever como 100% vetorial. Geometria **1781×2080**. Ver `assets/img/logo-pca/LEIA-ME.md`.
+Matriz de uso, geometrias e escadas: [`assets/img/logo-pca/LEIA-ME.md`](../../assets/img/logo-pca/LEIA-ME.md).
 
 ---
 

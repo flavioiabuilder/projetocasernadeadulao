@@ -545,6 +545,39 @@
         object-fit: contain;
       }
 
+      /* Desktop amplo: Lockup Horizontal Mono_1C (evita redundância Master+texto) */
+      .site-header__lockup {
+        display: none;
+        flex-shrink: 0;
+        width: min(14rem, 36vw);
+        padding: 0.25rem 0.35rem;
+        background: var(--color-papel);
+        border-radius: var(--radius-sm);
+        box-sizing: border-box;
+      }
+
+      .site-header__lockup img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2313 / 1008;
+        object-fit: contain;
+      }
+
+      @media (min-width: 900px) {
+        .site-header__brand {
+          max-width: min(22rem, 42vw);
+        }
+
+        .site-header__mark,
+        .site-header__brand > .wordmark {
+          display: none;
+        }
+
+        .site-header__lockup {
+          display: block;
+        }
+      }
+
       .wordmark {
         font-family: var(--font-display);
         font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
@@ -1342,6 +1375,19 @@
               width="128"
               height="128"
               alt=""
+              decoding="async"
+            />
+          </picture>
+          <picture class="site-header__lockup">
+            <source
+              type="image/webp"
+              srcset="assets/img/logo-pca/LOGO_PCA_Lockup_Horizontal_Mono_1C_240.webp"
+            />
+            <img
+              src="assets/img/logo-pca/LOGO_PCA_Lockup_Horizontal_Mono_1C_240.png"
+              width="240"
+              height="105"
+              alt="Projeto Caserna de Adulão"
               decoding="async"
             />
           </picture>

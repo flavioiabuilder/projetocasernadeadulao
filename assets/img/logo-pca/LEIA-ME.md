@@ -4,118 +4,117 @@ Pasta canônica dos arquivos oficiais da marca institucional do **Projeto Casern
 
 Não confundir com a marca do **Discipulando a Caserna** (`programas/discipulando-a-caserna/assets/img/logo-pdac/`).
 
-## Localização
+## Uma colorway · várias configurações
 
-| Caminho                 | Status                                              |
-| ----------------------- | --------------------------------------------------- |
-| `assets/img/logo-pca/`  | **Canônico** — usar na página institucional da raiz |
-| `marca/`                | Brand book + tokens PCA (guidelines, lab HTML)      |
-
-Ver também: [`marca/README.md`](../../marca/README.md), [`marca/docs/brand-guidelines.md`](../../marca/docs/brand-guidelines.md).
-
-## Kit autorizado — somente `Mono_1C`
-
-O kit oficial da logomarca contém **uma única variante**:
-
-| Variante | Papel |
+| Conceito | Valor |
 | -------- | ----- |
-| `Mono_1C` | Logomarca canônica (positiva monocromática) |
+| **Colorway** | Somente `Mono_1C` |
+| **Tinta do wordmark** | `#000000` em fundo transparente |
+| **Master canônico** | `LOGO_PCA_Master_Mono_1C.webp` (imutável) |
 
-Não fazem parte do kit (removidas por decisão humana):
+Configurações estruturais ≠ variantes cromáticas. Não existem Branca, Color ou Reverso no kit.
 
-- `Mono_1C_Branca_FFFFFF`
-- `Color_Institucional`
-- `Color_Institucional_Reverso`
+A paleta institucional (carvão / papel / bronze) permanece nos tokens de **interface**. Em fundos escuros, use placa `--color-papel` — nunca inverta a logomarca.
 
-Não criar versão branca, colorida, reversa, duotone ou de campanha até novo gate explícito.
+## Configurações oficiais
 
-A **paleta institucional** (carvão / papel / bronze) permanece nos tokens de interface (`marca/tokens/`). Ela colore fundos, textos e componentes — **não** gera novas versões da logomarca.
+| Configuração | Arquivo base | Status | Função |
+| ------------ | ------------ | ------ | ------ |
+| **Master** | `LOGO_PCA_Master_Mono_1C` | Canônica | Logomarca autônoma |
+| **Lockup Vertical** | `LOGO_PCA_Lockup_Vertical_Mono_1C` | Oficial | Assinatura empilhada |
+| **Lockup Horizontal** | `LOGO_PCA_Lockup_Horizontal_Mono_1C` | Oficial | Assinatura em faixa |
+| **Wordmark Stacked** | `LOGO_PCA_Wordmark_Stacked_Mono_1C` | Auxiliar | Texto 2 linhas sem Master |
+| **Wordmark Horizontal** | `LOGO_PCA_Wordmark_Horizontal_Mono_1C` | Auxiliar | Linha única ultrawide |
 
-## Convenção de nomes
+### Candidatos rejeitados
 
-```
-LOGO_PCA_{Master|Lockup_Vertical}_Mono_1C[_TAMANHO].{png|webp|svg}
-```
+| Candidato | Motivo |
+| --------- | ------ |
+| Lockup Vertical Compact | Só redimensionamento; escada `_180`/`_128` basta |
+| Lockup Horizontal Compact | Escada `_240`/`_180` cobre headers estreitos |
+| Wordmark em 3 linhas | Duplicaria o Stacked sem ganho |
 
-| Segmento | Significado |
+### Proibido (fora de escopo)
+
+Shield-only extraído, submark, monograma, outline, sombra, gradiente, espelho, rotação, colorways alternativas, favicon redesenhado.
+
+## Geometrias
+
+| Configuração | Master (px) | Proporção |
+| ------------ | ----------- | --------- |
+| Master | 1563×1563 | 1∶1 |
+| Lockup Vertical | 1781×2080 | ≈0,856 |
+| Lockup Horizontal | 2313×1008 | ≈2,295 |
+| Wordmark Stacked | 2052×400 | ≈5,13 |
+| Wordmark Horizontal | 2379×239 | ≈9,95 |
+
+## Escadas de exportação
+
+| Configuração | Sufixos (largura) |
+| ------------ | ----------------- |
+| Master | `_800` `_400` `_180` `_128` `_64` `_32` |
+| Lockup Vertical | `_400` `_180` `_128` |
+| Lockup Horizontal | `_800` `_400` `_240` `_180` |
+| Wordmarks | `_800` `_400` `_240` `_180` |
+
+Formatos: SVG + PNG + WebP. Lockups com Master = SVG **híbrido** (WebP `data:` + contornos). Wordmarks = SVG vetorial (paths `#000000`).
+
+## Tipografia (wordmarks / lockups)
+
+- `PROJETO`: Palatino Linotype Regular, tracking aberto
+- `CASERNA DE ADULÃO`: Palatino Linotype Bold
+- Contornos via fontTools na máquina de build (`pala.ttf` / `palab.ttf` **não** versionados)
+- Pipeline: `marca/scripts/generate_logo_system.py`
+
+## Seleção por contexto
+
+| Contexto | Preferência |
 | -------- | ----------- |
-| `Master` | Logomarca canônica (escudo com tipografia fundida) |
-| `Lockup_Vertical` | Composição de aplicação: Master + wordmark editorial |
-| `Mono_1C` | Única variante autorizada |
-| `_800` … `_32` | Escada web do **Master** (lado máx.) |
-| `_400` / `_180` / `_128` | Escada do **Lockup** (largura) |
+| Favicon / avatar | Master |
+| Header mobile | Master (+ texto editorial opcional) |
+| Header desktop amplo | Lockup Horizontal |
+| Hero | Master (ou Lockup Horizontal se o nome não estiver no copy) |
+| Capa / encerramento vertical | Lockup Vertical |
+| Documento / ofício | Lockup Horizontal |
+| Master já visível no mesmo contexto | Wordmark Stacked |
+| Crédito / rodapé ultrawide | Wordmark Horizontal (mín. largura ~400 px) |
 
-Fonte visual primária (inegociável): `LOGO_PCA_Master_Mono_1C.webp`.
+Wordmarks **não** substituem o Master como logomarca.
 
-## Inventário ativo
+## Tamanhos mínimos (orientação)
 
-### Master (`Mono_1C`)
+| Configuração | Mínimo confortável |
+| ------------ | ------------------ |
+| Master | 32 px (favicon); 64–128 UI |
+| Lockup Vertical | 180 px de largura (128 só próximo) |
+| Lockup Horizontal | 240 px de largura |
+| Wordmark Stacked | 240 px |
+| Wordmark Horizontal | **400 px** (abaixo disso a altura fica ilegível) |
 
-| Arquivo | Uso |
-| ------- | --- |
-| `LOGO_PCA_Master_Mono_1C.png` / `.webp` / `.svg` | Master (1563×1563) |
-| `LOGO_PCA_Master_Mono_1C_{800,400,180,128,64,32}.*` | Escada web |
+## Uso na página institucional
 
-### Lockup vertical (`Lockup_Vertical`)
+| Superfície | Asset |
+| ---------- | ----- |
+| Favicon / OG | Master `_128` / `_800` |
+| Header &lt;900 px | Master `_128` + placa papel |
+| Header ≥900 px | Lockup Horizontal `_240` + placa papel |
+| Hero | Master `_180` + placa papel |
+| Encerramento | Lockup Vertical `_180` + placa papel |
+| Footer | Master `_128` + placa papel |
 
-Composição opcional (não substitui o Master):
+## Pipeline e QA
 
-```text
-        [ Master Mono_1C completo ]
-           PROJETO
-      CASERNA DE ADULÃO
+```bash
+python marca/scripts/generate_logo_system.py
+python marca/scripts/generate_logo_system.py --config Lockup_Horizontal
 ```
 
-| Arquivo | Uso |
-| ------- | --- |
-| `LOGO_PCA_Lockup_Vertical_Mono_1C.png` / `.webp` / `.svg` | Master do lockup **1781×2080** |
-| `LOGO_PCA_Lockup_Vertical_Mono_1C_{400,180,128}.*` | Escada por largura |
+Compatibilidade: `generate_lockup_vertical.py` delega ao sistema (gera só Lockup Vertical).
 
-Pipeline: `marca/scripts/generate_lockup_vertical.py` (allowlist fechada: só `Mono_1C`). SVG **híbrido** (Master WebP em `data:` URI + contornos Palatino). Evidência: `marca/laboratorio/_qa/`.
-
-#### Tipografia do wordmark
-
-| Item | Valor |
-| ---- | ----- |
-| Família | **Palatino Linotype** (stack `--font-display`; não fontes DaC) |
-| `PROJETO` | Regular · ~48% do corpo da linha 2 · tracking **0.18em** |
-| `CASERNA DE ADULÃO` | Bold · tracking **0.04em** · ≤ 88% da largura do escudo |
-| Geometria | **1781×2080** · `@180` → **180×210** · `aspect-ratio: 1781 / 2080` |
-
-## Fundos escuros
-
-Não inverter nem recolorir a logomarca. Não usar `filter`, blend modes ou SVG com fills sobrescritos.
-
-Quando o contraste externo for insuficiente:
-
-1. manter `Mono_1C` intacta;
-2. apoiar a marca em uma **placa local** com `--color-papel` / `--surface-paper`;
-3. respeitar a área de proteção;
-4. não criar uma nova variante de logo.
-
-## Uso na página institucional (`index.html`)
-
-| Superfície | Arquivo |
-| ---------- | ------- |
-| Favicon / OG | `LOGO_PCA_Master_Mono_1C_{128\|800}.*` |
-| Header / Footer | `LOGO_PCA_Master_Mono_1C_128.*` (+ placa papel em chrome ink) |
-| Hero | `LOGO_PCA_Master_Mono_1C_180.*` (+ placa papel) |
-| Encerramento | `LOGO_PCA_Lockup_Vertical_Mono_1C_180.*` (+ placa papel) |
-
-## Mapa do kit — status
-
-| Versão | Status |
-| ------ | ------ |
-| Master Mono_1C | **Canônico** |
-| Lockup Vertical Mono_1C | **Canônico** (aplicação) |
-| Master / Lockup Branca | **Removido** (histórico) |
-| Master / Lockup Color | **Removido** (histórico) |
-| Master / Lockup Color Reverso | **Removido** (histórico) |
-| Lockup horizontal / só símbolo | Fora de escopo |
+Evidências: `marca/laboratorio/_qa/LOGO_SYSTEM_CANDIDATES_BOARD.png`, `logo_system_build_report.json`.
 
 ## Governança
 
-- Kit fechado em `Mono_1C`. Novas cores da logomarca exigem decisão humana.
-- Tokens de UI podem evoluir sem autorizar logo colorida.
-- Homologação pastoral/institucional permanece decisão humana.
+- Colorway fechada em `Mono_1C`. Novas cores exigem gate humano.
+- Não regenerar nem alterar o Master WebP canônico.
 - Após incluir ou renomear arquivos, atualizar este LEIA-ME.

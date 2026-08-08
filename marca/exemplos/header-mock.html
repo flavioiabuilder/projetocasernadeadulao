@@ -35,6 +35,28 @@
         height: 100%;
         object-fit: contain;
       }
+      .bar .lockup {
+        display: none;
+        width: min(14rem, 40vw);
+        padding: 0.25rem 0.35rem;
+        background: var(--color-papel);
+        border-radius: var(--radius-sm);
+        box-sizing: border-box;
+      }
+      .bar .lockup img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2313 / 1008;
+      }
+      @media (min-width: 900px) {
+        .bar .mark,
+        .bar .word {
+          display: none;
+        }
+        .bar .lockup {
+          display: block;
+        }
+      }
       .bar strong {
         font-family: var(--font-display);
         font-size: 1.1rem;
@@ -68,14 +90,22 @@
           alt=""
         />
       </span>
-      <div>
+      <span class="lockup">
+        <img
+          src="../../assets/img/logo-pca/LOGO_PCA_Lockup_Horizontal_Mono_1C_240.webp"
+          width="240"
+          height="105"
+          alt="Projeto Caserna de Adulão"
+        />
+      </span>
+      <div class="word">
         <strong>Projeto Caserna de Adulão</strong>
-        <small>Chrome denso · Mono_1C + placa papel</small>
+        <small>Mobile: Master · Desktop: Lockup Horizontal</small>
       </div>
     </header>
     <p class="note">
-      Espelha o header da home: Master Mono_1C sobre placa <code>--color-papel</code>
-      em chrome ink. Favicon permanece Mono 128.
+      Header responsivo: Master + texto (&lt;900px) ou Lockup Horizontal (≥900px),
+      ambos em placa <code>--color-papel</code>.
       <a href="../laboratorio/index.html">Lab</a> ·
       <a href="cartao-mock.html">Cartão</a> ·
       <a href="assinatura-mock.html">Assinatura</a>

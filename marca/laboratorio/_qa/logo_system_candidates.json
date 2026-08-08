@@ -1,0 +1,51 @@
+{
+  "Master": {
+    "status": "canonical",
+    "note": "N\u00e3o regenerado pelo script"
+  },
+  "Lockup_Vertical": {
+    "status": "approved",
+    "geometry": [
+      1781,
+      2080
+    ],
+    "ink": "#000000"
+  },
+  "Lockup_Horizontal": {
+    "status": "approved",
+    "geometry": [
+      2313,
+      1008
+    ],
+    "ink": "#000000"
+  },
+  "Wordmark_Stacked": {
+    "status": "approved_auxiliary",
+    "geometry": [
+      2052,
+      400
+    ],
+    "note": "N\u00e3o substitui o Master"
+  },
+  "Wordmark_Horizontal": {
+    "aspect": 9.954,
+    "canvas": [
+      2379,
+      239
+    ],
+    "decision": "approved",
+    "reason": "\u00datil em rodap\u00e9s/cr\u00e9ditos de largura extrema; hierarquia Regular/Bold preservada."
+  },
+  "Lockup_Vertical_Compact": {
+    "status": "rejected",
+    "reason": "Redimensionamento do Vertical j\u00e1 cobre; sem breakpoint estrutural distinto"
+  },
+  "Lockup_Horizontal_Compact": {
+    "status": "rejected",
+    "reason": "Escada _240/_180 cobre headers estreitos sem segunda composi\u00e7\u00e3o"
+  },
+  "Wordmark_Three_Lines": {
+    "status": "rejected",
+    "reason": "Duplicaria Stacked sem ganho de legibilidade"
+  }
+}
