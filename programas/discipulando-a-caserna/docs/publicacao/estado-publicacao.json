@@ -23,9 +23,18 @@
   },
   "rootFiles": ["index.html", "robots.txt", "404.html"],
   "rootAssets": [
+    "marca/tokens/tokens.css",
     "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.png",
     "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.webp",
-    "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_800.png"
+    "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_800.png",
+    "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_BG_White_FFFFFF_128.png",
+    "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_BG_White_FFFFFF_128.webp",
+    "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_BG_White_FFFFFF_180.png",
+    "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_BG_White_FFFFFF_180.webp",
+    "assets/img/logo-pca/LOGO_PCA_Lockup_Horizontal_Mono_1C_BG_White_FFFFFF_240.png",
+    "assets/img/logo-pca/LOGO_PCA_Lockup_Horizontal_Mono_1C_BG_White_FFFFFF_240.webp",
+    "assets/img/logo-pca/LOGO_PCA_Lockup_Vertical_Mono_1C_BG_White_FFFFFF_180.png",
+    "assets/img/logo-pca/LOGO_PCA_Lockup_Vertical_Mono_1C_BG_White_FFFFFF_180.webp"
   ],
   "programIndex": "programas/discipulando-a-caserna/index.html",
   "surfaces": [

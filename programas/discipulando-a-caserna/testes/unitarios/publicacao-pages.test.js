@@ -126,6 +126,27 @@ describe("montagem do artefato Pages", () => {
       true
     );
     assert.equal(
+      fs.existsSync(path.join(out, "marca/tokens/tokens.css")),
+      true,
+      "índice institucional exige marca/tokens/tokens.css no artefato"
+    );
+    assert.equal(
+      fs.existsSync(
+        path.join(
+          out,
+          "assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_BG_White_FFFFFF_128.png"
+        )
+      ),
+      true,
+      "índice institucional exige logos _BG_White_FFFFFF no artefato"
+    );
+    const indexHtml = fs.readFileSync(path.join(out, "index.html"), "utf8");
+    assert.match(indexHtml, /href=["']marca\/tokens\/tokens\.css["']/);
+    assert.match(
+      indexHtml,
+      /LOGO_PCA_Master_Mono_1C_BG_White_FFFFFF_128\.(png|webp)/
+    );
+    assert.equal(
       fs.existsSync(
         path.join(out, "programas/discipulando-a-caserna/prototipos/prospecto-fase-5-v1")
       ),
