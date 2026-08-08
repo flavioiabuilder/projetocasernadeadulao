@@ -1,0 +1,18 @@
+---
+description: Base técnica Conhecimento — consultar em tarefas de código e refatoração
+alwaysApply: true
+---
+
+# Conhecimento técnico
+
+Em tarefas de **código, revisão ou refatoração**, consulte
+`conhecimento/indice.md` e a **ficha** relevante antes de aprofundar no
+Markdown convertido.
+
+- Comece pela ficha (tese + quando acionar); abra `conhecimento/md/` só se
+  precisar de detalhe ou citação.
+- Esta base **não** substitui ADRs, `AGENTS.md`, regras pastorais nem
+  convenções do método — em conflito, o repositório vence.
+- Não embutir livros inteiros neste arquivo nem em regras permanentes.
+- Material de terceiros: uso local do agente; não tratar como conteúdo
+  institucional a publicar.

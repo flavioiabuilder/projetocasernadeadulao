@@ -17,6 +17,7 @@ as regras pastorais do Discipulando a Caserna.
 | Camada método (ADR)         | [ADR-007](docs/arquitetura/ADR-007-camada-metodo-o-sistema.md)                                                                            |
 | Programa piloto             | [`programas/discipulando-a-caserna/`](programas/discipulando-a-caserna/)                                                                  |
 | Estudos DevTools            | [`referencias-devtools/`](referencias-devtools/) — não é produto                                                                          |
+| Base Conhecimento (técnica) | [`conhecimento/`](conhecimento/) — índice [`conhecimento/indice.md`](conhecimento/indice.md); não é pastoral nem Pages                  |
 
 ## Trabalho no Discipulando a Caserna
 

@@ -26,6 +26,7 @@ Documento de domínio para agentes (Matt Pocock / grill-with-docs).
 | Programa             | `programas/discipulando-a-caserna/` | Discipulando a Caserna                         |
 | Método               | `metodo/`                           | Fase 0 — templates/prompts (não publicado)     |
 | Referências DevTools | `referencias-devtools/`             | Estudos técnicos — **não** produto ministerial |
+| Conhecimento         | `conhecimento/`                     | Base técnica para o agente (MD + fichas); não pastoral |
 | Skills de agente     | `.claude/skills/`                   | Canônico (ADR-006)                             |
 
 ## Restrições duras para agentes
@@ -39,3 +40,4 @@ Documento de domínio para agentes (Matt Pocock / grill-with-docs).
 
 - Catálogo: [`docs/agent-skills.md`](docs/agent-skills.md)
 - Notas / ADRs de sessão: [`docs/agent/`](docs/agent/)
+- Base técnica (código limpo etc.): [`conhecimento/indice.md`](conhecimento/indice.md)
