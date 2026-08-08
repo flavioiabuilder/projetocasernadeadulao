@@ -133,6 +133,12 @@
       "skillPath": "skills/pdf/SKILL.md",
       "computedHash": "37226d4220d844377e6b2a386c51a011df4cd130855ff0b80bcc22f9c28abd57"
     },
+    "pymupdf-pdf": {
+      "source": "kesslerio/pymupdf-pdf-parser-clawdbot-skill",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "758ea830f818c894dbbbb9e70f6f8a02e1ee65b297274e37944750d9e6493c14"
+    },
     "repomix-explorer": {
       "source": "yamadashy/repomix",
       "sourceType": "github",
