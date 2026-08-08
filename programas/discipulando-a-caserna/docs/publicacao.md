@@ -24,7 +24,8 @@ Pages deve expor **somente** a allowlist de `estado-publicacao.json`:
 Na raiz do artefato:
 
 - `index.html` (índice do Projeto Caserna de Adulão)
-- assets de marca PCA listados em `rootAssets`
+- assets de marca PCA listados em `rootAssets` (inclui `marca/tokens/tokens.css`
+  e os logos `_BG_White_FFFFFF` referenciados pelo índice institucional)
 - `404.html`
 - `robots.txt`
 - shims em `prototipos/` (URLs antigas)
