@@ -1,6 +1,6 @@
 # Brand Guidelines — Projeto Caserna de Adulão (PCA)
 
-> Last updated: 2026-08-05  
+> Last updated: 2026-08-07
 > Status: **Homologado** (gates H1–H5; H6 lab só local — ver `decisoes.md`)
 
 Manual de identidade visual e tokens da marca **institucional** do Projeto Caserna de Adulão.
@@ -106,17 +106,20 @@ Não misturar kits, tokens ou messaging sem decisão humana explícita.
 
 Fonte canônica: [`assets/img/logo-pca/LEIA-ME.md`](../../assets/img/logo-pca/LEIA-ME.md).
 
-### Colorway e configurações
+### Colorway, configurações e fundos
 
-| Tipo | Valor |
+| Eixo | Valor |
 |------|-------|
 | Colorway | Somente `Mono_1C` |
 | Canônica | Master `LOGO_PCA_Master_Mono_1C` |
 | Oficiais | Lockup Vertical · Lockup Horizontal |
 | Auxiliares | Wordmark Stacked · Wordmark Horizontal |
+| Fundos | Transparente (canônico) · Branco `#FFFFFF` (`_BG_White_FFFFFF`) |
 | Tinta wordmark | `#000000` |
 
-**Histórico:** Branca / Color / Reverso removidas. Em fundos escuros: placa `--color-papel`, nunca filter nem colorway invertida.
+**Fundo branco ≠ logo branca.** O sufixo `_BG_White_FFFFFF` preenche o canvas; a arte permanece Mono_1C. Não confundir com colorway, reverso ou recoloração.
+
+**Histórico:** colorways Branca / Color / Reverso removidas. Em fundos escuros: preferir asset `_BG_White_FFFFFF` **ou** placa CSS — nunca ambos; nunca `filter` nem colorway invertida.
 
 ### Clear space e não-usos
 
@@ -126,7 +129,7 @@ Fonte canônica: [`assets/img/logo-pca/LEIA-ME.md`](../../assets/img/logo-pca/LE
 - Wordmarks não substituem o Master.
 - Preferir WebP; PNG fallback; SVG híbrido nos lockups com Master.
 
-**H2 / H2c:** Master = logo; colorway única; configurações estruturais documentadas no LEIA-ME.
+**H2 / H2c:** Master = logo; colorway única; dois fundos; configurações estruturais no LEIA-ME.
 
 Matriz de uso, geometrias e escadas: [`assets/img/logo-pca/LEIA-ME.md`](../../assets/img/logo-pca/LEIA-ME.md).
 
@@ -211,7 +214,8 @@ npm run validate:marca:tokens
 |------|--------|
 | Paleta UI (carvão/papel/bronze) | Homologado (H1) — não gera logo colorida |
 | Kit logomarca Mono_1C | Decidido (H2c) |
-| Logo Master + Lockup Vertical | Feito (H2) |
+| Fundos Transparent + BG_White_FFFFFF | Decidido (H2) |
+| Logo Master + lockups + wordmarks | Feito (H2) |
 | Tipografia stacks | Homologado (H3) |
 | Voz | Homologado (H4) |
 | Motion presença sóbria | Homologado (H5) |

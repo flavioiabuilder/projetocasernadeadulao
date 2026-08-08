@@ -10,7 +10,7 @@
   </head>
   <body>
     <a class="lab-skip" href="#conteudo">Ir para o conteúdo</a>
-    <p class="lab-banner">Colorway Mono_1C · configurações estruturais · tinta #000</p>
+    <p class="lab-banner">Colorway Mono_1C · fundos Transparent / White · tinta #000</p>
     <div class="lab-shell">
       <div class="lab-layout">
         <nav class="lab-nav" aria-label="Capítulos do brand book">
@@ -32,37 +32,45 @@
             <p class="lab-hero__eyebrow">Capítulo 02</p>
             <h1>Logo</h1>
             <p class="lab-hero__lede">
-              Uma colorway (<code>Mono_1C</code>), várias configurações estruturais.
-              Master canônico; lockups e wordmarks derivados. Pasta
+              Uma colorway (<code>Mono_1C</code>), várias configurações estruturais,
+              dois tratamentos de fundo (transparente e branco). Master canônico;
+              lockups e wordmarks derivados. Pasta
               <code>assets/img/logo-pca/</code>.
             </p>
           </header>
           <div class="lab-prose">
-            <h2>Master — canônica</h2>
+            <h2>Colorway × fundo</h2>
             <p>
-              Única colorway. Em superfícies escuras, placa
-              <code>--color-papel</code> — nunca logo branca/colorida.
+              Colorway única: <code>Mono_1C</code>. Fundos:
+              <strong>transparente</strong> (nome sem segmento de fundo) e
+              <strong>branco</strong> (<code>_BG_White_FFFFFF</code>).
+              Fundo branco é canvas <code>#FFFFFF</code> — <em>não</em> é logo branca,
+              reverso nem nova colorway.
             </p>
+            <p>
+              Em superfícies escuras, use o asset branco <strong>ou</strong> uma placa
+              CSS — nunca ambos.
+            </p>
+
+            <h2>Master — canônica</h2>
             <div class="logo-grid">
               <figure class="logo-card" data-reveal data-i="0">
                 <img
                   src="../../../assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_180.webp"
                   width="180"
                   height="180"
-                  alt="Master Mono_1C"
+                  alt="Master Mono_1C transparente"
                 />
-                <figcaption>Mono_1C — fundo claro</figcaption>
+                <figcaption>Transparente — fundo claro</figcaption>
               </figure>
               <figure class="logo-card logo-card--ink" data-reveal data-i="1">
-                <div style="background: var(--color-papel); padding: 0.5rem; border-radius: var(--radius-sm)">
-                  <img
-                    src="../../../assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_180.webp"
-                    width="180"
-                    height="180"
-                    alt="Master Mono_1C sobre placa papel"
-                  />
-                </div>
-                <figcaption>Mono_1C + placa papel em ink</figcaption>
+                <img
+                  src="../../../assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_BG_White_FFFFFF_180.webp"
+                  width="180"
+                  height="180"
+                  alt="Master Mono_1C com fundo branco"
+                />
+                <figcaption>BG White — superfície ink (sem placa CSS)</figcaption>
               </figure>
             </div>
 
@@ -77,20 +85,18 @@
                   src="../../../assets/img/logo-pca/LOGO_PCA_Lockup_Vertical_Mono_1C_180.webp"
                   width="180"
                   height="210"
-                  alt="Lockup vertical Mono_1C"
+                  alt="Lockup vertical Mono_1C transparente"
                 />
-                <figcaption>Vertical 180</figcaption>
+                <figcaption>Vertical 180 · transparente</figcaption>
               </figure>
               <figure class="logo-card logo-card--lockup logo-card--ink" data-reveal data-i="5">
-                <div style="background: var(--color-papel); padding: 0.5rem; border-radius: var(--radius-sm)">
-                  <img
-                    src="../../../assets/img/logo-pca/LOGO_PCA_Lockup_Vertical_Mono_1C_180.webp"
-                    width="180"
-                    height="210"
-                    alt="Lockup vertical sobre placa papel"
-                  />
-                </div>
-                <figcaption>Vertical + placa papel</figcaption>
+                <img
+                  src="../../../assets/img/logo-pca/LOGO_PCA_Lockup_Vertical_Mono_1C_BG_White_FFFFFF_180.webp"
+                  width="180"
+                  height="210"
+                  alt="Lockup vertical Mono_1C fundo branco"
+                />
+                <figcaption>Vertical 180 · BG White</figcaption>
               </figure>
             </div>
 
@@ -104,7 +110,16 @@
                   height="174"
                   alt="Lockup horizontal Mono_1C"
                 />
-                <figcaption>Horizontal 400 · 2313×1008</figcaption>
+                <figcaption>Horizontal 400 · transparente · 2313×1008</figcaption>
+              </figure>
+              <figure class="logo-card logo-card--lockup logo-card--ink" data-reveal data-i="6b" style="grid-column: 1 / -1">
+                <img
+                  src="../../../assets/img/logo-pca/LOGO_PCA_Lockup_Horizontal_Mono_1C_BG_White_FFFFFF_400.webp"
+                  width="400"
+                  height="174"
+                  alt="Lockup horizontal Mono_1C fundo branco"
+                />
+                <figcaption>Horizontal 400 · BG White</figcaption>
               </figure>
             </div>
 
@@ -116,18 +131,36 @@
                   src="../../../assets/img/logo-pca/LOGO_PCA_Wordmark_Stacked_Mono_1C_400.webp"
                   width="400"
                   height="78"
-                  alt="Wordmark stacked"
+                  alt="Wordmark stacked transparente"
                 />
-                <figcaption>Stacked 400</figcaption>
+                <figcaption>Stacked 400 · transparente</figcaption>
+              </figure>
+              <figure class="logo-card logo-card--ink" data-reveal data-i="7b">
+                <img
+                  src="../../../assets/img/logo-pca/LOGO_PCA_Wordmark_Stacked_Mono_1C_BG_White_FFFFFF_400.webp"
+                  width="400"
+                  height="78"
+                  alt="Wordmark stacked fundo branco"
+                />
+                <figcaption>Stacked 400 · BG White</figcaption>
               </figure>
               <figure class="logo-card" data-reveal data-i="8">
                 <img
                   src="../../../assets/img/logo-pca/LOGO_PCA_Wordmark_Horizontal_Mono_1C_400.webp"
                   width="400"
                   height="40"
-                  alt="Wordmark horizontal"
+                  alt="Wordmark horizontal transparente"
                 />
-                <figcaption>Horizontal 400</figcaption>
+                <figcaption>Horizontal 400 · transparente</figcaption>
+              </figure>
+              <figure class="logo-card logo-card--ink" data-reveal data-i="8b">
+                <img
+                  src="../../../assets/img/logo-pca/LOGO_PCA_Wordmark_Horizontal_Mono_1C_BG_White_FFFFFF_400.webp"
+                  width="400"
+                  height="40"
+                  alt="Wordmark horizontal fundo branco"
+                />
+                <figcaption>Horizontal 400 · BG White</figcaption>
               </figure>
             </div>
 
@@ -167,21 +200,24 @@
             <h2>Clear space</h2>
             <p>
               Área livre aproximada de ¼ da altura do escudo em todos os lados (também ao
-              redor do lockup completo).
+              redor do lockup completo). Mesma geometria nos dois fundos.
             </p>
             <h2>Não usar</h2>
             <ul>
               <li>Distorcer, rotacionar ou aplicar sombras/glow não documentados</li>
               <li>Criar variantes branca, colorida ou reversa da logomarca</li>
+              <li>Confundir <code>_BG_White_FFFFFF</code> com logo branca</li>
+              <li>Usar placa CSS e asset branco ao mesmo tempo</li>
               <li>Usar <code>filter</code>, blend ou SVG recolorido para simular outra variante</li>
               <li>Substituir pelo logo do Discipulando</li>
               <li>Tratar o wordmark do lockup como substituto do Master</li>
               <li>Usar Georgia ou sans DaC no wordmark do lockup</li>
             </ul>
             <p class="lab-note">
-              H2: Master + configurações estruturais. H2c: colorway Mono_1C.
+              H2: Master + configurações + dois fundos. H2c: colorway Mono_1C.
               Rejeitados: compactos e wordmark 3 linhas. Pipeline:
               <code>marca/scripts/generate_logo_system.py</code>.
+              QA: <code>marca/laboratorio/_qa/LOGO_SYSTEM_BG_QA_BOARD.png</code>.
             </p>
           </div>
           <footer class="lab-footer">

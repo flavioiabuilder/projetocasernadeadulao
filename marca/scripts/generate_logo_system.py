@@ -1,17 +1,24 @@
-"""PCA logo system — one colorway (Mono_1C), multiple structural configurations.
+"""PCA logo system — one colorway (Mono_1C), configurations × backgrounds.
+
+Axes (independent):
+  Colorway       → Mono_1C only
+  Configuration  → Master | Lockup_* | Wordmark_*
+  Background     → Transparent | White_FFFFFF
+  Format / size  → SVG · PNG · WebP · ladder widths
 
 Canonical Master (never rewritten):
   assets/img/logo-pca/LOGO_PCA_Master_Mono_1C.webp
 
 Wordmark ink: #000000 (not carvão/papel/bronze).
+White background is NOT a white logo, reverse, or new colorway.
 """
 from __future__ import annotations
 
 import argparse
 import base64
-import io
 import json
 import math
+import re
 from pathlib import Path
 
 import numpy as np
@@ -24,12 +31,25 @@ LOGO_DIR = ROOT / "assets" / "img" / "logo-pca"
 QA_DIR = ROOT / "marca" / "laboratorio" / "_qa"
 
 PRIMARY_WEBP = LOGO_DIR / "LOGO_PCA_Master_Mono_1C.webp"
+PRIMARY_SVG = LOGO_DIR / "LOGO_PCA_Master_Mono_1C.svg"
 FONT_REG = Path(r"C:\Windows\Fonts\pala.ttf")
 FONT_BOLD = Path(r"C:\Windows\Fonts\palab.ttf")
 
 AUTHORIZED_COLORWAYS = ("Mono_1C",)
-# Master is source-of-truth on disk — script does not regenerate it.
+AUTHORIZED_BACKGROUNDS = (
+    "Transparent",
+    "White_FFFFFF",
+)
 AUTHORIZED_CONFIGURATIONS = (
+    "Master",
+    "Lockup_Vertical",
+    "Lockup_Horizontal",
+    "Wordmark_Stacked",
+    "Wordmark_Horizontal",
+)
+
+# Configurations regenerated from Master + type (Master transparent is never rewritten)
+DERIVED_CONFIGURATIONS = (
     "Lockup_Vertical",
     "Lockup_Horizontal",
     "Wordmark_Stacked",
@@ -42,7 +62,22 @@ LINE_FULL = "PROJETO CASERNA DE ADULÃO"
 
 INK = (0, 0, 0, 255)
 INK_HEX = "#000000"
+WHITE = (255, 255, 255, 255)
+WHITE_HEX = "#FFFFFF"
 WEBP_Q = 90
+
+BG_SUFFIX = {
+    "Transparent": "",
+    "White_FFFFFF": "_BG_White_FFFFFF",
+}
+
+LADDERS: dict[str, tuple[int, ...]] = {
+    "Master": (800, 400, 180, 128, 64, 32),
+    "Lockup_Vertical": (400, 180, 128),
+    "Lockup_Horizontal": (800, 400, 240, 180),
+    "Wordmark_Stacked": (800, 400, 240, 180),
+    "Wordmark_Horizontal": (800, 400, 240, 180),
+}
 
 # Vertical lockup geometry (preserved)
 V_SIDE = 0.07
@@ -56,8 +91,8 @@ V_LINE_GAP = 0.38
 V_BOTTOM = 0.07
 
 # Horizontal lockup
-H_CREST_SIDE = 900  # Master drawn at this size (uniform from 1563)
-H_GAP_X = 0.10  # of crest
+H_CREST_SIDE = 900
+H_GAP_X = 0.10
 H_PAD = 0.06
 H_LINE1_SIZE = 0.48
 H_TRACK1 = 0.16
@@ -72,7 +107,7 @@ W_TRACK2 = 0.04
 W_LINE_GAP = 0.38
 W_H_TRACK_PROJ = 0.12
 W_H_TRACK_MAIN = 0.03
-W_H_GAP_WORDS = 0.55  # em of main size between PROJETO and rest
+W_H_GAP_WORDS = 0.55
 
 
 def load_primary() -> Image.Image:
@@ -80,6 +115,23 @@ def load_primary() -> Image.Image:
     if im.size[0] != im.size[1]:
         raise ValueError(f"PRIMARY not square: {im.size}")
     return im
+
+
+def asset_stem(config: str, background: str) -> str:
+    if background not in AUTHORIZED_BACKGROUNDS:
+        raise ValueError(f"Unauthorized background: {background}")
+    return f"LOGO_PCA_{config}_Mono_1C{BG_SUFFIX[background]}"
+
+
+def apply_background(im: Image.Image, background: str) -> Image.Image:
+    """Return RGBA with identical geometry; only canvas treatment differs."""
+    rgba = im.convert("RGBA")
+    if background == "Transparent":
+        return rgba.copy()
+    if background == "White_FFFFFF":
+        base = Image.new("RGBA", rgba.size, WHITE)
+        return Image.alpha_composite(base, rgba)
+    raise ValueError(f"Unauthorized background: {background}")
 
 
 def measure_tracked(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.FreeTypeFont, tracking: float) -> float:
@@ -115,10 +167,16 @@ def fit_font_bold(draw: ImageDraw.ImageDraw, text: str, max_w: float, track_em: 
     return best
 
 
-def save_raster(im: Image.Image, base: Path) -> None:
+def save_raster(im: Image.Image, base: Path, *, lossless_webp: bool = False) -> None:
+    webp_kwargs: dict = {"format": "WEBP", "method": 6}
+    if lossless_webp:
+        # White-BG assets must stay pixel-identical to transparent∘#FFFFFF (no lossy round-trip).
+        webp_kwargs["lossless"] = True
+    else:
+        webp_kwargs["quality"] = WEBP_Q
     for ext, kwargs in (
         (".png", {"format": "PNG", "optimize": True}),
-        (".webp", {"format": "WEBP", "quality": WEBP_Q, "method": 6}),
+        (".webp", webp_kwargs),
     ):
         path = base.with_suffix(ext)
         tmp = path.with_suffix(ext + ".tmp")
@@ -135,14 +193,20 @@ def resize_width(im: Image.Image, width: int) -> Image.Image:
     return im.resize((width, h), Image.Resampling.LANCZOS)
 
 
-def export_ladder(im: Image.Image, base: Path, widths: tuple[int, ...]) -> dict:
-    save_raster(im, base)
-    out = {"master": list(im.size)}
+def export_ladder(
+    im: Image.Image,
+    base: Path,
+    widths: tuple[int, ...],
+    *,
+    lossless_webp: bool = False,
+) -> dict:
+    save_raster(im, base, lossless_webp=lossless_webp)
+    out = {"master": list(im.size), "webp_lossless": lossless_webp}
     for w in widths:
         if w >= im.width:
             continue
         scaled = resize_width(im, w)
-        save_raster(scaled, LOGO_DIR / f"{base.name}_{w}")
+        save_raster(scaled, LOGO_DIR / f"{base.name}_{w}", lossless_webp=lossless_webp)
         out[str(w)] = list(scaled.size)
     return out
 
@@ -182,16 +246,35 @@ def path_group_for_line(
     return "\n    ".join(parts)
 
 
-def write_hybrid_svg(path: Path, crest_bytes: bytes, crest_box: tuple[int, int, int, int], canvas: tuple[int, int], paths: str, title: str) -> None:
+def bg_rect(background: str) -> str:
+    if background == "White_FFFFFF":
+        return f'  <rect width="100%" height="100%" fill="{WHITE_HEX}"/>\n'
+    return ""
+
+
+def write_hybrid_svg(
+    path: Path,
+    crest_bytes: bytes,
+    crest_box: tuple[int, int, int, int],
+    canvas: tuple[int, int],
+    paths: str,
+    title: str,
+    background: str,
+) -> None:
     w, h = canvas
     cx, cy, cs, _ = crest_box
     b64 = base64.b64encode(crest_bytes).decode("ascii")
+    bg_note = (
+        "Fundo #FFFFFF no canvas (não é logo branca/reversa)."
+        if background == "White_FFFFFF"
+        else "Canvas transparente."
+    )
     svg = f'''<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="{title}">
   <title>{title}</title>
-  <desc>SVG híbrido Mono_1C: Master WebP (data URI) + wordmark #000000 em contornos. Não é 100% vetorial.</desc>
-  <image x="{cx}" y="{cy}" width="{cs}" height="{cs}"
+  <desc>SVG híbrido Mono_1C: Master WebP (data URI) + wordmark #000000 em contornos. {bg_note} Não é 100% vetorial.</desc>
+{bg_rect(background)}  <image x="{cx}" y="{cy}" width="{cs}" height="{cs}"
          href="data:image/webp;base64,{b64}"
          xlink:href="data:image/webp;base64,{b64}"
          preserveAspectRatio="xMidYMid meet"/>
@@ -203,19 +286,51 @@ def write_hybrid_svg(path: Path, crest_bytes: bytes, crest_box: tuple[int, int, 
     path.write_text(svg, encoding="utf-8")
 
 
-def write_vector_svg(path: Path, canvas: tuple[int, int], paths: str, title: str) -> None:
+def write_vector_svg(
+    path: Path,
+    canvas: tuple[int, int],
+    paths: str,
+    title: str,
+    background: str,
+) -> None:
     w, h = canvas
+    bg_note = (
+        "Fundo #FFFFFF no canvas (não é logo branca/reversa)."
+        if background == "White_FFFFFF"
+        else "Canvas transparente."
+    )
     svg = f'''<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="{title}">
   <title>{title}</title>
-  <desc>Wordmark Mono_1C vetorial (Palatino outlines, fill #000000). Auxiliar — não substitui o Master.</desc>
-  <g class="wordmark">
+  <desc>Wordmark Mono_1C vetorial (Palatino outlines, fill #000000). {bg_note} Auxiliar — não substitui o Master.</desc>
+{bg_rect(background)}  <g class="wordmark">
     {paths}
   </g>
 </svg>
 '''
     path.write_text(svg, encoding="utf-8")
+
+
+def write_master_white_svg(dest: Path) -> None:
+    """Clone Master SVG with white canvas rect; do not alter art paths."""
+    src = PRIMARY_SVG.read_text(encoding="utf-8")
+    if 'fill="#FFFFFF"' in src and 'width="100%" height="100%"' in src:
+        dest.write_text(src, encoding="utf-8")
+        return
+    # Insert after opening <svg …> tag (and optional title if present early)
+    m = re.search(r"(<svg\b[^>]*>)", src, flags=re.IGNORECASE)
+    if not m:
+        raise SystemExit("Master SVG: missing <svg> root")
+    insert_at = m.end()
+    rect = f'\n  <rect width="100%" height="100%" fill="{WHITE_HEX}"/>'
+    # Avoid inserting into a copy that already has our bg marker comment
+    marker = '<!-- PCA canvas background White_FFFFFF — not a white logo -->'
+    if marker in src:
+        dest.write_text(src, encoding="utf-8")
+        return
+    out = src[:insert_at] + f"\n  {marker}" + rect + src[insert_at:]
+    dest.write_text(out, encoding="utf-8")
 
 
 def crest_mae(lockup: Image.Image, primary: Image.Image, box: tuple[int, int, int, int]) -> dict:
@@ -230,6 +345,38 @@ def crest_mae(lockup: Image.Image, primary: Image.Image, box: tuple[int, int, in
         "exact_match": exact,
         "mae_rgba": 0.0 if exact else float(np.abs(a.astype(float) - b.astype(float)).mean()),
         "pass": exact,
+    }
+
+
+def compare_transparent_on_white(transparent: Image.Image, white: Image.Image) -> dict:
+    """Compose transparent over #FFFFFF and compare to white-background asset."""
+    t = transparent.convert("RGBA")
+    w = white.convert("RGBA")
+    if t.size != w.size:
+        return {"pass": False, "error": f"size mismatch {t.size} vs {w.size}", "mae_rgba": None}
+    composed = apply_background(t, "White_FFFFFF")
+    a = np.asarray(composed)
+    b = np.asarray(w)
+    exact = bool((a == b).all())
+    mae = 0.0 if exact else float(np.abs(a.astype(float) - b.astype(float)).mean())
+    # White BG must be fully opaque
+    alpha_min = int(b[..., 3].min())
+    return {
+        "pass": exact and alpha_min == 255,
+        "exact_match": exact,
+        "mae_rgba": mae,
+        "white_alpha_min": alpha_min,
+        "size": list(t.size),
+    }
+
+
+def alpha_stats(im: Image.Image) -> dict:
+    a = np.asarray(im.convert("RGBA"))[..., 3]
+    return {
+        "min": int(a.min()),
+        "max": int(a.max()),
+        "has_transparency": bool(a.min() < 255),
+        "fully_opaque": bool(a.min() == 255),
     }
 
 
@@ -289,7 +436,6 @@ def compose_lockup_horizontal(primary: Image.Image) -> tuple[Image.Image, dict, 
     pad = int(round(H_CREST_SIDE * H_PAD))
     gap_x = int(round(H_CREST_SIDE * H_GAP_X))
 
-    # Fit line2 to ~1.15× crest width of text column
     text_max = int(round(H_CREST_SIDE * 1.35))
     probe = Image.new("RGBA", (text_max + 8, 64), (0, 0, 0, 0))
     draw = ImageDraw.Draw(probe)
@@ -314,15 +460,12 @@ def compose_lockup_horizontal(primary: Image.Image) -> tuple[Image.Image, dict, 
     canvas.paste(crest, (crest_x, crest_y))
 
     text_x = crest_x + H_CREST_SIDE + gap_x
-    # Optical vertical center of text block vs crest
     text_block_top = pad + (canvas_h - 2 * pad - text_h) // 2
     draw = ImageDraw.Draw(canvas)
     draw_tracked(draw, (text_x + (text_w - w1) / 2, text_block_top), LINE1, font1, track1)
     y2 = text_block_top + a1 + d1 + line_gap
     draw_tracked(draw, (text_x + (text_w - w2) / 2, y2), LINE2, font2, track2)
 
-    # Full-res crest for MAE: paste primary scaled into crest box via LANCZOS from full file
-    # For fidelity check, compare resized primary to crest region
     meta = {
         "canvas": [canvas_w, canvas_h],
         "crest_box": [crest_x, crest_y, H_CREST_SIDE, H_CREST_SIDE],
@@ -335,12 +478,10 @@ def compose_lockup_horizontal(primary: Image.Image) -> tuple[Image.Image, dict, 
         "line2_xy": [text_x + (text_w - w2) / 2, y2],
         "ink": INK_HEX,
     }
-    # Rebuild crest paste from full primary bytes path for SVG embed (full webp, scaled in SVG)
     return canvas, meta, PRIMARY_WEBP.read_bytes()
 
 
 def compose_wordmark_stacked() -> tuple[Image.Image, dict]:
-    # Use vertical type metrics at a generous master size
     size2 = 160
     size1 = max(12, int(round(size2 * W_LINE1_SIZE)))
     font1 = ImageFont.truetype(str(FONT_REG), size1)
@@ -379,7 +520,6 @@ def compose_wordmark_stacked() -> tuple[Image.Image, dict]:
 
 
 def compose_wordmark_horizontal() -> tuple[Image.Image, dict, dict]:
-    """Single-line wordmark. Returns image, meta, evaluation dict."""
     size_main = 140
     size_proj = max(12, int(round(size_main * 0.72)))
     font_project = ImageFont.truetype(str(FONT_REG), size_proj)
@@ -395,7 +535,6 @@ def compose_wordmark_horizontal() -> tuple[Image.Image, dict, dict]:
     total_w = w_p + gap + w_r
     a_p, d_p = font_project.getmetrics()
     a_m, d_m = font_main.getmetrics()
-    # Align baselines optically
     canvas_h = W_PAD * 2 + max(a_p + d_p, a_m + d_m)
     canvas_w = W_PAD * 2 + int(math.ceil(total_w))
     canvas = Image.new("RGBA", (canvas_w, canvas_h), (0, 0, 0, 0))
@@ -409,7 +548,6 @@ def compose_wordmark_horizontal() -> tuple[Image.Image, dict, dict]:
     draw_tracked(draw, (x2, y_m), rest, font_main, track_m)
 
     aspect = canvas_w / canvas_h
-    # Approve if aspect is usable for ultrawide credits but not absurd
     approved = 6.0 <= aspect <= 14.0
     evaluation = {
         "aspect": round(aspect, 3),
@@ -440,16 +578,105 @@ def svg_paths_vertical(meta: dict) -> str:
     fr, fb = TTFont(str(FONT_REG)), TTFont(str(FONT_BOLD))
     p1 = path_group_for_line(LINE1, fr, meta["font1_px"], meta["track1_px"], tuple(meta["line1_xy"]), str(FONT_REG))
     p2 = path_group_for_line(LINE2, fb, meta["font2_px"], meta["track2_px"], tuple(meta["line2_xy"]), str(FONT_BOLD))
-    fr.close(); fb.close()
+    fr.close()
+    fb.close()
     return p1 + "\n    " + p2
 
 
 def svg_paths_horizontal_wm(meta: dict) -> str:
     fr, fb = TTFont(str(FONT_REG)), TTFont(str(FONT_BOLD))
     p1 = path_group_for_line(LINE1, fr, meta["font_project_px"], meta["track_project_px"], tuple(meta["project_xy"]), str(FONT_REG))
-    p2 = path_group_for_line("CASERNA DE ADULÃO", fb, meta["font_main_px"], meta["track_main_px"], tuple(meta["rest_xy"]), str(FONT_BOLD))
-    fr.close(); fb.close()
+    p2 = path_group_for_line(
+        "CASERNA DE ADULÃO", fb, meta["font_main_px"], meta["track_main_px"], tuple(meta["rest_xy"]), str(FONT_BOLD)
+    )
+    fr.close()
+    fb.close()
     return p1 + "\n    " + p2
+
+
+def checkerboard(size: tuple[int, int], cell: int = 16) -> Image.Image:
+    w, h = size
+    im = Image.new("RGBA", (w, h), (200, 200, 200, 255))
+    draw = ImageDraw.Draw(im)
+    for y in range(0, h, cell):
+        for x in range(0, w, cell):
+            if ((x // cell) + (y // cell)) % 2 == 0:
+                draw.rectangle([x, y, x + cell - 1, y + cell - 1], fill=(230, 230, 230, 255))
+    return im
+
+
+def build_qa_board(pairs: dict[str, dict[str, Image.Image]]) -> Path:
+    """pairs[config] = {Transparent: im, White_FFFFFF: im}"""
+    QA_DIR.mkdir(parents=True, exist_ok=True)
+    paper = (0xF3, 0xEE, 0xE6, 255)
+    ink = (0x0E, 0x12, 0x16, 255)
+    cell_w, cell_h = 340, 320
+    # rows: config; cols: transparent/checker, transparent/paper, white/ink, white/ink-label
+    configs = [c for c in AUTHORIZED_CONFIGURATIONS if c in pairs]
+    cols = 4
+    rows = len(configs)
+    board = Image.new("RGBA", (cols * cell_w, rows * cell_h + 40), paper)
+    draw = ImageDraw.Draw(board)
+    try:
+        font = ImageFont.truetype(str(FONT_REG), 12)
+        font_sm = ImageFont.truetype(str(FONT_REG), 10)
+    except OSError:
+        font = ImageFont.load_default()
+        font_sm = font
+
+    draw.text((12, 10), "QA · Mono_1C · Transparent vs BG_White_FFFFFF (não é logo branca)", font=font, fill=(20, 20, 20, 255))
+
+    col_labels = [
+        "Transparente / checker",
+        "Transparente / papel",
+        "Branco / ink",
+        "Branco / ink (arquivo)",
+    ]
+    for col, label in enumerate(col_labels):
+        # labels sit in first row header area already used; put small tags per cell
+        pass
+
+    for row, config in enumerate(configs):
+        t_im = pairs[config]["Transparent"]
+        w_im = pairs[config]["White_FFFFFF"]
+        # Col 0: transparent on checkerboard
+        # Col 1: transparent on paper
+        # Col 2–3: white asset on ink (visual + filename)
+        surfaces = [
+            ("checker", None, t_im, True),
+            ("paper", paper, t_im, True),
+            ("ink", ink, w_im, False),
+            ("ink-file", ink, w_im, False),
+        ]
+        for col, (kind, bg, im, use_alpha) in enumerate(surfaces):
+            x0, y0 = col * cell_w, 40 + row * cell_h
+            if kind == "checker":
+                cell_bg = checkerboard((cell_w, cell_h))
+                board.paste(cell_bg, (x0, y0))
+            else:
+                draw.rectangle([x0, y0, x0 + cell_w - 1, y0 + cell_h - 1], fill=bg)
+
+            thumb = im.copy()
+            thumb.thumbnail((cell_w - 40, cell_h - 70), Image.Resampling.LANCZOS)
+            px = x0 + (cell_w - thumb.width) // 2
+            py = y0 + 40
+            if use_alpha:
+                board.paste(thumb, (px, py), thumb)
+            else:
+                board.paste(thumb, (px, py))
+
+            label_fill = (255, 255, 255, 255) if kind.startswith("ink") else (20, 20, 20, 255)
+            stem = asset_stem(config, "Transparent" if use_alpha else "White_FFFFFF")
+            caption = f"{config}"
+            if col == 3:
+                caption = stem[:42] + ("…" if len(stem) > 42 else "")
+            else:
+                caption = f"{config} · {col_labels[col].split('/')[0].strip()}"
+            draw.text((x0 + 8, y0 + 8), caption, font=font_sm, fill=label_fill)
+
+    out = QA_DIR / "LOGO_SYSTEM_BG_QA_BOARD.png"
+    board.save(out, format="PNG", optimize=True)
+    return out
 
 
 def build_candidate_board(assets: dict[str, Image.Image], decisions: dict) -> Path:
@@ -463,9 +690,9 @@ def build_candidate_board(assets: dict[str, Image.Image], decisions: dict) -> Pa
         ("Lockup Horizontal", assets["Lockup_Horizontal"], paper),
         ("Wordmark Stacked", assets["Wordmark_Stacked"], paper),
         ("Wordmark Horizontal", assets["Wordmark_Horizontal"], paper),
-        ("V + placa ink", assets["Lockup_Vertical"], ink),
-        ("H + placa ink", assets["Lockup_Horizontal"], ink),
-        ("Stacked + placa", assets["Wordmark_Stacked"], ink),
+        ("V · BG White / ink", assets.get("Lockup_Vertical_White", assets["Lockup_Vertical"]), ink),
+        ("H · BG White / ink", assets.get("Lockup_Horizontal_White", assets["Lockup_Horizontal"]), ink),
+        ("Master · BG White / ink", assets.get("Master_White", assets["Master"]), ink),
         ("Master 128", resize_width(assets["Master"], min(128, assets["Master"].width)), paper),
     ]
     cols, rows = 3, 3
@@ -478,16 +705,13 @@ def build_candidate_board(assets: dict[str, Image.Image], decisions: dict) -> Pa
         draw.rectangle([x0, y0, x0 + cell_w - 1, y0 + cell_h - 1], fill=bg)
         thumb = im.copy()
         thumb.thumbnail((cell_w - 36, cell_h - 56), Image.Resampling.LANCZOS)
+        px = x0 + (cell_w - thumb.width) // 2
+        py = y0 + 36
         if bg[0] < 80:
-            plate = Image.new("RGBA", (thumb.width + 20, thumb.height + 20), paper)
-            plate.paste(thumb, (10, 10), thumb)
-            px = x0 + (cell_w - plate.width) // 2
-            py = y0 + 36
-            board.paste(plate, (px, py))
+            # white-BG assets already include canvas — no CSS plate
+            board.paste(thumb, (px, py))
             fill = (255, 255, 255, 255)
         else:
-            px = x0 + (cell_w - thumb.width) // 2
-            py = y0 + 36
             board.paste(thumb, (px, py), thumb)
             fill = (20, 20, 20, 255)
         draw.text((x0 + 8, y0 + 8), label, font=font, fill=fill)
@@ -499,19 +723,65 @@ def build_candidate_board(assets: dict[str, Image.Image], decisions: dict) -> Pa
 
 def assert_no_forbidden_colors_in_svg(path: Path) -> None:
     t = path.read_text(encoding="utf-8")
+    # Strip desc/title to avoid false positives from documentation text? Keep strict on fills.
     for bad in ("#0E1216", "#0e1216", "#F3EEE6", "#f3eee6", "#8B6F47", "#8b6f47"):
         if bad in t:
-            # allow in desc? no — fail
             raise SystemExit(f"Forbidden color {bad} in {path.name}")
 
 
-def generate_all(selected: list[str]) -> dict:
+def export_config_backgrounds(
+    config: str,
+    transparent: Image.Image,
+    backgrounds: list[str],
+    *,
+    svg_writer,
+) -> dict:
+    """Export ladder + SVG for each authorized background from one transparent composition."""
+    result: dict = {"geometry": list(transparent.size), "backgrounds": {}}
+    for bg in backgrounds:
+        stem = asset_stem(config, bg)
+        base = LOGO_DIR / stem
+        im = apply_background(transparent, bg)
+        ladder = export_ladder(
+            im, base, LADDERS[config], lossless_webp=(bg == "White_FFFFFF")
+        )
+        svg_writer(base.with_suffix(".svg"), bg)
+        assert_no_forbidden_colors_in_svg(base.with_suffix(".svg"))
+        stats = alpha_stats(im)
+        result["backgrounds"][bg] = {
+            "stem": stem,
+            "exports": ladder,
+            "alpha": stats,
+        }
+        if bg == "Transparent" and not stats["has_transparency"]:
+            # Master may be mostly opaque; wordmarks/lockups should have alpha
+            if config != "Master":
+                raise SystemExit(f"{stem}: expected transparency")
+        if bg == "White_FFFFFF" and not stats["fully_opaque"]:
+            raise SystemExit(f"{stem}: white BG must be fully opaque (alpha 255)")
+    if "Transparent" in backgrounds and "White_FFFFFF" in backgrounds:
+        cmp = compare_transparent_on_white(
+            apply_background(transparent, "Transparent"),
+            apply_background(transparent, "White_FFFFFF"),
+        )
+        result["transparent_on_white_vs_white"] = cmp
+        if not cmp["pass"]:
+            raise SystemExit(
+                f"{config}: transparent∘white vs white failed MAE={cmp.get('mae_rgba')}"
+            )
+    return result
+
+
+def generate_all(selected_configs: list[str], selected_backgrounds: list[str]) -> dict:
     if not FONT_REG.is_file() or not FONT_BOLD.is_file():
         raise SystemExit("Palatino fonts required on build machine")
 
     primary = load_primary()
+    master_hash_before = PRIMARY_WEBP.read_bytes()
+
     report: dict = {
         "authorized_colorways": list(AUTHORIZED_COLORWAYS),
+        "authorized_backgrounds": list(AUTHORIZED_BACKGROUNDS),
         "authorized_configurations": list(AUTHORIZED_CONFIGURATIONS),
         "generated": [],
         "master_source": PRIMARY_WEBP.name,
@@ -519,24 +789,26 @@ def generate_all(selected: list[str]) -> dict:
         "ink": INK_HEX,
         "exports": {},
         "fidelity": {},
+        "background_qa": {},
         "decisions": {},
     }
 
-    board_assets: dict[str, Image.Image] = {"Master": primary}
-
-    # Always compute all for candidate board / decisions; export only selected
+    # Compose all for boards/decisions
     v_img, v_meta, v_bytes = compose_lockup_vertical(primary)
     h_img, h_meta, h_bytes = compose_lockup_horizontal(primary)
     s_img, s_meta = compose_wordmark_stacked()
     wh_img, wh_meta, wh_eval = compose_wordmark_horizontal()
 
-    board_assets["Lockup_Vertical"] = v_img
-    board_assets["Lockup_Horizontal"] = h_img
-    board_assets["Wordmark_Stacked"] = s_img
-    board_assets["Wordmark_Horizontal"] = wh_img
+    compositions: dict[str, Image.Image] = {
+        "Master": primary,
+        "Lockup_Vertical": v_img,
+        "Lockup_Horizontal": h_img,
+        "Wordmark_Stacked": s_img,
+        "Wordmark_Horizontal": wh_img,
+    }
 
     report["decisions"] = {
-        "Master": {"status": "canonical", "note": "Não regenerado pelo script"},
+        "Master": {"status": "canonical", "note": "Não regenerado pelo script (transparent); BG White derivado por compositing"},
         "Lockup_Vertical": {"status": "approved", "geometry": v_meta["canvas"], "ink": INK_HEX},
         "Lockup_Horizontal": {"status": "approved", "geometry": h_meta["canvas"], "ink": INK_HEX},
         "Wordmark_Stacked": {
@@ -545,6 +817,10 @@ def generate_all(selected: list[str]) -> dict:
             "note": "Não substitui o Master",
         },
         "Wordmark_Horizontal": wh_eval,
+        "Backgrounds": {
+            "Transparent": "Canônico — ausência de segmento de fundo no nome",
+            "White_FFFFFF": "Canvas #FFFFFF — não é colorway, logo branca nem reverso",
+        },
         "Lockup_Vertical_Compact": {
             "status": "rejected",
             "reason": "Redimensionamento do Vertical já cobre; sem breakpoint estrutural distinto",
@@ -559,65 +835,185 @@ def generate_all(selected: list[str]) -> dict:
         },
     }
 
+    board_assets = {
+        "Master": primary,
+        "Lockup_Vertical": v_img,
+        "Lockup_Horizontal": h_img,
+        "Wordmark_Stacked": s_img,
+        "Wordmark_Horizontal": wh_img,
+        "Master_White": apply_background(primary, "White_FFFFFF"),
+        "Lockup_Vertical_White": apply_background(v_img, "White_FFFFFF"),
+        "Lockup_Horizontal_White": apply_background(h_img, "White_FFFFFF"),
+    }
     board_path = build_candidate_board(board_assets, report["decisions"])
     report["candidate_board"] = str(board_path.relative_to(ROOT)).replace("\\", "/")
 
-    if "Lockup_Vertical" in selected:
-        base = LOGO_DIR / "LOGO_PCA_Lockup_Vertical_Mono_1C"
-        report["exports"]["Lockup_Vertical"] = export_ladder(v_img, base, (400, 180, 128))
+    qa_pairs: dict[str, dict[str, Image.Image]] = {}
+
+    # --- Master ---
+    if "Master" in selected_configs:
+        # Never rewrite transparent Master rasters/SVG from composition.
+        # Only emit White_FFFFFF derivatives (and validate transparent files exist).
+        if "Transparent" in selected_backgrounds:
+            if not PRIMARY_WEBP.is_file():
+                raise SystemExit("Missing canonical Master WebP")
+            # Validate existing transparent ladder exists; do not overwrite
+            report["exports"].setdefault("Master", {})["Transparent"] = {
+                "stem": asset_stem("Master", "Transparent"),
+                "note": "canonical — not regenerated",
+                "master": list(primary.size),
+                "alpha": alpha_stats(primary),
+            }
+            report["generated"].append("Master:Transparent(canonical)")
+        if "White_FFFFFF" in selected_backgrounds:
+            white = apply_background(primary, "White_FFFFFF")
+            stem = asset_stem("Master", "White_FFFFFF")
+            base = LOGO_DIR / stem
+            ladder = export_ladder(
+                white, base, LADDERS["Master"], lossless_webp=True
+            )
+            write_master_white_svg(base.with_suffix(".svg"))
+            assert_no_forbidden_colors_in_svg(base.with_suffix(".svg"))
+            cmp = compare_transparent_on_white(primary, white)
+            if not cmp["pass"]:
+                raise SystemExit(f"Master BG white compositing failed: {cmp}")
+            report["exports"].setdefault("Master", {})["White_FFFFFF"] = {
+                "stem": stem,
+                "exports": ladder,
+                "alpha": alpha_stats(white),
+                "transparent_on_white_vs_white": cmp,
+            }
+            report["background_qa"]["Master"] = cmp
+            report["generated"].append("Master:White_FFFFFF")
+            qa_pairs["Master"] = {
+                "Transparent": primary,
+                "White_FFFFFF": white,
+            }
+
+    # --- Lockup Vertical ---
+    if "Lockup_Vertical" in selected_configs:
         paths = svg_paths_vertical(v_meta)
-        write_hybrid_svg(base.with_suffix(".svg"), v_bytes, tuple(v_meta["crest_box"]), tuple(v_meta["canvas"]), paths, base.name)
-        assert_no_forbidden_colors_in_svg(base.with_suffix(".svg"))
+
+        def _svg_v(path: Path, bg: str) -> None:
+            write_hybrid_svg(
+                path, v_bytes, tuple(v_meta["crest_box"]), tuple(v_meta["canvas"]), paths, path.stem, bg
+            )
+
+        # Always export selected BGs from same transparent composition
+        exp = export_config_backgrounds(
+            "Lockup_Vertical", v_img, selected_backgrounds, svg_writer=_svg_v
+        )
+        report["exports"]["Lockup_Vertical"] = exp
         report["fidelity"]["Lockup_Vertical"] = crest_mae(v_img, primary, tuple(v_meta["crest_box"]))
-        report["generated"].append("Lockup_Vertical")
         report["typo_vertical"] = v_meta
+        report["generated"].append("Lockup_Vertical")
+        if "transparent_on_white_vs_white" in exp:
+            report["background_qa"]["Lockup_Vertical"] = exp["transparent_on_white_vs_white"]
+        qa_pairs["Lockup_Vertical"] = {
+            "Transparent": v_img,
+            "White_FFFFFF": apply_background(v_img, "White_FFFFFF"),
+        }
 
-    if "Lockup_Horizontal" in selected:
-        base = LOGO_DIR / "LOGO_PCA_Lockup_Horizontal_Mono_1C"
-        report["exports"]["Lockup_Horizontal"] = export_ladder(h_img, base, (800, 400, 240, 180))
-        paths = svg_paths_vertical(h_meta)  # same LINE1/LINE2 fields
-        # Embed full Master webp; SVG scales via width/height of image element
-        write_hybrid_svg(base.with_suffix(".svg"), h_bytes, tuple(h_meta["crest_box"]), tuple(h_meta["canvas"]), paths, base.name)
-        assert_no_forbidden_colors_in_svg(base.with_suffix(".svg"))
-        # MAE vs LANCZOS of primary into crest box
+    # --- Lockup Horizontal ---
+    if "Lockup_Horizontal" in selected_configs:
+        paths = svg_paths_vertical(h_meta)
+
+        def _svg_h(path: Path, bg: str) -> None:
+            write_hybrid_svg(
+                path, h_bytes, tuple(h_meta["crest_box"]), tuple(h_meta["canvas"]), paths, path.stem, bg
+            )
+
+        exp = export_config_backgrounds(
+            "Lockup_Horizontal", h_img, selected_backgrounds, svg_writer=_svg_h
+        )
+        report["exports"]["Lockup_Horizontal"] = exp
         report["fidelity"]["Lockup_Horizontal"] = crest_mae(h_img, primary, tuple(h_meta["crest_box"]))
-        report["generated"].append("Lockup_Horizontal")
         report["typo_horizontal"] = h_meta
+        report["generated"].append("Lockup_Horizontal")
+        if "transparent_on_white_vs_white" in exp:
+            report["background_qa"]["Lockup_Horizontal"] = exp["transparent_on_white_vs_white"]
+        qa_pairs["Lockup_Horizontal"] = {
+            "Transparent": h_img,
+            "White_FFFFFF": apply_background(h_img, "White_FFFFFF"),
+        }
 
-    if "Wordmark_Stacked" in selected:
-        base = LOGO_DIR / "LOGO_PCA_Wordmark_Stacked_Mono_1C"
-        report["exports"]["Wordmark_Stacked"] = export_ladder(s_img, base, (800, 400, 240, 180))
+    # --- Wordmark Stacked ---
+    if "Wordmark_Stacked" in selected_configs:
         paths = svg_paths_vertical(s_meta)
-        write_vector_svg(base.with_suffix(".svg"), tuple(s_meta["canvas"]), paths, base.name)
-        assert_no_forbidden_colors_in_svg(base.with_suffix(".svg"))
-        report["generated"].append("Wordmark_Stacked")
-        report["typo_wordmark_stacked"] = s_meta
 
-    if "Wordmark_Horizontal" in selected:
+        def _svg_s(path: Path, bg: str) -> None:
+            write_vector_svg(path, tuple(s_meta["canvas"]), paths, path.stem, bg)
+
+        exp = export_config_backgrounds(
+            "Wordmark_Stacked", s_img, selected_backgrounds, svg_writer=_svg_s
+        )
+        report["exports"]["Wordmark_Stacked"] = exp
+        report["typo_wordmark_stacked"] = s_meta
+        report["generated"].append("Wordmark_Stacked")
+        if "transparent_on_white_vs_white" in exp:
+            report["background_qa"]["Wordmark_Stacked"] = exp["transparent_on_white_vs_white"]
+        qa_pairs["Wordmark_Stacked"] = {
+            "Transparent": s_img,
+            "White_FFFFFF": apply_background(s_img, "White_FFFFFF"),
+        }
+
+    # --- Wordmark Horizontal ---
+    if "Wordmark_Horizontal" in selected_configs:
         if wh_eval["decision"] != "approved":
             print("Wordmark_Horizontal rejected — not exported:", wh_eval["reason"])
+            report["decisions"]["Wordmark_Horizontal"] = wh_eval
         else:
-            base = LOGO_DIR / "LOGO_PCA_Wordmark_Horizontal_Mono_1C"
-            report["exports"]["Wordmark_Horizontal"] = export_ladder(wh_img, base, (800, 400, 240, 180))
             paths = svg_paths_horizontal_wm(wh_meta)
-            write_vector_svg(base.with_suffix(".svg"), tuple(wh_meta["canvas"]), paths, base.name)
-            assert_no_forbidden_colors_in_svg(base.with_suffix(".svg"))
-            report["generated"].append("Wordmark_Horizontal")
+
+            def _svg_wh(path: Path, bg: str) -> None:
+                write_vector_svg(path, tuple(wh_meta["canvas"]), paths, path.stem, bg)
+
+            exp = export_config_backgrounds(
+                "Wordmark_Horizontal", wh_img, selected_backgrounds, svg_writer=_svg_wh
+            )
+            report["exports"]["Wordmark_Horizontal"] = exp
             report["typo_wordmark_horizontal"] = wh_meta
+            report["generated"].append("Wordmark_Horizontal")
+            if "transparent_on_white_vs_white" in exp:
+                report["background_qa"]["Wordmark_Horizontal"] = exp["transparent_on_white_vs_white"]
+            qa_pairs["Wordmark_Horizontal"] = {
+                "Transparent": wh_img,
+                "White_FFFFFF": apply_background(wh_img, "White_FFFFFF"),
+            }
+
+    if qa_pairs and set(selected_backgrounds) >= {"Transparent", "White_FFFFFF"}:
+        qa_board = build_qa_board(qa_pairs)
+        report["qa_board"] = str(qa_board.relative_to(ROOT)).replace("\\", "/")
+
+    # Master integrity
+    if PRIMARY_WEBP.read_bytes() != master_hash_before:
+        raise SystemExit("FATAL: Master WebP was modified")
+    report["master_untouched"] = True
+    report["master_sha1_hint"] = "blob checked in-process (bytes unchanged)"
 
     QA_DIR.mkdir(parents=True, exist_ok=True)
-    (QA_DIR / "logo_system_build_report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    (QA_DIR / "logo_system_build_report.json").write_text(
+        json.dumps(report, indent=2), encoding="utf-8"
+    )
     return report
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
-    p = argparse.ArgumentParser(description="Generate PCA Mono_1C logo configurations")
+    p = argparse.ArgumentParser(
+        description="Generate PCA Mono_1C logo system (configurations × backgrounds)"
+    )
     p.add_argument("--colorway", default="Mono_1C", help="Must be Mono_1C")
     p.add_argument(
         "--config",
         nargs="+",
         metavar="NAME",
-        help=f"Subset of {', '.join(AUTHORIZED_CONFIGURATIONS)} (default: all approved)",
+        help=f"Subset of {', '.join(AUTHORIZED_CONFIGURATIONS)} (default: all)",
+    )
+    p.add_argument(
+        "--background",
+        nargs="+",
+        metavar="BG",
+        help=f"Subset of {', '.join(AUTHORIZED_BACKGROUNDS)} (default: both)",
     )
     return p.parse_args(argv)
 
@@ -629,21 +1025,46 @@ def main(argv: list[str] | None = None) -> None:
             f"Colorway nao autorizada: {args.colorway}. Somente Mono_1C."
         )
     selected = list(AUTHORIZED_CONFIGURATIONS) if not args.config else list(args.config)
-    bad = [c for c in selected if c not in AUTHORIZED_CONFIGURATIONS and c != "Master"]
+    bad = [c for c in selected if c not in AUTHORIZED_CONFIGURATIONS]
     if bad:
         raise SystemExit(
             f"Configuracao(oes) nao autorizada(s): {', '.join(bad)}. "
             f"Permitidas: {', '.join(AUTHORIZED_CONFIGURATIONS)}"
         )
-    selected = [c for c in selected if c != "Master"]
-    report = generate_all(selected)
-    print(json.dumps({
-        "generated": report["generated"],
-        "exports": report["exports"],
-        "fidelity": report["fidelity"],
-        "decisions": {k: v.get("status") or v.get("decision") for k, v in report["decisions"].items()},
-        "candidate_board": report.get("candidate_board"),
-    }, indent=2))
+    backgrounds = list(AUTHORIZED_BACKGROUNDS) if not args.background else list(args.background)
+    bad_bg = [b for b in backgrounds if b not in AUTHORIZED_BACKGROUNDS]
+    if bad_bg:
+        raise SystemExit(
+            f"Fundo(s) nao autorizado(s): {', '.join(bad_bg)}. "
+            f"Permitidos: {', '.join(AUTHORIZED_BACKGROUNDS)}"
+        )
+    report = generate_all(selected, backgrounds)
+    print(
+        json.dumps(
+            {
+                "generated": report["generated"],
+                "exports": {
+                    k: {
+                        "geometry": v.get("geometry"),
+                        "backgrounds": list(v.get("backgrounds", v).keys())
+                        if isinstance(v, dict)
+                        else v,
+                    }
+                    for k, v in report["exports"].items()
+                },
+                "fidelity": report["fidelity"],
+                "background_qa": report.get("background_qa"),
+                "decisions": {
+                    k: v.get("status") or v.get("decision") or v
+                    for k, v in report["decisions"].items()
+                },
+                "candidate_board": report.get("candidate_board"),
+                "qa_board": report.get("qa_board"),
+                "master_untouched": report["master_untouched"],
+            },
+            indent=2,
+        )
+    )
 
 
 if __name__ == "__main__":

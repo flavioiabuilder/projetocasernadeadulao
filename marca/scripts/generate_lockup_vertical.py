@@ -3,6 +3,7 @@
 Prefer:
   python marca/scripts/generate_logo_system.py
   python marca/scripts/generate_logo_system.py --config Lockup_Vertical
+  python marca/scripts/generate_logo_system.py --background White_FFFFFF
 """
 from __future__ import annotations
 
@@ -29,5 +30,5 @@ if __name__ == "__main__":
             )
         argv = argv[:i] + argv[j:] + ["--config", "Lockup_Vertical"]
     elif "--config" not in argv:
-        argv = ["--config", "Lockup_Vertical"]
+        argv = ["--config", "Lockup_Vertical"] + argv
     main(argv)

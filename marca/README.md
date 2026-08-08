@@ -16,7 +16,8 @@ Brand book e design system **institucionais** da raiz do repositório.
 | [`tokens/tokens.css`](tokens/tokens.css) | Gerado — consumido por `index.html` e pelo lab |
 | [`laboratorio/`](laboratorio/) | Brand book HTML (local) |
 | [`exemplos/`](exemplos/) | Mocks: [header](exemplos/header-mock.html), [cartão](exemplos/cartao-mock.html), [assinatura](exemplos/assinatura-mock.html) |
-| [`../assets/img/logo-pca/`](../assets/img/logo-pca/) | Kit de logo canônico |
+| [`../assets/img/logo-pca/`](../assets/img/logo-pca/) | Kit Mono_1C (configs × fundos Transparent / White) |
+| [`scripts/generate_logo_system.py`](scripts/generate_logo_system.py) | Pipeline de exportação do kit |
 
 ## Servir o laboratório
 

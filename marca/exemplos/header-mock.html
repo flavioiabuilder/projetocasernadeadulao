@@ -25,10 +25,9 @@
       .bar .mark {
         width: 2.75rem;
         height: 2.75rem;
-        padding: 0.2rem;
         box-sizing: border-box;
-        background: var(--color-papel);
         border-radius: var(--radius-sm);
+        overflow: hidden;
       }
       .bar .mark img {
         width: 100%;
@@ -38,10 +37,9 @@
       .bar .lockup {
         display: none;
         width: min(14rem, 40vw);
-        padding: 0.25rem 0.35rem;
-        background: var(--color-papel);
-        border-radius: var(--radius-sm);
         box-sizing: border-box;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
       }
       .bar .lockup img {
         width: 100%;
@@ -84,7 +82,7 @@
     <header class="bar" aria-label="Mock de header institucional">
       <span class="mark">
         <img
-          src="../../assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_128.webp"
+          src="../../assets/img/logo-pca/LOGO_PCA_Master_Mono_1C_BG_White_FFFFFF_128.webp"
           width="128"
           height="128"
           alt=""
@@ -92,7 +90,7 @@
       </span>
       <span class="lockup">
         <img
-          src="../../assets/img/logo-pca/LOGO_PCA_Lockup_Horizontal_Mono_1C_240.webp"
+          src="../../assets/img/logo-pca/LOGO_PCA_Lockup_Horizontal_Mono_1C_BG_White_FFFFFF_240.webp"
           width="240"
           height="105"
           alt="Projeto Caserna de Adulão"
@@ -104,8 +102,9 @@
       </div>
     </header>
     <p class="note">
-      Header responsivo: Master + texto (&lt;900px) ou Lockup Horizontal (≥900px),
-      ambos em placa <code>--color-papel</code>.
+      Header responsivo em superfície ink: assets
+      <code>_BG_White_FFFFFF</code> (canvas branco incorporado) —
+      sem placa CSS. Fundo branco ≠ logo branca.
       <a href="../laboratorio/index.html">Lab</a> ·
       <a href="cartao-mock.html">Cartão</a> ·
       <a href="assinatura-mock.html">Assinatura</a>
